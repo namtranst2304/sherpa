@@ -1,5 +1,4 @@
 {
-  "_streaming_chunk_1": "Structuring the raid metadata and preface...",
   "raid_name": "The Desert Perpetual",
   "active_orbit": "Kepler Sector",
   "preface": {
@@ -26,7 +25,6 @@
       ]
     },
   },
-  "_streaming_chunk_2": "Compiling detailed loadout recommendations for all three classes...",
   "loadout_tips": {
     "note": "Một lần nữa, đây chỉ là những kiến thức tốt nhất ở thời điểm hiện tại của tôi và sẽ được cập nhật liên tục khi meta mới xuất hiện. Mọi Encounter trong Raid này đều là đấu Trùm (Boss fight), vì vậy các thiết lập Loadout này thường sẽ hoạt động hiệu quả cho tất cả các ải (ngoại trừ vũ khí có thể thay đổi tùy thuộc vào khoảng cách của Boss đứng gần hay xa bạn). Hướng dẫn này mặc định bạn đang chơi ở độ khó Normal và sẽ không thực hiện đổi đồ (loadout swapping) giữa chừng.",
     "warlocks": {
@@ -189,7 +187,6 @@
   },
   "encounters": [
     {
-      "_streaming_chunk_4": "Mapping out Encounter A: Living Rhythm...",
       "id": "enc_a",
       "name": "Encounter A - Living Rhythm (Boss Wyvern: Iatros)",
       "roles": {
@@ -253,7 +250,6 @@
       }
     },
     {
-      "_streaming_chunk_5": "Mapping out Encounter B: Inverse Function...",
       "id": "enc_b",
       "name": "Encounter B - Inverse Function (Boss Hobgoblin)",
       "roles": {
@@ -315,7 +311,6 @@
       }
     },
     {
-      "_streaming_chunk_6": "Mapping out Encounter C: Clear Sight...",
       "id": "enc_c",
       "name": "Encounter C - Clear Sight (Boss Hydra: Epoptes)",
       "roles": {
@@ -375,7 +370,6 @@
       }
     },
     {
-      "_streaming_chunk_7": "Mapping out the Final Encounter: The End Times...",
       "id": "enc_final",
       "name": "Final Encounter - The End Times (Boss Harpy)",
       "roles": {
