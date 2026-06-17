@@ -4,12 +4,22 @@ import { ActivityEncounterView } from "@/components/layout/ActivityEncounterView
 
 interface PageProps {
   params: Promise<{ slug: string }>
-  searchParams: Promise<{ enc?: string }>
 }
 
-export default async function DungeonEncounterPage({ params, searchParams }: PageProps) {
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  const keys = Object.keys(DUNGEONS_DATA);
+  if (keys.length === 0) {
+    return [{ slug: '_empty_' }]
+  }
+  return keys.map((slug) => ({
+    slug,
+  }))
+}
+
+export default async function DungeonOverviewPage({ params }: PageProps) {
   const resolvedParams = await params
-  const resolvedSearchParams = await searchParams
 
   const dungeonData = DUNGEONS_DATA[resolvedParams.slug]
 
@@ -20,7 +30,8 @@ export default async function DungeonEncounterPage({ params, searchParams }: Pag
   return (
     <ActivityEncounterView 
       activityData={dungeonData} 
-      activeEncounterId={resolvedSearchParams.enc} 
+      activeEncounterId="overview"
+      basePath={`/dungeons/${resolvedParams.slug}`}
     />
   )
 }

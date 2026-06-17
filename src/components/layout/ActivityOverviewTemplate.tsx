@@ -96,7 +96,7 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                       <Crosshair className="w-4 h-4" /> Recommended Weapons
                     </h3>
                     <div className="flex flex-col gap-2">
-                      {loadout_tips.weapons.map((w: any) => (
+                      {loadout_tips.weapons.map((w: { name: string; description: string }) => (
                         <div key={w.name} className="flex flex-col bg-secondary/10 p-3 rounded-md border border-border/50">
                           <span className="font-bold text-foreground text-sm">{w.name}</span>
                           <span className="text-xs text-muted-foreground mt-1">{w.description}</span>
@@ -107,7 +107,7 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                 )}
                 
                 {['warlocks', 'titans', 'hunters'].map((cls) => {
-                  const data = loadout_tips?.[cls] as any;
+                  const data = loadout_tips?.[cls] as { supers?: { name: string; utility: string }[]; exotics_and_abilities?: { name: string; recommendation: string }[] } | undefined;
                   if (!data) return null;
                   
                   return (
@@ -116,11 +116,11 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                         <Shield className="w-4 h-4" /> {cls.charAt(0).toUpperCase() + cls.slice(1)}
                       </h3>
                       <div className="space-y-3 pl-2 border-l border-border/50">
-                        {data.supers?.length > 0 && (
+                        {(data.supers?.length ?? 0) > 0 && (
                           <div>
                             <strong className="text-xs text-muted-foreground uppercase">Supers:</strong>
                             <div className="flex flex-col gap-2 mt-2">
-                              {data.supers.map((s: any) => (
+                              {data.supers!.map((s: { name: string; utility: string }) => (
                                 <div key={s.name} className="flex flex-col bg-secondary/10 p-3 rounded-md border border-border/50">
                                   <span className="font-bold text-primary text-sm">{s.name}</span>
                                   <span className="text-xs text-muted-foreground mt-1">{s.utility}</span>
@@ -129,11 +129,11 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                             </div>
                           </div>
                         )}
-                        {data.exotics_and_abilities?.length > 0 && (
+                        {(data.exotics_and_abilities?.length ?? 0) > 0 && (
                           <div className="mt-4">
                             <strong className="text-xs text-muted-foreground uppercase">Exotics & Abilities:</strong>
                             <div className="flex flex-col gap-2 mt-2">
-                              {data.exotics_and_abilities.map((e: any) => (
+                              {data.exotics_and_abilities!.map((e: { name: string; recommendation: string }) => (
                                 <div key={e.name} className="flex flex-col bg-amber-500/5 p-3 rounded-md border border-amber-500/20">
                                   <span className="font-bold text-amber-500 text-sm">{e.name}</span>
                                   <span className="text-xs text-muted-foreground mt-1">{e.recommendation}</span>

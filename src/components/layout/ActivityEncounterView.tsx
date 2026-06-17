@@ -8,9 +8,10 @@ import { ActivityData, ActivityEncounter, ActivityEncounterPhase, ActivityRole }
 interface ActivityEncounterViewProps {
   activityData: ActivityData
   activeEncounterId?: string
+  basePath: string
 }
 
-export function ActivityEncounterView({ activityData, activeEncounterId }: ActivityEncounterViewProps) {
+export function ActivityEncounterView({ activityData, activeEncounterId, basePath }: ActivityEncounterViewProps) {
   if (!activityData || !activityData.encounters) {
     return <div>No activity data found.</div>
   }
@@ -24,7 +25,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
         {
           id: "overview",
           title: "Overview & Loadouts",
-          href: "?enc=overview",
+          href: basePath,
         }
       ]
     },
@@ -33,7 +34,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       items: activityData.encounters.map((enc: ActivityEncounter) => ({
         id: enc.id,
         title: enc.name,
-        href: `?enc=${enc.id}`,
+        href: `${basePath}/${enc.id}`,
       }))
     }
   ]

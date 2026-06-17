@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
   outputFileTracingExcludes: {
     '*': [
       'node_modules/next/dist/compiled/@vercel/og/**',

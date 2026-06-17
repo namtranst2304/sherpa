@@ -4,12 +4,18 @@ import { ActivityEncounterView } from "@/components/layout/ActivityEncounterView
 
 interface PageProps {
   params: Promise<{ slug: string }>
-  searchParams: Promise<{ enc?: string }>
 }
 
-export default async function RaidEncounterPage({ params, searchParams }: PageProps) {
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return Object.keys(RAIDS_DATA).map((slug) => ({
+    slug,
+  }))
+}
+
+export default async function RaidOverviewPage({ params }: PageProps) {
   const resolvedParams = await params
-  const resolvedSearchParams = await searchParams
 
   const raidData = RAIDS_DATA[resolvedParams.slug]
 
@@ -20,7 +26,8 @@ export default async function RaidEncounterPage({ params, searchParams }: PagePr
   return (
     <ActivityEncounterView 
       activityData={raidData} 
-      activeEncounterId={resolvedSearchParams.enc} 
+      activeEncounterId="overview"
+      basePath={`/raids/${resolvedParams.slug}`}
     />
   )
 }

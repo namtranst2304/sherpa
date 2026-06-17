@@ -43,9 +43,9 @@ export interface ActivityData {
   loadout_tips?: {
     note?: string;
     weapons?: { name: string; description: string }[];
-    warlocks?: { supers?: any[]; exotics_and_abilities?: any[] };
-    titans?: { supers?: any[]; exotics_and_abilities?: any[] };
-    hunters?: { supers?: any[]; exotics_and_abilities?: any[] };
+    warlocks?: { supers?: { name: string; utility: string }[]; exotics_and_abilities?: { name: string; recommendation: string }[] };
+    titans?: { supers?: { name: string; utility: string }[]; exotics_and_abilities?: { name: string; recommendation: string }[] };
+    hunters?: { supers?: { name: string; utility: string }[]; exotics_and_abilities?: { name: string; recommendation: string }[] };
     [key: string]: unknown;
   };
   encounters: ActivityEncounter[];
