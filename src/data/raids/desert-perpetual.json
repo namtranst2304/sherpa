@@ -247,7 +247,13 @@
             "Bạn có tối đa 3 lần DPS trước khi Boss rơi vào trạng thái Enrage quét sạch cả đội."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/desert-perpetual/enc01.png",
+          "caption": "Bản đồ lượng tử đấu trường Iatros"
+        }
+      ]
     },
     {
       "id": "enc_b",
@@ -308,7 +314,13 @@
             "Gây sát thương tối đa trong vòng 3 phase DPS trước khi Boss kích hoạt Enrage WIPE toàn đội."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/desert-perpetual/enc02.png",
+          "caption": "Bản đồ lượng tử đấu trường Agraios"
+        }
+      ]
     },
     {
       "id": "enc_c",
@@ -367,7 +379,17 @@
             "Bạn có tối đa 3 phase DPS trước khi Boss kích hoạt Enrage WIPE toàn đội."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/desert-perpetual/enc03A.png",
+          "caption": "Bản đồ chi tiết Epoptes 1"
+        },
+        {
+          "url": "/images/raids/desert-perpetual/enc03B.png",
+          "caption": "Bản đồ chi tiết Epoptes 2"
+        }
+      ]
     },
     {
       "id": "enc_final",
@@ -446,8 +468,104 @@
             "Dồn toàn bộ lượng sát thương mạnh nhất (Edge Transit, Supers) để kết liễu Boss trước khi enrage timer 15s chạm mốc 0 gây WIPE sạch cả đội.",
             "Fireteam có tối đa 3 phase DPS trước khi Boss enrage hoàn toàn."
           ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - Quy trình xoay vòng súng Bait & Switch (Simulator)",
+          "objective": "Tối ưu sát thương (DPS) với perk Bait & Switch trong giai đoạn Final Stand.",
+          "steps": [
+            "Bước 1: Bắn súng Special (Scatter Signal / Sniper) - Bắn trúng Boss đúng 1 viên bằng súng Special. Điều này đánh dấu điều kiện thứ nhất để kích hoạt Bait and Switch.",
+            "Bước 2: Bắn súng Primary (Outbreak Perfected / SMG) - Chuyển nhanh sang súng Primary, bắn Boss 1 viên để hoàn thành điều kiện đánh dấu thứ hai.",
+            "Bước 3: Chuyển sang súng Heavy (Edge Transit / Apex) - Bắn viên Heavy đầu tiên trúng Boss. Lúc này dòng buff Bait and Switch hiện lên bên cạnh màn hình, tăng ngay lập tức 30%-35% sát thương cho tất cả các viên Heavy tiếp theo.",
+            "Bước 4: Spam đạn Heavy hết băng & Gặp lại chu kỳ - Xả liên tục cho đến khi hết đạn trong băng. Chuyển lại về bước 1 để sạc lại buff Bait and Switch nếu Boss vẫn chưa chết."
+          ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/desert-perpetual/enc04A.png",
+          "caption": "Bản đồ đấu trường sạc hạt (Mine Phase)"
+        },
+        {
+          "url": "/images/raids/desert-perpetual/enc04B.png",
+          "caption": "Bản đồ đấu trường Damage Phase"
+        }
+      ]
     }
-  ]
+  ],
+  "loot_table": [
+    {
+      "weapon": "Whirling Ovation (Exotic)",
+      "type": "Rocket Launcher",
+      "frame": "Coronal Culmination",
+      "source": "Koregos, the Worldline"
+    },
+    {
+      "weapon": "Intercalary",
+      "type": "Auto Rifle",
+      "frame": "Adaptive Frame",
+      "source": "Agraios, Inherent"
+    },
+    {
+      "weapon": "Opaque Hourglass",
+      "type": "Combat Bow",
+      "frame": "High-Impact Frame",
+      "source": "Epoptes, Lord of Quanta"
+    },
+    {
+      "weapon": "Finite Maybe",
+      "type": "Fusion Rifle",
+      "frame": "Aggressive Frame",
+      "source": "Iatros, Inward-Turned"
+    },
+    {
+      "weapon": "The When and Where",
+      "type": "Rocket Launcher",
+      "frame": "Adaptive Frame",
+      "source": "Iatros, Inward-Turned"
+    },
+    {
+      "weapon": "Lance Ephemeral",
+      "type": "Sniper Rifle",
+      "frame": "Rapid-Fire Frame",
+      "source": "Agraios, Inherent"
+    },
+    {
+      "weapon": "Antedate",
+      "type": "Submachine Gun",
+      "frame": "Adaptive Frame",
+      "source": "Agraios, Inherent"
+    }
+  ],
+  "epic_mode": {
+    "requirements_and_contest": [
+      "Điều kiện: Sở hữu bản mở rộng Edge of Fate, Power Level 300+, Fireteam leader phải từng hoàn thành Raid Normal ít nhất 1 lần.",
+      "Contest Mode: Khóa Power Level, chặn các trang bị trong 48 giờ đầu.",
+      "Phần thưởng: First clear (Trong 48h) rớt 100% trang bị Tier 5. Clear sau đó rớt Tier 4 và có tỷ lệ lên Tier 5.",
+      "Feats (Thử thách): Hoàn thành 3-5 feats rớt đồ Tier 5. Hoàn thành 0-2 feats rớt đồ Tier 4."
+    ],
+    "emblems_and_titles": [
+      "Fractured Timeline: Clear Contest Mode trong 48h đầu.",
+      "After the Unknown: Clear Epic mode bất kỳ lúc nào.",
+      "Gnarled Tendrils: Xem Twitch Drop 1 tiếng dịp ra mắt.",
+      "World First Belt: Dành cho Fireteam đầu tiên hoàn thành Epic mode."
+    ],
+    "encounter_changes": [
+      {
+        "name": "1. Iatros, Inward-Turned",
+        "changes": "Vòng Chronon Hoop liên tục đổi màu. Người xây bục (builders) phải bắn các cột dựa trên màu của canister. Buff Temporality sẽ xoay vòng đổi cho người khác sau mỗi nhịp xây bục."
+      },
+      {
+        "name": "2. Agraios, Inherent",
+        "changes": "Các cổng Portals và cột Alignment yêu cầu loại Chronon cụ thể. Phase DPS sẽ ở khoảng cách xa hơn, và Final Stand yêu cầu tiêu diệt 3 phân thân Agraios tương ứng với 3 loại Temporality."
+      },
+      {
+        "name": "3. Epoptes, Lord of Quanta",
+        "changes": "Xuất hiện thêm Detain-supplicants. Cơ chế đọc Outside lens mới. Trong Phase DPS, người chơi có thể bị hút vào các căn phòng 2 bên bất ngờ."
+      },
+      {
+        "name": "4. Koregos (Fractured in Time)",
+        "changes": "Làm lại hoàn toàn thành trận chiến Fractured in Time. Gồm 5 Phase lặp lại, xuất hiện các Mini-game Portals liên kết với 3 Boss trước đó. Damage Phase thay đổi liên tục dựa trên vị trí của các khối tinh thể Temporal Loci crystals."
+      }
+    ]
+  }
 }

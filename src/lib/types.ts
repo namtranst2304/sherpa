@@ -48,6 +48,12 @@ export interface ActivityData {
     hunters?: { supers?: { name: string; utility: string }[]; exotics_and_abilities?: { name: string; recommendation: string }[] };
     [key: string]: unknown;
   };
+  epic_mode?: {
+    requirements_and_contest?: string[];
+    emblems_and_titles?: string[];
+    encounter_changes?: { name: string; changes: string }[];
+  };
+  loot_table?: { weapon: string; type: string; frame: string; source: string }[];
   encounters: ActivityEncounter[];
   [key: string]: unknown;
 }

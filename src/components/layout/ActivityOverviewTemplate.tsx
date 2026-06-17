@@ -1,6 +1,6 @@
 import React from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Shield, Crosshair, BookOpen, Map } from "lucide-react"
+import { Shield, Crosshair, BookOpen, Map, Trophy, Gem } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { ActivityData } from "@/lib/types"
 
@@ -9,7 +9,7 @@ interface ActivityOverviewTemplateProps {
 }
 
 export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTemplateProps) {
-  const { preface, loadout_tips, raid_name, dungeon_name } = activityData
+  const { preface, loadout_tips, epic_mode, loot_table, raid_name, dungeon_name } = activityData
   const title = raid_name || dungeon_name || "Activity Overview"
 
   return (
@@ -149,6 +149,101 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
               </CardContent>
             </Card>
           </div>
+
+          {/* Epic Mode */}
+          {epic_mode && (
+            <div className="space-y-8">
+              <Card className="bg-card border-border hover:border-red-500/50 transition-colors hover:shadow-[0_0_15px_rgba(239,68,68,0.1)] h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5">
+                  <Trophy className="w-32 h-32 text-red-500" />
+                </div>
+                <CardHeader className="border-b border-border/50 pb-4 mb-4 relative z-10">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-red-500/10 rounded-md">
+                      <Trophy className="w-5 h-5 text-red-500" />
+                    </div>
+                    <CardTitle className="uppercase tracking-wider text-red-500">The Epic Raid (Mastery)</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6 relative z-10">
+                  {epic_mode.requirements_and_contest && (
+                    <div>
+                      <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">🛡️ Requirements & Contest Mode</h3>
+                      <ul className="space-y-2 text-sm text-foreground/80 list-disc pl-5">
+                        {epic_mode.requirements_and_contest.map((req, i) => <li key={i}>{req}</li>)}
+                      </ul>
+                    </div>
+                  )}
+                  {epic_mode.emblems_and_titles && (
+                    <div>
+                      <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">🏆 Emblems & Titles</h3>
+                      <ul className="space-y-2 text-sm text-foreground/80 list-disc pl-5">
+                        {epic_mode.emblems_and_titles.map((emb, i) => <li key={i}>{emb}</li>)}
+                      </ul>
+                    </div>
+                  )}
+                  {epic_mode.encounter_changes && (
+                    <div>
+                      <h3 className="text-sm font-bold uppercase tracking-wider text-red-500 mb-3 border-b border-border/50 pb-2 flex items-center gap-2">⚠️ Encounter Changes</h3>
+                      <div className="space-y-3">
+                        {epic_mode.encounter_changes.map((enc, i) => (
+                          <div key={i} className="p-3 bg-secondary/20 border border-border/50 rounded-lg">
+                            <strong className="text-primary block mb-1">{enc.name}</strong>
+                            <span className="text-sm text-muted-foreground">{enc.changes}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          )}
+
+          {/* Loot Table */}
+          {loot_table && loot_table.length > 0 && (
+            <div className="space-y-8">
+              <Card className="bg-card border-border hover:border-purple-500/50 transition-colors hover:shadow-[0_0_15px_rgba(168,85,247,0.1)] h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5">
+                  <Gem className="w-32 h-32 text-purple-500" />
+                </div>
+                <CardHeader className="border-b border-border/50 pb-4 mb-4 relative z-10">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-purple-500/10 rounded-md">
+                      <Gem className="w-5 h-5 text-purple-500" />
+                    </div>
+                    <CardTitle className="uppercase tracking-wider text-purple-500">Loot Table</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="relative z-10 overflow-x-auto">
+                  <table className="w-full text-sm text-left">
+                    <thead className="text-xs uppercase bg-secondary/50 text-muted-foreground border-b border-border/50">
+                      <tr>
+                        <th scope="col" className="px-4 py-3 font-bold">Weapon</th>
+                        <th scope="col" className="px-4 py-3 font-bold">Type</th>
+                        <th scope="col" className="px-4 py-3 font-bold">Frame</th>
+                        <th scope="col" className="px-4 py-3 font-bold">Source</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {loot_table.map((item, i) => (
+                        <tr key={i} className="border-b border-border/50 hover:bg-secondary/20">
+                          <td className="px-4 py-3 font-bold text-foreground flex items-center gap-2">
+                            {item.weapon.includes('(Exotic)') && <span className="w-2 h-2 rounded-full bg-amber-500"></span>}
+                            {!item.weapon.includes('(Exotic)') && <span className="w-2 h-2 rounded-full bg-purple-500"></span>}
+                            {item.weapon}
+                          </td>
+                          <td className="px-4 py-3 text-muted-foreground">{item.type}</td>
+                          <td className="px-4 py-3 text-muted-foreground">{item.frame}</td>
+                          <td className="px-4 py-3 font-medium text-foreground/80">{item.source}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </CardContent>
+              </Card>
+            </div>
+          )}
         </div>
       </div>
     </div>
