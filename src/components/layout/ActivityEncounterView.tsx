@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { GuideSidebar } from "@/components/layout/GuideSidebar"
 import { GuideTemplate } from "@/components/layout/GuideTemplate"
 import { ActivityOverviewTemplate } from "@/components/layout/ActivityOverviewTemplate"
@@ -8,10 +9,9 @@ import { ActivityData, ActivityEncounter, ActivityEncounterPhase, ActivityRole }
 interface ActivityEncounterViewProps {
   activityData: ActivityData
   activeEncounterId?: string
-  basePath: string
 }
 
-export function ActivityEncounterView({ activityData, activeEncounterId, basePath }: ActivityEncounterViewProps) {
+export function ActivityEncounterView({ activityData, activeEncounterId }: ActivityEncounterViewProps) {
   if (!activityData || !activityData.encounters) {
     return <div>No activity data found.</div>
   }
@@ -25,7 +25,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId, basePat
         {
           id: "overview",
           title: "Overview & Loadouts",
-          href: basePath,
+          href: "?enc=overview",
         }
       ]
     },
@@ -34,7 +34,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId, basePat
       items: activityData.encounters.map((enc: ActivityEncounter) => ({
         id: enc.id,
         title: enc.name,
-        href: `${basePath}/${enc.id}`,
+        href: `?enc=${enc.id}`,
       }))
     }
   ]
@@ -108,8 +108,15 @@ export function ActivityEncounterView({ activityData, activeEncounterId, basePat
             activeEncounter!.images && activeEncounter!.images.length > 0 ? (
               <div className="w-full flex flex-col gap-6 p-4">
                 {activeEncounter!.images.map((img, idx) => (
-                  <div key={idx} className="flex flex-col items-center gap-3">
-                    <img src={img.url} alt={img.caption || "Encounter map"} className="rounded-lg shadow-[0_0_15px_rgba(0,195,255,0.1)] border border-border max-w-full h-auto" />
+                  <div key={idx} className="flex flex-col items-center gap-3 w-full">
+                    <Image 
+                      src={img.url} 
+                      alt={img.caption || "Encounter map"} 
+                      width={1200} 
+                      height={800} 
+                      unoptimized={true}
+                      className="rounded-lg shadow-[0_0_15px_rgba(0,195,255,0.1)] border border-border max-w-full h-auto" 
+                    />
                     {img.caption && <p className="text-sm text-muted-foreground italic bg-secondary/30 px-4 py-1.5 rounded-full">{img.caption}</p>}
                   </div>
                 ))}
