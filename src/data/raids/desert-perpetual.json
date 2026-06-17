@@ -1,10 +1,8 @@
 {
   "_streaming_chunk_1": "Structuring the raid metadata and preface...",
   "raid_name": "The Desert Perpetual",
-  "source_document": "The Desert Perpetual Raid Guide.docx",
   "active_orbit": "Kepler Sector",
   "preface": {
-    "author_notes": "Tôi muốn lưu ý một vài điều trước khi đi vào chi tiết từng Encounter: Tôi biết tài liệu này rất dài. Tuy nhiên, tôi thấy rất nhiều bài raid guides thường bỏ qua các mẹo và chi tiết quan trọng, vì vậy tôi muốn bản cẩm nang này phải thật chi tiết và đầy đủ nhất có thể. Bạn có thể điều hướng nhanh tài liệu này bằng cách nhấp vào các phần tương ứng trong Table of Contents hoặc sử dụng thanh chuyển hướng bên trái.",
     "formatting_rules": "Tất cả các Buff lượng tử quan trọng sẽ được viết hoa nổi bật để giúp bạn dễ dàng tìm kiếm và nhận diện trong suốt quá trình đi Raid.",
     "non_linear_mechanic": {
       "description": "Các Encounter A, B, và C có thể được thực hiện theo bất kỳ thứ tự nào tùy ý Fireteam (Có vẻ như bạn cũng có thể kích hoạt Final Encounter trước nếu đã hoàn thành Raid này trước đó, điều này chưa được xác nhận hoàn toàn và có thể là một lỗi bug game). Bạn lựa chọn Encounter muốn đi bằng cách đi lên thang máy bên trái ở starting zone và tương tác với các bệ đứng (plates) ở trên đỉnh:",
@@ -27,16 +25,6 @@
         }
       ]
     },
-    "credits": {
-      "day_1_team": [
-        "Anth",
-        "Eddie",
-        "Luke",
-        "Mark",
-        "Josh"
-      ],
-      "special_thanks": "Gửi lời cảm ơn chân thành đến Klaus vì đã chỉnh sửa nội dung và Anth vì đã hỗ trợ tôi thiết lập các mẹo Loadout tuyệt vời này!"
-    }
   },
   "_streaming_chunk_2": "Compiling detailed loadout recommendations for all three classes...",
   "loadout_tips": {
@@ -468,17 +456,4 @@
       }
     }
   ],
-  "other_resources": {
-    "loot_tables": "Blueberries.gg Guide - The Desert Perpetual Loot Database",
-    "video_guides": [
-      {
-        "creator": "Datto",
-        "url": "Raid Guide Video Reference on YouTube"
-      },
-      {
-        "creator": "Fallout Plays",
-        "url": "Raid Guide Video Reference on YouTube"
-      }
-    ]
-  }
 }
