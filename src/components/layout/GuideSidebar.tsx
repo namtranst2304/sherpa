@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { cn } from "@/lib/utils/cn";
+import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import {
   Sidebar,
@@ -19,6 +19,7 @@ import {
 export type SidebarSection = {
   id: string;
   title: string;
+  href?: string;
   label?: string;
   isFinal?: boolean;
 };
@@ -33,16 +34,23 @@ export function GuideSidebar({
   subtitle,
   orbit,
   groups,
+  activeEncounterId,
 }: {
   title: string;
   subtitle: string;
   orbit?: string;
   groups: SidebarGroup[];
+  activeEncounterId?: string;
 }) {
-  const [activeId, setActiveId] = useState<string>("");
+  const [activeId, setActiveId] = useState<string>(activeEncounterId || "");
   const { setOpenMobile } = useSidebar();
 
   useEffect(() => {
+    if (activeEncounterId) {
+      setActiveId(activeEncounterId);
+      return;
+    }
+
     const handleScroll = () => {
       const sections = groups.flatMap((g) => g.items).map((item) => document.getElementById(item.id));
       let currentId = "";
@@ -65,19 +73,19 @@ export function GuideSidebar({
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Check on mount
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [groups, activeId]);
+  }, [groups, activeId, activeEncounterId]);
 
   return (
     <Sidebar className="top-[3.5rem] h-[calc(100vh-3.5rem)] border-r-border z-40 bg-background" collapsible="icon">
       <SidebarHeader className="border-b border-border p-4">
-        <h1 className="text-xl font-extrabold text-foreground tracking-wider uppercase truncate">
+        <h1 className="text-xl font-extrabold text-foreground tracking-wider uppercase break-words" title={title}>
           {title}
         </h1>
-        <h2 className="text-xs font-black text-primary tracking-widest uppercase mt-1 truncate">
+        <h2 className="text-xs font-black text-primary tracking-widest uppercase mt-1 break-words">
           {subtitle}
         </h2>
         {orbit && (
-          <p className="text-[10px] text-muted-foreground mt-2 truncate">Active Orbit: {orbit}</p>
+          <p className="text-[10px] text-muted-foreground mt-2 break-words">Active Orbit: {orbit}</p>
         )}
       </SidebarHeader>
       <SidebarContent>
@@ -88,6 +96,7 @@ export function GuideSidebar({
               <SidebarMenu>
                 {group.items.map((item) => {
                   const isActive = activeId === item.id;
+                  const linkHref = item.href || `#${item.id}`;
                   return (
                     <SidebarMenuItem key={item.id}>
                       <SidebarMenuButton
@@ -95,17 +104,17 @@ export function GuideSidebar({
                         isActive={isActive}
                         onClick={() => setOpenMobile(false)}
                         className={cn(
-                          "transition-all",
+                          "transition-all h-auto py-2",
                           isActive ? "text-primary font-bold bg-muted/50" : "text-foreground/70"
                         )}
                         tooltip={item.title}
                       >
-                        <Link href={`#${item.id}`} className="flex items-center justify-between w-full">
-                          <span className={cn("truncate", item.isFinal && "text-destructive font-extrabold")}>
+                        <Link href={linkHref} className="flex items-start justify-between w-full gap-2">
+                          <div className={cn("break-words whitespace-normal leading-tight", item.isFinal && "text-destructive font-extrabold")}>
                             {item.title}
-                          </span>
+                          </div>
                           {item.label && (
-                            <span
+                            <div
                               className={cn(
                                 "text-[9px] px-1.5 py-0.5 rounded font-bold font-mono ml-2 shrink-0",
                                 item.isFinal
@@ -114,7 +123,7 @@ export function GuideSidebar({
                               )}
                             >
                               {item.label}
-                            </span>
+                            </div>
                           )}
                         </Link>
                       </SidebarMenuButton>

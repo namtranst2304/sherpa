@@ -23,7 +23,7 @@
           "target_encounter": "Final Encounter - The End Times (Boss Harpy)"
         }
       ]
-    },
+    }
   },
   "loadout_tips": {
     "note": "Một lần nữa, đây chỉ là những kiến thức tốt nhất ở thời điểm hiện tại của tôi và sẽ được cập nhật liên tục khi meta mới xuất hiện. Mọi Encounter trong Raid này đều là đấu Trùm (Boss fight), vì vậy các thiết lập Loadout này thường sẽ hoạt động hiệu quả cho tất cả các ải (ngoại trừ vũ khí có thể thay đổi tùy thuộc vào khoảng cách của Boss đứng gần hay xa bạn). Hướng dẫn này mặc định bạn đang chơi ở độ khó Normal và sẽ không thực hiện đổi đồ (loadout swapping) giữa chừng.",
@@ -449,5 +449,5 @@
         }
       }
     }
-  ],
+  ]
 }

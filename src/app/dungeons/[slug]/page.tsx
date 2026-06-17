@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { RAIDS_DATA } from "@/data"
+import { DUNGEONS_DATA } from "@/data"
 import { ActivityEncounterView } from "@/components/layout/ActivityEncounterView"
 
 interface PageProps {
@@ -7,19 +7,19 @@ interface PageProps {
   searchParams: Promise<{ enc?: string }>
 }
 
-export default async function RaidEncounterPage({ params, searchParams }: PageProps) {
+export default async function DungeonEncounterPage({ params, searchParams }: PageProps) {
   const resolvedParams = await params
   const resolvedSearchParams = await searchParams
 
-  const raidData = RAIDS_DATA[resolvedParams.slug]
+  const dungeonData = DUNGEONS_DATA[resolvedParams.slug]
 
-  if (!raidData) {
+  if (!dungeonData) {
     notFound()
   }
 
   return (
     <ActivityEncounterView 
-      activityData={raidData} 
+      activityData={dungeonData} 
       activeEncounterId={resolvedSearchParams.enc} 
     />
   )

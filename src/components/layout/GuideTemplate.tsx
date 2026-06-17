@@ -1,6 +1,6 @@
 import React from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Map, Users, Settings, Target } from "lucide-react"
+import { Map, Users, Settings } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 
 interface GuideTemplateProps {
@@ -30,10 +30,10 @@ export function GuideTemplate({ title, description, mechanics, map, roles }: Gui
                 </div>
 
                 {/* 3 Cards Nội Dung */}
-                <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
+                <div className="flex flex-col gap-8">
 
-                    {/* Card 1: Mechanics (Cơ chế cốt lõi) - Chiếm 2 cột trên màn hình lớn */}
-                    <Card className="xl:col-span-2 bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)]">
+                    {/* Card 1: Mechanics (Cơ chế cốt lõi) */}
+                    <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)]">
                         <CardHeader className="border-b border-border/50 pb-4 mb-4">
                             <div className="flex items-center gap-3">
                                 <div className="p-2 bg-primary/10 rounded-md">
@@ -47,8 +47,8 @@ export function GuideTemplate({ title, description, mechanics, map, roles }: Gui
                         </CardContent>
                     </Card>
 
-                    {/* Card 2: Map (Bản đồ) - Chiếm 1 cột */}
-                    <Card className="xl:col-span-1 bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)] flex flex-col">
+                    {/* Card 2: Map (Bản đồ) */}
+                    <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)] flex flex-col">
                         <CardHeader className="border-b border-border/50 pb-4 mb-4">
                             <div className="flex items-center gap-3">
                                 <div className="p-2 bg-primary/10 rounded-md">
@@ -62,8 +62,8 @@ export function GuideTemplate({ title, description, mechanics, map, roles }: Gui
                         </CardContent>
                     </Card>
 
-                    {/* Card 3: What to do (Nhiệm vụ cho từng Role) - Trải dài full màn hình dưới cùng */}
-                    <Card className="xl:col-span-3 bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)]">
+                    {/* Card 3: What to do (Nhiệm vụ cho từng Role) */}
+                    <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)]">
                         <CardHeader className="border-b border-border/50 pb-4 mb-4">
                             <div className="flex items-center gap-3">
                                 <div className="p-2 bg-primary/10 rounded-md">

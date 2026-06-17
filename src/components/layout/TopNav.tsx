@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Menu, Ghost } from "lucide-react"
 
@@ -19,7 +18,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { DESTINY_ACTIVITIES } from "@/lib/constants"
 
 export function TopNav() {
-  const pathname = usePathname()
   const activities = Object.values(DESTINY_ACTIVITIES)
 
   return (
@@ -97,11 +95,6 @@ export function TopNav() {
                             {item.description}
                           </ListItem>
                         ))}
-
-                        {/* Nút View All */}
-                        <ListItem href={category.href} title={`View All ${category.title}`} className="text-primary font-medium mt-2">
-                          See full directory →
-                        </ListItem>
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -112,9 +105,7 @@ export function TopNav() {
         </div>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <Button variant="secondary" size="sm" className="font-bold">
-            Sign In
-          </Button>
+          {/* Sign In removed */}
         </div>
       </div>
     </header>
