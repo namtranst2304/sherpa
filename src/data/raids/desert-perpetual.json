@@ -2,7 +2,7 @@
   "raid_name": "The Desert Perpetual",
   "active_orbit": "Kepler Sector",
   "preface": {
-    "formatting_rules": "Tất cả các Buff lượng tử quan trọng sẽ được viết hoa nổi bật để giúp bạn dễ dàng tìm kiếm và nhận diện trong suốt quá trình đi Raid.",
+    "formatting_rules": "Tất cả các Temporality Buff quan trọng sẽ được viết hoa nổi bật để giúp bạn dễ dàng tìm kiếm và nhận diện trong suốt quá trình đi Raid.",
     "non_linear_mechanic": {
       "description": "Các Encounter A, B, và C có thể được thực hiện theo bất kỳ thứ tự nào tùy ý Fireteam (Có vẻ như bạn cũng có thể kích hoạt Final Encounter trước nếu đã hoàn thành Raid này trước đó, điều này chưa được xác nhận hoàn toàn và có thể là một lỗi bug game). Bạn lựa chọn Encounter muốn đi bằng cách đi lên thang máy bên trái ở starting zone và tương tác với các bệ đứng (plates) ở trên đỉnh:",
       "elevator_plates": [
@@ -206,7 +206,7 @@
       "walkthrough": {
         "phase_1": {
           "name": "Phase 1 - Fill the Hourglass",
-          "objective": "Nạp hạt Chronons xuyên qua vòng xoay lượng tử ở giữa để sạc đầy đồng hồ cát.",
+          "objective": "Nạp hạt Chronons xuyên qua vòng xoay Temporality ở giữa để sạc đầy đồng hồ cát.",
           "steps": [
             "Để kích hoạt Encounter bắt đầu chạy, toàn đội dồn hỏa lực bắn vào con Boss Iatros hoặc đi bộ xuống dốc xuất phát từ khu vực spawn hướng về phía bục trung tâm.",
             "6 con Vex Minotaurs sẽ đồng loạt spawn ở khu vực giữa sàn đấu. Tiêu diệt chúng để chúng rơi ra các quả cầu năng lượng mang buff Chronon.",
@@ -231,9 +231,9 @@
             "Không có hình phạt nào cho việc bỏ qua nhịp Diastole đứng chờ, Shooters có thể chờ nhịp sau nếu chưa sẵn sàng. Tuy nhiên, nếu nổ súng lệch pha (bắn sớm hoặc hụt), đồng hồ cát sẽ bị rút bớt thời gian rất nhanh.",
             "Runner phải chạy qua bệ đứng Plate nằm dưới chân platform vừa dựng để lấy buff Absolute Temporality.",
             "Cảnh báo: Tất cả những người chơi khác tuyệt đối không được dẫm chân lên bệ này, tránh cướp mất buff của Runner. Nếu lỡ cướp nhầm, người đó phải đi nhặt 1 hạt Chronon đem đi dunk ở vòng giữa để tẩy sạch buff Absolute Temporality.",
-            "Runner nhảy lướt thật nhanh lên các platform đá vừa dựng, leo lên đỉnh cột cao nhất để tương tác sạc Core lượng tử đầu tiên. Sau khi sạc xong, Runner báo cho team Shooters chuẩn bị bắn đợt hộp tiếp theo.",
+            "Runner nhảy lướt thật nhanh lên các platform đá vừa dựng, leo lên đỉnh cột cao nhất để tương tác sạc Temporality Core đầu tiên. Sau khi sạc xong, Runner báo cho team Shooters chuẩn bị bắn đợt hộp tiếp theo.",
             "Khi Shooters chuẩn bị xong, cả 3 đồng nổ súng bắn đồng loạt cụm hộp ở giữa (middle set) để dựng tiếp platform tầng 2 cho Runner leo lên sạc Core thứ hai.",
-            "Cuối cùng, Shooters phối hợp bắn nổ hộp Vex trên đỉnh (top box), dựng nốt platform cuối cùng để Runner leo lên tương tác nút sạc lượng tử trên cùng, kích hoạt mở cửa sổ DPS Boss."
+            "Cuối cùng, Shooters phối hợp bắn nổ hộp Vex trên đỉnh (top box), dựng nốt platform cuối cùng để Runner leo lên tương tác Temporality node trên cùng, kích hoạt mở cửa sổ DPS Boss."
           ]
         },
         "phase_3": {
@@ -316,7 +316,7 @@
       "roles": {
         "runners": {
           "quantity": 2,
-          "description": "2 Người chạy: Di chuyển vào 2 phòng lượng tử Left/Right, đứng trong tụ sáng trắng của Hydra để soi gọi vị trí diamond chéo phòng cho nhau."
+          "description": "2 Người chạy: Di chuyển vào 2 Temporality room Left/Right, đứng trong tụ sáng trắng của Hydra để soi gọi vị trí diamond chéo phòng cho nhau."
         },
         "runner_buddies": {
           "quantity": 2,
@@ -335,12 +335,12 @@
             "Kích hoạt Encounter bằng cách dồn sát thương bắn vào Boss Hydra ở giữa sảnh đấu.",
             "Dọn dẹp bầy quái lính lác cho đến khi 2 con Vex Cyclops bắn tỉa xuất hiện (một con bên Trái, một con bên Phải). Tập trung bắn hạ Cyclops lập tức để kích hoạt các bệ đứng Plate bên cạnh chúng. Lưu ý: Chỉ cần có Cyclops còn sống, các bệ đứng Plate sẽ luôn bị khóa vô hiệu hóa.",
             "2 Runners phải đồng loạt dẫm chân lên 2 bệ đứng cùng lúc để lấy buff Temporality (bệ Left cấp Cyclical Temporality, bệ Right cấp Constant Temporality).",
-            "Ngay khi nhận buff, 2 Runners cùng 2 người Runner Buddies nhanh chóng di chuyển tiến vào 2 buồng lượng tử Left và Right bên cạnh. 2 Add-Clear còn lại ở ngoài sảnh chính dọn quái bảo vệ bệ.",
+            "Ngay khi nhận buff, 2 Runners cùng 2 người Runner Buddies nhanh chóng di chuyển tiến vào 2 Temporality room Left và Right bên cạnh. 2 Add-Clear còn lại ở ngoài sảnh chính dọn quái bảo vệ bệ.",
             "Tiến vào trong phòng, Runners sẽ thấy Boss Hydra được bao bọc bởi lớp khiên kiên cố chứa 7 con mắt (6 mắt nhỏ vòng ngoài, và 1 mắt chính to ở tâm). Runners định vị 2 bảng điều khiển chứa hệ thống 6 hình kim cương (6 diamonds panel) trong phòng.",
             "Boss Hydra sẽ liên tục phóng ra luồng sáng trắng rực trước ngực. Runners bắt buộc phải đứng trực tiếp trong luồng tụ sáng trắng này để đóng băng (pause) Timer đếm ngược của Temporality buff, đồng thời kích hoạt khả năng nhìn thấy 1 trong các hình kim cương sáng lên trên bảng điều khiển. Runners gọi chéo vị trí diamond sáng này cho Runner phòng bên kia biết.",
             "Mỗi Runner lắng nghe callout từ phòng đối diện, sau đó ngắm bắn chính xác con mắt vàng trên khiên Boss tương ứng với vị trí diamond được báo. Lưu ý: Bạn bắt buộc phải đứng trong luồng tụ sáng trắng trước ngực Hydra mới có thể gây sát thương phá mắt.",
             "Trong lúc này, Runner Buddies tập trung xả đạn dọn dẹp toàn bộ lính Vex tràn ra trong phòng, bảo đảm an toàn tuyệt đối cho Runners ngắm bắn mắt.",
-            "Khi phá hủy thành công ít nhất 4 con mắt nhỏ ở một trong hai phòng, thông báo lượng tử 'Epoptes blocks the unforeseen and prompts function collapse' sẽ hiện lên, kích hoạt chuyển dịch sang Phase 2."
+            "Khi phá hủy thành công ít nhất 4 con mắt nhỏ ở một trong hai phòng, thông báo in-game 'Epoptes blocks the unforeseen and prompts function collapse' sẽ hiện lên, kích hoạt chuyển dịch sang Phase 2."
           ]
         },
         "phase_2": {
@@ -350,8 +350,8 @@
             "2 Add-Clearers phòng ngoài chạy đến dẫm 2 bệ đứng để lấy buff Temporality. Định vị mảng tường chứa ký hiệu tam giác khuyết (3 diamonds in a triangle) ở sảnh giữa, tiến lại đứng trong luồng sáng trắng phát ra từ Boss trung tâm.",
             "Đứng trong luồng sáng, mỗi Add-Clearer sẽ thấy 2 diamonds sáng và 1 diamond bị tắt (khuyết). Hai người gọi to vị trí của hình diamond bị tắt đó cho nhau biết.",
             "Duy trì vị trí đứng trong luồng sáng, hướng súng bắn phá hủy 2 hình diamond sáng theo chỉ định callout từ người còn lại.",
-            "Ngay lúc đó, phía bên trong buồng lượng tử của 2 Runners sẽ xuất hiện một hình tam giác khuyết lơ lửng phía trên đầu Boss Hydra. Runners lắng nghe callout góc tam giác khuyết từ Add-Clearer ngoài phòng (căn theo hướng nhìn thẳng từ cửa phòng tiến vào), dồn hỏa lực bắn nổ góc tam giác tương ứng.",
-            "Phá hủy thành công các tam giác lượng tử sẽ kích hoạt thông báo 'Function collapse suppressed' và reset tẩy sạch toàn bộ buffs của cả đội. 2 Runners nhanh chóng di chuyển ra ngoài sảnh sạc lại buff Temporality, quay lại buồng lượng tử bắn hạ nốt các con mắt nhỏ còn lại và kết liễu con mắt to chính giữa (Central Gaze). Cơ chế này sẽ trao cho mỗi Runner buff Probabilistic Lance cực mạnh.",
+            "Ngay lúc đó, phía bên trong Temporality room của 2 Runners sẽ xuất hiện một hình tam giác khuyết lơ lửng phía trên đầu Boss Hydra. Runners lắng nghe callout góc tam giác khuyết từ Add-Clearer ngoài phòng (căn theo hướng nhìn thẳng từ cửa phòng tiến vào), dồn hỏa lực bắn nổ góc tam giác tương ứng.",
+            "Phá hủy thành công các Triangles sẽ kích hoạt thông báo 'Function collapse suppressed' và reset tẩy sạch toàn bộ buffs của cả đội. 2 Runners nhanh chóng di chuyển ra ngoài sảnh sạc lại buff Temporality, quay lại Temporality room bắn hạ nốt các con mắt nhỏ còn lại và kết liễu con mắt to chính giữa (Central Gaze). Cơ chế này sẽ trao cho mỗi Runner buff Probabilistic Lance cực mạnh.",
             "Khi cả 2 Runners đã sạc đầy Probabilistic Lance, cả đội nhanh chóng tập hợp về khu vực trung tâm sảnh để bắt đầu DPS Boss."
           ]
         },
@@ -359,7 +359,7 @@
           "name": "Phase 3 - DPS",
           "details": [
             "Để mở phase DPS, 2 Runners đứng trực diện luồng sáng trắng của khiên Boss, nổ súng bắn vỡ con mắt tâm để giải phóng năng lượng Probabilistic Lance gỡ khiên.",
-            "Hệ thống sẽ báo 2 thông báo lượng tử 'Epoptes pulls [Tên người chơi] through time'. Hai người chơi được gọi tên phải nhanh chóng tìm xem chiếc khiên nào đang phát tụ sáng trắng với họ, chạy đến đứng trực diện luồng sáng đó để kích hoạt điểm yếu làm Boss dễ bị tổn thương (vulnerable) cho đồng đội bắn.",
+            "Hệ thống sẽ báo 2 thông báo in-game 'Epoptes pulls [Tên người chơi] through time'. Hai người chơi được gọi tên phải nhanh chóng tìm xem chiếc khiên nào đang phát tụ sáng trắng với họ, chạy đến đứng trực diện luồng sáng đó để kích hoạt điểm yếu làm Boss dễ bị tổn thương (vulnerable) cho đồng đội bắn.",
             "Sau vài giây, các con mắt vàng sẽ đồng loạt mọc lại trên khiên Boss. Đội hình bám sát theo chiều xoay của khiên Boss, bắn nổ tuần tự các con mắt nhỏ ngoài rìa rồi dứt điểm con mắt lớn trung tâm để đập vỡ hoàn toàn tấm khiên chắn.",
             "Khi khiên vỡ, Boss sẽ rơi vào trạng thái dễ bị tổn thương trong vài giây, cắm Well xả toàn lực sát thương.",
             "Tiếp tục có thêm 2 người chơi khác bị 'pulled through time', nhanh chóng chạy đến đứng luồng sáng trắng kích hoạt lại mốc vulnerable bắn mắt sập khiên Boss đợt 2.",
@@ -407,11 +407,11 @@
           "name": "Phase 1 - Fill the Hourglass",
           "objective": "Phối hợp giải mã 3-step để bắn nổ mìn thật, thu thập sạc đầy 6 hạt Unobserved Chronons vào đồng hồ cát.",
           "steps": [
-            "Để khởi động trận chiến cuối cùng, di chuyển vào trung tâm đấu trường tương tác với node lượng tử hiển thị dòng chữ 'Will you finish it here?'.",
-            "Hạ gục nhanh 3 con Hydras xuất hiện ở góc cuối phòng đấu để thắp sáng kích hoạt 3 bệ đứng Plate xung quanh sảnh đấu. Mỗi Plate thắp sáng sẽ cấp 1 buff lượng tử riêng biệt (tính theo hướng nhìn từ dốc spawn tiến vào): bệ Trái cấp Constant Temporality, bệ Giữa cấp Absolute Temporality, bệ Phải cấp Cyclical Temporality.",
+            "Để khởi động trận chiến cuối cùng, di chuyển vào trung tâm đấu trường tương tác với Temporality node hiển thị dòng chữ 'Will you finish it here?'.",
+            "Hạ gục nhanh 3 con Hydras xuất hiện ở góc cuối phòng đấu để thắp sáng kích hoạt 3 bệ đứng Plate xung quanh sảnh đấu. Mỗi Plate thắp sáng sẽ cấp 1 Temporality buff riêng biệt (tính theo hướng nhìn từ dốc spawn tiến vào): bệ Trái cấp Constant Temporality, bệ Giữa cấp Absolute Temporality, bệ Phải cấp Cyclical Temporality.",
             "3 Runners được phân công phải đồng loạt dẫm chân lên 3 bệ đứng cùng lúc để nhận buff Temporality của mình. Mỗi buff nắm giữ một cơ chế đặc thù riêng biệt:",
             "• Constant buff: Nhìn thấy màu sắc thuộc tính của các quả mìn lơ lửng và bắn súng phá hủy được 4 khẩu pháo đại bác (cannons) của Boss.",
-            "• Absolute buff: Nhìn thấy màu sắc của vòng sạc trung tâm đồng hồ cát và có khả năng bắn kích nổ được các quả mìn lượng tử.",
+            "• Absolute buff: Nhìn thấy màu sắc của vòng sạc trung tâm đồng hồ cát và có khả năng bắn kích nổ được các quả Temporality mines.",
             "• Cyclical buff: Kiểm tra và xác nhận quả mìn nào đang ở trạng thái kích hoạt (glowing active) và nhặt nạp hạt Chronons.",
             "Mẹo duy trì kéo dài thời gian đếm ngược của Buff: bắn vỡ 4 khẩu pháo Boss sẽ gia hạn thêm thời gian cho Constant buff; bắn nổ một quả mìn sẽ sạc thêm thời gian cho Absolute buff; nhặt một hạt Chronon mới bất kỳ trên đất sẽ reset lại Timer cho Cyclical buff (nhặt đè hạt mới đè lên hạt đang cầm cũng sẽ giúp reset timer cứu mạng trong các pha hiểm nghèo).",
             "Mục tiêu của Runners là nạp sạc đầy đồng hồ cát tương tự Encounter A. Đầu tiên, Runner giữ buff Constant dồn đạn phá hủy sạch 4 cannons của Boss để kích hoạt khởi chạy các bệ đứng trên cao (elevated plates).",
@@ -421,7 +421,7 @@
             "• Bước 2: Constant Runner tìm trong 9 quả mìn lơ lửng xem 3 quả mìn nào có màu sắc trùng khớp với màu vòng sạc vừa đọc, ngắm súng vào quả mìn đó gọi to số hiệu để hỏi xác nhận.",
             "• Bước 3: Trong 3 quả mìn màu đó, chỉ có 2 quả mìn là Thật (Active). Cyclical Runner quan sát quả mìn được hỏi, nếu thấy nó phát hào quang trắng rực rỡ thì hô 'ĐÚNG, BẮN ĐI!'",
             "Sau khi nhận xác nhận chuẩn xác từ Cyclical, Absolute Runner bóp cò bắn nổ 2 quả mìn Thật. Mìn nổ sẽ rơi ra hạt Unobserved Chronon màu tím rực rỡ xuống đất.",
-            "Cyclical Runner nhặt hạt Unobserved Chronon, thực hiện pha nhảy lướt căn nhịp xuyên qua tâm chiếc vòng sạc lượng tử để dunk nạp hạt. Nạp hạt thành công sẽ ép Boss phải teleport sang khu vực mới, thay đổi màu sắc vòng sạc đồng hồ cát và hồi lại mìn mới.",
+            "Cyclical Runner nhặt hạt Unobserved Chronon, thực hiện pha nhảy lướt căn nhịp xuyên qua tâm chiếc vòng Temporality ring để dunk nạp hạt. Nạp hạt thành công sẽ ép Boss phải teleport sang khu vực mới, thay đổi màu sắc vòng sạc đồng hồ cát và hồi lại mìn mới.",
             "Lưu ý: Nếu Fireteam chạy theo Option 2 với nhiều Cyclical Runners, họ có thể nhặt nhiều hạt nạp cùng lúc để gia tốc sạc đồng hồ cát, nhưng phải dunk cùng một thời điểm tránh việc Boss teleport đổi màu vòng sạc sớm làm lỗi hạt của người sau.",
             "Lặp lại quy trình giải mìn sạc hạt chuẩn xác cho đến khi sạc đủ 6 hạt Unobserved Chronons giúp đồng hồ cát sạc đầy hoàn toàn.",
             "Ngay khi đồng hồ cát sạc đầy, một khối kim cương Vex trắng xuất hiện bên dưới. Bắn vỡ nó để kết thúc cơ chế sập khiên Boss, các platform đá xếp tầng xuất hiện tạo lối thang dẫn lên bệ cao để bắt đầu phase DPS chính."
