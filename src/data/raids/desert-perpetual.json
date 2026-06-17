@@ -1,0 +1,484 @@
+{
+  "_streaming_chunk_1": "Structuring the raid metadata and preface...",
+  "raid_name": "The Desert Perpetual",
+  "source_document": "The Desert Perpetual Raid Guide.docx",
+  "active_orbit": "Kepler Sector",
+  "preface": {
+    "author_notes": "Tôi muốn lưu ý một vài điều trước khi đi vào chi tiết từng Encounter: Tôi biết tài liệu này rất dài. Tuy nhiên, tôi thấy rất nhiều bài raid guides thường bỏ qua các mẹo và chi tiết quan trọng, vì vậy tôi muốn bản cẩm nang này phải thật chi tiết và đầy đủ nhất có thể. Bạn có thể điều hướng nhanh tài liệu này bằng cách nhấp vào các phần tương ứng trong Table of Contents hoặc sử dụng thanh chuyển hướng bên trái.",
+    "formatting_rules": "Tất cả các Buff lượng tử quan trọng sẽ được viết hoa nổi bật để giúp bạn dễ dàng tìm kiếm và nhận diện trong suốt quá trình đi Raid.",
+    "non_linear_mechanic": {
+      "description": "Các Encounter A, B, và C có thể được thực hiện theo bất kỳ thứ tự nào tùy ý Fireteam (Có vẻ như bạn cũng có thể kích hoạt Final Encounter trước nếu đã hoàn thành Raid này trước đó, điều này chưa được xác nhận hoàn toàn và có thể là một lỗi bug game). Bạn lựa chọn Encounter muốn đi bằng cách đi lên thang máy bên trái ở starting zone và tương tác với các bệ đứng (plates) ở trên đỉnh:",
+      "elevator_plates": [
+        {
+          "plate_text": "Axiom is axiom",
+          "target_encounter": "Encounter A - Living Rhythm (Boss Wyvern: Iatros)"
+        },
+        {
+          "plate_text": "Interference patterns swell",
+          "target_encounter": "Encounter B - Inverse Function (Boss Hobgoblin)"
+        },
+        {
+          "plate_text": "All are entangled",
+          "target_encounter": "Encounter C - Clear Sight (Boss Hydra: Epoptes)"
+        },
+        {
+          "plate_text": "Dust drifts eternal",
+          "target_encounter": "Final Encounter - The End Times (Boss Harpy)"
+        }
+      ]
+    },
+    "credits": {
+      "day_1_team": [
+        "Anth",
+        "Eddie",
+        "Luke",
+        "Mark",
+        "Josh"
+      ],
+      "special_thanks": "Gửi lời cảm ơn chân thành đến Klaus vì đã chỉnh sửa nội dung và Anth vì đã hỗ trợ tôi thiết lập các mẹo Loadout tuyệt vời này!"
+    }
+  },
+  "_streaming_chunk_2": "Compiling detailed loadout recommendations for all three classes...",
+  "loadout_tips": {
+    "note": "Một lần nữa, đây chỉ là những kiến thức tốt nhất ở thời điểm hiện tại của tôi và sẽ được cập nhật liên tục khi meta mới xuất hiện. Mọi Encounter trong Raid này đều là đấu Trùm (Boss fight), vì vậy các thiết lập Loadout này thường sẽ hoạt động hiệu quả cho tất cả các ải (ngoại trừ vũ khí có thể thay đổi tùy thuộc vào khoảng cách của Boss đứng gần hay xa bạn). Hướng dẫn này mặc định bạn đang chơi ở độ khó Normal và sẽ không thực hiện đổi đồ (loadout swapping) giữa chừng.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cung cấp hiệu ứng Restoration và Radiance liên tục cho cả team để sinh tồn và tăng sát thương đầu ra lúc DPS."
+        },
+        {
+          "name": "Song of Flame",
+          "utility": "Tốc độ sạc abilities cực nhanh cho đồng đội, siêu tốt để boost sức mạnh cho các Warlocks khác sử dụng Starfire Protocol. Bạn có thể chủ động chuyển đổi lại về súng của mình khi đang kích hoạt Super này để đồng đội có nhiều thời gian tận dụng hiệu ứng sạc abilities nhanh nhất. Super này cung cấp tới 90% kháng sát thương (Damage Resistance) cho caster, cực kỳ hoàn hảo để làm mồi nhử facetank Boss giữ aggro, đặc biệt hữu ích trong Encounter A."
+        },
+        {
+          "name": "Nova Bomb: Cataclysm",
+          "utility": "Lựa chọn tốt nhất nếu cần burst damage tức thì. Không phải là lựa chọn tối ưu hàng đầu nhưng sẽ hữu dụng nếu đội hình của bạn có quá nhiều Warlock dư thừa Well và cần thêm sát thương. Tuy nhiên, nếu bạn chạy Prismatic, Song of Flame vẫn là lựa chọn tối ưu hơn."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Starfire Protocol",
+          "recommendation": "Chạy kết hợp Aspect Touch of Flame (để kích hoạt thêm vụ nổ phụ cho lựu đạn Fusion Grenade) và ưu tiên build chỉ số Grenade stat đạt mốc tối đa 200."
+        },
+        {
+          "name": "Speaker's Sight",
+          "recommendation": "Về mặt lý thuyết, bạn nên ưu tiên chạy build Starfire Protocol trước. Tuy nhiên, nếu Fireteam của bạn đang gặp khó khăn nghiêm trọng trong việc sống sót, đây là sự lựa chọn hỗ trợ tuyệt vời (hoặc bạn có thể cân nhắc sử dụng một khẩu súng Support Frame Auto Rifle để hồi máu)."
+        },
+        {
+          "name": "Cenotaph Mask",
+          "recommendation": "Lựa chọn bắt buộc nếu bạn được phân công cầm Divinity và/hoặc cả đội đang rơi vào tình trạng cạn kiệt đạn dược (Heavy/Special ammo generation)."
+        },
+        {
+          "name": "Felwinter’s Helm",
+          "recommendation": "Thực hiện đòn dứt điểm (Finishers) sẽ áp dụng hiệu ứng Weaken lên kẻ địch xung quanh. Đòn cận chiến Powered Melee trúng đích cũng áp dụng Weaken. Cực kỳ hữu dụng nếu bạn đang chạy Well of Radiance kết hợp cầm Tractor Cannon và biết cách kéo dài debuff. Ngay cả khi không biết cách kéo dài, việc đấm cận chiến tầm xa vào Boss (như Celestial Fire) cũng mang lại 15% Weaken tăng sát thương cho cả 6 người chơi."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Thundercrash",
+          "utility": "Đây là lựa chọn bắt buộc mà tất cả các Titans nên trang bị. Super này gây ra lượng sát thương burst khổng lồ và đặc biệt hiệu quả vì hầu hết các Boss trong Raid này đều đứng áp sát tầm cận chiến (ít nhất là trong một phần của phase DPS)."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Arc Subclass kết hợp Rally Barricade & Storm's Keep",
+          "recommendation": "Sử dụng thiết lập này để sạc liên tục năng lượng Bolt Charge. Nếu Fireteam có từ 2 Titans trở lên, những người còn lại có thể chạy build Prismatic (nhưng vẫn khuyên dùng Thundercrash làm Super gây dam chính)."
+        },
+        {
+          "name": "Cuirass of the Falling Star",
+          "recommendation": "Tăng thêm 55% sát thương cho Thundercrash, sát thương sẽ được boost mạnh hơn nữa nếu build chỉ số Super stat đạt mốc 200."
+        },
+        {
+          "name": "Crest of Alpha Lupi",
+          "recommendation": "Hồi phục máu lập tức cho bản thân và đồng đội xung quanh khi dựng Barricade, tăng tốc độ sạc lại kỹ năng Barricade từ mọi nguồn, và liên tục sạc máu khi xả sát thương duy trì sau bức tường Barricade. Cực kỳ hoàn hảo cho việc sinh tồn chung của team, thời gian sạc lại Barricade rất nhanh."
+        },
+        {
+          "name": "Insurmountable Skullfort",
+          "recommendation": "Hồi phục hoàn toàn năng lượng cận chiến Arc Melee nếu bạn kết liễu thành công kẻ địch bằng đòn đấm Arc. Nếu đấm trúng nhưng không chết, bạn vẫn được trả lại một phần năng lượng. Khả năng tạo Orbs of Power siêu khủng khi kết hợp cùng mod 3x Heavy Handed, đồng thời hỗ trợ Add Clear cực mạnh cho Arc Titan."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot: Mobius Quiver (Tether)",
+          "utility": "Cách đơn giản và an toàn nhất để áp dụng hiệu ứng Weaken lên Boss, giúp gia tăng toàn bộ lượng sát thương đầu ra của cả Fireteam."
+        },
+        {
+          "name": "Golden Gun: Marksman",
+          "utility": "Super burst damage điểm yếu chí mạng (Crit Spot) mạnh mẽ hàng đầu."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Star-Eater Scales",
+          "recommendation": "Tăng tối đa lên tới 70% sát thương cho Super khi bạn nhặt đủ Orbs of Light sau khi thanh Super đã được sạc đầy. Rất dễ kích hoạt trong hầu hết các phase DPS dài vì bạn có thể cast Super nhiều hơn 1 lần. Exotic này không bị giảm tốc độ sạc Super giống như Celestial Nighthawk, tăng tỷ lệ giúp bạn cast được 2 lần Golden Gun trong cùng 1 phase."
+        },
+        {
+          "name": "Lucky Pants",
+          "recommendation": "Tăng sát thương súng Hand Cannon lên đến 450%. Tối ưu nhất khi sử dụng cùng các khẩu Hand Cannon thuộc khung Heavy-Burst Frame. Đây là phương án dự phòng DPS súng Primary tuyệt hảo nếu bạn bị cạn kiệt đạn Heavy, đồng thời giúp sạc lại năng lượng Super cực nhanh nhờ lượng dam Primary khổng lồ. Yêu cầu một chút luyện tập để xoay vòng rotation mượt mà nhưng cực kỳ đáng giá."
+        },
+        {
+          "name": "Celestial Nighthawk",
+          "recommendation": "Tăng khoảng 80% sát thương cho phát bắn Golden Gun: Marksman duy nhất, boost mạnh hơn khi sạc Super stat lên mốc 200. Tuy nhiên, Star-Eater Scales thường sẽ có màn thể hiện vượt trội hơn vì phase DPS của Boss trong Raid này đủ dài để tích sạc cast nhiều lần."
+        },
+        {
+          "name": "Orpheus Rig",
+          "recommendation": "Cung cấp thêm phát bắn mũi tên Shadowshot phụ và trả lại một lượng lớn năng lượng abilities."
+        }
+      ]
+    },
+    "_streaming_chunk_3": "Compiling the comprehensive weapon recommendations list (17 types)...",
+    "weapons": [
+      {
+        "name": "Divinity",
+        "description": "Áp dụng hiệu ứng Weaken liên tục và vẽ một bong bóng Crit Spot khổng lồ bao quanh thân Boss, giúp đồng đội dễ dàng bắn trúng điểm yếu khi Boss di chuyển liên tục."
+      },
+      {
+        "name": "Thunderlord",
+        "description": "Lượng sát thương DPS duy trì cực kỳ mạnh mẽ và ổn định ở thời điểm hiện tại. Súng yêu cầu có Catalyst để đạt mức sát thương đỉnh cao nhưng không bắt buộc nếu chỉ cần bắn cơ chế thông thường."
+      },
+      {
+        "name": "Lord of Wolves + Catalyst",
+        "description": "Nếu bạn có thể đứng facetank áp sát cự ly gần với Boss, việc bắn hip-fire xả đạn không ngắm và áp dụng hiệu ứng thiêu cháy (Scorch) sẽ gây ra lượng sát thương khổng lồ, đặc biệt hiệu quả khi có đồng đội hỗ trợ bong bóng Divinity."
+      },
+      {
+        "name": "Grand Overture",
+        "description": "Hoạt động cực tốt ở mọi cự ly bắn. Khả năng tích đạn tên lửa và dốc burst xả một lúc sẽ đục vỡ và rút các cây máu Boss cực nhanh."
+      },
+      {
+        "name": "Outbreak Perfected",
+        "description": "Lựa chọn gây sát thương bằng súng Primary tuyệt vời nhất khi cả đội bị cạn sạch đạn dược (Heavy/Special). Hoàn hảo cho các đội hình thiếu thốn đạn DPS."
+      },
+      {
+        "name": "Hezen Vengeance (Kết hợp cùng Gjallarhorn)",
+        "description": "Mang lại lượng sát thương Rocket bùng nổ tốt nhất, chỉ cần chú ý cẩn thận tránh tự sát nổ súng vào lưng đồng đội khi Boss áp sát tầm gần (áp dụng khi cả Fireteam đều đồng loạt chạy súng Rockets)."
+      },
+      {
+        "name": "New Land Beyond",
+        "description": "Vũ khí có tổng lượng sát thương dự trữ (Total Damage) siêu khủng, nhưng tốc độ bắn có phần hơi chậm. Nhìn chung, khẩu súng này cực kỳ tối ưu để bắn phá hủy các khớp tay của Boss cuối trong giai đoạn giải đố mechanics."
+      },
+      {
+        "name": "Tractor Cannon",
+        "description": "Phương án gỡ giáp Weaken 30% hoàn hảo nếu team thiếu Hunter Tether. Đồng thời áp dụng hiệu ứng khống chế disorient lên quái thường xung quanh và cực kỳ tiết kiệm đạn dược."
+      },
+      {
+        "name": "The Queenbreaker",
+        "description": "Thực sự hữu hiệu nhất tại Encounter B khi Boss Hobgoblin di chuyển và đứng trên các bục cao lơ lửng. Khuyên dùng kết hợp cùng một khẩu Fusion Rifle hoặc súng burst special ở ô phụ."
+      },
+      {
+        "name": "Anarchy",
+        "description": "Khẩu súng Heavy tiết kiệm và tối ưu đạn nhất game. Bạn chỉ việc stick bắn 2 viên mìn điện vào thân Boss, sau đó chuyển sang súng Special để nã đạn trong vòng 10 giây trước khi quay lại bắn stick lại mìn mới. Cực kỳ hiệu quả trong Encounter C khi kết hợp cùng Sniper Rifles."
+      },
+      {
+        "name": "Mint Retrograde",
+        "description": "Khẩu súng đặc trị dọn dẹp cực nhanh bầy quái bay Vex Imp Swarms, các con Wyverns cứng đầu và bầy bắn tỉa Cyclops."
+      },
+      {
+        "name": "Support Frame Auto Rifles",
+        "description": "Nếu Fireteam của bạn đang chật vật trong khâu hồi phục, hãy phân công một người chơi cầm khẩu súng này để chuyên bắn đạn hồi máu bảo kê đồng đội."
+      },
+      {
+        "name": "Rapid Fire sniper rifles (Supremacy, Ikelos SR, Praedyth’s Revenge, etc.)",
+        "description": "Lựa chọn xuất sắc để bắn hạ nhanh Cyclops và Hydras từ khoảng cách an toàn, đồng thời là phương án dự phòng DPS cực kỳ dồi dào đạn nhờ perk Fourth Time's the Charm. Rất mạnh để bắn vỡ các khớp tay Boss cuối ở phase giải đố, và tuyệt vời cho long-range DPS tại ải Hobgoblin."
+      },
+      {
+        "name": "Trace rifles (Hollow Denial, Chronophage, Unsworn, etc.)",
+        "description": "Vũ khí chuyên dụng để bắn phá nhanh các con mắt bảo vệ trong Encounter C, dọn bầy quái bay Vex Imp Swarms, và là trang bị bắt buộc nếu bạn chạy build Cenotaph Mask Warlock. Súng cũng hoạt động như một công cụ chỉ điểm laser pointer ở phase giải đố Boss cuối. Cực kỳ tiết kiệm đạn, đặc biệt là Hollow Denial có perk Lead From Gold giúp hồi đạn Special rất dễ sau khi dọn dẹp phase DPS dài."
+      },
+      {
+        "name": "Glaives",
+        "description": "Khả năng dựng khiên chắn block sát thương của Glaive cực kỳ hữu dụng để cứu mạng bạn trong các tình huống hiểm nghèo, và chúng tiêu thụ đạn rất ít."
+      },
+      {
+        "name": "High ammo generation primary (Multimach CCX, Imminence, VS Velocity Baton, Lost Signal, etc.)",
+        "description": "Kể từ khi các mod Ammo Scout bị gỡ bỏ, mỗi cá nhân trong Fireteam phải tự chịu trách nhiệm về khả năng tự nhặt và hồi đạn của mình (ngoại trừ các cơ chế ép rơi đạn như Aeon Sect hoặc Cenotaph). Với các ải yêu cầu bạn phải đứng lane cô lập độc lập, các khẩu súng này rất quan trọng (đặc biệt khi build Weapon stat cao để tăng tỷ lệ rơi đạn)."
+      }
+    ]
+  },
+  "encounters": [
+    {
+      "_streaming_chunk_4": "Mapping out Encounter A: Living Rhythm...",
+      "id": "enc_a",
+      "name": "Encounter A - Living Rhythm (Boss Wyvern: Iatros)",
+      "roles": {
+        "shooters": {
+          "quantity": 3,
+          "description": "3 Người bắn: Chịu trách nhiệm bắn phá các hộp Vex boxes theo đúng nhịp đếm Diastole countdown."
+        },
+        "dunkers": {
+          "quantity": 2,
+          "description": "2 Người nạp: Săn lùng Minotaurs nhặt hạt Chronon để nạp giữ cho đồng hồ cát không bị cạn."
+        },
+        "runner": {
+          "quantity": 1,
+          "description": "1 Người chạy: Lấy buff Absolute Temporality để nhảy leo các bậc đá vừa dựng, kích hoạt nút sạc sập khiên Boss."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Fill the Hourglass",
+          "objective": "Nạp hạt Chronons xuyên qua vòng xoay lượng tử ở giữa để sạc đầy đồng hồ cát.",
+          "steps": [
+            "Để kích hoạt Encounter bắt đầu chạy, toàn đội dồn hỏa lực bắn vào con Boss Iatros hoặc đi bộ xuống dốc xuất phát từ khu vực spawn hướng về phía bục trung tâm.",
+            "6 con Vex Minotaurs sẽ đồng loạt spawn ở khu vực giữa sàn đấu. Tiêu diệt chúng để chúng rơi ra các quả cầu năng lượng mang buff Chronon.",
+            "Các hạt Chronons rơi ra sẽ mang ngẫu nhiên 3 thuộc tính màu sắc: Cobalt (màu xanh dương), Cinnabar (màu đỏ), hoặc Antimony (màu trắng).",
+            "Màu sắc của hạt rớt ra sẽ chỉ định bục Plate nào sẽ được dựng lên ở Phase 2 tiếp theo (Cobalt tương ứng bệ Center, Cinnabar là bệ Bottom, và Antimony là bệ Spawn).",
+            "Bạn phải tiến lại gần và tương tác trực tiếp để nhặt hạt Chronon.",
+            "Lưu ý: Hạt Chronon nằm trên đất sẽ tự động biến mất (despawn) nếu cả đội bỏ mặc quá lâu không nhặt.",
+            "Nếu hạt bị biến mất hoặc người chơi cầm hạt bị chết, một con Minotaur mới sẽ spawn lại sau khoảng 1 phút để bù hạt.",
+            "Bất kỳ ai cũng có thể nhặt các hạt này, sau đó căn nhịp căn góc nhảy xuyên qua chiếc vòng tròn sạc (ring) lơ lửng phía trên đồng hồ cát để dunk nạp hạt.",
+            "Khi toàn bộ 6 hạt Chronons đã được nạp thành công, một khối kim cương Vex trắng (white Vex diamond) sẽ hiện lên phía dưới đồng hồ cát. Bắn vỡ nó để kết thúc Phase 1, chuyển giao sang Phase 2 cho đội Shooters và Runner.",
+            "Lưu ý cho Dunkers: Trong suốt quá trình Phase 2 diễn ra, 2 Dunkers phải tiếp tục dọn quái, giết thêm Minotaurs để nạp thêm Chronons giữ đồng hồ cát luôn đầy. Đồng hồ cát cạn sạch = WIPE cả team. Tốt nhất Dunkers nên găm sẵn 1-2 hạt dự phòng ở cuối Phase 2 để nạp khẩn cấp lúc team đang DPS."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Build Platforms",
+          "objective": "Bắn nổ các hộp Vex boxes theo đúng nhịp đếm để dựng bệ platform cho Runner leo.",
+          "steps": [
+            "Ngay khi khối kim cương trắng bị bắn vỡ, debuff Diastole sẽ xuất hiện ở góc trên màn hình dưới dạng 4 ô vuông sạc đầy dần từ trái qua phải; đây là đồng hồ đếm ngược nhịp nhảy cho 3 Shooters. Khi ô thứ 4 sạc đầy, tất cả người chơi đang dẫm chân trên mặt đất sẽ bị hất văng (bounce) lên trời.",
+            "Cú hất văng này chỉ gây lượng dam cực nhỏ nhưng sẽ ngắt hoàn toàn cơ chế tự hồi máu (regen) của bạn. Bạn có thể nhảy nhảy nhẹ tại chỗ để triệt tiêu lực hất, hoặc nhảy cùng lúc hất để bay siêu cao lên không trung.",
+            "Mỗi người trong 3 Shooters sẽ được phân công trực một cột chứa các hộp Vex boxes. Shooters phải hội ý liên tục xem có bắn hộp ở cuối đợt Diastole hiện tại hay phải chờ nhịp đếm sau.",
+            "Khi sẵn sàng, cả 3 Shooters phải đồng loạt nổ súng bắn phá hủy hộp Vex ở đáy cột đúng vào khoảnh khắc ô Diastole thứ 4 sạc đầy (căn nhịp đếm miệng: '3, 2, 1, bắn!'). Nếu phối hợp chuẩn, các hộp sẽ nổ, thông báo 'Iatros loses control of the phase space' hiện lên và các bệ platform đá sẽ xuất hiện tại vị trí tương ứng màu sắc của hạt đã nạp.",
+            "Không có hình phạt nào cho việc bỏ qua nhịp Diastole đứng chờ, Shooters có thể chờ nhịp sau nếu chưa sẵn sàng. Tuy nhiên, nếu nổ súng lệch pha (bắn sớm hoặc hụt), đồng hồ cát sẽ bị rút bớt thời gian rất nhanh.",
+            "Runner phải chạy qua bệ đứng Plate nằm dưới chân platform vừa dựng để lấy buff Absolute Temporality.",
+            "Cảnh báo: Tất cả những người chơi khác tuyệt đối không được dẫm chân lên bệ này, tránh cướp mất buff của Runner. Nếu lỡ cướp nhầm, người đó phải đi nhặt 1 hạt Chronon đem đi dunk ở vòng giữa để tẩy sạch buff Absolute Temporality.",
+            "Runner nhảy lướt thật nhanh lên các platform đá vừa dựng, leo lên đỉnh cột cao nhất để tương tác sạc Core lượng tử đầu tiên. Sau khi sạc xong, Runner báo cho team Shooters chuẩn bị bắn đợt hộp tiếp theo.",
+            "Khi Shooters chuẩn bị xong, cả 3 đồng nổ súng bắn đồng loạt cụm hộp ở giữa (middle set) để dựng tiếp platform tầng 2 cho Runner leo lên sạc Core thứ hai.",
+            "Cuối cùng, Shooters phối hợp bắn nổ hộp Vex trên đỉnh (top box), dựng nốt platform cuối cùng để Runner leo lên tương tác nút sạc lượng tử trên cùng, kích hoạt mở cửa sổ DPS Boss."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - DPS",
+          "details": [
+            "Khi phase DPS được kích hoạt, Iatros sẽ teleport thẳng đến bệ đứng Plate nơi platform vừa được dựng.",
+            "Nếu xuất phát từ bệ Spawn hoặc Bottom, Boss sẽ di chuyển lùi dần về phía bệ Center.",
+            "Nếu xuất phát từ bệ Center, Boss sẽ di chuyển lùi dần về phía bệ Spawn.",
+            "Nguyên tắc cắm Well: Đặt Well of Radiance ở hướng ngược lại với đường Boss sẽ đi lùi dốc sát lưng (VD: Boss đi lùi từ Center về Spawn, hãy đặt Well ở hướng ngược lại của dốc Spawn). Tránh đặt Well trực diện dưới chân Boss vì cú giậm chân (Stomp) của nó sẽ phá hủy Well ngay lập tức.",
+            "Dunkers phải liên tục tuần tra dọn quái và sạc thêm Chronon trong lúc DPS để kéo dài thời gian bắn Boss.",
+            "Bạn có tối đa 3 lần DPS trước khi Boss rơi vào trạng thái Enrage quét sạch cả đội."
+          ]
+        }
+      }
+    },
+    {
+      "_streaming_chunk_5": "Mapping out Encounter B: Inverse Function...",
+      "id": "enc_b",
+      "name": "Encounter B - Inverse Function (Boss Hobgoblin)",
+      "roles": {
+        "runners": {
+          "quantity": 3,
+          "types": [
+            "Cyclical Runner",
+            "Absolute Runner",
+            "Constant Runner"
+          ],
+          "description": "3 Người chạy giữ 3 buff Temporality riêng biệt để Align Boss và lấy Tachyon Charge tạo Detain bubble phản laser."
+        },
+        "dunkers": {
+          "quantity": 3,
+          "description": "3 Người dọn quái săn Minotaur nhặt hạt Cobalt nạp sạc lại các coils điện trung tâm theo callout."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Ready the Coils",
+          "objective": "Nạp sạc thắp sáng hoàn toàn 5 coils điện ở trung tâm đấu trường.",
+          "steps": [
+            "Kích hoạt Encounter bằng cách chạy thẳng vào khu vực trung tâm của đấu trường.",
+            "Phân công một vài người di chuyển sang mạn đối diện bắn rớt nhanh con Hydra khi nó vừa spawn. Hydra chết sẽ mở cổng cho bầy Minotaurs tràn ra.",
+            "Cả đội phối hợp tiêu diệt sạch lính gác và Minotaurs để chúng rơi ra 5 hạt Cobalt Chronons.",
+            "Nhặt hạt năng lượng Cobalt Chronon kịp thời trước khi nó despawn.",
+            "Nếu mất hạt hoặc người chơi ôm hạt bị chết, Minotaurs mới sẽ spawn lại sau một khoảng thời gian.",
+            "Người nhặt hạt mang đập vào 1 trong 5 coils điện ở giữa sàn đấu để thắp sáng nó. Giai đoạn này yêu cầu toàn đội cùng làm không phân biệt vai trò.",
+            "Coil điện được sạc thành công sẽ phát luồng sáng xanh dương mạnh mẽ bên trong. Cảnh báo cực nguy hiểm: Chạy qua một coil điện ĐÃ SÁNG sẽ kích nổ nướng chín bạn lập tức.",
+            "Khi cả 5 coils điện được thắp sáng hoàn toàn, 3 bệ đứng Plate ở trung tâm sẽ được kích hoạt để sẵn sàng cho Phase 2. Lúc này Wyverns sẽ tràn ra, Dunkers phải ưu tiên dọn dẹp chúng trước vì hỏa lực của Wyvern rất rát."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Align the Coils",
+          "objective": "Align kích hoạt Boss, nạp sạc lại các coils điện, dùng Detain bubble bẻ hướng laser sập khiên Boss.",
+          "steps": [
+            "3 Runners di chuyển vào giữa, mỗi người đứng lên một Plate chỉ định để lấy buff Temporality (Left Plate cấp Cyclic Temporality, Middle Plate cấp Absolute Temporality, Right Plate cấp Constant Temporality).",
+            "Mỗi buff Temporality sẽ tương ứng với một phân thân Boss Hobgoblin lơ lửng trên bục cao (bạn có thể ngắm súng ADS để đọc tên Boss hiển thị). Fireteam cử một Runner chạy nhanh đến cột điều khiển dưới chân Boss tương thích với buff đang cầm và tương tác để Align nó.",
+            "Khi Boss được Align thành công, nó sẽ áp dụng debuff Variable Elimination đếm ngược 10 giây lên tất cả người chơi nằm trong tầm nhìn (LOS) của nó.",
+            "Nếu bộ đếm 10s Variable Elimination chạm mốc 0, Boss sẽ nã phát súng laser chí mạng hạ gục bạn lập tức. Bạn bắt buộc phải di chuyển né sau các khối đá chắn tầm nhìn (break line of sight) để reset lại Timer đếm ngược về 10s.",
+            "Lúc này, 2 Runners còn lại (những người không thực hiện Align) sẽ nhìn thấy các coils điện trung tâm đổi màu. Mỗi người sẽ nhìn thấy 2 coils điện phát sáng xanh dương khác nhau. Hai người này phải hô to (Callout) số hiệu coils sáng cho Dunkers.",
+            "Đội Dunkers săn lùng Minotaurs lấy hạt Cobalt Chronons đem đi dập sạc vào đúng các coils điện được gọi tên. Dunkers phải phối hợp và giao tiếp chặt chẽ để tránh dập chồng chéo lên nhau vì chỉ có Runners mới nhìn thấy coils nào đang sáng.",
+            "Khi Dunkers hoàn tất việc nạp sạc các coils điện, Runner thực hiện Align phải chạy tuần tra lướt qua toàn bộ các coils điện vừa thắp sáng để nạp đầy mốc Alignment Charge.",
+            "Khi sạc đầy, Alignment Charge sẽ chuyển đổi thành buff Tachyon Charge, biến đổi lựu đạn (grenade) của Runner thành một quả cầu giam giữ Detain Bubble. Khi ném, nó sẽ tạo ra một bong bóng năng lượng bao bọc bản thân và đồng đội đứng cạnh, khóa cứng chuyển động của cả nhóm trong vài giây.",
+            "Tachyon Charge hoạt động như một công cụ tẩy uế (cleanse) cho 2 Runners còn lại và là màng chắn phản xạ laser của Boss. Cả 3 Runners tụ họp đứng cạnh nhau dưới màng chắn, cố tình để lộ tầm nhìn trước mặt Boss để kích hoạt Variable Elimination countdown. Khi đồng hồ chỉ còn khoảng 2 giây, Runner cầm Tachyon Charge ném lựu đạn kích hoạt Detain Bubble để phản xạ tia laser của Boss dội ngược lại găm thẳng vào ngực nó.",
+            "Sau vài giây bị dội laser phản pháo, Hobgoblin Boss sẽ bị choáng gục và teleport thẳng xuống trung tâm sàn đấu mở phase DPS. Nếu không thể diệt Boss trong 1 phase, lặp lại quy trình Phase 2 với việc đổi sang một Runner khác đi Align boss của họ."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - DPS",
+          "details": [
+            "Phase DPS bắt đầu ngay tại khu vực trung tâm của sàn đấu. Hãy cắm Well of Radiance sát chân Boss và sử dụng các vũ khí tầm gần hiệu quả cao.",
+            "Đội có thể chủ động kéo dài thời gian DPS bằng cách cử một thành viên chạy nhanh qua các coils điện để tái nạp Tachyon Charge Detain Bubble, dùng nó để phản xạ tiếp laser khi Boss chuẩn bị teleport đi.",
+            "Sau một khoảng thời gian xả dam, Boss sẽ teleport lùi lên các bục đá cao phía trên. Đội hình bắt buộc phải swap nhanh sang các loại vũ khí có tầm bắn xa (như LFR hoặc Sniper).",
+            "Khi đứng trên cao, Boss sẽ tái kích hoạt debuff Variable Elimination quét laser bắn tỉa (break LOS sau cột đá để sạc lại timer 10s). Runner có Tachyon Charge dẫn dụ Boss bắn laser, ném Detain bubble đúng thời điểm để dội ngược laser làm Boss choáng ngã rớt lại xuống đất để DPS tiếp. Bạn có thể thực hiện bẻ cong phản xạ tối đa 3 lần.",
+            "Gây sát thương tối đa trong vòng 3 phase DPS trước khi Boss kích hoạt Enrage WIPE toàn đội."
+          ]
+        }
+      }
+    },
+    {
+      "_streaming_chunk_6": "Mapping out Encounter C: Clear Sight...",
+      "id": "enc_c",
+      "name": "Encounter C - Clear Sight (Boss Hydra: Epoptes)",
+      "roles": {
+        "runners": {
+          "quantity": 2,
+          "description": "2 Người chạy: Di chuyển vào 2 phòng lượng tử Left/Right, đứng trong tụ sáng trắng của Hydra để soi gọi vị trí diamond chéo phòng cho nhau."
+        },
+        "runner_buddies": {
+          "quantity": 2,
+          "description": "2 Người bảo vệ: Đi cùng Runners vào 2 phòng Left/Right chuyên trách dọn dẹp quái vật bảo vệ cho Runner tập trung bắn mắt."
+        },
+        "outside_add_clear": {
+          "quantity": 2,
+          "description": "2 Người Add-Clear ngoài phòng: Đọc vị trí diamond tam giác khuyết ở giữa sảnh để phá liên kết Triangles, sạc năng lượng Probabilistic Lance."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Break Eyes",
+          "objective": "2 Runners phối hợp gọi vị trí chéo phòng để bắn vỡ 4 con mắt nhỏ bảo vệ của Hydra.",
+          "steps": [
+            "Kích hoạt Encounter bằng cách dồn sát thương bắn vào Boss Hydra ở giữa sảnh đấu.",
+            "Dọn dẹp bầy quái lính lác cho đến khi 2 con Vex Cyclops bắn tỉa xuất hiện (một con bên Trái, một con bên Phải). Tập trung bắn hạ Cyclops lập tức để kích hoạt các bệ đứng Plate bên cạnh chúng. Lưu ý: Chỉ cần có Cyclops còn sống, các bệ đứng Plate sẽ luôn bị khóa vô hiệu hóa.",
+            "2 Runners phải đồng loạt dẫm chân lên 2 bệ đứng cùng lúc để lấy buff Temporality (bệ Left cấp Cyclical Temporality, bệ Right cấp Constant Temporality).",
+            "Ngay khi nhận buff, 2 Runners cùng 2 người Runner Buddies nhanh chóng di chuyển tiến vào 2 buồng lượng tử Left và Right bên cạnh. 2 Add-Clear còn lại ở ngoài sảnh chính dọn quái bảo vệ bệ.",
+            "Tiến vào trong phòng, Runners sẽ thấy Boss Hydra được bao bọc bởi lớp khiên kiên cố chứa 7 con mắt (6 mắt nhỏ vòng ngoài, và 1 mắt chính to ở tâm). Runners định vị 2 bảng điều khiển chứa hệ thống 6 hình kim cương (6 diamonds panel) trong phòng.",
+            "Boss Hydra sẽ liên tục phóng ra luồng sáng trắng rực trước ngực. Runners bắt buộc phải đứng trực tiếp trong luồng tụ sáng trắng này để đóng băng (pause) Timer đếm ngược của Temporality buff, đồng thời kích hoạt khả năng nhìn thấy 1 trong các hình kim cương sáng lên trên bảng điều khiển. Runners gọi chéo vị trí diamond sáng này cho Runner phòng bên kia biết.",
+            "Mỗi Runner lắng nghe callout từ phòng đối diện, sau đó ngắm bắn chính xác con mắt vàng trên khiên Boss tương ứng với vị trí diamond được báo. Lưu ý: Bạn bắt buộc phải đứng trong luồng tụ sáng trắng trước ngực Hydra mới có thể gây sát thương phá mắt.",
+            "Trong lúc này, Runner Buddies tập trung xả đạn dọn dẹp toàn bộ lính Vex tràn ra trong phòng, bảo đảm an toàn tuyệt đối cho Runners ngắm bắn mắt.",
+            "Khi phá hủy thành công ít nhất 4 con mắt nhỏ ở một trong hai phòng, thông báo lượng tử 'Epoptes blocks the unforeseen and prompts function collapse' sẽ hiện lên, kích hoạt chuyển dịch sang Phase 2."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Break Triangles & Finish Eyes",
+          "objective": "Team ngoài đọc tam giác khuyết báo góc cho team trong phòng phá hủy Triangles, sạc Probabilistic Lance.",
+          "steps": [
+            "2 Add-Clearers phòng ngoài chạy đến dẫm 2 bệ đứng để lấy buff Temporality. Định vị mảng tường chứa ký hiệu tam giác khuyết (3 diamonds in a triangle) ở sảnh giữa, tiến lại đứng trong luồng sáng trắng phát ra từ Boss trung tâm.",
+            "Đứng trong luồng sáng, mỗi Add-Clearer sẽ thấy 2 diamonds sáng và 1 diamond bị tắt (khuyết). Hai người gọi to vị trí của hình diamond bị tắt đó cho nhau biết.",
+            "Duy trì vị trí đứng trong luồng sáng, hướng súng bắn phá hủy 2 hình diamond sáng theo chỉ định callout từ người còn lại.",
+            "Ngay lúc đó, phía bên trong buồng lượng tử của 2 Runners sẽ xuất hiện một hình tam giác khuyết lơ lửng phía trên đầu Boss Hydra. Runners lắng nghe callout góc tam giác khuyết từ Add-Clearer ngoài phòng (căn theo hướng nhìn thẳng từ cửa phòng tiến vào), dồn hỏa lực bắn nổ góc tam giác tương ứng.",
+            "Phá hủy thành công các tam giác lượng tử sẽ kích hoạt thông báo 'Function collapse suppressed' và reset tẩy sạch toàn bộ buffs của cả đội. 2 Runners nhanh chóng di chuyển ra ngoài sảnh sạc lại buff Temporality, quay lại buồng lượng tử bắn hạ nốt các con mắt nhỏ còn lại và kết liễu con mắt to chính giữa (Central Gaze). Cơ chế này sẽ trao cho mỗi Runner buff Probabilistic Lance cực mạnh.",
+            "Khi cả 2 Runners đã sạc đầy Probabilistic Lance, cả đội nhanh chóng tập hợp về khu vực trung tâm sảnh để bắt đầu DPS Boss."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - DPS",
+          "details": [
+            "Để mở phase DPS, 2 Runners đứng trực diện luồng sáng trắng của khiên Boss, nổ súng bắn vỡ con mắt tâm để giải phóng năng lượng Probabilistic Lance gỡ khiên.",
+            "Hệ thống sẽ báo 2 thông báo lượng tử 'Epoptes pulls [Tên người chơi] through time'. Hai người chơi được gọi tên phải nhanh chóng tìm xem chiếc khiên nào đang phát tụ sáng trắng với họ, chạy đến đứng trực diện luồng sáng đó để kích hoạt điểm yếu làm Boss dễ bị tổn thương (vulnerable) cho đồng đội bắn.",
+            "Sau vài giây, các con mắt vàng sẽ đồng loạt mọc lại trên khiên Boss. Đội hình bám sát theo chiều xoay của khiên Boss, bắn nổ tuần tự các con mắt nhỏ ngoài rìa rồi dứt điểm con mắt lớn trung tâm để đập vỡ hoàn toàn tấm khiên chắn.",
+            "Khi khiên vỡ, Boss sẽ rơi vào trạng thái dễ bị tổn thương trong vài giây, cắm Well xả toàn lực sát thương.",
+            "Tiếp tục có thêm 2 người chơi khác bị 'pulled through time', nhanh chóng chạy đến đứng luồng sáng trắng kích hoạt lại mốc vulnerable bắn mắt sập khiên Boss đợt 2.",
+            "Quy trình sập khiên lập lại đợt 3 với 2 người chơi cuối cùng trước khi kết thúc phase DPS.",
+            "Bạn có tối đa 3 phase DPS trước khi Boss kích hoạt Enrage WIPE toàn đội."
+          ]
+        }
+      }
+    },
+    {
+      "_streaming_chunk_7": "Mapping out the Final Encounter: The End Times...",
+      "id": "enc_final",
+      "name": "Final Encounter - The End Times (Boss Harpy)",
+      "roles": {
+        "option_1": {
+          "runners": {
+            "quantity": 3,
+            "types": [
+              "Cyclical Runner",
+              "Absolute Runner",
+              "Constant Runner"
+            ]
+          },
+          "add_clear": {
+            "quantity": 3,
+            "description": "3 Người dọn quái chuyên dọn dẹp Hydras bảo vệ bệ sạc."
+          }
+        },
+        "option_2": {
+          "cyclical_runners": {
+            "quantity": 3,
+            "description": "3 Người chạy Cyclical chuyên nhặt Unobserved Chronon nạp sạc."
+          },
+          "absolute_runner": {
+            "quantity": 1,
+            "description": "1 Người Absolute chuyên đọc mìn sập khiên."
+          },
+          "constant_runners": {
+            "quantity": 2,
+            "description": "2 Người Constant chuyên phá cannons, thắp cột sáng oculus."
+          }
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Fill the Hourglass",
+          "objective": "Phối hợp giải mã 3-step để bắn nổ mìn thật, thu thập sạc đầy 6 hạt Unobserved Chronons vào đồng hồ cát.",
+          "steps": [
+            "Để khởi động trận chiến cuối cùng, di chuyển vào trung tâm đấu trường tương tác với node lượng tử hiển thị dòng chữ 'Will you finish it here?'.",
+            "Hạ gục nhanh 3 con Hydras xuất hiện ở góc cuối phòng đấu để thắp sáng kích hoạt 3 bệ đứng Plate xung quanh sảnh đấu. Mỗi Plate thắp sáng sẽ cấp 1 buff lượng tử riêng biệt (tính theo hướng nhìn từ dốc spawn tiến vào): bệ Trái cấp Constant Temporality, bệ Giữa cấp Absolute Temporality, bệ Phải cấp Cyclical Temporality.",
+            "3 Runners được phân công phải đồng loạt dẫm chân lên 3 bệ đứng cùng lúc để nhận buff Temporality của mình. Mỗi buff nắm giữ một cơ chế đặc thù riêng biệt:",
+            "• Constant buff: Nhìn thấy màu sắc thuộc tính của các quả mìn lơ lửng và bắn súng phá hủy được 4 khẩu pháo đại bác (cannons) của Boss.",
+            "• Absolute buff: Nhìn thấy màu sắc của vòng sạc trung tâm đồng hồ cát và có khả năng bắn kích nổ được các quả mìn lượng tử.",
+            "• Cyclical buff: Kiểm tra và xác nhận quả mìn nào đang ở trạng thái kích hoạt (glowing active) và nhặt nạp hạt Chronons.",
+            "Mẹo duy trì kéo dài thời gian đếm ngược của Buff: bắn vỡ 4 khẩu pháo Boss sẽ gia hạn thêm thời gian cho Constant buff; bắn nổ một quả mìn sẽ sạc thêm thời gian cho Absolute buff; nhặt một hạt Chronon mới bất kỳ trên đất sẽ reset lại Timer cho Cyclical buff (nhặt đè hạt mới đè lên hạt đang cầm cũng sẽ giúp reset timer cứu mạng trong các pha hiểm nghèo).",
+            "Mục tiêu của Runners là nạp sạc đầy đồng hồ cát tương tự Encounter A. Đầu tiên, Runner giữ buff Constant dồn đạn phá hủy sạch 4 cannons của Boss để kích hoạt khởi chạy các bệ đứng trên cao (elevated plates).",
+            "Khi bệ cao sáng lên, cả 3 Runners phải nhanh chóng di chuyển dẫm lên bệ cùng lúc để sạc và nhận chung buff Temporal Oculus, giúp giải phóng hoàn toàn các khả năng ẩn của 3 loại buff.",
+            "Quy trình giải mìn 3 bước (3-Step Mine Decode):",
+            "• Bước 1: Absolute Runner nhìn bệ trung tâm và gọi to màu sắc hiển thị của vòng sạc đồng hồ cát (Xanh dương, Đỏ, hoặc Trắng).",
+            "• Bước 2: Constant Runner tìm trong 9 quả mìn lơ lửng xem 3 quả mìn nào có màu sắc trùng khớp với màu vòng sạc vừa đọc, ngắm súng vào quả mìn đó gọi to số hiệu để hỏi xác nhận.",
+            "• Bước 3: Trong 3 quả mìn màu đó, chỉ có 2 quả mìn là Thật (Active). Cyclical Runner quan sát quả mìn được hỏi, nếu thấy nó phát hào quang trắng rực rỡ thì hô 'ĐÚNG, BẮN ĐI!'",
+            "Sau khi nhận xác nhận chuẩn xác từ Cyclical, Absolute Runner bóp cò bắn nổ 2 quả mìn Thật. Mìn nổ sẽ rơi ra hạt Unobserved Chronon màu tím rực rỡ xuống đất.",
+            "Cyclical Runner nhặt hạt Unobserved Chronon, thực hiện pha nhảy lướt căn nhịp xuyên qua tâm chiếc vòng sạc lượng tử để dunk nạp hạt. Nạp hạt thành công sẽ ép Boss phải teleport sang khu vực mới, thay đổi màu sắc vòng sạc đồng hồ cát và hồi lại mìn mới.",
+            "Lưu ý: Nếu Fireteam chạy theo Option 2 với nhiều Cyclical Runners, họ có thể nhặt nhiều hạt nạp cùng lúc để gia tốc sạc đồng hồ cát, nhưng phải dunk cùng một thời điểm tránh việc Boss teleport đổi màu vòng sạc sớm làm lỗi hạt của người sau.",
+            "Lặp lại quy trình giải mìn sạc hạt chuẩn xác cho đến khi sạc đủ 6 hạt Unobserved Chronons giúp đồng hồ cát sạc đầy hoàn toàn.",
+            "Ngay khi đồng hồ cát sạc đầy, một khối kim cương Vex trắng xuất hiện bên dưới. Bắn vỡ nó để kết thúc cơ chế sập khiên Boss, các platform đá xếp tầng xuất hiện tạo lối thang dẫn lên bệ cao để bắt đầu phase DPS chính."
+          ],
+          "mine_locations": [
+            "Có tổng cộng 9 quả mìn luôn lơ lửng quanh đấu trường (chia đều 3 màu sắc khác nhau). Vị trí phân bổ của các quả mìn được định vị theo các landmark cố định sau:",
+            "• 2 Quả mìn nằm sát lỗ hổng trung tâm cạnh khu vực đồng hồ cát (1 quả mạn sát dốc spawn, 1 quả mạn đối diện xa spawn).",
+            "• 2 Quả mìn nằm lơ lửng sát các khối kiến trúc cầu kết nối (bridge) ở 2 mạn sườn Trái và Phải sàn đấu (tính từ dốc spawn nhìn lên).",
+            "• 4 Quả mìn bay xoay vòng xung quanh các cột trụ nhỏ nơi người chơi nhảy để kích sạc lấy buff Temporal Oculus.",
+            "• 4 Quả mìn bay xoay vòng xung quanh các cột trụ đá khổng lồ định vị ở 4 góc bản đồ (Gần-Trái, Gần-Phải, Xa-Trái, Xa-Phải). Cảnh báo: Các quả mìn ở đây thường bị che khuất tầm nhìn hoàn toàn sau các cột đá lớn khi chúng xoay vòng ra phía sau."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - DPS & Final Stand",
+          "steps": [
+            "Khi dịch chuyển lên bục DPS, cả đội sẽ thấy 4 cột cột sáng (pillars) đặt xung quanh rìa. Mỗi cột sáng có 3 đèn năng lượng, nhưng chỉ có Constant và Cyclical Runners nhìn thấy 2 đèn sáng. Absolute Runner lắng nghe và tương tác kích hoạt nốt chiếc đèn thứ 3 để sập hoàn toàn hệ thống khiên của Boss.",
+            "Kích hoạt thành công cả 4 cột sáng để ép Boss lộ ra điểm yếu Crit Spot (các vòng tròn đỏ nằm ở khối cầu trung tâm thân Harpy).",
+            "Trong suốt phase DPS, Boss sẽ liên tục phóng ra các dải hỏa lực laser càn quét cực rát theo các cự ly ngẫu nhiên (sát chân Boss, cự ly giữa, hoặc quét rộng ra ngoài rìa). Phân công 1 thành viên chuyên quan sát để hô to hướng quét laser cho cả đội di chuyển né tránh. Đặt Well of Radiance ở giữa bệ để hồi máu facetank laser Boss (áp dụng ở độ khó Normal).",
+            "Trong lúc cả đội đang dồn sát thương, quái vật sẽ rớt ra hạt Chronon ngẫu nhiên trên sàn. Phân công 1 người chơi chịu trách nhiệm định vị vòng sạc màu, nhặt đúng hạt Chronon mang thuộc tính màu tương thích (Cobalt xanh dương, Cinnabar đỏ, hoặc Antimony trắng) mang đi dunk sạc để gia hạn thêm giây (Extend) cho phase DPS. Bạn có thể thực hiện sạc kéo dài tối đa 3 lần mỗi phase.",
+            "Cơ chế Final Stand (Khi máu Boss tụt dưới mốc 10%): Boss sẽ teleport ra trung tâm sảnh, enrage timer 15 giây bắt đầu đếm ngược. Màn hình cả đội tối dần.",
+            "Cảnh báo sinh tử: Toàn bộ màng bảo vệ con mắt của Boss sẽ quay cuồng liên tục và Crit Spot lúc này bị xoay ngược hướng chĩa thẳng LÊN TRỜI (UP). Người chơi bắt buộc phải thực hiện các pha nhảy cao lên không trung, nã súng/ném Super ngắm thẳng hướng từ trên cắm xuống dưới mới có thể trúng điểm Crit Spot dứt điểm Boss.",
+            "Dồn toàn bộ lượng sát thương mạnh nhất (Edge Transit, Supers) để kết liễu Boss trước khi enrage timer 15s chạm mốc 0 gây WIPE sạch cả đội.",
+            "Fireteam có tối đa 3 phase DPS trước khi Boss enrage hoàn toàn."
+          ]
+        }
+      }
+    }
+  ],
+  "other_resources": {
+    "loot_tables": "Blueberries.gg Guide - The Desert Perpetual Loot Database",
+    "video_guides": [
+      {
+        "creator": "Datto",
+        "url": "Raid Guide Video Reference on YouTube"
+      },
+      {
+        "creator": "Fallout Plays",
+        "url": "Raid Guide Video Reference on YouTube"
+      }
+    ]
+  }
+}
