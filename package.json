@@ -5,9 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion",
-    "preview": "opennextjs-cloudflare build --dangerouslyUseUnsupportedNextVersion && opennextjs-cloudflare preview",
-    "cf-typegen": "opennextjs-cloudflare-typegen",
     "start": "next start",
     "lint": "eslint"
   },
