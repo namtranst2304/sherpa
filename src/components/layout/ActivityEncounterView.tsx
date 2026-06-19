@@ -84,9 +84,9 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                       )}
                       <ul className="space-y-3">
                         {steps.map((step: string, i: number) => (
-                          <li key={i} className="flex gap-3 text-sm text-foreground/80 leading-relaxed">
-                            <span className="text-neon-cyan mt-1 font-bold">{i + 1}.</span>
-                            <span>{step}</span>
+                          <li key={i} className="text-sm text-foreground/80 leading-relaxed pl-5 relative">
+                            <span className="text-neon-cyan font-bold absolute left-0">{i + 1}.</span>
+                            {step}
                           </li>
                         ))}
                       </ul>

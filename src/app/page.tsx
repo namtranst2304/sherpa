@@ -1,28 +1,46 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { CyberCard, CyberButton, CyberBadge } from "@/components/ui/CyberComponents"
 import { DESTINY_ACTIVITIES } from "@/lib/constants"
+import { AstronautIcon } from "@/components/ui/icons"
 
 export default function Home() {
   const activities = Object.values(DESTINY_ACTIVITIES)
 
   return (
-    <div className="flex-1 overflow-y-auto w-full">
-      <main className="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-[calc(100vh-3.5rem)]">
+    <div className="flex-1 w-full bg-black cyber-grid min-h-[calc(100vh-3.5rem)] relative overflow-hidden">
+      {/* Cool background overlay */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-black/80 to-black z-0" />
+      
+      <main className="container mx-auto px-4 py-12 flex flex-col items-center justify-center relative z-10">
 
         {/* Hero Section */}
         <div className="text-center space-y-6 max-w-3xl mb-16 mt-8">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500 uppercase">
+          <div className="flex justify-center mb-6">
+            <AstronautIcon className="w-24 h-24 text-neon-cyan animate-pulse drop-shadow-[0_0_15px_rgba(0,243,255,0.5)]" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black tracking-widest text-neon-cyan text-glow-cyan uppercase">
             Destiny 2 Sherpa
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground">
-            Welcome Guardian! Your ultimate hub for comprehensive guides on Destiny 2 Dungeons and Raids.
+          <p className="text-xl md:text-2xl text-zinc-400 font-mono">
+            Welcome Guardian. Your ultimate hub for comprehensive guides on Destiny 2 Dungeons and Raids.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
             {activities.map((act) => (
-              <Button key={`hero-btn-${act.id}`} asChild size="lg" variant={act.id === "raids" ? "default" : "outline"} className="font-bold tracking-wide">
-                <Link href={act.href}>Explore {act.title}</Link>
-              </Button>
+              <CyberButton 
+                key={`hero-btn-${act.id}`} 
+                variant={act.id === "raids" ? "red" : "cyan"} 
+                className="font-bold tracking-wide uppercase px-8 py-4 text-lg"
+              >
+                {act.id === "raids" ? (
+                  <span className="cursor-not-allowed flex items-center gap-2 text-neon-red">
+                    Explore {act.title} <CyberBadge variant="red" pulse>UPDATING</CyberBadge>
+                  </span>
+                ) : (
+                  <Link href={act.href}>
+                    Explore {act.title}
+                  </Link>
+                )}
+              </CyberButton>
             ))}
           </div>
         </div>
@@ -31,35 +49,43 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl">
           {activities.map((category) => {
             const Icon = category.icon
+            const isRaid = category.id === "raids"
             return (
-              <Card key={category.id} className="flex flex-col hover:border-primary transition-colors bg-card border-border hover:shadow-[0_0_15px_rgba(0,195,255,0.2)]">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-primary/10 rounded-md">
-                      <Icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-2xl uppercase tracking-wider">{category.title}</CardTitle>
+              <CyberCard key={category.id} variant={isRaid ? "red" : "cyan"} withCorners className="flex flex-col h-full bg-black">
+                <div className="flex items-center gap-3 mb-4 border-b border-zinc-800 pb-4">
+                  <div className={`p-3 rounded-md ${isRaid ? 'bg-neon-red/10' : 'bg-neon-cyan/20'}`}>
+                    <Icon className={`w-8 h-8 ${isRaid ? 'text-neon-red opacity-80' : 'text-neon-cyan'}`} />
                   </div>
-                  <CardDescription className="text-base">
-                    {category.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                    {category.items.map((item) => (
-                      <li key={item.title}>{item.title}</li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button asChild variant="secondary" className="w-full group">
-                    <Link href={category.href}>
-                      View All {category.title}
-                      <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  <h2 className={`text-2xl font-black uppercase tracking-widest flex items-center gap-3 ${isRaid ? 'text-neon-red text-glow-red' : 'text-neon-cyan text-glow-cyan'}`}>
+                    {category.title}
+                    {isRaid && <CyberBadge variant="red" pulse>UPDATING</CyberBadge>}
+                  </h2>
+                </div>
+                <p className={`${isRaid ? 'text-neon-red/60' : 'text-zinc-400'} mb-6 flex-1 font-mono text-sm leading-relaxed`}>
+                  {category.description}
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {category.items.map((item) => (
+                    <li key={item.title} className="flex items-start gap-3">
+                      <span className={`mt-1 text-xs ${isRaid ? 'text-zinc-600' : 'text-neon-cyan'}`}>▶</span>
+                      <span className={`text-sm ${isRaid ? 'text-zinc-500' : 'text-zinc-300'}`}>{item.title}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto">
+                  {isRaid ? (
+                    <CyberButton variant="red" className="w-full justify-center cursor-not-allowed">
+                      SYSTEM OFFLINE
+                    </CyberButton>
+                  ) : (
+                    <Link href={category.href} className="w-full block">
+                      <CyberButton variant="cyan" className="w-full justify-center">
+                        INITIALIZE {category.title.toUpperCase()}
+                      </CyberButton>
                     </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+                  )}
+                </div>
+              </CyberCard>
             )
           })}
         </div>

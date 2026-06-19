@@ -23,7 +23,7 @@ export function GuideTemplate({ title, description, mechanics, map, roles }: Gui
                 <div className="flex items-center gap-4 border-b border-primary/30 pb-6">
                     <SidebarTrigger className="md:hidden" />
                     <div>
-                        <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-magenta text-glow-cyan">
+                        <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange text-glow-cyan">
                             {title}
                         </h1>
                         <p className="text-muted-foreground mt-2 text-lg font-mono tracking-wide">

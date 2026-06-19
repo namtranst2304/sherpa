@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-export type CyberVariant = 'cyan' | 'magenta' | 'yellow' | 'red' | 'zinc';
+export type CyberVariant = 'cyan' | 'orange' | 'yellow' | 'red' | 'zinc';
 export type CyberSize = 'sm' | 'md' | 'lg';
 
 // ─── CYBER BUTTON ────────────────────────────────────────────────────────────
@@ -26,9 +26,9 @@ export function CyberButton({
       'border-neon-cyan text-neon-cyan hover:bg-neon-cyan/20',
       glow && 'shadow-neon-cyan hover:shadow-neon-cyan-hover'
     ),
-    magenta: cn(
-      'border-neon-magenta text-neon-magenta hover:bg-neon-magenta/20',
-      glow && 'shadow-neon-magenta hover:shadow-neon-magenta-hover'
+    orange: cn(
+      'border-neon-orange text-neon-orange hover:bg-neon-orange/20',
+      glow && 'shadow-neon-orange hover:shadow-neon-orange-hover'
     ),
     yellow: cn(
       'border-neon-yellow text-neon-yellow hover:bg-neon-yellow/20',
@@ -78,7 +78,7 @@ export function CyberCard({
 }: CyberCardProps) {
   const variantStyles = {
     cyan: 'border-neon-cyan/30 shadow-[0_0_15px_rgba(0,243,255,0.05)]',
-    magenta: 'border-neon-magenta/40 shadow-[0_0_15px_rgba(255,0,255,0.05)]',
+    orange: 'border-neon-orange/40 shadow-[0_0_15px_rgba(255,0,255,0.05)]',
     yellow: 'border-neon-yellow/40 shadow-[0_0_15px_rgba(252,226,5,0.05)]',
     red: 'border-neon-red/40 shadow-[0_0_15px_rgba(255,0,0,0.05)]',
     zinc: 'border-zinc-800'
@@ -86,7 +86,7 @@ export function CyberCard({
 
   const cornerColor = {
     cyan: 'border-neon-cyan',
-    magenta: 'border-neon-magenta',
+    orange: 'border-neon-orange',
     yellow: 'border-neon-yellow',
     red: 'border-neon-red',
     zinc: 'border-zinc-500'
@@ -129,7 +129,7 @@ export function CyberBadge({
 }: CyberBadgeProps) {
   const variantStyles = {
     cyan: 'bg-neon-cyan/10 text-neon-cyan border-neon-cyan shadow-[0_0_8px_rgba(0,243,255,0.15)]',
-    magenta: 'bg-neon-magenta/10 text-neon-magenta border-neon-magenta shadow-[0_0_8px_rgba(255,0,255,0.15)]',
+    orange: 'bg-neon-orange/10 text-neon-orange border-neon-orange shadow-[0_0_8px_rgba(255,0,255,0.15)]',
     yellow: 'bg-neon-yellow/10 text-neon-yellow border-neon-yellow shadow-[0_0_8px_rgba(252,226,5,0.15)]',
     red: 'bg-neon-red/10 text-neon-red border-neon-red shadow-[0_0_8px_rgba(255,0,0,0.15)]',
     zinc: 'bg-zinc-900/50 text-zinc-500 border-zinc-700'
@@ -137,7 +137,7 @@ export function CyberBadge({
 
   const indicatorStyles = {
     cyan: 'bg-neon-cyan shadow-[0_0_8px_#00f3ff]',
-    magenta: 'bg-neon-magenta shadow-[0_0_8px_#ff00ff]',
+    orange: 'bg-neon-orange shadow-[0_0_8px_#ff8c00]',
     yellow: 'bg-neon-yellow shadow-[0_0_8px_#fce205]',
     red: 'bg-neon-red shadow-[0_0_8px_#ff0000]',
     zinc: 'bg-zinc-600'

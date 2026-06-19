@@ -16,7 +16,7 @@
   --primary: #00f3ff;
   --primary-foreground: #0f1115;
   
-  --secondary: #ff00ff;
+  --secondary: #ff8c00;
   --secondary-foreground: #f8fafc;
   
   --muted: #1e222a;
@@ -48,7 +48,7 @@
   --primary: #00f3ff;
   --primary-foreground: #0f1115;
   
-  --secondary: #ff00ff;
+  --secondary: #ff8c00;
   --secondary-foreground: #f8fafc;
   
   --muted: #1e222a;
@@ -87,7 +87,7 @@
   --color-ring: var(--ring);
 
   --color-neon-cyan: #00f3ff;
-  --color-neon-magenta: #ff00ff;
+  --color-neon-orange: #ff8c00;
   --color-neon-yellow: #fce205;
   --color-neon-red: #ff0000;
 
@@ -118,8 +118,8 @@
 @utility text-glow-cyan {
   text-shadow: 0 0 5px #00f3ff;
 }
-@utility text-glow-magenta {
-  text-shadow: 0 0 5px #ff00ff;
+@utility text-glow-orange {
+  text-shadow: 0 0 5px #ff8c00;
 }
 @utility text-glow-yellow {
   text-shadow: 0 0 5px #fce205;
@@ -136,10 +136,10 @@
     box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
   }
 }
-@utility shadow-neon-magenta {
+@utility shadow-neon-orange {
   box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
 }
-@utility shadow-neon-magenta-hover {
+@utility shadow-neon-orange-hover {
   &:hover {
     box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
   }

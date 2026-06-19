@@ -19,7 +19,7 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
         <div className="flex items-center gap-4 border-b border-border pb-6">
           <SidebarTrigger className="md:hidden" />
           <div>
-            <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-magenta text-glow-cyan">
+            <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange text-glow-cyan">
               {title} - Overview
             </h1>
             {preface?.author_notes && (
@@ -197,15 +197,15 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
           {/* Loot Table */}
           {loot_table && loot_table.length > 0 && (
             <div className="space-y-8">
-              <CyberCard variant="magenta" withCorners className="h-full">
+              <CyberCard variant="orange" withCorners className="h-full">
                 <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
-                  <Gem className="w-32 h-32 text-neon-magenta" />
+                  <Gem className="w-32 h-32 text-neon-orange" />
                 </div>
-                <div className="border-b border-neon-magenta/30 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                  <div className="p-2 bg-neon-magenta/20 rounded-md">
-                    <Gem className="w-5 h-5 text-neon-magenta" />
+                <div className="border-b border-neon-orange/30 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                  <div className="p-2 bg-neon-orange/20 rounded-md">
+                    <Gem className="w-5 h-5 text-neon-orange" />
                   </div>
-                  <h2 className="text-xl font-bold uppercase tracking-wider text-neon-magenta text-glow-magenta">Loot Table</h2>
+                  <h2 className="text-xl font-bold uppercase tracking-wider text-neon-orange text-glow-orange">Loot Table</h2>
                 </div>
                 <div className="relative z-10 overflow-x-auto">
                   <table className="w-full text-sm text-left">
