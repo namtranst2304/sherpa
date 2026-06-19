@@ -2,7 +2,7 @@
   "id": "the-fate-saga",
   "name": "Saga định mệnh",
   "description": "Sự kiện trong The Fate Saga.",
-  "themeColor": "zinc",
+  "themeColor": "cyan",
   "events": [
     {
       "title": "Chín người thảo luận về cái chết của Nhân chứng và kế hoạch của nó...",

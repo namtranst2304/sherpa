@@ -2,27 +2,11 @@
   "id": "history-of-the-eliksni",
   "name": "Lịch sử của Eliksni",
   "description": "Sự kiện từ Lịch sử của Eliksni.",
-  "themeColor": "zinc",
+  "themeColor": "yellow",
   "events": [
     {
-      "title": "Lữ khách đến thăm hành tinh quê hương Eliksni Riis và...",
-      "description": "Lữ khách đến thăm hành tinh Riis quê hương của Eliksni và cung cấp cho họ Ether vô hạn. Eliksni thịnh vượng dưới sự bảo trợ của Lữ khách và tôn kính nó là \"Cỗ máy vĩ đại\". Trong những năm này, Tòa án xét xử thực thi luật pháp và hòa bình."
-    },
-    {
-      "title": "Cuộc chiến cạnh",
-      "description": "Sự kiện được gọi là Edge Wars mang đến sự đấu đá nội bộ giữa các Eliksni. Cuộc xung đột này được kết thúc bởi House of Kings và House of Judgement, đưa dân tộc của họ bước vào Thời đại Hoàng kim."
-    },
-    {
-      "title": "House of Rain kể về một lời tiên tri rằng Thần...",
-      "description": "House of Rain kể về một lời tiên tri rằng Cỗ máy vĩ đại sẽ phong một chiến binh vĩ đại là \"Kell of Kells\"."
-    },
-    {
-      "title": "Irrha, một Dược sĩ và là người học việc của Slayer Baro...",
-      "description": "Irrha, một Dược sĩ và là người học việc của Slayer Baron Kiiraskes, ghi lại những quan sát của cô về một sinh vật bí ẩn đang đe dọa trang trại House of Rain, sử dụng Thuốc bổ để theo dõi nó. Sinh vật này được mô tả là có khả năng biến hình và có mùi khó chịu. Họ đã có thể giết chết sinh vật này và khi quay trở lại, họ biết được rằng Haaksis đã chạm trán với một tàu của Hạm đội Đen và thu hồi được một vật thể hình cầu tiên tri về một tai họa sắp xảy ra sẽ sớm ảnh hưởng đến Riis. Họ sẽ báo cáo trải nghiệm của mình cho Nhà phán xét và trong khi chờ đợi Kiiraskes, Irrha tình cờ nghe được một bài hát được hát bởi Chelsis, một Kell của Nhà đá, một Nhà chịu trách nhiệm tổ chức phòng thủ cho Riis."
-    },
-    {
-      "title": "Cơn lốc",
-      "description": "Một thời gian sau, nền văn minh Eliksni bị phá hủy bởi một sự kiện được gọi là Cơn lốc. Hạm đội Đen xâm chiếm hệ thống ngôi sao bản địa của Eliksni, khiến Lữ khách phải chạy trốn khỏi Riis. Oryx và lực lượng của anh ta sau đó đã đến nơi. Chelchis bị chính Taken King giết chết, trở thành một huyền thoại trong dân tộc hắn. Nhiều Eliksni đã bỏ mạng, nền văn minh của họ bị bỏ lại trong đống đổ nát. Sau đó, Tòa án cố gắng duy trì trật tự giữa những người sống sót nhưng không thể ngăn chặn sự bùng nổ của một cuộc nội chiến đẫm máu và bản thân gần như bị xóa sổ. Những người còn sót lại của House Judgement bị những Kells còn lại buộc phải làm nô lệ. Họ bắt đầu cuộc tìm kiếm Lữ khách với hy vọng trở lại sự vĩ đại, bắt đầu Cuộc trôi dạt dài và trở thành Kẻ sa ngã."
+      "title": "Lịch Sử Chủng Tộc Eliksni (History of the Eliksni)",
+      "description": "Traveler đã đến hành tinh quê nhà Riis của người Eliksni và cung cấp cho họ nguồn năng lượng Ether vô tận. Người Eliksni trở nên thịnh vượng dưới sự bảo trợ của Traveler và tôn kính gọi nó là \"Cỗ Máy Vĩ Đại\" (The Great Machine). Trong những năm tháng đó, House of Judgment (Gia tộc Phán xét) đóng vai trò thực thi luật pháp và duy trì hòa bình.\n\nChiến tranh Biên giới (Edge Wars): Sự kiện này đã châm ngòi cho những cuộc nội chiến khốc liệt trong cộng đồng người Eliksni. Xung đột được chấm dứt bởi House of Kings và House of Judgment, đưa người dân của họ bước vào một Kỷ Nguyên Vàng.\n\nHouse of Rain truyền lại một lời tiên tri rằng Cỗ Máy Vĩ Đại sẽ phong cho một chiến binh vĩ đại danh hiệu \"Kell of Kells\" (Thủ lĩnh của các Thủ lĩnh).\n\nIrrha, một Apothecary (Dược sư) và là người học việc của Slayer Baron Kiiraskes, đã ghi chép lại những quan sát của mình về một sinh vật bí ẩn đe dọa nông trại của House of Rain, và sử dụng Tonic để theo dõi nó. Sinh vật này được mô tả là có khả năng biến hình và tỏa ra một mùi hôi thối. Họ đã giết được sinh vật đó và khi quay trở lại, biết được rằng Haaksis đã chạm trán một con tàu Black Fleet và thu hồi được một vật thể hình cầu mang lời tiên tri về tai họa sắp giáng xuống Riis. Họ định báo cáo lại trải nghiệm này cho House of Judgment, nhưng trong lúc chờ đợi Kiiraskes, Irrha tình cờ nghe được một khúc ca cáo phó đang được hát bởi Chelchis, Kell của House of Stone – gia tộc chịu trách nhiệm tổ chức hệ thống phòng thủ cho Riis.\n\nCơn lốc cuồng nộ (Whirlwind): Một thời gian sau, nền văn minh Eliksni bị hủy diệt bởi sự kiện mang tên Whirlwind. Hạm đội Black Fleet xâm lược hệ sao của Eliksni, khiến Traveler phải bỏ chạy khỏi Riis. Oryx và lực lượng của hắn đến sau đó. Chelchis đã bị đích thân The Taken King sát hại, trở thành một huyền thoại trong lòng người dân của mình. Vô số người Eliksni đã bỏ mạng, để lại nền văn minh của họ trong đống tro tàn. Hậu quả là, House of Judgment cố gắng duy trì trật tự nhưng không thể ngăn cản một cuộc nội chiến đẫm máu nổ ra, và chính họ cũng gần như bị xóa sổ hoàn toàn. Tàn dư của House of Judgment buộc phải phục tùng những Kells còn sót lại. Họ bắt đầu công cuộc tìm kiếm Traveler với hy vọng lấy lại ánh hào quang xưa, khởi đầu cuộc hành trình Long Drift (Sự Trôi dạt Dài lâu) và từ đó trở thành loài Fallen (Những kẻ sa ngã)."
     }
   ]
 }

@@ -8,12 +8,14 @@ import { Calendar, Tag, ChevronDown } from "lucide-react";
 
 // ─── THEME COLOR MAP ─────────────────────────────────────────────────────────
 const themeColorMap: Record<string, { text: string; border: string; bg: string; glow: string; shadow: string; hex: string }> = {
-  cyan:   { text: "text-neon-cyan",   border: "border-neon-cyan",   bg: "bg-neon-cyan",   glow: "text-glow-cyan",   shadow: "shadow-neon-cyan",   hex: "#00f3ff" },
-  green:  { text: "text-neon-green",  border: "border-neon-green",  bg: "bg-neon-green",  glow: "text-glow-green",  shadow: "shadow-neon-green",  hex: "#39ff14" },
-  yellow: { text: "text-neon-yellow", border: "border-neon-yellow", bg: "bg-neon-yellow", glow: "text-glow-yellow", shadow: "shadow-neon-yellow", hex: "#fce205" },
-  orange: { text: "text-neon-orange", border: "border-neon-orange", bg: "bg-neon-orange", glow: "text-glow-orange", shadow: "shadow-neon-orange", hex: "#ff8c00" },
-  red:    { text: "text-neon-red",    border: "border-neon-red",    bg: "bg-neon-red",    glow: "text-glow-red",    shadow: "shadow-neon-red",    hex: "#ff0000" },
-  zinc:   { text: "text-zinc-400",    border: "border-zinc-600",    bg: "bg-zinc-600",    glow: "",                 shadow: "",                   hex: "#a1a1aa" },
+  cyan:   { text: "text-cyan-400",   border: "border-cyan-400",   bg: "bg-cyan-400",   glow: "drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]",   shadow: "shadow-[0_0_15px_rgba(34,211,238,0.4)]",   hex: "#22d3ee" },
+  green:  { text: "text-green-400",  border: "border-green-400",  bg: "bg-green-400",  glow: "drop-shadow-[0_0_8px_rgba(74,222,128,0.8)]",  shadow: "shadow-[0_0_15px_rgba(74,222,128,0.4)]",  hex: "#4ade80" },
+  yellow: { text: "text-yellow-400", border: "border-yellow-400", bg: "bg-yellow-400", glow: "drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]", shadow: "shadow-[0_0_15px_rgba(250,204,21,0.4)]", hex: "#facc15" },
+  orange: { text: "text-orange-500", border: "border-orange-500", bg: "bg-orange-500", glow: "drop-shadow-[0_0_8px_rgba(249,115,22,0.8)]", shadow: "shadow-[0_0_15px_rgba(249,115,22,0.4)]", hex: "#f97316" },
+  red:    { text: "text-red-500",    border: "border-red-500",    bg: "bg-red-500",    glow: "drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]",    shadow: "shadow-[0_0_15px_rgba(239,68,68,0.4)]",    hex: "#ef4444" },
+  zinc:   { text: "text-zinc-400",   border: "border-zinc-400",   bg: "bg-zinc-400",   glow: "drop-shadow-[0_0_8px_rgba(161,161,170,0.8)]",   shadow: "shadow-[0_0_15px_rgba(161,161,170,0.4)]",   hex: "#a1a1aa" },
+  purple: { text: "text-purple-400", border: "border-purple-400", bg: "bg-purple-400", glow: "drop-shadow-[0_0_8px_rgba(192,132,252,0.8)]", shadow: "shadow-[0_0_15px_rgba(192,132,252,0.4)]", hex: "#c084fc" },
+  blue:   { text: "text-blue-400",   border: "border-blue-400",   bg: "bg-blue-400",   glow: "drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]",   shadow: "shadow-[0_0_15px_rgba(96,165,250,0.4)]",   hex: "#60a5fa" },
 };
 
 // ─── EVENT CARD ──────────────────────────────────────────────────────────────
@@ -31,10 +33,10 @@ function EventCard({ event, isRightSide, themeColor }: { event: TimelineEvent; i
       }}
       transition={{ type: "spring" as const, stiffness: 300, damping: 30 }}
     >
-      <h4 className={`text-base md:text-lg font-black text-zinc-100 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-zinc-400 transition-all ${isRightSide ? "md:text-left" : "md:text-right"} text-left`}>
+      <h4 className={`text-xl md:text-2xl font-black mb-4 transition-all ${theme.text} drop-shadow-md ${isRightSide ? "md:text-left" : "md:text-right"} text-left group-hover:brightness-125`}>
         {event.title}
       </h4>
-      <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-3 group-hover:text-zinc-300 transition-colors relative z-10 font-mono text-justify">
+      <p className="text-zinc-300 text-sm md:text-base leading-relaxed mb-4 group-hover:text-zinc-200 transition-colors relative z-10 font-mono text-justify whitespace-pre-line">
         {event.description}
       </p>
       <div className={`flex flex-wrap items-center gap-2 relative z-10 ${isRightSide ? "md:justify-start" : "md:justify-end"} justify-start`}>
@@ -125,7 +127,7 @@ function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
 function EraEvents({ era }: { era: TimelineEra }) {
   const theme = themeColorMap[era.themeColor] || themeColorMap.zinc;
   return (
-    <div className="relative max-w-5xl mx-auto px-4 pb-16">
+    <div className="relative max-w-7xl mx-auto px-4 pb-16">
       {/* Central vertical line */}
       <motion.div
         className={`absolute left-8 md:left-1/2 md:-ml-[1px] top-0 bottom-0 w-[2px] ${theme.bg} opacity-20`}
@@ -294,7 +296,7 @@ function EraNav({ activeEraId, eraRefs }: { activeEraId: string; eraRefs: React.
                 key={era.id}
                 data-era-id={era.id}
                 onClick={() => scrollToEra(era.id)}
-                className={`relative flex-shrink-0 px-2.5 py-1.5 text-[9px] md:text-[10px] font-mono font-bold tracking-wider uppercase transition-all duration-300 whitespace-nowrap ${
+                className={`relative flex-shrink-0 px-3 py-2 text-xs md:text-sm font-mono font-bold tracking-wider uppercase transition-all duration-300 whitespace-nowrap ${
                   isActive
                     ? `${theme.text} ${theme.glow}`
                     : "text-zinc-600 hover:text-zinc-400"
@@ -409,7 +411,7 @@ export function DestinyTimeline() {
           >
             {/* Era divider line */}
             {index > 0 && (
-              <div className="max-w-5xl mx-auto px-4">
+              <div className="max-w-7xl mx-auto px-4">
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}

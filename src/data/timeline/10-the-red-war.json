@@ -2,7 +2,7 @@
   "id": "the-red-war",
   "name": "Chiến tranh đỏ",
   "description": "Sự kiện trong Chiến tranh Đỏ.",
-  "themeColor": "zinc",
+  "themeColor": "red",
   "events": [
     {
       "title": "Sự hình thành của Ngôi nhà Hoàng hôn",

@@ -2,7 +2,7 @@
   "id": "dark-age",
   "name": "Thời kỳ đen tối",
   "description": "Sự kiện từ thời kỳ đen tối.",
-  "themeColor": "orange",
+  "themeColor": "zinc",
   "events": [
     {
       "title": "Sự khởi đầu của thời kỳ đen tối",

@@ -2,7 +2,7 @@
   "id": "the-city-age",
   "name": "Thời đại thành phố",
   "description": "Sự kiện từ Thời đại thành phố.",
-  "themeColor": "yellow",
+  "themeColor": "blue",
   "events": [
     {
       "title": "Sự thành lập của thành phố cuối cùng",

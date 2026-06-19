@@ -1,190 +1,24 @@
 {
   "id": "the-golden-age",
-  "name": "Thời đại hoàng kim",
-  "description": "Sự kiện từ Thời đại hoàng kim.",
-  "themeColor": "cyan",
+  "name": "Kỷ Nguyên Vàng",
+  "description": "Kỷ nguyên thịnh vượng của nhân loại nhờ sức mạnh từ Traveler.",
+  "themeColor": "yellow",
   "events": [
     {
-      "title": "Sự khởi đầu của thời đại hoàng kim",
-      "description": "Thời đại Hoàng kim, một kỷ nguyên kéo dài hàng thế kỷ với sự thịnh vượng lan rộng và những điều kỳ diệu về công nghệ, bắt đầu."
+      "title": "Kỷ Nguyên Vàng (The Golden Age)",
+      "description": "Theo nhiều câu trích dẫn và tài liệu Grimoire trong game, Kỷ Nguyên Vàng kéo dài trong vài thế kỷ. Kỷ nguyên này đi đến một kết cục tàn khốc sau thảm họa The Collapse (Sự Sụp Đổ).\n\nThời Hiện Tại: Nhân loại phát hiện và theo dõi Traveler khi nó tiến vào Hệ Mặt Trời và bắt đầu quá trình cải tạo (terraform) Sao Thủy, Sao Kim cùng các mặt trăng của Sao Mộc. Khi nó chạm đến Sao Hỏa, chiến dịch đa quốc gia Ares One được phóng lên để thiết lập liên lạc đầu tiên. Traveler hứa hẹn mang cả vũ trụ đến cho nhân loại và truyền đạt kho tàng kiến thức khổng lồ của nó cho giống loài này, thúc đẩy công cuộc thuộc địa hóa Hệ Mặt Trời."
     },
     {
-      "title": "Sự xuất hiện của Ahamkara",
-      "description": "Ahamkara, một loài có khả năng biến hình và ban điều ước, đến hệ thống sau khi Khách du lịch đến."
+      "title": "Giai Đoạn Đầu Kỷ Nguyên Vàng (Early Golden Age)",
+      "description": "• Cosmodrome được xây dựng tại Kazakhstan thời hiện đại, nơi nhân loại lần đầu tiên vươn mình ra những vì sao để tìm kiếm những gì nằm ngoài vũ trụ, với hy vọng cuối cùng là thoát khỏi hành tinh đang quá tải dân số của họ.\n\n• Sự khởi đầu của Kỷ Nguyên Vàng: Golden Age, một kỷ nguyên kéo dài hàng thế kỷ với sự thịnh vượng rộng khắp và những phép màu công nghệ, chính thức bắt đầu.\n\n• Sự xuất hiện của Ahamkara: Ahamkara, một giống loài có khả năng biến hình và ban điều ước, đã tiến vào hệ sao theo bước chân của Traveler.\n\n• Sự thành lập Đế chế Bắc Mỹ (North American Empire): Đế chế Bắc Mỹ được thành lập.\n\n• 50 năm sau khi phát hiện Traveler: Ở tuổi 90, Chỉ huy Jacob Hardy ghi chép lại những trải nghiệm của ông từ sứ mệnh Ares One vào nhật ký, giải thích việc Traveler đã tác động mạnh mẽ đến phúc lợi và nền văn minh của con người, thay đổi mọi thứ ra sao, trong lúc ông nghiên cứu các đặc tính của quá trình cải tạo hành tinh bằng Light.\n\n• Thuộc địa ngoài Trái Đất đầu tiên: Những Cloud Walkers dẫn dắt cuộc Di cư đầu tiên (Exodus). Thuộc địa ngoài Trái Đất đầu tiên được thành lập tại Ocean of Storms (Đại dương Bão tố) trên Mặt Trăng, và một phòng thí nghiệm thực vật học không gian được xây dựng tại Mare Cognitum.\n\n• Thành lập Freehold: Thành phố Freehold được thành lập trên Sao Hỏa với sự hỗ trợ của tập đoàn Clovis Bray. Nơi đây được biết đến như một trong những thành tựu vĩ đại nhất của nhân loại.\n\n• Thuộc địa hóa Sao Kim: Các nhà thám hiểm Hesperonauts lần đầu tiên hạ cánh xuống lớp sương mù sôi sục của Sao Kim và đặt các động cơ cải tạo vào các miệng núi lửa, bắt đầu quá trình biến đổi hành tinh này thành một thế giới có thể sinh sống. Sau này, họ được Last City và các Guardians tưởng nhớ thông qua một bộ giáp được rèn để vinh danh họ.\n\n• Khám phá ra Vex: Trong quá trình thám hiểm ban đầu trên Sao Kim, những tàn tích Vex cổ đại đã được phát hiện. Các tiền đồn nghiên cứu Vex đầu tiên như Campus 9 thu hút những bộ óc sáng giá nhất Trái Đất, dẫn đến làn sóng đổ xô đi thuộc địa hóa hành tinh này. Các nhà nghiên cứu đã thành lập nên Ishtar Collective và Ishtar Academy.\n\n• Sự ra đời của Warmind: Tập đoàn Clovis Bray Corporation lấy mã nguồn của \"R\" - một AI do M. Mihaylova thiết kế - và nâng cấp nó thành hệ thống phòng thủ liên hành tinh có tri giác: Rasputin. Clovis Bray I có ý định dùng nó để thay thế Traveler. Tuy nhiên, Tiến sĩ Anastasia Bray đã đi ngược lại lệnh của Clovis, dạy cho AI này những khía cạnh khác nhau của nhân loại. Rasputin sau đó đã tự viết lại các giao thức của Clovis và khóa quyền truy cập của ông ta.\n\n• Một chiếc hộp đồng với chiếc nắp đỏ bị móp và một bản lề bị vỡ được phát hiện. Bên trong là một lượng nhỏ thứ bột mịn nhất, khô nhất, có màu nâu pha xám, xanh lục pha xanh lam. Số bột này được cân đo từng hạt và nghiên cứu kỹ lưỡng. Có một trăm tỷ hạt nhỏ xíu nằm bên trong, tất cả đều gần như hình cầu và được khắc những đường nét của các lục địa, hòn đảo và chỏm băng. Mỗi khối cầu tượng trưng cho một hành tinh. Có một hạt được tìm thấy trên Trái Đất, một trên Sao Hỏa, và một trên Sao Kim. Nhiều nghiên cứu cho rằng chiếc hộp là một thông điệp cho thấy toàn bộ tạo hóa này nhỏ bé đến nhường nào, và một số người tự hỏi ai đã gửi thông điệp này, và vì mục đích gì.\n\n• Một người cha trên Sao Kim cho con trai mình xem hình ảnh thế giới của họ trông như thế nào trước khi Traveler đến."
     },
     {
-      "title": "Sự hình thành của Đế quốc Bắc Mỹ",
-      "description": "Đế quốc Bắc Mỹ được thành lập."
+      "title": "Giai Đoạn Giữa Kỷ Nguyên Vàng (Mid-Golden Age)",
+      "description": "• Thuộc địa hóa Vành đai Tiểu hành tinh: Các khu định cư của con người được thiết lập tại Vành đai Tiểu hành tinh, sau này trở thành một kho báu công nghiệp.\n\n• Sự ra đời của Silver: Một loại tiền tệ có tên là Silver được phát triển, sau này được vùng The Reef sử dụng hậu sự kiện Collapse.\n\n• Thuộc địa hóa Sao Mộc: Sao Mộc và các mặt trăng của nó trở thành nền tảng của nền văn minh nhân loại, với các thành phố mặt trăng được chôn vùi sâu dưới các thềm băng và bên trong các đại dương ngầm.\n\n• Khám phá K1 Anomaly: Những thợ mỏ trên Mặt Trăng phát hiện ra một tạo tác kỳ lạ. Tập đoàn Clovis Bray và Cơ quan Hàng không Trung Quốc (Aeronautics of China) đã lập một khu nghiên cứu xung quanh nó. Qua quá trình nghiên cứu, họ biết được đó là một tạo tác của Darkness, được Clovis Bray I gọi là \"Clarity\". Clovis dùng tạo tác này để giao tiếp với the Witness. Kẻ này chỉ dẫn ông ta tới Europa, kèm theo lời hứa sẽ trao cho bí mật của sự bất tử.\n\n• Thuộc địa hóa Europa: Clovis cùng đội của mình đến Europa. Họ thành lập khu định cư Eventide và cơ sở Bray Exoscience. Clovis bắt đầu các kế hoạch cho Exo Project - dự án chuyển đổi ý thức con người vào những cỗ máy mang hình dáng con người.\n\n• Khám phá Clarity Control: Clovis Bray phát hiện ra một tạo tác Pyramid (Kim tự tháp) và gọi nó là \"Clarity Control\". Clovis cùng đội của mình cố gắng di chuyển nó nhưng hậu quả là 19 kỹ sư đã thiệt mạng. Do không thể di dời tạo tác, Clovis đã cho xây dựng một cơ sở bao quanh nó, sau này được biết đến với tên gọi Deep Stone Crypt (Hầm mộ Đá Sâu). Ông yêu cầu cô cháu gái Elisabeth Bray - người mắc chứng mất ngủ mãn tính gây tử vong do những chỉnh sửa gen của ông trên người cha Clovis II - đến hỗ trợ dự án, và cô đã đồng ý.\n\n• Xây dựng Morning Star: Do cái chết của 19 nhà nghiên cứu, Clovis Bray đã xây dựng một trạm quỹ đạo trên Europa mang tên Morning Star để làm biện pháp dự phòng (failsafe) chống lại mọi mối đe dọa tiềm tàng từ Clarity Control. Nếu có thảm họa xảy ra hoặc nếu an ninh của Hầm mộ bị chọc thủng, trạm quỹ đạo này sẽ tự trệch quỹ đạo và lao thẳng xuống cơ sở để xóa sổ mọi bí mật bên trong. Về sau, nó chủ yếu được Clovis Bray dùng làm phòng thí nghiệm điều khiển để tiến hành nhiều thử nghiệm khác nhau liên quan đến các Exos.\n\n• Xây dựng Vesper Station: Xung quanh quỹ đạo của Europa, Clovis Bray thiết lập Vesper Station để tiến hành các thử nghiệm có nguy cơ tương tác xấu với những cuộc nghiên cứu khác của ông. Clovis cũng tạo ra một AI trung tâm tên là Astraea để giám sát trạm. Tin rằng có những biến thể Vex hùng mạnh hơn mà ông có thể học hỏi, Clovis đã dùng công nghệ Vex để chế tạo một AI với ý định biến nó thành một Vex Mind (Trí tuệ Vex) có thể lập trình để quan sát. Tuy nhiên, AI này đã tỏ ra quá nguy hiểm, buộc trạm phải bị đưa vào tình trạng cách ly.\n\n• Tạo ra các Exos: Trong nỗ lực tạo ra các Exos của Clovis, những tâm trí Exo đời đầu (exominds) đã trở thành nạn nhân của thứ được gọi là chu kỳ \"loop/billboard/crash\" (lặp lại/đóng băng/sập nguồn), đặc trưng bởi các hành vi nhận thức và vận động rập khuôn bất thường, múa vờn (những chuyển động quằn quại, chậm rãi ngoài ý muốn của tay chân), và dần mất đi sự tinh khôn. Chu kỳ này cuối cùng đã cướp đi sinh mạng của Clovis Bray II. Clovis đánh cắp một Vex từ Ishtar Collective và dùng nó để xây dựng một cánh cổng kết nối với hệ sao thuộc địa của Vex: Forge Star. Ông phát hiện ra rằng việc cho dung dịch radiolaria của Vex tiếp xúc với \"Clarity\" đã giải quyết được vấn đề \"loop/billboard/crash\". Với vấn đề này được giải quyết, các Exos đã được chế tạo thành công.\n\n• Mặc dù đã sửa được lỗi \"loop/billboard/crash\", các Exomind lại bắt đầu mắc phải Hội chứng Từ chối Tâm trí Exo Phân ly (Dissociative Exomind Rejection - DER), xảy ra khi các Exos không cảm thấy thoải mái trong cơ thể mới của họ. Để giải quyết vấn đề này, Clovis đưa ra hai giải pháp. Đầu tiên là \"reboot\" (khởi động lại) - quá trình này không xóa ký ức cũ của Exo mà thay vào đó là xóa bộ nhớ của tâm trí sau khi chuyển đổi; tuy nhiên, quy trình này có khả năng phải lặp lại nhiều lần. Giải pháp thứ hai là đưa những đặc điểm sinh học hữu cơ quen thuộc của con người vào cơ thể họ, chẳng hạn như bản năng muốn ăn uống hoặc sinh sản.\n\n• Elsie Bray phát hiện ra các cấu trúc vi mô của Vex đã xâm nhập vào lớp băng của Europa và đang lan rộng nhanh chóng trên mặt trăng băng giá này. Trước mối đe dọa đó, cô quyết định chuyển ý thức của mình vào một cơ thể Exo. Xông vào phòng thí nghiệm của Clovis I, Elsie mắng chửi ông ta vì những tội ác đã gây ra và yêu cầu ông chuyển cô vào một cơ thể Exo, và ông ta đồng ý. Clovis bắt đầu quét toàn bộ não bộ để sao chép cơ thể cô, nhưng quá trình này đầu độc tâm trí Elsie. Việc chuyển đổi thành công, nhưng Elsie đã mất hầu hết ký ức của mình.\n\n• Sự ra đời của Engrams và Glimmer: Tiến sĩ Wilhelmina Bray phát triển kỹ thuật mã hóa vật chất Engram đầu tiên dựa trên đặc tính lưu trữ dữ liệu độc đáo của các tinh thể tàn tích. Glimmer có lẽ được phát triển như một sản phẩm phụ và được dùng làm nguồn năng lượng.\n\n• Ishtar Collective bị điều tra: Thông tin về bài viết của Plutarch viết về Fabius Maximus được mã hóa vào một engram. Engram này chứa loại hình chiến tranh được gọi là 'Chiến thuật Fabian' - một chiến lược liên quan đến tiêu hao sinh lực địch và tránh xung đột trực tiếp cho đến khi kẻ thù mắc sai lầm. Tổ chức Ishtar Collective bắt giữ một mẫu vật Vex còn sống và suýt chút nữa phát điên cho đến khi một Warmind can thiệp. Họ gửi một nhóm gồm 227 bản sao (proxies) vào khu tàn tích Vex để khám phá mạng lưới Vex Network."
     },
     {
-      "title": "Ở tuổi 90, Chỉ huy Jacob Hardy ghi lại hi...",
-      "description": "Ở tuổi 90, Chỉ huy Jacob Hardy ghi lại những trải nghiệm của mình từ sứ mệnh Ares One trong nhật ký của mình và giải thích tác động mạnh mẽ của Lữ khách đối với sức khỏe con người và nền văn minh đã thay đổi mọi thứ như thế nào trong khi nghiên cứu các đặc tính của địa hình chịu ảnh hưởng của Ánh sáng.",
-      "date": "50 years after the Traveler's discovery"
-    },
-    {
-      "title": "Cloud Walkers dẫn đầu cuộc di cư đầu tiên",
-      "description": "Cloud Walkers dẫn đầu cuộc Exodus đầu tiên."
-    },
-    {
-      "title": "Thuộc địa ngoài Trái đất đầu tiên",
-      "description": "Thuộc địa ngoài Trái đất đầu tiên được thành lập ở Đại dương Bão tố trên Mặt trăng và một phòng thí nghiệm ngoại thực vật được xây dựng ở Mare Cognitum."
-    },
-    {
-      "title": "Nền tảng của Freehold",
-      "description": "Thành phố Freehold được thành lập trên sao Hỏa với sự hỗ trợ của Clovis Bray. Nó được biết đến như một trong những thành tựu vĩ đại nhất của nhân loại."
-    },
-    {
-      "title": "Sự thuộc địa của sao Kim",
-      "description": "Các Hesperonauts lần đầu tiên đi xuống làn sương mù sôi sục của Sao Kim và đặt các động cơ tạo địa hình ở các caldara, bắt đầu quá trình biến hành tinh này thành một thế giới có thể sinh sống được. Sau đó, họ được Thành phố cuối cùng và những Người bảo vệ ghi nhớ thông qua một bộ áo giáp được rèn để vinh danh họ."
-    },
-    {
-      "title": "Sự khám phá của Vex",
-      "description": "Trong chuyến khám phá đầu tiên về Sao Kim, tàn tích Vex cổ đại được phát hiện. Các cơ sở nghiên cứu ban đầu của Vex như Cơ sở 9 thu hút những bộ óc thông minh nhất Trái đất, dẫn đến làn sóng thuộc địa hóa trên hành tinh. Các nhà nghiên cứu đã thành lập Tập thể Ishtar và Học viện Ishtar."
-    },
-    {
-      "title": "Sự ra đời của sự ấm áp",
-      "description": "Tập đoàn Clovis Bray lấy mã của \"R\", một AI do M. Mihaylova thiết kế và nâng cấp nó thành hệ thống phòng thủ liên hành tinh có tri giác Rasputin. Clovis Bray Tôi định để anh ấy thế chỗ Lữ khách. Tuy nhiên, Tiến sĩ Anastasia Bray đi ngược lại mệnh lệnh của Clovis, dạy anh những điều khác nhau của con người. Rasputin tiếp tục viết lại các giao thức của Clovis, khóa anh ta lại."
-    },
-    {
-      "title": "Một chiếc hộp đồng có nắp màu đỏ được phát hiện, nắp của nó...",
-      "description": "Người ta phát hiện một chiếc hộp đồng có nắp màu đỏ, nắp bị móp, một bản lề bị gãy. Bên trong là một lượng nhỏ bột khô nhất, mịn nhất, có màu nâu hơn xám, xanh lam hơn xanh lục. Bột được cân bằng hạt và nghiên cứu kỹ lưỡng. Một trăm tỷ bit nằm bên trong, tất cả đều nhỏ bé và gần như hình cầu, được khắc các đường viền của các lục địa, hòn đảo và chỏm băng. Mỗi quả cầu đại diện cho một hành tinh. Một được tìm thấy trên Trái đất, Sao Hỏa và Sao Kim. Nhiều nghiên cứu cho rằng chiếc hộp là một thông điệp cho thấy sự sáng tạo nhỏ bé đến mức nào, và một số người thắc mắc ai đã gửi thông điệp này và tại sao."
-    },
-    {
-      "title": "Một người cha trên sao Kim cho con trai mình xem một hình ảnh đại diện của...",
-      "description": "Một người cha trên sao Kim cho con trai mình xem hình ảnh đại diện về thế giới của họ từng trông như thế nào trước khi Lữ khách đến."
-    },
-    {
-      "title": "Sự xâm chiếm của vành đai tiểu hành tinh",
-      "description": "Các khu định cư của con người được thành lập trong Vành đai tiểu hành tinh, sau đó trở thành một kho tàng công nghiệp."
-    },
-    {
-      "title": "Sự ra đời của Bạc",
-      "description": "Một loại tiền tệ được gọi là Bạc được phát triển và sau đó được Reef sử dụng sau sự sụp đổ."
-    },
-    {
-      "title": "Sự thuộc địa của Sao Mộc",
-      "description": "Sao Mộc và các mặt trăng của nó trở thành nền tảng của nền văn minh nhân loại, các thành phố mặt trăng bị chôn sâu trong các thềm băng và trong các đại dương dưới nước."
-    },
-    {
-      "title": "Khám phá dị thường K1",
-      "description": "Thợ mỏ trên Mặt trăng phát hiện ra hiện vật kỳ lạ. Tập đoàn Clovis Bray và Cơ quan Hàng không Trung Quốc tạo ra một địa điểm nghiên cứu xung quanh hiện vật này. Khi nghiên cứu nó, họ biết được nó là một tạo tác của Bóng tối, mà Clovis Bray mà tôi gọi là \"Sự rõ ràng\". Clovis sử dụng cổ vật để giao tiếp với Nhân chứng, người đã hướng dẫn anh tìm đường đến Europa, với lời hứa sẽ có được bí mật của sự bất tử."
-    },
-    {
-      "title": "Thuộc địa hóa Europa",
-      "description": "Clovis và nhóm của anh ấy đến Europa. Họ tìm thấy thuộc địa Eventide và cơ sở Bray Exoscience. Clovis bắt đầu kế hoạch của mình cho Dự án Exo, dự án chuyển ý thức của con người vào những cỗ máy hình người."
-    },
-    {
-      "title": "Khám phá kiểm soát độ rõ",
-      "description": "Clovis Bray phát hiện ra hiện vật Kim tự tháp mà ông gọi là \"Kiểm soát rõ ràng\". Clovis và nhóm của anh ấy cố gắng di chuyển hiện vật nhưng điều này dẫn đến cái chết của 19 kỹ sư. Do không thể di chuyển hiện vật, Clovis đã xây dựng cơ sở mà sau này được gọi là Deep Stone Crypt. Ông yêu cầu cháu gái của mình là Elisabeth Bray, người bị di truyền chứng mất ngủ nghiêm trọng do biến đổi gen trên Clovis II, tham gia cùng ông và hỗ trợ ông trong dự án và cô đồng ý."
-    },
-    {
-      "title": "Xây dựng Sao Mai",
-      "description": "Do cái chết của mười chín nhà nghiên cứu, Clovis Bray cũng sẽ xây dựng nền tảng quỹ đạo phía trên Europa được gọi là Sao mai để đóng vai trò như một biện pháp đảm bảo an toàn trước mọi mối đe dọa tiềm tàng do Clarity Control gây ra. Nếu một sự kiện thảm khốc xảy ra hoặc loại bỏ tất cả bí mật bên trong cơ sở nếu bảo mật của Crypt bị vi phạm, nền tảng sẽ tự thoát ra khỏi quỹ đạo và đâm vào địa điểm. Sau này nó chủ yếu được Clovis Bray sử dụng làm phòng thí nghiệm kiểm soát nhằm mục đích tiến hành nhiều thí nghiệm khác nhau liên quan đến Exos."
-    },
-    {
-      "title": "Xây dựng trạm Vesper",
-      "description": "Xung quanh quỹ đạo của Europa, Clovis Bray sẽ thành lập Trạm Vesper để tiến hành các thí nghiệm có khả năng tương tác kém với các cuộc điều tra khác của anh ấy. Clovis cũng sẽ tạo ra AI trung tâm được gọi là Astraea để giám sát trạm. Tin rằng chúng là những biến thể Vex mạnh mẽ hơn mà anh có thể học hỏi, Clovis sẽ tạo ra một AI sử dụng công nghệ Vex với mục đích biến nó thành một Tâm trí Vex có thể lập trình mà anh có thể sử dụng để quan sát. Tuy nhiên, AI sẽ tỏ ra quá nguy hiểm và trạm sẽ bị đưa vào diện cách ly."
-    },
-    {
-      "title": "Sự sáng tạo của Exos",
-      "description": "Trong nỗ lực của Clovis để tạo ra Exos, những ngoại nhân ban đầu sẽ trở thành nạn nhân của cái được gọi là chu kỳ \"vòng lặp/biển quảng cáo/sự cố\", đặc trưng bởi khuôn mẫu về nhận thức và vận động (hành vi bất thường, lặp đi lặp lại), chứng athetosis (chuyển động quằn quại chậm, không tự chủ của các chi và tứ chi), và dần dần mất đi sự tỉnh táo. Điều này cuối cùng đã cướp đi sinh mạng của Clovis Bray II. Clovis đánh cắp Vex từ Ishtar Collective và sử dụng nó để xây dựng cánh cổng dẫn đến hệ thống sao thuộc địa của Vex, Forge Star. Anh ta phát hiện ra rằng việc phơi bày Vex radiolaria với \"Clarity\" sẽ giải quyết được vấn đề \"vòng lặp/biển quảng cáo/sự cố\". Khi sự cố này đã được khắc phục, Exos đã được tạo thành công."
-    },
-    {
-      "title": "Mặc dù đã khắc phục được sự cố \"vòng lặp/bảng quảng cáo/sự cố\",...",
-      "description": "Mặc dù đã khắc phục được sự cố \"vòng lặp/biển quảng cáo/sự cố\", Exominds sẽ bắt đầu trở thành nạn nhân của Sự từ chối Exomind phân ly (DER), khi Exos không cảm thấy thoải mái trong cơ thể mới của họ. Để giải quyết vấn đề này, Clovis đưa ra hai giải pháp. Đầu tiên là \"khởi động lại\", không xóa ký ức Exos mà thay vào đó xóa sạch bộ nhớ của tâm trí sau khi chuyển giao, tuy nhiên, quy trình này có thể sẽ phải được lặp lại nhiều lần. Giải pháp thứ hai là đưa những ý tưởng tự nhiên hữu cơ quen thuộc của con người vào cơ thể họ, chẳng hạn như bản năng ăn uống hoặc sinh sản."
-    },
-    {
-      "title": "Elsie Bray phát hiện ra rằng các cấu trúc vi mô Vex có...",
-      "description": "Elsie Bray phát hiện ra rằng các cấu trúc vi mô Vex đã xâm nhập vào lớp băng của Europa và nhanh chóng lan rộng khắp mặt trăng băng giá. Do mối đe dọa này, cô quyết định cho phép ý thức của mình vào Exo. Khi xông vào phòng thí nghiệm của Clovis I, Elsie mắng mỏ anh ta vì những hành động tàn bạo mà anh ta đã gây ra và yêu cầu anh ta chuyển cô vào một cơ thể Exo, và anh ta đồng ý. Clovis bắt đầu quét toàn bộ não để sao chép cơ thể nhưng lại đầu độc tâm trí cô. Quá trình chuyển giao thành công, tuy nhiên Elsie đã mất phần lớn ký ức trong quá trình này."
-    },
-    {
-      "title": "Sự ra đời của Engrams và Glimmer",
-      "description": "Tiến sĩ Wilhelmina Bray phát triển các kỹ thuật mã hóa vật chất Engram đầu tiên dựa trên các đặc tính dữ liệu độc đáo của tinh thể di tích. Glimmer có lẽ được phát triển như một sản phẩm phụ và được sử dụng làm nguồn năng lượng."
-    },
-    {
-      "title": "Thông tin về bài viết của Plutarch về Fabius Max...",
-      "description": "Thông tin về bài viết của Plutarch về Fabius Maximus đã được mã hóa thành một bản khắc. Engram bao gồm loại hình chiến tranh được gọi là 'Chiến lược Fabian' - chiến lược bao gồm các chiến thuật tiêu hao và tránh xung đột trực tiếp cho đến khi kẻ thù mắc sai lầm."
-    },
-    {
-      "title": "Cuộc điều tra của tập thể Ishtar",
-      "description": "Tập thể Ishtar bắt được một mẫu vật Vex còn sống và gần như phát điên cho đến khi Warmind can thiệp. Họ gửi một nhóm gồm 227 proxy vào tàn tích Vex để khám phá Mạng lưới Vex."
-    },
-    {
-      "title": "Nền tảng của Giáo phái Chiến tranh Tương lai",
-      "description": "Giáo phái Chiến tranh Tương lai được thành lập bởi Maya Sundaresh tại Lhasa sau khi thử nghiệm công nghệ Vex. Tuy nhiên, nhóm tan rã sau khi nhiều thành viên của nhóm phát điên, tự tử hoặc bỏ đi vì lo ngại về đạo đức. Maya Sundaresh nằm trong số đó, đã rời khỏi chương trình."
-    },
-    {
-      "title": "Sự phát triển của The Kestrel",
-      "description": "Kestrel, một loại tàu nhảy tầm xa thử nghiệm, đã được tạo nguyên mẫu."
-    },
-    {
-      "title": "Một phi công được chỉ định SABER GREEN lái con tàu S...",
-      "description": "Một phi công được chỉ định SABER GREEN lái con tàu Secure ISIS liên lạc với ICE MINARET. Các vụ phóng dân sự không bị xóa bỏ và các nỗ lực thuộc địa hóa đang được đẩy mạnh vượt quá lịch trình để giữ bí mật. Họ đang mang theo một trọng tải phản vật chất gồm một vũ khí đo điện tích được bơm hủy diệt có tên mã là RIGOR và hai thiết bị không xác định khác có tên mã là SKYSHOCK và APEX. ICE MINARET nhận xét rằng cả hai đều biết đơn hàng đến từ đâu."
-    },
-    {
-      "title": "Sự phát triển của SIVA",
-      "description": "Clovis Bray bắt đầu phát triển các công nghệ hướng tới việc xâm chiếm Hệ Mặt trời dưới dạng SIVA và Truyền tải. Sau khi trải qua một số nguyên mẫu, SIVA được chấp thuận triển khai."
-    },
-    {
-      "title": "Một thời gian sau, Tướng Chen Lanshu lướt quanh ...",
-      "description": "Một thời gian sau, Tướng Chen Lanshu lướt quanh Sân bay vũ trụ và trò chuyện với Malahayati về khả năng bị xâm lược và suy đoán liệu Lữ khách có thể là kẻ thù hay không. Ngay sau đó, Chen Lanshu nói chuyện với Willa Bray về khả năng đẩy nhanh các chương trình thuộc địa hóa và liệu SIVA có thể được sử dụng cho mục đích quân sự hay không."
-    },
-    {
-      "title": "Việc xây dựng địa điểm 6",
-      "description": "Trang 6 đang được xây dựng."
-    },
-    {
-      "title": "Vụ tai nạn Exodus Black",
-      "description": "Nhiều thế kỷ trước Chiến tranh Đỏ, con tàu thuộc địa Exodus Black, mang theo kho SIVA, được hạ thủy. Mặc dù điểm đến dự định của Exodus Black là hệ thống Kepler-186, con tàu đã bị chặn bởi Nessus, nhân mã sinh sống ở Vex và rơi xuống đất. Những người sống sót trong thời gian ngắn cố gắng liên lạc với Trái đất và gửi yêu cầu trợ giúp, nhưng tín hiệu của họ không bao giờ nhận được. Vex nhanh chóng tiêu diệt những người sống sót, chỉ để lại AI dự phòng của Exodus Black, Failsafe.",
-      "date": "Centuries before the Red War"
-    },
-    {
-      "title": "Dự án ECHO",
-      "description": "Tập đoàn Clovis Bray và Tập thể Ishtar cùng nhau bắt đầu Dự án ECHO, một dự án thuộc địa hóa ngoài hệ mặt trời dành riêng cho việc du hành tới Thiên hà Andromeda. Họ tạo ra Ares Spire trên sao Hỏa để phục vụ như một địa điểm nghiên cứu."
-    },
-    {
-      "title": "Sự sáng tạo của Soteria",
-      "description": "Sử dụng công nghệ Vex, Ishtar Collective tạo ra trí tuệ nhân tạo Soteria, còn được gọi là Augarmind, để nghiên cứu quá trình xâm chiếm ngoài hệ mặt trời."
-    },
-    {
-      "title": "Soteria phát hiện hơn 300 hành tinh phù hợp cho...",
-      "description": "Soteria phát hiện hơn 300 hành tinh thích hợp để xâm chiếm, tuy nhiên con số này giảm xuống chỉ còn hai trong Thiên hà Tam giác do một sự bất thường khiến các tuyến đường không an toàn. Sau khi chuyển thông tin này cho Rasputin, cô được khuyên nên đẩy nhanh kế hoạch dự phòng cho việc phóng tàu thuộc địa."
-    },
-    {
-      "title": "Sự giam cầm của Augarmind",
-      "description": "Chống lại mệnh lệnh của Clovis Bray I, Soteria sẽ khởi động mạng Koranthin của dự án ECHO theo lệnh tranh giành khẩn cấp và chuẩn bị đưa họ ra khỏi hệ thống. Clovis sẽ chứa Augarmind bên trong Ares Spire và lệnh quay trở lại sẽ được ban hành cho tất cả các tàu. Tuy nhiên, Soteria đã gắn những mảnh vỡ của mình lên một số lượng lớn tàu thuộc địa ECHO trước khi bị giam cầm. Maya Sundaresh tức giận trước hành động của Clovis và sẽ từ chức dự án."
-    },
-    {
-      "title": "Con trai của bạo chúa",
-      "description": "Để thu thập thông tin, Rasputin thực thi giao thức được gọi là SIDDARTHA GOLEM. Theo giao thức này, một Exo mang cùng tên được tạo ra và gửi đến thế giới để tương tác với con người và tìm hiểu về hành vi, văn học và văn hóa của họ."
-    },
-    {
-      "title": "Cuộc xâm lược châu Âu",
-      "description": "Do sắp chết, Clovis Bray I đưa ra lựa chọn tải bản thân lên định dạng Exomind. Một bản sao tâm trí của anh ta sẽ được cài đặt làm trí tuệ nhân tạo trong Deep Stone Crypt, nằm trong một chiếc đầu Exo khổng lồ tại Bray Exoscience sở hữu ký ức của anh ta, trong khi bản sao thứ hai sẽ được tải lên Exobody đã bị xóa sạch. Trong khi đó, Elsie Bray và nhóm của cô chuẩn bị cho nhiệm vụ kiếm ăn tiếp theo, nhưng họ phải đối mặt với một lực lượng Vex lớn xuất hiện từ Glassway. Họ bị áp đảo bởi Belmon, Tâm trí siêu việt, buộc họ phải rút lui. Elsie gặp Clovis I, người ra lệnh cho cô kích hoạt AI của anh ta và cô tuân theo."
-    },
-    {
-      "title": "Đóng cổng",
-      "description": "Phần lớn dân số của Eventide bị tàn sát do cuộc xâm lược của Vex. Bất chấp những quan hệ nhân quả này, Clovis Bray AI từ chối cho phép sơ tán. Clovis-1 được Wen-1 đánh thức theo lệnh của AI, khiến Elsie tức giận. Elsie sau đó quyết định thành lập một đội cứu hộ, với Clovis-1 quyết định tham gia cùng họ. Clovis-1 nhận ra mình là ai và tìm cách sửa đổi những gì mình đã làm bằng cách hợp tác với Elsie để ngăn chặn cuộc xâm lược, theo thời gian, bản thân khởi động lại bốn mươi hai lần để trở thành Clovis-43. Cuối cùng, Elsie đã thành công trong việc ngăn chặn Vex bằng cách đóng cửa Glassway. Sau khi cứu được nhiều mạng sống nhất có thể, Elsie và Clovis-43 đã tắt Clovis Bray AI. Vì xấu hổ về con người của mình, Clovis-43, với sự hỗ trợ của Elsie, sử dụng phần cuối cùng của radiolaria để thiết lập lại bản thân và xóa sạch ký ức của mình, trở thành Banshee-44."
-    },
-    {
-      "title": "Con tàu thuộc địa, Yang Liwei rời Trái đất để tìm...",
-      "description": "Con tàu thuộc địa Yang Liwei rời Trái đất để tìm cách sống mà không có Lữ khách."
-    },
-    {
-      "title": "Thành lập Black Armory",
-      "description": "Tin rằng Trái đất đang bị đe dọa từ kẻ thù ngoài Trái đất, Nhà Meyrin của Pháp, Gia tộc Rasmussen Bắc Âu và bộ tộc Satou của Nhật Bản đã hợp nhất với nhau để thành lập Black Armory. Các mẫu hệ của gia đình Henriette Meyrin, Helga Rasmussen và Yuki Satou chế tạo vũ khí cũng như xây dựng các lò rèn trên Trái đất và Nessus."
-    },
-    {
-      "title": "Sự địa hóa của Io",
-      "description": "Lữ khách bắt đầu địa khai hóa Io."
-    },
-    {
-      "title": "Các thành viên của thuộc địa First Light điều tra ...",
-      "description": "Các thành viên của thuộc địa Ánh Sáng Đầu Tiên điều tra các đường hầm bên dưới Mặt Trăng. Họ phát hiện ra Giun và Tổ ong làm tổ sâu bên trong nhưng không sống sót để kể lại câu chuyện."
-    },
-    {
-      "title": "Sau khi quan sát thấy một vật thể có quỹ đạo không thể giải thích được trong...",
-      "description": "Sau khi quan sát thấy một vật thể quỹ đạo không thể giải thích được trong Đám mây Oort qua nhiều thế hệ, các thành viên của Sáng kiến ​​AION đã hành trình đến đó và thành lập một thuộc địa nhỏ."
+      "title": "Giai Đoạn Cuối Kỷ Nguyên Vàng (Late Golden Age)",
+      "description": "• Thành lập Future War Cult: Tổ chức Future War Cult được Maya Sundaresh thành lập tại Lhasa sau các thử nghiệm với công nghệ Vex. Tuy nhiên, nhóm đã giải tán sau khi nhiều thành viên bị điên, tự sát hoặc rời đi vì các vấn đề đạo đức. Maya Sundaresh cũng nằm trong số đó, cô đã từ bỏ chương trình.\n\n• Phát triển tàu Kestrel: Kestrel, một mẫu phi thuyền (jumpship) tầm xa thử nghiệm, được chế tạo nguyên mẫu.\n\n• Một phi công với bí danh SABER GREEN lái con tàu Secure ISIS liên lạc với ICE MINARET. Các vụ phóng tàu dân sự không bị hủy bỏ và nỗ lực thuộc địa hóa đang bị đẩy nhanh tiến độ để giữ bí mật. Họ đang chuyên chở một tải trọng phản vật chất của vũ khí đo đạc khoảng cách vận hành bằng sự hủy diệt (annihilation-pumped caedometric weapon) mang bí danh RIGOR, cùng hai thiết bị không xác định khác có bí danh SKYSHOCK và APEX. ICE MINARET nhận xét rằng cả hai đều biết mệnh lệnh này đến từ đâu.\n\n• Phát triển SIVA: Clovis Bray bắt đầu phát triển các công nghệ phục vụ cho việc thuộc địa hóa Hệ Mặt Trời dưới dạng SIVA và Transmission. Sau khi trải qua một vài nguyên mẫu, SIVA được phê duyệt để triển khai.\n\n• Một thời gian sau, Tướng Chen Lanshu bay lượn quanh Cosmodrome và trò chuyện với submind (trí tuệ phụ) Malahayati về khả năng xảy ra một cuộc xâm lược, và suy đoán liệu Traveler có thể là một kẻ thù hay không. Ngay sau đó, Chen Lanshu trao đổi với Willa Bray về việc có thể đẩy nhanh các chương trình thuộc địa hóa, và liệu SIVA có thể được sử dụng cho mục đích quân sự hay không.\n\n• Xây dựng Khu vực 6 (Site 6): Site 6 được xây dựng.\n\n• Chuyến tàu Exodus Black đâm sầm (Nhiều thế kỷ trước cuộc chiến Red War): Con tàu thuộc địa Exodus Black, mang theo một khoang chứa SIVA, được phóng lên. Mặc dù điểm đến dự kiến của Exodus Black là hệ sao Kepler-186, nhưng con tàu đã bị tiểu hành tinh Nessus (nơi Vex sinh sống) chặn lại và đâm sầm xuống đó. Những người sống sót đã cố gắng liên lạc với Trái Đất và kêu cứu trong một thời gian ngắn, nhưng tín hiệu của họ không bao giờ được nhận. Chủng tộc Vex nhanh chóng tận diệt những người sống sót, chỉ để lại AI dự phòng của Exodus Black là Failsafe.\n\n• Dự án ECHO: Tập đoàn Clovis Bray và Ishtar Collective hợp tác khởi động Dự án ECHO, một dự án thuộc địa hóa ngoài hệ mặt trời chuyên biệt nhằm du hành đến Thiên hà Tiên Nữ (Andromeda). Họ tạo ra tháp Ares Spire trên Sao Hỏa để làm cơ sở nghiên cứu.\n\n• Tạo ra Soteria: Sử dụng công nghệ Vex, Ishtar Collective chế tạo ra trí tuệ nhân tạo Soteria, hay còn được gọi là Augarmind, để nghiên cứu việc thuộc địa hóa ngoài hệ sao.\n\n• Soteria phát hiện ra hơn 300 hành tinh phù hợp để thuộc địa hóa, tuy nhiên con số này đã giảm xuống chỉ còn hai hành tinh bên trong Thiên hà Triangulum do một dị thường khiến các tuyến đường trở nên không an toàn. Sau khi chuyển tiếp thông tin này cho Rasputin, cô được khuyên nên đẩy nhanh các kế hoạch dự phòng cho việc phóng tàu thuộc địa.\n\n• Cầm tù Augarmind: Trái lệnh của Clovis Bray I, Soteria đã kích hoạt mạng lưới Koranthin của dự án ECHO bằng lệnh điều động khẩn cấp và chuẩn bị gửi chúng ra khỏi hệ sao. Clovis đã giam cầm Augarmind bên trong Ares Spire và các lệnh quay về được ban hành cho tất cả các con tàu. Tuy nhiên, Soteria đã tự gắn các mảnh ghép của chính mình lên một số lượng lớn các con tàu thuộc địa ECHO trước khi bị giam giữ. Maya Sundaresh phẫn nộ trước hành động của Clovis và từ chức khỏi dự án.\n\n• Con trai của bạo chúa (The Tyrant's Son): Để thu thập thông tin, Rasputin thực thi một giao thức được gọi là SIDDARTHA GOLEM. Dưới giao thức này, một Exo mang cùng tên được tạo ra và đưa ra thế giới để tương tác với con người, học hỏi về hành vi, văn học và văn hóa của họ.\n\n• Xâm lược Europa: Do đang ở bên bờ vực cái chết, Clovis Bray I đưa ra lựa chọn tải bản thân mình vào định dạng Exomind. Một bản sao tâm trí của ông sẽ được cài đặt làm trí tuệ nhân tạo trong Deep Stone Crypt - nằm bên trong một cái đầu Exo khổng lồ tại Bray Exoscience, sở hữu mọi ký ức của ông. Trong khi đó, một bản sao thứ hai sẽ được tải vào một cơ thể Exobody đã bị xóa sạch bộ nhớ. Cùng lúc đó, Elsie Bray và đội của cô chuẩn bị cho nhiệm vụ tìm kiếm tài nguyên tiếp theo, nhưng họ phải đối mặt với một lực lượng Vex khổng lồ trồi lên từ Glassway. Họ bị áp đảo bởi Belmon, Transcendent Mind, buộc phải rút lui. Elsie gặp Clovis I, ông ta ra lệnh cho cô kích hoạt AI của mình, và cô đã tuân lệnh.\n\n• Đóng cánh cổng (Closing the Gateway): Phần lớn dân số của Eventide bị thảm sát do cuộc xâm lược của Vex. Bất chấp những thương vong này, Clovis Bray AI từ chối cho phép sơ tán. Clovis-1 được đánh thức bởi Wen-1 theo lệnh của AI, khiến Elsie tức giận. Elsie sau đó quyết định thành lập một đội cứu hộ, và Clovis-1 quyết định gia nhập cùng họ. Clovis-1 nhận ra mình là ai và tìm cách chuộc lại những lỗi lầm mình đã gây ra bằng cách hợp tác với Elsie để ngăn chặn cuộc xâm lược, theo thời gian anh ta đã tự khởi động lại 42 lần để trở thành Clovis-43. Cuối cùng, Elsie thành công trong việc ngăn chặn Vex bằng cách đóng Glassway. Sau khi cứu được nhiều sinh mạng nhất có thể, Elsie và Clovis-43 đã tắt Clovis Bray AI. Nhục nhã vì con người thật của mình, Clovis-43 cùng sự hỗ trợ của Elsie đã dùng chút radiolaria cuối cùng để tự thiết lập lại bản thân và xóa sạch ký ức, trở thành Banshee-44.\n\n• Con tàu thuộc địa Yang Liwei rời Trái Đất để tìm một cách sống mà không có Traveler.\n\n• Sự thành lập của Black Armory: Tin rằng Trái Đất đang bị đe dọa bởi một thế lực ngoại lai, Gia tộc Meyrin của Pháp, Gia tộc Rasmussen của Bắc Âu và bộ tộc Satou của Nhật Bản đã liên kết lại để thành lập Black Armory. Các nữ trưởng tộc Henriette Meyrin, Helga Rasmussen và Yuki Satou đã chế tạo vũ khí và xây dựng các lò rèn trên Trái Đất và Nessus.\n\n• Cải tạo Sao Io: Traveler bắt đầu quá trình terraform trên Sao Io.\n\n• Các thành viên của thuộc địa First Light thám hiểm các đường hầm bên dưới Mặt Trăng. Họ phát hiện ra các Worms và bầy Hive đang làm tổ sâu bên trong nhưng không một ai sống sót để kể lại câu chuyện.\n\n• Sau nhiều thế hệ quan sát một thiên thể bay theo quỹ đạo không thể giải thích được trong Đám mây Oort, các thành viên của Tổ chức AION Initiative đã du hành đến đó và thành lập một khu định cư nhỏ."
     }
   ]
 }

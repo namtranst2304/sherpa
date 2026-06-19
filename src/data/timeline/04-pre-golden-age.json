@@ -1,32 +1,12 @@
 {
   "id": "pre-golden-age",
-  "name": "Thời kỳ tiền vàng",
-  "description": "Sự kiện từ thời tiền vàng son.",
-  "themeColor": "cyan",
+  "name": "Thời kỳ Tiền Kỷ Nguyên Vàng",
+  "description": "Sự kiện từ Thời kỳ Tiền Kỷ Nguyên Vàng.",
+  "themeColor": "zinc",
   "events": [
     {
-      "title": "Một văn bản có tên Of Hated Nezarec được biết là có hoặc...",
-      "description": "Một văn bản có tên Of Hated Nezarec được cho là có nguồn gốc từ khoảng thời gian này. Văn bản này sau đó được sử dụng để truyền bá các nạn nhân bị tra tấn vào Acolytes của Nezarec."
-    },
-    {
-      "title": "Cục Quan sát Đối ngoại, một cơ quan của Hoa Kỳ...",
-      "description": "Cục Quan sát Bên ngoài, một cơ quan của Hoa Kỳ được giao nhiệm vụ điều tra các dị thường ngoài Trái đất, đang điều tra một loại vũ khí năng lượng không xác định được sử dụng để ám sát John F. Kennedy."
-    },
-    {
-      "title": "Louis Yero, một người đa ngôn ngữ sinh ra ở Lodi, Wisconsin, ...",
-      "description": "Louis Yero, một người đa ngôn ngữ sinh ra ở Lodi, Wisconsin, bắt đầu làm việc tại DEO. Trước khi làm việc, anh ta đã phục vụ trong một cuộc chiến vô danh."
-    },
-    {
-      "title": "DEO sẽ bắt đầu điều tra Les Di...",
-      "description": "DEO sẽ bắt đầu điều tra vụ Les Diaberets và Louis Yero là một trong những người đó. Họ không thể tìm thấy bất kỳ dấu hiệu nào của dạng sống ngoài Trái đất, nhưng họ có thể nghiên cứu công nghệ từ nó."
-    },
-    {
-      "title": "Louis gặp bác sĩ",
-      "description": "Louis gặp Tiến sĩ Nella Davis, một nhà toán học đang làm việc trong Dự án Graviton. Sau đó cô bị giết bởi một chuyến tàu do Nine gửi đến."
-    },
-    {
-      "title": "Sau khi Louis tình cờ gặp Nella gần khu quản thúc của DEO...",
-      "description": "Sau khi Louis tình cờ gặp Nella gần phòng quản thúc của DEO, người này vội vàng rời đi, anh ta sẽ trả lời một chiếc điện thoại lạ bên trong phòng quản thúc. Anh ta không hề hay biết, bằng cách trả lời điện thoại, anh ta sẽ bị Nine kéo về phía trước kịp thời."
+      "title": "Giai Đoạn Tiền Kỷ Nguyên Vàng (Pre-Golden Age)",
+      "description": "Một văn bản mang tên Of Hated Nezarec (Về Nezarec Đáng ghét) được cho là bắt nguồn từ thời kỳ này. Văn bản này sau đó được sử dụng để tẩy não những nạn nhân bị đọa đày, biến họ thành các Acolytes of Nezarec.\n\nDepartment of External Observation (DEO) – một cơ quan của Hoa Kỳ có nhiệm vụ điều tra các hiện tượng dị thường ngoài Trái Đất – đã vào cuộc điều tra một loại vũ khí năng lượng không xác định từng được sử dụng để ám sát John F. Kennedy.\n\nLouis Yero, một nhà đa ngôn ngữ sinh ra tại Lodi, Wisconsin, bắt đầu làm việc tại DEO. Trước khi được tuyển dụng, anh từng phục vụ trong một cuộc chiến chưa rõ tên.\n\nDEO bắt đầu điều tra sự cố Les Diablerets, trong đó Louis Yero là một phần của sự việc. Họ không tìm thấy bất kỳ dấu hiệu nào của dạng sống ngoài hành tinh, nhưng họ đã có thể nghiên cứu được các công nghệ từ nó.\n\nLouis gặp Tiến sĩ Nella Davis, một nhà toán học đang làm việc cho Dự án Graviton. Sau này cô đã bị giết bởi một chiếc tàu hỏa do the Nine điều khiển.\n\nSau khi Louis vô tình va phải Nella gần phòng chứa (containment room) của DEO và thấy cô rời đi một cách vội vã, anh đã nghe máy một cuộc điện thoại kỳ lạ vang lên bên trong phòng chứa. Không hề hay biết, khi trả lời cuộc gọi, anh đã bị the Nine kéo thẳng về tương lai phía trước dòng thời gian."
     }
   ]
 }
