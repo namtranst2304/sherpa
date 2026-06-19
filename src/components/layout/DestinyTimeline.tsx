@@ -303,9 +303,11 @@ function EraNav({ activeEraId, eraRefs }: { activeEraId: string; eraRefs: React.
                 {/* Active indicator background */}
                 {isActive && (
                   <motion.div
-                    layoutId="era-nav-active"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     className={`absolute inset-0 rounded-sm border ${theme.border}/40 bg-gradient-to-b from-zinc-800/60 to-zinc-900/40`}
-                    transition={{ type: "spring" as const, stiffness: 300, damping: 30 }}
+                    transition={{ duration: 0.2 }}
                     style={{
                       boxShadow: `0 0 12px ${theme.hex}15, inset 0 1px 0 ${theme.hex}20`,
                     }}
@@ -325,9 +327,11 @@ function EraNav({ activeEraId, eraRefs }: { activeEraId: string; eraRefs: React.
                 {/* Active dot indicator under the button */}
                 {isActive && (
                   <motion.div
-                    layoutId="era-nav-dot"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0 }}
                     className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${theme.bg}`}
-                    transition={{ type: "spring" as const, stiffness: 300, damping: 30 }}
+                    transition={{ duration: 0.2 }}
                     style={{ boxShadow: `0 0 6px ${theme.hex}` }}
                   />
                 )}
