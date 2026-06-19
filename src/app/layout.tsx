@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/common/theme-provider";
 import { TopNav } from "@/components/layout/TopNav";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning>
       <body className="antialiased min-h-screen bg-background text-foreground flex flex-col">
         <ThemeProvider
           attribute="class"
@@ -34,6 +35,7 @@ export default function RootLayout({
                 <div className="flex-1 flex overflow-hidden">
                   {children}
                 </div>
+                <ScrollToTop />
               </div>
             </SidebarProvider>
           </TooltipProvider>

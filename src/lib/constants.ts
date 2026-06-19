@@ -2,6 +2,7 @@ import { ShieldAlert, Swords, Crown, type LucideIcon } from "lucide-react"
 import { RAIDS_DATA, DUNGEONS_DATA, PANTHEON_DATA } from "@/data"
 import { ActivityData } from "./types"
 
+
 export type ActivityItem = {
   title: string
   href: string
@@ -48,9 +49,9 @@ const mapPantheonToItems = (): ActivityItem[] => {
 export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
   raids: {
     id: "raids",
-    title: "Raids",
+    title: "Chinh Phạt (Raids)",
     href: "/raids",
-    description: "Step-by-step walkthroughs for 6-player endgame activities.",
+    description: "Hướng dẫn chi tiết từng bước cho các hoạt động endgame 6 người.",
     icon: Swords,
     items: mapRaidsToItems(),
     locked: true,
@@ -58,18 +59,18 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
   },
   dungeons: {
     id: "dungeons",
-    title: "Dungeons",
+    title: "Hầm Ngục (Dungeons)",
     href: "/dungeons",
-    description: "Comprehensive guides for 3-player mini-raids.",
+    description: "Hướng dẫn toàn tập cho các mini-raid 3 người.",
     icon: ShieldAlert,
     items: mapDungeonsToItems(),
     themeColor: "green"
   },
   pantheon: {
     id: "pantheon",
-    title: "Pantheon",
+    title: "Đấu Trường Pantheon",
     href: "/pantheon",
-    description: "The ultimate boss rush experience. Face Destiny 2's most challenging foes back-to-back.",
+    description: "Trải nghiệm đánh boss liên hoàn đỉnh cao. Đối đầu với những kẻ thù khó nhằn nhất Destiny 2.",
     icon: Crown,
     items: mapPantheonToItems(),
     themeColor: "cyan"

@@ -6,21 +6,11 @@ import { DESTINY_TIMELINE, TimelineEra, TimelineEvent } from "@/data/timeline/in
 import { motion, useScroll, useTransform } from "motion/react";
 import { Calendar, Tag, ChevronDown } from "lucide-react";
 
-// ─── THEME COLOR MAP ─────────────────────────────────────────────────────────
-const themeColorMap: Record<string, { text: string; border: string; bg: string; glow: string; shadow: string; hex: string }> = {
-  cyan:   { text: "text-cyan-400",   border: "border-cyan-400",   bg: "bg-cyan-400",   glow: "drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]",   shadow: "shadow-[0_0_15px_rgba(34,211,238,0.4)]",   hex: "#22d3ee" },
-  green:  { text: "text-green-400",  border: "border-green-400",  bg: "bg-green-400",  glow: "drop-shadow-[0_0_8px_rgba(74,222,128,0.8)]",  shadow: "shadow-[0_0_15px_rgba(74,222,128,0.4)]",  hex: "#4ade80" },
-  yellow: { text: "text-yellow-400", border: "border-yellow-400", bg: "bg-yellow-400", glow: "drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]", shadow: "shadow-[0_0_15px_rgba(250,204,21,0.4)]", hex: "#facc15" },
-  orange: { text: "text-orange-500", border: "border-orange-500", bg: "bg-orange-500", glow: "drop-shadow-[0_0_8px_rgba(249,115,22,0.8)]", shadow: "shadow-[0_0_15px_rgba(249,115,22,0.4)]", hex: "#f97316" },
-  red:    { text: "text-red-500",    border: "border-red-500",    bg: "bg-red-500",    glow: "drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]",    shadow: "shadow-[0_0_15px_rgba(239,68,68,0.4)]",    hex: "#ef4444" },
-  zinc:   { text: "text-zinc-400",   border: "border-zinc-400",   bg: "bg-zinc-400",   glow: "drop-shadow-[0_0_8px_rgba(161,161,170,0.8)]",   shadow: "shadow-[0_0_15px_rgba(161,161,170,0.4)]",   hex: "#a1a1aa" },
-  purple: { text: "text-purple-400", border: "border-purple-400", bg: "bg-purple-400", glow: "drop-shadow-[0_0_8px_rgba(192,132,252,0.8)]", shadow: "shadow-[0_0_15px_rgba(192,132,252,0.4)]", hex: "#c084fc" },
-  blue:   { text: "text-blue-400",   border: "border-blue-400",   bg: "bg-blue-400",   glow: "drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]",   shadow: "shadow-[0_0_15px_rgba(96,165,250,0.4)]",   hex: "#60a5fa" },
-};
+import { getTheme } from "@/lib/theme";
 
 // ─── EVENT CARD ──────────────────────────────────────────────────────────────
 function EventCard({ event, isRightSide, themeColor }: { event: TimelineEvent; isRightSide: boolean; themeColor: string }) {
-  const theme = themeColorMap[themeColor] || themeColorMap.zinc;
+  const theme = getTheme(themeColor);
   return (
     <motion.div
       className={`bg-zinc-900/30 backdrop-blur-sm p-5 md:p-6 relative overflow-hidden group
@@ -59,7 +49,7 @@ function EventCard({ event, isRightSide, themeColor }: { event: TimelineEvent; i
 
 // ─── ERA HEADER ──────────────────────────────────────────────────────────────
 function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
-  const theme = themeColorMap[era.themeColor] || themeColorMap.zinc;
+  const theme = getTheme(era.themeColor);
   return (
     <motion.div
       initial={{ opacity: 0, y: 60 }}
@@ -84,8 +74,7 @@ function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
           transition={{ type: "spring" as const, stiffness: 120, damping: 20, delay: 0.1 }}
           className="mb-4"
         >
-          <span className={`text-xs font-mono tracking-[0.4em] uppercase ${theme.text} opacity-70`}>
-            Chương {String(index + 1).padStart(2, "0")}
+          <span className={`text-xs font-mono tracking-[0.4em] uppercase ${theme.text} opacity-70`}>Chương {String(index + 1).padStart(2, "0")}
           </span>
         </motion.div>
 
@@ -125,7 +114,7 @@ function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
 
 // ─── ERA EVENTS SECTION ──────────────────────────────────────────────────────
 function EraEvents({ era }: { era: TimelineEra }) {
-  const theme = themeColorMap[era.themeColor] || themeColorMap.zinc;
+  const theme = getTheme(era.themeColor);
   return (
     <div className="relative max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 pb-16">
       {/* Central vertical line */}
@@ -200,17 +189,13 @@ function HeroSection() {
           DESTINY
         </motion.div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500 mb-4 relative">
-          Destiny Universe
-        </h1>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500 mb-4 relative">Destiny Universe</h1>
         <motion.span
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: "spring" as const, stiffness: 100, damping: 15, delay: 0.3 }}
           className="block text-xl md:text-3xl font-bold tracking-[0.3em] text-zinc-400 uppercase"
-        >
-          Biên Niên Sử
-        </motion.span>
+        >Biên Niên Sử</motion.span>
       </motion.div>
 
       <motion.p
@@ -218,9 +203,7 @@ function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring" as const, stiffness: 80, delay: 0.5 }}
         className="text-zinc-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed mt-8 font-mono text-center relative z-10"
-      >
-        Toàn bộ các sự kiện quan trọng trong vũ trụ Destiny, từ thời kỳ Hỗn Mang đến Kỷ Nguyên Ánh Sáng và Bóng Tối.
-      </motion.p>
+      >Toàn bộ các sự kiện quan trọng trong vũ trụ Destiny, từ thời kỳ Hỗn Mang đến Kỷ Nguyên Ánh Sáng và Bóng Tối.</motion.p>
 
       {/* Scroll indicator */}
       <motion.div
@@ -289,7 +272,7 @@ function EraNav({ activeEraId, eraRefs }: { activeEraId: string; eraRefs: React.
           className="max-w-full px-2 md:px-4 py-1.5 flex items-center gap-0.5 flex-wrap justify-center"
         >
           {DESTINY_TIMELINE.map((era, idx) => {
-            const theme = themeColorMap[era.themeColor] || themeColorMap.zinc;
+            const theme = getTheme(era.themeColor);
             const isActive = activeEraId === era.id;
             return (
               <button
@@ -435,9 +418,7 @@ export function DestinyTimeline() {
           viewport={{ once: true }}
           className="text-center py-24"
         >
-          <p className="text-zinc-600 text-xs font-mono tracking-widest uppercase">
-            — Kết thúc Biên Niên Sử —
-          </p>
+          <p className="text-zinc-600 text-xs font-mono tracking-widest uppercase">— Kết thúc Biên Niên Sử —</p>
           <div className="mt-4 w-16 h-[2px] bg-neon-cyan/30 mx-auto" />
         </motion.div>
       </div>
