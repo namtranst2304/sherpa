@@ -1,4 +1,4 @@
-import { ShieldAlert, Swords, type LucideIcon } from "lucide-react"
+import { ShieldAlert, Swords, Crown, type LucideIcon } from "lucide-react"
 import { RAIDS_DATA, DUNGEONS_DATA, PANTHEON_DATA } from "@/data"
 import { ActivityData } from "./types"
 
@@ -42,7 +42,7 @@ const mapPantheonToItems = (): ActivityItem[] => {
   }))
 }
 
-import { Crown } from "lucide-react"
+
 
 export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
   raids: {

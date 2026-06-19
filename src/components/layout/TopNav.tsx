@@ -124,9 +124,6 @@ export function TopNav() {
           </NavigationMenu>
         </div>
 
-        <div className="flex flex-1 items-center justify-end space-x-2">
-          {/* Sign In removed */}
-        </div>
       </div>
     </header>
   )
