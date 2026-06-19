@@ -94,7 +94,7 @@ function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring" as const, stiffness: 100, damping: 18, delay: 0.15 }}
-          className={`text-3xl md:text-5xl font-black uppercase tracking-wider text-white mb-4 ${theme.glow}`}
+          className={`text-3xl md:text-5xl font-black uppercase tracking-wider text-white mb-4 leading-snug md:leading-snug py-1 ${theme.glow}`}
         >
           {era.name}
         </motion.h2>
@@ -127,7 +127,7 @@ function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
 function EraEvents({ era }: { era: TimelineEra }) {
   const theme = themeColorMap[era.themeColor] || themeColorMap.zinc;
   return (
-    <div className="relative max-w-7xl mx-auto px-4 pb-16">
+    <div className="relative max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 pb-16">
       {/* Central vertical line */}
       <motion.div
         className={`absolute left-8 md:left-1/2 md:-ml-[1px] top-0 bottom-0 w-[2px] ${theme.bg} opacity-20`}
@@ -411,7 +411,7 @@ export function DestinyTimeline() {
           >
             {/* Era divider line */}
             {index > 0 && (
-              <div className="max-w-7xl mx-auto px-4">
+              <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4">
                 <motion.div
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
