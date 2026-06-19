@@ -115,10 +115,9 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
       <motion.nav
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        className="fixed right-0 md:right-4 top-1/2 -translate-y-1/2 h-[80vh] min-h-[400px] max-h-[800px] z-50 py-4 flex flex-col items-end"
+        className="fixed right-0 md:right-4 top-1/2 -translate-y-1/2 h-[80vh] min-h-[400px] max-h-[800px] z-50 w-8 flex flex-col py-4"
       >
-
-      <div className="flex-1 w-8 relative flex items-center justify-center">
+        <div className="flex-1 relative flex items-center justify-center">
         {/* Background pill to make the line visible against text */}
         <div className="absolute inset-y-0 w-8 bg-black/20 backdrop-blur-sm rounded-full -z-10 border border-white/5" />
 
@@ -136,7 +135,7 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
             const isAutoScrolling = autoScrollState !== null;
             const isActive = isAutoScrolling ? (idx === autoScrollState.target) : (idx === navActiveIndex);
             const isHovered = hoveredEraId === era.id;
-            const isPast = idx <= navActiveIndex;
+            const isPast = idx <= effectiveActiveIndex;
             const theme = getTheme(era.themeColor);
 
             return (
@@ -189,7 +188,6 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
             );
           })}
         </div>
-      </div>
       </motion.nav>
     </>
   );
