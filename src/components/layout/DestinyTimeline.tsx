@@ -26,7 +26,7 @@ export function DestinyTimeline() {
   }, []);
 
   return (
-    <div className="bg-transparent min-h-screen font-sans text-zinc-100 overflow-x-hidden selection:bg-neon-cyan/30 selection:text-white pb-32">
+    <div className="bg-transparent min-h-screen font-sans text-zinc-100 overflow-x-hidden selection:bg-neon-cyan/30 selection:text-white pb-8">
       <ScrollProgress />
       <EraNav eraRefs={eraRefs} />
 
@@ -39,7 +39,7 @@ export function DestinyTimeline() {
             ref={(el) => {
               if (el) eraRefs.current.set(era.id, el);
             }}
-            className="mb-16 md:mb-24 scroll-mt-20"
+            className={`scroll-mt-20 ${idx !== DESTINY_TIMELINE.length - 1 ? "mb-16 md:mb-24" : "mb-8"}`}
           >
             <EraHeader era={era} index={idx} />
             <EraEvents era={era} />

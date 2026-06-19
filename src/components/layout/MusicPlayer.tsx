@@ -96,7 +96,7 @@ export function MusicPlayer() {
   return (
     <>
       {audioTemplate}
-      
+
       <div className="fixed bottom-8 left-8 z-50 flex items-center gap-3">
         {/* Nút Play/Pause kèm hiệu ứng nháy sáng (pulse) khi scroll */}
         <motion.button
@@ -131,14 +131,12 @@ export function MusicPlayer() {
           {/* Dòng chữ gợi ý mờ mờ */}
           <AnimatePresence>
             {showPulseHint && !isPlaying && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
                 className="absolute left-14 whitespace-nowrap text-xs text-neon-cyan/80 font-mono tracking-wider pointer-events-none"
-              >
-                Click to play 🎵
-              </motion.div>
+              ></motion.div>
             )}
           </AnimatePresence>
         </motion.button>
