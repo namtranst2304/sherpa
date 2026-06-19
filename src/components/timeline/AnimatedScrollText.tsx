@@ -9,7 +9,7 @@ export function AnimatedScrollText() {
 
   return (
     <span 
-      className="text-zinc-500 transition-colors text-xs font-mono tracking-[0.4em] uppercase relative flex"
+      className="text-zinc-500 transition-colors text-lg md:text-2xl font-mono tracking-[0.4em] uppercase relative flex font-bold"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

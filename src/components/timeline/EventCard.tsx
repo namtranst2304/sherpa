@@ -5,6 +5,13 @@ import { CyberBadge } from "@/components/ui/CyberComponents";
 import { TimelineEvent } from "@/data/timeline/index";
 import { getTheme } from "@/lib/theme";
 
+const renderDescription = (text: string) => {
+  if (!text) return null;
+  if (!text.includes('**')) return text;
+  const parts = text.split('**');
+  return parts.map((part, i) => i % 2 === 1 ? <strong key={i} className="text-white font-bold">{part}</strong> : part);
+}
+
 export function EventCard({ event, isRightSide, themeColor, center }: { event: TimelineEvent; isRightSide: boolean; themeColor: string; center?: boolean }) {
   const theme = getTheme(themeColor);
   return (
@@ -22,7 +29,7 @@ export function EventCard({ event, isRightSide, themeColor, center }: { event: T
         {event.title}
       </h4>
       <p className={`text-zinc-300 text-sm md:text-base leading-relaxed mb-4 group-hover:text-zinc-200 transition-colors relative z-10 font-mono whitespace-pre-line text-justify`}>
-        {event.description}
+        {renderDescription(event.description)}
       </p>
       <div className={`flex flex-wrap items-center gap-2 relative z-10 ${center ? "justify-center" : isRightSide ? "md:justify-start justify-start" : "md:justify-end justify-start"}`}>
         {event.date && (

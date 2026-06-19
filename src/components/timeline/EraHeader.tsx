@@ -7,11 +7,11 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
   const theme = getTheme(era.themeColor);
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ type: "spring" as const, stiffness: 80, damping: 20 }}
-      className="relative py-16 md:py-24 mb-8"
+      className="relative py-8 md:py-12 mb-8"
     >
       {/* Giant background number */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">

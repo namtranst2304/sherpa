@@ -6,6 +6,7 @@ import { TopNav } from "@/components/layout/TopNav";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
+import { MusicPlayer } from "@/components/layout/MusicPlayer";
 
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
@@ -32,10 +33,11 @@ export default function RootLayout({
               <div className="relative flex min-h-screen flex-col w-full">
                 <TopNav />
                 {/* Phần thân chính */}
-                <div className="flex-1 flex overflow-hidden">
+                <div className="flex-1 flex flex-col">
                   {children}
                 </div>
                 <ScrollToTop />
+                <MusicPlayer />
               </div>
             </SidebarProvider>
           </TooltipProvider>
