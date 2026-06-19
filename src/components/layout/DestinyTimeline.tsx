@@ -210,17 +210,62 @@ function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 cursor-pointer z-20 group"
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <span className="text-zinc-600 text-[10px] font-mono tracking-widest uppercase">Cuộn để khám phá</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-5 h-5 text-neon-cyan/50" />
-        </motion.div>
+        <AnimatedScrollText />
+        
+        {/* Cascading Chevrons */}
+        <div className="flex flex-col items-center -space-y-3 pt-2">
+          <motion.div animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0 }}>
+             <ChevronDown className="w-4 h-4 text-neon-cyan/40" />
+          </motion.div>
+          <motion.div animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}>
+             <ChevronDown className="w-5 h-5 text-neon-cyan/70" />
+          </motion.div>
+          <motion.div animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}>
+             <ChevronDown className="w-6 h-6 text-neon-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+          </motion.div>
+        </div>
       </motion.div>
     </section>
+  );
+}
+
+function AnimatedScrollText() {
+  const [isHovered, setIsHovered] = useState(false);
+  const text = "BEGIN DISCOVERY";
+
+  return (
+    <span 
+      className="text-zinc-500 transition-colors text-xs font-mono tracking-[0.4em] uppercase relative flex"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          animate={isHovered ? {
+            opacity: 1,
+            textShadow: "0 0 12px rgba(34,211,238,0.8)",
+            color: "#22d3ee"
+          } : { 
+            opacity: [0.3, 1, 0.3],
+            textShadow: ["0 0 0px transparent", "0 0 12px rgba(34,211,238,0.8)", "0 0 0px transparent"],
+            color: ["#71717a", "#22d3ee", "#71717a"]
+          }}
+          transition={isHovered ? { duration: 0.2 } : { 
+            duration: 3, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: index * 0.15 
+          }}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+      <span className={`absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent transition-transform duration-500 ${isHovered ? 'scale-x-100' : 'scale-x-0'}`} />
+    </span>
   );
 }
 
