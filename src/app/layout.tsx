@@ -7,6 +7,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { MusicPlayer } from "@/components/layout/MusicPlayer";
+import { WelcomeScreen } from "@/components/layout/WelcomeScreen";
 
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
@@ -27,6 +28,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <WelcomeScreen />
           <TooltipProvider>
             {/* SidebarProvider bọc toàn bộ để các trang con có thể dùng GuideSidebar */}
             <SidebarProvider defaultOpen={true}>

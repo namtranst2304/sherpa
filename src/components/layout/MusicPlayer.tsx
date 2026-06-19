@@ -22,77 +22,45 @@ export function MusicPlayer() {
     if (!audio) return;
 
     audio.volume = 0.15;
-    let interactionListenersActive = true;
 
-    const attemptPlay = () => {
-      const playPromise = audio.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-            setShowPulseHint(false);
-            if (interactionListenersActive) {
-              removeListeners();
-              interactionListenersActive = false;
-            }
-          })
-          .catch(() => {
-            setIsPlaying(false);
-          });
-      }
+    // Đồng bộ state isPlaying thông qua event gốc của thẻ audio
+    const syncState = () => {
+      setIsPlaying(!audio.paused);
+      if (!audio.paused) setShowPulseHint(false);
     };
 
-    attemptPlay();
+    audio.addEventListener("play", syncState);
+    audio.addEventListener("pause", syncState);
 
-    // Lắng nghe tương tác HỢP LỆ (chỉ click/phím/touch mới lách được luật của trình duyệt)
-    const handleValidInteraction = () => {
-      if (audio.paused) attemptPlay();
-    };
+    // 1. Thử auto-play ngay lập tức
+    audio.play().catch(() => {
+      // 2. Nếu browser chặn, chờ tương tác đầu tiên của user để bật nhạc
+      const unlockAudio = () => audio.play().catch(() => {});
+      const events = ["click", "keydown", "touchstart", "pointerdown"];
+      
+      events.forEach((evt) => window.addEventListener(evt, unlockAudio, { once: true, passive: true }));
 
-    // Bắt sự kiện scroll riêng: vì browser CẤM bật loa bằng scroll, 
-    // mình sẽ làm nút Play nháy sáng để gợi ý user click 1 phát.
-    const handleScrollHint = () => {
-      if (audio.paused && interactionListenersActive) {
-        setShowPulseHint(true);
-      }
-    };
+      // 3. Nếu user cuộn trang mà nhạc vẫn chưa bật -> nháy sáng nút Play
+      const hintScroll = () => { if (audio.paused) setShowPulseHint(true); };
+      window.addEventListener("scroll", hintScroll, { once: true, passive: true });
 
-    const addListeners = () => {
-      ["click", "pointerdown", "keydown", "touchstart"].forEach((evt) =>
-        window.addEventListener(evt, handleValidInteraction, { passive: true })
-      );
-      window.addEventListener("scroll", handleScrollHint, { passive: true });
-    };
-
-    const removeListeners = () => {
-      ["click", "pointerdown", "keydown", "touchstart"].forEach((evt) =>
-        window.removeEventListener(evt, handleValidInteraction)
-      );
-      window.removeEventListener("scroll", handleScrollHint);
-    };
-
-    addListeners();
+      return () => {
+        events.forEach((evt) => window.removeEventListener(evt, unlockAudio));
+        window.removeEventListener("scroll", hintScroll);
+      };
+    });
 
     return () => {
-      removeListeners();
-      interactionListenersActive = false;
+      audio.removeEventListener("play", syncState);
+      audio.removeEventListener("pause", syncState);
     };
   }, [isVisible]);
 
   const togglePlay = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
+    if (audioRef.current?.paused) {
+      audioRef.current.play().catch(console.error);
     } else {
-      audio.play()
-        .then(() => {
-          setIsPlaying(true);
-          setShowPulseHint(false);
-        })
-        .catch((e) => console.error("Play lỗi:", e));
+      audioRef.current?.pause();
     }
   };
 
