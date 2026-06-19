@@ -221,6 +221,9 @@ export function TopNav() {
           </NavigationMenu>
         </div>
 
+        {/* Portal Target for Dynamic Headers (e.g., Timeline Active Chapter) */}
+        <div id="topnav-portal-target" className="ml-auto flex h-full items-center" />
+
       </div>
     </header>
   )
