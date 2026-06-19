@@ -12,8 +12,10 @@ import week2 from "./pantheon/week-2.json"
 import week3 from "./pantheon/week-3.json"
 import week4 from "./pantheon/week-4.json"
 
+import equilibrium from "./dungeons/equilibrium.json"
+
 export const DUNGEONS_DATA: Record<string, ActivityData> = {
-  // Dungeons ...
+  "equilibrium": equilibrium as unknown as ActivityData,
 }
 
 export const PANTHEON_DATA: Record<string, ActivityData> = {

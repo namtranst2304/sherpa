@@ -1,7 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-export type CyberVariant = 'cyan' | 'orange' | 'yellow' | 'red' | 'zinc';
+export type CyberVariant = 'cyan' | 'orange' | 'yellow' | 'red' | 'green' | 'zinc';
 export type CyberSize = 'sm' | 'md' | 'lg';
 
 // ─── CYBER BUTTON ────────────────────────────────────────────────────────────
@@ -37,6 +37,10 @@ export function CyberButton({
     red: cn(
       'border-neon-red text-neon-red hover:bg-neon-red/20',
       glow && 'shadow-neon-red hover:shadow-neon-red-hover'
+    ),
+    green: cn(
+      'border-neon-green text-neon-green hover:bg-neon-green/20',
+      glow && 'shadow-neon-green hover:shadow-neon-green-hover'
     ),
     zinc: 'border-zinc-600 text-zinc-300 hover:border-zinc-400 hover:bg-zinc-800/30'
   };
@@ -81,6 +85,7 @@ export function CyberCard({
     orange: 'border-neon-orange/40 shadow-[0_0_15px_rgba(255,0,255,0.05)]',
     yellow: 'border-neon-yellow/40 shadow-[0_0_15px_rgba(252,226,5,0.05)]',
     red: 'border-neon-red/40 shadow-[0_0_15px_rgba(255,0,0,0.05)]',
+    green: 'border-neon-green/40 shadow-[0_0_15px_rgba(57,255,20,0.05)]',
     zinc: 'border-zinc-800'
   };
 
@@ -89,6 +94,7 @@ export function CyberCard({
     orange: 'border-neon-orange',
     yellow: 'border-neon-yellow',
     red: 'border-neon-red',
+    green: 'border-neon-green',
     zinc: 'border-zinc-500'
   };
 
@@ -132,6 +138,7 @@ export function CyberBadge({
     orange: 'bg-neon-orange/10 text-neon-orange border-neon-orange shadow-[0_0_8px_rgba(255,0,255,0.15)]',
     yellow: 'bg-neon-yellow/10 text-neon-yellow border-neon-yellow shadow-[0_0_8px_rgba(252,226,5,0.15)]',
     red: 'bg-neon-red/10 text-neon-red border-neon-red shadow-[0_0_8px_rgba(255,0,0,0.15)]',
+    green: 'bg-neon-green/10 text-neon-green border-neon-green shadow-[0_0_8px_rgba(57,255,20,0.15)]',
     zinc: 'bg-zinc-900/50 text-zinc-500 border-zinc-700'
   };
 
@@ -140,6 +147,7 @@ export function CyberBadge({
     orange: 'bg-neon-orange shadow-[0_0_8px_#ff8c00]',
     yellow: 'bg-neon-yellow shadow-[0_0_8px_#fce205]',
     red: 'bg-neon-red shadow-[0_0_8px_#ff0000]',
+    green: 'bg-neon-green shadow-[0_0_8px_#39ff14]',
     zinc: 'bg-zinc-600'
   };
 

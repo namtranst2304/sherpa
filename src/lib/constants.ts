@@ -16,6 +16,7 @@ export type ActivityCategory = {
   icon: LucideIcon
   items: ActivityItem[]
   locked?: boolean
+  themeColor: "cyan" | "green" | "yellow" | "orange" | "red" | "zinc"
 }
 
 const mapRaidsToItems = (): ActivityItem[] => {
@@ -53,6 +54,7 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     icon: Swords,
     items: mapRaidsToItems(),
     locked: true,
+    themeColor: "cyan"
   },
   dungeons: {
     id: "dungeons",
@@ -61,6 +63,7 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     description: "Comprehensive guides for 3-player mini-raids.",
     icon: ShieldAlert,
     items: mapDungeonsToItems(),
+    themeColor: "green"
   },
   pantheon: {
     id: "pantheon",
@@ -69,5 +72,6 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     description: "The ultimate boss rush experience. Face Destiny 2's most challenging foes back-to-back.",
     icon: Crown,
     items: mapPantheonToItems(),
+    themeColor: "cyan"
   }
 }

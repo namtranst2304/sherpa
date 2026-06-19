@@ -50,13 +50,56 @@ export default function Home() {
           {activities.map((category) => {
             const Icon = category.icon
             const isLocked = category.locked
+            const theme = category.themeColor || "cyan"
+            
+            const themeStyles = {
+              cyan: {
+                iconBox: 'bg-neon-cyan/20',
+                icon: 'text-neon-cyan',
+                title: 'text-neon-cyan text-glow-cyan',
+                arrow: 'text-neon-cyan'
+              },
+              green: {
+                iconBox: 'bg-neon-green/20',
+                icon: 'text-neon-green',
+                title: 'text-neon-green text-glow-green',
+                arrow: 'text-neon-green'
+              },
+              red: {
+                iconBox: 'bg-neon-red/10',
+                icon: 'text-neon-red opacity-80',
+                title: 'text-neon-red text-glow-red',
+                arrow: 'text-zinc-600'
+              },
+              orange: {
+                iconBox: 'bg-neon-orange/20',
+                icon: 'text-neon-orange',
+                title: 'text-neon-orange text-glow-orange',
+                arrow: 'text-neon-orange'
+              },
+              yellow: {
+                iconBox: 'bg-neon-yellow/20',
+                icon: 'text-neon-yellow',
+                title: 'text-neon-yellow text-glow-yellow',
+                arrow: 'text-neon-yellow'
+              },
+              zinc: {
+                iconBox: 'bg-zinc-800/20',
+                icon: 'text-zinc-400',
+                title: 'text-zinc-400',
+                arrow: 'text-zinc-400'
+              }
+            }
+
+            const currentStyle = isLocked ? themeStyles.red : themeStyles[theme]
+
             return (
-              <CyberCard key={category.id} variant={isLocked ? "red" : "cyan"} withCorners className="flex flex-col h-full bg-black">
+              <CyberCard key={category.id} variant={isLocked ? "red" : theme} withCorners className="flex flex-col h-full bg-black">
                 <div className="flex items-center gap-3 mb-4 border-b border-zinc-800 pb-4">
-                  <div className={`p-3 rounded-md ${isLocked ? 'bg-neon-red/10' : 'bg-neon-cyan/20'}`}>
-                    <Icon className={`w-8 h-8 ${isLocked ? 'text-neon-red opacity-80' : 'text-neon-cyan'}`} />
+                  <div className={`p-3 rounded-md ${currentStyle.iconBox}`}>
+                    <Icon className={`w-8 h-8 ${currentStyle.icon}`} />
                   </div>
-                  <h2 className={`text-2xl font-black uppercase tracking-widest flex items-center gap-3 ${isLocked ? 'text-neon-red text-glow-red' : 'text-neon-cyan text-glow-cyan'}`}>
+                  <h2 className={`text-2xl font-black uppercase tracking-widest flex items-center gap-3 ${currentStyle.title}`}>
                     {category.title}
                     {isLocked && <CyberBadge variant="red" pulse>UPDATING</CyberBadge>}
                   </h2>
@@ -67,7 +110,7 @@ export default function Home() {
                 <ul className="space-y-3 mb-8">
                   {category.items.map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
-                      <span className={`mt-1 text-xs ${isLocked ? 'text-zinc-600' : 'text-neon-cyan'}`}>▶</span>
+                      <span className={`mt-1 text-xs ${currentStyle.arrow}`}>▶</span>
                       <span className={`text-sm ${isLocked ? 'text-zinc-500' : 'text-zinc-300'}`}>{item.title}</span>
                     </li>
                   ))}
@@ -79,7 +122,7 @@ export default function Home() {
                     </CyberButton>
                   ) : (
                     <Link href={category.href} className="w-full block">
-                      <CyberButton variant="cyan" className="w-full justify-center">
+                      <CyberButton variant={theme} className="w-full justify-center">
                         INITIALIZE {category.title.toUpperCase()}
                       </CyberButton>
                     </Link>

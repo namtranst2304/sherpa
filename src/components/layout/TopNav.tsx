@@ -69,21 +69,88 @@ export function TopNav() {
             <NavigationMenuList>
               {activities.map((category) => {
                 const Icon = category.icon
+                const theme = category.themeColor || "cyan"
+                
+                const themeStyles = {
+                  cyan: {
+                    trigger: 'hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-neon-cyan/30 data-[state=open]:bg-neon-cyan/10 data-[state=open]:text-neon-cyan data-[state=open]:border-neon-cyan/30',
+                    dropdown: 'border-neon-cyan/30 shadow-[0_10px_40px_rgba(0,243,255,0.2)]',
+                    cardBg: 'bg-neon-cyan/5 border-neon-cyan/30 shadow-[inset_0_0_20px_rgba(0,243,255,0.05)]',
+                    cardGlow: 'bg-neon-cyan/10',
+                    icon: 'text-neon-cyan',
+                    title: 'text-neon-cyan text-glow-cyan',
+                    hoverItem: 'hover:bg-neon-cyan/10 hover:border-neon-cyan group-hover:text-neon-cyan group-hover:text-glow-cyan',
+                    arrow: 'group-hover:text-neon-cyan/70'
+                  },
+                  green: {
+                    trigger: 'hover:bg-neon-green/10 hover:text-neon-green hover:border-neon-green/30 data-[state=open]:bg-neon-green/10 data-[state=open]:text-neon-green data-[state=open]:border-neon-green/30',
+                    dropdown: 'border-neon-green/30 shadow-[0_10px_40px_rgba(57,255,20,0.2)]',
+                    cardBg: 'bg-neon-green/5 border-neon-green/30 shadow-[inset_0_0_20px_rgba(57,255,20,0.05)]',
+                    cardGlow: 'bg-neon-green/10',
+                    icon: 'text-neon-green',
+                    title: 'text-neon-green text-glow-green',
+                    hoverItem: 'hover:bg-neon-green/10 hover:border-neon-green group-hover:text-neon-green group-hover:text-glow-green',
+                    arrow: 'group-hover:text-neon-green/70'
+                  },
+                  red: {
+                    trigger: 'hover:bg-neon-red/10 hover:text-neon-red hover:border-neon-red/30 data-[state=open]:bg-neon-red/10 data-[state=open]:text-neon-red data-[state=open]:border-neon-red/30',
+                    dropdown: 'border-neon-red/30 shadow-[0_10px_40px_rgba(255,0,0,0.2)]',
+                    cardBg: 'bg-black border-neon-red/30 shadow-[inset_0_0_20px_rgba(255,0,0,0.1)]',
+                    cardGlow: 'bg-neon-red/5',
+                    icon: 'text-neon-red opacity-60',
+                    title: 'text-neon-red text-glow-red',
+                    hoverItem: 'hover:bg-neon-red/10 hover:border-neon-red group-hover:text-neon-red group-hover:text-glow-red',
+                    arrow: 'group-hover:text-neon-red/70'
+                  },
+                  orange: {
+                    trigger: 'hover:bg-neon-orange/10 hover:text-neon-orange hover:border-neon-orange/30 data-[state=open]:bg-neon-orange/10 data-[state=open]:text-neon-orange data-[state=open]:border-neon-orange/30',
+                    dropdown: 'border-neon-orange/30 shadow-[0_10px_40px_rgba(255,140,0,0.2)]',
+                    cardBg: 'bg-neon-orange/5 border-neon-orange/30 shadow-[inset_0_0_20px_rgba(255,140,0,0.05)]',
+                    cardGlow: 'bg-neon-orange/10',
+                    icon: 'text-neon-orange',
+                    title: 'text-neon-orange text-glow-orange',
+                    hoverItem: 'hover:bg-neon-orange/10 hover:border-neon-orange group-hover:text-neon-orange group-hover:text-glow-orange',
+                    arrow: 'group-hover:text-neon-orange/70'
+                  },
+                  yellow: {
+                    trigger: 'hover:bg-neon-yellow/10 hover:text-neon-yellow hover:border-neon-yellow/30 data-[state=open]:bg-neon-yellow/10 data-[state=open]:text-neon-yellow data-[state=open]:border-neon-yellow/30',
+                    dropdown: 'border-neon-yellow/30 shadow-[0_10px_40px_rgba(252,226,5,0.2)]',
+                    cardBg: 'bg-neon-yellow/5 border-neon-yellow/30 shadow-[inset_0_0_20px_rgba(252,226,5,0.05)]',
+                    cardGlow: 'bg-neon-yellow/10',
+                    icon: 'text-neon-yellow',
+                    title: 'text-neon-yellow text-glow-yellow',
+                    hoverItem: 'hover:bg-neon-yellow/10 hover:border-neon-yellow group-hover:text-neon-yellow group-hover:text-glow-yellow',
+                    arrow: 'group-hover:text-neon-yellow/70'
+                  },
+                  zinc: {
+                    trigger: 'hover:bg-zinc-800/50 hover:text-zinc-300 hover:border-zinc-500/30 data-[state=open]:bg-zinc-800/50 data-[state=open]:text-zinc-300 data-[state=open]:border-zinc-500/30',
+                    dropdown: 'border-zinc-800/50 shadow-[0_10px_40px_rgba(0,0,0,0.5)]',
+                    cardBg: 'bg-zinc-900/20 border-zinc-800/50 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]',
+                    cardGlow: 'bg-zinc-800/20',
+                    icon: 'text-zinc-400',
+                    title: 'text-zinc-300',
+                    hoverItem: 'hover:bg-zinc-800/30 hover:border-zinc-500 group-hover:text-zinc-300',
+                    arrow: 'group-hover:text-zinc-400'
+                  }
+                }
+
+                const currentStyle = category.locked ? themeStyles.red : themeStyles[theme]
+
                 return (
                   <NavigationMenuItem key={category.id}>
-                    <NavigationMenuTrigger className="bg-transparent hover:bg-neon-cyan/10 hover:text-neon-cyan text-zinc-300 uppercase tracking-widest font-mono text-sm border border-transparent hover:border-neon-cyan/30 rounded-none transition-all data-[state=open]:bg-neon-cyan/10 data-[state=open]:text-neon-cyan data-[state=open]:border-neon-cyan/30">
+                    <NavigationMenuTrigger className={`bg-transparent text-zinc-300 uppercase tracking-widest font-mono text-sm border border-transparent rounded-none transition-all ${currentStyle.trigger}`}>
                       {category.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-black/95 backdrop-blur-xl border border-neon-cyan/30 shadow-[0_10px_40px_rgba(0,243,255,0.2)]">
+                      <ul className={`grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-black/95 backdrop-blur-xl border ${currentStyle.dropdown}`}>
                         <li className="row-span-4">
                           {category.locked ? (
                             <div
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-black p-6 outline-none border border-neon-red/30 shadow-[inset_0_0_20px_rgba(255,0,0,0.1)] relative overflow-hidden"
+                              className={`flex h-full w-full select-none flex-col justify-start rounded-md p-6 outline-none relative overflow-hidden ${currentStyle.cardBg}`}
                             >
                               <div className="absolute inset-0 bg-neon-red/5 animate-pulse" />
-                              <Icon className="h-6 w-6 text-neon-red mb-2 opacity-60" />
-                              <div className="mb-2 mt-4 text-lg font-black uppercase text-neon-red text-glow-red tracking-widest flex items-center gap-2">
+                              <Icon className={`h-6 w-6 mb-2 ${currentStyle.icon}`} />
+                              <div className={`mb-2 mt-4 text-lg font-black uppercase tracking-widest flex items-center gap-2 ${currentStyle.title}`}>
                                 {category.title}
                                 <span className="text-[10px] px-1.5 py-0.5 border border-neon-red bg-neon-red/20 text-neon-red animate-pulse">
                                   UPDATING
@@ -95,11 +162,11 @@ export function TopNav() {
                             </div>
                           ) : (
                             <div
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-neon-cyan/5 p-6 outline-none border border-neon-cyan/30 shadow-[inset_0_0_20px_rgba(0,243,255,0.05)] relative overflow-hidden"
+                              className={`flex h-full w-full select-none flex-col justify-start rounded-md p-6 outline-none relative overflow-hidden ${currentStyle.cardBg}`}
                             >
-                              <div className="absolute top-0 right-0 w-32 h-32 bg-neon-cyan/10 blur-3xl -mr-10 -mt-10 pointer-events-none" />
-                              <Icon className="h-6 w-6 text-neon-cyan mb-2" />
-                              <div className="mb-2 mt-4 text-lg font-medium uppercase text-neon-cyan text-glow-cyan tracking-widest">
+                              <div className={`absolute top-0 right-0 w-32 h-32 blur-3xl -mr-10 -mt-10 pointer-events-none ${currentStyle.cardGlow}`} />
+                              <Icon className={`h-6 w-6 mb-2 ${currentStyle.icon}`} />
+                              <div className={`mb-2 mt-4 text-lg font-medium uppercase tracking-widest ${currentStyle.title}`}>
                                 {category.title}
                               </div>
                               <p className="text-sm leading-tight text-muted-foreground font-mono">
@@ -111,7 +178,7 @@ export function TopNav() {
 
                         {/* Map qua từng item nhỏ bên trong */}
                         {category.items.slice(0, 4).map((item) => (
-                          <ListItem key={item.title} href={item.href} title={item.title}>
+                          <ListItem key={item.title} href={item.href} title={item.title} hoverClass={currentStyle.hoverItem} arrowClass={currentStyle.arrow}>
                             {item.description}
                           </ListItem>
                         ))}
@@ -129,21 +196,22 @@ export function TopNav() {
   )
 }
 
-const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a"> & { title: string }>(
-  ({ className, title, children, ...props }, ref) => {
+const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a"> & { title: string, hoverClass?: string, arrowClass?: string }>(
+  ({ className, title, children, hoverClass, arrowClass, ...props }, ref) => {
     return (
       <li>
         <NavigationMenuLink asChild>
           <a
             ref={ref}
             className={cn(
-              "block select-none space-y-1 rounded-none p-3 leading-none no-underline outline-none transition-all hover:bg-neon-cyan/10 border-l-2 border-transparent hover:border-neon-cyan group",
+              "block select-none space-y-1 rounded-none p-3 leading-none no-underline outline-none transition-all border-l-2 border-transparent group",
+              hoverClass || "hover:bg-neon-cyan/10 hover:border-neon-cyan",
               className
             )}
             {...props}
           >
-            <div className="text-sm font-bold uppercase tracking-wider text-zinc-300 group-hover:text-neon-cyan group-hover:text-glow-cyan transition-colors">{title}</div>
-            <p className="line-clamp-2 text-xs leading-snug text-zinc-500 font-mono mt-2 group-hover:text-neon-cyan/70 transition-colors">
+            <div className="text-sm font-bold uppercase tracking-wider text-zinc-300 transition-colors">{title}</div>
+            <p className={cn("line-clamp-2 text-xs leading-snug text-zinc-500 font-mono mt-2 transition-colors", arrowClass)}>
               {children}
             </p>
           </a>
