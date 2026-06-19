@@ -36,16 +36,47 @@ export function TopNav() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col gap-4 mt-8">
-                <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-                  <AstronautIcon className="h-5 w-5" />
+              <nav className="flex flex-col mt-8 overflow-y-auto max-h-[80vh] pr-2">
+                <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6">
+                  <div className="p-1.5 bg-neon-cyan/10 border border-neon-cyan/30 rounded-sm">
+                    <AstronautIcon className="h-5 w-5 text-neon-cyan" />
+                  </div>
                   <span>D2 Sherpa</span>
                 </Link>
-                {activities.map((act) => (
-                  <Link key={`mobile-${act.id}`} href={act.href} className="text-muted-foreground hover:text-foreground uppercase font-medium">
-                    {act.title}
-                  </Link>
-                ))}
+                <div className="flex flex-col gap-6">
+                  {activities.map((act) => {
+                    const theme = act.themeColor || "cyan"
+                    const themeText = {
+                      cyan: 'text-neon-cyan',
+                      green: 'text-neon-green',
+                      red: 'text-neon-red',
+                      orange: 'text-neon-orange',
+                      yellow: 'text-neon-yellow',
+                      zinc: 'text-zinc-400'
+                    }
+                    const titleColor = act.locked ? 'text-neon-red' : themeText[theme]
+                    
+                    return (
+                      <div key={`mobile-${act.id}`} className="flex flex-col gap-2">
+                        <div className={`text-xs font-bold tracking-widest uppercase ${titleColor}`}>
+                          {act.title}
+                          {act.locked && <span className="ml-2 text-[8px] border border-neon-red px-1 bg-neon-red/20 text-neon-red">LOCKED</span>}
+                        </div>
+                        <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
+                          {act.items.map((item) => (
+                            <Link 
+                              key={`mobile-item-${item.title}`} 
+                              href={act.locked ? "#" : item.href} 
+                              className={`py-1.5 text-sm font-mono transition-colors ${act.locked ? 'text-zinc-600 cursor-not-allowed' : 'text-zinc-400 hover:text-foreground'}`}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
               </nav>
             </SheetContent>
           </Sheet>

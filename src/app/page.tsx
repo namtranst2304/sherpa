@@ -36,7 +36,7 @@ export default function Home() {
                     Explore {act.title} <CyberBadge variant="red" pulse>UPDATING</CyberBadge>
                   </span>
                 ) : (
-                  <Link href={act.href}>
+                  <Link href={act.items[0]?.href || act.href}>
                     Explore {act.title}
                   </Link>
                 )}
@@ -121,7 +121,7 @@ export default function Home() {
                       SYSTEM OFFLINE
                     </CyberButton>
                   ) : (
-                    <Link href={category.href} className="w-full block">
+                    <Link href={category.items[0]?.href || category.href} className="w-full block">
                       <CyberButton variant={theme} className="w-full justify-center">
                         INITIALIZE {category.title.toUpperCase()}
                       </CyberButton>
