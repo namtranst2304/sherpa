@@ -49,7 +49,7 @@ const mapPantheonToItems = (): ActivityItem[] => {
 export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
   raids: {
     id: "raids",
-    title: "Chinh Phạt (Raids)",
+    title: "Raids",
     href: "/raids",
     description: "Hướng dẫn chi tiết từng bước cho các hoạt động endgame 6 người.",
     icon: Swords,
@@ -59,7 +59,7 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
   },
   dungeons: {
     id: "dungeons",
-    title: "Hầm Ngục (Dungeons)",
+    title: "Dungeons",
     href: "/dungeons",
     description: "Hướng dẫn toàn tập cho các mini-raid 3 người.",
     icon: ShieldAlert,
@@ -68,7 +68,7 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
   },
   pantheon: {
     id: "pantheon",
-    title: "Đấu Trường Pantheon",
+    title: "Pantheon",
     href: "/pantheon",
     description: "Trải nghiệm đánh boss liên hoàn đỉnh cao. Đối đầu với những kẻ thù khó nhằn nhất Destiny 2.",
     icon: Crown,

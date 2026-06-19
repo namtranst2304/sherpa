@@ -18,6 +18,78 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { DESTINY_ACTIVITIES } from "@/lib/constants"
 
+const THEME_TEXT = {
+  cyan: 'text-neon-cyan',
+  green: 'text-neon-green',
+  red: 'text-neon-red',
+  orange: 'text-neon-orange',
+  yellow: 'text-neon-yellow',
+  zinc: 'text-zinc-400'
+} as const;
+
+const TOPNAV_THEMES = {
+  cyan: {
+    trigger: 'hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-neon-cyan/30 data-[state=open]:bg-neon-cyan/10 data-[state=open]:text-neon-cyan data-[state=open]:border-neon-cyan/30',
+    dropdown: 'border-neon-cyan/30 shadow-[0_10px_40px_rgba(0,243,255,0.2)]',
+    cardBg: 'bg-neon-cyan/5 border-neon-cyan/30 shadow-[inset_0_0_20px_rgba(0,243,255,0.05)]',
+    cardGlow: 'bg-neon-cyan/10',
+    icon: 'text-neon-cyan',
+    title: 'text-neon-cyan text-glow-cyan',
+    hoverItem: 'hover:bg-neon-cyan/10 hover:border-neon-cyan group-hover:text-neon-cyan group-hover:text-glow-cyan',
+    arrow: 'group-hover:text-neon-cyan/70'
+  },
+  green: {
+    trigger: 'hover:bg-neon-green/10 hover:text-neon-green hover:border-neon-green/30 data-[state=open]:bg-neon-green/10 data-[state=open]:text-neon-green data-[state=open]:border-neon-green/30',
+    dropdown: 'border-neon-green/30 shadow-[0_10px_40px_rgba(57,255,20,0.2)]',
+    cardBg: 'bg-neon-green/5 border-neon-green/30 shadow-[inset_0_0_20px_rgba(57,255,20,0.05)]',
+    cardGlow: 'bg-neon-green/10',
+    icon: 'text-neon-green',
+    title: 'text-neon-green text-glow-green',
+    hoverItem: 'hover:bg-neon-green/10 hover:border-neon-green group-hover:text-neon-green group-hover:text-glow-green',
+    arrow: 'group-hover:text-neon-green/70'
+  },
+  red: {
+    trigger: 'hover:bg-neon-red/10 hover:text-neon-red hover:border-neon-red/30 data-[state=open]:bg-neon-red/10 data-[state=open]:text-neon-red data-[state=open]:border-neon-red/30',
+    dropdown: 'border-neon-red/30 shadow-[0_10px_40px_rgba(255,0,0,0.2)]',
+    cardBg: 'bg-black border-neon-red/30 shadow-[inset_0_0_20px_rgba(255,0,0,0.1)]',
+    cardGlow: 'bg-neon-red/5',
+    icon: 'text-neon-red opacity-60',
+    title: 'text-neon-red text-glow-red',
+    hoverItem: 'hover:bg-neon-red/10 hover:border-neon-red group-hover:text-neon-red group-hover:text-glow-red',
+    arrow: 'group-hover:text-neon-red/70'
+  },
+  orange: {
+    trigger: 'hover:bg-neon-orange/10 hover:text-neon-orange hover:border-neon-orange/30 data-[state=open]:bg-neon-orange/10 data-[state=open]:text-neon-orange data-[state=open]:border-neon-orange/30',
+    dropdown: 'border-neon-orange/30 shadow-[0_10px_40px_rgba(255,140,0,0.2)]',
+    cardBg: 'bg-neon-orange/5 border-neon-orange/30 shadow-[inset_0_0_20px_rgba(255,140,0,0.05)]',
+    cardGlow: 'bg-neon-orange/10',
+    icon: 'text-neon-orange',
+    title: 'text-neon-orange text-glow-orange',
+    hoverItem: 'hover:bg-neon-orange/10 hover:border-neon-orange group-hover:text-neon-orange group-hover:text-glow-orange',
+    arrow: 'group-hover:text-neon-orange/70'
+  },
+  yellow: {
+    trigger: 'hover:bg-neon-yellow/10 hover:text-neon-yellow hover:border-neon-yellow/30 data-[state=open]:bg-neon-yellow/10 data-[state=open]:text-neon-yellow data-[state=open]:border-neon-yellow/30',
+    dropdown: 'border-neon-yellow/30 shadow-[0_10px_40px_rgba(252,226,5,0.2)]',
+    cardBg: 'bg-neon-yellow/5 border-neon-yellow/30 shadow-[inset_0_0_20px_rgba(252,226,5,0.05)]',
+    cardGlow: 'bg-neon-yellow/10',
+    icon: 'text-neon-yellow',
+    title: 'text-neon-yellow text-glow-yellow',
+    hoverItem: 'hover:bg-neon-yellow/10 hover:border-neon-yellow group-hover:text-neon-yellow group-hover:text-glow-yellow',
+    arrow: 'group-hover:text-neon-yellow/70'
+  },
+  zinc: {
+    trigger: 'hover:bg-zinc-800/50 hover:text-zinc-300 hover:border-zinc-500/30 data-[state=open]:bg-zinc-800/50 data-[state=open]:text-zinc-300 data-[state=open]:border-zinc-500/30',
+    dropdown: 'border-zinc-800/50 shadow-[0_10px_40px_rgba(0,0,0,0.5)]',
+    cardBg: 'bg-zinc-900/20 border-zinc-800/50 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]',
+    cardGlow: 'bg-zinc-800/20',
+    icon: 'text-zinc-400',
+    title: 'text-zinc-300',
+    hoverItem: 'hover:bg-zinc-800/30 hover:border-zinc-500 group-hover:text-zinc-300',
+    arrow: 'group-hover:text-zinc-400'
+  }
+} as const;
+
 export function TopNav() {
   const activities = Object.values(DESTINY_ACTIVITIES)
 
@@ -45,17 +117,8 @@ export function TopNav() {
                 </Link>
                 <div className="flex flex-col gap-6">
                   {activities.map((act) => {
-                    const theme = act.themeColor || "cyan"
-                    const themeText = {
-                      cyan: 'text-neon-cyan',
-                      green: 'text-neon-green',
-                      red: 'text-neon-red',
-                      orange: 'text-neon-orange',
-                      yellow: 'text-neon-yellow',
-                      zinc: 'text-zinc-400'
-                    }
-                    const titleColor = act.locked ? 'text-neon-red' : themeText[theme]
-                    
+                    const theme = act.themeColor || "cyan";
+                    const titleColor = act.locked ? 'text-neon-red' : THEME_TEXT[theme as keyof typeof THEME_TEXT] || THEME_TEXT.zinc
                     return (
                       <div key={`mobile-${act.id}`} className="flex flex-col gap-2">
                         <div className={`text-xs font-bold tracking-widest uppercase ${titleColor}`}>
@@ -100,72 +163,8 @@ export function TopNav() {
             <NavigationMenuList>
               {activities.map((category) => {
                 const Icon = category.icon
-                const theme = category.themeColor || "cyan"
-                
-                const themeStyles = {
-                  cyan: {
-                    trigger: 'hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-neon-cyan/30 data-[state=open]:bg-neon-cyan/10 data-[state=open]:text-neon-cyan data-[state=open]:border-neon-cyan/30',
-                    dropdown: 'border-neon-cyan/30 shadow-[0_10px_40px_rgba(0,243,255,0.2)]',
-                    cardBg: 'bg-neon-cyan/5 border-neon-cyan/30 shadow-[inset_0_0_20px_rgba(0,243,255,0.05)]',
-                    cardGlow: 'bg-neon-cyan/10',
-                    icon: 'text-neon-cyan',
-                    title: 'text-neon-cyan text-glow-cyan',
-                    hoverItem: 'hover:bg-neon-cyan/10 hover:border-neon-cyan group-hover:text-neon-cyan group-hover:text-glow-cyan',
-                    arrow: 'group-hover:text-neon-cyan/70'
-                  },
-                  green: {
-                    trigger: 'hover:bg-neon-green/10 hover:text-neon-green hover:border-neon-green/30 data-[state=open]:bg-neon-green/10 data-[state=open]:text-neon-green data-[state=open]:border-neon-green/30',
-                    dropdown: 'border-neon-green/30 shadow-[0_10px_40px_rgba(57,255,20,0.2)]',
-                    cardBg: 'bg-neon-green/5 border-neon-green/30 shadow-[inset_0_0_20px_rgba(57,255,20,0.05)]',
-                    cardGlow: 'bg-neon-green/10',
-                    icon: 'text-neon-green',
-                    title: 'text-neon-green text-glow-green',
-                    hoverItem: 'hover:bg-neon-green/10 hover:border-neon-green group-hover:text-neon-green group-hover:text-glow-green',
-                    arrow: 'group-hover:text-neon-green/70'
-                  },
-                  red: {
-                    trigger: 'hover:bg-neon-red/10 hover:text-neon-red hover:border-neon-red/30 data-[state=open]:bg-neon-red/10 data-[state=open]:text-neon-red data-[state=open]:border-neon-red/30',
-                    dropdown: 'border-neon-red/30 shadow-[0_10px_40px_rgba(255,0,0,0.2)]',
-                    cardBg: 'bg-black border-neon-red/30 shadow-[inset_0_0_20px_rgba(255,0,0,0.1)]',
-                    cardGlow: 'bg-neon-red/5',
-                    icon: 'text-neon-red opacity-60',
-                    title: 'text-neon-red text-glow-red',
-                    hoverItem: 'hover:bg-neon-red/10 hover:border-neon-red group-hover:text-neon-red group-hover:text-glow-red',
-                    arrow: 'group-hover:text-neon-red/70'
-                  },
-                  orange: {
-                    trigger: 'hover:bg-neon-orange/10 hover:text-neon-orange hover:border-neon-orange/30 data-[state=open]:bg-neon-orange/10 data-[state=open]:text-neon-orange data-[state=open]:border-neon-orange/30',
-                    dropdown: 'border-neon-orange/30 shadow-[0_10px_40px_rgba(255,140,0,0.2)]',
-                    cardBg: 'bg-neon-orange/5 border-neon-orange/30 shadow-[inset_0_0_20px_rgba(255,140,0,0.05)]',
-                    cardGlow: 'bg-neon-orange/10',
-                    icon: 'text-neon-orange',
-                    title: 'text-neon-orange text-glow-orange',
-                    hoverItem: 'hover:bg-neon-orange/10 hover:border-neon-orange group-hover:text-neon-orange group-hover:text-glow-orange',
-                    arrow: 'group-hover:text-neon-orange/70'
-                  },
-                  yellow: {
-                    trigger: 'hover:bg-neon-yellow/10 hover:text-neon-yellow hover:border-neon-yellow/30 data-[state=open]:bg-neon-yellow/10 data-[state=open]:text-neon-yellow data-[state=open]:border-neon-yellow/30',
-                    dropdown: 'border-neon-yellow/30 shadow-[0_10px_40px_rgba(252,226,5,0.2)]',
-                    cardBg: 'bg-neon-yellow/5 border-neon-yellow/30 shadow-[inset_0_0_20px_rgba(252,226,5,0.05)]',
-                    cardGlow: 'bg-neon-yellow/10',
-                    icon: 'text-neon-yellow',
-                    title: 'text-neon-yellow text-glow-yellow',
-                    hoverItem: 'hover:bg-neon-yellow/10 hover:border-neon-yellow group-hover:text-neon-yellow group-hover:text-glow-yellow',
-                    arrow: 'group-hover:text-neon-yellow/70'
-                  },
-                  zinc: {
-                    trigger: 'hover:bg-zinc-800/50 hover:text-zinc-300 hover:border-zinc-500/30 data-[state=open]:bg-zinc-800/50 data-[state=open]:text-zinc-300 data-[state=open]:border-zinc-500/30',
-                    dropdown: 'border-zinc-800/50 shadow-[0_10px_40px_rgba(0,0,0,0.5)]',
-                    cardBg: 'bg-zinc-900/20 border-zinc-800/50 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]',
-                    cardGlow: 'bg-zinc-800/20',
-                    icon: 'text-zinc-400',
-                    title: 'text-zinc-300',
-                    hoverItem: 'hover:bg-zinc-800/30 hover:border-zinc-500 group-hover:text-zinc-300',
-                    arrow: 'group-hover:text-zinc-400'
-                  }
-                }
-
-                const currentStyle = category.locked ? themeStyles.red : themeStyles[theme]
+                const theme = category.themeColor || "cyan";
+                const currentStyle = category.locked ? TOPNAV_THEMES.red : TOPNAV_THEMES[theme as keyof typeof TOPNAV_THEMES] || TOPNAV_THEMES.zinc
 
                 return (
                   <NavigationMenuItem key={category.id}>
