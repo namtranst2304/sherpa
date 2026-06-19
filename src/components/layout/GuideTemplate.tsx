@@ -1,7 +1,7 @@
 import React from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Map, Users, Settings } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { CyberCard } from "@/components/ui/CyberComponents"
 
 interface GuideTemplateProps {
     title: string
@@ -13,69 +13,67 @@ interface GuideTemplateProps {
 
 export function GuideTemplate({ title, description, mechanics, map, roles }: GuideTemplateProps) {
     return (
-        <div className="flex-1 overflow-y-auto w-full bg-background p-4 md:p-8">
-            <div className="max-w-6xl mx-auto space-y-8">
+        <div className="flex-1 overflow-y-auto w-full bg-background p-4 md:p-8 relative">
+            {/* Subtle background scanlines for the whole guide */}
+            <div className="absolute inset-0 pointer-events-none opacity-5 bg-scanline z-0" />
+            
+            <div className="max-w-6xl mx-auto space-y-8 relative z-10">
 
-                {/* Header với nút bật/tắt Sidebar trên mobile */}
-                <div className="flex items-center gap-4 border-b border-border pb-6">
+                {/* Header with mobile sidebar toggle */}
+                <div className="flex items-center gap-4 border-b border-primary/30 pb-6">
                     <SidebarTrigger className="md:hidden" />
                     <div>
-                        <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">
+                        <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-magenta text-glow-cyan">
                             {title}
                         </h1>
-                        <p className="text-muted-foreground mt-2 text-lg">
+                        <p className="text-muted-foreground mt-2 text-lg font-mono tracking-wide">
                             {description}
                         </p>
                     </div>
                 </div>
 
-                {/* 3 Cards Nội Dung */}
                 <div className="flex flex-col gap-8">
 
-                    {/* Card 1: Mechanics (Cơ chế cốt lõi) */}
-                    <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)]">
-                        <CardHeader className="border-b border-border/50 pb-4 mb-4">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-primary/10 rounded-md">
-                                    <Settings className="w-5 h-5 text-primary" />
-                                </div>
-                                <CardTitle className="uppercase tracking-wider">Encounter Mechanics</CardTitle>
+                    {/* Mechanics */}
+                    <CyberCard variant="zinc" withCorners className="cyber-grid relative">
+                        <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                            <div className="p-2 bg-neon-cyan/10 rounded-md">
+                                <Settings className="w-5 h-5 text-neon-cyan" />
                             </div>
-                        </CardHeader>
-                        <CardContent className="text-muted-foreground leading-relaxed">
+                            <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Encounter Mechanics</h2>
+                        </div>
+                        <div className="text-muted-foreground leading-relaxed relative z-10">
                             {mechanics}
-                        </CardContent>
-                    </Card>
+                        </div>
+                    </CyberCard>
 
-                    {/* Card 2: Map (Bản đồ) */}
-                    <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)] flex flex-col">
-                        <CardHeader className="border-b border-border/50 pb-4 mb-4">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-primary/10 rounded-md">
-                                    <Map className="w-5 h-5 text-primary" />
-                                </div>
-                                <CardTitle className="uppercase tracking-wider">Callout Map</CardTitle>
+                    {/* Map */}
+                    <CyberCard variant="zinc" withCorners className="flex flex-col">
+                        <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                            <div className="p-2 bg-neon-cyan/10 rounded-md">
+                                <Map className="w-5 h-5 text-neon-cyan" />
                             </div>
-                        </CardHeader>
-                        <CardContent className="flex-1 flex items-center justify-center min-h-[300px] bg-secondary/50 rounded-md m-4 mt-0 border border-border">
+                            <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Callout Map</h2>
+                        </div>
+                        <div className="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden relative z-10">
+                            {/* Inner cyber frame for map */}
+                            <div className="absolute inset-0 pointer-events-none border border-neon-cyan/20 m-2" />
                             {map}
-                        </CardContent>
-                    </Card>
+                        </div>
+                    </CyberCard>
 
-                    {/* Card 3: What to do (Nhiệm vụ cho từng Role) */}
-                    <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)]">
-                        <CardHeader className="border-b border-border/50 pb-4 mb-4">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 bg-primary/10 rounded-md">
-                                    <Users className="w-5 h-5 text-primary" />
-                                </div>
-                                <CardTitle className="uppercase tracking-wider">What to do (Roles)</CardTitle>
+                    {/* Roles */}
+                    <CyberCard variant="zinc" withCorners className="cyber-grid relative">
+                        <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                            <div className="p-2 bg-neon-cyan/10 rounded-md">
+                                <Users className="w-5 h-5 text-neon-cyan" />
                             </div>
-                        </CardHeader>
-                        <CardContent>
+                            <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">What to do (Roles)</h2>
+                        </div>
+                        <div className="relative z-10">
                             {roles}
-                        </CardContent>
-                    </Card>
+                        </div>
+                    </CyberCard>
 
                 </div>
             </div>

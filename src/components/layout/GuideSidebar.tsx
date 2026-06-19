@@ -76,22 +76,28 @@ export function GuideSidebar({
   }, [groups, activeId, activeEncounterId]);
 
   return (
-    <Sidebar className="top-[3.5rem] h-[calc(100vh-3.5rem)] border-r-border z-40 bg-background" collapsible="icon">
-      <SidebarHeader className="border-b border-border p-4">
-        <h1 className="text-xl font-extrabold text-foreground tracking-wider uppercase break-words" title={title}>
+    <Sidebar className="top-[3.5rem] h-[calc(100vh-3.5rem)] border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid" collapsible="icon">
+      <SidebarHeader className="border-b-2 border-neon-yellow p-4 relative overflow-hidden bg-zinc-950">
+        {/* Decorative cyber corner */}
+        <div className="absolute top-0 right-0 w-8 h-8 bg-neon-yellow -rotate-45 translate-x-4 -translate-y-4" />
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-neon-yellow to-transparent" />
+        
+        <h1 className="text-xl font-extrabold text-neon-yellow tracking-widest uppercase break-words text-glow-yellow" title={title}>
           {title}
         </h1>
-        <h2 className="text-xs font-black text-primary tracking-widest uppercase mt-1 break-words">
-          {subtitle}
-        </h2>
+        <div className="mt-2">
+          <h2 className="text-[10px] font-black text-black bg-neon-cyan tracking-widest uppercase break-words inline-block px-2 py-0.5">
+            {subtitle}
+          </h2>
+        </div>
         {orbit && (
-          <p className="text-[10px] text-muted-foreground mt-2 break-words">Active Orbit: {orbit}</p>
+          <p className="text-[10px] text-zinc-500 mt-2 break-words font-mono uppercase">sys.orbit: {orbit}</p>
         )}
       </SidebarHeader>
       <SidebarContent>
         {groups.map((group, idx) => (
-          <ShadcnSidebarGroup key={idx}>
-            {group.title && <SidebarGroupLabel>{group.title}</SidebarGroupLabel>}
+          <ShadcnSidebarGroup key={idx} className="mt-2">
+            {group.title && <SidebarGroupLabel className="text-neon-red font-mono tracking-widest uppercase text-[10px] opacity-80">{group.title}</SidebarGroupLabel>}
             <SidebarGroupContent>
               <SidebarMenu>
                 {group.items.map((item) => {
@@ -104,22 +110,26 @@ export function GuideSidebar({
                         isActive={isActive}
                         onClick={() => setOpenMobile(false)}
                         className={cn(
-                          "transition-all h-auto py-2",
-                          isActive ? "text-primary font-bold bg-muted/50" : "text-foreground/70"
+                          "transition-all h-auto py-2.5 relative group overflow-hidden rounded-none font-mono text-sm",
+                          isActive 
+                            ? "text-black font-extrabold bg-neon-yellow hover:bg-neon-yellow/90 hover:text-black border-l-4 border-neon-red" 
+                            : "text-zinc-400 hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-l-4 hover:border-neon-cyan border-l-4 border-transparent"
                         )}
                         tooltip={item.title}
                       >
-                        <Link href={linkHref} className="flex items-start justify-between w-full gap-2">
-                          <div className={cn("break-words whitespace-normal leading-tight", item.isFinal && "text-destructive font-extrabold")}>
+                        <Link href={linkHref} className="flex items-start justify-between w-full gap-2 relative z-10">
+                          <div className={cn("break-words whitespace-normal leading-tight tracking-wide", item.isFinal && !isActive && "text-neon-red font-extrabold text-glow-red", item.isFinal && isActive && "text-red-700 font-extrabold")}>
                             {item.title}
                           </div>
                           {item.label && (
                             <div
                               className={cn(
-                                "text-[9px] px-1.5 py-0.5 rounded font-bold font-mono ml-2 shrink-0",
-                                item.isFinal
-                                  ? "bg-destructive/20 text-destructive"
-                                  : "bg-primary/20 text-primary"
+                                "text-[9px] px-1.5 py-0.5 rounded-none font-bold font-mono ml-2 shrink-0 border uppercase",
+                                isActive 
+                                  ? "bg-black text-neon-yellow border-black" 
+                                  : (item.isFinal
+                                    ? "bg-neon-red/20 text-neon-red border-neon-red/50"
+                                    : "bg-neon-cyan/20 text-neon-cyan border-neon-cyan/50")
                               )}
                             >
                               {item.label}

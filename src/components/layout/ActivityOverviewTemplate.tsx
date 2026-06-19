@@ -1,7 +1,7 @@
 import React from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Shield, Crosshair, BookOpen, Map, Trophy, Gem } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
 import { ActivityData } from "@/lib/types"
 
 interface ActivityOverviewTemplateProps {
@@ -19,11 +19,11 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
         <div className="flex items-center gap-4 border-b border-border pb-6">
           <SidebarTrigger className="md:hidden" />
           <div>
-            <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">
+            <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-magenta text-glow-cyan">
               {title} - Overview
             </h1>
             {preface?.author_notes && (
-              <p className="text-muted-foreground mt-2 text-lg">
+              <p className="text-muted-foreground mt-2 text-lg font-mono tracking-wide">
                 {preface.author_notes}
               </p>
             )}
@@ -33,16 +33,14 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
         <div className="flex flex-col gap-8">
           {/* General Mechanics & Rules */}
           <div className="space-y-8">
-            <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)]">
-              <CardHeader className="border-b border-border/50 pb-4 mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-md">
-                    <BookOpen className="w-5 h-5 text-primary" />
-                  </div>
-                  <CardTitle className="uppercase tracking-wider">General Rules</CardTitle>
+            <CyberCard variant="zinc" withCorners className="cyber-grid relative">
+              <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                <div className="p-2 bg-neon-cyan/10 rounded-md">
+                  <BookOpen className="w-5 h-5 text-neon-cyan" />
                 </div>
-              </CardHeader>
-              <CardContent className="text-muted-foreground leading-relaxed space-y-4">
+                <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">General Rules</h2>
+              </div>
+              <div className="text-muted-foreground leading-relaxed space-y-4 relative z-10">
                 {preface?.formatting_rules && (
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Formatting & Callouts</h3>
@@ -59,9 +57,9 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                       <ul className="space-y-2">
                         {preface.non_linear_mechanic.elevator_plates.map((plate, i) => (
                           <li key={i} className="text-sm flex items-center gap-2">
-                            <span className="px-2 py-1 bg-primary/10 text-primary font-mono text-xs rounded">
+                            <CyberBadge variant="cyan" withIndicator={false}>
                               {plate.plate_text}
-                            </span>
+                            </CyberBadge>
                             <span>→ {plate.target_encounter}</span>
                           </li>
                         ))}
@@ -69,22 +67,20 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                     )}
                   </div>
                 )}
-              </CardContent>
-            </Card>
+              </div>
+            </CyberCard>
           </div>
 
           {/* Loadout Recommendations */}
           <div className="space-y-8">
-            <Card className="bg-card border-border hover:border-primary transition-colors hover:shadow-[0_0_15px_rgba(0,195,255,0.1)] h-full">
-              <CardHeader className="border-b border-border/50 pb-4 mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-md">
-                    <Shield className="w-5 h-5 text-primary" />
-                  </div>
-                  <CardTitle className="uppercase tracking-wider">Recommended Loadouts</CardTitle>
+            <CyberCard variant="zinc" withCorners className="h-full">
+              <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3">
+                <div className="p-2 bg-neon-cyan/10 rounded-md">
+                  <Shield className="w-5 h-5 text-neon-cyan" />
                 </div>
-              </CardHeader>
-              <CardContent className="space-y-6">
+                <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Recommended Loadouts</h2>
+              </div>
+              <div className="space-y-6 relative z-10">
                 {loadout_tips?.note && (
                   <p className="text-sm italic text-muted-foreground bg-secondary/10 p-3 rounded border-l-2 border-primary">
                     {loadout_tips.note}
@@ -146,26 +142,24 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                     </div>
                   )
                 })}
-              </CardContent>
-            </Card>
+              </div>
+            </CyberCard>
           </div>
 
           {/* Epic Mode */}
           {epic_mode && (
             <div className="space-y-8">
-              <Card className="bg-card border-border hover:border-red-500/50 transition-colors hover:shadow-[0_0_15px_rgba(239,68,68,0.1)] h-full relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-5">
-                  <Trophy className="w-32 h-32 text-red-500" />
+              <CyberCard variant="red" withCorners className="h-full">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <Trophy className="w-32 h-32 text-neon-red" />
                 </div>
-                <CardHeader className="border-b border-border/50 pb-4 mb-4 relative z-10">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-red-500/10 rounded-md">
-                      <Trophy className="w-5 h-5 text-red-500" />
-                    </div>
-                    <CardTitle className="uppercase tracking-wider text-red-500">The Epic Raid (Mastery)</CardTitle>
+                <div className="border-b border-neon-red/30 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                  <div className="p-2 bg-neon-red/20 rounded-md">
+                    <Trophy className="w-5 h-5 text-neon-red" />
                   </div>
-                </CardHeader>
-                <CardContent className="space-y-6 relative z-10">
+                  <h2 className="text-xl font-bold uppercase tracking-wider text-neon-red text-glow-red">The Epic Raid (Mastery)</h2>
+                </div>
+                <div className="space-y-6 relative z-10">
                   {epic_mode.requirements_and_contest && (
                     <div>
                       <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">🛡️ Requirements & Contest Mode</h3>
@@ -195,27 +189,25 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                       </div>
                     </div>
                   )}
-                </CardContent>
-              </Card>
+                </div>
+              </CyberCard>
             </div>
           )}
 
           {/* Loot Table */}
           {loot_table && loot_table.length > 0 && (
             <div className="space-y-8">
-              <Card className="bg-card border-border hover:border-purple-500/50 transition-colors hover:shadow-[0_0_15px_rgba(168,85,247,0.1)] h-full relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-5">
-                  <Gem className="w-32 h-32 text-purple-500" />
+              <CyberCard variant="magenta" withCorners className="h-full">
+                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+                  <Gem className="w-32 h-32 text-neon-magenta" />
                 </div>
-                <CardHeader className="border-b border-border/50 pb-4 mb-4 relative z-10">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-purple-500/10 rounded-md">
-                      <Gem className="w-5 h-5 text-purple-500" />
-                    </div>
-                    <CardTitle className="uppercase tracking-wider text-purple-500">Loot Table</CardTitle>
+                <div className="border-b border-neon-magenta/30 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                  <div className="p-2 bg-neon-magenta/20 rounded-md">
+                    <Gem className="w-5 h-5 text-neon-magenta" />
                   </div>
-                </CardHeader>
-                <CardContent className="relative z-10 overflow-x-auto">
+                  <h2 className="text-xl font-bold uppercase tracking-wider text-neon-magenta text-glow-magenta">Loot Table</h2>
+                </div>
+                <div className="relative z-10 overflow-x-auto">
                   <table className="w-full text-sm text-left">
                     <thead className="text-xs uppercase bg-secondary/50 text-muted-foreground border-b border-border/50">
                       <tr>
@@ -240,8 +232,8 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
                       ))}
                     </tbody>
                   </table>
-                </CardContent>
-              </Card>
+                </div>
+              </CyberCard>
             </div>
           )}
         </div>
