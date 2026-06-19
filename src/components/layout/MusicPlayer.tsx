@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Play, Pause, Music } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,19 +10,15 @@ export function MusicPlayer() {
   const pathname = usePathname();
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPulseHint, setShowPulseHint] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   // Chỉ hiển thị và phát nhạc ở trang chủ và timeline
-  if (pathname !== "/" && pathname !== "/timeline") {
-    return null;
-  }
-
-  // Dùng useMemo để chứa audio template đúng như cách giải quyết trên mạng
-  const audioTemplate = useMemo(() => {
-    return <audio id="global-bg-audio" src="/audio/timeline-theme.mp3" loop preload="auto" />;
-  }, []);
+  const isVisible = pathname === "/" || pathname === "/timeline";
 
   useEffect(() => {
-    const audio = document.getElementById("global-bg-audio") as HTMLAudioElement;
+    if (!isVisible) return;
+
+    const audio = audioRef.current;
     if (!audio) return;
 
     audio.volume = 0.15;
@@ -81,10 +77,10 @@ export function MusicPlayer() {
       removeListeners();
       interactionListenersActive = false;
     };
-  }, []);
+  }, [isVisible]);
 
   const togglePlay = () => {
-    const audio = document.getElementById("global-bg-audio") as HTMLAudioElement;
+    const audio = audioRef.current;
     if (!audio) return;
 
     if (isPlaying) {
@@ -100,9 +96,13 @@ export function MusicPlayer() {
     }
   };
 
+  if (!isVisible) {
+    return null;
+  }
+
   return (
     <>
-      {audioTemplate}
+      <audio ref={audioRef} src="/audio/timeline-theme.mp3" loop preload="auto" />
 
       <div className="fixed bottom-8 left-8 z-50 flex items-center gap-3">
         {/* Nút Play/Pause kèm hiệu ứng nháy sáng (pulse) khi scroll */}
@@ -132,18 +132,6 @@ export function MusicPlayer() {
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                 exit={{ opacity: 0 }}
               />
-            )}
-          </AnimatePresence>
-
-          {/* Dòng chữ gợi ý mờ mờ */}
-          <AnimatePresence>
-            {showPulseHint && !isPlaying && (
-              <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                className="absolute left-14 whitespace-nowrap text-xs text-neon-cyan/80 font-mono tracking-wider pointer-events-none"
-              ></motion.div>
             )}
           </AnimatePresence>
         </motion.button>
