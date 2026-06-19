@@ -1,6 +1,5 @@
 import { ShieldAlert, Swords, type LucideIcon } from "lucide-react"
-import { RAIDS_DATA, DUNGEONS_DATA } from "@/data"
-
+import { RAIDS_DATA, DUNGEONS_DATA, PANTHEON_DATA } from "@/data"
 import { ActivityData } from "./types"
 
 export type ActivityItem = {
@@ -35,6 +34,14 @@ const mapDungeonsToItems = (): ActivityItem[] => {
   }))
 }
 
+const mapPantheonToItems = (): ActivityItem[] => {
+  return Object.entries(PANTHEON_DATA).map(([slug, data]: [string, ActivityData]) => ({
+    title: data.raid_name || "Unknown Week",
+    href: `/pantheon/${slug}`,
+    description: data.active_orbit || "Pantheon Orbit",
+  }))
+}
+
 import { Crown } from "lucide-react"
 
 export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
@@ -61,7 +68,6 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     href: "/pantheon",
     description: "The ultimate boss rush experience. Face Destiny 2's most challenging foes back-to-back.",
     icon: Crown,
-    items: [],
-    locked: true,
+    items: mapPantheonToItems(),
   }
 }

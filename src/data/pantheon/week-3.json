@@ -1,0 +1,162 @@
+{
+  "raid_name": "Pantheon 2026 - Week 3: The Agraios Indomitable",
+  "active_orbit": "Power Delta -15",
+  "preface": {
+    "formatting_rules": "Tất cả các cơ chế thay đổi (PANTHEON CHANGES) và Modifiers quan trọng sẽ được viết hoa nổi bật.",
+    "mechanic": {
+      "description": "Tuần 3 đẩy độ khó lên mốc -15 Power Delta. Boss Agraios mang cơ chế bàn cờ điện chết người gia nhập chuỗi.",
+      "boss_list": ["Caretaker", "Iatros, Inward-Turned", "Explicator", "The Witness", "Agraios, Inherent"]
+    }
+  },
+  "loadout_tips": {
+    "note": "Ở mốc -15, khả năng sinh tồn là yếu tố tiên quyết. Ưu tiên các trang bị có khả năng dọn dẹp đám đông và giữ máu.",
+    "warlocks": {
+      "supers": [
+        {"name": "Song of Flame", "utility": "Cung cấp kháng sát thương khổng lồ và khả năng spam grenade diện rộng."},
+        {"name": "Well of Radiance", "utility": "Cần thiết ở một số phase DPS có sát thương môi trường cao."}
+      ],
+      "exotics_and_abilities": [
+        {"name": "Speaker's Sight", "recommendation": "Lựa chọn cứu giá tuyệt vời cho đội hình khi lượng sát thương là quá sức chịu đựng."},
+        {"name": "Cenotaph Mask", "recommendation": "Bắt buộc để đánh dấu Tormentors và Subjugators sinh đạn Heavy."}
+      ]
+    },
+    "titans": {
+      "supers": [
+        {"name": "Twilight Arsenal", "utility": "Ném 3 chiếc rìu Void gây suy yếu (Weaken) mạnh."}
+      ],
+      "exotics_and_abilities": [
+        {"name": "Stoicism (Exotic Class Item)", "recommendation": "Tìm roll Spirit of the Assassin + Spirit of Synthoceps."},
+        {"name": "Hazardous Propulsion", "recommendation": "Bắn tên lửa từ ngực và buff sát thương cho Rocket."}
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {"name": "Storm's Edge", "utility": "Dọn dẹp quái vật cực kỳ cơ động, giúp Hunter sống sót và clear bãi quái."},
+        {"name": "Golden Gun: Marksman", "utility": "Sát thương chuẩn xác từ xa."}
+      ],
+      "exotics_and_abilities": [
+        {"name": "Orpheus Rig", "recommendation": "Giữ chân Tormentor và Subjugator ở các ải kiểm soát không gian hẹp."},
+        {"name": "Celestial Nighthawk", "recommendation": "Bắt buộc khi kết hợp với súng Still Hunt."}
+      ]
+    },
+    "weapons": [
+      {"name": "Still Hunt", "description": "Vũ khí meta 2026 kết hợp Celestial Nighthawk."},
+      {"name": "Microcosm", "description": "Trace Rifle hạng nặng bắn tia năng lượng Kinetic đục khiên Boss."},
+      {"name": "The Call (Rocket Sidearm)", "description": "Vũ khí dọn quái và phá khiên tốt nhất ở ô Special."}
+    ]
+  },
+  "encounters": [
+    {
+      "id": "pantheon_iatros",
+      "name": "Encounter 1 - Iatros, Inward-Turned (Desert Perpetual)",
+      "roles": {
+        "runners": {
+          "quantity": 2,
+          "description": "Nhặt Cyclical buff, dập hạt Chronon vào vòng Hoop."
+        },
+        "readers": {
+          "quantity": 1,
+          "description": "Nhìn màng màu Boss để báo thứ tự bắn."
+        },
+        "add_clear": {
+          "quantity": 3,
+          "description": "Dọn dẹp Supplicants và Tormentors."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Sạc Hạt & PANTHEON CHANGES",
+          "objective": "Nạp hạt Chronons để sập khiên Wyvern trong áp lực cao.",
+          "steps": [
+            "Runners săn Minotaur nhặt hạt Chronon nhảy dập vào vòng Hoop.",
+            "PANTHEON CHANGES: Trong Pantheon 2026, Minotaurs sẽ có khiên Void cực dày và được bảo vệ bởi 1 Subjugator (Stasis). Vòng Chronon Hoop sẽ liên tục đổi hướng nhanh hơn gấp đôi bình thường.",
+            "Add-Clear phải dùng Microcosm hoặc The Call để đục khiên nhanh nhất cho Runners lấy hạt."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - DPS",
+          "objective": "Đọc màu và dốc sát thương.",
+          "steps": [
+            "Đọc màu màng (Trắng/Xanh/Đỏ) và bắn vỡ khớp giáp theo quy tắc.",
+            "PANTHEON CHANGES: Iatros sẽ thả bãi độc (Void pools) liên tục dưới chân team DPS, bắt buộc phải di chuyển và cắm Well bù máu liên tục."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pantheon_witness",
+      "name": "Encounter 2 - The Witness (Salvation's Edge)",
+      "roles": {
+        "runners": {
+          "quantity": 3,
+          "description": "Chạy vào gương cắt tay để lấy buff cộng hưởng ánh sáng/bóng tối."
+        },
+        "defenders": {
+          "quantity": 3,
+          "description": "Chặn quái, giữ bệ và phá tay của Witness."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Phá Cánh Tay & PANTHEON CHANGES",
+          "objective": "Lấy buff cộng hưởng để phá các nút thắt trên tay Witness.",
+          "steps": [
+            "Runners bước vào vùng gương, né đòn và lấy buff.",
+            "PANTHEON CHANGES: Mỗi lần cắt tay thành công, The Witness sẽ gọi ra 2 Tormentors ngẫu nhiên trên các bệ đứng. Thời gian để phá tay bị rút ngắn đi 30%.",
+            "Sử dụng Prismatic Transcendence để xóa sổ Tormentors tức thì bảo vệ bệ đứng."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Mưa Kính & DPS",
+          "objective": "Tránh đòn chém kính của Witness và xả sát thương.",
+          "steps": [
+            "Cả đội nhảy lên bệ trung tâm. Chú ý mắt Witness phát sáng để né đòn chém (Nhảy lên, đứng yên, hoặc dạt sang hai bên).",
+            "Sử dụng Still Hunt + Celestial Nighthawk bắn thẳng vào ngực Witness.",
+            "PANTHEON CHANGES: Các cú chém của Witness giờ đây sẽ để lại dư ảnh gây sát thương theo thời gian (DoT) trên mặt đất. Việc đứng im một chỗ cắm Well là tự sát."
+          ]
+        }
+      }
+    },
+    {
+      "id": "pantheon_agraios",
+      "name": "Encounter 3 - Agraios, Inherent (Desert Perpetual)",
+      "roles": {
+        "buff_holders": {
+          "quantity": 3,
+          "description": "Giữ Constant, Absolute, Cyclical để diệt Sniper."
+        },
+        "pathfinders": {
+          "quantity": 3,
+          "description": "Thám thính bàn cờ và nạp bóng phản laser."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Bàn Cờ Điện & PANTHEON CHANGES",
+          "objective": "Dò ô an toàn và diệt Hobgoblin Snippers đúng tên.",
+          "steps": [
+            "Đi theo các ô an toàn, tránh ô điện tím.",
+            "PANTHEON CHANGES: Sàn bàn cờ sẽ thay đổi pattern ô an toàn mỗi 10 giây thay vì 20 giây. Bầy Hobgoblin Sniper giờ có thêm khiên đạn đạo.",
+            "Buff holders phải dùng súng Anti-Barrier hoặc Radiant để xuyên khiên diệt đúng con Sniper mang tên buff của mình."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Phản Laser DPS",
+          "objective": "Dùng bong bóng bẻ cong laser của Boss.",
+          "steps": [
+            "Nạp Alignment Nodes lấy Detain Bubble.",
+            "PANTHEON CHANGES: Agraios bắn 2 tia Laser cùng lúc. Đội phải chia làm 2 nhóm, có 2 người cầm Detain Bubble để dội ngược cả 2 tia mới làm Boss sập khiên."
+          ]
+        }
+      }
+    }
+  ],
+  "epic_mode": {
+    "modifiers": [
+      {
+        "name": "General Modifier: Prismatic Resonance",
+        "changes": "Tất cả các vũ khí Kinetic và Heavy sẽ được tăng 20% sát thương khi người chơi đang trong trạng thái Transcendence."
+      }
+    ]
+  }
+}
