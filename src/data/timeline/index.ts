@@ -31,19 +31,19 @@ import theEchoesArmsRace from './14-the-echoes-arms-race.json';
 import theFateSaga from './15-the-fate-saga.json';
 
 export const DESTINY_TIMELINE: TimelineEra[] = [
-  theAncientPast,
-  historyOfTheCabal,
-  historyOfTheEliksni,
-  preGoldenAge,
-  theGoldenAge,
-  theCollapse,
-  darkAge,
-  theCityAge,
-  theYoungWolfSAscension,
-  theRedWar,
-  cayde6SDeath,
-  returnOfTheBlackFleet,
-  theWarAgainstTheWitness,
-  theEchoesArmsRace,
-  theFateSaga
+  theAncientPast as unknown as TimelineEra,
+  historyOfTheCabal as unknown as TimelineEra,
+  historyOfTheEliksni as unknown as TimelineEra,
+  preGoldenAge as unknown as TimelineEra,
+  theGoldenAge as unknown as TimelineEra,
+  theCollapse as unknown as TimelineEra,
+  darkAge as unknown as TimelineEra,
+  theCityAge as unknown as TimelineEra,
+  theYoungWolfSAscension as unknown as TimelineEra,
+  theRedWar as unknown as TimelineEra,
+  cayde6SDeath as unknown as TimelineEra,
+  returnOfTheBlackFleet as unknown as TimelineEra,
+  theWarAgainstTheWitness as unknown as TimelineEra,
+  theEchoesArmsRace as unknown as TimelineEra,
+  theFateSaga as unknown as TimelineEra
 ];
