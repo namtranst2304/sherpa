@@ -1,0 +1,213 @@
+{
+  "id": "the-city-age",
+  "name": "Thời đại thành phố",
+  "description": "Sự kiện từ Thời đại thành phố.",
+  "themeColor": "yellow",
+  "events": [
+    {
+      "title": "Sự thành lập của thành phố cuối cùng",
+      "description": "Những người sống sót sau Sự sụp đổ, con người, Thức tỉnh và Exo, đi từ nơi xa đến địa điểm của Lữ khách không hoạt động và xây dựng Thành phố cuối cùng bên dưới hào quang bảo vệ của nó. Thời đại Thành phố bắt đầu."
+    },
+    {
+      "title": "Nền tảng của rạn san hô",
+      "description": "Mara Sov, Uldren Sov và Sjur Eido dẫn nhiều Người thức tỉnh rời Distributary và quay trở lại Sol. Họ sẽ đến khu vực tiểu hành tinh và tìm thấy Rạn san hô. Ngay sau khi bị Fallen Ketch tấn công, Mara Sov được trao vương miện Nữ hoàng thức tỉnh. Một số Người thức tỉnh chọn đường đến Trái đất."
+    },
+    {
+      "title": "Xây dựng thành phố mộng mơ",
+      "description": "Mara Sov tìm cách tạo ra một thế giới an toàn và yên bình cho Người thức tỉnh. Uldren Sov tìm thấy và mang Ahamkara trẻ tuổi, Riven of a Thousand Voices đến Mara như một món quà.. Nữ hoàng thức tỉnh với sự hỗ trợ của phép thuật điều ước của Riven và xây dựng Thành phố mộng mơ. Riven bí mật xây dựng hang ổ của mình, tránh xa khỏi Người thức tỉnh."
+    },
+    {
+      "title": "Theo thời gian, nhiều Ahamkara du hành đến Dreaming Ci...",
+      "description": "Theo thời gian, nhiều Ahamkara du hành đến Thành phố mộng mơ. Tại Spine of Keres, Riven gặp Taranis. Không giống như những Ahamkara khác, Taranis không bóp méo mong muốn của mình và những món hời mà anh đưa ra đều an toàn. Taranis mời Riven đến hang ổ của anh ta ở Khu vườn Đen, cô chấp nhận. họ tạo ra một cây cầu nối giữa hang ổ của họ ở Thành phố mộng mơ và Khu vườn đen, đồng thời tạo ra những ý tưởng bất chợt."
+    },
+    {
+      "title": "Cuộc chiến phe phái",
+      "description": "Các cuộc tranh giành quyền lực giữa các phe phái chính trị khác nhau để giành được sự ủng hộ của quần chúng tị nạn Thành phố leo thang thành một loạt xung đột bạo lực. Rezyl Azzir, một nhà lãnh đạo và nhà vô địch vĩ đại trong những ngày đó, đã giúp đoàn kết những Người Phục sinh và thành lập những Người bảo vệ, khiến anh ta càng nổi tiếng hơn. Họ cùng nhau chấm dứt cuộc đổ máu trước khi Thành phố bị chia cắt bởi cuộc nội chiến và tập trung vào một mối đe dọa xâm lấn mới: Fallen."
+    },
+    {
+      "title": "Ada-1 đến Thành phố cuối cùng, giờ là thành viên cuối cùng...",
+      "description": "Ada-1 đến Thành phố cuối cùng, hiện là thành viên cuối cùng của Black Armory sau khi mất Yuki và mẹ cô là Henriette vào tay Warlords trong Thời kỳ đen tối. Mở một nơi ẩn náu trong các bức tường của thành phố, Ada cung cấp vũ khí của mình cho bất kỳ ai cần tự vệ. Tuy nhiên, cô ấy sẽ từ chối làm việc với Vanguard do những kinh nghiệm trong quá khứ của cô ấy với các Lãnh chúa."
+    },
+    {
+      "title": "Chế độ quân chủ mới hình thành sau các cuộc chiến tranh",
+      "description": "Chế độ quân chủ mới hợp nhất sau Chiến tranh. Sau đó, các Titan xây dựng và bảo vệ các bức tường của Thành phố."
+    },
+    {
+      "title": "Sự ra đời của sự đồng thuận",
+      "description": "Đồng thuận, một cơ quan đại diện mà qua đó các phe phái có thể theo đuổi chương trình nghị sự của họ một cách hòa bình, được thành lập sau Cuộc chiến phe phái để cùng cai trị Thành phố với Diễn giả."
+    },
+    {
+      "title": "Khi Thành phố tiếp tục phát triển, Rezyl và con sóng...",
+      "description": "Khi Thành phố tiếp tục phát triển, Rezyl và số lượng Người bảo vệ ngày càng tăng gần như liên tục hành động chống lại Fallen đang xâm lấn."
+    },
+    {
+      "title": "Sự hiện diện của Hive đầu tiên trên Trái đất",
+      "description": "Hive bắt đầu hạ cánh các tàu gieo hạt xuống Trái đất trong một quá trình kéo dài hàng thế kỷ nhằm chuẩn bị trước một cuộc xâm lược. Những người bảo vệ cuối cùng lần đầu tiên biết đến sự hiện diện của Hive tại Rusted Lands, địa điểm tương lai của đấu trường Crucible."
+    },
+    {
+      "title": "Cuộc lưu đày của Toland",
+      "description": "Toland, một Pháp sư đáng kính và được kính trọng, bị trục xuất khỏi Thành phố Cuối cùng vì những nghiên cứu đầy ám ảnh và nguy hiểm về Tổ ong. Anh ấy tiếp tục công việc của mình không suy giảm."
+    },
+    {
+      "title": "Chuyến đi đầu tiên đến Rạn san hô",
+      "description": "Tại một thời điểm nào đó, chuyến đi đầu tiên được biết đến đến Rạn san hô được khởi động."
+    },
+    {
+      "title": "Cuộc thám hiểm tới Ceres",
+      "description": "Dead Orbit khởi động một chuyến thám hiểm từ Reef đến Ceres, nơi đã phát hiện ra một trạm vũ trụ. Tuy nhiên, một tàu tuần tra Awoken đã phát hiện ra họ và làm tê liệt tàu của họ, buộc họ phải di chuyển đến trạm vũ trụ. Không có gì trở lại ngoại trừ Ghost."
+    },
+    {
+      "title": "Sáu mặt trận",
+      "description": "Cuộc tấn công lớn đầu tiên bị phong tỏa bởi Thành phố. Bốn mệnh lệnh Titan do các Lãnh chúa Sắt lãnh đạo đã bảo vệ sáu cách tiếp cận khác nhau trước lực lượng áp đảo của kẻ thù. Không một mệnh lệnh nào bị chùn bước, và điều có thể là một thất bại thảm hại thay vào đó lại trở thành một chiến thắng quyết định. Vào thời điểm này, các Lãnh chúa Sắt được biết đến với những cuộc tuần tra bất khả chiến bại. Vào cuối trận chiến, hai chỉ huy Firebreak trong đó có Lord Radegast, dẫn đầu một cuộc hành quân chống lại Fallen và giành lại năm dặm đất cháy xém bên ngoài bức tường của Thành phố."
+    },
+    {
+      "title": "Lãnh chúa Timur và Felwinter sẽ tiếp tục cuộc tìm kiếm của mình...",
+      "description": "Lord Timur và Felwinter sẽ tiếp tục tìm kiếm SIVA, cuối cùng phát hiện ra tọa độ của Site 6 trong Seraph Bunker. Mặc dù Felwinter nghi ngờ thông tin này vì anh ta tin chính xác rằng đó là mồi nhử của Rasputin, nhưng họ sẽ báo cáo phát hiện của mình cho các Lãnh chúa Sắt còn lại."
+    },
+    {
+      "title": "Khi phát hiện ra vị trí của Site 6, Iron Lor...",
+      "description": "Khi phát hiện ra vị trí của Địa điểm 6, các Lãnh chúa Sắt, đã lên tới hàng trăm người (bao gồm cả Sói Sắt), quyết định du hành đến Địa điểm 6 với hy vọng sử dụng SIVA để xây dựng các phi thuyền và thuộc địa. Bất chấp nỗ lực giải thích của Felwinter với Rasputin, Warmind sẽ đáp trả bằng cách kích hoạt các cơ chế phòng thủ, bao gồm SIVA để chống lại chúng. Hàng trăm Lãnh chúa sắt và Người sói bị giết, chỉ có tám người đến được phòng nhân bản. Cuối cùng, tất cả tám Lãnh chúa Sắt ngoại trừ Saladin đều hy sinh bản thân để ngăn chặn SIVA trong Địa điểm sau khi nó chứng tỏ rằng ngay cả Rasputin cũng không thể kiểm soát được. Chỉ có Saladin và Efrideet mới sống sót sau cơn thịnh nộ tàn khốc của SIVA. Efrideet đã không tham gia trận chiến và đã rời Trái đất cùng với những Lightbearers khác, những người theo chủ nghĩa hòa bình. Rasputin sẽ rút lại các biện pháp đối phó và bắt đầu quan sát những Người bảo vệ. Tuy nhiên, anh ta sẽ rất đau lòng vì đã giết Felwinter và những thiệt hại không thể khắc phục mà anh ta đã gây ra."
+    },
+    {
+      "title": "Diễn giả bổ nhiệm Osiris làm Chỉ huy Đội tiên phong ...",
+      "description": "Diễn giả bổ nhiệm Osiris làm Tư lệnh Đội tiên phong bất chấp sự phản đối và tuyên bố nghiêm trọng của Concordat sau trận chiến ở Sáu Mặt trận."
+    },
+    {
+      "title": "Sự hình thành của Six Coyote",
+      "description": "Six Coyotes, một đội thợ săn huyền thoại, thực hiện cuộc khảo sát đầu tiên bên ngoài bức tường Cosmodrome."
+    },
+    {
+      "title": "Đội hình của phi hành đoàn Cayde-6",
+      "description": "Cayde-6, cùng với Andal Brask, Shiro-4 và một Thợ săn khác, đã thành lập một phi hành đoàn và thực hiện các hành động ra khỏi Thành phố. Họ điều hành các nhóm trinh sát để tìm kiếm những người sống sót và dẫn họ trở lại Thành phố, lập bản đồ các địa điểm bị mất và săn lùng Fallen."
+    },
+    {
+      "title": "Cuộc săn Ahamkara vĩ đại",
+      "description": "Ahamkara bị tuyệt chủng theo lệnh của Đội tiên phong để ngăn chặn những Người bảo vệ tự hủy diệt. Các Pháp sư bảo tồn một số xương và hóa thạch Ahamkara để nghiên cứu, đồng thời một số Thợ săn trang trí áo giáp của họ bằng vảy. Riven và Taranis là những người duy nhất sống sót sau cuộc săn lùng này và bị tách ra, nhưng họ vẫn tiếp tục thì thầm với nhau. Mara Sov mong muốn Riven bị mắc kẹt trong Keep of Voices để giam giữ cô ấy."
+    },
+    {
+      "title": "Lãnh chúa Naeem học được từ Shaxx của một Ahamkara mà anh ta ...",
+      "description": "Lãnh chúa Naeem biết được từ Shaxx về một Ahamkara mà anh ta đã giết có tên là Hefnd. Tìm kiếm sức mạnh để bắt đầu lại, cô đến lâu đài nơi Hefnd được chôn cất và chào đón Ahamkara đã chết, cầu mong lòng tốt của anh ta. Cô cố gắng thuyết phục anh ta cho phép cô sử dụng xương của anh ta để ban điều ước cho các ngôi làng, bù đắp cho quá khứ của cô là một Lãnh chúa tàn nhẫn, tuy nhiên Hefnd sẽ từ chối vì điều đó hầu như không đủ để thỏa mãn cơn đói của anh ta. Naeem sau đó sẽ đề xuất rằng cô ấy sẽ phải đối mặt với hậu quả của những điều ước, Hefnd đồng ý và một món hời đã xảy ra. Theo thời gian, một tình bạn hình thành giữa hai người họ. Tuy nhiên, House of Kings đã tấn công lâu đài và giết chết Naeem, trong hơi thở cuối cùng, cô ước rằng sự báo thù của mình sẽ theo họ xuống mồ."
+    },
+    {
+      "title": "Rezyl Azzir lên Mặt trăng để \"tìm kiếm [cho] gần...",
+      "description": "Rezyl Azzir lên Mặt trăng để \"tìm kiếm [tìm] những cơn ác mộng\", và tìm thấy Hive Wizard Xyor, Đấng ban phước. Anh ta giết phối ngẫu của cô và lấy chitin của anh ta làm chiến tích để tô điểm cho Rose."
+    },
+    {
+      "title": "Trận chiến hồ cháy",
+      "description": "Tổ ong xâm lược Trái đất và lần đầu tiên liên lạc với các Vệ binh. Mặc dù những người bảo vệ đã đẩy lùi thành công cuộc xâm lược, Shaxx cố gắng ngăn cản Đồng thuận ra lệnh phản công, lập luận rằng cần phải hiểu rõ sức mạnh của Hive trước khi có thể tiến hành một cuộc tấn công thích hợp. Trong những năm sau, anh bắt đầu phát triển nghệ thuật rèn kiếm đã thất truyền, thiết kế ngược những lưỡi kiếm Hive đáng sợ để những Người bảo vệ sử dụng."
+    },
+    {
+      "title": "Thảm họa lớn",
+      "description": "Các Vệ binh phát động một cuộc tấn công táo bạo để giành lại Mặt trăng từ Tổ ong. Chiến binh Ascendant Hive Crota, con trai của God-King Oryx của họ, đã đẩy lùi cuộc tấn công một cách tàn nhẫn, đích thân chỉ huy lực lượng của Hive và giết chết hàng chục Người bảo vệ bằng thanh kiếm huyền thoại của mình. Khiêm tốn, Đội tiên phong ra lệnh rút lui hoàn toàn và tuyên bố nằm ngoài giới hạn của Mặt trăng, hy vọng rằng Tổ ong sẽ mất hứng thú và kiềm chế xâm lược Trái đất."
+    },
+    {
+      "title": "Trong Máy bay lên cao, hai Hiệp sĩ - một trong...",
+      "description": "Trong Máy bay lên cao, hai Hiệp sĩ - một trong số Oryx và Xivu Arath tham gia vào một trận đấu tay đôi. Chứng tỏ sức mạnh ngang nhau, các Hiệp sĩ quyết định lao mình vào Biển Screams để dòng điện trong đó quyết định số phận của họ. Điều này dẫn đến việc một trong những nhà vô địch của Crota không nhận được một lượng cống phẩm đáng kể, dẫn đến thất bại trước một trung sĩ của Xivu Arath. Do mất đi một lượng lớn đền thờ và phụ lưu, Crota quyết định ngủ trong thế giới ngai vàng của mình để lấy lại phần mười của mình. Anh ta gắn linh hồn của mình vào một viên pha lê Tăng dần, để anh ta có thể nhanh chóng trở lại khi sức mạnh của mình đã trở lại và giao thanh kiếm của mình cho các Hoàng tử Swarm."
+    },
+    {
+      "title": "Bi kịch của đội cứu hỏa Crota đầu tiên",
+      "description": "Tìm cách trả thù cho những đồng minh đã mất và người yêu của cô là Wei Ning, Eriana-3 dẫn đầu một đội gồm những Người bảo vệ gồm Eris Morn, Vell Tarlowe, Omar Agah, Sai Mota và Toland lên Mặt trăng để săn lùng Crota. Họ cắm trại tại Anchor of Light và tiến vào Đền thờ Crota sau khi nghe thấy tiếng hét của Omnigul, Will of Crota. Họ phải đối mặt với Alak-Hul, Verok và đàn em của họ. Đánh giá thấp kẻ thù của mình, Vell Tarlowe bị lũ sinh vật áp đảo và bị Alak-Hul giết chết. Đội cứu hỏa được tách ra, với Eriana-3 và Sai ở một nhóm, còn Eris, Toland và Omar ở nhóm còn lại. Toland tìm kiếm Ir Yût, Deathsinger, bài hát giết chết anh ta và ném linh hồn của anh ta lên Máy bay lên cao. Omar bị bắt bởi Heart of Crota, người sử dụng Ánh sáng của mình để nuôi tổ ong chưa sinh ra, dẫn đến việc linh hồn của anh ta bị chuyển thành một sinh vật giống côn trùng. Sai bị Omnigul giết, còn Eriana-3 đến lối vào Thế giới ngai vàng của Crota và phải chịu cái chết trước Ir Yût. Chỉ có Eris mới trốn tránh được cơn thịnh nộ của Tổ ong, mất đi Ghost Brya và đôi mắt của cô ấy, sống sót trong đường hầm của Tổ ong nhiều năm trước khi trốn thoát và sau đó trở thành một trong những Người ẩn náu của Ikora Rey."
+    },
+    {
+      "title": "Bi kịch của đội cứu hỏa Kabr",
+      "description": "Một đội cứu hỏa gồm Praedyth, Pahanin, Kabr đáp xuống Sao Kim và đột nhập Vault of Glass, với hy vọng tiêu diệt Atheon, cùng với bất kỳ bí mật nào mà Vex đã giấu ở đó, và trở về Thành phố trong vinh quang. Cuộc tấn công là một thảm họa khi đội của Kabr chạm trán với Hiệp sĩ dòng Đền, những người có tấm khiên bất khả xâm phạm và vũ khí mạnh mẽ buộc cả đội phải tiến sâu hơn vào Hầm Thủy tinh. Chỉ có Pahanin thoát khỏi Vault. Một thành viên, Praedyth, bị Vex mắc kẹt và lạc lối trong thời gian. Bản thân Kabr không bị giết mà thay vào đó trở nên điên loạn, bị ám ảnh bởi Vex, chế tạo áo giáp và vũ khí từ xác chết của chúng. Cuối cùng, Kabr không chết mà bị Vex đồng hóa. Trong hành động cuối cùng của mình, Kabr tạo ra Aegis, một vũ khí có khả năng xuyên thủng các lá chắn của Hiệp sĩ để các đội cứu hỏa trong tương lai không gặp phải số phận của anh ta."
+    },
+    {
+      "title": "Sự biến mất của Kauko Swiftriver",
+      "description": "Kauko Swiftriver, Thợ săn tiên phong, biến mất không dấu vết. Sự biến mất của anh ta khiến các Thợ săn không có Đội tiên phong trong hai năm tiếp theo."
+    },
+    {
+      "title": "Lần tiếp xúc đầu tiên của băng Cayde với Taniks",
+      "description": "Hai năm sau khi Kauko Swiftriver biến mất, phi hành đoàn của Cayde-6 bị Taniks nhắm đến và trong lần chạm trán đầu tiên, người lính đánh thuê đã ngã xuống đã giết chết Nian Ruo và khiến Lush không còn bóng ma."
+    },
+    {
+      "title": "Cuộc thách đấu giữa Andal Brask và Cayde-6",
+      "description": "Andal Brask và Cayde-6 thách đấu, ai không giết được Taniks sẽ phải trở thành Hunter Vanguard mới."
+    },
+    {
+      "title": "Cuộc săn lùng Tanik",
+      "description": "Andal Brask và Cayde-6 truy lùng Tanik. Cùng lúc đó, Osiris và Diễn giả cử Saint-14 đi giết Taniks, nhưng Cayde-6 đã giết anh ta trước."
+    },
+    {
+      "title": "Andal Brask, Đội tiên phong thợ săn mới",
+      "description": "Andal Brask mất Dám và trở thành Đội tiên phong của Thợ săn."
+    },
+    {
+      "title": "Sự lưu đày của Osiris",
+      "description": "Osiris bắt đầu cảm thấy mệt mỏi với các nhiệm vụ tấn công lặp đi lặp lại và các phiên họp dường như không hiệu quả với Cryptarch trước khi cuối cùng anh được Người phát ngôn chú ý, người đã biến anh thành người học việc của mình. Tuy nhiên, mong muốn của Osiris về sự thật về mục đích của những Người bảo vệ và bản chất của Bóng tối đã gây ra sự chia rẽ. Sau đó, việc anh ta lạm dụng tài nguyên và chuyển hướng những người bảo vệ khỏi nhiệm vụ của họ sẽ dẫn đến việc Diễn giả gửi anh ta đi lưu vong ngay sau Trận chiến ở Chạng vạng, vì Diễn giả tin rằng anh ta đã bị ám ảnh bởi Vex giống như Toland đã làm với Tổ ong. Sau một cuộc tranh cãi gay gắt với Diễn giả, Osiris bị trục xuất khỏi Tháp và Ikora Rey thay thế anh ta làm Đội tiên phong Warlock."
+    },
+    {
+      "title": "Trận chiến ở khoảng cách Chạng vạng",
+      "description": "The Fallen dẫn đầu sức mạnh tổng hợp của Nhà Quỷ, Vua và Mùa Đông thống nhất trong một cuộc tấn công chống lại Thành phố. Trận chiến diễn ra tại Twilight Gap, ngay bên ngoài bức tường của Thành phố. Chỉ huy Đội tiên phong Lord Saladin Forge điều phối việc phòng thủ của Thành phố cùng với các học trò của ông là Chỉ huy Zavala và Lãnh chúa Shaxx. Mặc dù nhiều Người bảo vệ ngã xuống trong trận chiến sau đó, nhưng những Ngôi nhà sụp đổ thống nhất vẫn bị đánh bại với thương vong nặng nề. Sau chiến thắng khó khăn của Đội bảo vệ, các khu vực ngoài cùng của Thành phố được sơ tán và chuyển thành công sự, và Đội tiên phong quyết định có lập trường chủ động hơn trong việc chiến đấu với lực lượng Bóng tối bằng cách triển khai các đội tấn công chống lại các mục tiêu có giá trị cao của kẻ thù."
+    },
+    {
+      "title": "Cuộc thập tự chinh của Saint-14",
+      "description": "Sau Twilight Gap, Titan huyền thoại và Exo Saint-14 tập hợp đội quân Vệ binh để tấn công Fallen xung quanh Thành phố Cuối cùng. Chiến dịch của anh ta thành công và các cuộc tấn công của Fallen vào Thành phố tạm thời giảm bớt. Trong chiến dịch, anh chiến đấu và tiêu diệt Solkis, Kell of Devils. Ngay sau đó, anh ta đi tìm Osiris theo lệnh của Diễn giả, hướng tới Sao Thủy. Saint-14 đi vào Khu rừng vô tận và xung đột với Hậu duệ, những người tạo ra Agioktis, Martyr Mind để tiêu hao Ánh sáng của Saint-14. Great Titan cuối cùng cũng gặp được kết cục của mình. Zavala trở thành Chỉ huy Đội tiên phong và Đội tiên phong Titan sau khi Saint-14 biến mất."
+    },
+    {
+      "title": "Cuộc chiến rạn san hô",
+      "description": "Khi Twilight Gap hoành hành trên Trái đất, Thức tỉnh của Rạn san hô, liên minh với Chín người, khuất phục Nhà Sói hùng mạnh. Các trận chiến bao gồm Chiến dịch Hildian và Raze of Amethyst. Sau khi Kell Virixas của họ bị giết, một cuộc nội chiến tàn khốc giữa bầy Sói xảy ra và Skolas nổi lên với tư cách là Kell mới. Sau khi Skolas bị bắt tại Cuộc nổi dậy Cybele, Bầy sói đầu hàng và thề trung thành với Nữ hoàng Mara Sov thay vì bị tiêu diệt hoàn toàn. Nữ hoàng phong ấn giới quý tộc của họ trong Nhà tù Trưởng lão và cho phép những người còn lại làm vệ sĩ và người hầu riêng cho bà."
+    },
+    {
+      "title": "Sự lưu đày của Petra Venj",
+      "description": "Petra Venj bị đày đến Thành phố cuối cùng để phục vụ với tư cách là Sứ giả của Nữ hoàng nhằm đền tội vì đã giết 9 Người bảo vệ và Hồn ma của họ vì sự hiểu lầm giữa Người thức tỉnh và Đội tiên phong. Thỉnh thoảng trong thời gian lưu vong này, cô viết một lá thư xin trở về nhà."
+    },
+    {
+      "title": "Sau Cuộc chiến Rạn san hô, chỉ huy Cabal Valus...",
+      "description": "Sau Cuộc chiến tranh Rạn san hô, chỉ huy Cabal Valus Trau'ug cố gắng ủy quyền cho một cuộc xâm lược Rạn san hô. Khi bị cấp trên từ chối, Trau'ug tàn sát các sĩ quan của mình trong một cuộc binh biến và dẫn dắt những người lính trung thành nhất của mình chống lại Nữ hoàng. Trau'ug thất bại hoàn toàn khi cả anh và Quân đoàn tan vỡ của anh đều bị giam giữ trong Nhà tù của các trưởng lão bằng những cách không xác định."
+    },
+    {
+      "title": "Sau hậu quả của Cuộc chiến rạn san hô và Chạng vạng...",
+      "description": "Sau cuộc Chiến tranh Rạn san hô và Khoảng cách Chạng vạng, vô số kẻ bất hảo và những kẻ bị ruồng bỏ của các Ngôi nhà sa ngã tập hợp lại để thành lập Nhà lưu vong trên mặt trăng và bắt đầu cướp bóc pháo đài Hive ở đó."
+    },
+    {
+      "title": "Cuộc nổi dậy của Concordat",
+      "description": "Concordat cố gắng đảo chính chống lại Đồng thuận, chiến đấu chống lại Chế độ quân chủ mới tại Bannerfall. Sau thất bại, phe và người sáng lập của họ bị trục xuất khỏi Thành phố. Sau đó, Vanguard và Diễn giả chấp thuận việc gia nhập Giáo phái Chiến tranh Tương lai để thay thế Concordat."
+    },
+    {
+      "title": "Hiệp định phe phái",
+      "description": "Cuộc đàm phán được gọi là Hiệp định phe phái đã diễn ra. Andal Brask đã tham gia vào quá trình này. Ikora Rey đã đạt được chuỗi 25 trận thắng đầu tiên được ghi nhận ở Crucible. Hành tinh nhân mã Nessus quay trở lại Hệ Mặt trời sau một thời gian trì hoãn không giải thích được.",
+      "date": "Approximately 126 years before the SIVA Crisis"
+    },
+    {
+      "title": "Cái chết của Andal Brask",
+      "description": "Andal Brask, Đội tiên phong Thợ săn, rơi vào trận chiến với tên lính đánh thuê Sa ngã hung ác Taniks. Cayde-6 miễn cưỡng đảm nhận vị trí của Brask để tưởng nhớ người bạn đã khuất của mình."
+    },
+    {
+      "title": "Cuộc điều tra của Cung điện Bụi",
+      "description": "Vật chủ của Holborn điều tra Cung điện Bụi trên sao Hỏa để tìm kiếm Warmind. Trong khi chuẩn bị cho cuộc tấn công vào Cung điện Bụi, Holborn phát hiện ra một Hồn ma bị lạc và cố gắng liên lạc với nó trước khi mời nó tham gia cùng họ trong nhiệm vụ. Con ma \"ốm yếu\" sau đó đi lang thang và Holborn tiếp tục cuộc tìm kiếm của mình."
+    },
+    {
+      "title": "Sự sụp đổ của Rezyl Azir",
+      "description": "Rezyl Azzir trở thành Dregen Yor, bị tha hóa bởi những chiến tích Hive mà anh ta thu thập được và bắt đầu chiến dịch hủy diệt của mình."
+    },
+    {
+      "title": "Chiến dịch Dredgen Yor",
+      "description": "Dredgen Yor sát hại những người bảo vệ đồng nghiệp cũng như thường dân. Các nạn nhân của hắn bao gồm nhà vô địch Crucible Thalor và các Thợ săn Pahanin và Jaren Ward."
+    },
+    {
+      "title": "Cái chết của Dredgen Yor",
+      "description": "Yor cuối cùng đã bị giết bởi Shin Malphur, con nuôi của Jaren Ward và khẩu súng ngắn The Last Word của anh ta sau một trận đấu tay đôi định mệnh. Tất cả thông tin liên quan đến việc Rezyl trở thành Dregen Yor đều được Vanguard biên tập lại vì sợ mất tinh thần. Chỉ có Shin và Vanguard biết sự thật."
+    },
+    {
+      "title": "Sự hình thành của Shadows of Yor",
+      "description": "Shin Malphur, nhận ra rằng những Người bảo vệ vẫn sẽ bị ảnh hưởng bởi di sản của Yor, hợp tác với Teben Grey và thành lập Shadows of Yor. Anh ta lấy tên là \"Zyre Orsa\", còn được gọi là \"Dredgen Vale\" và anh ta sử dụng Shadows of Yor để xác định những Người bảo vệ nào đang bắt đầu rời xa Ánh sáng. Với sự hỗ trợ của Vanguard, Shadows of Yor trở thành một mối đe dọa hiện hữu và bắt đầu thu hút những người sùng bái Yor. Malphur bắt đầu săn lùng những người gia nhập Bóng tối, tiêu diệt những Người bảo vệ yếu đuối và hư hỏng, những người dễ bị ảnh hưởng bởi sức mạnh của Bóng tối."
+    },
+    {
+      "title": "Fireteam Tuyết đi ngang qua bồn rửa Ishtar để tìm kiếm...",
+      "description": "Fireteam Tuyết đi ngang qua Bồn rửa Ishtar để tìm kiếm bí mật Vex. Thật không may, Vex tìm thấy họ trước và Tuyết bị lạc ở vị trí cuối cùng trên Shattered Coast. Tuy nhiên, thông tin họ thu hồi được sau đó được sử dụng để rèn Pocket Infinity."
+    },
+    {
+      "title": "Một Thợ săn vô danh trinh sát tàn tích Ishtar đang tìm kiếm...",
+      "description": "Một Thợ săn vô danh trinh sát tàn tích Ishtar để tìm kiếm Kellship của Ngôi nhà mùa đông sụp đổ. Cô ấy bị phục kích bởi quân Fallen trước khi xác định được vị trí của Ketch của họ. Thay vì tự mình tấn công nó, Thợ săn hướng dẫn Hồn ma của mình cảnh báo cho Đội tiên phong rằng Draksis, Winter Kell đang ở Cinders."
+    },
+    {
+      "title": "Sự sáng tạo của trái tim đen",
+      "description": "Cloud Strider Rohan tiến vào Black Garden, một vương quốc bí ẩn nằm ngoài không gian và thời gian do Sol Divisive, một tập thể Vex phục vụ Nhân chứng, chiếm giữ. Anh ta chứng kiến ​​Tâm trí Khái niệm tạo ra Trái tim đen bằng cách sử dụng một \"hạt giống\" do Nhân chứng gieo trồng. Anh ta kết luận rằng Trái tim là nỗ lực thất bại của Sol Divisive trong việc tạo ra một bản sao của Tấm màn che. Hội đồng Neomuni từ chối hành động."
+    },
+    {
+      "title": "Black Heart, mặc dù có nhiều sai sót và thất bại...",
+      "description": "Trái tim đen, mặc dù có sai sót và không tạo được liên kết mà Nhân chứng mong muốn, vẫn chia sẻ kết nối với Lữ khách. Sự kết nối này sẽ tạo ra tĩnh điện vũ trụ trong dòng chảy của Ánh sáng và Bóng tối, làm suy yếu Lữ khách. Sol Divisive sẽ chuẩn bị cho Sol Progeny trong nỗ lực mở rộng sức mạnh của Black Heart vào Vault of Glass. Uldren trải qua sự tha hóa của Trái tim sau khi vào Khu vườn Đen từ cổng Vex tại Thung lũng các vị vua."
+    }
+  ]
+}

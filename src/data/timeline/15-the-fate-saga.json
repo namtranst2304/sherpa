@@ -1,0 +1,21 @@
+{
+  "id": "the-fate-saga",
+  "name": "Saga định mệnh",
+  "description": "Sự kiện trong The Fate Saga.",
+  "themeColor": "zinc",
+  "events": [
+    {
+      "title": "Chín người thảo luận về cái chết của Nhân chứng và kế hoạch của nó...",
+      "description": "Chín người thảo luận về cái chết của Nhân Chứng và kế hoạch áp đặt Hình dạng Cuối cùng của nó. Một số thành viên của Nine đã thoát khỏi cái chết của nó trong khi những thành viên khác thì không. IV là thành viên duy nhất của Nine vắng mặt trong cuộc thảo luận."
+    },
+    {
+      "title": "Sau khi rời khỏi Nessus, Maya sẽ suy ngẫm về...",
+      "description": "Sau khi rời Nessus, Maya sẽ suy ngẫm về hành động giết Chioma thật. Cô giao nhiệm vụ cho Vex tìm thông tin về cách khôi phục Trái đất về thời kỳ Hoàng kim. Câu trả lời của cô dẫn cô đến thông tin liên quan đến Cocytus và vật chất tối, cả hai đều có mối liên hệ với Nine. Cô ấy sẽ bắt đầu nhiệm vụ thương lượng với Nine để khiến họ trao đổi Trái đất hiện tại với Trái đất Thời đại Hoàng kim chống lại lời đề nghị của Te'Qal để quản lý chiến lược của cô ấy."
+    },
+    {
+      "title": "Đế chế",
+      "description": "Vài tháng kể từ cái chết của III, Trái đất bắt đầu phải hứng chịu những thay đổi trong thành phần hóa học bên cạnh những bất thường về sức khỏe và môi trường đã bắt đầu. Để tránh sự cuồng loạn, Vanguard và Praxic Order đã quyết định biên tập lại thông tin liên quan đến lời tiên tri mà III đã nêu trước khi chết. Thật không may, những người dân của Thành phố cuối cùng vẫn phải chịu hậu quả từ cái chết của nó. Trong khi đó, Drifter tập hợp một nhóm gồm Eido, Eris, Lodi, Aunor Mahal, Người bảo vệ và Hồn ma của anh ta, Blue, để hành động theo lời tiên tri. Họ đánh cắp một tài sản của Barant Imperium và cố gắng trốn thoát khỏi chúng trên tàu Derelict, nhưng nó lại bị bắt và đưa lên tàu Zagan Gloriosus. Derelict sau đó được đưa lên bởi Imperium và các thủ lĩnh của nó, Premier Lume và Dredgen Bael, những người đã bắt được Drifter bằng Stasis. Người bảo vệ lên tàu sân bay và chiến đấu chống lại lực lượng của Đế quốc Barant. Trên đường giải cứu Drifter, Dredgen Bael nói chuyện với Người bảo vệ trước khi IV chiếm hữu anh ta trong giây lát và coi thường Người bảo vệ. Sau khi trả lại Drifter cho Derelict, Aunor đã có thể vô hiệu hóa chùm máy kéo giữ nó tại chỗ trong khi Guardian hạ gục một số Imperium Behemoth. Trước khi rời đi, Aunor và Dredgen Bael chiến đấu một thời gian ngắn bằng Praxic Blades của họ mà cả hai đều không giành được chiến thắng khi Aunor trốn thoát cùng Derelict và phi hành đoàn.",
+      "date": "2 December"
+    }
+  ]
+}

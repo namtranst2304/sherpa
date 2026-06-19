@@ -1,0 +1,21 @@
+{
+  "id": "cayde-6-s-death",
+  "name": "Cái chết của Cayde-6",
+  "description": "Sự kiện từ cái chết của Cayde-6.",
+  "themeColor": "zinc",
+  "events": [
+    {
+      "title": "Petra Venj giao nhiệm vụ cho một nhóm Vệ binh do Cayde lãnh đạo...",
+      "description": "Petra Venj giao nhiệm vụ cho một nhóm Hộ vệ do Cayde-6 chỉ huy đi săn các Nam tước bị khinh miệt. Bảy người trong số họ bị bắt và giam trong Nhà tù của những người lớn tuổi. Chỉ có thủ lĩnh của họ, Fikrul, Fanatic trốn thoát."
+    },
+    {
+      "title": "Siviks, Lost to None, người anh trai loạn trí của Spid...",
+      "description": "Siviks, Lost to None, anh trai loạn trí của Spider và là thủ lĩnh của Kell's Scourge phát hiện ra Lò rèn Gofannon của Black Armory. Để bắt đầu chiến dịch vô chính phủ của mình, Siviks bắt đầu phân phối vũ khí cho Fallen trên toàn hệ thống."
+    },
+    {
+      "title": "bầy thú",
+      "description": "Calus mời Người bảo vệ tham gia vào vinh quang bằng cách chiến đấu với lực lượng Hive và Vex mà anh ta bắt được bên trong Leviathan của mình và hứa với họ những phần thưởng ngọt ngào nếu họ chấp nhận lời mời của anh ta.",
+      "date": "4 June"
+    }
+  ]
+}

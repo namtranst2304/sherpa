@@ -1,0 +1,29 @@
+{
+  "id": "the-young-wolf-s-ascension",
+  "name": "Sự thăng thiên của Sói Trẻ",
+  "description": "Sự kiện từ Sự thăng thiên của Sói Trẻ.",
+  "themeColor": "zinc",
+  "events": [
+    {
+      "title": "Một người bảo vệ trỗi dậy",
+      "description": "Một Bóng ma tìm thấy và hồi sinh Người bảo vệ của nó trong Sân bay vũ trụ đúng lúc \"Bóng tối\" đe dọa quay trở lại Hệ mặt trời và hoàn thành những gì nó đã bắt đầu trong Sự sụp đổ. Trong khi tìm kiếm một con tàu có khả năng đưa họ đến Thành phố cuối cùng, Người bảo vệ buộc phải chống lại đám Quỷ sa ngã của Nhà quỷ, trước khi cuối cùng xác định được vị trí của Tàu nhảy lớp Arcadia ở Bến tàu 13. Ghost tăng cường sức mạnh cho chiếc tàu cổ xưa và Người bảo vệ cất cánh đến Tháp khi Exo Stranger nhìn vào.",
+      "date": "Centuries after the Collapse"
+    },
+    {
+      "title": "Eris Morn quay trở lại Tháp, cảnh báo về một mối đe dọa...",
+      "description": "Eris Morn quay trở lại Tháp, cảnh báo về một cuộc xâm lược của Tổ ong sắp xảy ra do Crota sắp hồi sinh lãnh đạo. Cô giao nhiệm vụ cho Người bảo vệ giết các đệ tử của Crota."
+    },
+    {
+      "title": "Cuộc nổi dậy của sói",
+      "description": "Mara Sov tặng Skolas cho Chín người như một món quà nhằm xoa dịu họ về việc cử Quạ vào lãnh thổ của họ để tìm kiếm Kaliks Prime. Tuy nhiên, Skolas được giải thoát, có thể với sự trợ giúp của Nine, Skolas thống nhất Nhà Sói trở lại dưới sự lãnh đạo của mình và tuyên bố mình là Kell of Kells, tìm cách trở thành người cai trị tất cả các Ngôi nhà sụp đổ. Nhà Sói nổi dậy chống lại Rạn san hô. Mara Sov mở Rạn san hô cho các Hộ vệ để hỗ trợ cô săn lùng những kẻ phản bội sói."
+    },
+    {
+      "title": "Petra Venj phát hiện Hive Dreadnaught đang quay quanh...",
+      "description": "Petra Venj phát hiện Hive Dreadnaught quay quanh các vành đai Sao Thổ và ra lệnh huy động tất cả tài sản của Reef, sau cuộc trò chuyện giữa Nữ hoàng Mara Sov, Eris Morn và có lẽ là Osiris về sự xuất hiện sắp xảy ra của Oryx. Mara Sov tạo ra Thế giới ngai vàng của riêng mình bằng phép thuật điều ước của Riven."
+    },
+    {
+      "title": "Sự cố truyền tải",
+      "description": "Các báo cáo hiện trường được thực hiện từ những Người bảo vệ có áo giáp đã bị nhiễm \"bọ công nghệ\", biểu hiện dưới dạng những đám đốm đầy màu sắc xoay quanh đầu họ. Không thể ngăn chặn sự lây lan của loài ve trong số những Người bảo vệ, Thay vào đó, Khu vực cú và Đội tiên phong đã thực hiện cách ly ở Thành phố cuối cùng để ngăn chặn sự phơi nhiễm của những người không phải Người bảo vệ."
+    }
+  ]
+}

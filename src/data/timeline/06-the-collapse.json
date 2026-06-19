@@ -1,0 +1,77 @@
+{
+  "id": "the-collapse",
+  "name": "sự sụp đổ",
+  "description": "Sự kiện từ Sự sụp đổ.",
+  "themeColor": "red",
+  "events": [
+    {
+      "title": "Warmind Rasputin phát hiện sự xuất hiện đột ngột của...",
+      "description": "Warmind Rasputin phát hiện sự xuất hiện bất ngờ của Hạm đội Đen bên ngoài Hệ Mặt trời, với sự trợ giúp của công nghệ bị bỏ rơi của Giáo phái Chiến tranh Tương lai và Augurmind Soteria. Anh phát hiện ra đây là Hạm đội Đen, do Nhân chứng chỉ huy, cùng với các Đệ tử và Savathûn của nó. Nhận thức được mối đe dọa, Rasputin đảm nhận quyền kiểm soát Mạng lưới phòng thủ hành tinh của nhân loại."
+    },
+    {
+      "title": "Lữ khách thực hiện \"cuộc di cư cuối cùng\" khỏi Io, ...",
+      "description": "Lữ khách thực hiện \"cuộc di cư cuối cùng\" khỏi Io, khiến quá trình địa hình hóa mặt trăng chưa hoàn thiện và chạy trốn đến Trái đất khi Sự sụp đổ bắt đầu."
+    },
+    {
+      "title": "Rasputin cố gắng đánh bại Hạm đội Đen bằng cách sử dụng ...",
+      "description": "Rasputin cố gắng đánh bại Hạm đội Đen bằng tất cả vũ khí sẵn có nhưng vô ích. Trong nỗ lực cuối cùng nhằm ngăn chặn sự diệt vong sắp xảy ra, Rasputin thực hiện MỆNH LỆNH TUYỆT VỜI và chuẩn bị bắn vào Lữ khách bằng vũ khí mạnh nhất của mình, từ đó ép nó vào một hành động phòng thủ \"giả vị tha\", nếu nó cố gắng rời đi. Lữ khách, không rõ vì lý do gì, chọn ở lại và chiến đấu."
+    },
+    {
+      "title": "Xol, Nokris và đàn con của họ đến sao Hỏa trong ...",
+      "description": "Xol, Nokris và đàn con của họ đến Sao Hỏa với nỗ lực chinh phục hành tinh này. Rasputin kích hoạt \"SIBERIAN ENTROPY\", đóng băng và nhốt chúng bên dưới Lưu vực Hellas."
+    },
+    {
+      "title": "Rasputin đưa Yang Liwei làm tàu ​​chiến, ...",
+      "description": "Rasputin ủy quyền cho Yang Liwei làm tàu ​​chiến, nhưng họ từ chối đứng về một bên trong cuộc xung đột. Trận chiến giữa Hạm đội Đen và Lữ khách dẫn đến việc tạo ra kugelblitz. Nó hút Yang Liwei vào một không gian túi mới được hình thành từ Ánh sáng và Bóng tối, nơi thời gian trôi qua nhanh hơn nhiều. Những người trên tàu sẽ mất đi cơ thể vật lý và trở thành những sinh vật có đầy đủ tiềm năng. Mara Sov là người đầu tiên bước vào."
+    },
+    {
+      "title": "Vì tất cả các biện pháp đối phó đều không ảnh hưởng đến thực thể...",
+      "description": "Khi tất cả các biện pháp đối phó đều không ảnh hưởng đến thực thể và thất bại trở thành điều chắc chắn, Rasputin quyết định thực hiện YUGA SUNDOWN và đóng cửa để bảo vệ chính nó, khiến hàng tỷ người thiệt mạng."
+    },
+    {
+      "title": "Nhiều tàu ECHO được hạ thủy nhằm cố gắng ...",
+      "description": "Nhiều tàu ECHO được hạ thủy nhằm cố gắng thoát khỏi sự kiện tận thế này. Tuy nhiên, nhiều người trong số họ đã bị phá hủy trong chuyến bay của họ. Một trong những con tàu chứa tiểu tâm trí của Soteria bị cuốn vào giếng trọng lực của Sao Hải Vương và đâm vào bề mặt của gã khổng lồ băng."
+    },
+    {
+      "title": "Hạm đội Đầu tiên hoặc có thể là những gì được biết đến...",
+      "description": "Hạm đội thứ nhất hoặc có thể được gọi là Cassini, bị mất tích quanh quỹ đạo Sao Thổ."
+    },
+    {
+      "title": "Trên Sao Thủy, Sao Kim và Sao Hỏa, các đơn vị Vex không hoạt động sẽ...",
+      "description": "Trên Sao Thủy, Sao Kim và Sao Hỏa, các đơn vị Vex không hoạt động phản ứng với Sự sụp đổ sẽ kích hoạt lại và bắt đầu địa khai hóa một số thế giới. Trong khi Sao Thủy bị biến thành Thế giới Máy móc sau nhiều ngày. Trên Mercury, Dendron, Root Mind thiết lập công cụ dự đoán có kích thước bằng hành tinh sẽ trở thành Khu rừng vô tận, với Panoptes, Infinite Mind đóng vai trò là Tâm trí trục của nó. Sự lây lan Vex tạm thời bị đình trệ bởi Lữ khách."
+    },
+    {
+      "title": "Một con tàu vũ trụ khổng lồ mang biểu tượng của Thời đại Hoàng kim...",
+      "description": "Một con tàu vũ trụ khổng lồ mang biểu tượng của Trái đất Thời đại Hoàng kim trên mũi của nó đâm vào một thế giới đầy vết sẹo chiến đấu không xác định, nơi hơn hai chục binh sĩ Exo chiến đấu trong một trận chiến kinh hoàng với Vex."
+    },
+    {
+      "title": "sự sụp đổ",
+      "description": "Hạm đội Đen, được Nhân loại tin rằng chính là Bóng tối, đến Trái đất. Cuộc tấn công được chỉ huy bởi Nezarec, người có Mạng che mặt trên tàu của mình, cùng với Savathûn. Chúng đã gây ra sự sụp đổ và sự kết thúc đột ngột của Thời đại Hoàng kim. Những người bảo vệ Trái đất liên tục bị đánh lui cho đến khi loài người bị đe dọa tuyệt chủng."
+    },
+    {
+      "title": "Bất chấp vũ khí tiên tiến của Black Armory, họ...",
+      "description": "Bất chấp vũ khí tiên tiến của Black Armory, họ không thể chống đỡ trước sự tấn công dữ dội của Hạm đội Đen và buộc phải từ bỏ nơi ẩn náu và lò rèn. Helga Rasmussen thiệt mạng, trong khi con gái của Henriette Meyrin là Adelaide bị thương nặng do vụ tấn công. Để cứu con gái mình, Henriette đồng ý để Yuki Satou tải ý thức của Adelaide vào Exo, từ đó tạo ra Ada-1."
+    },
+    {
+      "title": "Savathûn phản bội và giết Nezarec, nguyền rủa...",
+      "description": "Savathûn phản bội và giết Nezarec, nguyền rủa hài cốt của anh ta và giấu Tấm màn che trên Neptune. Cô ta lừa Nhân chứng để tha cho Lữ khách. Nhân loại được cứu nhờ sự can thiệp của Lữ khách, người hy sinh bản thân để ngăn chặn Hạm đội Đen. Trước khi chìm vào giấc ngủ, Lữ khách tạo ra các Bóng ma để tìm kiếm những người có thể sử dụng Ánh sáng của nó làm vũ khí."
+    },
+    {
+      "title": "Sự sụp đổ của kim tự tháp mặt trăng",
+      "description": "Con tàu của Nezarec gặp nạn và bị chôn sâu dưới Mặt trăng."
+    },
+    {
+      "title": "Sự sụp đổ của một mảnh vỡ của Lữ khách",
+      "description": "Một mảnh vỡ của du khách đáp xuống Vùng Chết Châu Âu trong trận chiến với Hạm đội Đen."
+    },
+    {
+      "title": "Sự ra đời của người thức tỉnh",
+      "description": "Là người đầu tiên bước vào và thức tỉnh trong vũ trụ mới này, Mara sẽ định hình vũ trụ theo ý muốn của mình, lựa chọn để cô và những người còn lại trong phi hành đoàn tồn tại như những thực thể hiện thân. Alice, người thứ hai thức tỉnh (bây giờ được gọi là Alis), tạo ra hành tinh được gọi là Nhà phân phối từ ký ức của cô. Cả Mara và Alis đều thức tỉnh trên Distributary. Mara lừa Alis rằng cô là người tạo ra các quy tắc của vũ trụ mới. Cả hai đều giúp đánh thức và hóa thân vào các thành viên khác trong phi hành đoàn, bao gồm cả anh trai của Mara, Uldren Sov, do đó trở thành loài được gọi là Awoken, một loài hình người được tạo ra từ cả Ánh sáng và Bóng tối và bất tử miễn là họ vẫn còn trong Phân phối. Alis trở thành nữ hoàng đầu tiên của họ."
+    },
+    {
+      "title": "Thuộc địa của Sáng kiến ​​AION trên Kepler bị cắt đứt...",
+      "description": "Thuộc địa của Sáng kiến ​​AION trên Kepler bị cắt khỏi Trái đất và sẽ chỉ biết về những gì đã xảy ra 1,7 năm sau do khoảng cách quá xa giữa Kepler và Trái đất.",
+      "date": "1.7 years after the Collapse"
+    }
+  ]
+}

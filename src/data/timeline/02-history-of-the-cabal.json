@@ -1,0 +1,36 @@
+{
+  "id": "history-of-the-cabal",
+  "name": "Lịch sử của Cabal",
+  "description": "Sự kiện từ Lịch sử của Cabal.",
+  "themeColor": "green",
+  "events": [
+    {
+      "title": "Theo truyền thuyết, ba chiến binh Cabal đã tìm kiếm...",
+      "description": "Theo truyền thuyết, ba chiến binh Cabal đã tìm cách giành lại Mặt trời cho người dân của họ được bảo vệ bởi một con thú hùng mạnh. Hai người đầu tiên bị giết khi cố gắng trốn tránh sinh vật đó, nhưng người thứ ba sẽ chết trong danh dự để lại dấu ấn trên người con thú. Truyền cảm hứng cho người thân của cô để chiến đấu với sinh vật này bất chấp những cái chết liên tục. Tuy nhiên, con quái vật sẽ phải chịu kết cục trước Acrius, đòi lại mặt trời cho người dân của mình và trở thành Hoàng đế Cabal đầu tiên."
+    },
+    {
+      "title": "Tại một thời điểm nào đó, Cabal đã tạo ra một không gian rộng lớn giữa các vì sao...",
+      "description": "Tại một thời điểm nào đó, Cabal đã tạo nên một Đế chế giữa các vì sao rộng lớn và kết hợp các Psion điều khiển từ xa như một chủng tộc khách hàng, những người trước đây đã tôn thờ một tai họa không xác định mà cuối cùng đã tấn công Cabal và buộc Đế chế phải chạy trốn."
+    },
+    {
+      "title": "Theo thời gian, Cabal Throne mất đi phần lớn sức mạnh...",
+      "description": "Theo thời gian, Cabal Throne mất đi phần lớn quyền lực và tầng lớp quý tộc quân sự, Pháp quan giành được quyền kiểm soát phần lớn quyền lực của Đế chế. Họ phổ biến Nghi thức Chứng minh, một truyền thống để Cabal chứng minh quyền của mình thông qua trận chiến."
+    },
+    {
+      "title": "Calus, Hoàng tử được chỉ định, lãnh đạo một cuộc cách mạng và ...",
+      "description": "Calus, Hoàng tử chỉ định, lãnh đạo một cuộc cách mạng và lật đổ Pháp quan, trở thành Hoàng đế của Đế chế Cabal. Anh ta chuyển nguồn gốc của Đế chế từ chủ nghĩa quân phiệt sang nghệ thuật và triết học, đồng thời biến Torobatl trở thành hành tinh quê hương của Cabal. Sau đó ông có một cô con gái tên là Caiatl. Lãnh sự, người trước đây có quan hệ với Pháp quan sẽ tìm ra cậu bé mồ côi Ghaul, nhận cậu vào và huấn luyện cậu như một vũ khí để lật đổ Calus."
+    },
+    {
+      "title": "Ghaul sẽ trở thành Đấu sĩ ở đấu trường,...",
+      "description": "Ghaul sẽ trở thành Đấu sĩ trong đấu trường, được Hoàng đế sủng ái. Calus thăng chức Ghaul lên Primus của Quân đoàn Đỏ, và cuối cùng là cánh tay phải của anh ta."
+    },
+    {
+      "title": "Cuộc đảo chính lúc nửa đêm",
+      "description": "Ghaul, với sự hỗ trợ của Lãnh sự, Caiatl và những người khác dẫn đầu một cuộc đảo chính quân sự chống lại Calus. Ghaul trở thành thủ lĩnh mới của Đế chế Cabal. Tuy nhiên, vì Calus quá nổi tiếng trong cộng đồng Cabal nên không thể hành quyết mà không mạo hiểm nổi loạn, những kẻ chủ mưu đã đày Calus và những người ủng hộ anh ta còn sống đến Leviathan và khóa đường đi của nó đến một điểm đến xa bên ngoài đế chế Cabal."
+    },
+    {
+      "title": "Sau khi đắm mình trong tuyệt vọng không biết bao lâu...",
+      "description": "Sau khi đắm mình trong tuyệt vọng trong một khoảng thời gian không xác định sau khi bị lưu đày, Leviathan tình cờ gặp một vùng hư vô rộng lớn, khiến hệ thống định vị bị cắt đứt. Calus sau đó nhìn vào khoảng không và nhận được tầm nhìn từ Nhân chứng, cho anh ta thấy Hạm đội Đen và một sự kiện tận thế sẽ loại bỏ tất cả sự sống trong vũ trụ. Nhân chứng tuyên bố với Calus rằng anh ta sẽ là người báo trước về ngày tận thế sắp tới. Với quyền kiểm soát Leviathan trong tay, Calus bắt đầu khám phá thiên hà và lên kế hoạch chiếm lại đế chế."
+    }
+  ]
+}

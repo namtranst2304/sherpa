@@ -1,0 +1,124 @@
+{
+  "id": "dark-age",
+  "name": "Thời kỳ đen tối",
+  "description": "Sự kiện từ thời kỳ đen tối.",
+  "themeColor": "orange",
+  "events": [
+    {
+      "title": "Sự khởi đầu của thời kỳ đen tối",
+      "description": "Sau sự sụp đổ là Thời kỳ đen tối. Đó là thời gian đầy đau khổ và tội ác khủng khiếp."
+    },
+    {
+      "title": "Thành lập Neomuna",
+      "description": "Các thành viên của Ishtar Collective trên tàu Exodus Indigo đến Neptune do Maya Sundaresh đề xuất theo đuổi tín hiệu Vex, có thể đến từ mảnh vỡ của Soteria. Các nhà nghiên cứu sẽ khám phá ra Tấm màn che trên bề mặt Sao Hải Vương và phần phụ của Soteria. Các thành viên Exo của phi hành đoàn sẽ trở nên chết não khi tiếp cận thực thể cận nhân quả. Maya giao tiếp với Tấm màn che và trở nên say mê với nó, tuyên bố rằng đó sẽ là \"sự cứu rỗi\" của họ. Tập thể Ishtar bắt đầu xây dựng Neomuna, sử dụng Mạng che mặt để cung cấp năng lượng cho thành phố và tiến hành các thí nghiệm."
+    },
+    {
+      "title": "Khu định cư đầu tiên của con người",
+      "description": "Nhiều người sống sót sau Sự sụp đổ tập trung trong các khu vực bí mật trong nỗ lực sống sót trong tuyệt vọng. Một số Người thức tỉnh quay trở lại Trái đất và Exos xuất hiện nhưng ký ức của họ đã bị tổn hại không thể khắc phục được. Những bóng ma du hành giữa các cột người tị nạn, tìm kiếm những Người bảo vệ đầu tiên."
+    },
+    {
+      "title": "Những người bảo vệ đầu tiên của những người sống sót",
+      "description": "Trước khi những Người bảo vệ đầu tiên xuất hiện, các kiểm lâm viên do huyền thoại Ayane Takanome chỉ huy sẽ bảo vệ những người sống sót của nhân loại. Họ biến mất sau khi những người bảo vệ trở nên phổ biến."
+    },
+    {
+      "title": "Sự xuất hiện của Fallen",
+      "description": "The Fallen đến Hệ thống Sol trong Ketches của họ. Những Ngôi nhà sa ngã được thành lập trên toàn bộ Hệ thống bắt đầu cướp phá các thế giới và thuộc địa cũ của loài người, kết thúc Cuộc trôi dạt dài. Nhà của Quỷ và Nhà của các vị vua định cư trên Trái đất, Nhà Sói ở sao Mộc, Nhà Mùa đông trên Sao Kim và Nhà Mưa trên Sao Thủy."
+    },
+    {
+      "title": "Khám phá kim tự tháp mặt trăng",
+      "description": "Nhà Sói, dẫn đầu bởi Kell Inaaks của họ, khám phá tàn tích của Nezarec trong Kim tự tháp Mặt Trăng. Họ chia xác anh ta thành nhiều mảnh khác nhau để tạo ra Di tích Hắc ám."
+    },
+    {
+      "title": "Sự tái sinh của Lakshmi-2",
+      "description": "Để phân tích hiệu quả hơn dữ liệu tâm linh đến từ Mạng che mặt, Maya Sundaresh và Chioma Esi tạo ra một nguyên mẫu để giao tiếp với thực thể cận nhân quả, được thiết kế giống như một \"người nhạc trưởng\" hướng dẫn một \"bản giao hưởng\" của những người tham gia. Bất chấp cái chết của các tình nguyện viên trong quá trình thử nghiệm, Maya Sundaresh vẫn tiếp tục thí nghiệm của mình bằng cách đặt Exos đã chết vào giao diện của Mạng che mặt, thay vì những người tham gia sinh học là con người. Hướng dữ liệu từ Exos đến người nhận trung tâm. Maya tạo ra dấu ấn tinh thần của riêng mình để phủ lên người nhận Exo trung tâm. Lakshmi-2 thức tỉnh, giờ đây mang theo dấu ấn tinh thần của Maya và sở hữu một số ký ức của cô ấy."
+    },
+    {
+      "title": "Maya Sundaresh được tìm thấy đã chết trong phòng của người soát vé...",
+      "description": "Maya Sundaresh được tìm thấy đã chết trên ghế chỉ huy của giao diện Veil, Chioma và các nhà nghiên cứu khác của Ishtar Collective không chắc chắn về những gì cô ấy đang cố gắng làm. Tuy nhiên, không ai biết rằng ý thức của Maya sẽ tiếp tục tồn tại bên trong Bóng tối của tấm màn che. Cuối cùng, Maya sẽ xâm nhập vào Mạng Vex với mã định danh \"MSUND12\"."
+    },
+    {
+      "title": "Tạo CloudArk",
+      "description": "Sử dụng các nghiên cứu của họ về mạng Vex và trường năng lượng cận nhân quả từ Mạng che mặt, người dân Neomuna tạo ra môi trường thực tế ảo được gọi là CloudArk. Mảnh Soteria, được gọi là Occlusion, trở thành phần trung tâm của cấu trúc thực tế ảo."
+    },
+    {
+      "title": "Sự hình thành của Cloud Striders",
+      "description": "Công dân Neomuni Mikaela Julaha gặp tai nạn với công nghệ nano. Sức mạnh và khả năng bảo hiểm của Mikaela sẽ nhanh chóng tăng lên, nhưng tuổi thọ của cô sẽ bị rút ngắn nghiêm trọng. Những người khác sẽ cho phép mình trải qua thủ tục này, trở thành Cloud Striders. Chỉ có hai Cloud Strider có thể tồn tại cùng một lúc."
+    },
+    {
+      "title": "Sự thức tỉnh của lòng ấm áp",
+      "description": "Rasputin sẽ được kích hoạt lại và phát hiện ra Neomuna, đặt cho nó mật danh là \"Thành trì Nefele\". Chioma Esi cử Cloud Strider Stargazer tới Trái đất để ngăn Warmind tìm hiểu thêm. Stargazer mang theo Lakshmi-2 và sử dụng Malahayati phục tùng để xóa sạch mọi đề cập đến Sao Hải Vương. Lakshmi-2 bị bỏ lại trên Trái đất."
+    },
+    {
+      "title": "Sự hủy diệt của Luân Đôn",
+      "description": "Nhà quỷ phá hủy London vào khoảng thời gian này."
+    },
+    {
+      "title": "Sự xuất hiện của Cabal",
+      "description": "Đế chế Cabal đã đến Hệ thống Sol. Quân đoàn trinh sát Cabal đã thiết lập một đầu cầu trên Phobos, xây dựng căn cứ của họ, Fleetbase Korus và Firebase Thuria trước khi xâm lược Sao Hỏa. Mục đích ban đầu của họ là khai thác tài nguyên trên sao Hỏa, nhưng phạm vi đã mở rộng đáng kể khi phát hiện ra tàn tích Vex. Tuy nhiên, Cabal sớm tham gia vào một chiến dịch tiêu hao lớn với chương trình Vex bản địa có tên là Lệnh cấm Xử Nữ, kẻ cố gắng hết sức để bảo vệ lối vào Khu vườn Đen khỏi Khu vực Loại trừ ngày càng mở rộng. Cuộc chiến này sẽ tiếp tục trong suốt Thời kỳ Đen tối và cả Thời đại Thành phố với rất ít sự can thiệp từ bên ngoài."
+    },
+    {
+      "title": "Sự xuất hiện của Hive",
+      "description": "Lực lượng của Hive, bao gồm Hidden Swarm, Blood of Oryx và Spawn of Crota, đã xâm chiếm Mặt trăng và thành lập căn cứ dưới lòng đất của họ, được gọi là Hellmouth."
+    },
+    {
+      "title": "Sự xuất hiện của các lãnh chúa",
+      "description": "Những người đầu tiên được Lữ khách hồi sinh sẽ trở thành Người mang ánh sáng và hình thành các Lãnh chúa tàn nhẫn, gây ra sự hỗn loạn và vô chính phủ."
+    },
+    {
+      "title": "Sự hình thành của các lãnh chúa sắt",
+      "description": "Cuối cùng, sau khi chịu đựng đủ sự chuyên chế của các Lãnh chúa, Lãnh chúa Radegast tập hợp Lãnh chúa Saladin Forge và Lady Jolder để tiêu diệt các Lãnh chúa và thành lập các Lãnh chúa Sắt."
+    },
+    {
+      "title": "SIDDARTHA GOLEM Exo được nuôi dưỡng như một Người Mang Ánh Sáng...",
+      "description": "SIDDARTHA GOLEM Exo được nuôi dưỡng như một Lightbearer và được Ghost của anh ta đặt cho cái tên Felwinter. Tức giận vì mất đi \"con trai\" của mình, Rasputin gửi Warsats và các khung chiến đấu của mình để tiêu diệt Risen-Exo mới. Chán nản với việc chạy trốn khỏi tài sản của Rasputin, Felwinter quyết định xây một ngôi nhà trên đỉnh núi mà anh đã phát hiện ra bằng cách sử dụng bản đồ từ Trạm Seraph. Felwinter kêu gọi Warlord Castor, người cai trị ngọn núi để thương lượng, tuy nhiên anh ta đã tiêu diệt Castor's Ghost và ném Warlord ra khỏi vách đá, tuyên bố ngọn núi là của riêng mình và đặt tên là Felwinter Peak."
+    },
+    {
+      "title": "Chiến tranh Thần học",
+      "description": "Chiến tranh Theodicy nổ ra ở Phân phối giữa Sanguine và Eccaleists. Sanguine do Nữ hoàng Alis Li lãnh đạo tin rằng sự tồn tại của người dân của họ là một món quà và không cần phải giải quyết xung đột giữa Ánh sáng và Bóng tối. Trong khi những người theo chủ nghĩa Eccaleists do Mara Sov lãnh đạo với Diasyrm là thủ lĩnh bù nhìn của cô ấy tin rằng Awoken phải đóng một vai trò nào đó trong cuộc xung đột. Alis Lin từ chức và Nguyển Pin kế nhiệm."
+    },
+    {
+      "title": "Khi Diasyrm biến mất vào cuối Theodi...",
+      "description": "Khi Diasyrm biến mất vào cuối Chiến tranh Theodicy, vì tin rằng cô đã bị Mara Sov bí mật sát hại, Nhà truyền giáo Sjur Eido xông vào tòa án của Gensym Scribes, thề sẽ trả thù cho cô. Tìm cách ngăn chặn một cuộc Chiến tranh Theodicy khác, họ cho cô mượn tài nguyên để thực hiện sứ mệnh của mình. Tuy nhiên, khi Nữ hoàng Pin chuyển sang Chủ nghĩa Giáo hội, Sjur Eido sẽ vào triều đình của Nữ hoàng và suy ra ai trong số các cận thần của Pin là Mara. Tuy nhiên, Sjur không thể giết Mara vì vẻ đẹp của cô ấy. Thay vào đó, Sjur thách thức Mara \"đấu tay đôi đến đau đớn\" với người bạn đồng hành yêu quý nhất của cô, Uldren Sov. Họ đồng ý với ba đối tượng: một có dao, súng và máy bay chiến đấu. Trận đấu đầu tiên kết thúc với tỷ số hòa, trận thứ hai thuộc về Sjur và trận thứ ba thuộc về Uldren. Do thất bại kép này trong việc xác định người chiến thắng, Sjur đã giao số phận của mình cho Mara."
+    },
+    {
+      "title": "Cuộc đối đầu với Lãnh chúa Segoth",
+      "description": "Các Lãnh chúa Sắt đối đầu với Lãnh chúa Segoth khi ông đi đến một ngôi làng hẻo lánh. Sau một trận chiến đẫm máu, các Lãnh chúa Sắt giành chiến thắng và Segoth bị Perun bắn hạ khi anh ta cố gắng trốn thoát."
+    },
+    {
+      "title": "Việc tuyển dụng Lãnh chúa Felwinter",
+      "description": "Trong khi tuần tra Mothyards, Felwinter gặp Chúa tể sắt Timur, người đã kể cho anh nghe về SIVA. Vì mong muốn hòa bình và an ninh, Felwinter gia nhập các Lãnh chúa Sắt và trao cho họ ngọn núi của mình để họ xây dựng Đền Sắt làm căn cứ hoạt động."
+    },
+    {
+      "title": "Tin đồn lan truyền về một thiên đường bên dưới Lữ khách",
+      "description": "Tin đồn lan truyền về một thiên đường bên dưới Lữ khách."
+    },
+    {
+      "title": "Cái chết của lãnh chúa Citan",
+      "description": "Lãnh chúa Felwinter gặp Warlord Citan để hòa giải. Citan từ chối và Exo đã hạ gục anh ta. Khi Hồn ma của anh ta hồi sinh anh ta một lần nữa, Felwinter sử dụng khẩu súng ngắn của mình, Felwinter's Lie để tiêu diệt cả hai."
+    },
+    {
+      "title": "Cuộc đối đầu với Warlord Rience",
+      "description": "Các Lãnh chúa Sắt thách thức Lãnh chúa Rience."
+    },
+    {
+      "title": "Bảo vệ Patch Run",
+      "description": "Lãnh chúa Saladin, khi đang tuần tra ở ngoại ô thị trấn có tên Patch Run, ông gặp phải một nhóm đột kích Fallen. Một Lightbearer tên là Efrideet tham gia cùng anh ta và cùng nhau bảo vệ ngôi làng khỏi những kẻ đã ngã xuống cho đến khi họ không còn đạn. Sau khi Fallen triển khai một khung tập đi trên một khoảng cách dài, Efrideet đề nghị ném Saladin vào khung tập đi. Trước khi anh kịp tranh luận, Efrideet đã ném anh, giống như một chiếc lao, vào Walker, phá hủy nó trong quá trình đó. Sau trận chiến, Lord Saladin, ấn tượng với sức mạnh và tính cách của Efrideet, đã thuyết phục cô tham gia cùng nhóm của ông tại Dwindler's Ridge."
+    },
+    {
+      "title": "Cuộc thám hiểm của Lãnh chúa Timur và Lãnh chúa Felwinter",
+      "description": "Lãnh chúa Timur và Lãnh chúa Felwinter băng qua Bờ biển Ả Rập để tìm kiếm cơ sở thuộc sở hữu của Clovis Bray. Trên đường đi, họ bị tấn công bởi một nhóm Fallen trước khi phát hiện ra một cơ sở Clovis Bray cũ ở vùng hoang vu vắng vẻ."
+    },
+    {
+      "title": "Sự thành lập của đội bảo vệ hành hương",
+      "description": "Các Titan đầu tiên cam kết bảo vệ những người tị nạn đang tụ tập bên Lữ khách, thành lập Đội bảo vệ hành hương."
+    },
+    {
+      "title": "Sự hình thành của những chiếc áo chống nắng",
+      "description": "Các Titan tạo thành trật tự của Sunbreakers."
+    },
+    {
+      "title": "Có báo cáo về chỉ huy Cabal, Bracus Tho'...",
+      "description": "Các báo cáo được đưa ra về một chỉ huy của Cabal, Bracus Tho'ourg, người đã bảo vệ Thành phố bị chôn vùi trên sao Hỏa chỉ bằng một phần nhỏ lực lượng Cabal của hành tinh. Những Người bảo vệ đầu tiên đối mặt với anh ta đã chết vào một thời điểm nào đó giữa đây và Thời đại Thành phố."
+    }
+  ]
+}

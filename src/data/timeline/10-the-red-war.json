@@ -1,0 +1,21 @@
+{
+  "id": "the-red-war",
+  "name": "Chiến tranh đỏ",
+  "description": "Sự kiện trong Chiến tranh Đỏ.",
+  "themeColor": "zinc",
+  "events": [
+    {
+      "title": "Sự hình thành của Ngôi nhà Hoàng hôn",
+      "description": "Uldren Sov để mình bị House of Kings bắt giữ để có thể nuôi quân. Hoàng tử điên được đưa đến Craask, Kell of Kings, người phục tùng anh ta và nhờ anh ta giúp đỡ trong việc thống nhất Fallen. Uldren đồng ý. Anh ta hợp nhất những tàn tích còn sót lại của Nhà Quỷ, Sói, Mùa Đông và Lưu vong để tạo thành Nhà Hoàng hôn."
+    },
+    {
+      "title": "Tâm trí của khu rừng vô tận, Panoptes, bắt đầu ...",
+      "description": "Tâm trí của Khu rừng vô tận, Panoptes, bắt đầu hướng tới một tương lai nơi ánh sáng và bóng tối không còn tồn tại. Warlock Osiris bị lưu đày gửi Hồn ma của mình, Sagira, để tìm kiếm sự giúp đỡ trong không gian thực. Cô ấy được Ikora Rey's Hidden tìm thấy và đưa trở lại Tháp."
+    },
+    {
+      "title": "Băng và Bóng tối",
+      "description": "Khi nghe báo cáo rằng Red Legion đang tập trung trên sao Hỏa, cũng như việc Warsats đang lao xuống sao Hỏa, Guardian đã đi điều tra. Sau đó, The Guardian hạ cánh xuống Hellas Basin và tìm thấy Anastasia Bray, sau đó phát hiện ra rằng một giáo phái Hive được gọi là Grasp of Nokris đã bắt đầu thức tỉnh trên sao Hỏa do Rasputin kêu gọi các Warsats tấn công sao Hỏa.",
+      "date": "8 May"
+    }
+  ]
+}

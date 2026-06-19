@@ -1,0 +1,49 @@
+{
+  "id": "return-of-the-black-fleet",
+  "name": "Sự trở lại của Hạm đội Đen",
+  "description": "Sự kiện trong Sự trở lại của Hạm đội Đen.",
+  "themeColor": "zinc",
+  "events": [
+    {
+      "title": "Sau cái chết của Crota và Oryx, Hidden Swa...",
+      "description": "Sau cái chết của Crota và Oryx, Hidden Swarm bị chia cắt và suy yếu. Trong khi Bầy đàn vẫn giữ niềm tin vào Sword Logic, các con gái của Crota, Hashladûn, Besuirth, Voshyr và Kinox đã lên kế hoạch hồi sinh Oryx như một cơn ác mộng bằng cách sử dụng sức mạnh của Kim tự tháp Mặt Trăng, mặc dù điều đó vi phạm Sword Logic."
+    },
+    {
+      "title": "Sự khám phá đồng hồ mặt trời",
+      "description": "Đồng hồ Mặt trời được phát hiện bởi chị em Psion Flayer: Niruul, Hollow Voice, Ozletc, Sky Piercer và Tazaroc, Sun Eater."
+    },
+    {
+      "title": "Seraph Bunker: EDZ",
+      "description": "Biết rằng Đấng toàn năng đang trên đường đến Thành phố cuối cùng để bị tiêu diệt để trả thù cho cái chết của Ozletc, Tazaroc và Niruul tại Sundial, Zavala và Ana Bray yêu cầu Người bảo vệ tăng sức mạnh cho Seraph Bunker của Rasputin và sử dụng Warsats chống lại Đấng toàn năng. Seraph Bunker trên EDZ đã được cấp nguồn.",
+      "date": "10 March"
+    },
+    {
+      "title": "Ngưỡng cửa bóng tối",
+      "description": "Người bảo vệ đến Europa theo chỉ dẫn của Nhân chứng, nhưng phát hiện ra một tín hiệu cấp cứu do Variks gửi đến cảnh báo về điều gì đó đe dọa Eliksni và Nhân loại. Theo tín hiệu, họ cứu Variks khỏi lực lượng House Salvation do Eramis cử đến.",
+      "date": "November 10"
+    },
+    {
+      "title": "Trên thế giới thủ đô Cabal của Torabatl, Uman'arath...",
+      "description": "Tại thủ đô Torabatl của Cabal, mối lo ngại của Uman'arath về mối đe dọa mà Hive gây ra cho Đế chế Cabal ngày càng trở nên hấp dẫn do ảnh hưởng của Savathûn. Cô ấy sẽ bắt đầu nghiên cứu Hive với mục đích tìm hiểu cách Cabal có thể phát triển thành những chiến binh vĩ đại hơn. Khi đối mặt với Caiatl, Uman'arath bày tỏ niềm tin của mình rằng Cabal nên cống hiến hết mình cho việc tôn thờ các vị thần Hive để đảm bảo sự tồn tại của giống loài của họ. Nhận thấy sự nguy hiểm từ nỗi ám ảnh của Uman'arath, Caiatl ra lệnh cho người bạn cũ của mình từ chức trong hội đồng."
+    },
+    {
+      "title": "Sự tự do của Quạ",
+      "description": "Sau khi giết chết High Celebrant của Xivu Arath, Spider tặng Người bảo vệ một món quà là \"món trang sức quý giá\" từ hang ổ của anh ta. Người bảo vệ chỉ vào Crow, chọn sự tự do của Crow làm khoản thanh toán. Nhện rất tức giận vì điều này, nhưng quyết định giữ nguyên thỏa thuận của mình, giải phóng Quạ khỏi sự phục vụ của Nhện. Ngay sau đó, Crow gặp \"Osiris\" ở một nơi nào đó trong Vùng Chết Châu Âu, nơi họ thảo luận về tương lai của Crow và nhu cầu tiếp tục cải trang trong Thành phố Cuối cùng của anh ta. \"Osiris\" hứa với Crow rằng nếu có bất cứ điều gì xảy ra với Crow, anh ấy là người có thể tin cậy được."
+    },
+    {
+      "title": "Sự xuất hiện của Caiatl",
+      "description": "Sau thất bại của High Celebrant of Xivu Arath dưới bàn tay của Guardian, Caiatl mời Zavala và \"Osiris\" đến kỳ hạm của cô ấy và tìm kiếm một liên minh với điều kiện Zavala phải quỳ gối trước cô ấy, nhưng anh ta từ chối, và Vanguard gây chiến với Imperial Cabal.",
+      "date": "February 9"
+    },
+    {
+      "title": "Sự xuất hiện của Mithrax",
+      "description": "Mithrax đến Europa để đón những kẻ đào thoát khỏi House Salvation gần Asterion Abyss, nhưng pháo binh Vex đã bắn hạ Skiff của anh ta, buộc anh ta phải hạ cánh xuống đó và giấu những người sống sót trong một hang động gần Tàn tích Eventide.",
+      "date": "before May 11"
+    },
+    {
+      "title": "Sự tái xuất hiện của sao Hỏa",
+      "description": "The Guardian điều tra sự xuất hiện trở lại của Sao Hỏa với sự biến dạng về thời gian theo lệnh của Ikora, nhưng bị Cabal tấn công dưới ngọn cờ của Caiatl. Sau đó, con tàu The Lure của Savathûn hạ cánh phía trên Cái nôi của Sao Hỏa. Họ thâm nhập vào boongke của Cabal và sử dụng đại bác để lao vào Lure. Họ lần theo dấu vết bí ẩn của Void Light khi hạ cánh xuống Lure, chỉ để chạm trán với Hive được thấm nhuần sức mạnh của Ánh sáng du khách và Bướm đêm sáng. Trước khi có thể chặn Savathûn, họ thu hồi được một hiện vật khác có liên quan đến Hạm đội Đen. Họ chặn Savathûn, nhưng cô trốn thoát và một Hiệp sĩ thế chỗ cô; một người sử dụng Void Light và sở hữu Ghost của riêng mình. Người bảo vệ buộc phải nghiền nát Bóng ma của Hiệp sĩ Ánh sáng để đánh bại Hiệp sĩ vĩnh viễn. Cánh cổng mở vào Thế giới ngai vàng của Savathûn và họ theo cô đến đó, nhưng cô đuổi họ sau khi họ đánh bại một trong những hình chiếu của cô ở Queen's Bailey. Họ quay trở lại Sao Hỏa gần The Enclave, địa điểm của Thánh tích mà Người bảo vệ sử dụng hiện vật thu được từ Lure để chế tạo Glaive đầu tiên của họ: Bí ẩn.",
+      "date": "February 22"
+    }
+  ]
+}

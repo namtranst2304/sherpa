@@ -93,6 +93,7 @@
   --color-neon-green: #39ff14;
 
   --animate-cyber-fade: cyber-fade 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  --animate-cyber-scan: cyber-scan 3s linear infinite;
 }
 
 @keyframes cyber-fade {
@@ -106,6 +107,11 @@
     filter: brightness(1) contrast(1);
     transform: translateY(0) scale(1);
   }
+}
+
+@keyframes cyber-scan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
 }
 
 /* Cyberpunk Custom Utilities */
