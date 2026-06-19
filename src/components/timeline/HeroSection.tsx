@@ -2,16 +2,20 @@ import React from "react";
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { AnimatedScrollText } from "./AnimatedScrollText";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
       {/* Hero Background Image */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-start justify-center">
-        <img 
+        <Image 
           src="/images/timeline/heroBG.webp" 
           alt="Destiny Universe Background" 
           className="w-full h-auto opacity-40 mix-blend-luminosity" 
+          width={1920}
+          height={1080}
+          priority
         />
         {/* Gradient mask to blend nicely into the timeline below */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black" />

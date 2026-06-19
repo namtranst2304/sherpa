@@ -188,6 +188,7 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
             );
           })}
         </div>
+        </div>
       </motion.nav>
     </>
   );

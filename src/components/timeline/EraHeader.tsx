@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { TimelineEra } from "@/data/timeline/index";
 import { getTheme } from "@/lib/theme";
+import Image from "next/image";
 
 export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
   const theme = getTheme(era.themeColor);
@@ -64,10 +65,12 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
           >
             <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none`} />
             <div className={`absolute inset-0 opacity-10 mix-blend-color z-10 pointer-events-none ${theme.bg}`} />
-            <img 
+            <Image 
               src={era.image} 
               alt={era.name} 
               className="w-full h-auto object-cover transition-opacity duration-1000 opacity-90 hover:opacity-100 aspect-video" 
+              width={1280}
+              height={720}
               loading="lazy"
             />
           </motion.div>

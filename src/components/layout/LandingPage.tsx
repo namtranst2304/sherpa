@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
@@ -30,10 +31,13 @@ export function LandingPage() {
       
       {/* Background from HeroSection */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-start justify-center">
-        <img 
+        <Image 
           src="/images/timeline/heroBG.webp" 
           alt="Destiny Universe Background" 
           className="w-full h-auto opacity-40 mix-blend-luminosity" 
+          width={1920}
+          height={1080}
+          priority
         />
         {/* Gradient mask */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black" />
