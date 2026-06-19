@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { CyberBadge } from "@/components/ui/CyberComponents";
 import { DESTINY_TIMELINE, TimelineEra, TimelineEvent } from "@/data/timeline/index";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Calendar, Tag, ChevronDown } from "lucide-react";
 
 // ─── THEME COLOR MAP ─────────────────────────────────────────────────────────
