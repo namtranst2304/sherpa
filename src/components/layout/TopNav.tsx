@@ -77,7 +77,7 @@ export function TopNav() {
                     <NavigationMenuContent>
                       <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-black/95 backdrop-blur-xl border border-neon-cyan/30 shadow-[0_10px_40px_rgba(0,243,255,0.2)]">
                         <li className="row-span-3">
-                          {category.id === "raids" ? (
+                          {category.locked ? (
                             <div
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-black p-6 outline-none border border-neon-red/30 shadow-[inset_0_0_20px_rgba(255,0,0,0.1)] relative overflow-hidden"
                             >

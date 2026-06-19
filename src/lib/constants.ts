@@ -16,6 +16,7 @@ export type ActivityCategory = {
   description: string
   icon: LucideIcon
   items: ActivityItem[]
+  locked?: boolean
 }
 
 const mapRaidsToItems = (): ActivityItem[] => {
@@ -34,6 +35,8 @@ const mapDungeonsToItems = (): ActivityItem[] => {
   }))
 }
 
+import { Crown } from "lucide-react"
+
 export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
   raids: {
     id: "raids",
@@ -42,6 +45,7 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     description: "Step-by-step walkthroughs for 6-player endgame activities.",
     icon: Swords,
     items: mapRaidsToItems(),
+    locked: true,
   },
   dungeons: {
     id: "dungeons",
@@ -51,4 +55,13 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     icon: ShieldAlert,
     items: mapDungeonsToItems(),
   },
+  pantheon: {
+    id: "pantheon",
+    title: "Pantheon",
+    href: "/pantheon",
+    description: "The ultimate boss rush experience. Face Destiny 2's most challenging foes back-to-back.",
+    icon: Crown,
+    items: [],
+    locked: true,
+  }
 }

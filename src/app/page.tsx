@@ -28,10 +28,10 @@ export default function Home() {
             {activities.map((act) => (
               <CyberButton 
                 key={`hero-btn-${act.id}`} 
-                variant={act.id === "raids" ? "red" : "cyan"} 
+                variant={act.locked ? "red" : "cyan"} 
                 className="font-bold tracking-wide uppercase px-8 py-4 text-lg"
               >
-                {act.id === "raids" ? (
+                {act.locked ? (
                   <span className="cursor-not-allowed flex items-center gap-2 text-neon-red">
                     Explore {act.title} <CyberBadge variant="red" pulse>UPDATING</CyberBadge>
                   </span>
@@ -49,31 +49,31 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl">
           {activities.map((category) => {
             const Icon = category.icon
-            const isRaid = category.id === "raids"
+            const isLocked = category.locked
             return (
-              <CyberCard key={category.id} variant={isRaid ? "red" : "cyan"} withCorners className="flex flex-col h-full bg-black">
+              <CyberCard key={category.id} variant={isLocked ? "red" : "cyan"} withCorners className="flex flex-col h-full bg-black">
                 <div className="flex items-center gap-3 mb-4 border-b border-zinc-800 pb-4">
-                  <div className={`p-3 rounded-md ${isRaid ? 'bg-neon-red/10' : 'bg-neon-cyan/20'}`}>
-                    <Icon className={`w-8 h-8 ${isRaid ? 'text-neon-red opacity-80' : 'text-neon-cyan'}`} />
+                  <div className={`p-3 rounded-md ${isLocked ? 'bg-neon-red/10' : 'bg-neon-cyan/20'}`}>
+                    <Icon className={`w-8 h-8 ${isLocked ? 'text-neon-red opacity-80' : 'text-neon-cyan'}`} />
                   </div>
-                  <h2 className={`text-2xl font-black uppercase tracking-widest flex items-center gap-3 ${isRaid ? 'text-neon-red text-glow-red' : 'text-neon-cyan text-glow-cyan'}`}>
+                  <h2 className={`text-2xl font-black uppercase tracking-widest flex items-center gap-3 ${isLocked ? 'text-neon-red text-glow-red' : 'text-neon-cyan text-glow-cyan'}`}>
                     {category.title}
-                    {isRaid && <CyberBadge variant="red" pulse>UPDATING</CyberBadge>}
+                    {isLocked && <CyberBadge variant="red" pulse>UPDATING</CyberBadge>}
                   </h2>
                 </div>
-                <p className={`${isRaid ? 'text-neon-red/60' : 'text-zinc-400'} mb-6 flex-1 font-mono text-sm leading-relaxed`}>
+                <p className={`${isLocked ? 'text-neon-red/60' : 'text-zinc-400'} mb-6 flex-1 font-mono text-sm leading-relaxed`}>
                   {category.description}
                 </p>
                 <ul className="space-y-3 mb-8">
                   {category.items.map((item) => (
                     <li key={item.title} className="flex items-start gap-3">
-                      <span className={`mt-1 text-xs ${isRaid ? 'text-zinc-600' : 'text-neon-cyan'}`}>▶</span>
-                      <span className={`text-sm ${isRaid ? 'text-zinc-500' : 'text-zinc-300'}`}>{item.title}</span>
+                      <span className={`mt-1 text-xs ${isLocked ? 'text-zinc-600' : 'text-neon-cyan'}`}>▶</span>
+                      <span className={`text-sm ${isLocked ? 'text-zinc-500' : 'text-zinc-300'}`}>{item.title}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="mt-auto">
-                  {isRaid ? (
+                  {isLocked ? (
                     <CyberButton variant="red" className="w-full justify-center cursor-not-allowed">
                       SYSTEM OFFLINE
                     </CyberButton>
