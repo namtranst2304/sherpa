@@ -1,0 +1,13 @@
+{
+  "id": "16-epilogue",
+  "name": "Bình Minh Kỷ Nguyên Mới",
+  "description": "The Witness đã ngã xuống, nhưng tàn dư của quá khứ vẫn phủ bóng lên tương lai. Vũ trụ bước vào một chương mới.",
+  "themeColor": "prismatic",
+  "events": [
+    {
+      "title": "Biên Niên Sử Còn Tiếp Diễn",
+      "description": "Sự tĩnh lặng sau cơn bão vĩ đại chỉ là khởi đầu. Không còn bị trói buộc bởi những ý chí tuyệt đối, nơi Ánh Sáng và Bóng Tối không còn là hai thái cực đối lập, mà hòa quyện vào vạn vật tiếp tục tồn tại song song, như vầng thái dương rực rỡ và bầu trời đêm thăm thẳm. Nhân loại, Eliksni, Cabal, và Awoken giờ đây tự do định hình vận mệnh của chính mình.\n\nNhững con đường chưa từng được khám phá đang rộng mở, những hiểm họa mới đang chực chờ nơi tinh tú xa xôi, và câu chuyện về những Hộ vệ—những người mang trong mình hy vọng của toàn cõi thiên hà—sẽ còn được ngân vang mãi trong cõi vĩnh hằng."
+    }
+  ],
+  "image": "/images/timeline/16.webp"
+}

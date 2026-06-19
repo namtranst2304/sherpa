@@ -29,7 +29,7 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
           transition={{ type: "spring" as const, stiffness: 120, damping: 20, delay: 0.1 }}
           className="mb-4"
         >
-          <span className={`text-xs font-mono tracking-[0.4em] uppercase ${theme.text} opacity-70`}>
+          <span className={`text-sm md:text-base font-mono font-bold tracking-[0.4em] uppercase ${theme.text} opacity-90`}>
             Chương {String(index + 1).padStart(2, "0")}
           </span>
         </motion.div>
@@ -39,7 +39,7 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring" as const, stiffness: 100, damping: 18, delay: 0.15 }}
-          className={`text-3xl md:text-5xl font-black uppercase tracking-wider text-white mb-4 leading-snug md:leading-snug py-1 ${theme.glow}`}
+          className={`text-2xl md:text-4xl font-black uppercase tracking-wider text-white mb-4 leading-snug md:leading-snug py-1 whitespace-nowrap ${theme.glow}`}
         >
           {era.name}
         </motion.h2>
@@ -53,6 +53,25 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
         >
           {era.description}
         </motion.p>
+
+        {era.image && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring" as const, stiffness: 100, damping: 18, delay: 0.35 }}
+            className={`mt-10 relative z-10 w-full max-w-3xl mx-auto overflow-hidden rounded-2xl border ${theme.border}/30 shadow-2xl shadow-black/80`}
+          >
+            <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none`} />
+            <div className={`absolute inset-0 opacity-10 mix-blend-color z-10 pointer-events-none ${theme.bg}`} />
+            <img 
+              src={era.image} 
+              alt={era.name} 
+              className="w-full h-auto object-cover transition-opacity duration-1000 opacity-90 hover:opacity-100 aspect-video" 
+              loading="lazy"
+            />
+          </motion.div>
+        )}
 
         {/* Decorative line */}
         <motion.div

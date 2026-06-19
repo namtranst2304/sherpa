@@ -6,8 +6,19 @@ import { AnimatedScrollText } from "./AnimatedScrollText";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
+      {/* Hero Background Image */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-start justify-center">
+        <img 
+          src="/images/timeline/heroBG.webp" 
+          alt="Destiny Universe Background" 
+          className="w-full h-auto opacity-40 mix-blend-luminosity" 
+        />
+        {/* Gradient mask to blend nicely into the timeline below */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black" />
+      </div>
+
       {/* Radial glow behind title */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
         <div className="w-[600px] h-[600px] bg-neon-cyan/5 rounded-full blur-[120px]" />
       </div>
 
@@ -31,7 +42,7 @@ export function HeroSection() {
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: "spring" as const, stiffness: 100, damping: 15, delay: 0.3 }}
-          className="block text-xl md:text-3xl font-bold tracking-[0.3em] text-zinc-400 uppercase"
+          className="block text-xl md:text-3xl font-bold tracking-[0.3em] text-zinc-400 uppercase drop-shadow-md"
         >Biên Niên Sử</motion.span>
       </motion.div>
 
@@ -39,8 +50,10 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring" as const, stiffness: 80, delay: 0.5 }}
-        className="text-zinc-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed mt-8 font-mono text-center relative z-10"
-      >Toàn bộ các sự kiện quan trọng trong vũ trụ Destiny, từ thời kỳ Hỗn Mang đến Kỷ Nguyên Ánh Sáng và Bóng Tối.</motion.p>
+        className="text-zinc-400 max-w-xl mx-auto text-sm md:text-base leading-relaxed mt-8 font-mono text-center relative z-10 drop-shadow-md"
+      >
+        Toàn bộ các sự kiện quan trọng trong vũ trụ Destiny, từ thời kỳ Hỗn Mang đến Kỷ Nguyên Ánh Sáng và Bóng Tối.
+      </motion.p>
 
       {/* Scroll indicator */}
       <motion.div

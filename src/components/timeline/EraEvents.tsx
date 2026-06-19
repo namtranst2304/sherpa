@@ -6,19 +6,40 @@ import { EventCard } from "./EventCard";
 
 export function EraEvents({ era }: { era: TimelineEra }) {
   const theme = getTheme(era.themeColor);
+  const isEpilogue = era.id === "16-epilogue";
+
   return (
     <div className="relative max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 pb-16">
       {/* Central vertical line */}
-      <motion.div
-        className={`absolute left-8 md:left-1/2 md:-ml-[1px] top-0 bottom-0 w-[2px] ${theme.bg} opacity-20`}
-        initial={{ scaleY: 0, originY: 0 }}
-        whileInView={{ scaleY: 1 }}
-        viewport={{ once: true, amount: 0.05 }}
-        transition={{ duration: 1.5, ease: "circOut" }}
-      />
+      {!isEpilogue && (
+        <motion.div
+          className={`absolute left-8 md:left-1/2 md:-ml-[1px] top-0 bottom-0 w-[2px] ${theme.bg} opacity-20`}
+          initial={{ scaleY: 0, originY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: true, amount: 0.05 }}
+          transition={{ duration: 1.5, ease: "circOut" }}
+        />
+      )}
 
       <div className="space-y-6 md:space-y-10 relative">
         {era.events.map((event, eventIdx) => {
+          if (isEpilogue) {
+            return (
+              <motion.div
+                key={eventIdx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ type: "spring" as const, stiffness: 100, damping: 20 }}
+                className="relative flex flex-col items-center w-full max-w-4xl mx-auto pt-8"
+              >
+                <div className="w-full">
+                  <EventCard event={event} isRightSide={false} themeColor={era.themeColor} center={true} />
+                </div>
+              </motion.div>
+            );
+          }
+
           const isRightSide = eventIdx % 2 !== 0;
           return (
             <motion.div

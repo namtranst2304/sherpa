@@ -2,7 +2,7 @@
 // Single source of truth for all color theming across the app.
 // Used by: DestinyTimeline, TopNav, CyberComponents, constants.ts
 
-export type ThemeColor = "cyan" | "green" | "yellow" | "orange" | "red" | "zinc" | "purple" | "blue";
+export type ThemeColor = "cyan" | "green" | "yellow" | "orange" | "red" | "zinc" | "purple" | "blue" | "prismatic";
 
 export interface ThemeColorTokens {
   hex: string;
@@ -23,6 +23,7 @@ export const THEME_COLORS: Record<ThemeColor, ThemeColorTokens> = {
   zinc:   { hex: "#a1a1aa", rgb: "161,161,170",  text: "text-zinc-400",   border: "border-zinc-400",   bg: "bg-zinc-400",   glow: "drop-shadow-[0_0_8px_rgba(161,161,170,0.8)]",   shadow: "shadow-[0_0_15px_rgba(161,161,170,0.4)]" },
   purple: { hex: "#c084fc", rgb: "192,132,252",  text: "text-purple-400", border: "border-purple-400", bg: "bg-purple-400", glow: "drop-shadow-[0_0_8px_rgba(192,132,252,0.8)]", shadow: "shadow-[0_0_15px_rgba(192,132,252,0.4)]" },
   blue:   { hex: "#60a5fa", rgb: "96,165,250",   text: "text-blue-400",   border: "border-blue-400",   bg: "bg-blue-400",   glow: "drop-shadow-[0_0_8px_rgba(96,165,250,0.8)]",   shadow: "shadow-[0_0_15px_rgba(96,165,250,0.4)]" },
+  prismatic: { hex: "#d946ef", rgb: "217,70,239", text: "text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-400", border: "border-fuchsia-400", bg: "bg-gradient-to-tr from-fuchsia-500 via-purple-500 to-cyan-500", glow: "drop-shadow-[0_0_8px_rgba(217,70,239,0.8)]", shadow: "shadow-[0_0_15px_rgba(217,70,239,0.4)]" },
 };
 
 /** Safely get theme tokens with fallback to zinc */

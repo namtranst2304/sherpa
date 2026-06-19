@@ -1,19 +1,4 @@
 // Auto-generated Destiny Timeline
-export interface TimelineEvent {
-  title: string;
-  description: string;
-  date?: string;
-  tags?: string[];
-}
-
-export interface TimelineEra {
-  id: string;
-  name: string;
-  description: string;
-  themeColor: "cyan" | "green" | "yellow" | "orange" | "red" | "zinc";
-  events: TimelineEvent[];
-}
-
 import theAncientPast from './01-the-ancient-past.json';
 import historyOfTheCabal from './02-history-of-the-cabal.json';
 import historyOfTheEliksni from './03-history-of-the-eliksni.json';
@@ -29,6 +14,24 @@ import returnOfTheBlackFleet from './12-return-of-the-black-fleet.json';
 import theWarAgainstTheWitness from './13-the-war-against-the-witness.json';
 import theEchoesArmsRace from './14-the-echoes-arms-race.json';
 import theFateSaga from './15-the-fate-saga.json';
+import epilogue from './16-epilogue.json';
+
+export interface TimelineEvent {
+  title: string;
+  description: string;
+  date?: string;
+  tags?: string[];
+  image?: string;
+}
+
+export interface TimelineEra {
+  id: string;
+  name: string;
+  description: string;
+  themeColor: "cyan" | "green" | "yellow" | "orange" | "red" | "zinc" | "purple" | "blue" | "prismatic";
+  image?: string;
+  events: TimelineEvent[];
+}
 
 export const DESTINY_TIMELINE: TimelineEra[] = [
   theAncientPast as unknown as TimelineEra,
@@ -45,5 +48,6 @@ export const DESTINY_TIMELINE: TimelineEra[] = [
   returnOfTheBlackFleet as unknown as TimelineEra,
   theWarAgainstTheWitness as unknown as TimelineEra,
   theEchoesArmsRace as unknown as TimelineEra,
-  theFateSaga as unknown as TimelineEra
+  theFateSaga as unknown as TimelineEra,
+  epilogue as unknown as TimelineEra
 ];

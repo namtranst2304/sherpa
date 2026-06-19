@@ -9,38 +9,27 @@ import { EraHeader } from "../timeline/EraHeader";
 import { EraEvents } from "../timeline/EraEvents";
 
 export function DestinyTimeline() {
-  const [activeEraId, setActiveEraId] = useState(DESTINY_TIMELINE[0]?.id || "");
   const eraRefs = useRef<Map<string, HTMLElement>>(new Map());
 
   // Track which era is currently in view
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
-    const refMap = eraRefs.current;
+    const handleScroll = () => {
+      // Intentionally left empty as activeEraId is no longer needed here
+    };
 
-    refMap.forEach((el, eraId) => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveEraId(eraId);
-            }
-          });
-        },
-        { rootMargin: "-20% 0px -60% 0px", threshold: 0.1 }
-      );
-      observer.observe(el);
-      observers.push(observer);
-    });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // Trigger once on mount
+    handleScroll();
 
     return () => {
-      observers.forEach((obs) => obs.disconnect());
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div className="bg-black min-h-screen font-sans text-zinc-100 overflow-x-hidden selection:bg-neon-cyan/30 selection:text-white pb-32">
+    <div className="bg-transparent min-h-screen font-sans text-zinc-100 overflow-x-hidden selection:bg-neon-cyan/30 selection:text-white pb-32">
       <ScrollProgress />
-      <EraNav activeEraId={activeEraId} eraRefs={eraRefs} />
+      <EraNav eraRefs={eraRefs} />
       <HeroSection />
 
       {/* TIMELINE CONTENT */}
