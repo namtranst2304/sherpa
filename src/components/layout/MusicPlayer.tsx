@@ -4,10 +4,17 @@ import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Play, Pause, Music } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export function MusicPlayer() {
+  const pathname = usePathname();
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPulseHint, setShowPulseHint] = useState(false);
+
+  // Chỉ hiển thị và phát nhạc ở trang chủ và timeline
+  if (pathname !== "/" && pathname !== "/timeline") {
+    return null;
+  }
 
   // Dùng useMemo để chứa audio template đúng như cách giải quyết trên mạng
   const audioTemplate = useMemo(() => {
