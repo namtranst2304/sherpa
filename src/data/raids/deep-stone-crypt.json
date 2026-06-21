@@ -1,0 +1,328 @@
+{
+  "raid_name": "Deep Stone Crypt",
+  "active_orbit": "Europa",
+  "preface": {
+    "formatting_rules": "Tất cả các cơ chế liên quan đến Augments (Scanner, Operator, Suppressor) sẽ được viết hoa nổi bật. Trong Raid này, việc giao tiếp trao đổi Augment qua Terminal là chìa khóa sống còn.",
+    "non_linear_mechanic": {
+      "description": "Raid diễn ra tuyến tính. Phần mở đầu yêu cầu lái Sparrow vượt qua bão tuyết và tránh các bong bóng diệt vong (Frostbite) trước khi vào được cơ sở Deep Stone Crypt.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Raid này có một trong những trận Boss yêu cầu sát thương dồn (burst damage) khủng khiếp nhất game (Atraks-1). Ở các ải khác, khả năng sống sót và dọn quái linh hoạt đóng vai trò quyết định.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cần thiết ở ải 1 để hồi máu khi đứng dưới hầm, ải 3 để sống sót khi nhặt core, và ải cuối để DPS Boss."
+        },
+        {
+          "name": "Nova Bomb",
+          "utility": "Sử dụng cho ải 2 (Atraks-1) để dồn sát thương cực mạnh trong khoảnh khắc ngắn."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Luna's Howl / Speaker's Sight",
+          "recommendation": "Hỗ trợ hồi máu cho đồng đội khi giữ chốt ở ải 1 và 3."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Thundercrash (Cuirass of the Falling Star)",
+          "utility": "Tuyệt kỹ dồn sát thương số 1 cho ải 2 (Atraks-1). Nhiều Titans bay cùng lúc có thể 1-phase Boss này dễ dàng."
+        },
+        {
+          "name": "Ward of Dawn / Twilight Arsenal",
+          "utility": "Hỗ trợ DPS và sống sót ở ải cuối (Taniks)."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Synthoceps / Pyrogale Gauntlets",
+          "recommendation": "Tối ưu hóa sát thương cận chiến / Super ở ải Atraks-1."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Golden Gun: Marksman / Blade Barrage",
+          "utility": "DPS cực mạnh cho ải 2 và ải 4."
+        },
+        {
+          "name": "Shadowshot (Tether)",
+          "utility": "Trói và làm yếu đám quái (Servitors, Captains) ở ải 1 và 3."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Celestial Nighthawk / Star-Eater Scales",
+          "recommendation": "Tăng cường tối đa sát thương cho Golden Gun."
+        },
+        {
+          "name": "Omnioculus (Void)",
+          "recommendation": "Tàng hình cứu đồng đội khi họ đang ôm Nuclear Core ở ải 3."
+        }
+      ]
+    },
+    "weapons": [
+      {
+        "name": "The Lament",
+        "description": "Vũ khí cận chiến trấn phái cho ải 2 (Atraks-1). Combo chuột trái + chuột phải sẽ bốc hơi phân thân của Boss."
+      },
+      {
+        "name": "Xenophage / Grand Overture",
+        "description": "Tuyệt vời ở ải 1 (bắn cầu chì dưới hầm nhanh) và dọn quái tốt ở mọi ải."
+      },
+      {
+        "name": "Rocket Launchers (Gjallarhorn + Legendary Rockets)",
+        "description": "Loadout quốc dân để DPS Boss cuối Taniks."
+      },
+      {
+        "name": "Divinity",
+        "description": "Bắt buộc phải có 1 người cầm ở ải cuối để mở rộng điểm yếu của Taniks, giúp đồng đội dễ dàng nã Rocket/Sniper."
+      },
+      {
+        "name": "Trinity Ghoul / Riskrunner",
+        "description": "Vũ khí Add-clear siêu hạng vì đa số sát thương của Fallen trong Raid này là sát thương Arc."
+      }
+    ]
+  },
+  "encounters": [
+    {
+      "id": "enc_0",
+      "name": "Encounter 0 - Desolation (Sparrow Run)",
+      "roles": {
+        "drivers": {
+          "quantity": 6,
+          "description": "Lái Sparrow chạy đua với bão tuyết tìm đường vào Crypt."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Frostbite & Heat Bubbles",
+          "objective": "Sống sót qua cơn bão tuyết bằng cách di chuyển giữa các lồng sưởi ấm.",
+          "steps": [
+            "Ngay khi ra khỏi cửa hầm ban đầu, cả đội sẽ phải đối mặt với cơn bão tuyết chết người trên bề mặt Europa.",
+            "Khi ở ngoài trời bão, bạn sẽ liên tục nhận debuff 'Frostbite' (Tê Cóng). Nếu Frostbite tích tụ lên mốc 10 cộng dồn (10 stacks), bạn sẽ chết ngay lập tức.",
+            "Để xóa sạch stack Frostbite, bạn phải lái Sparrow (hoặc chạy bộ) vào các bong bóng sưởi ấm (Heat Bubbles) màu cam rải rác dọc theo tuyến đường.",
+            "Cẩn thận với địa hình gập ghềnh và các hố sâu tàng hình. Tránh đám quái ngáng đường hoặc giết chúng thật nhanh.",
+            "Di chuyển cẩn thận qua các bong bóng cho đến khi bạn tới được cửa ngõ thực sự của cơ sở Deep Stone Crypt."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Rương bí mật (Secret Chest)",
+          "steps": [
+            "Trên tuyến đường này có chứa Rương Bí Mật đầu tiên của Raid.",
+            "Nó được giấu trên một gờ đá cao ở khu vực cuối cùng trước khi vào hầm.",
+            "Hãy đảm bảo cả đội cùng chờ nhau nhảy lên ăn rương trước khi đi qua cửa an toàn hầm tiếp theo."
+          ]
+        }
+      },
+      "images": []
+    },
+    {
+      "id": "enc_1",
+      "name": "Encounter 1 - Crypt Security",
+      "roles": {
+        "scanner": {
+          "quantity": 1,
+          "description": "Người soi (Scanner - Vàng): Chạy trên mặt đất để nhìn xuyên kính xuống hầm, gọi 2 bảng điều khiển sáng. Sau đó đưa buff xuống hầm để gọi cầu chì."
+        },
+        "operator": {
+          "quantity": 1,
+          "description": "Người thao tác (Operator - Đỏ): Xuống hầm bắn 4 bảng điều khiển theo chỉ dẫn của Scanner để mở hệ thống cầu chì (Fuses)."
+        },
+        "add_clear": {
+          "quantity": 4,
+          "description": "Dọn quái, giết Servitors để vô hiệu hóa lớp khiên bảo vệ các cỗ máy (Terminal) giúp luân chuyển Buff."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Soi bảng điều khiển (Panels)",
+          "objective": "Quét và bắn 4 bảng điều khiển đúng dưới hầm để lộ ra cầu chì.",
+          "steps": [
+            "Chia map làm 2 khu vực trên mặt đất: Dark (bên tối) và Light (bên sáng). Giữa 2 bên có Terminal (máy luân chuyển buff). Dưới mặt đất là Tầng Hầm (Basement).",
+            "Giết quái Vandal đặc biệt để lấy 2 buff Augments: Operator (Đỏ) và Scanner (Vàng).",
+            "Operator sẽ dùng súng bắn vào công tắc cửa để đi xuống Tầng Hầm.",
+            "Scanner ở trên mặt đất (bắt đầu ở bên Dark hoặc Light). Nhìn qua các tấm kính trên sàn xuống Tầng Hầm, tìm xem trong số 5 bảng điều khiển (Panels) của mỗi bên, có 2 cái nào đang phát sáng màu Vàng.",
+            "Scanner gọi to vị trí 2 bảng sáng cho Operator dưới hầm bắn (Vd: 'Dark Trong', 'Dark Ngoài').",
+            "Sau khi đọc xong 1 bên, Scanner bỏ buff Vàng vào máy Terminal để người bên kia nhặt, đọc nốt 2 bảng sáng còn lại.",
+            "Operator bắn đúng 4 bảng (2 Dark, 2 Light). Hệ thống sẽ thông báo phòng bảo vệ đã mở."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Phá Cầu Chì (DPS Fuses)",
+          "objective": "Trao đổi buff, Scanner xuống hầm soi cầu chì đúng để cả đội ở trên phá hủy.",
+          "steps": [
+            "Khi bắn đúng 4 bảng, 6 ống cầu chì (Fuses) ở giữa phòng sẽ mở ra.",
+            "Operator dưới hầm cất buff Đỏ vào Terminal. Ai đó trên mặt đất nhặt lấy buff Đỏ.",
+            "Scanner trên mặt đất cất buff Vàng vào Terminal. Người dưới hầm nhặt lấy buff Vàng để trở thành Scanner mới.",
+            "Scanner dưới hầm ngẩng mặt lên nhìn 6 ống cầu chì. Sẽ có 1 ống phát sáng Vàng. Scanner hô to ống nào sáng (Vd: 'Ống giữa bên Trái!').",
+            "Cả đội trên mặt đất tập trung sát thương (Xenophage, Sniper) bắn vỡ chính xác ống cầu chì đó. CẤM BẮN SAI ỐNG, nếu vỡ ống không sáng = WIPE.",
+            "Ống vỡ, Scanner lại soi ống tiếp theo. Lặp lại đến khi bắn vỡ đủ 6 ống.",
+            "Lưu ý: Nếu không phá đủ 6 ống trong 1 lượt, phòng hầm sẽ bị bốc cháy. Operator mới trên mặt đất phải bắn cửa hầm thả người khác xuống để đổi ca, lặp lại Phase 1."
+          ]
+        }
+      },
+      "images": []
+    },
+    {
+      "id": "enc_2",
+      "name": "Encounter 2 - Atraks-1, Fallen Exo",
+      "roles": {
+        "space_team": {
+          "quantity": 3,
+          "description": "3 người đi thang máy lên Trạm Vũ Trụ (Space). Cần có Scanner (Vàng)."
+        },
+        "earth_team": {
+          "quantity": 3,
+          "description": "3 người ở lại dưới mặt đất (Earth/Crypt). Cần có Operator (Đỏ)."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Dọn quái và Tìm Boss",
+          "objective": "Tiêu diệt Servitors để nhận buff, luân chuyển buff giữa Không gian và Trái Đất để tìm phân thân thật của Boss.",
+          "steps": [
+            "Bắt đầu, 3 người nhặt 3 khối thang máy (Pods) bay lên Space. 3 người ở lại Earth.",
+            "Cả 2 nơi sẽ có 4 phân thân Boss Atraks-1 xuất hiện (Tổng cộng 8).",
+            "Tiêu diệt Servitors ở cả 2 nơi. Ở Space sẽ rớt buff Scanner (Vàng). Ở Earth rớt buff Operator (Đỏ).",
+            "Mỗi khu vực sẽ đến lượt (DPS Phase). Nếu thanh thông báo hiện 'Atraks-1 đang chuẩn bị kích nổ vũ khí', Phase DPS bắt đầu.",
+            "Ví dụ Space DPS trước: Scanner ở Space soi xem trong 4 con Boss, con nào phát sáng màu Vàng rực. Gọi cả đội áp sát con đó."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - DPS và Luân chuyển Buff",
+          "objective": "Đánh Boss, nhặt quả cầu Debuff (Replication) và ném nó ra ngoài không gian.",
+          "steps": [
+            "Cả 3 người đếm ngược (3, 2, 1, Chém!) và dùng The Lament hoặc Thundercrash dồn sát thương cực mạnh vào con Boss phát sáng.",
+            "Boss bị đánh sẽ biến mất, để lại một quả cầu đen đỏ (Replication Debuff). Một người PHẢI chạy vào nhặt nó.",
+            "Quả cầu này có bộ đếm giờ (45 giây). Nếu hết giờ, người cầm sẽ chết và Wipe team. Operator (Đỏ) có thể bắn vào người đang ôm cầu để reset giờ.",
+            "Sau khi đánh xong ở Space, Scanner phải cất buff Vàng vào Terminal (máy luân chuyển). Earth Team lấy buff Vàng, lặp lại quá trình soi và chém Boss dưới Earth.",
+            "Ai ôm cầu dưới Earth phải đi thang máy lên Space. Lên đến Space, đi tới căn phòng Air-lock (Cửa gió).",
+            "Operator (Đỏ) ở Space bắn vào bảng điều khiển cửa Air-lock để mở. Những người ôm cầu chạy vào trong, Operator bắn rơi quả cầu khỏi người họ, họ chạy ra ngoài. Air-lock đóng lại, hút toàn bộ quả cầu ra ngoài vũ trụ."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - Final Stand",
+          "details": [
+            "Khi máu Boss tụt xuống một nấc nhỏ cuối cùng, Final Stand bắt đầu.",
+            "Toàn bộ người chơi dưới Earth lập tức đi thang máy lên Space.",
+            "Sẽ có 8 phân thân Boss xuất hiện quanh phòng. Scanner soi nhanh con nào sáng Vàng, cả đội lao vào chém.",
+            "Chém vỡ 1 con, soi tiếp con khác sáng, chém đến khi sạch máu Boss. Không cần nhặt cầu ở phase này."
+          ]
+        }
+      },
+      "images": []
+    },
+    {
+      "id": "enc_3",
+      "name": "Encounter 3 - The Descent (Crash)",
+      "roles": {
+        "scanner": {
+          "quantity": 1,
+          "description": "Vàng: Soi 2 cái thùng nạp (Bins) nào đang phát sáng để gọi đồng đội nạp lõi hạt nhân."
+        },
+        "operator": {
+          "quantity": 1,
+          "description": "Đỏ: Bắn các bảng điều khiển để drop Lõi Hạt Nhân (Nuclear Cores) cho đội nhặt."
+        },
+        "suppressor": {
+          "quantity": 1,
+          "description": "Xanh Biển: Đứng dưới 3 drone an ninh, bắn vào Boss để choáng nó, mở cửa thùng nạp."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Lấy Buff và Xử Lý Cores",
+          "objective": "Ngăn trạm vũ trụ phát nổ bằng cách tước Lõi Hạt Nhân và nạp vào rác.",
+          "steps": [
+            "Đánh Vandal để lấy 3 buff: Vàng, Đỏ, Xanh.",
+            "Phòng có 4 góc, mỗi góc có một khu vực nạp lõi (tổng 4 cái Bins).",
+            "Operator nhìn vào hệ thống ống ở giữa phòng, gọi số lượng Lõi Hạt Nhân sẽ rớt ra (thường là 2 hoặc 3 lõi mỗi đợt) và bắn vào bảng đỏ để rơi lõi.",
+            "Scanner soi 4 Bins ở 4 góc, xem 2 hoặc 3 cái nào đang sáng màu Vàng. Hô to vị trí (Vd: 'Trái gần', 'Phải xa').",
+            "Người KHÔNG có buff (hoặc có buff dư) sẽ nhặt Lõi Hạt Nhân ôm chạy tới Bins được Scanner đọc. Ôm lõi sẽ bị cộng dồn debuff Phóng xạ (Radiation), đủ 10 stack sẽ chết.",
+            "Suppressor chạy luân phiên dưới 3 con Drone lơ lửng, hướng súng bắn 1 viên vào Boss Taniks. Khi bắn đủ ở cả 3 Drone, Boss bị choáng.",
+            "Lúc Boss choáng, các thùng Bins mới chính thức mở nắp. Người ôm lõi lập tức NẠP (Dunk) lõi vào thùng."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Vô hiệu hóa Augment",
+          "steps": [
+            "Cứ mỗi đợt nạp lõi xong, Boss Taniks sẽ Random 'Khóa' (Deactivate) một người đang cầm buff (Vàng, Đỏ, hoặc Xanh).",
+            "Người bị khóa sẽ có buff chuyển sang màu Xám và kêu tít tít. Người này PHẢI chạy ngay đến Terminal và cất buff vào đó.",
+            "Một người khác chưa có buff (hoặc đổi buff) sẽ chạy tới Terminal nhặt buff đó ra để tiếp tục làm việc.",
+            "Lặp lại quy trình Nhặt Lõi -> Soi Thùng -> Bắn Choáng Boss -> Nạp Lõi -> Đổi Buff khoảng 6 lần cho đến khi cửa trung tâm mở ra."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - Chạy Trốn Khỏi Trạm Rơi",
+          "details": [
+            "Trạm vũ trụ bắt đầu rơi xuống Europa.",
+            "Cả đội lao nhanh qua hành lang hẹp đang bốc cháy.",
+            "Dùng khiên chặn, hồi máu hoặc chạy thục mạng tới căn phòng trú ẩn an toàn ở cuối đường."
+          ]
+        }
+      },
+      "images": []
+    },
+    {
+      "id": "enc_4",
+      "name": "Final Encounter - Taniks, the Abomination",
+      "roles": {
+        "scanner": {
+          "quantity": 1,
+          "description": "Vàng: Đọc 2 thùng (Bins) sáng để nạp lõi."
+        },
+        "operator": {
+          "quantity": 1,
+          "description": "Đỏ: Giải cứu những người ôm lõi bị Taniks giam cầm."
+        },
+        "suppressor": {
+          "quantity": 1,
+          "description": "Xanh Biển: Bắn Taniks từ 3 drone để choáng Boss và mở nắp thùng."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Chuẩn Bị Lõi Hạt Nhân",
+          "objective": "Lấy 2 lõi từ Taniks mang đi nạp.",
+          "steps": [
+            "Bản đồ chia làm 3 khu vực (Spawn, Trái, Phải). Mỗi khu vực có 2 thùng nạp (Bins).",
+            "Giết Vandal lấy 3 buff (Vàng, Đỏ, Xanh).",
+            "Taniks sẽ di chuyển đến 1 trong 3 khu vực và gầm lên, rớt 4 cột thiên thạch màu cam xung quanh hắn.",
+            "Cả đội bắn vỡ 2 điểm sáng trên thân Taniks (chân hoặc hông) để làm rơi ra 2 Lõi Hạt Nhân.",
+            "Scanner soi nhanh 6 thùng Bins trên map xem 2 thùng nào sáng vàng, hô to cho người ôm lõi mang tới.",
+            "Người ôm lõi sẽ bị dính phóng xạ (Radiation) chậm dần. Đồng thời Taniks sẽ random ném lồng năng lượng màu tím giam giữ 1 người ôm lõi.",
+            "Operator (Đỏ) PHẢI bắn vỡ quả cầu đỏ trên lồng tím để giải thoát cho người ôm lõi.",
+            "Suppressor chạy dưới 3 Drone, bắn Taniks 3 lần để choáng hắn. Chú ý: Bắn choáng CÀNG CHẬM thì người ôm lõi càng có thời gian di chuyển, nhưng chậm quá họ sẽ chết vì phóng xạ. Canh lúc họ vừa tới thùng thì bắn phát thứ 3 mở nắp."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - 4 Core Strat (Chiến thuật nâng cao)",
+          "steps": [
+            "Thay vì bắn 2 lõi, đội pro sẽ bắn rụng cả 4 lõi của Taniks cùng lúc.",
+            "Cần 4 người ôm 4 lõi chạy tỏa ra 4 thùng sáng (Scanner sẽ thấy 4 thùng sáng).",
+            "Chiến thuật này rủi ro cực cao nhưng chỉ cần làm 1 lần là vào thẳng Phase DPS, thay vì phải làm 2 lần 2 lõi."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - DPS Taniks",
+          "details": [
+            "Sau khi nạp đủ 4 lõi, Taniks sẽ bay ra giữa sân. Cả 2 vòng xoáy năng lượng khổng lồ sẽ xuất hiện quanh hắn.",
+            "Toàn đội nhảy VÀO BÊN TRONG vòng xoáy gần Boss nhất (nếu đứng ngoài vòng sẽ bị rác vũ trụ xoay chết).",
+            "Cắm Well, bắn Divinity, và xả toàn bộ Rocket/Sniper vào Taniks.",
+            "Chú ý: Khi Taniks gầm lên đẩy bật cả đội ra ngoài vòng, phải vừa nhảy lướt vừa xả đạn để tái nhập vòng, hoặc cắm Well thứ 2 ngay mép vòng tiếp tục bắn.",
+            "Khi máu sát đáy (Final Stand), Boss sẽ liên tục xả thiên thạch tím và teleport nhẹ. Nhồi toàn bộ sát thương còn lại để kết liễu."
+          ]
+        }
+      },
+      "images": []
+    }
+  ]
+}

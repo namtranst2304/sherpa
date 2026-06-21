@@ -1,12 +1,14 @@
 // Import file json
 import desertPerpetual from "./raids/desert-perpetual.json"
 import gardenOfSalvation from "./raids/garden-of-salvation.json"
+import deepStoneCrypt from "./raids/deep-stone-crypt.json"
 import { ActivityData } from "@/lib/types"
 
 export const RAIDS_DATA: Record<string, ActivityData> = {
   // Sửa key ở đây thành "the-desert-perpetual" để khớp với URL
   "the-desert-perpetual": desertPerpetual as unknown as ActivityData,
   "garden-of-salvation": gardenOfSalvation as unknown as ActivityData,
+  "deep-stone-crypt": deepStoneCrypt as unknown as ActivityData,
 }
 
 import week1 from "./pantheon/week-1.json"
