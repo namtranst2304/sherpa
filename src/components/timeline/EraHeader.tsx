@@ -36,7 +36,7 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
         >
           {/* Elegant divider lines */}
           <div className="h-[1px] w-12 md:w-32 xl:w-48 bg-gradient-to-r from-transparent via-white/20 to-white/40" />
-          <span className={`text-xs md:text-sm xl:text-base font-sans font-medium tracking-[0.8em] uppercase ${theme.text} opacity-90`} style={{ textShadow: `0 0 15px rgba(${theme.rgb}, 0.6)` }}>
+          <span className={`text-xs md:text-sm xl:text-base font-sans font-medium tracking-widest uppercase ${theme.text} opacity-90`} style={{ textShadow: `0 0 15px rgba(${theme.rgb}, 0.6)` }}>
             ✧ CHƯƠNG {chapterRoman} ✧
           </span>
           <div className="h-[1px] w-12 md:w-32 xl:w-48 bg-gradient-to-l from-transparent via-white/20 to-white/40" />
@@ -47,7 +47,7 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring" as const, stiffness: 90, damping: 20, delay: 0.15 }}
-          className={`relative inline-block text-3xl md:text-5xl font-sans tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40 mb-8 leading-tight md:leading-tight py-2 uppercase`}
+          className={`relative inline-block text-3xl md:text-5xl font-sans tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40 mb-8 leading-tight md:leading-tight py-2 uppercase whitespace-pre-line`}
           style={{ filter: `drop-shadow(0 0 20px rgba(${theme.rgb}, 0.3))` }}
         >
           {era.name}

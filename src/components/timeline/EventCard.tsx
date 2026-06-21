@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Calendar, Tag } from "lucide-react";
 import { CyberBadge } from "@/components/ui/CyberComponents";
 import { TimelineEvent } from "@/data/timeline/index";
 import { getTheme } from "@/lib/theme";

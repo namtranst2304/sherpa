@@ -89,28 +89,39 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
     <>
       {/* TopNav Overlay for Active Chapter - Rendered into TopNav via Portal */}
       {portalNode && createPortal(
-        <div className="h-full flex items-center px-4 md:px-8 -mr-4 md:-mr-6 bg-black/40 backdrop-blur-md border-l border-white/10 relative">
-          <div className="flex flex-col items-end justify-center">
-            <span className={`text-[9px] md:text-[10px] font-sans font-medium tracking-[0.4em] uppercase ${activeTheme.text} transition-colors opacity-90`}>
-              ✧ CHƯƠNG {activeChapterRoman} ✧
-            </span>
-            <div className="relative h-6 md:h-7 overflow-hidden flex items-center mt-0.5">
-              <AnimatePresence mode="popLayout">
-                <motion.span
-                  key={activeEra.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="text-sm md:text-base font-serif tracking-widest text-white whitespace-nowrap uppercase"
-                >
-                  {activeEra.name}
-                </motion.span>
-              </AnimatePresence>
-            </div>
+        <div className="flex items-center h-full group cursor-default">
+          <div className="flex flex-col items-end justify-center h-full">
+             
+             {/* Chapter Number with Flanking Lines */}
+             <div className="flex items-center gap-3 mb-1 md:mb-1.5 opacity-60 group-hover:opacity-100 transition-all duration-700 translate-x-0 group-hover:-translate-x-1">
+                <div className="h-[1px] w-8 md:w-16 bg-gradient-to-r from-transparent to-white/40" />
+                <span className={`text-[9px] md:text-[11px] font-sans font-medium tracking-widest uppercase ${activeTheme.text}`}>
+                  CHƯƠNG {activeChapterRoman}
+                </span>
+                <div 
+                  className={`w-1 h-1 md:w-1.5 md:h-1.5 rotate-45 ${activeTheme.bg}`} 
+                  style={{ boxShadow: `0 0 10px rgba(${activeTheme.rgb}, 0.8)` }} 
+                />
+             </div>
+
+             {/* Era Name with Cinematic Animation */}
+             <div className="relative overflow-hidden flex items-center h-[20px] md:h-[24px]">
+               <AnimatePresence mode="wait">
+                 <motion.span
+                    key={activeEra.id}
+                    initial={{ opacity: 0, filter: "blur(8px)", y: 10 }}
+                    animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                    exit={{ opacity: 0, filter: "blur(8px)", y: -10 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="text-xs md:text-[15px] font-sans tracking-widest uppercase text-zinc-100 group-hover:text-white transition-colors duration-700 whitespace-nowrap"
+                    style={{ textShadow: `0 2px 10px rgba(${activeTheme.rgb}, 0.4)` }}
+                 >
+                    {activeEra.name}
+                 </motion.span>
+               </AnimatePresence>
+             </div>
+
           </div>
-          
-          {/* Subtle glowing accent line at the bottom of the TopNav block */}
-          <div className={`absolute bottom-0 left-0 w-full h-[2px] ${activeTheme.bg} transition-colors duration-500 shadow-[0_0_10px_currentColor] opacity-70`} />
         </div>,
         portalNode
       )}
@@ -178,10 +189,10 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
                       transition={{ duration: 0.2 }}
                       className="absolute right-full mr-4 flex flex-col items-end pointer-events-none drop-shadow-2xl bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl px-5 py-3"
                     >
-                      <span className={`text-[9px] md:text-[10px] font-sans font-medium tracking-[0.4em] uppercase ${theme.text} mb-1 opacity-90 whitespace-nowrap`}>
+                      <span className={`text-[9px] md:text-[10px] font-sans font-medium tracking-widest uppercase ${theme.text} mb-1.5 opacity-90 whitespace-nowrap`}>
                         ✧ CHƯƠNG {romanNumerals[idx] || String(idx + 1)} ✧
                       </span>
-                      <span className="text-sm md:text-base font-serif tracking-widest text-white whitespace-nowrap uppercase">
+                      <span className="text-sm md:text-base font-sans tracking-widest text-white whitespace-nowrap uppercase">
                         {era.name}
                       </span>
                     </motion.div>
