@@ -4,43 +4,51 @@ import { TimelineEra } from "@/data/timeline/index";
 import { getTheme } from "@/lib/theme";
 import Image from "next/image";
 
+const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
+
 export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
   const theme = getTheme(era.themeColor);
+  const chapterRoman = romanNumerals[index] || String(index + 1);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ type: "spring" as const, stiffness: 80, damping: 20 }}
-      className="relative py-8 md:py-12 mb-8"
+      className="relative py-8 md:py-16 mb-8"
     >
-      {/* Giant background number */}
+      {/* Giant background Roman Numeral */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-        <span className={`text-[10rem] md:text-[16rem] font-black font-mono ${theme.text} opacity-[0.03] leading-none`}>
-          {String(index + 1).padStart(2, "0")}
+        <span className={`text-[12rem] md:text-[20rem] font-sans ${theme.text} opacity-[0.02] leading-none tracking-widest`}>
+          {chapterRoman}
         </span>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-3xl mx-auto px-4">
+      <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ type: "spring" as const, stiffness: 120, damping: 20, delay: 0.1 }}
-          className="mb-4"
+          transition={{ type: "spring" as const, stiffness: 100, damping: 25, delay: 0.1 }}
+          className="mb-6 flex items-center justify-center gap-6"
         >
-          <span className={`text-sm md:text-base font-mono font-bold tracking-[0.4em] uppercase ${theme.text} opacity-90`}>
-            Chương {String(index + 1).padStart(2, "0")}
+          {/* Elegant divider lines */}
+          <div className="h-[1px] w-12 md:w-32 xl:w-48 bg-gradient-to-r from-transparent via-white/20 to-white/40" />
+          <span className={`text-xs md:text-sm xl:text-base font-sans font-medium tracking-[0.8em] uppercase ${theme.text} opacity-90`} style={{ textShadow: `0 0 15px rgba(${theme.rgb}, 0.6)` }}>
+            ✧ CHƯƠNG {chapterRoman} ✧
           </span>
+          <div className="h-[1px] w-12 md:w-32 xl:w-48 bg-gradient-to-l from-transparent via-white/20 to-white/40" />
         </motion.div>
 
         <motion.h2
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ type: "spring" as const, stiffness: 100, damping: 18, delay: 0.15 }}
-          className={`text-2xl md:text-4xl font-black uppercase tracking-wider text-white mb-4 leading-snug md:leading-snug py-1 whitespace-nowrap ${theme.glow}`}
+          transition={{ type: "spring" as const, stiffness: 90, damping: 20, delay: 0.15 }}
+          className={`relative inline-block text-3xl md:text-5xl font-sans tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40 mb-8 leading-tight md:leading-tight py-2 uppercase`}
+          style={{ filter: `drop-shadow(0 0 20px rgba(${theme.rgb}, 0.3))` }}
         >
           {era.name}
         </motion.h2>
@@ -49,8 +57,8 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ type: "spring" as const, stiffness: 100, damping: 18, delay: 0.25 }}
-          className="text-zinc-500 text-sm md:text-base font-mono leading-relaxed"
+          transition={{ type: "spring" as const, stiffness: 90, damping: 20, delay: 0.25 }}
+          className="text-zinc-400 text-sm md:text-base xl:text-[17px] font-sans font-light leading-relaxed tracking-wide max-w-2xl mx-auto"
         >
           {era.description}
         </motion.p>

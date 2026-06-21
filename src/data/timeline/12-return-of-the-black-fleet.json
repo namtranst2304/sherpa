@@ -1,8 +1,8 @@
 {
   "id": "12-return-of-the-black-fleet",
-  "name": "Return of the Black Fleet",
-  "description": "Kỷ nguyên của Return of the Black Fleet bao gồm bản mở rộng Shadowkeep, Beyond Light, The Witch Queen và các mùa giải tương ứng.",
-  "themeColor": "purple",
+  "name": "Sự Trở Lại Của Hạm Đội Đen",
+  "description": "Bóng tối đã chính thức phủ bóng lên Hệ Mặt Trời. Các hạm đội Kim tự tháp (Pyramid Ships) khổng lồ xuất hiện, mang theo quyền năng nguyên thủy của The Darkness. Kỷ nguyên ánh sáng đang đứng trước thử thách tàn khốc nhất khi các hành tinh dần biến mất vào hư vô.",
+  "themeColor": "zinc",
   "image": "/images/timeline/12.webp",
   "events": [
     {

@@ -1,8 +1,8 @@
 {
-  "id": "the-war-against-the-witness",
-  "name": "The War against the Witness",
-  "description": "Sự kiện trong Cuộc chiến chống lại Witness.",
-  "themeColor": "green",
+  "id": "13-the-war-against-the-witness",
+  "name": "Cuộc Chiến Chống Lại The Witness",
+  "description": "Kẻ thù tối thượng lộ diện. The Witness - hiện thân của màn đêm đen tối - bắt đầu tiến trình định hình lại vũ trụ thành The Final Shape. Cuộc chiến bùng nổ dữ dội từ những ảo ảnh của Savathûn cho đến chiến dịch sinh tử tại Neomuna và The Pale Heart.",
+  "themeColor": "red",
   "events": [
     {
       "title": "Season of the Haunted",
