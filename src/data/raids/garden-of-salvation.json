@@ -1,0 +1,306 @@
+{
+  "raid_name": "Garden of Salvation",
+  "active_orbit": "Black Garden",
+  "preface": {
+    "formatting_rules": "Tất cả các cơ chế quan trọng như Tether (Dây nối sáng), Voltaic Overflow, và Enlightenment (Khai sáng) sẽ được nhấn mạnh để giúp Fireteam dễ dàng phối hợp.",
+    "non_linear_mechanic": {
+      "description": "Raid này diễn ra theo trình tự tuyến tính từ đầu đến cuối. Xuyên suốt Raid là một chuỗi Quest ẩn để lấy khẩu Trace Rifle Exotic Divinity. Hướng dẫn này sẽ tập trung vào cơ chế chính của các Encounter tiêu chuẩn.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Raid này đòi hỏi sự phân chia rõ ràng giữa việc chạy cơ chế (bảo vệ trạm, nhặt hạt) và dồn sát thương Boss. Các ải đầu tập trung mạnh vào Add Clear (dọn quái) và sinh tồn, trong khi 2 ải cuối yêu cầu burst DPS cực mạnh kết hợp khả năng bắn điểm yếu (Crit Spot) chuẩn xác do Boss di chuyển rất khó chịu.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cực kỳ quan trọng ở Encounter 3 và 4 để cả đội có thể đứng tank sát thương từ vũng phóng xạ hoặc sự tấn công của Boss khi DPS."
+        },
+        {
+          "name": "Needlestorm / Nova Bomb",
+          "utility": "Sử dụng ở Encounter 1 và 2 để dọn dẹp khẩn cấp Minotaur, Hydra hoặc Angelic khi chúng khóa trụ."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Cenotaph Mask",
+          "recommendation": "Gắn lên Trace Rifle để đánh dấu (mark) Minotaurs và Angelics, cung cấp lượng đạn Heavy dồi dào cho đồng đội trong các ải sau."
+        },
+        {
+          "name": "Osmiomancy Gloves / Bleak Watcher",
+          "recommendation": "Đóng băng toàn bộ Vex ở Encounter 2, giúp việc kiểm soát trụ trở nên dễ dàng cực kỳ."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Thundercrash (Cuirass of the Falling Star)",
+          "utility": "Sát thương burst lớn để dứt điểm hoặc dồn DPS nhanh vào Consecrated Mind (Boss ải 3)."
+        },
+        {
+          "name": "Ward of Dawn / Banner Shield",
+          "utility": "Giúp tạo khiên và buff sát thương vũ khí nếu đội thiếu Warlock cầm Well."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Synthoceps",
+          "recommendation": "Tăng cực mạnh sát thương Super và cận chiến, hoàn hảo để dọn quái xung quanh trạm Relay."
+        },
+        {
+          "name": "Abeyant Leap (Strand)",
+          "recommendation": "Trói chân đám Goblin có khiên miễn nhiễm (immune) ở ải 2, câu giờ trước khi bạn kịp sạc lại buff Enlightenment."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Golden Gun: Marksman",
+          "utility": "Gây sát thương chí mạng khổng lồ lên Sanctified Mind (Boss ải 4) khi kết hợp với Celestial Nighthawk hoặc Star-Eater Scales."
+        },
+        {
+          "name": "Shadowshot (Tether)",
+          "utility": "Tuyệt vời để trói và Weaken đám Minotaur, Angelic ở mọi ải."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Celestial Nighthawk",
+          "recommendation": "Lựa chọn DPS hàng đầu cho Hunter ở 2 ải Boss cuối vì khung thời gian DPS khá ngắn và Boss di chuyển nhiều."
+        },
+        {
+          "name": "Orpheus Rig",
+          "recommendation": "Dùng ở Encounter 2 để liên tục ném Tether dọn dẹp các đường hành lang dài Vex di chuyển tới."
+        }
+      ]
+    },
+    "weapons": [
+      {
+        "name": "Divinity",
+        "description": "Là Exotic từ chính Raid này. Nếu ai đã có, bắt buộc phải dùng ở Encounter 4 vì Sanctified Mind có điểm yếu (Crit Spot) cực kỳ khó bắn. Divinity tạo bong bóng giúp team xả đạn dễ dàng."
+      },
+      {
+        "name": "Xenophage",
+        "description": "Vũ khí tiêu chuẩn và an toàn nhất cho Garden of Salvation. Bắn 1 hit chết Cyclops ở ải 1, dọn quái mạnh, phá mắt Boss ải 3 cực nhanh, và có DPS cực ổn định cho cả 2 Boss."
+      },
+      {
+        "name": "Linear Fusion Rifles (Taipan-4FR, Cataclysmic...)",
+        "description": "Sự lựa chọn sát thương tầm xa hoàn hảo cho Boss ải 3 và 4."
+      },
+      {
+        "name": "Sniper Rifles (Izanagi's Burden, Supremacy)",
+        "description": "Tốt cho việc bắn mắt Boss và DPS tầm xa nếu hết đạn Heavy."
+      },
+      {
+        "name": "Fusion Rifles / Shotguns",
+        "description": "Xử lý nhanh gọn Minotaur ở các ải để cướp Mote."
+      }
+    ]
+  },
+  "encounters": [
+    {
+      "id": "enc_1",
+      "name": "Encounter 1 - Evade the Consecrated Mind",
+      "roles": {
+        "team_1": {
+          "quantity": 3,
+          "description": "Đội đi trước (Forward Team) để dọn phòng, mở khóa cửa bằng dây Tether."
+        },
+        "team_2": {
+          "quantity": 3,
+          "description": "Đội đi sau (Rear Team) để ở lại đối mặt với Boss, nhặt khối Voltaic Overflow và chống cự trước khi cửa mở."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Mở Cửa & Chạy Trốn",
+          "objective": "Sinh tồn trước Boss, nhặt khối Voltaic Overflow và kết nối dây sáng Tether để mở cửa đi tiếp.",
+          "steps": [
+            "Khởi động Encounter bằng cách bắn vào hộp Vex box (bông hoa sáng) ở đầu map để tạo dây Tether, kéo dây cắm vào ổ khóa (+) trên cánh cổng khổng lồ trước mặt để mở cửa.",
+            "Ngay khi cửa mở, Boss (Consecrated Mind) sẽ xuất hiện chặn đường. Lúc này không thể giết Boss.",
+            "Boss sẽ bắt đầu nôn ra một khối lập phương phát sáng màu trắng gọi là 'Voltaic Overflow'.",
+            "Nếu khối lập phương này chạm đất và không ai nhặt trong vài giây, nó sẽ nổ và WIPE toàn đội.",
+            "Một người chơi phải chạy vào khối đó để nhặt. Người này sẽ nhận debuff Voltaic Overflow kéo dài 2 phút 30 giây. CHÚ Ý: Nếu nhặt thêm một khối nữa khi debuff chưa hết, bạn sẽ chết ngay lập tức.",
+            "Phân công thứ tự nhặt khối (vd: Người 1, Người 2, Người 3) trong Team 2 để luân phiên nhau đỡ đạn cho team.",
+            "Trong lúc đó, Team 1 tiến lên trước tìm hộp Vex box tiếp theo. Bắn vào hộp để tạo dây Tether, dàn hàng ngang kéo dây nối vào ổ khóa cửa tiếp theo.",
+            "Khi dây chạm vào ổ khóa, cửa sẽ mở. Lập tức cả Team 2 chạy qua cửa để hội quân cùng Team 1."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Tiến Lên Phía Trước",
+          "steps": [
+            "Sau khi qua cửa, một số người chơi sẽ mất debuff Voltaic. Hai team đảo vị trí: Team 1 ở lại nhặt khối Voltaic của Boss, Team 2 tiến lên trước dọn quái và mở cửa.",
+            "Lưu ý: Bất cứ lúc nào tiến lên khu vực mới, sẽ có Cyclops hoặc Minotaurs sinh ra. Phải lập tức dồn sát thương diệt Cyclops vì chúng có thể bắn one-shot bạn.",
+            "Tiếp tục lặp lại quá trình: Nhặt khối Voltaic (để khỏi Wipe) -> Dàn đội hình kéo dây Tether để mở khóa cửa -> Chạy tiếp.",
+            "Quá trình này lặp lại qua khoảng 4 khu vực cho đến khi bạn đến một hành lang dài."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - Cuộc Đua Cuối",
+          "details": [
+            "Ở cuối hành lang, cả đội không cần mở cửa bằng dây nữa. Thay vào đó Boss sẽ chặn đường rút lui và liên tục nhả khối Voltaic.",
+            "Cả đội phải thi nhau chạy nước rút qua cánh đồng đầy Vex. Đội hình chạy trước dọn dẹp liên tục (đặc biệt là Cyclops).",
+            "3 người ở lại chạy theo sau Boss phải thay phiên nhau nhặt thêm 3 khối Voltaic để sống sót.",
+            "Khi cả đội tới được bờ bên kia an toàn, Boss sẽ bỏ đi, kết thúc Encounter 1."
+          ]
+        }
+      },
+      "images": []
+    },
+    {
+      "id": "enc_2",
+      "name": "Encounter 2 - Summon the Consecrated Mind (Underbrush)",
+      "roles": {
+        "defenders": {
+          "quantity": 4,
+          "description": "4 người trấn giữ 4 trạm Relay (Trạm đầu, Trái, Phải, Trạm cuối)."
+        },
+        "floaters": {
+          "quantity": 2,
+          "description": "2 người cơ động chạy quanh map để hỗ trợ dọn quái và giúp sạc buff."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Lấy Buff Khai Sáng (Enlightenment)",
+          "objective": "Sử dụng dây Tether để sạc buff Enlightenment, dùng buff này phá khiên quái vật Vex.",
+          "steps": [
+            "Bản đồ có 4 trạm Relay, bắt đầu từ Trạm 1. Mỗi trạm có một hộp Vex box.",
+            "Khi quái Vex di chuyển về trạm, chúng sẽ nỗ lực 'hiến tế' (sacrifice). Nếu có quá nhiều Vex hiến tế vào Relay, cả đội sẽ WIPE.",
+            "Đám Vex này được bảo vệ bởi một lớp khiên trắng miễn nhiễm mọi sát thương.",
+            "Để phá khiên, người chơi phải có buff Enlightenment (Khai sáng).",
+            "Cách lấy buff: Bắn vào hộp Vex box để kéo dây Tether cắm vào chính cái trạm Relay (ổ khóa +). Những ai đứng trong đường dây lúc nó cắm vào trạm sẽ nhận buff Enlightenment kéo dài 45 giây.",
+            "Người có buff chỉ cần bắn 1 viên đạn vào quái là khiên trắng của nó sẽ vỡ, những người khác không có buff cũng có thể bắn phụ giết quái."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Mở Rộng Địa Bàn",
+          "steps": [
+            "Khởi đầu, cả đội lấy buff ở Trạm 1. Sau đó cử người chạy sang Trạm 2 (Trái) và Trạm 3 (Phải) để dọn quái và mở rộng.",
+            "Giữa các trạm có các cổng dịch chuyển (Vex portal). Bắn vào cổng để kích hoạt nó, giúp người cơ động (Floaters) di chuyển nhanh chóng giữa các trạm.",
+            "Vì buff chỉ tồn tại 45s, hai Floaters phải liên tục dùng cổng dịch chuyển đến các trạm sắp hết buff, phối hợp cùng người trấn giữ (Defender) tại trạm đó để kéo dây Tether nối lại buff.",
+            "Lưu ý: Angelics (Hydra lớn) sẽ xuất hiện ngẫu nhiên ở các trạm. Khi Angelic còn sống, hộp Vex box bị khóa (không thể kéo dây). Phải giết Angelic ngay lập tức để mở khóa hộp."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - Hội Quân Bảo Vệ Mạng Lưới",
+          "details": [
+            "Sau khi cả 4 trạm đều đã được kiểm soát (trạm cuối cùng mở), tường thành xung quanh khu vực trung tâm sẽ hạ xuống.",
+            "Tất cả 6 người chơi hội quân về giữa sân.",
+            "Sẽ có một trạm Relay ở giữa và 4 đường hành lang quái tràn vào liên tục. Cả đội phải phối hợp kéo dây Tether từ giữa sảnh ra để lấy buff và liên tục dọn quái, ngăn cấm cản tuyệt đối không cho Vex hiến tế.",
+            "3 Angelics sẽ spawn lần lượt. Giết chúng và dọn sạch quái cho đến khi thông báo Encounter Complete hiện lên."
+          ]
+        }
+      },
+      "images": []
+    },
+    {
+      "id": "enc_3",
+      "name": "Encounter 3 - Defeat the Consecrated Mind",
+      "roles": {
+        "mote_team": {
+          "quantity": 3,
+          "description": "Đội nhặt Hạt (Mote Team): Theo Boss, giết Minotaur, lụm hạt đem về nạp vào trạm Relay."
+        },
+        "boss_team": {
+          "quantity": 3,
+          "description": "Đội đọc Mắt (Eye Team): Đứng lại cản Boss không cho hiến tế, nhặt Voltaic Overflow và bắn Mắt Boss."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Lượm Hạt (Gambit)",
+          "objective": "Mote Team đi nhặt hạt (Mote) rơi từ Minotaur và nạp 30 hạt vào trạm Relay ở giữa.",
+          "steps": [
+            "Encounter bắt đầu khi bắn Boss ở giữa. Nó sẽ di chuyển ra 1 trong 4 hành lang ngoài rìa.",
+            "Mote Team đi theo lối khác tìm Minotaur. Giết Minotaur sẽ rớt ra 5 Voltaic Motes (hạt Vex màu trắng).",
+            "Mỗi người nhặt 5 hạt (tối đa chứa được 10 hạt), mang về trạm Relay ở giữa sảnh và nạp (Bank) vào đó.",
+            "Khi nạp hạt, người đó sẽ nhận buff Enlightenment giúp họ giết được đám Goblin khiên trắng đang cố hiến tế vào Relay. Phải nạp đủ 30 hạt để kích hoạt Phase DPS."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Chặn Boss & Bắn Mắt",
+          "objective": "Eye Team chạy theo Boss, nhặt Voltaic Overflow để sống sót và gọi Mắt.",
+          "steps": [
+            "Boss sẽ đi tới cuối một hành lang và lại bắt đầu nôn ra khối Voltaic Overflow như Encounter 1.",
+            "Người trong Eye Team phải chạy ra nhặt khối lập phương đó. Khi bị nhặt, Boss sẽ xòe cánh, để lộ ra 6 con mắt (3 mắt trên, 3 mắt dưới, hoặc trái/phải).",
+            "2 con mắt trong số đó sẽ phát sáng rực màu đỏ (Inner - Mắt Trong, hoặc Outer - Mắt Ngoài).",
+            "Người vừa nhặt Voltaic KHÔNG THỂ THẤY MẮT ĐỎ NÀY (Họ sẽ thấy mắt màu bình thường). Nhưng 2 đồng đội đứng cạnh sẽ thấy mắt đỏ.",
+            "Họ phải Callout to lên: ví dụ 'Trong Bên Trái' (Inner Left), 'Ngoài Bên Phải' (Outer Right).",
+            "Lập tức cả 3 người ngắm và bắn nổ chính xác 2 con mắt đó (Người nhặt khối phải bắn mù theo lời đọc của đồng đội).",
+            "Nếu bắn sai mắt hoặc bắn chậm, Boss sẽ giết người nhặt khối. Nếu bắn thành công, Boss bỏ đi. Luân phiên nhau ra nhặt khối và bắn mắt cho đến khi Mote team nạp đủ 30 hạt."
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - DPS Boss",
+          "details": [
+            "Khi nạp đủ 30 hạt, thông báo hiện lên. Boss sẽ đi về phía trạm Relay ở giữa và xòe tất cả mắt ra.",
+            "Boss sẽ bắt đầu lui lại rất xa. Toàn đội tụ tập chạy theo sau nó.",
+            "Các con mắt trên cánh Boss sẽ lần lượt sáng lên đỏ. Cả đội phải bắn nổ tât cả mắt đỏ cực nhanh để khiến Boss choáng và để lộ hạch trung tâm (Crit Spot màu trắng giữa bụng).",
+            "Lúc này DPS bắt đầu. Cắm Well of Radiance và dùng đạn Heavy bắn dồn dập vào bụng Boss. Vừa bắn vừa đi lùi hoặc tiến theo Boss.",
+            "Sau khi Boss đóng cánh lại, lặp lại toàn bộ Phase 1 và 2. Giết Boss trước khi nó Enrage."
+          ]
+        }
+      },
+      "images": []
+    },
+    {
+      "id": "enc_4",
+      "name": "Final Encounter - Defeat the Sanctified Mind",
+      "roles": {
+        "mote_teams": {
+          "quantity": 4,
+          "description": "Hai nhóm 2 người (2 người đi Cổng Xanh Blue, 2 người đi Cổng Cam Orange) luân phiên vào cổng nhặt 15 hạt Mote."
+        },
+        "builders": {
+          "quantity": 2,
+          "description": "2 người (Builder) chuyên dọn quái, bảo vệ Relay, và xây lại sàn bị Boss phá."
+        }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phase 1 - Lượm Hạt 2 Cổng",
+          "objective": "Phá điểm yếu trên người Boss để mở cổng, cử người vào lượm Mote mang về nạp 30 hạt cho mỗi trạm (Xanh và Cam).",
+          "steps": [
+            "Boss có 2 điểm yếu (Vai Trái và Hông Phải). Bắn vỡ 1 điểm sẽ rớt ra 1 khối cổng dịch chuyển.",
+            "Bắn hông sẽ tạo cổng màu Cam (Orange), dẫn ra đảo chứa quái rớt hạt Cam.",
+            "Bắn vai sẽ tạo cổng màu Xanh dương (Blue), dẫn ra đảo chứa quái rớt hạt Xanh.",
+            "Đội 1 (2 người) nhảy vào cổng. Ở ngoài, Angelic sẽ sinh ra và khóa trạm Relay. Những người ở ngoài phải lập tức tiêu diệt Angelic.",
+            "Đội trong cổng giết hết quái, lượm khoảng 15-18 hạt. Khi lượm xong, họ báo cho người ngoài bắn cái điểm yếu (vai hoặc hông) một lần nữa để KÉO họ về sảnh chính.",
+            "Khi họ về sảnh, họ chạy ra nạp hạt vào trạm Relay cùng màu (Xanh hoặc Cam). Lúc này họ sẽ có buff Enlightenment để phá khiên quái nhỏ.",
+            "Cùng lúc đó, Đội 2 chờ sẵn để nhảy vào cổng vừa mới mở để lượm hạt tiếp.",
+            "Mỗi trạm (Xanh, Cam) cần đúng 30 hạt để sạc đầy. Khi một trạm đầy, nó sẽ phát sáng và không cho nạp thêm nữa."
+          ]
+        },
+        "phase_2": {
+          "name": "Phase 2 - Xây Sàn (Building)",
+          "objective": "Boss liên tục xóa sổ các miếng sàn đất. Builder dùng dây Tether để phục hồi sàn.",
+          "steps": [
+            "Xuyên suốt trận chiến, Boss sẽ thi thoảng giơ tay lên, làm một mảng nền nhà biến mất vĩnh viễn (chừa lại dung dịch Vex phóng xạ chết người).",
+            "Đội Builder phải quan sát xem trạm Relay nào (Xanh hoặc Cam) đang dư người và không bị Angelic khóa.",
+            "Builder bắn vào hộp Vex box ở trạm đó để kéo dây Tether. Kéo đường dây cắm vào cái trụ dấu (+) sáng mờ lơ lửng ngay vị trí miếng sàn vừa bị mất.",
+            "Khi dây chạm vào ổ, sàn nhà sẽ được tái cấu trúc (phục hồi) trở lại.",
+            "Chú ý: Khi dây Tether được kích hoạt kéo dài, bất kỳ người chơi nào vô tình bị dây xuyên qua sẽ KHÔNG thể bắn súng và KHÔNG có tác dụng nạp Mote. Do đó phải thông báo 'Đang xây sàn, tránh đường dây ra!'"
+          ]
+        },
+        "phase_3": {
+          "name": "Phase 3 - DPS Sanctified Mind",
+          "details": [
+            "Sau khi CẢ HAI trạm Xanh và Cam đều đã được nạp đủ 30 hạt, Boss sẽ chuẩn bị cơ chế kết liễu.",
+            "Một biểu tượng dấu (+) khổng lồ sẽ xuất hiện phát sáng giữa không trung, trước mặt Boss. Nó sẽ mang MỘT TRONG HAI MÀU: Xanh (Blue) hoặc Cam (Orange).",
+            "Cả đội tập trung về hướng trạm Relay CÓ CÙNG MÀU với dấu (+) trên trời.",
+            "3 người nhanh chóng xếp hàng thẳng tắp từ trạm Relay đó, bắn hộp Vex box để kéo dây Tether.",
+            "Kéo dây cắm thẳng từ trạm Relay ghim trực tiếp vào dấu (+) khổng lồ trước mặt Boss.",
+            "Nếu cắm thành công, Boss sẽ bị nổ lớp giáp bảo vệ và rớt xuống sàn, mở ra điểm yếu (hạch trắng giữa ngực).",
+            "Lập tức cắm Well of Radiance và dồn toàn bộ hỏa lực DPS mạnh nhất. (Sniper, Linear Fusion, Golden Gun).",
+            "Nếu đội của bạn tự tin, có thể chia ra 3 người kéo dây, 3 người đứng sau lưng bắt đầu sạc sẵn vũ khí (như Izanagi's Burden) để nhồi dam ngay từ giây đầu tiên.",
+            "Khi Boss bay lên lại, lặp lại từ đầu toàn bộ các bước mở cổng lượm hạt. Boss có cơ chế Final Stand tương tự, khi máu rớt sát đáy, nó sẽ gọi ra 1 màu (+) nữa, kéo dây phá giáp 1 lần cuối và dứt điểm nó."
+          ]
+        }
+      },
+      "images": []
+    }
+  ]
+}
