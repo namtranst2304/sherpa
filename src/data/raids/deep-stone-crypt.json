@@ -122,6 +122,17 @@
           ]
         }
       },
+      "secrets": [
+        {
+          "title": "Hidden Chest 1",
+          "description": "Nằm trong giai đoạn đi qua cơn bão tuyết (Pike/Sparrow section).",
+          "steps": [
+            "Trên đường đi qua bão tuyết, bạn sẽ thấy nhiều bong bóng sưởi ấm.",
+            "Ở khu vực cuối cùng trước khi vào căn cứ, hãy rẽ sang bờ vực bên trái.",
+            "Rương nằm trên một gờ đá cao nhô ra vực thẳm."
+          ]
+        }
+      ],
       "images": []
     },
     {
@@ -218,6 +229,17 @@
           ]
         }
       },
+      "secrets": [
+        {
+          "title": "Hidden Chest 2",
+          "description": "Nằm trong giai đoạn nhảy nhót ngoài không gian (Space Walk) sau khi giết Atraks-1.",
+          "steps": [
+            "Trên đường đi ngoài vũ trụ, bạn sẽ phải nhảy qua các bệ máy móc.",
+            "Khoảng giữa đoạn đường, hãy nhìn lên trên cấu trúc bên trái, có một hệ thống bệ đỡ ẩn dắt lên một tầng cao hơn.",
+            "Nhảy lên đó và đi dọc theo gờ tường để tìm rương."
+          ]
+        }
+      ],
       "images": []
     },
     {

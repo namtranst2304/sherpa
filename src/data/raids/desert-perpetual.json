@@ -248,6 +248,17 @@
           ]
         }
       },
+      "secrets": [
+        {
+          "title": "Hidden Chest 1",
+          "description": "Trong khu vực di chuyển bằng rễ cây khổng lồ sau Ải A.",
+          "steps": [
+            "Khi nhảy qua các rễ cây phát quang, hãy để ý một rễ cây gãy nằm khuất bên phải.",
+            "Đi theo rễ cây gãy đó xuống dưới, bạn sẽ thấy một hang động nhỏ.",
+            "Rương nằm sâu bên trong hang động này."
+          ]
+        }
+      ],
       "images": [
         {
           "url": "/images/raids/desert-perpetual/enc01.png",

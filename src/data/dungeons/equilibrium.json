@@ -142,7 +142,18 @@
             "Lặp lại việc nạp cân bằng 4 lần để phá vỡ lõi bảo mật và hoàn thành ải."
           ]
         }
-      }
+      },
+      "secrets": [
+        {
+          "title": "Hidden Chest 1",
+          "description": "Trong đường hầm tối tăm sau khi hạ gục chiếc Harvester.",
+          "steps": [
+            "Khi di chuyển qua hầm thông gió, đừng rẽ trái ngay lập tức.",
+            "Đi thẳng tới cuối đường, nhìn lên trên trần nhà sẽ thấy một nắp hở.",
+            "Nhảy lên nắp hở đó và đi theo ống dẫn để lấy rương."
+          ]
+        }
+      ]
     },
     {
       "id": "eq_harrow",

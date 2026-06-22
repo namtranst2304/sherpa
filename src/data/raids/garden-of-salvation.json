@@ -147,6 +147,17 @@
           ]
         }
       },
+      "secrets": [
+        {
+          "title": "Hidden Chest 1",
+          "description": "Trong giai đoạn nhảy nhót (Undergrowth) ngay sau Ải 1.",
+          "steps": [
+            "Đang đi trên các rễ cây và hoa chuông khổng lồ, thay vì nhảy tới con đường chính rực sáng.",
+            "Hãy nhìn xuống phía dưới bên trái, tìm một thang máy ẩn (hoặc một lỗ hổng trong thân cây).",
+            "Nhảy xuống cành cây khuất đó để nhặt rương."
+          ]
+        }
+      ],
       "images": []
     },
     {
@@ -194,6 +205,17 @@
           ]
         }
       },
+      "secrets": [
+        {
+          "title": "Hidden Chest 2",
+          "description": "Trong khu vực cối xay gió khổng lồ (Giant Windmill) sau Ải 2.",
+          "steps": [
+            "Khi vào khu vực nhảy có các cành cây xoay liên tục như cối xay gió.",
+            "Hãy nhảy lên cành cây xoay và đi lên trên tít đỉnh ngọn cây thay vì nhảy qua bờ bên kia.",
+            "Rương nằm trên một gờ đá nhỏ ở phía trên cùng của khu vực."
+          ]
+        }
+      ],
       "images": []
     },
     {
