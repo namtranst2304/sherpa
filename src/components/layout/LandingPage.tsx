@@ -28,7 +28,7 @@ export function LandingPage() {
   };
 
   return (
-    <div className="relative h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-4 overflow-hidden w-full bg-black">
+    <div className="relative h-[calc(100vh-4rem)] min-h-[500px] flex flex-col items-center justify-between px-4 overflow-hidden w-full bg-black">
       
       {/* Background from HeroSection */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-start justify-center">
@@ -49,39 +49,43 @@ export function LandingPage() {
         <div className="w-[600px] h-[600px] bg-neon-cyan/5 rounded-full blur-[120px]" />
       </div>
 
+      {/* Top Spacer to balance the layout */}
+      <div className="flex-1 w-full pointer-events-none" />
+
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: -60, scale: 0.85 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: "spring", stiffness: 80, damping: 20 }}
-        className="relative z-10 text-center flex flex-col items-center"
+        className="relative z-10 text-center flex flex-col items-center shrink-0 my-8"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 0.15, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.2 }}
-          className="absolute -top-20 left-1/2 -translate-x-1/2 text-[8rem] md:text-[12rem] font-black text-neon-cyan leading-none pointer-events-none select-none whitespace-nowrap"
+          className="absolute -top-12 md:-top-20 left-1/2 -translate-x-1/2 text-[5rem] sm:text-[8rem] md:text-[12rem] font-black text-neon-cyan leading-none pointer-events-none select-none whitespace-nowrap"
         >
           DESTINY
         </motion.div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500 mb-4 relative">Destiny Universe</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500 mb-4 relative text-center">Destiny Universe</h1>
         <motion.span
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.3 }}
-          className="block text-xl md:text-3xl font-bold tracking-[0.3em] text-zinc-400 uppercase drop-shadow-md"
+          className="block text-lg sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-[0.3em] text-zinc-400 uppercase drop-shadow-md text-center"
         >Timeline</motion.span>
       </motion.div>
 
-      {/* Enter Button (Restored Animated Scroll Text) */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-32 md:bottom-40 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 cursor-pointer z-20 group"
-        onClick={handleEnter}
-      >
+      {/* Bottom section with Enter Button */}
+      <div className="flex-1 w-full flex items-end justify-center pb-8 md:pb-16 z-20">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="flex flex-col items-center gap-4 cursor-pointer group shrink-0"
+          onClick={handleEnter}
+        >
         <AnimatedScrollText />
         
         {/* Cascading Chevrons */}
@@ -97,6 +101,7 @@ export function LandingPage() {
           </motion.div>
         </div>
       </motion.div>
+      </div>
 
       {/* Door Transition Animation overlay (Starts OPEN, Closes on Enter) */}
       <AnimatePresence>

@@ -27,9 +27,9 @@ export default function NotFound() {
         </div>
         
         {/* System Error Console */}
-        <div className="flex items-center gap-3 text-neon-red font-mono bg-neon-red/10 px-6 py-3 border border-neon-red/50 shadow-neon-red">
-          <Terminal className="w-5 h-5" />
-          <span className="uppercase tracking-[0.2em] text-xs md:text-sm font-bold">System Error: Sector Not Found</span>
+        <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-2 sm:gap-3 text-neon-red font-mono bg-neon-red/10 px-4 sm:px-6 py-3 border border-neon-red/50 shadow-neon-red w-full max-w-sm sm:max-w-max">
+          <Terminal className="w-5 h-5 hidden sm:block" />
+          <span className="uppercase tracking-widest sm:tracking-[0.2em] text-[10px] sm:text-xs md:text-sm font-bold">System Error: Sector Not Found</span>
         </div>
 
         {/* Lore Description */}
@@ -41,7 +41,7 @@ export default function NotFound() {
         {/* Action Button */}
         <Link 
           href="/"
-          className="mt-8 px-10 py-4 border border-neon-cyan text-neon-cyan font-bold uppercase tracking-[0.3em] text-xs md:text-sm hover:bg-neon-cyan/10 hover:text-white hover:border-white shadow-neon-cyan hover:shadow-neon-cyan-hover transition-all duration-300 relative group overflow-hidden flex items-center gap-3"
+          className="mt-6 md:mt-8 px-6 md:px-10 py-3 md:py-4 border border-neon-cyan text-neon-cyan font-bold uppercase tracking-widest md:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm hover:bg-neon-cyan/10 hover:text-white hover:border-white shadow-neon-cyan hover:shadow-neon-cyan-hover transition-all duration-300 relative group overflow-hidden flex items-center gap-2 sm:gap-3"
         >
           {/* Scanline effect on hover */}
           <div className="absolute inset-0 -translate-y-full bg-gradient-to-b from-transparent via-neon-cyan/20 to-transparent group-hover:animate-[cyber-fade_1s_ease-in-out_infinite]" />

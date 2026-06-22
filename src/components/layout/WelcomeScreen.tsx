@@ -83,7 +83,7 @@ export function WelcomeScreen() {
 
             <button
               onClick={handleEnter}
-              className="px-12 py-4 mt-8 text-sm font-light tracking-[0.4em] uppercase border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-400 hover:bg-white/10 transform scale-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 hover:duration-75 will-change-transform relative overflow-hidden group rounded-sm flex items-center gap-3"
+              className="px-8 md:px-12 py-3 md:py-4 mt-8 text-xs md:text-sm font-light tracking-widest md:tracking-[0.4em] uppercase border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-400 hover:bg-white/10 transform scale-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-500 hover:duration-75 will-change-transform relative overflow-hidden group rounded-sm flex items-center gap-2 md:gap-3"
             >
               <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse group-hover:bg-green-400 transition-colors duration-300 group-hover:duration-75" />
               <span className="relative z-10 pt-[2px]">RETURN TO ORBIT</span>

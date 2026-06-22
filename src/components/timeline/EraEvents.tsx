@@ -52,7 +52,7 @@ export function EraEvents({ era }: { era: TimelineEra }) {
             >
               {/* Center Node */}
               <motion.div
-                className={`absolute left-[24px] md:left-1/2 md:-ml-[6px] w-3 h-3 rounded-none bg-black border-[2px] ${theme.border} z-10`}
+                className={`absolute left-[26px] md:left-1/2 md:-ml-[6px] w-3 h-3 rounded-none bg-black border-[2px] ${theme.border} z-10`}
                 style={{ rotate: "45deg" }}
                 whileHover={{ scale: 1.4, backgroundColor: theme.hex }}
                 transition={{ type: "spring" as const, stiffness: 300, damping: 15 }}
