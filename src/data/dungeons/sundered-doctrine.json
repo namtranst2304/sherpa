@@ -4,27 +4,27 @@
   "preface": {
     "formatting_rules": "Cơ chế Giải Mã Ký Hiệu (Symbols) và Tia Sáng (Light Beams) được viết hoa.",
     "non_linear_mechanic": {
-      "description": "Sundered Doctrine mang đến thử thách giải đố với hệ thống ổ khóa Zoetic Lockset, yêu cầu sự phối hợp cực cao để căn chỉnh các tia sáng và bẻ khóa biểu tượng của Hive/Pyramid.",
+      "description": "Sundered Doctrine mang đến thử thách giải đố với hệ thống ổ khóa Zoetic Lockset, yêu cầu sự phối hợp cực cao để căn chỉnh các tia sáng và bẻ khóa biểu tượng của Hive/Pyramid. Đặc biệt, khái niệm 'Truth' (Sự thật) và 'Lie' (Dối trá) sẽ quyết định sinh tử của cả đội.",
       "elevator_plates": []
     }
   },
   "loadout_tips": {
-    "note": "Kẻ địch là Hive/Scorn với số lượng đông đảo. Đòi hỏi di chuyển liên tục, dọn quái diện rộng và không để bị kẹt góc.",
+    "note": "Kẻ địch là Hive/Scorn với số lượng đông đảo và trâu bò, đặc biệt là quân đoàn Dread. Đòi hỏi di chuyển liên tục, dọn quái diện rộng và không để bị kẹt góc.",
     "warlocks": {
-      "supers": [ { "name": "Nova Bomb / Song of Flame", "utility": "Dọn dẹp quái vật Elite và giải vây cực nhanh." } ],
-      "exotics_and_abilities": [ { "name": "Getaway Artist", "recommendation": "Tạo Arc Soul liên tục hỗ trợ bắn quái trong lúc bạn bận chạy cơ chế." } ]
+      "supers": [ { "name": "Nova Bomb / Song of Flame", "utility": "Dọn dẹp quái vật Elite (Grim, Subjugator) và giải vây cực nhanh." } ],
+      "exotics_and_abilities": [ { "name": "Getaway Artist / Osmiomancy Gloves", "recommendation": "Tạo Arc Soul liên tục hỗ trợ bắn quái hoặc đóng băng toàn bộ sàn đấu trong lúc bạn bận chạy cơ chế." } ]
     },
     "titans": {
       "supers": [ { "name": "Twilight Arsenal", "utility": "Khống chế từ xa và dồn sát thương lên Kerrev." } ],
-      "exotics_and_abilities": [ { "name": "Synthoceps", "recommendation": "Tăng tối đa sát thương diện rộng và cận chiến khi bị vây hãm." } ]
+      "exotics_and_abilities": [ { "name": "Synthoceps", "recommendation": "Tăng tối đa sát thương diện rộng và cận chiến khi bị bầy Dread vây hãm." } ]
     },
     "hunters": {
-      "supers": [ { "name": "Shadowshot: Deadfall", "utility": "Trói chân đám Hive/Scorn tiến tới từ nhiều hướng." } ],
-      "exotics_and_abilities": [ { "name": "Gyrfalcon's Hauberk", "recommendation": "Bắn đạn Volatile dọn dẹp Add siêu nhanh và tàng hình." } ]
+      "supers": [ { "name": "Shadowshot: Deadfall", "utility": "Trói chân đám Hive/Scorn tiến tới từ nhiều hướng, gom chúng lại một chỗ." } ],
+      "exotics_and_abilities": [ { "name": "Gyrfalcon's Hauberk", "recommendation": "Bắn đạn Volatile dọn dẹp Add siêu nhanh và tàng hình liên tục để chạy cơ chế an toàn." } ]
     },
     "weapons": [
-      { "name": "Machine Guns", "description": "Rất hiệu quả ở encounter 1 và 2 để phòng thủ và kiểm soát đám đông." },
-      { "name": "Linear Fusion Rifles", "description": "Đặc biệt tốt để DPS Kerrev the Erased." }
+      { "name": "Machine Guns (Commemoration / Hammerhead)", "description": "Rất hiệu quả ở encounter 1 và 2 để phòng thủ và kiểm soát đám đông khổng lồ." },
+      { "name": "Linear Fusion Rifles / Whisper of the Worm", "description": "Vũ khí Hit-scan, sát thương chính xác là bắt buộc để DPS Boss cuối Kerrev the Erased vì hắn bay lượn liên tục." }
     ]
   },
   "encounters": [
@@ -32,17 +32,26 @@
       "id": "sd_riddle",
       "name": "Encounter 1 - Solve the Riddle",
       "roles": {
-        "symbol_reader": { "quantity": 1, "description": "Đọc và ghi nhớ các biểu tượng." },
-        "beam_aligner": { "quantity": 2, "description": "Điều chỉnh các lăng kính phản chiếu ánh sáng." }
+        "symbol_reader": { "quantity": 1, "description": "Đi săn Truth Seekers để tìm ra biểu tượng đúng (Truth)." },
+        "beam_aligner": { "quantity": 2, "description": "Điều chỉnh các lăng kính phản chiếu tia sáng theo lệnh của Reader." }
       },
       "walkthrough": {
         "phase_1": {
-          "name": "Căn chỉnh Tia sáng",
-          "objective": "Kết nối các tia sáng vào đúng biểu tượng yêu cầu.",
+          "name": "Phân Định Sự Thật và Dối Trá",
+          "objective": "Tìm ra biểu tượng đúng (Truth) giữa các biểu tượng sai (Lie).",
           "steps": [
-            "Người chơi phải nhìn các biểu tượng Hive/Pyramid hiển thị xung quanh đấu trường.",
-            "Tương tác với các tấm lăng kính để bẻ cong tia sáng và hướng nó bắn chuẩn xác vào biểu tượng đúng.",
-            "Dọn dẹp bầy quái vật liên tục xuất hiện cản trở quá trình ngắm tia sáng."
+            "Bắt đầu ải, các biểu tượng Hive/Pyramid sẽ xuất hiện ở 4 căn phòng xung quanh đấu trường chính.",
+            "Nhiệm vụ của Symbol Reader là đi lùng sục và tiêu diệt các quái vật tên là 'Truth Seekers'. Mỗi khi giết được một Truth Seeker, một biểu tượng sẽ sáng lên báo hiệu đó là Truth (Biểu tượng đúng).",
+            "Đọc to tên biểu tượng đó cho 2 người ở ngoài (ví dụ: 'Hoa Sen!', 'Hai con rắn!')."
+          ]
+        },
+        "phase_2": {
+          "name": "Căn Chỉnh Tia Sáng (Light Beams)",
+          "objective": "Bắn tia sáng vào tấm huy hiệu mang biểu tượng Truth.",
+          "steps": [
+            "Tại khu vực trung tâm có một nguồn sáng. Hai người Beam Aligner phải tương tác với các cột lăng kính xoay (Lenses) để bẻ cong tia sáng.",
+            "Mục tiêu là nối tia sáng chạy dọc theo các lăng kính, cuối cùng đập thẳng vào tấm huy hiệu (Medallion) có khắc biểu tượng Truth vừa được báo.",
+            "Sau khi bắn trúng, khu vực sẽ khóa lại và mở ra vòng mới. Lặp lại cho đến khi phá vỡ toàn bộ phong ấn."
           ]
         }
       }
@@ -51,16 +60,18 @@
       "id": "sd_lockset",
       "name": "Encounter 2 - Zoetic Lockset",
       "roles": {
-        "defender": { "quantity": 2, "description": "Bảo vệ các chốt chặn và kìm hãm đợt sóng quái." },
-        "runner": { "quantity": 1, "description": "Luân chuyển buff và đọc biểu tượng giữa các phòng." }
+        "defenders": { "quantity": 2, "description": "Bảo vệ các chốt chặn, bắn hạ Shriekers và kìm hãm đợt sóng quái." },
+        "runner": { "quantity": 1, "description": "Xoay vòng quay bánh răng Zoetic và khớp biểu tượng." }
       },
       "walkthrough": {
         "phase_1": {
-          "name": "Mở khóa Zoetic",
-          "objective": "Giữ vững vị trí và giải mã liên hoàn các khóa.",
+          "name": "Mở khóa Bánh Răng Zoetic",
+          "objective": "Sống sót và bẻ khóa liên hoàn các ổ khóa Zoetic.",
           "steps": [
-            "Đây là một dạng encounter phòng thủ, sống sót trước vô vàn đợt lính.",
-            "Giao tiếp liên tục để khớp nối các ổ khóa Zoetic theo thứ tự được yêu cầu để dọn đường."
+            "Đây là một ải thuần kỹ năng sinh tồn. Kẻ địch sẽ spawn ra với số lượng khổng lồ. Defenders phải xả đạn liên tục, ưu tiên tiêu diệt đám Shrieker trên cao để lấy không gian thở.",
+            "Ở giữa phòng là một cỗ máy khổng lồ gồm các vòng xoay chứa biểu tượng (Zoetic Wheels).",
+            "Người Runner phải đọc biểu tượng yêu cầu trên màn hình, sau đó bắn vào các công tắc để xoay vòng bánh răng cho đến khi các biểu tượng khớp với nhau theo một hàng dọc.",
+            "Sau khi khớp xong một chốt, đội phải di chuyển sang phòng tiếp theo, dọn dẹp quái và lặp lại cơ chế xoay vòng. Giao tiếp liên tục là chìa khóa."
           ]
         }
       }
@@ -69,23 +80,27 @@
       "id": "sd_kerrev",
       "name": "Final Encounter - Kerrev, the Erased",
       "roles": {
-        "mechanic_team": { "quantity": 3, "description": "Toàn đội phối hợp bẻ tia sáng, né tránh hỏa lực và giải mã." }
+        "mechanic_team": { "quantity": 3, "description": "Cả ba người phải tự linh động thay phiên nhau bẻ tia sáng và đọc biểu tượng." }
       },
       "walkthrough": {
         "phase_1": {
-          "name": "Phá Khiên",
-          "objective": "Thực hiện lại cơ chế ánh sáng để làm Kerrev mất lớp giáp.",
+          "name": "Phá Khiên Bằng Ánh Sáng",
+          "objective": "Kết hợp cơ chế tia sáng và biểu tượng để phá khiên Kerrev.",
           "steps": [
-            "Kerrev sẽ xả hỏa lực liên tục. Cả đội phải vừa né tránh, vừa giải mã biểu tượng nhanh chóng.",
-            "Căn tia sáng cuối cùng chiếu thẳng vào người Boss để phá bỏ hoàn toàn lớp khiên miễn nhiễm của hắn."
+            "Kerrev The Erased sẽ bay lượn ở giữa phòng và xả hỏa lực hủy diệt liên tục. Hắn có một lớp khiên miễn nhiễm sát thương hoàn toàn.",
+            "Đội phải lặp lại cơ chế ở Encounter 1: Tìm diệt Truth Seekers để lấy biểu tượng đúng, sau đó bẻ cong lăng kính để dẫn tia sáng bắn trúng biểu tượng đó trên tường.",
+            "Sự khác biệt là lần này: Sau khi bắn trúng 3 biểu tượng, tia sáng cuối cùng không bắn vào tường, mà phải được xoay lăng kính để CHIẾU THẲNG VÀO NGƯỜI KERREV.",
+            "Khi tia sáng đập vào Boss, lớp khiên của hắn sẽ vỡ tan."
           ]
         },
         "phase_2": {
-          "name": "DPS Phase",
-          "objective": "Gây sát thương tối đa.",
+          "name": "Giai Đoạn DPS",
+          "objective": "Dồn sát thương hạ gục Kerrev.",
           "steps": [
-            "Kerrev có độ cơ động rất cao, yêu cầu sử dụng các vũ khí hit-scan (như Linear Fusion Rifles, Snipers) hoặc Rocket bám mục tiêu tự động.",
-            "Đặc biệt cẩn thận các đòn đánh nổ diện rộng của hắn trong lúc cả đội tụ tập DPS."
+            "Khi khiên vỡ, Kerrev sẽ dịch chuyển liên tục xung quanh đấu trường. Tuyệt đối không dùng súng Phóng lựu (GL) hay Kiếm vì hắn bay lơ lửng và rất lanh lẹ.",
+            "Sử dụng Linear Fusion Rifle, Sniper hoặc Súng máy nã đạn liên tục vào đầu hắn.",
+            "Hãy cẩn thận: Trong lúc DPS, Kerrev sẽ thả các đòn đánh nổ diện rộng (AoE). Cả đội không được đứng tụm lại một cục mà phải tản ra một chút để tránh bị quét sạch.",
+            "Lặp lại pha phá khiên nếu hắn chưa chết."
           ]
         }
       }
@@ -100,7 +115,7 @@
     { "weapon": "Flain Suit", "type": "Armor", "frame": "Artifice (Master Mode)", "source": "All Encounters" }
   ],
   "master_mode": {
-    "requirements": [ "Khóa Power Delta -10", "Thêm các Champions (Unstoppable/Overload)" ],
-    "rewards": [ "Trang bị Artifice Armor (Flain Suit)", "Farm được vô hạn Legendary Drops", "Seal / Title progress" ]
+    "requirements": [ "Khóa Power Delta -10", "Thêm các Champions (Unstoppable/Overload)", "Số lượng Dread Subjugators tăng gấp đôi" ],
+    "rewards": [ "Trang bị Artifice Armor (Flain Suit) với 1 slot mod kháng cự", "Farm vũ khí Legendary có tỷ lệ ra perk tốt cao hơn", "Seal / Title progress" ]
   }
 }

@@ -4,42 +4,42 @@
   "preface": {
     "formatting_rules": "Các cơ chế quan trọng như Augment (Scanner/Operator/Suppressor) và Nuclear Core sẽ được viết hoa.",
     "non_linear_mechanic": {
-      "description": "Vesper's Host mang lại cơ chế từ Deep Stone Crypt nhưng với biến thể: Bạn chỉ có thể cầm Augment trong 1 phút, nếu không sẽ bị chết. Hãy sử dụng Augment Terminal để reset thời gian.",
+      "description": "Vesper's Host mang lại cơ chế từ Deep Stone Crypt nhưng với biến thể: Bạn chỉ có thể cầm Augment trong 1 phút, nếu không sẽ bị chết. Hãy sử dụng Augment Terminal để gửi Augment qua lại cho đồng đội và reset thời gian. Đặc biệt cẩn thận cơ chế Phóng Xạ (Radiation) khi cầm Nuclear Core.",
       "elevator_plates": []
     }
   },
   "loadout_tips": {
-    "note": "Kẻ địch cực đông và có cơ chế Radiation (Phóng xạ) giết bạn ở 10 stack. Sát thương diện rộng và hồi máu là bắt buộc.",
+    "note": "Kẻ địch cực đông, bao gồm Fallen và Vex. Cơ chế Radiation giết bạn ở 10 stack. Ưu tiên vũ khí dọn dẹp diện rộng và khả năng tự hồi phục.",
     "warlocks": {
       "supers": [
-        { "name": "Song of Flame", "utility": "Kháng sát thương và dọn quái cục bộ." },
-        { "name": "Well of Radiance", "utility": "Hỗ trợ sống sót trong pha DPS boss Corrupted Puppeteer." }
+        { "name": "Song of Flame", "utility": "Kháng sát thương 90% và dọn quái cực nhanh bằng lựu đạn." },
+        { "name": "Well of Radiance", "utility": "Hỗ trợ sống sót cho cả team trong pha DPS boss Corrupted Puppeteer." }
       ],
       "exotics_and_abilities": [
-        { "name": "Speaker's Sight", "recommendation": "Cứu cánh tuyệt vời cho cả team khi liên tục nhận sát thương bức xạ." }
+        { "name": "Speaker's Sight", "recommendation": "Tạo Healing Turret liên tục để chống lại sát thương bức xạ khi team đang ôm Core." }
       ]
     },
     "titans": {
       "supers": [
-        { "name": "Twilight Arsenal", "utility": "DPS từ xa và ném rìu debuff." },
-        { "name": "Ward of Dawn", "utility": "Tạo điểm an toàn khẩn cấp." }
+        { "name": "Twilight Arsenal", "utility": "DPS từ xa an toàn và ném rìu tạo debuff." },
+        { "name": "Bladefury (Strand)", "utility": "Kết hợp Banner of War để bất tử giữa bầy Fallen đông đúc." }
       ],
       "exotics_and_abilities": [
-        { "name": "Synthoceps / Hazardous Propulsion", "recommendation": "Dọn quái nhanh và buff sát thương Rocket." }
+        { "name": "Synthoceps", "recommendation": "Dọn quái và diệt các mục tiêu Elite nhanh gọn chỉ bằng 1 hit." }
       ]
     },
     "hunters": {
       "supers": [
-        { "name": "Shadowshot: Deadfall", "utility": "Khống chế bầy quái Fallen và Vex hung hãn." },
-        { "name": "Golden Gun: Marksman", "utility": "Gây sát thương cực mạnh vào điểm yếu của Raneiks Unified." }
+        { "name": "Shadowshot: Deadfall", "utility": "Khống chế toàn bộ căn phòng, ngắt nhịp tấn công của kẻ địch." },
+        { "name": "Golden Gun: Marksman", "utility": "Gây sát thương cực mạnh vào điểm yếu của Boss, đặc biệt là Raneiks." }
       ],
       "exotics_and_abilities": [
-        { "name": "Celestial Nighthawk", "recommendation": "Dùng chung với Still Hunt để max DPS." }
+        { "name": "Celestial Nighthawk", "recommendation": "Dùng chung với Still Hunt để tối đa hóa DPS trong thời gian ngắn." }
       ]
     },
     "weapons": [
-      { "name": "Microcosm / Dragon's Breath", "description": "Lựa chọn tốt cho DPS và dọn dẹp các mục tiêu Elite." },
-      { "name": "The Call", "description": "Xử lý quái vật nhanh gọn." }
+      { "name": "Microcosm / Dragon's Breath", "description": "Microcosm cực kỳ hiệu quả để bào khiên của Boss và Elite. Dragon's Breath dọn quái diện rộng." },
+      { "name": "The Call / Wave-Frame GL", "description": "Vũ khí đạn Special lý tưởng nhất để clear đám đông." }
     ]
   },
   "encounters": [
@@ -47,17 +47,19 @@
       "id": "vh_activation",
       "name": "Encounter 1 - Activation",
       "roles": {
-        "scanner": { "quantity": 1, "description": "Đọc bảng panel để tìm vị trí đúng." },
-        "operator": { "quantity": 1, "description": "Bắn các panel màu đỏ theo chỉ dẫn của Scanner." }
+        "scanner": { "quantity": 1, "description": "Nhặt Augment màu vàng. Nhìn qua kính để đọc và ghi nhớ vị trí 4 panel sáng." },
+        "operator": { "quantity": 1, "description": "Nhặt Augment màu đỏ. Bắn vào 4 panel theo đúng thứ tự Scanner đọc." }
       },
       "walkthrough": {
         "phase_1": {
-          "name": "Khởi động lại Mạng (Reactivate Network)",
-          "objective": "Quản lý Augment để kích hoạt các panel.",
+          "name": "Truy Tìm Mật Mã",
+          "objective": "Quản lý Augment để kích hoạt các panel theo thứ tự.",
           "steps": [
-            "Người chơi nhặt SCANNER để đọc xem panel nào đang sáng vàng.",
-            "Người chơi nhặt OPERATOR bắn vào các panel đó để kích hoạt.",
-            "Lưu ý: Thời gian cầm Augment chỉ có 1 phút, hãy đổi qua lại thông qua các Terminal."
+            "Bắt đầu ải bằng cách tiêu diệt con Brig khổng lồ. Kẻ địch sẽ rớt ra Scanner Augment.",
+            "Người chơi cầm SCANNER có 1 phút để chạy quanh phòng, tìm 4 bảng điều khiển (panel) đang phát sáng màu vàng và gọi tên vị trí của chúng cho team.",
+            "Khi thời gian của Scanner sắp hết, phải bỏ Augment vào Terminal. Tránh để đếm ngược về 0 nếu không sẽ Wipe.",
+            "Tiếp tục tiêu diệt Elite để lấy OPERATOR Augment. Người cầm Operator đi đến 4 panel mà Scanner vừa đọc, bắn vào chúng để kích hoạt mạng lưới.",
+            "Lặp lại chu trình này ở 3 khu vực khác nhau để hoàn thành ải."
           ]
         }
       }
@@ -66,17 +68,28 @@
       "id": "vh_dismemberment",
       "name": "Encounter 2 - Dismemberment (Raneiks Unified)",
       "roles": {
-        "scanner": { "quantity": 1, "description": "Nhìn bóng của các mảnh Raneiks." },
-        "core_runner": { "quantity": 1, "description": "Mang vác Nuclear Core." }
+        "scanner": { "quantity": 1, "description": "Tìm và chỉ điểm 2 con Servitor thật đang phát sáng." },
+        "core_runner": { "quantity": 2, "description": "Vác Nuclear Core, chuyền cho nhau để không bị chết do Phóng Xạ." }
       },
       "walkthrough": {
         "phase_1": {
-          "name": "Phân rã Raneiks",
-          "objective": "Tách Raneiks thành các mảnh nhỏ và đánh bại chúng.",
+          "name": "Truy Tìm Mảnh Raneiks",
+          "objective": "Tách Raneiks thành 10 mảnh và tìm ra 2 mảnh chứa Core.",
           "steps": [
-            "Raneiks sẽ tách thành nhiều Servitor nhỏ ẩn chứa Nuclear Core.",
-            "Scanner xác định con Servitor nào là hàng thật (sẽ phát sáng đặc biệt). Đồng đội tiêu diệt chúng để rớt ra Nuclear Core.",
-            "Mang Nuclear Core bỏ vào bệ chứa nhưng cực kỳ chú ý số stack Radiation (quá 10 stack sẽ chết, nên phải chuyền cho nhau)."
+            "Boss Raneiks Unified sẽ tự tách mình thành 10 con Servitor nhỏ tản ra khắp nơi.",
+            "Người chơi nhặt SCANNER đi xung quanh và quan sát. Chỉ có đúng 2 con Servitor sẽ phát ra vệt sáng đặc biệt khi nhìn qua ống kính Scanner.",
+            "Gọi team tập trung hỏa lực tiêu diệt 2 con Servitor đó. Mỗi con sẽ rớt ra 1 Nuclear Core."
+          ]
+        },
+        "phase_2": {
+          "name": "Vận Chuyển Core & DPS",
+          "objective": "Nạp Core vào lò để phá khiên Boss và dồn sát thương.",
+          "steps": [
+            "Người chơi nhặt Nuclear Core lên sẽ bắt đầu bị tích tụ stack Radiation (Phóng Xạ). Nếu stack lên đến 10, bạn sẽ chết lập tức.",
+            "Phải liên tục vứt Core xuống đất cho đồng đội nhặt để reset stack.",
+            "Mang 2 Core nạp vào 2 bệ chứa (Deposit Bin) ở khu vực trung tâm.",
+            "Khi nạp đủ, 10 mảnh Servitor sẽ hợp nhất lại thành Raneiks Unified và mất khiên. Dốc toàn lực DPS vào con mắt của nó.",
+            "Hết thời gian DPS, Boss sẽ tiếp tục tách ra. Lặp lại quá trình trên cho đến khi hạ gục Boss."
           ]
         }
       }
@@ -85,24 +98,36 @@
       "id": "vh_shutdown",
       "name": "Final Encounter - Shutdown (The Corrupted Puppeteer)",
       "roles": {
-        "suppressor": { "quantity": 1, "description": "Đứng dưới drone và bắn boss để làm choáng." },
-        "operator_scanner": { "quantity": 2, "description": "Đọc và bắn panel để mở cửa an toàn." }
+        "suppressor": { "quantity": 1, "description": "Đứng dưới Drone và bắn Boss để ngắt đòn tấn công." },
+        "scanner": { "quantity": 1, "description": "Tìm phân thân (Clone) thực sự của Boss." },
+        "operator": { "quantity": 1, "description": "Bắn Panel màu đỏ để mở cửa lánh nạn." }
       },
       "walkthrough": {
         "phase_1": {
-          "name": "Sống sót và Làm Choáng",
-          "objective": "Mở khóa phòng DPS và làm choáng Boss.",
+          "name": "Sống sót và Giải mã Panel",
+          "objective": "Mở khóa các cánh cửa an toàn và ngăn chặn Boss quét Wipe.",
           "steps": [
-            "Sử dụng kết hợp nhịp nhàng 3 Augment: Scanner, Operator, và Suppressor.",
-            "Suppressor bắn boss từ dưới các drone lơ lửng để ngăn chặn đòn tấn công diện rộng.",
-            "Phân thân của Boss xuất hiện, phải đánh bại phân thân đúng để bắt đầu chuỗi DPS."
+            "Boss liên tục xả đạn và vận chiêu diện rộng. Người nhặt SUPPRESSOR (màu xanh) phải đứng ngay dưới các Drone nổi lơ lửng, bắn vào Boss để làm choáng và ngắt chiêu của hắn.",
+            "Cùng lúc đó, OPERATOR (màu đỏ) phải bắn các bảng panel để mở các cánh cửa an toàn, giúp team tránh khỏi những đợt quét laze tử thần.",
+            "Hãy nhớ luôn luân chuyển các Augment vào Terminal mỗi phút một lần để không ai bị chết vì hết giờ."
+          ]
+        },
+        "phase_2": {
+          "name": "Tìm Phân Thân & DPS",
+          "objective": "Tiêu diệt đúng Clone, lấy Core nạp để DPS Boss.",
+          "steps": [
+            "Vào giai đoạn chuẩn bị DPS, Boss sẽ tạo ra hàng loạt Phân Thân (Clones).",
+            "Người cầm SCANNER phải nhanh chóng quét qua các Clone. Clone hàng thật sẽ phát sáng vàng. Lập tức tiêu diệt nó.",
+            "Clone thật sẽ rớt ra Nuclear Core. Nhặt Core và chạy thật nhanh tới bệ nạp trung tâm (nhớ chú ý stack Radiation).",
+            "Sau khi nạp Core, Boss chính thức mất lớp khiên bảo vệ. Lập tức tung toàn bộ Heavy, Super và hỏa lực vào hắn.",
+            "Khu vực DPS không an toàn tuyệt đối, Boss sẽ liên tục phản kháng bằng các quả cầu năng lượng, hãy cử Warlock cắm Well hoặc dùng Speaker's Sight để sống sót."
           ]
         }
       }
     }
   ],
   "loot_table": [
-    { "weapon": "Ice Breaker", "type": "Sniper Rifle", "frame": "Exotic", "source": "The Corrupted Puppeteer (Rare Drop)" },
+    { "weapon": "Ice Breaker", "type": "Sniper Rifle", "frame": "Exotic Solar", "source": "The Corrupted Puppeteer (Rare Drop)" },
     { "weapon": "VS Chill Inhibitor", "type": "Grenade Launcher", "frame": "Stasis Rapid-Fire", "source": "Encounter 1, 2 & 3" },
     { "weapon": "VS Velocity Baton", "type": "Glaive", "frame": "Void Adaptive", "source": "Encounter 1 & 2" },
     { "weapon": "VS Gravitic Arrest", "type": "Fusion Rifle", "frame": "Void Adaptive", "source": "Encounter 2 & 3" },
@@ -110,7 +135,7 @@
     { "weapon": "Spacewalk Suit", "type": "Armor", "frame": "Artifice (Master Mode)", "source": "All Encounters" }
   ],
   "master_mode": {
-    "requirements": [ "Khóa Power Delta -10", "Xuất hiện nhiều Champions (Overload/Barrier)" ],
-    "rewards": [ "Trang bị Artifice Armor (Spacewalk Suit)", "VS Tech Sledge Sparrow", "Seal / Title progress" ]
+    "requirements": [ "Khóa Power Delta ở mức -10", "Xuất hiện nhiều Champions (Overload/Barrier)" ],
+    "rewards": [ "Trang bị Artifice Armor (Spacewalk Suit) với thêm 1 slot mod", "VS Tech Sledge Sparrow", "Mở khóa các mảnh Title (Danh hiệu)" ]
   }
 }
