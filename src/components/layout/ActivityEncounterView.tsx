@@ -6,6 +6,17 @@ import { Shield, Target, Sword, Map, Sparkles } from "lucide-react"
 import { ActivityData, ActivityEncounter, ActivityEncounterPhase, ActivityRole } from "@/types"
 import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
 import { ImageCarousel } from "@/components/ui/ImageCarousel"
+import ReactMarkdown, { Components } from "react-markdown"
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const markdownComponents: Components = {
+  p: ({ node, ...props }) => <span {...props} />,
+  strong: ({ node, ...props }) => <strong className="text-neon-cyan font-bold" {...props} />,
+  em: ({ node, ...props }) => <em className="text-neon-yellow italic" {...props} />,
+  a: ({ node, ...props }) => <a className="text-neon-yellow underline underline-offset-2 hover:text-white" target="_blank" rel="noreferrer" {...props} />,
+  code: ({ node, ...props }) => <code className="bg-black/50 text-neon-pink px-1.5 py-0.5 rounded text-xs border border-zinc-800 font-mono" {...props} />
+}
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 interface ActivityEncounterViewProps {
   activityData: ActivityData
@@ -89,7 +100,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                         {steps.map((step: string, i: number) => (
                           <li key={i} className="text-sm text-foreground/80 leading-relaxed pl-5 relative">
                             <span className="text-neon-cyan font-bold absolute left-0">{i + 1}.</span>
-                            {step}
+                            <ReactMarkdown components={markdownComponents}>{step}</ReactMarkdown>
                           </li>
                         ))}
                       </ul>
@@ -215,7 +226,11 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                       <h4 className="text-lg font-bold text-neon-cyan mb-3 flex items-center gap-2">
                         <Sparkles className="w-4 h-4" /> {secret.title}
                       </h4>
-                      {secret.description && <p className="text-muted-foreground text-sm mb-4">{secret.description}</p>}
+                      {secret.description && (
+                        <p className="text-muted-foreground text-sm mb-4">
+                          <ReactMarkdown components={markdownComponents}>{secret.description}</ReactMarkdown>
+                        </p>
+                      )}
                       
                       {secret.images && secret.images.length > 0 && (
                         <ImageCarousel images={secret.images} />
@@ -225,7 +240,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                         <ul className="space-y-2">
                           {secret.steps.map((step, i) => (
                             <li key={i} className="text-sm text-foreground/80 pl-4 border-l-2 border-neon-cyan/50 leading-relaxed">
-                              {step}
+                              <ReactMarkdown components={markdownComponents}>{step}</ReactMarkdown>
                             </li>
                           ))}
                         </ul>
