@@ -54,7 +54,6 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     description: "Hướng dẫn chi tiết từng bước cho các hoạt động endgame 6 người.",
     icon: Swords,
     items: mapRaidsToItems(),
-    locked: true,
     themeColor: "cyan"
   },
   dungeons: {

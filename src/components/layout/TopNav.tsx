@@ -108,7 +108,7 @@ export function TopNav() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col mt-8 overflow-y-auto max-h-[80vh] pr-2">
+              <nav className="flex flex-col mt-8 overflow-y-auto max-h-[calc(100vh-4rem)] pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
                 <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6">
                   <div className="flex items-center justify-center w-8 h-8 rounded-sm overflow-hidden mix-blend-screen">
                     <Image src="/logo.ico" alt="D2 Sherpa Logo" width={32} height={32} className="w-full h-full object-contain" unoptimized />
