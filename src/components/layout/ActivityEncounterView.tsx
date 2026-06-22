@@ -12,6 +12,20 @@ interface ActivityEncounterViewProps {
   activeEncounterId?: string
 }
 
+const EncounterImage = ({ src, alt, caption, className = "" }: { src: string; alt: string; caption?: string; className?: string }) => (
+  <div className={`mb-4 mt-2 flex flex-col items-center gap-3 w-full ${className}`}>
+    <Image 
+      src={src} 
+      alt={alt} 
+      width={1200} 
+      height={800} 
+      unoptimized={true}
+      className="rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)] border border-border max-w-full h-auto" 
+    />
+    {caption && <p className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800">{caption}</p>}
+  </div>
+)
+
 export function ActivityEncounterView({ activityData, activeEncounterId }: ActivityEncounterViewProps) {
   if (!activityData || !activityData.encounters) {
     return <div>No activity data found.</div>
@@ -82,6 +96,9 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                           Mục tiêu: {phaseObjective}
                         </p>
                       )}
+                      {phaseVal.image && (
+                        <EncounterImage src={phaseVal.image} alt={phaseTitle} />
+                      )}
                       <ul className="space-y-3">
                         {steps.map((step: string, i: number) => (
                           <li key={i} className="text-sm text-foreground/80 leading-relaxed pl-5 relative">
@@ -113,17 +130,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
               activeEncounter!.images && activeEncounter!.images.length > 0 ? (
                 <div className="w-full flex flex-col gap-6 p-4">
                   {activeEncounter!.images.map((img, idx) => (
-                    <div key={idx} className="flex flex-col items-center gap-3 w-full">
-                      <Image 
-                        src={img.url} 
-                        alt={img.caption || "Encounter map"} 
-                        width={1200} 
-                        height={800} 
-                        unoptimized={true}
-                        className="rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)] border border-border max-w-full h-auto" 
-                      />
-                      {img.caption && <p className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800">{img.caption}</p>}
-                    </div>
+                    <EncounterImage key={idx} src={img.url} alt={img.caption || "Encounter map"} caption={img.caption} className="mb-0 mt-0" />
                   ))}
                 </div>
               ) : (
@@ -225,6 +232,11 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                         <Sparkles className="w-4 h-4" /> {secret.title}
                       </h4>
                       {secret.description && <p className="text-muted-foreground text-sm mb-4">{secret.description}</p>}
+                      
+                      {secret.image && (
+                        <EncounterImage src={secret.image} alt={secret.title} />
+                      )}
+
                       {secret.steps && (
                         <ul className="space-y-2">
                           {secret.steps.map((step, i) => (
