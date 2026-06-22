@@ -2,7 +2,7 @@
 import desertPerpetual from "./raids/desert-perpetual.json"
 import gardenOfSalvation from "./raids/garden-of-salvation.json"
 import deepStoneCrypt from "./raids/deep-stone-crypt.json"
-import { ActivityData } from "@/lib/types"
+import { ActivityData } from "@/types"
 
 export const RAIDS_DATA: Record<string, ActivityData> = {
   // Sửa key ở đây thành "the-desert-perpetual" để khớp với URL

@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { DESTINY_ACTIVITIES } from "@/lib/constants"
+import { DESTINY_ACTIVITIES } from "@/config/constants"
 
 const THEME_TEXT = {
   cyan: 'text-neon-cyan',

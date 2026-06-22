@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { DoorOverlay } from "@/components/ui/DoorOverlay";
 
 export function WelcomeScreen() {
   const [isOpened, setIsOpened] = useState(false);
@@ -52,27 +53,7 @@ export function WelcomeScreen() {
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden pointer-events-none">
       
-      {/* Rèm Trái */}
-      <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: isOpened ? "-100%" : 0 }}
-        transition={{ duration: 1.0, ease: [0.76, 0, 0.24, 1] }}
-        className="absolute left-0 top-0 bottom-0 w-1/2 bg-black/95 backdrop-blur-md pointer-events-auto overflow-hidden"
-      >
-        {/* Phân nửa không gian sao bên trái */}
-        <div className="absolute right-0 top-0 bottom-0 w-[200vw] opacity-30 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800 via-black to-black pointer-events-none" />
-      </motion.div>
-
-      {/* Rèm Phải */}
-      <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: isOpened ? "100%" : 0 }}
-        transition={{ duration: 1.0, ease: [0.76, 0, 0.24, 1] }}
-        className="absolute right-0 top-0 bottom-0 w-1/2 bg-black/95 backdrop-blur-md pointer-events-auto overflow-hidden"
-      >
-        {/* Phân nửa không gian sao bên phải */}
-        <div className="absolute left-0 top-0 bottom-0 w-[200vw] opacity-30 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800 via-black to-black pointer-events-none" />
-      </motion.div>
+      <DoorOverlay isOpened={isOpened} duration={1.0} />
 
       {/* Nội dung UI */}
       <AnimatePresence>

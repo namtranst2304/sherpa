@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { AnimatedScrollText } from "../timeline/AnimatedScrollText";
+import { DoorOverlay } from "@/components/ui/DoorOverlay";
 
 export function LandingPage() {
   const router = useRouter();
@@ -101,25 +102,7 @@ export function LandingPage() {
       <AnimatePresence>
         {isTransitioning && (
           <div className="fixed inset-0 z-[9999] pointer-events-none overflow-hidden">
-            {/* Left Door */}
-            <motion.div
-              initial={{ x: "-100%" }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-              className="absolute left-0 top-0 bottom-0 w-1/2 bg-black/95 backdrop-blur-md pointer-events-auto overflow-hidden"
-            >
-              <div className="absolute right-0 top-0 bottom-0 w-[200vw] opacity-30 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800 via-black to-black" />
-            </motion.div>
-
-            {/* Right Door */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-              className="absolute right-0 top-0 bottom-0 w-1/2 bg-black/95 backdrop-blur-md pointer-events-auto overflow-hidden"
-            >
-              <div className="absolute left-0 top-0 bottom-0 w-[200vw] opacity-30 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-800 via-black to-black" />
-            </motion.div>
+            <DoorOverlay isOpened={false} initialOpened={true} duration={0.8} />
           </div>
         )}
       </AnimatePresence>

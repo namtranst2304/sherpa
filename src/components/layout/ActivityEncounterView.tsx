@@ -4,7 +4,7 @@ import { GuideSidebar } from "@/components/layout/GuideSidebar"
 import { GuideTemplate } from "@/components/layout/GuideTemplate"
 import { ActivityOverviewTemplate } from "@/components/layout/ActivityOverviewTemplate"
 import { Shield, Target, Sword, Map } from "lucide-react"
-import { ActivityData, ActivityEncounter, ActivityEncounterPhase, ActivityRole } from "@/lib/types"
+import { ActivityData, ActivityEncounter, ActivityEncounterPhase, ActivityRole } from "@/types"
 import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
 
 interface ActivityEncounterViewProps {

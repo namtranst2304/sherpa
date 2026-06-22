@@ -2,7 +2,7 @@ import React from "react"
 import { Shield, Crosshair, BookOpen, Map, Trophy, Gem } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
-import { ActivityData } from "@/lib/types"
+import { ActivityData } from "@/types"
 
 interface ActivityOverviewTemplateProps {
   activityData: ActivityData
