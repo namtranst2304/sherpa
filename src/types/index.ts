@@ -20,6 +20,11 @@ export interface ActivityEncounter {
   walkthrough?: Record<string, ActivityEncounterPhase>;
   roles?: Record<string, ActivityRole | Record<string, ActivityRole>>;
   images?: { url: string; caption?: string }[];
+  secrets?: {
+    title: string;
+    description?: string;
+    steps?: string[];
+  }[];
   [key: string]: unknown;
 }
 

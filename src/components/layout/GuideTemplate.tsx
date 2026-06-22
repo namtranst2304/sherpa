@@ -1,5 +1,5 @@
 import React from "react"
-import { Map, Users, Settings } from "lucide-react"
+import { Map, Users, Settings, Sparkles } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { CyberCard } from "@/components/ui/CyberComponents"
 
@@ -9,9 +9,10 @@ interface GuideTemplateProps {
     mechanics: React.ReactNode
     map: React.ReactNode
     roles: React.ReactNode
+    secrets?: React.ReactNode
 }
 
-export function GuideTemplate({ title, description, mechanics, map, roles }: GuideTemplateProps) {
+export function GuideTemplate({ title, description, mechanics, map, roles, secrets }: GuideTemplateProps) {
     return (
         <div className="flex-1 overflow-y-auto w-full bg-background p-4 md:p-8 relative">
             {/* Subtle background scanlines for the whole guide */}
@@ -74,6 +75,21 @@ export function GuideTemplate({ title, description, mechanics, map, roles }: Gui
                             {roles}
                         </div>
                     </CyberCard>
+
+                    {/* Secrets & Hidden Chests */}
+                    {secrets && (
+                        <CyberCard variant="zinc" withCorners className="cyber-grid relative">
+                            <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                                <div className="p-2 bg-neon-cyan/10 rounded-md">
+                                    <Sparkles className="w-5 h-5 text-neon-cyan" />
+                                </div>
+                                <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Hidden Chests & Secrets</h2>
+                            </div>
+                            <div className="relative z-10">
+                                {secrets}
+                            </div>
+                        </CyberCard>
+                    )}
 
                 </div>
             </div>

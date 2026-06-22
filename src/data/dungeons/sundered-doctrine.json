@@ -54,7 +54,17 @@
             "Sau khi bắn trúng, khu vực sẽ khóa lại và mở ra vòng mới. Lặp lại cho đến khi phá vỡ toàn bộ phong ấn."
           ]
         }
-      }
+      },
+      "secrets": [
+        {
+          "title": "Hidden Chest 1",
+          "description": "Ngay sau ải 1, trên đường di chuyển xuống khu vực cống ngầm.",
+          "steps": [
+            "Khi nhảy xuống các mỏm đá ngầm tăm tối, hãy để ý bức tường bên tay phải.",
+            "Sẽ có một khe hẹp phát ra ánh sáng vàng nhạt hắt ra. Nhảy vào khe đó và đi hết đường hầm nhỏ để lấy rương."
+          ]
+        }
+      ]
     },
     {
       "id": "sd_lockset",
@@ -74,7 +84,18 @@
             "Sau khi khớp xong một chốt, đội phải di chuyển sang phòng tiếp theo, dọn dẹp quái và lặp lại cơ chế xoay vòng. Giao tiếp liên tục là chìa khóa."
           ]
         }
-      }
+      },
+      "secrets": [
+        {
+          "title": "Hidden Chest 2",
+          "description": "Sau ải 2, trong khu vực nhảy qua các con lắc khổng lồ.",
+          "steps": [
+            "Ở vị trí con lắc thứ 3, đừng nhảy sang bờ bên kia vội.",
+            "Hãy đợi con lắc đung đưa sát vào bức tường bên trái, nhảy lên một cái gờ nhỏ ẩn trên vách đá.",
+            "Đi theo gờ đá đó sẽ dẫn đến căn phòng bí mật chứa Hidden Chest."
+          ]
+        }
+      ]
     },
     {
       "id": "sd_kerrev",

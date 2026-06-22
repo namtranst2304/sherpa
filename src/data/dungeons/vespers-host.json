@@ -62,7 +62,18 @@
             "Lặp lại chu trình này ở 3 khu vực khác nhau để hoàn thành ải."
           ]
         }
-      }
+      },
+      "secrets": [
+        {
+          "title": "Hidden Chest 1",
+          "description": "Nằm trong giai đoạn nhảy nhót (Jumping Puzzle) ngay sau khi hoàn thành Encounter 1.",
+          "steps": [
+            "Sau khi đi qua cánh cửa dẫn ra khu vực ngoài không gian (Outside), thay vì rẽ phải để đi tiếp theo đường chính.",
+            "Hãy rẽ trái, đi men theo gờ tường hẹp.",
+            "Bạn sẽ thấy một cánh cửa đang hé mở. Đi vào bên trong, rẽ trái ở ngã ba đầu tiên sẽ thấy Hidden Chest."
+          ]
+        }
+      ]
     },
     {
       "id": "vh_dismemberment",
@@ -92,7 +103,18 @@
             "Hết thời gian DPS, Boss sẽ tiếp tục tách ra. Lặp lại quá trình trên cho đến khi hạ gục Boss."
           ]
         }
-      }
+      },
+      "secrets": [
+        {
+          "title": "Hidden Chest 2",
+          "description": "Nằm trong khu vực nhà kính (Greenhouse / Infiltration) ngay trước khi bước vào phòng Boss cuối.",
+          "steps": [
+            "Khi vào căn phòng có các vách ngăn bằng kính, nhiều cây cối và các bệ đứng.",
+            "Sử dụng Augment Scanner để tìm một bảng điện nhỏ ẩn dưới cầu thang hoặc góc tường (vị trí có thể thay đổi).",
+            "Bắn bảng điện đó bằng vũ khí sát thương điện (Arc) hoặc bằng Augment Operator để mở khóa căn phòng phụ chứa rương ẩn."
+          ]
+        }
+      ]
     },
     {
       "id": "vh_shutdown",
