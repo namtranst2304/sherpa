@@ -2,9 +2,9 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Menu } from "lucide-react"
-import { AstronautIcon } from "@/components/ui/icons"
 
 import {
   NavigationMenu,
@@ -110,8 +110,8 @@ export function TopNav() {
             <SheetContent side="left" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col mt-8 overflow-y-auto max-h-[80vh] pr-2">
                 <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6">
-                  <div className="p-1.5 bg-neon-cyan/10 border border-neon-cyan/30 rounded-sm">
-                    <AstronautIcon className="h-5 w-5 text-neon-cyan" />
+                  <div className="flex items-center justify-center w-8 h-8 rounded-sm overflow-hidden mix-blend-screen">
+                    <Image src="/logo.ico" alt="D2 Sherpa Logo" width={32} height={32} className="w-full h-full object-contain" unoptimized />
                   </div>
                   <span>D2 Sherpa</span>
                 </Link>
@@ -148,8 +148,8 @@ export function TopNav() {
         {/* Desktop Logo */}
         <div className="mr-8 hidden md:flex">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="p-1.5 bg-neon-cyan/10 border border-neon-cyan/30 rounded-sm group-hover:bg-neon-cyan/20 transition-colors">
-              <AstronautIcon className="h-6 w-6 text-neon-cyan drop-shadow-[0_0_8px_rgba(0,243,255,0.8)] group-hover:animate-pulse" />
+            <div className="flex items-center justify-center w-10 h-10 rounded-sm overflow-hidden mix-blend-screen transition-transform group-hover:scale-105">
+              <Image src="/logo.ico" alt="D2 Sherpa Logo" width={40} height={40} className="w-full h-full object-contain group-hover:animate-pulse" unoptimized />
             </div>
             <span className="hidden font-black sm:inline-block tracking-widest uppercase text-neon-cyan text-glow-cyan text-lg">
               D2 Sherpa

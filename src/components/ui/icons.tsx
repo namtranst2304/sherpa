@@ -1,6 +1,6 @@
 import React from "react"
 
-export function AstronautIcon(props: React.SVGProps<SVGSVGElement>) {
+export function GhostIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,23 +9,26 @@ export function AstronautIcon(props: React.SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
     >
-      {/* Astronaut Helmet Base */}
-      <rect x="4" y="4" width="16" height="16" rx="6" ry="6" />
-      {/* Helmet Visor */}
-      <rect x="7" y="8" width="10" height="6" rx="3" ry="3" fill="currentColor" fillOpacity="0.2" />
-      {/* Antenna */}
-      <path d="M12 4v-2" />
-      <circle cx="12" cy="2" r="1" />
-      {/* Suit Collar details */}
-      <path d="M8 20v2" />
-      <path d="M16 20v2" />
-      <path d="M4 14h-2" />
-      <path d="M20 14h2" />
+      {/* Ghost Core Eye */}
+      <circle cx="12" cy="12" r="3.5" fill="currentColor" fillOpacity="0.1" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+      
+      {/* Top Shell */}
+      <path d="M12 2 L15.5 8.5 L8.5 8.5 Z" />
+      
+      {/* Bottom Shell */}
+      <path d="M12 22 L15.5 15.5 L8.5 15.5 Z" />
+      
+      {/* Right Shell */}
+      <path d="M22 12 L15.5 8.5 L15.5 15.5 Z" />
+      
+      {/* Left Shell */}
+      <path d="M2 12 L8.5 8.5 L8.5 15.5 Z" />
     </svg>
   )
 }
