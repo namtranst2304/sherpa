@@ -11,7 +11,7 @@ export interface ActivityEncounterPhase {
   steps?: string[];
   details?: string[];
   mine_locations?: string[];
-  image?: string;
+  images?: { url: string; caption?: string }[];
   [key: string]: unknown;
 }
 
@@ -25,7 +25,7 @@ export interface ActivityEncounter {
     title: string;
     description?: string;
     steps?: string[];
-    image?: string;
+    images?: { url: string; caption?: string }[];
   }[];
   [key: string]: unknown;
 }

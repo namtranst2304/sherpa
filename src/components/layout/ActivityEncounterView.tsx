@@ -1,30 +1,16 @@
 import * as React from "react"
-import Image from "next/image"
 import { GuideSidebar } from "@/components/layout/GuideSidebar"
 import { GuideTemplate } from "@/components/layout/GuideTemplate"
 import { ActivityOverviewTemplate } from "@/components/layout/ActivityOverviewTemplate"
 import { Shield, Target, Sword, Map, Sparkles } from "lucide-react"
 import { ActivityData, ActivityEncounter, ActivityEncounterPhase, ActivityRole } from "@/types"
 import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
+import { ImageCarousel } from "@/components/ui/ImageCarousel"
 
 interface ActivityEncounterViewProps {
   activityData: ActivityData
   activeEncounterId?: string
 }
-
-const EncounterImage = ({ src, alt, caption, className = "" }: { src: string; alt: string; caption?: string; className?: string }) => (
-  <div className={`mb-4 mt-2 flex flex-col items-center gap-3 w-full ${className}`}>
-    <Image 
-      src={src} 
-      alt={alt} 
-      width={1200} 
-      height={800} 
-      unoptimized={true}
-      className="rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)] border border-border max-w-full h-auto" 
-    />
-    {caption && <p className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800">{caption}</p>}
-  </div>
-)
 
 export function ActivityEncounterView({ activityData, activeEncounterId }: ActivityEncounterViewProps) {
   if (!activityData || !activityData.encounters) {
@@ -96,8 +82,8 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                           Mục tiêu: {phaseObjective}
                         </p>
                       )}
-                      {phaseVal.image && (
-                        <EncounterImage src={phaseVal.image} alt={phaseTitle} />
+                      {phaseVal.images && phaseVal.images.length > 0 && (
+                        <ImageCarousel images={phaseVal.images} />
                       )}
                       <ul className="space-y-3">
                         {steps.map((step: string, i: number) => (
@@ -129,9 +115,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
             map={
               activeEncounter!.images && activeEncounter!.images.length > 0 ? (
                 <div className="w-full flex flex-col gap-6 p-4">
-                  {activeEncounter!.images.map((img, idx) => (
-                    <EncounterImage key={idx} src={img.url} alt={img.caption || "Encounter map"} caption={img.caption} className="mb-0 mt-0" />
-                  ))}
+                  <ImageCarousel images={activeEncounter!.images} />
                 </div>
               ) : (
                 <div className="text-center text-muted-foreground flex flex-col items-center justify-center gap-4 p-8 w-full h-full min-h-[300px] border border-dashed border-zinc-800 rounded-none bg-black/50">
@@ -233,8 +217,8 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                       </h4>
                       {secret.description && <p className="text-muted-foreground text-sm mb-4">{secret.description}</p>}
                       
-                      {secret.image && (
-                        <EncounterImage src={secret.image} alt={secret.title} />
+                      {secret.images && secret.images.length > 0 && (
+                        <ImageCarousel images={secret.images} />
                       )}
 
                       {secret.steps && (
