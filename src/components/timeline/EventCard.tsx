@@ -15,8 +15,8 @@ export function EventCard({ event, isRightSide, themeColor, center }: { event: T
   const theme = getTheme(themeColor);
   return (
     <motion.div
-      className={`bg-zinc-900/30 backdrop-blur-sm p-5 md:p-6 relative overflow-hidden group
-        ${center ? "rounded-2xl" : isRightSide ? "md:rounded-tr-2xl md:rounded-bl-2xl md:rounded-tl-none md:rounded-br-2xl rounded-tr-2xl rounded-bl-2xl" : "md:rounded-tl-2xl md:rounded-br-2xl md:rounded-tr-none md:rounded-bl-2xl rounded-tr-2xl rounded-bl-2xl"}
+      className={`bg-zinc-900/30 backdrop-blur-sm p-5 md:p-6 relative overflow-hidden group rounded-2xl
+        ${center ? "" : isRightSide ? "md:rounded-tr-2xl md:rounded-bl-2xl md:rounded-tl-none md:rounded-br-2xl" : "md:rounded-tl-2xl md:rounded-br-2xl md:rounded-tr-none md:rounded-bl-2xl"}
         border border-zinc-800/50 transition-all duration-500 ${theme.hoverShadow} hover:border-zinc-600/50
       `}
       whileHover={{
@@ -24,7 +24,7 @@ export function EventCard({ event, isRightSide, themeColor, center }: { event: T
       }}
       transition={{ type: "spring" as const, stiffness: 300, damping: 30 }}
     >
-      <h4 className={`flex items-center text-xl md:text-2xl font-sans mb-3 lg:mb-4 ${center ? "justify-center" : isRightSide ? "md:justify-start justify-start" : "md:justify-end justify-start"}`}>
+      <h4 className={`flex items-center text-xl md:text-2xl font-sans mb-3 lg:mb-4 justify-center ${center ? "md:justify-center" : isRightSide ? "md:justify-start" : "md:justify-end"}`}>
         {/* Elegant Prefix Line */}
         <span 
           className="inline-block mr-4 w-[2px] h-6 md:h-7 opacity-70" 
@@ -37,7 +37,7 @@ export function EventCard({ event, isRightSide, themeColor, center }: { event: T
         </span>
       </h4>
       {event.date && (
-        <div className={`mb-5 lg:mb-6 flex ${center ? "justify-center" : isRightSide ? "md:justify-start justify-start" : "md:justify-end justify-start"}`}>
+        <div className={`mb-5 lg:mb-6 flex justify-center ${center ? "md:justify-center" : isRightSide ? "md:justify-start" : "md:justify-end"}`}>
           <div className="relative inline-flex cursor-default">
             {/* Ambient Glow */}
             <div className={`absolute -inset-1 rounded-full blur-md opacity-20`} style={{ backgroundColor: `rgba(${theme.rgb}, 0.3)` }} />
@@ -54,7 +54,7 @@ export function EventCard({ event, isRightSide, themeColor, center }: { event: T
         {renderDescription(event.description)}
       </p>
       {event.tags && event.tags.length > 0 && (
-        <div className={`flex flex-wrap items-center gap-2 relative z-10 ${center ? "justify-center" : isRightSide ? "md:justify-start justify-start" : "md:justify-end justify-start"}`}>
+        <div className={`flex flex-wrap items-center gap-2 relative z-10 justify-center ${center ? "md:justify-center" : isRightSide ? "md:justify-start" : "md:justify-end"}`}>
           {event.tags.map((tag, tagIdx) => (
             <CyberBadge key={tagIdx} variant="zinc" withIndicator={false} className="text-[9px] py-1 px-3 bg-transparent border-white/10 text-zinc-500 shadow-none font-sans tracking-widest rounded-full uppercase">
               {tag}
