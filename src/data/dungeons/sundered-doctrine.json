@@ -1,0 +1,106 @@
+{
+  "dungeon_name": "Sundered Doctrine",
+  "active_orbit": "The Throne World / Pyramid Ship",
+  "preface": {
+    "formatting_rules": "Cơ chế Giải Mã Ký Hiệu (Symbols) và Tia Sáng (Light Beams) được viết hoa.",
+    "non_linear_mechanic": {
+      "description": "Sundered Doctrine mang đến thử thách giải đố với hệ thống ổ khóa Zoetic Lockset, yêu cầu sự phối hợp cực cao để căn chỉnh các tia sáng và bẻ khóa biểu tượng của Hive/Pyramid.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Kẻ địch là Hive/Scorn với số lượng đông đảo. Đòi hỏi di chuyển liên tục, dọn quái diện rộng và không để bị kẹt góc.",
+    "warlocks": {
+      "supers": [ { "name": "Nova Bomb / Song of Flame", "utility": "Dọn dẹp quái vật Elite và giải vây cực nhanh." } ],
+      "exotics_and_abilities": [ { "name": "Getaway Artist", "recommendation": "Tạo Arc Soul liên tục hỗ trợ bắn quái trong lúc bạn bận chạy cơ chế." } ]
+    },
+    "titans": {
+      "supers": [ { "name": "Twilight Arsenal", "utility": "Khống chế từ xa và dồn sát thương lên Kerrev." } ],
+      "exotics_and_abilities": [ { "name": "Synthoceps", "recommendation": "Tăng tối đa sát thương diện rộng và cận chiến khi bị vây hãm." } ]
+    },
+    "hunters": {
+      "supers": [ { "name": "Shadowshot: Deadfall", "utility": "Trói chân đám Hive/Scorn tiến tới từ nhiều hướng." } ],
+      "exotics_and_abilities": [ { "name": "Gyrfalcon's Hauberk", "recommendation": "Bắn đạn Volatile dọn dẹp Add siêu nhanh và tàng hình." } ]
+    },
+    "weapons": [
+      { "name": "Machine Guns", "description": "Rất hiệu quả ở encounter 1 và 2 để phòng thủ và kiểm soát đám đông." },
+      { "name": "Linear Fusion Rifles", "description": "Đặc biệt tốt để DPS Kerrev the Erased." }
+    ]
+  },
+  "encounters": [
+    {
+      "id": "sd_riddle",
+      "name": "Encounter 1 - Solve the Riddle",
+      "roles": {
+        "symbol_reader": { "quantity": 1, "description": "Đọc và ghi nhớ các biểu tượng." },
+        "beam_aligner": { "quantity": 2, "description": "Điều chỉnh các lăng kính phản chiếu ánh sáng." }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Căn chỉnh Tia sáng",
+          "objective": "Kết nối các tia sáng vào đúng biểu tượng yêu cầu.",
+          "steps": [
+            "Người chơi phải nhìn các biểu tượng Hive/Pyramid hiển thị xung quanh đấu trường.",
+            "Tương tác với các tấm lăng kính để bẻ cong tia sáng và hướng nó bắn chuẩn xác vào biểu tượng đúng.",
+            "Dọn dẹp bầy quái vật liên tục xuất hiện cản trở quá trình ngắm tia sáng."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sd_lockset",
+      "name": "Encounter 2 - Zoetic Lockset",
+      "roles": {
+        "defender": { "quantity": 2, "description": "Bảo vệ các chốt chặn và kìm hãm đợt sóng quái." },
+        "runner": { "quantity": 1, "description": "Luân chuyển buff và đọc biểu tượng giữa các phòng." }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Mở khóa Zoetic",
+          "objective": "Giữ vững vị trí và giải mã liên hoàn các khóa.",
+          "steps": [
+            "Đây là một dạng encounter phòng thủ, sống sót trước vô vàn đợt lính.",
+            "Giao tiếp liên tục để khớp nối các ổ khóa Zoetic theo thứ tự được yêu cầu để dọn đường."
+          ]
+        }
+      }
+    },
+    {
+      "id": "sd_kerrev",
+      "name": "Final Encounter - Kerrev, the Erased",
+      "roles": {
+        "mechanic_team": { "quantity": 3, "description": "Toàn đội phối hợp bẻ tia sáng, né tránh hỏa lực và giải mã." }
+      },
+      "walkthrough": {
+        "phase_1": {
+          "name": "Phá Khiên",
+          "objective": "Thực hiện lại cơ chế ánh sáng để làm Kerrev mất lớp giáp.",
+          "steps": [
+            "Kerrev sẽ xả hỏa lực liên tục. Cả đội phải vừa né tránh, vừa giải mã biểu tượng nhanh chóng.",
+            "Căn tia sáng cuối cùng chiếu thẳng vào người Boss để phá bỏ hoàn toàn lớp khiên miễn nhiễm của hắn."
+          ]
+        },
+        "phase_2": {
+          "name": "DPS Phase",
+          "objective": "Gây sát thương tối đa.",
+          "steps": [
+            "Kerrev có độ cơ động rất cao, yêu cầu sử dụng các vũ khí hit-scan (như Linear Fusion Rifles, Snipers) hoặc Rocket bám mục tiêu tự động.",
+            "Đặc biệt cẩn thận các đòn đánh nổ diện rộng của hắn trong lúc cả đội tụ tập DPS."
+          ]
+        }
+      }
+    }
+  ],
+  "loot_table": [
+    { "weapon": "Finality's Auger", "type": "Linear Fusion Rifle", "frame": "Exotic Stasis", "source": "Kerrev, the Erased (Rare Drop)" },
+    { "weapon": "Unworthy", "type": "Scout Rifle", "frame": "Rapid-Fire", "source": "All Encounters" },
+    { "weapon": "Unloved", "type": "Hand Cannon", "frame": "Strand", "source": "All Encounters" },
+    { "weapon": "Unsworn", "type": "Trace Rifle", "frame": "Strand", "source": "All Encounters" },
+    { "weapon": "Unvoiced", "type": "Shotgun", "frame": "Void", "source": "All Encounters" },
+    { "weapon": "Flain Suit", "type": "Armor", "frame": "Artifice (Master Mode)", "source": "All Encounters" }
+  ],
+  "master_mode": {
+    "requirements": [ "Khóa Power Delta -10", "Thêm các Champions (Unstoppable/Overload)" ],
+    "rewards": [ "Trang bị Artifice Armor (Flain Suit)", "Farm được vô hạn Legendary Drops", "Seal / Title progress" ]
+  }
+}

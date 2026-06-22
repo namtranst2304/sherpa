@@ -17,9 +17,13 @@ import week3 from "./pantheon/week-3.json"
 import week4 from "./pantheon/week-4.json"
 
 import equilibrium from "./dungeons/equilibrium.json"
+import vespersHost from "./dungeons/vespers-host.json"
+import sunderedDoctrine from "./dungeons/sundered-doctrine.json"
 
 export const DUNGEONS_DATA: Record<string, ActivityData> = {
   "equilibrium": equilibrium as unknown as ActivityData,
+  "vespers-host": vespersHost as unknown as ActivityData,
+  "sundered-doctrine": sunderedDoctrine as unknown as ActivityData,
 }
 
 export const PANTHEON_DATA: Record<string, ActivityData> = {
