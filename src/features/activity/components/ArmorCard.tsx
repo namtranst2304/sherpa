@@ -1,6 +1,6 @@
 import { LootArmorSet } from "@/types";
 import Image from "next/image";
-import { CyberCard, CyberHeading, CyberVariant } from "@/components/common/CyberComponents";
+import { CyberCard, CyberHeading } from "@/components/common/CyberComponents";
 import { Shield } from "lucide-react";
 
 export function ArmorCard({ armor }: { armor: LootArmorSet }) {
@@ -8,13 +8,13 @@ export function ArmorCard({ armor }: { armor: LootArmorSet }) {
   const isHunter = armor.class === "Hunter";
   const isWarlock = armor.class === "Warlock";
 
-  let classColor: CyberVariant = "cyan";
+  let classColor: "cyan" | "orange" | "yellow" | "zinc" = "cyan";
   if (isTitan) classColor = "orange";
   else if (isWarlock) classColor = "yellow";
   else if (isHunter) classColor = "zinc";
 
   return (
-    <CyberCard variant={classColor as any} withCorners className="flex flex-col h-full p-4 relative group">
+    <CyberCard variant={classColor} withCorners className="flex flex-col h-full p-4 relative group">
       <div className="flex gap-4 items-center">
         {/* Icon Area */}
         <div className="w-20 h-20 shrink-0 bg-zinc-950 relative overflow-hidden flex items-center justify-center border border-zinc-800 rounded-md group-hover:border-white/20 transition-colors">
