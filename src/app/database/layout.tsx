@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Shield, Database, Sparkles, Shirt } from "lucide-react"
+import { Shield, Sparkles, Shirt } from "lucide-react"
 
 export default function DatabaseLayout({
   children,

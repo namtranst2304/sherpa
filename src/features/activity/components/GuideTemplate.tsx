@@ -33,50 +33,57 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
 
                 <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-8 items-start">
 
-                    {/* Left Column: Mechanics */}
+                    {/* Left Column: Map and Mechanics */}
                     <div className="flex flex-col gap-8 w-full">
-                        <CyberCard variant="zinc" withCorners className="cyber-grid relative">
-                            <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                                <div className="p-2 bg-neon-cyan/10 rounded-md">
-                                    <Settings className="w-5 h-5 text-neon-cyan" />
+                        {/* Map */}
+                        {map && (
+                            <CyberCard variant="zinc" withCorners className="flex flex-col">
+                                <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                                    <div className="p-2 bg-neon-cyan/10 rounded-md">
+                                        <Map className="w-5 h-5 text-neon-cyan" />
+                                    </div>
+                                    <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Callout Map</h2>
                                 </div>
-                                <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Encounter Mechanics</h2>
-                            </div>
-                            <div className="text-muted-foreground leading-relaxed relative z-10">
-                                {mechanics}
-                            </div>
-                        </CyberCard>
+                                <div className="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden relative z-10">
+                                    {/* Inner cyber frame for map */}
+                                    <div className="absolute inset-0 pointer-events-none border border-neon-cyan/20 m-2" />
+                                    {map}
+                                </div>
+                            </CyberCard>
+                        )}
+
+                        {/* Mechanics */}
+                        {mechanics && (
+                            <CyberCard variant="zinc" withCorners className="cyber-grid relative">
+                                <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                                    <div className="p-2 bg-neon-cyan/10 rounded-md">
+                                        <Settings className="w-5 h-5 text-neon-cyan" />
+                                    </div>
+                                    <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Encounter Mechanics</h2>
+                                </div>
+                                <div className="text-muted-foreground leading-relaxed relative z-10">
+                                    {mechanics}
+                                </div>
+                            </CyberCard>
+                        )}
                     </div>
 
-                    {/* Right Column: Map, Roles, Secrets */}
+                    {/* Right Column: Roles, Secrets */}
                     <div className="flex flex-col gap-8 w-full lg:sticky lg:top-8">
-                        {/* Map */}
-                        <CyberCard variant="zinc" withCorners className="flex flex-col">
-                            <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                                <div className="p-2 bg-neon-cyan/10 rounded-md">
-                                    <Map className="w-5 h-5 text-neon-cyan" />
-                                </div>
-                                <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Callout Map</h2>
-                            </div>
-                            <div className="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden relative z-10">
-                                {/* Inner cyber frame for map */}
-                                <div className="absolute inset-0 pointer-events-none border border-neon-cyan/20 m-2" />
-                                {map}
-                            </div>
-                        </CyberCard>
-
                         {/* Roles */}
-                        <CyberCard variant="zinc" withCorners className="cyber-grid relative">
-                            <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                                <div className="p-2 bg-neon-cyan/10 rounded-md">
-                                    <Users className="w-5 h-5 text-neon-cyan" />
+                        {roles && (
+                            <CyberCard variant="zinc" withCorners className="cyber-grid relative">
+                                <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                                    <div className="p-2 bg-neon-cyan/10 rounded-md">
+                                        <Users className="w-5 h-5 text-neon-cyan" />
+                                    </div>
+                                    <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">What to do (Roles)</h2>
                                 </div>
-                                <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">What to do (Roles)</h2>
-                            </div>
-                            <div className="relative z-10">
-                                {roles}
-                            </div>
-                        </CyberCard>
+                                <div className="relative z-10">
+                                    {roles}
+                                </div>
+                            </CyberCard>
+                        )}
 
                         {/* Secrets & Hidden Chests */}
                         {secrets && (

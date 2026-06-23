@@ -30,7 +30,12 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
           id: "overview",
           title: "Overview & Loadouts",
           href: "?enc=overview",
-        }
+        },
+        ...(activityData.activity_secrets ? [{
+          id: "secrets",
+          title: "Secrets & Chests",
+          href: "?enc=secrets"
+        }] : [])
       ]
     },
     {
@@ -43,9 +48,54 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
     }
   ]
 
-  const activeEncounter = isOverview 
+  const activeEncounter = isOverview || activeEncounterId === "secrets"
     ? null 
     : (activityData.encounters.find((enc: ActivityEncounter) => enc.id === activeEncounterId) || activityData.encounters[0])
+
+  const renderContent = () => {
+    if (activeEncounterId === "secrets" && activityData.activity_secrets) {
+      return (
+        <GuideTemplate
+          title="Secrets & Chests"
+          description="Vị trí rương ẩn và giải đố hạt giống viền đỏ (Red Border)"
+          mechanics={<EncounterSecrets secrets={activityData.activity_secrets} />}
+          map={null}
+          roles={null}
+        />
+      );
+    }
+    
+    if (isOverview) {
+      return <ActivityOverviewTemplate activityData={activityData} />;
+    }
+
+    return (
+      <GuideTemplate
+        title={activeEncounter!.name}
+        description={activityData.preface?.author_notes || "Hướng dẫn chi tiết cơ chế chiến đấu"}
+        mechanics={
+          activeEncounter!.walkthrough && Object.keys(activeEncounter!.walkthrough).length > 0 ? (
+            <EncounterPhase walkthrough={activeEncounter!.walkthrough} />
+          ) : undefined
+        }
+        map={
+          activeEncounter!.images && activeEncounter!.images.length > 0 ? (
+            <EncounterMap images={activeEncounter!.images} encounterName={activeEncounter!.name} />
+          ) : undefined
+        }
+        roles={
+          activeEncounter!.roles && Object.keys(activeEncounter!.roles).length > 0 && (
+            <EncounterRoles roles={activeEncounter!.roles} />
+          )
+        }
+        secrets={
+          activeEncounter!.secrets && activeEncounter!.secrets.length > 0 ? (
+            <EncounterSecrets secrets={activeEncounter!.secrets} />
+          ) : undefined
+        }
+      />
+    );
+  };
 
   return (
     <div className="flex h-full w-full overflow-hidden">
@@ -58,39 +108,14 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
 
       <AnimatePresence mode="wait">
         <motion.div 
-          key={isOverview ? "overview" : activeEncounter?.id} 
+          key={isOverview ? "overview" : activeEncounterId === "secrets" ? "secrets" : activeEncounter?.id} 
           className="flex-1 overflow-hidden h-full"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ opacity: { duration: 0.2, ease: "easeInOut" }, y: { duration: 0.2, ease: "easeInOut" } }}
         >
-          {isOverview ? (
-            <ActivityOverviewTemplate activityData={activityData} />
-          ) : (
-            <GuideTemplate
-              title={activeEncounter!.name}
-              description={activityData.preface?.author_notes || "Hướng dẫn chi tiết cơ chế chiến đấu"}
-              mechanics={
-                activeEncounter!.walkthrough && (
-                  <EncounterPhase walkthrough={activeEncounter!.walkthrough} />
-                )
-              }
-              map={
-                <EncounterMap images={activeEncounter!.images} encounterName={activeEncounter!.name} />
-              }
-              roles={
-                activeEncounter!.roles && (
-                  <EncounterRoles roles={activeEncounter!.roles} />
-                )
-              }
-              secrets={
-                activeEncounter!.secrets && (
-                  <EncounterSecrets secrets={activeEncounter!.secrets} />
-                )
-              }
-            />
-          )}
+          {renderContent()}
         </motion.div>
       </AnimatePresence>
     </div>

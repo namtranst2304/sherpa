@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Sparkles, Shell, Zap, Orbit, Snowflake, Droplets, Combine } from 'lucide-react';
+import { Sparkles, Zap, Orbit, Snowflake, Combine } from 'lucide-react';
 
 export interface ExoticWeapon {
   id: number;
@@ -31,21 +31,21 @@ export interface ExoticWeapon {
 
 const DamageTypeIcon = ({ type }: { type: string }) => {
   switch (type.toLowerCase()) {
-    case 'kinetic': return <div className="w-3 h-3 rounded-full bg-zinc-300" title="Kinetic" />;
-    case 'solar': return <Zap className="w-3 h-3 text-orange-500" title="Solar" />;
-    case 'arc': return <Zap className="w-3 h-3 text-cyan-400" title="Arc" />;
-    case 'void': return <Orbit className="w-3 h-3 text-purple-500" title="Void" />;
-    case 'stasis': return <Snowflake className="w-3 h-3 text-blue-400" title="Stasis" />;
-    case 'strand': return <Combine className="w-3 h-3 text-green-500" title="Strand" />;
+    case 'kinetic': return <div className="w-3 h-3 rounded-full bg-zinc-300" />;
+    case 'solar': return <Zap className="w-3 h-3 text-orange-500" />;
+    case 'arc': return <Zap className="w-3 h-3 text-cyan-400" />;
+    case 'void': return <Orbit className="w-3 h-3 text-purple-500" />;
+    case 'stasis': return <Snowflake className="w-3 h-3 text-blue-400" />;
+    case 'strand': return <Combine className="w-3 h-3 text-green-500" />;
     default: return <div className="w-3 h-3 rounded-full bg-zinc-500" />;
   }
 };
 
 const AmmoTypeIcon = ({ type }: { type: string }) => {
   switch (type.toLowerCase()) {
-    case 'primary': return <div className="w-3 h-4 bg-white rounded-sm" title="Primary Ammo" />;
-    case 'special': return <div className="w-3 h-4 bg-green-500 rounded-sm" title="Special Ammo" />;
-    case 'heavy': return <div className="w-3 h-4 bg-purple-500 rounded-sm" title="Heavy Ammo" />;
+    case 'primary': return <div className="w-3 h-4 bg-white rounded-sm" />;
+    case 'special': return <div className="w-3 h-4 bg-green-500 rounded-sm" />;
+    case 'heavy': return <div className="w-3 h-4 bg-purple-500 rounded-sm" />;
     default: return <div className="w-3 h-4 bg-zinc-500 rounded-sm" />;
   }
 };
@@ -72,10 +72,10 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
             <div className="flex items-center gap-1 opacity-80" title={weapon.slot}>
               <span className="text-zinc-400 text-xs uppercase bg-zinc-900/80 px-2 py-0.5 rounded border border-zinc-800">{weapon.slot}</span>
             </div>
-            <div className="flex items-center gap-1 opacity-80" title="Damage Type">
+            <div className="flex items-center gap-1 opacity-80" title={weapon.damageType}>
               <DamageTypeIcon type={weapon.damageType} />
             </div>
-            <div className="flex items-center gap-1 opacity-80" title="Ammo Type">
+            <div className="flex items-center gap-1 opacity-80" title={weapon.ammoType}>
               <AmmoTypeIcon type={weapon.ammoType} />
             </div>
           </div>
@@ -86,7 +86,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
       <div className="p-4 flex flex-col gap-4 flex-grow">
         {weapon.flavorText && (
           <p className="text-xs italic text-zinc-500 border-l-2 border-zinc-700 pl-3">
-            "{weapon.flavorText}"
+            &quot;{weapon.flavorText}&quot;
           </p>
         )}
         
@@ -98,7 +98,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
           
           <div className="flex gap-3 items-start p-3 rounded bg-black/30 border border-zinc-800/50 h-full">
             {traitIconUrl && (
-              <img src={traitIconUrl} alt={weapon.trait.name} className="w-8 h-8 rounded-sm shrink-0 bg-zinc-900" />
+              <Image src={traitIconUrl} alt={weapon.trait.name} width={32} height={32} className="rounded-sm shrink-0 bg-zinc-900" unoptimized />
             )}
             <div className="flex flex-col flex-1">
               <span className="font-bold text-white mb-1">{weapon.trait.name || 'Unknown Trait'}</span>
@@ -114,7 +114,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
                       <div className="flex flex-col gap-4">
                         {weapon.trait.perkPool.column1.map((perk, i) => (
                           <div key={i} className="flex gap-3">
-                            {perk.icon && <img src={`https://www.bungie.net${perk.icon}`} alt={perk.name} className="w-8 h-8 rounded shrink-0 bg-black" />}
+                            {perk.icon && <Image src={`https://www.bungie.net${perk.icon}`} alt={perk.name} width={32} height={32} className="rounded shrink-0 bg-black" unoptimized />}
                             <div className="flex flex-col">
                               <span className="text-sm font-bold text-zinc-200">{perk.name}</span>
                               <span className="text-xs text-zinc-500 leading-relaxed">{perk.description}</span>
@@ -128,7 +128,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
                       <div className="flex flex-col gap-4">
                         {weapon.trait.perkPool.column2.map((perk, i) => (
                           <div key={i} className="flex gap-3">
-                            {perk.icon && <img src={`https://www.bungie.net${perk.icon}`} alt={perk.name} className="w-8 h-8 rounded shrink-0 bg-black" />}
+                            {perk.icon && <Image src={`https://www.bungie.net${perk.icon}`} alt={perk.name} width={32} height={32} className="rounded shrink-0 bg-black" unoptimized />}
                             <div className="flex flex-col">
                               <span className="text-sm font-bold text-zinc-200">{perk.name}</span>
                               <span className="text-xs text-zinc-500 leading-relaxed">{perk.description}</span>
@@ -152,7 +152,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
                           {/* Column 1 Perk */}
                           {perk1 ? (
                             <div className="flex gap-3">
-                              {perk1.icon && <img src={`https://www.bungie.net${perk1.icon}`} alt={perk1.name} className="w-8 h-8 rounded shrink-0 bg-black shadow-md border border-zinc-700/50" />}
+                              {perk1.icon && <Image src={`https://www.bungie.net${perk1.icon}`} alt={perk1.name} width={32} height={32} className="rounded shrink-0 bg-black shadow-md border border-zinc-700/50" unoptimized />}
                               <div className="flex flex-col">
                                 <span className="text-sm font-bold text-zinc-200">{perk1.name}</span>
                                 <span className="text-xs text-zinc-500 leading-relaxed">{perk1.description}</span>
@@ -163,7 +163,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
                           {/* Column 2 Perk */}
                           {perk2 ? (
                             <div className="flex gap-3">
-                              {perk2.icon && <img src={`https://www.bungie.net${perk2.icon}`} alt={perk2.name} className="w-8 h-8 rounded shrink-0 bg-black shadow-md border border-zinc-700/50" />}
+                              {perk2.icon && <Image src={`https://www.bungie.net${perk2.icon}`} alt={perk2.name} width={32} height={32} className="rounded shrink-0 bg-black shadow-md border border-zinc-700/50" unoptimized />}
                               <div className="flex flex-col">
                                 <span className="text-sm font-bold text-zinc-200">{perk2.name}</span>
                                 <span className="text-xs text-zinc-500 leading-relaxed">{perk2.description}</span>
@@ -193,7 +193,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
                 <div key={idx} className="flex flex-col gap-3 p-3 rounded bg-zinc-950/80 border border-zinc-800/80">
                   <div className="flex gap-3 items-start">
                     {cat.icon && (
-                      <img src={`https://www.bungie.net${cat.icon}`} alt={cat.name} className="w-8 h-8 rounded-sm shrink-0 bg-zinc-900 border border-zinc-800" />
+                      <Image src={`https://www.bungie.net${cat.icon}`} alt={cat.name} width={32} height={32} className="rounded-sm shrink-0 bg-zinc-900 border border-zinc-800" unoptimized />
                     )}
                     <div className="flex flex-col">
                       <span className="font-bold text-white text-sm">{cat.name}</span>
@@ -207,7 +207,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
                       {cat.effects.map((effect, eIdx) => (
                         <div key={eIdx} className="flex gap-2 items-start">
                           {effect.icon && (
-                            <img src={`https://www.bungie.net${effect.icon}`} alt={effect.name} className="w-5 h-5 rounded-sm shrink-0" />
+                            <Image src={`https://www.bungie.net${effect.icon}`} alt={effect.name} width={20} height={20} className="rounded-sm shrink-0" unoptimized />
                           )}
                           <div className="flex flex-col">
                             <span className="text-xs font-bold text-zinc-300">{effect.name}</span>

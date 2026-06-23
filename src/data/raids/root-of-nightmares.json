@@ -2,51 +2,39 @@
   "raid_name": "Root of Nightmares",
   "active_orbit": "The Witness's Pyramid Ship",
   "preface": {
-    "formatting_rules": "Cơ chế xương sống của Raid này là việc nối các hạt giống (Seeds) để tạo thành mạng lưới rễ cây. Sẽ có 2 loại năng lượng: Ánh Sáng (Light - Màu trắng/aura trắng) và Bóng Tối (Darkness - Màu cam/aura cam).",
+    "formatting_rules": "Cơ chế xương sống của Raid này là việc nối các hạt giống (Nodes) để tạo thành mạng lưới rễ cây. Sẽ có 2 loại năng lượng: Ánh Sáng (Light - Field of Light) và Bóng Tối (Darkness - Flux of Darkness).",
     "non_linear_mechanic": {
-      "description": "Theo dấu chân Ánh sáng của Traveler đâm xuyên qua con tàu Kim Tự Tháp của The Witness để tiêu diệt Nezarec - Vị thần đau khổ.",
+      "description": "Theo chân Ánh sáng đâm xuyên qua con tàu Kim Tự Tháp của The Witness để tiêu diệt Nezarec - Final God of Pain.",
       "elevator_plates": []
     }
   },
   "loadout_tips": {
-    "note": "Raid này có mật độ quái vật khổng lồ, đặc biệt là Cabal và Tormentors. Khả năng Add Clear (Dọn quái) tốc độ cao là yêu cầu bắt buộc cho 4 người không chạy cơ chế (Ad Clearers). Về DPS, Nezarec di chuyển rất hỗn loạn nên Rocket Launcher rất dễ bị nổ ngược, súng máy hoặc Grenade Launcher là lựa chọn an toàn hơn.",
+    "note": "Raid Root of Nightmares có mật độ quái vật khổng lồ. Khả năng Add Clear (Dọn quái) tốc độ cao là yêu cầu bắt buộc đối với những người không chạy cơ chế. Về DPS, Nezarec di chuyển rất hỗn loạn nên tên lửa rât dễ bị nổ ngược, vì vậy Súng Máy (như Thunderlord), Grenade Launcher, hoặc Linear Fusion là lựa chọn an toàn hơn.",
     "warlocks": {
       "supers": [
         {
           "name": "Well of Radiance",
-          "utility": "Cực kỳ thiết yếu ở ải Nezarec. Nếu bạn cắm Well ở trên các lá cây/bục cao, hắn sẽ không thể đập nát Well và team sẽ an toàn bắn từ trên cao."
-        },
-        {
-          "name": "Needlestorm / Nova Bomb",
-          "utility": "Ném một phát dọn sạch hàng đống quái Cabal cản đường."
+          "utility": "Cực kỳ thiết yếu ở ải Nezarec và Explicator. Giúp team tăng sát thương và sống sót qua các đợt tấn công."
         }
       ],
       "exotics_and_abilities": [
         {
-          "name": "Sunbracers",
-          "recommendation": "Exotic dọn quái số 1 của Warlock. Một mình bạn có thể bao thầu quét sạch 1 nửa bản đồ."
-        },
-        {
-          "name": "Osmiomancy Gloves",
-          "recommendation": "Ném lựu đạn Coldsnap đóng băng lũ Tormentors khó chịu, khiến chúng trở nên vô hại."
+          "name": "Starfire Protocol / Sunbracers",
+          "recommendation": "Dọn quái cực mạnh và ném Fusion Grenade liên tục vào Boss."
         }
       ]
     },
     "titans": {
       "supers": [
         {
-          "name": "Bladefury (Strand)",
-          "utility": "Super dọn quái cận chiến vô cùng hiệu quả, kết hợp Banner of War giúp team bất tử."
-        },
-        {
-          "name": "Thundercrash",
-          "utility": "Bay thẳng vào Nezarec hoặc Explicator để dứt điểm nhanh gọn."
+          "name": "Thundercrash / Bladefury",
+          "utility": "Bay thẳng vào Nezarec hoặc Explicator để dứt điểm nhanh gọn, hoặc dọn dẹp Tormentors."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Abeyant Leap",
-          "recommendation": "Kỹ năng Barricade phóng ra 3 tia Strand trói cổ lũ Tormentors từ xa, đây là khắc tinh mạnh nhất của chúng."
+          "recommendation": "Phóng ra 3 tia Strand trói cổ lũ Tormentors từ xa, khắc tinh mạnh nhất của chúng."
         }
       ]
     },
@@ -54,18 +42,14 @@
       "supers": [
         {
           "name": "Gathering Storm (Arc)",
-          "utility": "Lựa chọn DPS số 1 cho Nezarec. Ném giáo ghim vào người hắn để giật sét liên tục."
+          "utility": "Lựa chọn DPS tuyệt vời cho Nezarec. Ném giáo ghim vào người hắn để giật sét liên tục."
         },
         {
-          "name": "Shadowshot (Deadfall)",
-          "utility": "Bắn Tether trói chân hàng đống quái Cabal và Tormentors."
+          "name": "Shadowshot",
+          "utility": "Bắn Tether trói chân hàng đống quái và làm suy yếu boss."
         }
       ],
       "exotics_and_abilities": [
-        {
-          "name": "Assassin's Cowl",
-          "recommendation": "Tàng hình liên tục, công cụ hoàn hảo cho các Runner chạy nối hạt giống giữa làn đạn thù địch."
-        },
         {
           "name": "Star-Eater Scales",
           "recommendation": "Tối đa hóa sát thương Super."
@@ -76,67 +60,85 @@
   "encounters": [
     {
       "id": "cataclysm",
-      "name": "Cataclysm (Sinh tồn đại hồng thủy)",
+      "name": "Cataclysm",
+      "images": [
+        {
+          "url": "/images/raids/root-of-nightmares/RON_1S.jpg",
+          "caption": "Quang cảnh ải Cataclysm"
+        }
+      ],
       "roles": {
-        "runner": {
-          "description": "Chạy nối hạt giống Ánh Sáng.",
-          "quantity": 1,
+        "runners": {
+          "description": "2 người phụ trách nối mạng lưới node Ánh Sáng.",
+          "quantity": 2,
           "types": [
             "Runner"
           ]
         },
-        "psion_killers": {
-          "description": "Đi săn bọn Psions có bong bóng để lấy buff Sweeping Terror.",
-          "quantity": 2,
-          "types": [
-            "Mechanic"
-          ]
-        },
         "add_clear": {
-          "description": "Dọn dẹp quái vật và bảo vệ Runner.",
-          "quantity": 3,
+          "description": "4 người còn lại dọn dẹp quái vật, tiêu diệt Psion và Tormentor.",
+          "quantity": 4,
           "types": [
-            "Add Clear"
+            "Add Clear",
+            "Mechanic"
           ]
         }
       },
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Nối mầm Ánh Sáng",
-          "objective": "Runner phải hoàn thành việc nối mạng lưới mầm Ánh Sáng từ điểm bắt đầu đến điểm kết thúc.",
+          "name": "Giai đoạn 1: Nối mạng lưới Ánh Sáng",
+          "objective": "Tạo ra mạng lưới các Node Ánh Sáng bằng cách truyền buff Field of Light.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-cataclysm-node-beam.jpg",
+              "caption": "Node Ánh Sáng đang phát tia chỉ đường"
+            }
+          ],
           "steps": [
-            "Bắt đầu bằng việc bắn vào cục hạt giống (Seed) màu trắng. Runner nhận được buff 'Field of Light'.",
-            "Runner nhìn theo hướng rễ cây tỏa ra, tìm cái mầm Ánh sáng tiếp theo đang tắt (Màu đen/trắng đục).",
-            "Chạy đến cái mầm đó, dùng súng bắn vào nó để thắp sáng nó (Nối mầm thành công). Ngay lập tức buff Field of Light biến mất.",
-            "Runner chạy TRỞ VỀ CÁI MẦM VỪA ĐƯỢC THẮP SÁNG đó (Hoặc chạy về mầm ban đầu nếu chưa mất aura), lấy lại buff Field of Light và tiếp tục đi tìm mầm tiếp theo để nối. Cứ làm liên tục cho đến mầm cuối cùng."
+            "Người chạy (Runner) đứng trong vùng hào quang (Aura) của Node đầu tiên và bắn vào hạt giống phát sáng (Pearl) để nhận buff 'Field of Light' (15 giây). Node này sẽ phóng một tia sáng chỉ đường đến Node tiếp theo.",
+            "Runner tìm Node tiếp theo (sẽ có một quả cầu nhỏ bay lơ lửng), đứng lên đĩa của nó và bắn vào quả cầu để kích hoạt. Thao tác này sẽ tiêu hao buff Field of Light.",
+            "Runner quay lại Node có Aura (Aura sẽ di chuyển theo quá trình nối), bắn vào hạt giống để lấy lại buff Field of Light, và tiếp tục đi tìm Node tiếp theo.",
+            "LƯU Ý (Disruption): Nếu người chạy đang cầm buff Field of Light và chưa kịp bắn Node tiếp theo, mà một người khác lại bắn vào Node có Aura để làm mới buff, Disruption sẽ xảy ra, làm mất buff Field of Light của người đang chạy."
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Cản cơn đại hồng thủy (Sweeping Terror)",
-          "objective": "Kéo dài thời gian cho Runner nối mầm bằng cách trì hoãn cơ chế Wipe.",
+          "name": "Giai đoạn 2: Trì hoãn Sweeping Terror",
+          "objective": "Tiêu diệt Psions và Tormentors để gia hạn thời gian sống sót.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-cataclysm-psion.jpg",
+              "caption": "Chạy vào bong bóng để giết Psion"
+            }
+          ],
           "steps": [
-            "Ngay khi ải bắt đầu, dòng chữ 'Sweeping Terror' hiện lên đếm ngược. Hết giờ team sẽ chết.",
-            "Sẽ có 2 con Psion Elite xuất hiện ngẫu nhiên bị bọc trong quả bong bóng to. 2 người (Psion Killers) phải chạy vào TRONG bong bóng và đấm cận chiến chết 2 con Psion đó.",
-            "Ngay khi 2 Psion chết, 1 con Tormentor khổng lồ xuất hiện. Bắn gãy 2 cái vai của nó, rồi bắn vào bụng để giết nó.",
-            "Giết Tormentor thành công sẽ GIA HẠN THÊM THỜI GIAN Sweeping Terror. Cứ thế câu giờ cho đến khi Runner nối xong toàn bộ mầm."
+            "Ngay khi bắt đầu, một đồng hồ đếm ngược có tên 'Sweeping Terror' sẽ xuất hiện. Nếu đếm về 0, cả đội sẽ chết (Wipe).",
+            "Sẽ có 2 con Psion xuất hiện trong bong bóng bảo vệ. Đội Add Clear phải chạy VÀO TRONG bong bóng và đấm chết chúng.",
+            "Sau khi 2 Psion chết, một con Tormentor sẽ xuất hiện. Tiêu diệt Tormentor này sẽ cộng thêm 35 giây vào đồng hồ Sweeping Terror.",
+            "Tiếp tục kéo dài thời gian và tiêu diệt quái cho đến khi Runner nối xong toàn bộ mạng lưới (Sẽ hiện dòng chữ 'His hatred halts'). Quá trình này sẽ lặp lại qua các khu vực cho đến cuối phòng."
           ]
         }
       }
     },
     {
       "id": "scission",
-      "name": "Scission (Chia Cắt)",
+      "name": "Scission",
+      "images": [
+        {
+          "url": "/images/raids/root-of-nightmares/RON_2S.jpg",
+          "caption": "Vượt vực sâu ở Scission"
+        }
+      ],
       "roles": {
         "runners": {
-          "description": "2 người chạy nối hạt, 1 người bên Sáng, 1 người bên Tối.",
+          "description": "1 người bên Trái (Tối) và 1 người bên Phải (Sáng) chạy qua lại giữa vực để nối mạng lưới.",
           "quantity": 2,
           "types": [
             "Runner"
           ]
         },
         "add_clear": {
-          "description": "4 người đi sau bảo vệ, dọn quái có khiên đặc biệt.",
+          "description": "Đi theo các Runner, nhận buff ké để phá khiên quái vật.",
           "quantity": 4,
           "types": [
             "Add Clear"
@@ -146,40 +148,60 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Chạy đua song song",
-          "objective": "Hoàn thành 2 đường rễ cây Ánh Sáng và Bóng Tối song song nhau trước khi Imminent Expulsion đếm ngược xong.",
+          "name": "Giai đoạn 1: Kết nối Ziczac xuyên Vực",
+          "objective": "Nối đồng thời mạng lưới Ánh Sáng và Bóng Tối ở cả 2 bờ.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-scission-crossing-gap-node.jpg",
+              "caption": "Bắn Shard để bay qua vực"
+            }
+          ],
           "steps": [
-            "Chia làm 2 tổ, mỗi tổ 3 người (1 Runner, 2 Add Clear). Một tổ phụ trách rễ Ánh Sáng (Trái), một tổ Bóng Tối (Phải).",
-            "Runner Ánh Sáng lấy buff Field of Light, bắn mầm Ánh Sáng để nối. Áp dụng tương tự cho Runner Bóng Tối (lấy buff Flux of Darkness màu cam).",
-            "Khác với ải 1, mầm tiếp theo có thể TẠI BỜ BÊN KIA vực. Runner phải bay qua vực (hoặc dùng bệ nhảy) sang bên bờ đối diện để nối mầm, rồi lại về bờ cũ lấy buff đi nối tiếp. (Rễ mọc đan chéo nhau).",
-            "Ai nối xong đường rễ của mình (Light hoặc Dark) trước thì chạy đến đập cái cục chóp nhọn cuối đường để phong ấn tầng đó."
+            "Chia làm 2 đội (Trái và Phải). Bên Trái quản lý Flux of Darkness (Tối), bên Phải quản lý Field of Light (Sáng).",
+            "Runner bắt đầu bằng cách nhận buff từ Node có Aura ở bên phía mình. Sau đó, BẮN VÀO CỤC PHA LÊ (Shard) ở phía trước cái Piston (Cột đẩy) để nó bắn bạn bay sang bờ đối diện.",
+            "Tìm và bắn Node tương ứng ở bờ đối diện. Mạng lưới sẽ chạy ziczac qua lại giữa 2 bờ vực.",
+            "Sau khi bắn Node xong, Runner dùng Piston bay TRỞ LẠI bờ ban đầu, tìm Node có Aura để làm mới buff, rồi lại bay sang bờ bên kia để nối Node tiếp theo.",
+            "Làm liên tục như vậy cho đến khi cả 2 mạng lưới đều được nối hoàn tất ở tầng đó."
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Dọn quái có khiên (Add Clear)",
-          "objective": "Bảo vệ Runner khỏi những con quái miễn nhiễm.",
+          "name": "Giai đoạn 2: Quái vật Redolence",
+          "objective": "Dọn dẹp quái vật có khiên bảo vệ và lên tầng.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-scission-redolence.jpg",
+              "caption": "Quái vật mang khiên Redolence"
+            }
+          ],
           "steps": [
-            "Sẽ có những con quái được bọc bởi khiên Sáng (Trắng) hoặc khiên Tối (Cam). Bạn không thể bắn chúng mất máu nếu không có buff tương ứng.",
-            "Người Add Clear phải đi theo Runner để 'hưởng ké' vòng tròn buff khi Runner lấy buff. Ví dụ lấy được buff Field of Light thì mới bắn vỡ được khiên con quái Trắng.",
-            "Tuyệt đối KHÔNG BẮN VÀO MẦM nếu bạn là người Add Clear (Sẽ làm gián đoạn Runner). Chỉ lấy buff rồi đi dọn quái.",
-            "Sau khi hoàn thành 1 tầng, bệ phóng (Man Cannon) sẽ kích hoạt bắn team lên tầng cao hơn. Lặp lại 3 tầng."
+            "Đội Add Clear phải tiêu diệt các quái vật tên là Redolence of Splendor (Khiên Sáng) hoặc Redolence of Decay (Khiên Tối).",
+            "Những con quái này CHỈ BỊ MẤT MÁU khi bạn có buff tương ứng (Field of Light cho quái Sáng, Flux of Darkness cho quái Tối).",
+            "Người dọn quái phải đứng gần Node Aura khi Runner bắn để 'hưởng ké' buff và đi giết quái.",
+            "Tuyệt đối KHÔNG ĐƯỢC BẮN VÀO NODE nếu bạn là người dọn quái, tránh gây ra Disruption làm mất buff của Runner.",
+            "Khi nối xong mạng lưới của 1 tầng, một con Major Redolence sẽ xuất hiện. Diệt nó, bắn vào Shard ở cuối đường để Piston đẩy cả team lên tầng tiếp theo. Lặp lại cho 3 tầng."
           ]
         }
       }
     },
     {
       "id": "macrocosm",
-      "name": "Macrocosm (Khu phức hợp hành tinh)",
+      "name": "Zo'Aurc, Explicator of Planets (Macrocosm)",
+      "images": [
+        {
+          "url": "/images/raids/root-of-nightmares/RON_3S.jpg",
+          "caption": "Hệ thống các hành tinh tại Macrocosm"
+        }
+      ],
       "roles": {
         "planet_movers": {
-          "description": "4 người di chuyển hành tinh giữa các bệ.",
+          "description": "4 người chia làm 2 cặp (Trên và Dưới) để di chuyển các hành tinh.",
           "quantity": 4,
           "types": [
             "Mechanic"
           ]
         },
         "add_clear": {
-          "description": "2 người dọn dẹp ở giữa và giết Colossus.",
+          "description": "2 người đứng giữa dọn quái và giết Centurions.",
           "quantity": 2,
           "types": [
             "Add Clear"
@@ -189,24 +211,46 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Chuyển vị trí hành tinh",
-          "objective": "Sắp xếp lại trật tự: Phải đưa tất cả Hành Tinh Sáng (Light) về bờ trái và Hành Tinh Tối (Dark) về bờ phải.",
+          "name": "Giai đoạn 1: Đổi chỗ Hành tinh (Planetary Shift)",
+          "objective": "Sắp xếp lại cho toàn bộ hành tinh Sáng nằm bên Trái, Tối nằm bên Phải.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-explicator-lieutenant.jpg",
+              "caption": "Tiêu diệt Terrestrial Lieutenants"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-explicator-planetary-insight.jpg",
+              "caption": "Nhìn màu hành tinh với Planetary Insight"
+            }
+          ],
           "steps": [
-            "Có 4 bệ tam giác (Trái Trên, Trái Dưới, Phải Trên, Phải Dưới). Mỗi bệ có 3 hành tinh. Bình thường bạn sẽ không thấy màu của chúng.",
-            "Sẽ có 4 con Lieutenants (Centurions to) xuất hiện ở 4 bệ. 4 người Planet Movers giết chúng, rồi giết con Terrestrial (Colossus) hiện ra.",
-            "Khi giết Colossus, người đó nhận buff 'Planetary Insight' và nhìn thấy MÀU của 3 hành tinh trên bệ mình.",
-            "Quy tắc: Bên trái là Sáng, Bên phải là Tối. Tìm 1 hành tinh BỊ SAI MÀU trên bệ của bạn (VD: Bên trái có 1 hành tinh Tối) -> Chạy lại hành tinh đó bấm Interact để Bắt lấy nó.",
-            "Sau đó, 2 người Mover trên cùng 1 mặt (Trên, hoặc Dưới) sẽ CHẠY SANG BỆ CỦA NHAU và thả hành tinh vừa bắt vào vị trí hành tinh sai của bệ kia. (Đổi chỗ chéo cho nhau)."
+            "Sẽ có 4 bệ tam giác (Trái Trên, Trái Dưới, Phải Trên, Phải Dưới). Mỗi bệ có 3 hành tinh.",
+            "Bắt đầu bằng việc diệt Honored Centurions ở giữa để triệu hồi Terrestrial Lieutenants ở 4 bệ. Planet Movers tiêu diệt Lieutenants để nhận buff 'Planetary Insight'.",
+            "Với buff này, bạn sẽ nhìn thấy MÀU của 3 hành tinh trên bệ của mình. Bạn cần tìm hành tinh LẠC QUẺ (Bên Trái thì tìm hành tinh Tối, bên Phải thì tìm hành tinh Sáng).",
+            "Đứng ngay dưới hành tinh lạc quẻ và bấm Tương Tác (Interact) để 'Bắt lấy' nó.",
+            "2 Mover của cùng một phía (VD: Trái Dưới và Phải Dưới) CHẠY ĐỔI CHỖ CHO NHAU và thả hành tinh vừa lấy vào ĐÚNG VỊ TRÍ MÀ NGƯỜI KIA ĐÃ LẤY. Nếu làm đúng, dòng chữ 'The indexed planets reveal themselves' sẽ hiện ra."
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Damage Phase (Zo'aurc, Explicator of Planets)",
-          "objective": "Kéo hành tinh vào giữa để phá khiên Boss.",
+          "name": "Giai đoạn 2: Sắp xếp các hành tinh ở giữa và Damage Phase",
+          "objective": "Khóa khiên Boss bằng 3 hành tinh ở trung tâm và gây sát thương.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-explicator-damage-phase-planets.jpg",
+              "caption": "Kiểm tra màu của 3 hành tinh trung tâm"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-explicator-damage-phase.jpg",
+              "caption": "Damage Phase: Đứng trên đĩa cùng màu với khiên Boss"
+            }
+          ],
           "steps": [
-            "Sau khi đổi chỗ xong, 3 cái chảo lớn ở giữa phòng sẽ sáng lên màu ngẫu nhiên (Ví dụ: Sáng - Sáng - Tối).",
-            "Mover nhìn màu chảo, chạy về bệ của mình nhặt hành tinh ĐÚNG MÀU ĐÓ, rồi chạy ra giữa thả vào cái chảo tương ứng.",
-            "Khi nạp đủ 3 chảo, Damage Phase bắt đầu. Boss Explicator sẽ tạo ra một vũng khiên màu Sáng hoặc Tối. Team PHẢI dẫm lên cái chảo CÙNG MÀU với cái khiên của Boss mới bắn hắn mất máu được.",
-            "Khi Boss đổi màu khiên, team lập tức di chuyển sang chảo màu khác. Xả sát thương hết cỡ (Thundercrash, Rocket)."
+            "Dọn quái và giết Lieutenants một lần nữa để nhận lại buff Planetary Insight.",
+            "Lúc này, người có buff hãy nhìn vào 3 hành tinh ở TRUNG TÂM phòng. Chúng sẽ có 2 Sáng 1 Tối hoặc 2 Tối 1 Sáng.",
+            "3 Mover hãy chạy ra các bệ ở hai bên, lấy 3 hành tinh có màu TƯƠNG ỨNG với màu của 3 hành tinh trung tâm (Lưu ý: giờ đây Trái đã full Sáng và Phải đã full Tối), và đem thả vào 3 cái đĩa (plate) ở giữa phòng ngay dưới các hành tinh trung tâm.",
+            "Ngay khi nạp đủ 3 đĩa, Damage Phase bắt đầu. Zo'Aurc sẽ tạo ra một vũng khiên màu Sáng hoặc Tối.",
+            "Cả team PHẢI ĐỨNG VÀO CÁI ĐĨA CÙNG MÀU với khiên của Boss mới có thể bắn hắn mất máu. Đừng quên phải bắn đủ lượng damage để chạm được cái vạch khấc trên thanh máu của Boss (Nếu không sẽ không thể dùng hết các đĩa).",
+            "Khi Boss báo Immune, di chuyển sang đĩa màu tiếp theo để tiếp tục bắn. Lặp lại quá trình trên cho đến Final Stand."
           ]
         }
       }
@@ -214,23 +258,29 @@
     {
       "id": "nezarec-final-god-of-pain",
       "name": "Nezarec, Final God of Pain",
+      "images": [
+        {
+          "url": "/images/raids/root-of-nightmares/RON_4S.jpg",
+          "caption": "Nezarec, Vị Thần Đau Khổ"
+        }
+      ],
       "roles": {
         "runners": {
-          "description": "2 người chạy nối mạng lưới Ánh sáng và Bóng tối.",
+          "description": "2 người chạy mạng lưới Ánh Sáng và Bóng Tối song song.",
           "quantity": 2,
           "types": [
             "Runner"
           ]
         },
-        "gaze_handler": {
-          "description": "1-2 người lấy Aggro của Nezarec, bắn gãy vai và ngực.",
+        "gaze_handlers": {
+          "description": "Bắn gãy vai và ngực của Nezarec, thu hút sự chú ý của hắn.",
           "quantity": 2,
           "types": [
             "Aggro"
           ]
         },
         "add_clear": {
-          "description": "Dọn dẹp quái và Colossus.",
+          "description": "Tiêu diệt quái vật xung quanh.",
           "quantity": 2,
           "types": [
             "Add Clear"
@@ -240,27 +290,95 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Nối mạng lưới đôi và Tránh Wipe (Refuge)",
-          "objective": "2 Runner phải nối thành công 2 hệ thống rễ (Ánh sáng và Bóng tối).",
+          "name": "Giai đoạn 1: Nối mạng lưới đôi và Tạo Hầm Trú Ẩn (Refuge)",
+          "objective": "Hoàn thành 2 đường nối Sáng/Tối và sống sót qua đòn Wipe của Nezarec.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-nezarec-roaming.jpg",
+              "caption": "Bắn gãy ngực Nezarec để lấy Aggro"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-nezarec-wipe-mechanic.jpg",
+              "caption": "Trú ẩn khỏi đòn Wipe của Nezarec"
+            }
+          ],
           "steps": [
-            "Runner Sáng và Runner Tối xuất phát ở đầu map, chạy nối từng mầm một y hệt ải Scission. Càng nhanh càng tốt.",
-            "Trong lúc đó, Nezarec sẽ bắn hỏa lực liên tục. Gaze Handlers phải thu hút sự chú ý của hắn: Bắn vỡ 2 cái VAI phát sáng của hắn, sau đó bắn vỡ LỒNG NGỰC.",
-            "Khi lồng ngực vỡ, hắn sẽ tỏa ra tia sáng báo hiệu HỆ THỐNG WIPE (Màu Sáng hoặc Màu Tối). Gaze Handler phải hô to màu đó lên (Ví dụ: 'Nó báo Wipe Ánh Sáng!').",
-            "Cơ chế tạo hầm trú ẩn (Refuge): Nếu Nezarec chuẩn bị Wipe bằng Ánh Sáng -> Runner Bóng tối phải lấy 1 buff Bóng Tối đem sang bắn vào 1 mầm Ánh Sáng (tạo ra Aura trú ẩn màu Cam Đen). Nếu Nez chuẩn bị Wipe Bóng tối -> Runner Ánh sáng mang buff Ánh sáng sang đập vào mầm Bóng tối (Aura Trắng).",
-            "Khi Nezarec phóng đòn Wipe, tất cả mọi người chạy vào cái hầm trú ẩn đó đứng sẽ không bị chết."
+            "2 Runner xuất phát và tiến hành nối các Node Ánh Sáng (Bên trái) và Bóng Tối (Bên phải) nhanh nhất có thể (Giống như ở Scission).",
+            "Trong lúc đó, Nezarec sẽ đứng trên bục. Đội Gaze Handlers phải bắn vỡ 2 điểm sáng trên VAI của hắn, rồi bắn vỡ LỒNG NGỰC để thu hút sự chú ý (Aggro). Hắn sẽ nhảy xuống và bắt đầu truy sát người có Aggro.",
+            "Khi lồng ngực vỡ, hắn sẽ tỏa ra một luồng sáng (Màu Trắng hoặc Màu Cam). Đội Gaze Handler phải hô to màu này vì nó báo hiệu loại đòn Wipe hắn sắp tung ra.",
+            "TẠO REFUGE: Nếu Nezarec sáng Trắng (Wipe bằng Ánh Sáng) -> Runner Bóng Tối phải lấy 1 buff Tối sang bắn vào 1 Node Sáng để tạo hào quang bảo vệ Darkness's Refuge. Nếu Nezarec sáng Cam (Wipe Bóng Tối) -> Runner Ánh Sáng lấy buff Sáng sang đập vào Node Tối tạo Light's Refuge.",
+            "Khi Nezarec chuẩn bị tung đòn Wipe, tất cả phải chạy vào vùng Refuge đó để lấy buff bảo vệ (15 giây). Nếu 2 Runner nối Node CỰC NHANH, có thể bỏ qua hoàn toàn bước tạo Refuge này."
           ]
         },
         "phase_2": {
           "name": "Giai đoạn 2: Damage Phase",
-          "objective": "Khi cả 2 đường rễ Sáng và Tối được nối xong hoàn toàn.",
+          "objective": "Kết liễu Nezarec.",
+          "images": [
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-nezarec-damage.jpg",
+              "caption": "Tụ tập trên bục cao để né sát thương và dồn damage"
+            }
+          ],
           "steps": [
-            "Một tia năng lượng khổng lồ bắn ra từ các mầm cây bắn thẳng vào Nezarec, phá vỡ sự bất tử của hắn.",
-            "Cả team tụ tập trên một bề mặt cao (như chiếc lá hoặc bệ đá an toàn), cắm Well of Radiance.",
-            "Nezarec sẽ nhảy xổ tới và chém điên cuồng. Xả đạn liên tục vào hắn. Hạn chế dùng Rocket vì hắn áp sát rất dễ tự chết, dùng Thunderlord, súng máy, Linear Fusion hoặc Grenade Launcher.",
-            "Final Stand: Khi vạch máu xuống cuối, hắn gọi wipe lần cuối. Dồn toàn lực kết liễu vị thần đau khổ trước khi mọi thứ nổ tung."
+            "Khi cả 2 đường Sáng và Tối được nối xong, một tia laser khổng lồ sẽ bắn vào Nezarec, báo hiệu hắn đã có thể nhận sát thương.",
+            "Cả team tập hợp trên một chiếc lá hoặc một bục an toàn để né đòn cận chiến của hắn. Cắm Well of Radiance và thả Debuff (Tether, Void grenade).",
+            "Nezarec di chuyển rất nhiều, vì vậy dùng Thunderlord, súng máy, Gjallarhorn hoặc tên lửa có khóa mục tiêu là cách an toàn và hiệu quả nhất.",
+            "Khi hắn Immune, tản ra và lặp lại toàn bộ quá trình.",
+            "Final Stand: Dồn mọi Super và Heavy Ammo bạn còn lại để thổi bay chút máu cuối cùng của Nezarec trước khi bị Wipe."
           ]
         }
       }
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Red Border Chest (Rương vũ khí đỏ)",
+      "description": "Để lấy được rương chứa vũ khí đỏ (Deepsight) chắc chắn rớt ra sau khi đánh bại Nezarec, bạn cần ghi nhớ một dãy 3 hạt giống ở đầu Raid và kích hoạt 3 hạt giống rải rác trong suốt quá trình đi Raid.",
+      "images": [
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-nezarec-extra-chest-reference-nodes-flower.jpg",
+          "caption": "Dãy 3 hạt giống để đọc mã màu đầu Raid"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-nezarec-extra-chest-node-room-1.jpg",
+          "caption": "Phòng hạt giống 1 (Trước ải Cataclysm)"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-nezarec-extra-chest-node-room-2.jpg",
+          "caption": "Phòng hạt giống 2 (Trước ải Scission)"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-nezarec-extra-chest-node-room-3.jpg",
+          "caption": "Phòng hạt giống 3 (Trước ải Macrocosm)"
+        }
+      ],
+      "steps": [
+        "**Đọc mã màu:** Ngay lúc mới vào Raid, sau khi gặp bông hoa (Node) đầu tiên, hãy nhìn xuống phía dưới. Sẽ có 3 hạt giống xếp hàng ngang, mang năng lượng Sáng (Light) hoặc Tối (Dark). Hãy ghi nhớ thứ tự này từ trái sang phải (VD: Sáng - Tối - Sáng).",
+        "**Hạt giống 1 (Trước ải 1):** Nằm ở khu vực có nhiều rễ cây trước khi vào Cataclysm. Tìm một góc nhỏ rẽ vào trong, bạn sẽ thấy 2 bông hoa Sáng và Tối. Đứng vào Aura tương ứng với màu số 1 của bạn và bắn vào hạt giống để nối chúng lại.",
+        "**Hạt giống 2 (Trước ải 2):** Trong đoạn Jumping Puzzle, sau khi ra khỏi phòng giết Tormentor, đi tiếp và nhảy qua những bậc thang tàng hình. Tìm phòng bí mật chứa hoa và kích hoạt hạt giống mang màu số 2.",
+        "**Hạt giống 3 (Trước ải 3):** Ở đoạn nhảy các Piston đẩy, trước khi leo lên thẳng khu vực Boss, hãy tìm một phòng bí mật dưới mái hiên. Kích hoạt hạt giống mang màu số 3. Nếu làm đúng cả 3 hạt, dòng chữ 'A great harvest awaits' sẽ hiện ra.",
+        "**Nhận thưởng:** Đánh bại Nezarec xong, một rương phụ chứa vũ khí Red Border sẽ xuất hiện bên cạnh rương chính."
+      ]
+    },
+    {
+      "title": "Secret Chest 1 (Rương ẩn 1)",
+      "description": "Nằm ở khu vực mê cung rễ cây trước khi vào ải 2 (Scission).",
+      "steps": [
+        "Sau khi qua ải Cataclysm, bạn sẽ đi tới một khu vực mê cung có nhiều đợt quái và xuất hiện một Tormentor.",
+        "Giết Tormentor để mở cửa. Từ chỗ Tormentor, đi vòng ra sau, nhảy lên phía trên rễ cây rẽ nhánh sang tay phải.",
+        "Tiếp tục men theo lối hẹp, bạn sẽ thấy một viên pha lê lơ lửng (Crux). Bắn vào viên pha lê để mở cánh cửa bên cạnh.",
+        "Vào trong lấy rương ẩn đầu tiên."
+      ]
+    },
+    {
+      "title": "Secret Chest 2 (Rương ẩn 2)",
+      "description": "Nằm ở khu vực nhảy Piston trước khi vào ải 3 (Macrocosm).",
+      "steps": [
+        "Tại khu vực Jumping Puzzle thứ hai (nơi bạn dùng các Piston đẩy để băng qua lại giữa các hòn đảo).",
+        "Tại một hòn đảo có cái bệ hình vuông (cùng phía với hướng đi lên), thay vì dùng Piston để bay tiếp sang bên kia, hãy nhìn thẳng sang bên kia hòn đảo cùng phía của bạn.",
+        "Có một cách cửa bị khóa ẩn trong bóng tối. Tìm một viên pha lê (Crux) lơ lửng gần đó, bắn nó để mở cửa.",
+        "Nhảy qua vực vào cửa đó để nhận rương ẩn số 2."
+      ]
     }
   ]
 }

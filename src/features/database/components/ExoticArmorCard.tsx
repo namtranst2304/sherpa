@@ -52,7 +52,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
           
           <div className="flex gap-3 items-start p-3 rounded bg-black/30 border border-zinc-800/50">
             {traitIconUrl && (
-              <img src={traitIconUrl} alt={armor.trait.name} className="w-8 h-8 rounded-sm shrink-0" />
+              <Image src={traitIconUrl} alt={armor.trait.name} width={32} height={32} className="rounded-sm shrink-0" unoptimized />
             )}
             <div className="flex flex-col flex-1">
               <span className="font-bold text-white mb-1">{armor.trait.name}</span>
@@ -68,7 +68,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
                       <div className="flex flex-col gap-4">
                         {armor.trait.perkPool.column1.map((perk, i) => (
                           <div key={i} className="flex gap-3">
-                            {perk.icon && <img src={`https://www.bungie.net${perk.icon}`} alt={perk.name} className="w-8 h-8 rounded shrink-0 bg-black" />}
+                            {perk.icon && <Image src={`https://www.bungie.net${perk.icon}`} alt={perk.name} width={32} height={32} className="rounded shrink-0 bg-black" unoptimized />}
                             <div className="flex flex-col">
                               <span className="text-sm font-bold text-zinc-200">{perk.name}</span>
                               <span className="text-xs text-zinc-500 leading-relaxed">{perk.description}</span>
@@ -82,7 +82,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
                       <div className="flex flex-col gap-4">
                         {armor.trait.perkPool.column2.map((perk, i) => (
                           <div key={i} className="flex gap-3">
-                            {perk.icon && <img src={`https://www.bungie.net${perk.icon}`} alt={perk.name} className="w-8 h-8 rounded shrink-0 bg-black" />}
+                            {perk.icon && <Image src={`https://www.bungie.net${perk.icon}`} alt={perk.name} width={32} height={32} className="rounded shrink-0 bg-black" unoptimized />}
                             <div className="flex flex-col">
                               <span className="text-sm font-bold text-zinc-200">{perk.name}</span>
                               <span className="text-xs text-zinc-500 leading-relaxed">{perk.description}</span>
@@ -106,7 +106,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
                           {/* Column 1 Perk */}
                           {perk1 ? (
                             <div className="flex gap-3">
-                              {perk1.icon && <img src={`https://www.bungie.net${perk1.icon}`} alt={perk1.name} className="w-8 h-8 rounded shrink-0 bg-black shadow-md border border-zinc-700/50" />}
+                              {perk1.icon && <Image src={`https://www.bungie.net${perk1.icon}`} alt={perk1.name} width={32} height={32} className="rounded shrink-0 bg-black shadow-md border border-zinc-700/50" unoptimized />}
                               <div className="flex flex-col">
                                 <span className="text-sm font-bold text-zinc-200">{perk1.name}</span>
                                 <span className="text-xs text-zinc-500 leading-relaxed">{perk1.description}</span>
@@ -117,7 +117,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
                           {/* Column 2 Perk */}
                           {perk2 ? (
                             <div className="flex gap-3">
-                              {perk2.icon && <img src={`https://www.bungie.net${perk2.icon}`} alt={perk2.name} className="w-8 h-8 rounded shrink-0 bg-black shadow-md border border-zinc-700/50" />}
+                              {perk2.icon && <Image src={`https://www.bungie.net${perk2.icon}`} alt={perk2.name} width={32} height={32} className="rounded shrink-0 bg-black shadow-md border border-zinc-700/50" unoptimized />}
                               <div className="flex flex-col">
                                 <span className="text-sm font-bold text-zinc-200">{perk2.name}</span>
                                 <span className="text-xs text-zinc-500 leading-relaxed">{perk2.description}</span>
