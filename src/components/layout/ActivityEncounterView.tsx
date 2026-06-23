@@ -78,19 +78,28 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
             description={activityData.preface?.author_notes || "Hướng dẫn chi tiết cơ chế chiến đấu"}
             mechanics={
               <div className="space-y-6">
-                {Object.entries(activeEncounter!.walkthrough || {}).map(([phaseKey, phaseVal]: [string, ActivityEncounterPhase], index) => {
-                  const phaseTitle = phaseVal.name || phaseKey.toUpperCase()
-                  const phaseObjective = phaseVal.objective
-                  const steps = phaseVal.steps || phaseVal.details || []
-                  return (
-                    <CyberCard key={phaseKey} variant="zinc" withCorners className="flex flex-col gap-2">
-                      <h3 className="text-xl font-bold text-neon-cyan mb-3 flex items-center gap-3 text-glow-cyan">
-                        <CyberBadge variant="cyan">
-                          {index + 1}
-                        </CyberBadge>
-                        {phaseTitle}
-                      </h3>
-                      {phaseObjective && (
+                {(() => {
+                  const walkthroughEntries = Object.entries(activeEncounter!.walkthrough || {})
+                  const hasMultiplePhases = walkthroughEntries.length > 1
+
+                  return walkthroughEntries.map(([phaseKey, phaseVal]: [string, ActivityEncounterPhase], index) => {
+                    let phaseTitle = phaseVal.name || phaseKey.toUpperCase()
+                    if (!hasMultiplePhases) {
+                      phaseTitle = phaseTitle.replace(/^(Giai đoạn 1:\s*|Phase 1:\s*)/i, '')
+                    }
+                    const phaseObjective = phaseVal.objective
+                    const steps = phaseVal.steps || phaseVal.details || []
+                    return (
+                      <CyberCard key={phaseKey} variant="zinc" withCorners className="flex flex-col gap-2">
+                        <h3 className="text-xl font-bold text-neon-cyan mb-3 flex items-center gap-3 text-glow-cyan">
+                          {hasMultiplePhases && (
+                            <CyberBadge variant="cyan">
+                              {index + 1}
+                            </CyberBadge>
+                          )}
+                          {phaseTitle}
+                        </h3>
+                        {phaseObjective && (
                         <p className="text-muted-foreground italic mb-4 border-l-2 border-neon-cyan pl-4 py-1 text-sm bg-neon-cyan/5 rounded-r-lg">
                           Mục tiêu: {phaseObjective}
                         </p>
@@ -124,7 +133,8 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                       )}
                     </CyberCard>
                   )
-                })}
+                })
+              })()}
               </div>
             }
             map={

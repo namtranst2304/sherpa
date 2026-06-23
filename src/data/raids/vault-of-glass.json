@@ -1,53 +1,147 @@
 {
   "raid_name": "Vault of Glass",
   "active_orbit": "Venus",
+  "preface": {
+    "formatting_rules": "Tất cả các cơ chế quan trọng (Mechanics), hiệu ứng bùa chú (Buffs/Debuffs) và thuật ngữ giao tiếp (Callouts) sẽ được làm nổi bật để bạn dễ dàng nắm bắt trước khi bước vào thực chiến.",
+    "non_linear_mechanic": {
+      "description": "Vault of Glass là một trong những Raid lâu đời nhất của Destiny, với thiết kế tuyến tính thuần túy. Bạn sẽ phải đi sâu dần vào trung tâm của cỗ máy Vex khổng lồ dưới lòng đất sao Kim. Điểm đặc biệt là sự xuất hiện của khiên thần khí (The Aegis) được luân chuyển sử dụng ở nhiều ải khác nhau.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Vault of Glass có thiết kế map khá rộng, các mục tiêu (Oracles, Boss) thường nằm ở khoảng cách vừa và xa. Do đó, súng máy (Machine Guns), súng trường thiện xạ (Sniper Rifles) và đặc biệt là súng Fusion hạng nặng Xenophage là những lựa chọn tỏa sáng nhất ở Raid này.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Kỹ năng tối thượng mang tính sống còn cho mọi pha Damage Phase (Templar, Atheon). Một mẹo nhỏ cho ải Atheon là Warlock có thể thả Well trên một khối đá nổi giữa không trung ngay giữa bản đồ để cả team đứng DPS vô cùng an toàn mà không sợ đám Harpy ném bom tự sát phá đám."
+        },
+        {
+          "name": "Needlestorm / Nova Bomb",
+          "utility": "Cực kỳ hiệu quả để dọn dẹp bầy quái Vex đông đúc (Minotaurs, Goblins) ở ải Confluxes và Gatekeepers."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Sunbracers",
+          "recommendation": "Kích hoạt hiệu ứng và ném lựu đạn mặt trời tràn ngập cả bản đồ, một mình bạn có thể thủ hoàn toàn một hướng quái đẻ ra ở ải Confluxes mà không cần ai phụ giúp."
+        },
+        {
+          "name": "Osmiomancy Gloves",
+          "recommendation": "Đóng băng (Freeze) mọi thứ trong tầm mắt. Cực kỳ hiệu quả để khống chế đám Praetorians cứng đầu ở ải Gatekeepers và Confluxes."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Thundercrash",
+          "utility": "Sự lựa chọn ưu tiên hàng đầu cho Damage Phase (DPS). Bạn có thể bay thẳng từ bệ đá trung tâm đâm sầm vào mặt Atheon để tạo ra lượng sát thương sốc (Burst damage) khổng lồ."
+        },
+        {
+          "name": "Ward of Dawn",
+          "utility": "Dành cho người phụ trách cầm khiên The Aegis (Relic Holder). Bạn có thể đặt bong bóng Ward of Dawn ngay tại vị trí vòng tròn đỏ mà Templar chuẩn bị dịch chuyển (Teleport) tới để đứng bên trong an toàn chặn đường nó."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Cuirass of the Falling Star",
+          "recommendation": "Exotic bắt buộc phải mang nếu bạn chơi Thundercrash. Nó gia tăng tới 55% sát thương bay đụng của bạn."
+        },
+        {
+          "name": "Heart of Inmost Light",
+          "recommendation": "Sạc kỹ năng liên tục để dọn quái linh hoạt trong suốt toàn bộ thời gian của Raid."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Golden Gun (Marksman)",
+          "utility": "Atheon có một điểm yếu chí mạng (Crit spot) cực kỳ to ở ngay trước ngực. Golden Gun bắn chính xác vào đây sẽ rút một lượng máu cực lớn của Boss."
+        },
+        {
+          "name": "Shadowshot (Deadfall)",
+          "utility": "Gắn mũi tên trói chân (Tether) ở ngay lối ra của bầy Vex tại ải Confluxes. Bạn sẽ tạo ra vô vàn Orbs of Power cho team."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Celestial Nighthawk",
+          "recommendation": "Kết hợp hoàn hảo với Golden Gun. Nén 3 phát bắn thành 1 phát bắn duy nhất với sát thương hủy diệt (thường đạt max cap 999,999 sát thương) lên người Atheon."
+        },
+        {
+          "name": "Orpheus Rig",
+          "recommendation": "Hồi lại 50% thanh Super ngay lập tức khi Tether trói được nhiều quái, giúp bạn bắn Shadowshot liên tục không ngừng nghỉ."
+        }
+      ]
+    }
+  },
   "encounters": [
     {
-      "name": "Waking Ruins (Opening the Spire)",
+      "id": "waking-ruins-opening-the-spire",
+      "name": "Waking Ruins (Mở cổng The Spire)",
       "roles": {
         "plate_defenders": {
-          "description": "Bảo vệ bệ không cho Minotaur xâm nhập.",
+          "description": "Đứng trấn thủ trong khu vực bệ (Sync Plate) và không cho bất kỳ con Vex nào, đặc biệt là Praetorian, bước vào bệ.",
           "quantity": 6,
           "types": [
-            "Void Weapons",
-            "Overload"
+            "Add Clear",
+            "Heavy Weapons"
           ]
         }
       },
       "secrets": [],
-      "id": "waking-ruins-opening-the-spire",
       "walkthrough": {
         "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Chia 6 người ra làm 3 nhóm (Trái, Giữa, Phải). Nhiệm vụ của mỗi nhóm là đứng chiếm 3 bệ Vex (Sync Plates) để giữ cho chúng luôn hiển thị màu trắng và hình thành vòng tròn hoàn chỉnh (Spire).",
+          "name": "Giai đoạn 1: Chia đội hình chiếm bệ",
+          "objective": "Khu vực ngoài trời có 3 bệ Vex (Sync Plates) tương ứng với 3 hướng: Trái, Giữa, Phải. Fireteam 6 người cần chia làm 3 nhóm, mỗi nhóm 2 người để trấn giữ.",
           "steps": [
-            "Mỗi nhóm 2 người di chuyển về 3 bệ (Sync Plates): Trái, Giữa, Phải.",
-            "Đứng trong bệ cho đến khi vòng tròn chuyển sang màu trắng hoàn toàn (chiếm quyền kiểm soát).",
-            "Tiêu diệt tất cả Vex, đặc biệt là bọn Praetorians (Minotaurs có giáp Void) vì nếu chúng bước vào bệ, bệ sẽ bị mất kiểm soát và đổi màu.",
-            "Giữ cả 3 bệ không bị gián đoạn cho đến khi tòa tháp Spire ở giữa được xây xong hoàn toàn và cửa hầm mở ra."
+            "Các nhóm di chuyển về vị trí bệ được phân công. Mỗi người bước vào bệ và đứng yên bên trong cho đến khi viền tròn của bệ chuyển sang màu trắng hoàn toàn (chiếm quyền kiểm soát).",
+            "Ngay khi cả 3 bệ được chiếm, một trụ tháp (The Spire) ở giữa khu vực sẽ bắt đầu hình thành từ từ bằng các vòng năng lượng Vex.",
+            "Lưu ý: Bạn không cần phải liên tục đứng trong bệ sau khi nó đã trắng. Bạn có thể đứng bên ngoài để tiện bắn quái, miễn là không có con Vex nào chạm vào bệ."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Cản bước Praetorians",
+          "objective": "Lũ Vex Minotaur tinh anh gọi là Praetorians (có khiên Void) sẽ liên tục hành quân hướng về các bệ.",
+          "steps": [
+            "Nếu một con Praetorian bước chân vào bệ, bệ sẽ ngay lập tức đổi màu sang đỏ (Bị mất kiểm soát).",
+            "Khi bệ bị đỏ, quá trình xây dựng tháp Spire ở giữa sẽ bị gián đoạn và các vòng năng lượng sẽ từ từ tiêu biến, đồng nghĩa với việc bạn sẽ phải mất nhiều thời gian hơn để mở cửa.",
+            "Bạn phải giết con Praetorian trong bệ, sau đó người chơi bước lại vào bệ để biến nó thành màu trắng lại.",
+            "Giữ vững cả 3 bệ trong khoảng 3-5 phút cho đến khi The Spire hoàn tất, một tia sáng bắn ra mở toang cánh cửa dưới lòng đất."
           ]
         }
       }
     },
     {
+      "id": "confluxes",
       "name": "Confluxes",
       "roles": {},
       "secrets": [],
-      "id": "confluxes",
       "walkthrough": {
         "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Bảo vệ các trụ Vex (Confluxes) khỏi sự hiến tế của lũ Fanatics (Vex cụt đầu). Nếu chúng hiến tế thành công quá nhiều (khoảng 4 con), cả team sẽ chết (wipe).",
+          "name": "Giai đoạn 1: Bảo vệ các Confluxes",
+          "objective": "Ngăn chặn bầy quái Vex Fanatics (những con Vex mất đầu, chảy dịch xanh lá) hiến tế (Sacrifice) vào các cột năng lượng (Confluxes).",
           "steps": [
-            "Phase 1: Bảo vệ 1 Conflux ở Giữa.",
-            "Phase 2: Bảo vệ 2 Conflux ở Trái và Phải.",
-            "Phase 3: Bảo vệ 3 Conflux cùng lúc (Trái, Giữa, Phải).",
-            "Lưu ý bãi độc: Fanatics chết sẽ để lại bãi độc xanh (Mark of Negation). Nếu đạp trúng, bạn phải nhảy xuống hố sáng ở giữa map (Cleanse) trước khi Templar cast Ritual of Negation, nếu không sẽ chết."
+            "Ải này chia làm 3 đợt. Đợt 1 sẽ có 1 cột Conflux xuất hiện ở giữa. Đợt 2 có 2 cột (Trái, Phải). Đợt cuối có 3 cột (Trái, Giữa, Phải).",
+            "Fireteam chia nhau ra để đứng phòng thủ quanh các cột. Đừng để cho bọn Fanatics đi thẳng vào chạm vào cột, nếu không chúng sẽ 'Hiến tế'.",
+            "Nếu có quá nhiều quái vật hiến tế thành công (khoảng 4 con), cả team sẽ bị Wipe (chết sạch)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Cơ chế Mark of Negation",
+          "objective": "Khi tiêu diệt Fanatics, chúng sẽ nổ và để lại một vũng dịch xanh lá cây dưới đất.",
+          "steps": [
+            "Nếu bạn vô tình dẫm vào vũng dịch xanh này, màn hình của bạn sẽ ngập trong ánh sáng xanh và góc trái hiện dòng chữ 'Mark of Negation'.",
+            "Cứ cách một khoảng thời gian, Boss Templar ở giữa bản đồ sẽ gọi chiêu 'Ritual of Negation'. BẤT KỲ AI đang mang debuff Mark of Negation trên người sẽ nổ tung và chết ngay lập tức.",
+            "Cách giải debuff: Ở khu vực thấp nhất giữa bản đồ, có một bệ đá tròn phát ra cột sáng màu trắng rực rỡ (gọi là vũng Cleanse). Nếu bị dính Mark, hãy hô to cho đồng đội biết, nhảy xuống chạy vào trong cột sáng đó để gột rửa (Cleanse) bản thân."
           ]
         }
       }
     },
     {
+      "id": "oracles",
       "name": "Oracles",
       "roles": {
         "oracle_readers": {
@@ -60,182 +154,197 @@
         }
       },
       "secrets": [],
-      "id": "oracles",
       "walkthrough": {
         "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Các cục sáng (Oracles) sẽ xuất hiện theo một thứ tự nhất định, sau đó biến mất và xuất hiện lại. Team phải bắn vỡ chúng chính xác theo thứ tự mà chúng vừa kêu leng keng.",
+          "name": "Giai đoạn 1: Xác định vị trí Oracles",
+          "objective": "Có tổng cộng 7 vị trí mà Oracles (các cục năng lượng phát sáng màu vàng) có thể xuất hiện. Team cần thống nhất tên gọi (Callouts) cho chúng.",
           "steps": [
-            "Lắng nghe và quan sát: Sẽ có tổng cộng 5 đợt (Waves) Oracles xuất hiện theo thứ tự (từ 3 cục đến 7 cục).",
-            "Gọi tên (Callout): Khi Oracles hiện nháp, người phụ trách khu vực đó phải đọc vị trí của nó theo thứ tự (ví dụ: L1, L2, R1, Mid...).",
-            "Bắn Oracles: Sau khi nó hiện nháp xong, chúng sẽ hiện đỏ lại. Người chơi dùng súng (sniper/xenophage) bắn vỡ Oracles chính xác theo thứ tự đã gọi.",
-            "Nếu bắn sai thứ tự: Toàn team sẽ bị dính Mark of Negation. Mọi người phải nhảy xuống giữa để Cleanse ngay trước khi bị Templar giết."
+            "Cách gọi phổ biến nhất là chia theo khu vực: L1, L2, L3 (Bên trái: Gần, Giữa, Xa) - Mid (Giữa) - R1, R2, R3 (Bên phải: Gần, Giữa, Xa).",
+            "Chia mỗi người canh giữ 1-2 vị trí. Trang bị vũ khí như Xenophage (bắn 1 viên vỡ 1 Oracle) hoặc Sniper Rifle."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Lắng nghe và tiêu diệt",
+          "objective": "Sẽ có 5 đợt (Waves) Oracles. Đợt 1 hiện 3 cục, đợt 2 hiện 4 cục, tăng dần cho đến đợt 5 hiện 7 cục.",
+          "steps": [
+            "Mở đầu mỗi đợt, tiếng chuông 'Leng keng' sẽ vang lên. Oracles sẽ hiện ra nháp (trong suốt) TỪNG CỤC MỘT theo một thứ tự nhất định. Người canh giữ khu vực nào thấy Oracle của mình sáng lên phải hô to vị trí đó (Ví dụ: L1... rồi đến R3... rồi đến Mid).",
+            "Sau khi hiển thị nháp xong chuỗi thứ tự, TẤT CẢ Oracles sẽ hiện ra màu vàng rực cùng một lúc.",
+            "Bây giờ, team phải bắn vỡ chúng THEO ĐÚNG THỨ TỰ mà chúng vừa hiện nháp lúc nãy.",
+            "Hình phạt: Nếu bắn sai thứ tự, bắn quá chậm, hoặc bắn nhầm, toàn team sẽ bị đánh dấu 'Mark of Negation'. Ngay lập tức, tất cả mọi người phải bỏ vị trí, cắm đầu nhảy xuống vũng sáng ở giữa bản đồ để Cleanse trước khi Templar gọi chiêu (khoảng 5 giây). Sau khi Cleanse, bạn sẽ phải làm lại đợt Wave đó."
           ]
         }
       }
     },
     {
+      "id": "the-templar",
       "name": "The Templar",
       "roles": {
         "relic_holder": {
           "description": "Cầm khiên Aegis, gồng Super phá khiên Boss và Cleanse đồng đội.",
-          "quantity": 1
+          "quantity": 1,
+          "types": [
+            "Runner"
+          ]
         },
-        "teleport_blocker": {
-          "description": "Đứng vào vòng đỏ để chặn Boss dịch chuyển.",
-          "quantity": 1
+        "dps_team": {
+          "description": "Tập trung hỏa lực bắn Boss và bắn Oracles.",
+          "quantity": 5,
+          "types": [
+            "Heavy Weapons"
+          ]
         }
       },
       "secrets": [],
-      "id": "the-templar",
       "walkthrough": {
         "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Boss Templar có khiên bất tử. Một người cầm khiên The Aegis (Relic) dùng chiêu cuối (Super) bắn vào Boss để phá khiên, giúp team gây sát thương.",
+          "name": "Giai đoạn 1: Chuẩn bị và Xử lý Oracles",
+          "objective": "Boss Templar có một lớp khiên bảo vệ bất tử không thể xuyên thủng bằng vũ khí thông thường.",
           "steps": [
-            "Relic Holder nhặt khiên The Aegis lên để bắt đầu.",
-            "Team tiêu diệt Oracles ngay khi chúng xuất hiện (chỉ hiện 3 cục ngẫu nhiên). Nếu không bắn kịp sẽ bị Mark, Relic holder phải dùng nút Chắn (Block) để gột rửa (Cleanse) cho team.",
-            "Khi Relic Holder có Super, báo cho team chuẩn bị. Bắn Super vào Templar để phá khiên.",
-            "Damage Phase: Cả team đứng tập trung bắn Boss. Templar sẽ cố gắng dịch chuyển (Teleport) bằng cách hiện vòng đỏ dưới đất.",
-            "Chặn Teleport (Tùy chọn): Có người đứng vào vòng tròn đỏ để chặn Boss teleport. Việc này giúp kéo dài thời gian gây sát thương, nhưng Boss sẽ triệu hồi Minotaur liên tục."
+            "Bắt đầu ải bằng việc cử 1 người (Relic Holder) nhảy xuống giữa map nhặt khiên thần khí The Aegis lên.",
+            "Trong suốt ải, hệ thống Oracles sẽ xuất hiện (3 cục ngẫu nhiên). Tuy nhiên, lần này chúng chỉ hiện ra 1 lần duy nhất, không hiện nháp báo trước thứ tự.",
+            "Ngay khi nghe tiếng chuông, 5 người còn lại phải nhanh chóng tìm và bắn nổ cả 3 cục Oracles thật lẹ. Nếu bắn chậm, cả team sẽ dính Mark of Negation. Tuy nhiên vũng sáng dưới đất đã biến mất. Lúc này, người cầm khiên (Relic Holder) phải bấm nút Đỡ đòn (Block/Guard) tạo ra bong bóng khiên, mọi người phải chui vào đó để được Cleanse."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Phá Khiên và Damage Phase",
+          "objective": "Người cầm khiên tích đầy thanh Super, bắn năng lượng vào Templar để phá khiên của hắn.",
+          "steps": [
+            "Khi thanh Super của người cầm khiên đầy, báo cho cả team: 'Chuẩn bị phá khiên'.",
+            "Bấm chiêu cuối (Super) bắn quả cầu ánh sáng thẳng vào người Templar. Khiên của hắn vỡ nát, Damage Phase bắt đầu.",
+            "Toàn team (thường tụ tập ở bục cao bên phải hoặc trái) thả Well of Radiance và xả đạn hỏa lực mạnh nhất (Rocket/Linear) vào mặt Boss."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Ngăn chặn Teleport (Tùy chọn nhưng khuyến khích)",
+          "objective": "Kéo dài thời gian Damage Phase lâu nhất có thể bằng cách không cho Boss dịch chuyển.",
+          "steps": [
+            "Ngay khi mất khiên, Templar sẽ cố gắng dịch chuyển (Teleport). Dưới sàn sẽ xuất hiện một vòng tròn màu đỏ với cột sáng trắng.",
+            "Một người chơi (thường là người cầm khiên) phải chủ động nhảy vào ĐỨNG BÊN TRONG vòng tròn đỏ đó. Vòng tròn sẽ chuyển thành màu xanh dương và Templar sẽ thất bại trong việc dịch chuyển.",
+            "Khi Templar bị chặn dịch chuyển, hắn sẽ tiếp tục đứng yên chịu trận, Damage Phase vẫn được tiếp diễn! Cứ thế người chặn tiếp tục chạy đi chặn vòng đỏ tiếp theo.",
+            "Lưu ý: Đổi lại việc chặn Teleport, Boss sẽ liên tục đẻ ra các con Minotaurs tinh anh rất rát. Team DPS phải chú ý sống sót và quăng lựu đạn dọn bớt quái."
           ]
         }
       }
     },
     {
+      "id": "gorgons-labyrinth",
       "name": "Gorgons' Labyrinth",
       "roles": {},
       "secrets": [],
-      "id": "gorgons-labyrinth",
       "walkthrough": {
         "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Khu vực tàng hình. Tránh ánh nhìn của bọn Harpy phát sáng (Gorgons). Nếu bị nhìn thấy, cả team sẽ wipe.",
+          "name": "Giai đoạn 1: Trốn tìm trong bóng tối",
+          "objective": "Một bài kiểm tra kỹ năng lén lút (Stealth). Đáy vực tăm tối đầy rẫy những con Harpy phát quang gọi là Gorgons.",
           "steps": [
-            "Tất cả bám sát nhau đi theo người dẫn đường.",
-            "Tuyệt đối không double jump (nhảy đôi), không bắn súng, không chạy quá sát Gorgon.",
-            "Tìm đường chui qua hang đá để đến cửa ra."
+            "Gorgons sẽ tuần tra theo những con đường cố định. Tầm nhìn của chúng là vùng ánh sáng hắt ra phía trước.",
+            "Nếu BẤT CỨ AI trong team bị một con Gorgon nhìn thấy (Màn hình nhấp nháy đỏ, Gorgon rú lên), cả team sẽ bị Wipe ngay lập tức không có cách nào cứu chữa.",
+            "Luật chơi: Không chạy nước rút quá gần chúng (tiếng bước chân làm chúng chú ý), không sử dụng Double/Triple Jump (tiếng động cơ kích hoạt làm chúng quay lại), và tuyệt đối không bắn súng.",
+            "Bạn có thể cử Hunter dùng bom khói tàng hình (Invisibility) để dẫn cả team lách qua đám Gorgon an toàn, đi tìm lối ra là một cái hang hẹp trên vách đá."
           ]
         }
       }
     },
     {
+      "id": "gatekeepers",
       "name": "Gatekeepers",
       "roles": {
         "relic_runners": {
           "description": "Luân chuyển khiên Aegis qua các cổng thời gian để diệt Praetorian.",
-          "quantity": 3
+          "quantity": 2,
+          "types": [
+            "Runner"
+          ]
         },
         "plate_defenders": {
-          "description": "Bảo vệ Sync Plates để cổng luôn mở.",
-          "quantity": 3
+          "description": "Bảo vệ các bệ mở cổng không bị Vex chiếm.",
+          "quantity": 4,
+          "types": [
+            "Add Clear"
+          ]
         }
       },
       "secrets": [],
-      "id": "gatekeepers",
       "walkthrough": {
         "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Sử dụng khiên Aegis mang qua lại giữa 2 cổng thời gian (Mars/Venus) để tiêu diệt Minotaur bất tử (Praetorians) và bảo vệ Conflux.",
+          "name": "Giai đoạn 1: Mở cổng Thời Gian",
+          "objective": "Khu vực cuối cùng của Vault. Sẽ có 2 cổng dịch chuyển: Cổng Trái (gọi là Venus/Jungle) và Cổng Phải (gọi là Mars/Desert).",
           "steps": [
-            "Giết Gatekeeper ở phòng ngoài để mở khóa Khiên Aegis. Một người nhặt khiên.",
-            "2 người đứng ngoài mở cổng Trái (Venus) và cổng Phải (Mars) bằng bệ Sync Plates.",
-            "Người cầm khiên chạy vào cổng báo có Minotaur. Chỉ người cầm khiên mới đánh vỡ khiên bất tử của nó được.",
-            "Sau khi diệt xong, người cầm khiên vứt khiên xuống, người khác nhặt khiên và chạy qua cổng bên kia để diệt Minotaur tiếp theo (vì nhặt khiên xong sẽ bị debuff không qua cổng lại được ngay).",
-            "Lặp lại việc đổi khiên giữa các phòng cho tới khi Conflux xuất hiện ở phòng ngoài.",
-            "Tất cả chạy ra ngoài bảo vệ Conflux cuối cùng khỏi Minotaurs (người cầm khiên phụ trách dọn Minotaur)."
+            "Bắt đầu ải bằng việc tiêu diệt con Gatekeeper (Hydra) bay ở giữa phòng. Nó chết sẽ rớt ra Khiên Aegis.",
+            "Cử 2 người đứng ở 2 bệ Sync Plates để giữ cho 2 cổng (Mars và Venus) luôn mở. 2 người khác phụ dọn quái.",
+            "Cử người chơi A cầm Khiên Aegis chạy vào một trong 2 cổng (ví dụ: Venus)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Trò chơi chuyền Khiên",
+          "objective": "Tiêu diệt các con Praetorian tinh anh bên trong các cánh cổng thời gian.",
+          "steps": [
+            "Bên trong mỗi cổng sẽ có 1 cột Conflux và quái vật tấn công cột đó. Đặc biệt, thỉnh thoảng sẽ xuất hiện 1 con Praetorian có khiên Vô Địch. CHỈ CÓ CHIÊU CHÉM CỦA KHIÊN AEGIS mới phá được lớp giáp vô địch này.",
+            "Người cầm khiên A dọn dẹp Praetorian bên Venus xong, phải lập tức chạy ra ngoài, vứt khiên xuống đất (nút Swap vũ khí). Người cầm khiên vừa vứt sẽ bị debuff 'Teleport Destabilized' trong 45 giây (Không thể chui qua bất kỳ cổng nào nữa).",
+            "Người chơi B đứng sẵn ở ngoài nhặt Khiên lên, lập tức lao vào cổng Mars bên kia để chém con Praetorian chuẩn bị xuất hiện bên đó.",
+            "Cứ thế, team ở ngoài luân chuyển Khiên qua lại giữa 2 cổng liên tục để bảo vệ Conflux bên trong."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Trận chiến cuối cùng ở hiện tại",
+          "objective": "Sau khi tiêu diệt đủ 6 con Praetorians bên trong, một trụ Conflux khổng lồ sẽ xuất hiện ở ngay giữa phòng ngoài.",
+          "steps": [
+            "Tất cả mọi người từ bên trong cổng chạy hết ra ngoài. Tập trung bảo vệ Conflux ở giữa phòng ngoài.",
+            "Hàng loạt Minotaurs và Praetorians có giáp Vô địch sẽ đổ ra liên tục. Người đang cầm khiên Aegis phải múa kiếm liên tục để phá giáp bọn chúng cho đồng đội bắn. Thủ vững cho đến khi hết quái là qua màn."
           ]
         }
       }
     },
     {
+      "id": "atheon-times-conflux",
       "name": "Atheon, Time's Conflux",
       "roles": {
         "oracles_readers": {
           "description": "Đội ở ngoài quan sát và đọc vị trí 3 cục Oracles mỗi đợt.",
-          "quantity": 3
+          "quantity": 3,
+          "types": [
+            "Callout"
+          ]
         },
         "oracles_shooters": {
-          "description": "Đội bị dịch chuyển nghe Callout và bắn vỡ Oracles.",
-          "quantity": 3
+          "description": "Đội bị nhốt bắn Oracles theo chuẩn thứ tự được đọc.",
+          "quantity": 3,
+          "types": [
+            "Sniper"
+          ]
         }
       },
       "secrets": [],
-      "id": "atheon-times-conflux",
       "walkthrough": {
         "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Boss sẽ ngẫu nhiên dịch chuyển 3 người qua chiều không gian khác (Mars/Venus). Người ở lại phải đọc thứ tự Oracles, người bị dịch chuyển phải bắn Oracles theo đúng thứ tự đó để kích hoạt Damage Phase.",
+          "name": "Giai đoạn 1: Bị dịch chuyển (Teleport) và Đọc Oracles",
+          "objective": "Khởi đầu trận chiến, Boss Atheon sẽ dơ tay lên và ngẫu nhiên hút 3 người chơi vào một trong hai chiều không gian: Venus (Trái) hoặc Mars (Phải).",
           "steps": [
-            "Bắt đầu bằng cách diệt bớt quái. Boss sẽ dơ tay và ngẫu nhiên vứt 3 người vào không gian Mars/Venus.",
-            "Inside Team (Người bị vứt vào): Bốc khiên Aegis lên. Gọi tên mình đang ở đâu (Mars/Venus) để Outside team mở cổng. Đứng chờ Outside đọc thứ tự.",
-            "Outside Team (Người ở lại): Mở Sync Plate tương ứng. Quan sát trên trời sẽ thấy 3 đợt Oracles đỏ xuất hiện theo thứ tự. Đọc thứ tự (ví dụ: Gần Phải, Xa Trái, Mid...) cho Inside Team biết.",
-            "Inside Team bắn chính xác 3 Oracles theo thứ tự vừa được đọc. Lặp lại 3 đợt (tổng 9 Oracles).",
-            "Khi bắn xong, chữ 'Guardians make their own fate' hiện lên. Cả team nhảy ra ngoài qua cổng, tập trung tại bệ nổi giữa map để gây sát thương lên Atheon.",
-            "Trong lúc bắn Boss, 1 người ngẫu nhiên dính debuff Imminent Detain (bị giam), phải chủ động nhảy tách ra khỏi team vài giây trước khi hết giờ để không giam chung cả team."
+            "Bên trong (Inside Team): Một người lập tức nhặt khiên Aegis rớt dưới đất. Nhìn quang cảnh xung quanh để biết mình đang ở đâu (Cây cỏ xanh mướt là Venus, sa mạc đỏ là Mars) và hô to lên: 'Tụi tao ở Venus/Mars!'. Tất cả chạy vào góc trong cùng đối diện cánh cổng.",
+            "Bên ngoài (Outside Team): Nghe callout, lập tức đứng vào bệ Sync Plate tương ứng (Venus thì bệ Trái, Mars thì bệ Phải) để mở cổng cho team Inside về.",
+            "Đọc Oracles (Outside): Ngay lập tức quan sát bầu trời phía trên cao ở giữa map. Oracles sẽ hiện nháp màu đỏ thành từng đợt 3 cục. Sẽ có 6 vị trí (Far Left, Far Mid, Far Right, Near Left, Near Mid, Near Right). Người ở ngoài phải đọc thật chuẩn xác TÍNH TỪ TRÁI SANG PHẢI vị trí của 3 cục đó. (Ví dụ: Trái Gần, Giữa Xa, Phải Gần)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Bắn Oracles và Trở Về",
+          "objective": "Inside Team phải tiêu diệt Oracles theo đúng trình tự.",
+          "steps": [
+            "Inside Team: Nghe callout từ bên ngoài, người bắn Oracles (không cầm khiên) dùng Sniper/Scout Rifle bắn nổ 3 cục Oracles theo đúng trình tự vừa được đọc.",
+            "Người cầm khiên (Relic Holder) phải liên tục dùng nút Đỡ đòn (Block) để tạo bong bóng Cleanse cho 2 người kia, vì ở trong không gian này màn hình sẽ bị mù dần (Marked by the Void).",
+            "Có tổng cộng 3 đợt Oracles (tổng 9 cục). Khi bắn xong cục thứ 9, dòng chữ 'Guardians make their own fate' sẽ hiện ra. Damage Phase (Time's Vengeance) bắt đầu với 30 giây đếm ngược.",
+            "Inside team chạy xuyên qua cánh cổng đã được Outside mở sẵn để về lại không gian thực."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Damage Phase và Giam cầm (Imminent Detain)",
+          "objective": "Tận dụng 30 giây Time's Vengeance để dồn sát thương Atheon.",
+          "steps": [
+            "Lúc này kỹ năng (Abilities) và Super của mọi người sạc cực nhanh. Cả team tập trung tại bệ nổi ở giữa map hoặc sát lối đi, ném lựu đạn và xả hỏa lực liên tục vào ngực Atheon.",
+            "LƯU Ý CỰC KỲ QUAN TRỌNG: Ở giây thứ 15 của Damage Phase, một người chơi ngẫu nhiên sẽ bị debuff 'Imminent Detain' đếm ngược 5 giây. Khi hết đếm ngược, người đó sẽ bị bọc trong một quả bóng giam cầm (Detain bubble).",
+            "Nếu người bị Detain đứng chung với đồng đội, QUẢ BÓNG SẼ GIAM CẢ TEAM VÀ WIPE. Do đó, ai thấy debuff Imminent Detain trên màn hình, phải lập tức hô to và TÁCH RA KHỎI ĐỘI HÌNH nhảy ra mép map, đợi bị giam rồi đồng đội bắn vỡ quả bóng để cứu.",
+            "Khi Time's Vengeance kết thúc, Atheon sẽ đóng khiên lại. Lặp lại toàn bộ quy trình từ Giai đoạn 1."
           ]
         }
       }
     }
-  ],
-  "preface": {
-    "formatting_rules": "Trong Vault of Glass, vũ khí có perk Oracle Disruptor và các vũ khí bắn nổ (Xenophage) cực kỳ quan trọng.",
-    "non_linear_mechanic": {
-      "description": "Raid diễn ra tuyến tính. Bạn sẽ đi từ bề mặt sao Kim sâu xuống lòng đất để tiêu diệt Atheon.",
-      "elevator_plates": []
-    }
-  },
-  "loadout_tips": {
-    "note": "Xenophage là vũ khí 'chân ái' trong Raid này vì nó bắn Oracles vỡ chỉ với 1 hit. Các ải Boss cần súng bắn xa (Linear Fusion Rifle hoặc Sniper) để bắn Atheon.",
-    "warlocks": {
-      "supers": [
-        {
-          "name": "Well of Radiance",
-          "utility": "Cắm Well ở bệ nổi giữa không trung để cả team đứng bắn Atheon an toàn."
-        }
-      ],
-      "exotics_and_abilities": [
-        {
-          "name": "Sunbracers / Osmiomancy",
-          "recommendation": "Dọn dẹp quái siêu nhanh ở ải Confluxes và Gatekeepers."
-        }
-      ]
-    },
-    "titans": {
-      "supers": [
-        {
-          "name": "Thundercrash",
-          "utility": "Bay thẳng vào mặt Atheon để dồn sát thương cực gắt."
-        },
-        {
-          "name": "Ward of Dawn",
-          "utility": "Dành cho người cầm khiên Relic đặt bong bóng bảo vệ team lúc chặn Templar teleport."
-        }
-      ],
-      "exotics_and_abilities": [
-        {
-          "name": "Cuirass of the Falling Star",
-          "recommendation": "Bắt buộc nếu xài Thundercrash để tối đa sát thương."
-        }
-      ]
-    },
-    "hunters": {
-      "supers": [
-        {
-          "name": "Golden Gun (Marksman)",
-          "utility": "Atheon có cục hạch trên bụng rất to, Celestial Nighthawk sẽ tạo ra con số sát thương khủng khiếp."
-        },
-        {
-          "name": "Shadowshot (Deadfall)",
-          "utility": "Trói chân và diệt nhanh bầy Goblin/Minotaur ở ải Confluxes."
-        }
-      ],
-      "exotics_and_abilities": [
-        {
-          "name": "Celestial Nighthawk",
-          "recommendation": "1 phát súng 999,999 sát thương vào Atheon."
-        }
-      ]
-    }
-  }
+  ]
 }

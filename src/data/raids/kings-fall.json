@@ -1,187 +1,30 @@
 {
   "raid_name": "King's Fall",
   "active_orbit": "The Dreadnaught",
-  "encounters": [
-    {
-      "name": "Totems",
-      "roles": {
-        "aura_holders": {
-          "description": "Đứng bệ Totem, cầm Aura giết quái lấy điểm.",
-          "quantity": 2
-        },
-        "brand_claimers": {
-          "description": "Giết Wizard, nhặt Brand chạy vào giật Aura thay ca.",
-          "quantity": 2
-        },
-        "dunkers": {
-          "description": "Bị giật Aura xong chạy ra bệ giữa nộp điểm.",
-          "quantity": 2
-        }
-      },
-      "secrets": [],
-      "id": "totems",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Team chia làm 2 bên (Trái/Phải). Truyền Aura để sinh tồn độc khí (Annihilator Totems), giết quái lấy Deathsinger's Power và nộp vào bệ giữa để mở cửa.",
-          "steps": [
-            "Mỗi bên 3 người. Có 1 quả cầu Aura ở mỗi bên. Ai cầm Aura sẽ có vòng sáng bảo vệ khỏi độc khí.",
-            "Người 1 cầm Aura chạy vào bệ Totem đứng để Totem không nổ. Đứng trong Aura và giết quái để tích lũy Deathsinger's Power.",
-            "Người 2 giết Wizard trên bục giữa, Knight rớt ra cục Brand Claimer (buff đổi Aura). Chạy vào Totem giật Aura từ người 1.",
-            "Người 1 (vừa bị giật Aura) mang số Deathsinger's Power chạy ra bệ giữa nộp (Dunk). Nộp xong thì giết Wizard/Knight chờ lấy Brand Claimer để giật lại.",
-            "Người 3 dự bị đứng giữa giết quái. Cứ thế 3 người xoay tua vòng tròn: Cầm Aura -> Bị giật -> Nộp Power -> Lấy Brand Claimer -> Giật Aura.",
-            "Nộp đủ 200 điểm Power tổng cộng cả 2 bên thì cửa mở."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Warpriest",
-      "roles": {
-        "plate_readers": {
-          "description": "Dẫm bệ và đọc thứ tự đá phát sáng.",
-          "quantity": 3
-        },
-        "brand_stealers": {
-          "description": "Giết Blightguard nhặt buff chạy về vòng sáng để giật Aura gia hạn Damage Phase.",
-          "quantity": 2
-        }
-      },
-      "secrets": [],
-      "id": "warpriest",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Giải câu đố đá (Glyph Sequence) để lấy Aura bảo vệ, dùng Aura để tránh bị Warpriest đốt cháy trong Damage Phase.",
-          "steps": [
-            "Chia 3 khu vực: Trái, Giữa, Phải. Đầu tiên chia nhau giết Hive Knights (Revenants).",
-            "Khi chữ 'Glyph sequence started' hiện, người đứng bệ giữa bước lên bệ nhìn mặt sau của tảng đá trái/phải/giữa xem đá nào sáng.",
-            "Đọc tên đá sáng (ví dụ: Trái). Người bên Trái bước lên bệ. Bệ Trái sẽ nhìn ra đá tiếp theo sáng. Lặp lại cho đủ 3 bệ.",
-            "Người dẫm bệ cuối cùng sẽ nhận được 'Brand of the Initiate' (vòng sáng bảo vệ màu đỏ).",
-            "Cả team tập trung vào trong vòng sáng đó để gây sát thương lên Warpriest.",
-            "Để duy trì vòng sáng, người cầm vòng (Aura) phải đi tìm và giết 1 con Blightguard (Knight) đúng lúc đồng hồ đếm ngược gần hết (giật ca).",
-            "Có thể giật ca 2 lần. Khi Aura mất, mọi người trốn sau bóng của 1 tảng đá còn nguyên để không bị Boss Wipe (Oculus).",
-            "Tảng đá đó sẽ vỡ. Lặp lại quy trình cho đến khi Boss chết hoặc hết 3 tảng đá."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Golgoroth",
-      "roles": {
-        "gaze_holders": {
-          "description": "Bắn lưng Boss lấy Gaze, đỡ đạn độc, điều hướng mặt Boss cho team bắn.",
-          "quantity": 2
-        },
-        "dps_team": {
-          "description": "Nhảy xuống hố, dẫm vũng nước và bắn vào bụng (phần thịt trắng) của Golgoroth.",
-          "quantity": 4
-        }
-      },
-      "secrets": [],
-      "id": "golgoroth",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Trận chiến con mắt. Bắn lưng Golgoroth để lấy Gaze (Sự chú ý), dụ nó quay mặt hở bụng để team bắn Damage Phase dưới vũng nước sáng.",
-          "steps": [
-            "Dọn quái. Chia 2 người làm Gaze Holders (Người giữ mắt). 4 người còn lại là DPS (Người bắn bụng).",
-            "Team DPS bắn nổ bong bóng nước trên trần nhà cho rớt xuống hố.",
-            "Gaze Holder 1 bắn vào bướu trên lưng Golgoroth. Nó sẽ nhìn vào người đó (Golgoroth's Gaze) trong 20 giây. Bụng nó sẽ hở ra.",
-            "Gaze Holder 1 phải đứng sao cho bụng Golgoroth quay về phía vũng nước sáng dưới hố.",
-            "Team DPS nhảy xuống vũng nước bắn cực mạnh vào bụng nó.",
-            "Khi đếm ngược Gaze còn 3 giây, Gaze Holder 2 bắn lưng Golgoroth để giật Gaze. Golgoroth sẽ quay sang nhìn Gaze Holder 2.",
-            "Team DPS bắn rớt bong bóng nước tiếp theo, di chuyển sang vũng nước mới và bắn bụng tiếp.",
-            "Luân chuyển Gaze đủ 6 lần hoặc hết bong bóng. Lưu ý debuff 'Unstable Light' sẽ nổ chết đồng đội, ai bị dính phải chạy ra xa team."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Daughters of Oryx",
-      "roles": {
-        "plate_builders": {
-          "description": "Đứng trên bệ đá theo đúng thứ tự để xây cầu tàng hình.",
-          "quantity": 4
-        },
-        "torn_runner": {
-          "description": "Người bị chọn ngẫu nhiên, nhảy parkour trên không để lấy mảnh giáp đập khiên Boss.",
-          "quantity": 1
-        }
-      },
-      "secrets": [],
-      "id": "daughters-of-oryx",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Hai chị em Phù Thủy. Phải xây cầu tàng hình trên không trung để một người được chọn (Torn) leo lên lấy mảnh giáp, rồi đập vỡ khiên của Phù Thủy.",
-          "steps": [
-            "Có 4 bệ đá. Sẽ có 1 bệ phát sáng xanh. Người được chọn ngẫu nhiên (Torn Between Dimensions - có màn hình sương mù) phải đứng đợi ở bệ sáng.",
-            "Người bệ đối diện chéo (cùng trục) nhảy lên bệ của mình. Người bệ sáng nhảy lên bệ sáng, cầu tàng hình sẽ hình thành.",
-            "Người Torn leo lên cầu chạy lấy mảnh giáp (Piece) lơ lửng trên cao.",
-            "Nhảy xuống, đập (Dunk) vào một trong hai đứa con gái (Ir Anûk hoặc Ir Halak) đang có khiên bảo vệ.",
-            "Khi đập xong, team có Aura bất tử tạm thời, đứng chụm lại dồn sát thương vào đứa con gái vừa bị mất khiên.",
-            "Giết nó hoặc rút đủ máu, sau đó lặp lại quy trình để giết đứa thứ 2. Nhớ là phải giết trong đợt hát (Dirge) trước khi hết giờ nếu không sẽ Wipe."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Oryx, the Taken King",
-      "roles": {
-        "plate_holders": {
-          "description": "Dẫm bệ xây cầu, giết Ogre và dẫm nổ bom Corrupted Light.",
-          "quantity": 4
-        },
-        "runner": {
-          "description": "Chạy parkour lấy Aura bất tử từ Vessel of Oryx.",
-          "quantity": 1
-        },
-        "floater": {
-          "description": "Đứng giữa map phụ bắn Ogre và Knight để bảo vệ bom.",
-          "quantity": 1
-        }
-      },
-      "secrets": [],
-      "id": "oryx-the-taken-king",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Tương tự như Daughters nhưng kết hợp thêm giết Ogre, ăn bom Corrupted Light, bắn ngực Oryx và hạ gục Hắn.",
-          "steps": [
-            "Oryx đập tay vào bệ nào, bệ đó là điểm bắt đầu. 4 người giữ 4 bệ xây cầu giống y như màn Daughters.",
-            "Mỗi khi một người nhảy lên bệ, 1 con Light-Eater Ogre sẽ spawn gần bệ đó. Giết Ogre thật nhanh. Ogre chết để lại 1 quả bom đen (Corrupted Light). Đừng dẫm vào bom lúc này.",
-            "Người Torn leo lên trên không lấy mảnh giáp, nhảy xuống Vessel of Oryx (con Knight chạy lăng xăng), đập nó để cướp Aura bất tử.",
-            "Khi cướp được Aura bất tử, Oryx sẽ gọi 'Doxology'. Bụng (ngực) Oryx sẽ mở ra sáng trắng.",
-            "Bắn ngực Oryx liên tục để làm Hắn choáng (Stun).",
-            "Ngay khi Stun, 4 người giữ bệ chạy vào ăn 4 quả bom đen cùng lúc (dẫm vào bom cho đến khi hiện tên mình trên góc trái) rồi lập tức chạy về vòng Aura bất tử ở giữa để tránh sát thương nổ bom.",
-            "Bom nổ sẽ gây sát thương khủng khiếp lên Oryx.",
-            "Lặp lại tới khi Oryx về Final Stand. Lúc này hắn sẽ dời lên đầu map dơ ngực ra, team dồn toàn bộ hỏa lực bắn ngực để kết liễu trước khi bị Wipe."
-          ]
-        }
-      }
-    }
-  ],
   "preface": {
-    "formatting_rules": "Kiểm soát thứ tự bước lên bệ (Plates) là cốt lõi của Raid này (ở Warpriest, Daughters, Oryx). Hãy lắng nghe người gọi bệ đầu tiên.",
+    "formatting_rules": "Đây là Raid có cấu trúc giao tiếp khắt khe nhất về việc gọi vị trí bệ đứng (L1, L2, R1, R2). Giao tiếp rõ ràng ai nhảy lên bệ trước, ai lên bệ sau là yếu tố sống còn.",
     "non_linear_mechanic": {
-      "description": "Khám phá chiến hạm Dreadnaught khổng lồ của Vua Hắc Ám Oryx qua các cửa ải tuyến tính.",
+      "description": "Thâm nhập vào con tàu Dreadnaught vĩ đại của Oryx lơ lửng trên vành đai sao Thổ để tiêu diệt Vua Hắc Ám.",
       "elevator_plates": []
     }
   },
   "loadout_tips": {
-    "note": "Các Boss (Warpriest, Golgoroth, Oryx) có hitbox rất to và đứng xa, thời gian Damage Phase rất dài nên Whisper of the Worm, Leviathan's Breath hoặc Linear Fusion Rifles là chân ái.",
+    "note": "Các con Boss trong King's Fall đều đứng ở rất xa, hitbox tĩnh và thời gian DPS kéo dài. Vì vậy, Whisper of the Worm, Leviathan's Breath, và Linear Fusion Rifles là hoàng đế của sát thương ở đây.",
     "warlocks": {
       "supers": [
         {
           "name": "Well of Radiance",
-          "utility": "Cắm Well ở Aura bất tử để team xả đạn thoải mái vào bụng Oryx và Golgoroth."
+          "utility": "Một kỹ năng bắt buộc phải có cho mọi ải DPS (Warpriest, Golgoroth, Daughters, Oryx)."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Lunafaction Boots",
-          "recommendation": "Tăng tốc độ nạp đạn cho cả team đứng trong Well, cực kỳ quan trọng ở Warpriest."
+          "recommendation": "Ở ải Warpriest, bạn phải xả đạn liên tục nhưng phải đứng túm tụm lại. Lunafaction Boots giúp cả team nạp đạn nhanh kỷ lục trong Well."
+        },
+        {
+          "name": "Cenotaph Mask",
+          "recommendation": "Sinh đạn Heavy cho team bắn các ụ Ogre máu trâu ở ải Oryx."
         }
       ]
     },
@@ -189,13 +32,17 @@
       "supers": [
         {
           "name": "Ward of Dawn",
-          "utility": "Đặt bong bóng ở phía sau để team lùi lại lấy thêm buff Weapons of Light."
+          "utility": "Cắm bong bóng ở đằng sau vị trí Damage Phase để team lùi lại một chút lấy buff Weapons of Light (tăng 25% sát thương)."
+        },
+        {
+          "name": "Thundercrash",
+          "utility": "Golgoroth là con boss hiếm hoi bạn có thể bay vào cắm thẳng vào bụng hắn."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Loreley Splendor",
-          "recommendation": "Sinh tồn tuyệt đối, giúp bạn dễ dàng giữ bệ một mình (Solo Plate) ở ải Oryx."
+          "recommendation": "Sống sót không tỳ vết. Khi bạn phải đứng trên bệ 1 mình (Solo Plate) ở ải Oryx giữa bầy quái, Loreley sẽ cứu mạng bạn vô số lần."
         }
       ]
     },
@@ -203,19 +50,277 @@
       "supers": [
         {
           "name": "Golden Gun (Marksman)",
-          "utility": "Phá khiên hoặc dồn damage bồi thêm ở Golgoroth/Oryx."
+          "utility": "Aura của Warpriest và ngực của Oryx cực kỳ to, bắn Golden Gun kèm Celestial Nighthawk vào đó sẽ tạo ra luồng sát thương đột biến."
         },
         {
-          "name": "Shadowshot",
-          "utility": "Dùng để kiểm soát quái vật tràn ngập ở ải Totems."
+          "name": "Shadowshot (Deadfall)",
+          "utility": "Tuyệt hảo để dọn quái ở ải Totems."
         }
       ],
       "exotics_and_abilities": [
         {
+          "name": "Celestial Nighthawk",
+          "recommendation": "Sự kết hợp chí tử với Golden Gun."
+        },
+        {
           "name": "Orpheus Rig",
-          "recommendation": "Hồi lại Super Tether liên tục ở ải Totems."
+          "recommendation": "Hồi Tether ở ải Totems, giúp cả team farm đạn Heavy thoải mái."
         }
       ]
     }
-  }
+  },
+  "encounters": [
+    {
+      "id": "totems",
+      "name": "Totems (Nghi thức vượt ải)",
+      "roles": {
+        "runners": {
+          "description": "Chạy ra giữa nhặt bùa, đổi ca cho người đứng trên bệ Totem.",
+          "quantity": 4,
+          "types": [
+            "Runner",
+            "Add Clear"
+          ]
+        },
+        "plate_defenders": {
+          "description": "Đứng chết dí trên bệ Totem và giết quái nạp stack.",
+          "quantity": 2,
+          "types": [
+            "Add Clear"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Chu kỳ luân chuyển Aura",
+          "objective": "Khu vực này chia làm 3 phòng: Phòng Giữa, Phòng Trái, Phòng Phải. Mỗi phòng Trái Phải có 1 cái Totem. BẠN PHẢI LUÔN CÓ NGƯỜI ĐỨNG DƯỚI TOTEM, nếu không team sẽ Wipe.",
+          "steps": [
+            "Chia làm 2 tổ, mỗi tổ 3 người (1 tổ đi Trái, 1 tổ đi Phải).",
+            "Người 1 của mỗi tổ nhặt cục Brand (Aura màu đỏ) ở giữa phòng và CHẠY RA đứng dưới cái Totem tương ứng.",
+            "Cục Brand tạo ra 1 vòng tròn đỏ bảo vệ. Cứ đứng trong vòng đỏ đó và giết quái, bạn sẽ tích lũy được stack 'Deathsinger's Power'.",
+            "Người 2 giết con Wizard ở trên ban công phòng giữa, một con Knight sẽ xuất hiện. Giết Knight, rớt ra cục ngọc Brand Claimer.",
+            "Người 2 nhặt Brand Claimer, CHẠY RA cái Totem đổi ca cho Người 1 (bấm nút tương tác để giật cái Aura bảo vệ lại)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Nạp Stack ở phòng giữa",
+          "objective": "Đưa linh hồn hiến tế vào bệ trung tâm.",
+          "steps": [
+            "Người 1 sau khi bị giật mất Aura, cắm đầu CHẠY VỀ phòng Giữa. Bước lên bệ đá ở giữa phòng.",
+            "Lúc này, số stack 'Deathsinger's Power' mà Người 1 tích được lúc nãy sẽ từ từ xả vào cái bệ đá này.",
+            "Trong lúc Người 1 đang xả stack ở giữa, Người 3 lại đi giết Wizard -> giết Knight -> nhặt ngọc Brand Claimer -> CHẠY RA Totem đổi ca cho Người 2.",
+            "Cứ luân chuyển vòng tròn 1-2-3 liên tục như vậy cho đến khi bệ đá ở giữa phòng nạp đủ 200 stack. Cánh cửa vào gặp Warpriest sẽ mở ra."
+          ]
+        }
+      }
+    },
+    {
+      "id": "the-warpriest",
+      "name": "The Warpriest (Đại Tu Sĩ)",
+      "roles": {
+        "plate_readers": {
+          "description": "Đứng lên bệ trung tâm để đọc thứ tự kích hoạt bệ.",
+          "quantity": 3,
+          "types": [
+            "Callout"
+          ]
+        },
+        "aura_holder": {
+          "description": "Giữ Aura để team có chỗ đứng bắn Boss, và phải giết quái để kéo dài Aura.",
+          "quantity": 1,
+          "types": [
+            "Mechanic"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đọc thứ tự bệ",
+          "objective": "Giết quái vật, Blightguards (Knights) để chuẩn bị vào Damage Phase.",
+          "steps": [
+            "Chia 3 người đứng ở 3 bệ: L (Trái), M (Giữa), R (Phải). 3 người còn lại phụ dọn quái.",
+            "Sau khi giết xong 3 con Knight tinh anh ở 3 khu vực. Bắt đầu đọc bệ: Người ở bệ Giữa (M) dẫm lên bệ của mình, KHÔNG XUỐNG.",
+            "Nhìn vào 3 cái cột đá khổng lồ trên bản đồ. Mặt sau của các cột đá sẽ phát sáng. Nếu cột đá Trái sáng -> Bệ L lên tiếp theo. Cột Phải sáng -> Bệ R. Cột Giữa không có đá, nếu không thấy cột nào sáng tức là Bệ Giữa lên tiếp theo.",
+            "Người đọc hô to thứ tự (Ví dụ: Trái - Phải - Giữa). Các người đứng bệ phải LẦN LƯỢT nhảy lên bệ theo đúng thứ tự đó và ĐỨNG YÊN."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Giữ Aura và Damage Phase",
+          "objective": "Người dẫm lên cái bệ cuối cùng trong chuỗi thứ tự sẽ nhận được Brand of the Initiate (Aura màu đỏ).",
+          "steps": [
+            "Người cầm Aura (Aura Holder) sẽ có 1 cái vòng đỏ xung quanh. TOÀN TEAM phải chạy lại đứng túm tụm vào trong vòng đỏ đó mới bắn mất máu Warpriest được.",
+            "LƯU Ý CỨU MẠNG: Aura Holder sẽ có bộ đếm ngược 10 giây. Khi hết giờ, Aura Holder SẼ CHẾT, nhưng Aura sẽ được truyền lại cho người khác. ĐỂ NGĂN VIỆC CHẾT, Aura Holder phải đi tìm và BẮN CHẾT 1 con quái vật ngẫu nhiên ở loanh quanh lúc bộ đếm còn khoảng 1-2 giây để RESET lại 10 giây đó.",
+            "Trong lúc Aura Holder lo giết quái duy trì Aura, 5 người còn lại xả toàn bộ đạn dược (Whisper, Linear) vào đầu Warpriest."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Trốn chiêu cuối (Oculus)",
+          "objective": "Khi Aura mất hiệu lực, Warpriest sẽ gọi quả cầu Oculus chói lóa trên trời để giết sạch màn hình.",
+          "steps": [
+            "Aura Holder sẽ chỉ được reset tối đa 2 lần. Khi Aura biến mất hoàn toàn, cả team hô to 'NẤP!'.",
+            "Cả 6 người phải chạy thật nhanh NẤP RA SAU một trong 3 cái cột đá khổng lồ để tránh ánh sáng của quả cầu Oculus.",
+            "Oculus sẽ thiêu rụi cái cột đá đó. Nghĩa là bạn chỉ có tối đa 4 lần Damage Phase (vì có 3 cột đá). Lặp lại Phase 1."
+          ]
+        }
+      }
+    },
+    {
+      "id": "golgoroth",
+      "name": "Golgoroth (Ác Thú Dưới Đáy Hầm)",
+      "roles": {
+        "gaze_holders": {
+          "description": "2 người chịu trách nhiệm bắn lưng Boss để lấy Aggro (Gaze) và xoay mặt Boss.",
+          "quantity": 2,
+          "types": [
+            "Aggro"
+          ]
+        },
+        "dps_team": {
+          "description": "4 người thả vũng nước xuống đất và đứng trong đó bắn bụng Boss.",
+          "quantity": 4,
+          "types": [
+            "Burst Damage"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Chuẩn bị vũng nước (Pool of Light)",
+          "objective": "Bắn nổ một trong 6 quả bong bóng nước trên trần nhà rớt xuống đất.",
+          "steps": [
+            "Cả team giết quái. Chú ý 6 quả bong bóng nước bám trên trần hang. Team DPS nhắm sẵn vào quả bong bóng L1 (Trái Gần nhất) và chuẩn bị bắn rụng nó.",
+            "Cùng lúc, Gaze Holder 1 (Người cầm Aggro 1) nhảy lên bục cao phía sau lưng Golgoroth."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Lấy Gaze (Ánh nhìn của Golgoroth)",
+          "objective": "Golgoroth có 2 điểm yếu: Lưng (để lấy Gaze) và Bụng (để DPS).",
+          "steps": [
+            "Gaze Holder 1 hô to: 'Lấy Gaze!'. Sau đó dùng súng bắn thẳng vào khối u phát sáng trên lưng Golgoroth.",
+            "Golgoroth sẽ quay mặt lại nhìn chằm chằm vào Gaze Holder 1 (Màn hình hiện 'Golgoroth's Gaze' đếm ngược 20 giây). Golgoroth sẽ liên tục khạc độc vào người này (bắn nổ cục độc đó).",
+            "Ngay lúc Golgoroth quay mặt về phía Gaze Holder 1, cái Bụng của hắn sẽ mở ra điểm yếu chí mạng.",
+            "Team DPS (4 người) lúc này đứng trọn vẹn bên trong Vũng Nước rớt từ quả bong bóng L1 lúc nãy, và bắn xối xả vào Bụng Golgoroth."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Luân chuyển Gaze và Lời nguyền (Unstable Light)",
+          "objective": "Kéo dài DPS bằng cách bắn rụng các bong bóng tiếp theo và truyền Gaze.",
+          "steps": [
+            "Khi Gaze của người 1 còn khoảng 5 giây, Gaze Holder 2 phải nhanh chóng di chuyển ra sau lưng Boss, ngắm sẵn vào khối u trên lưng.",
+            "Đếm ngược: '3.. 2.. 1.. Đổi Gaze!'. Người 2 bắn vỡ khối u lưng. Golgoroth ngay lập tức quay mặt về phía người 2.",
+            "Cùng lúc, Team DPS bắn rụng quả bong bóng tiếp theo (R1) và di chuyển sang vũng nước mới để tiếp tục bắn Bụng.",
+            "LƯU Ý WIPE: Trong lúc DPS, ngẫu nhiên 1 người trong đội DPS sẽ bị dính debuff 'Unstable Light' (Màn hình nhấp nháy xanh chói). Khi hết giờ, người này sẽ nổ tung và GIẾT CHẾT CẢ TEAM đứng cạnh. Phải lập tức hô to 'TAO BỊ NỔ!' và tách chạy ra xa khỏi team (cố gắng chạy vào đống quái để vụ nổ giết quái)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "daughters-of-oryx",
+      "name": "Daughters of Oryx (Phù Thủy Sinh Đôi)",
+      "roles": {
+        "plate_standers": {
+          "description": "Đứng lên 4 bệ xung quanh map theo thứ tự để tạo nền tảng vô hình.",
+          "quantity": 4,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "runner": {
+          "description": "Bị biến thành bóng ma (Torn), leo lên các nền tảng vô hình nhặt relic.",
+          "quantity": 1,
+          "types": [
+            "Runner"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Xây cầu vô hình",
+          "objective": "Có 4 bệ đá (L1, L2, R1, R2). Một cái Relic sẽ lơ lửng ngẫu nhiên trên đỉnh của 1 trong 4 bệ đó.",
+          "steps": [
+            "Bệ NÀO ở KHÁC VỊ TRÍ với cái bệ đang có Relic trên đầu, và đang phát sáng xanh thì sẽ là Bệ Số 1.",
+            "Người được phân công Bệ Số 1 nhảy lên bệ. Ngay lập tức 1 người chơi ngẫu nhiên sẽ bị biến thành bóng ma xám xịt (Torn between dimensions). Người này trở thành Runner.",
+            "Nhìn xem Relic đang nằm trên bệ nào, cái bệ ngay TRƯỚC nó ngược chiều kim đồng hồ sẽ là Bệ Số 2, tiếp theo là Bệ Số 3.",
+            "Lần lượt Người 2 và Người 3 nhảy lên bệ theo thứ tự (Không được nhảy cùng lúc). Các nền tảng tàng hình sẽ xuất hiện giữa không trung."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Lấy Aura và Damage",
+          "objective": "Runner leo lên các nền tảng tàng hình để nhặt Relic.",
+          "steps": [
+            "Runner nhảy thoăn thoắt trên các bệ tàng hình, đến cái bệ có cục Relic, bấm tương tác để nhặt nó.",
+            "Ngay khi nhặt xong, Runner có được quyền năng của khiên đỏ. Runner nhảy bổ xuống chém (Nút đập cận chiến) thẳng vào con Phù Thủy (Daughter) đang tụ phép (Con nào đang phát sáng đỏ).",
+            "Lớp khiên bất tử của Daughter vỡ nát, cướp luôn cái Aura bảo vệ của nó. Cả team (trừ con Boss) chạy nhanh lại đứng xung quanh Runner (Lúc này có vòng đỏ bảo vệ) và tập trung xả súng vào con Phù Thủy đó.",
+            "Đánh bại 1 con, bài ca tử thần sẽ dừng lại. Lặp lại toàn bộ quy trình cho con Phù Thủy thứ 2 ở bên kia."
+          ]
+        }
+      }
+    },
+    {
+      "id": "oryx-the-taken-king",
+      "name": "Oryx, The Taken King",
+      "roles": {
+        "plate_standers": {
+          "description": "Cố định 4 người ở 4 bệ L1, L2, R1, R2.",
+          "quantity": 4,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "runner": {
+          "description": "Bị Torn, leo bệ tàng hình y hệt ải Daughters.",
+          "quantity": 1,
+          "types": [
+            "Runner"
+          ]
+        },
+        "ogre_killers": {
+          "description": "Đứng giữa map, dùng súng hạng nặng bắn chết ngắc lũ Ogres và Knights.",
+          "quantity": 2,
+          "types": [
+            "Heavy Weapons"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Mở bệ và Diệt Ogres",
+          "objective": "Oryx di chuyển quanh map. Hắn sẽ đập tay vào 1 trong 4 cái bệ đá.",
+          "steps": [
+            "Bệ nào bị Oryx đập tay vào, bệ đó sáng xanh và LÀ BỆ SỐ 1. Bệ đối diện chéo góc sẽ là cái đích đến của Relic.",
+            "Giống hệt ải Daughters, lần lượt 3 người nhảy lên bệ theo chiều ngược kim đồng hồ để tạo cầu tàng hình cho Runner (người bị Torn) leo lên.",
+            "Cùng lúc đó, tại mỗi bệ sẽ trồi lên 1 con Ogre (Quái to béo mập). 2 người đi roam ở giữa map (Ogre Killers) dùng đạn Heavy (Xenophage/Machine Gun) bắn CHẾT NGAY TỨC KHẮC con Ogre ngay lúc nó chui lên.",
+            "Ogre chết sẽ để lại 1 quả bóng đen xì dưới đất (Blight). TUYỆT ĐỐI KHÔNG BƯỚC VÀO QUẢ BÓNG ĐÓ.",
+            "Sau Ogre, sẽ có con Light-Eater Knight chạy ra định cướp quả bóng đen. Phải diệt con Knight đó ngay lập tức."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Cướp Aura và Kích nổ bom",
+          "objective": "Runner lấy Relic, team kích bom gây sát thương mốc cho Oryx.",
+          "steps": [
+            "Runner nhảy nhặt được Relic. Một con Knight vô địch (Vessel of Oryx) sẽ xuất hiện ở giữa map mang theo Aura đỏ.",
+            "Runner nhảy xuống, dùng Relic chém đứt khiên Vessel, giật cái Aura đỏ đó về cho mình. Toàn team chạy vào trong vòng đỏ của Runner.",
+            "Lúc này Oryx sẽ há mồm gầm lên, lồng ngực hắn mở ra phát sáng. Bắn vài phát súng vào ngực hắn để hắn bị choáng (Stun).",
+            "Đếm ngược: '3..2..1.. KÍCH BOM!'. 4 người chơi đứng ở 4 bệ chạy ù vào trong 4 quả bóng đen (Blights) của Ogre lúc nãy. Đứng yên trong đó khoảng 3 giây cho đến khi dòng chữ '<Tên bạn> detonated a Corrupted Light' hiện lên.",
+            "Kích xong bom, chạy vội về vòng đỏ của Runner ngay lập tức. 4 quả bom nổ tung, giật 1 khúc máu siêu to khổng lồ của Oryx."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Sinh tồn và DPS",
+          "objective": "Ngay sau khi bom nổ, team tập trung bắn ngực Oryx (Damage Phase) bằng Whisper/Linear.",
+          "steps": [
+            "Sau DPS, Oryx sẽ dùng 1 trong 2 chiêu để trả đũa:",
+            "Chiêu 1 (Mưa thiên thạch): Cả 6 người phải chạy thành vòng tròn quanh map, chạy không ngừng nghỉ để không bị thiên thạch rớt trúng đầu.",
+            "Chiêu 2 (Lồng tử thần): Một cái lồng đen xuất hiện ở đầu map, hút từng người vào trong. Vào trong lồng, phải nhanh chóng diệt con Bóng ma (Shade of Oryx) cầm kiếm bằng mọi giá trước khi lồng sập.",
+            "Sống sót xong, lặp lại Phase 1. Làm như vậy tầm 2-3 lần đến Final Stand, Oryx sẽ hiện ra ngay chính giữa map há mồm chuẩn bị nổ. Dồn toàn lực bắn vào ngực hắn để tiễn hắn về với chúa trời."
+          ]
+        }
+      }
+    }
+  ]
 }
