@@ -99,13 +99,11 @@
 @keyframes cyber-fade {
   0% {
     opacity: 0;
-    filter: brightness(1.5) contrast(1.2);
-    transform: translateY(15px) scale(0.995);
+    transform: translate3d(0, 10px, 0);
   }
   100% {
     opacity: 1;
-    filter: brightness(1) contrast(1);
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -183,11 +181,6 @@
   * {
     @apply border-border outline-ring/50;
   }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-
   html, body {
     margin: 0;
     padding: 0;

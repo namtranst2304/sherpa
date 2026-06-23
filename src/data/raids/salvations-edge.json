@@ -1,189 +1,30 @@
 {
   "raid_name": "Salvation's Edge",
   "active_orbit": "The Pale Heart",
-  "encounters": [
-    {
-      "name": "Substratum",
-      "roles": {
-        "runners": {
-          "description": "Bắn kích sóng, đuổi theo sóng, nhặt Resonance và nạp.",
-          "quantity": 3
-        },
-        "add_clears": {
-          "description": "Dọn dẹp quái liên tục không để chúng cản đường Runner.",
-          "quantity": 3
-        }
-      },
-      "secrets": [],
-      "id": "substratum",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Bảo vệ các trụ dây dẫn (Conductors) bằng cách truyền sóng năng lượng, nhặt các cộng hưởng hạt (Resonance: Vuông, Tròn, Tam Giác) và nạp vào rương ở cuối đường.",
-          "steps": [
-            "Chia 3 đội, mỗi đội 2 người (1 Runner, 1 Add Clear) phụ trách 3 căn phòng.",
-            "Runner bắt đầu bằng việc bắn vào trụ vuông nổi trên không để phát ra sóng (Pulse).",
-            "Sóng sẽ truyền xuống các bệ dưới sàn. Runner phải nhảy theo đường sóng để nhận bệ, sinh ra quái Subjugator/Tormentor.",
-            "Sau khi dọn quái, các hình khối (Vuông/Tròn/Tam giác) gọi là Resonance rớt ra. Runner nhặt.",
-            "Tiếp tục kích sóng truyền từ phòng này sang phòng khác theo thứ tự liên hoàn.",
-            "Thu thập đủ 3 Resonance cùng loại (hoặc tạo ra bộ Resonance theo yêu cầu của cánh cửa).",
-            "Nạp (Dunk) vào hòm giữa phòng để đóng hộp lại. Khi cả 3 nhóm đều nạp xong, hoàn thành 1 vòng (Lap).",
-            "Lặp lại 3 Vòng, trụ năng lượng khổng lồ ở giữa sẽ sáng lên, báo hiệu qua màn."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Herald of Finality",
-      "roles": {
-        "runners": {
-          "description": "Bắn kích sóng, xem hình ở bệ và thu thập đúng Resonance, đóng bệ.",
-          "quantity": 3
-        },
-        "add_clears": {
-          "description": "Giữ aggro của Boss, dọn quái cản đường.",
-          "quantity": 3
-        }
-      },
-      "secrets": [],
-      "id": "herald-of-finality",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Đánh Boss Herald bằng cách tương tác liên hoàn sóng năng lượng ở 3 bệ. Dùng Resonance phá khiên và bước vào Damage Phase.",
-          "steps": [
-            "Sân đấu có 3 bệ phát sóng (Trái, Giữa, Phải). Chia 3 đội 2 người.",
-            "Cơ chế bắn truyền sóng y hệt màn 1 nhưng giờ là vòng tròn quanh sân.",
-            "Sau khi truyền sóng xong, giết Subjugator/Tormentor để rớt Resonance. Đặc biệt ở màn này, phải xem bệ của mình hiển thị hình gì thì nhặt đúng hình đó.",
-            "Khi thu thập đủ 3 hình giống cái bệ, chạy ra cục vuông phát sáng ở bệ của mình bắn nó để Đóng bệ (Close the Plate).",
-            "Khi cả 3 bệ được đóng, Boss sẽ vào Damage Phase. Cả team lại gần Boss, Boss sẽ tỏa ra 1 luồng hào quang lớn.",
-            "Đứng trong luồng hào quang đó (để không bị văng) và xả đạn vào đầu Boss.",
-            "Lặp lại cho đến khi Boss chết."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Repository",
-      "roles": {
-        "runners": {
-          "description": "Truyền sóng, nhặt hạt và đóng cửa để phá rào cản.",
-          "quantity": 4
-        },
-        "add_clears": {
-          "description": "Giết Tormentor nhanh nhất có thể.",
-          "quantity": 2
-        }
-      },
-      "secrets": [],
-      "id": "repository",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Chạy đua vượt rào kết hợp truyền sóng năng lượng. Không có Boss, chỉ là giải đố cực nhanh trước khi hết giờ (Wipe).",
-          "steps": [
-            "Tiếp tục cơ chế truyền sóng nhưng ở một địa hình dốc thẳng đứng.",
-            "Map được chia làm các phòng hẹp. Team chia 2 ngả (Trái và Phải).",
-            "Cả 2 ngả phải đồng loạt bắn truyền sóng và ăn Resonance y hệt màn 1, sau đó mang Resonance bắn vào cửa để mở đường đi tiếp.",
-            "Sẽ có con quái Tormentor chặn đường. Phải hạ nó thật nhanh để dọn đường.",
-            "Lên đến tầng trên cùng, 3 bệ sẽ xuất hiện cùng lúc, team phải truyền sóng qua lại giữa các bệ để khóa hộp năng lượng cuối cùng.",
-            "Thực hiện thành công 3 phòng lớn để hoàn thành Encounter."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Verity",
-      "roles": {
-        "inside_solo": {
-          "description": "Tự sinh tồn trong phòng kín, giết quái, trao đổi hình 2D cho nhau bằng cách gắn vào tượng.",
-          "quantity": 3
-        },
-        "outside_dissectors": {
-          "description": "Quan sát tượng, giết quái, ghép khối 3D cho đúng công thức để giải cứu người bên trong.",
-          "quantity": 3
-        }
-      },
-      "secrets": [],
-      "id": "verity",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Được mệnh danh là Mechanic hóc búa nhất Destiny 2. Chia team làm 2 nửa: 3 người Inside (Solo trong lồng) và 3 người Outside (Dọn rác, giải phẫu tượng). Phải thay đổi hình dạng 2D thành khối 3D để trốn thoát.",
-          "steps": [
-            "Khi bắt đầu, 3 người bị hút vào phòng riêng (Inside), 3 người ở ngoài (Outside).",
-            "**Inside Team:** Mỗi người thấy 1 bức tượng cầm 1 hình 2D (Vuông/Tròn/Tam giác) và trên tường có 2 bóng hình 2D khác. Mục tiêu là phân phát các hình 2D cho nhau sao cho tượng của mình cầm 2 hình 2D giống nhau, VÀ 2 hình đó KHÔNG được trùng với hình trên tường.",
-            "Để trao đổi hình, giết Ogre -> rớt quái cầm hình -> giết quái rớt hình -> nhặt hình -> đến tương tác với tượng của người muốn tặng.",
-            "**Outside Team:** Quan sát 3 bức tượng. Phân tích 3 người Inside đang cầm hình gì. Nhiệm vụ của Outside là giết quái nhặt hình 2D tương ứng để lắp ráp thành khối 3D đắp vào tượng.",
-            "Cách đắp khối 3D: Tượng của ai thì đắp 2 hình 2D còn thiếu của người đó (Ví dụ Inside tường hiện Vuông, thì Outside đắp Tròn và Tam Giác để thành nón Cone).",
-            "Khi Outside đắp đúng 3 khối 3D và Inside cũng gom đủ hình yêu cầu, cửa lồng mở ra. Tất cả chạy ra ngoài.",
-            "Giai đoạn gọi Hồn (Ghost Phase): Mọi người bị chết, hóa Ghost. Bức tượng phát sáng sẽ chỉ ra ai là ai, mọi người phải bay lại nhặt Ghost của đúng người đó để hồi sinh.",
-            "Lặp lại 3 vòng Verity để qua màn."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Zenith (The Witness)",
-      "roles": {
-        "runners": {
-          "description": "Bắn vòng tay Boss, đọc màu, nhặt Resonance và đóng bệ.",
-          "quantity": 3
-        },
-        "add_clears": {
-          "description": "Xử lý Subjugator và giữ mạng, hồi sinh Runner nếu lỡ chết.",
-          "quantity": 3
-        },
-        "dps_and_dodge": {
-          "description": "MỌI NGƯỜI: Vừa bắn Damage vừa phải để ý mắt Boss để né chiêu.",
-          "quantity": 6
-        }
-      },
-      "secrets": [],
-      "id": "zenith-the-witness",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Trận chiến cuối cùng với Kẻ Chứng Kiến (The Witness). Kết hợp nhặt Resonance ở 3 khu vực, khóa điểm yếu của The Witness và đối mặt với đòn tấn công diện rộng khủng khiếp trên bệ Damage Phase.",
-          "steps": [
-            "Chia 3 đội đứng ở 3 khu vực: Trái, Phải, Giữa.",
-            "Bắt đầu, The Witness sẽ gồng chiêu từ mắt hoặc tay. Mỗi đội phải bắn nổ 1 chiếc vòng đeo trên tay của nó.",
-            "Vòng nổ sinh ra vùng sáng. Bước vào vùng sáng sẽ cho biết tay đó là Light hay Dark.",
-            "Người Runner của đội đó phải đi nhặt đúng Resonance tương ứng với tay (Ví dụ tay Light thì nhặt Resonance Tam Giác/Tròn). Đội Add Clear bảo vệ.",
-            "Sau khi nhặt đủ, The Witness sẽ gọi Wipe. Runner phải chạy vào vòng sáng dưới đất, dùng Resonance nhặt được để đóng bệ (Dunk). Thực hiện thành công cả 3 khu vực.",
-            "Boss bị choáng. Bệ giữa sàn trồi lên. Cả team nhảy lên bệ bắt đầu Damage Phase.",
-            "Damage Phase: Bắn vào rương (ngực) của The Witness. TRONG LÚC ĐÓ, hắn sẽ tung chiêu mắt lướt trên sàn bệ. Cả team phải chạy, nhảy, lướt để né chiêu (Chiêu quẹt ngang thì phải nhảy qua, chiêu bổ dọc thì bước qua một bên).",
-            "Hết giờ Damage Phase, team nhảy xuống sàn dưới nấp sau tảng đá lớn để tránh Wipe.",
-            "Lặp lại cho đến khi Final Stand: Hắn sẽ hiện mặt lên, ngực hở to, dồn Damage kết liễu trước khi bị nát team."
-          ]
-        }
-      }
-    }
-  ],
   "preface": {
-    "formatting_rules": "Đỉnh cao của Mechanic. Bạn cần phải học cách giao tiếp về Hình học (Tròn, Vuông, Tam giác) và không gian 3D (Cylinder, Cone, Prism).",
+    "formatting_rules": "Đây là Raid có nhịp độ dồn dập nhất và trừng phạt sai lầm nặng nề nhất Destiny 2 (Đặc biệt là ải Verity). Mọi cơ chế đều xoay quanh việc chuyền và cộng hưởng năng lượng (Resonance).",
     "non_linear_mechanic": {
-      "description": "Cuộc chiến cuối cùng bên trong khối The Pale Heart của Traveler.",
+      "description": "Thâm nhập vào bên trong tảng đá nguyên khối Monolith để đối mặt với The Witness ở hình dạng tối thượng của hắn và kết thúc cuộc chiến Ánh sáng & Bóng tối.",
       "elevator_plates": []
     }
   },
   "loadout_tips": {
-    "note": "Still Hunt (Sniper) kết hợp với Hunter Celestial Nighthawk là meta mạnh nhất lịch sử game để kết liễu The Witness. Hắn ta không nhận sát thương từ Rocket Launcher (vì ngực hắn bay bổng).",
+    "note": "Khả năng sinh tồn (Survivability) là ưu tiên số 1. Quái vật ở đây hung hãn, Tormentors và Subjugators xuất hiện ở khắp mọi nơi. Vũ khí Burst DPS cực kỳ quan trọng ở The Witness.",
     "warlocks": {
       "supers": [
         {
-          "name": "Nova Bomb",
-          "utility": "Nếu không dùng Well, Nova Bomb ném vào ngực The Witness là lựa chọn dồn sát thương an toàn."
+          "name": "Song of Flame",
+          "utility": "Sự thay thế hoàn hảo cho Well of Radiance ở ải 4 (Verity) vì bạn không thể đứng yên 1 chỗ. Nó cho bạn khả năng chống chịu cực cao và ném chim lửa liên tục."
         },
         {
-          "name": "Song of Flame",
-          "utility": "Bật lên để hồi abilities siêu nhanh cho đồng đội và có 90% kháng sát thương."
+          "name": "Nova Bomb",
+          "utility": "Một trái Nova vào ngực The Witness là lựa chọn tối ưu cho Warlock."
         }
       ],
       "exotics_and_abilities": [
         {
-          "name": "Getaway Artist (Prismatic)",
-          "recommendation": "Gọi tháp súng Arc và mầm cây Bleak Watcher đóng băng toàn map, sinh tồn số 1."
+          "name": "Speaker's Sight",
+          "recommendation": "Biến bạn thành một Healer thực thụ. Ném lựu đạn hồi máu tạo ra ụ súng bắn máu cho cả team, cực kỳ quan trọng ở ải 1 và ải 3."
         }
       ]
     },
@@ -191,13 +32,21 @@
       "supers": [
         {
           "name": "Twilight Arsenal",
-          "utility": "Ném 3 cây rìu Hư không (Void) vào The Witness từ xa."
+          "utility": "Ném rìu Hư không vào The Witness để trừ giáp và dồn sát thương."
+        },
+        {
+          "name": "Ward of Dawn",
+          "utility": "Ở ải 4 (Verity), việc sinh tồn bên trong phòng Solo là cực khó. Đặt bong bóng để sống sót qua những lúc thập tử nhất sinh."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Hazardous Propulsion",
-          "recommendation": "Vừa bắn tên lửa từ áo giáp vừa xả súng Sniper vào The Witness."
+          "recommendation": "Bắn hàng loạt tên lửa dọn dẹp sạch sẽ quái vật ở ải 2 (Herald)."
+        },
+        {
+          "name": "Precious Scars",
+          "recommendation": "Hồi máu cho cả bạn và đồng đội xung quanh mỗi khi giết quái bằng vũ khí cùng hệ."
         }
       ]
     },
@@ -205,15 +54,235 @@
       "supers": [
         {
           "name": "Golden Gun (Marksman)",
-          "utility": "Đây là Raid dành riêng cho Hunter tỏa sáng. Bắn súng Vàng liên tục vào ngực Boss."
+          "utility": "Đeo Celestial Nighthawk, bắn 1 viên đạn duy nhất vào ngực The Witness là lượng sát thương lớn nhất game."
+        },
+        {
+          "name": "Shadowshot (Deadfall)",
+          "utility": "Tuyệt vời để trói Tormentor và Subjugators ở ải 1."
         }
       ],
       "exotics_and_abilities": [
         {
-          "name": "Celestial Nighthawk",
-          "recommendation": "Sử dụng kết hợp súng Sniper Exotic 'Still Hunt'. Bạn sẽ có 2 lượt bắn súng Vàng Celestial thay vì 1."
+          "name": "Still Hunt (Sniper)",
+          "recommendation": "Kết hợp với Celestial Nighthawk, Hunter có thể bắn Golden Gun 2-3 lần trong một pha DPS của The Witness."
         }
       ]
     }
-  }
+  },
+  "encounters": [
+    {
+      "id": "subjugation",
+      "name": "Subjugation (Vượt sảnh chính)",
+      "roles": {
+        "resonance_runners": {
+          "description": "Di chuyển liên tục để nạp hộp năng lượng.",
+          "quantity": 4,
+          "types": [
+            "Runner"
+          ]
+        },
+        "defenders": {
+          "description": "Giữ bệ giữa và tiêu diệt Tormentor.",
+          "quantity": 2,
+          "types": [
+            "Add Clear"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Nạp hộp năng lượng (Resonance Box)",
+          "objective": "Đóng các hộp năng lượng rải rác xung quanh.",
+          "steps": [
+            "Team chia làm 2 bên (Trái, Phải). Mỗi bên 3 người.",
+            "Tại mỗi bên sẽ có một cái hộp chữ nhật (Conductor). Để bắt đầu, bắn vào cái hộp đó để sinh ra năng lượng Resonance (các cục vuông lơ lửng).",
+            "Sẽ có 1 người chạy ra nhặt Resonance. Nhặt Resonance sẽ có buff đếm ngược. Trước khi hết giờ, phải chạy tới cái hộp và bắn nó để đóng nắp hộp lại (Deposit).",
+            "Sau khi đóng, khu vực đó sẽ sinh ra rất nhiều quái và 1 con Subjugator."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Bơm bệ trung tâm",
+          "objective": "Đưa năng lượng vào bệ trung tâm để mở cửa.",
+          "steps": [
+            "Giết con Subjugator sẽ rớt ra 1 loại Resonance đặc biệt (Sáng hoặc Tối).",
+            "Nhặt Resonance đó mang về Bệ Trung Tâm (Khu vực có 2 Defender đang đứng).",
+            "Tại bệ trung tâm có 1 cái hộp lớn. Bắn nó để nạp. Làm như vậy cho cả cánh Trái và Phải.",
+            "Tormentor sẽ liên tục xuất hiện quấy phá ở giữa, Defender phải ưu tiên diệt Tormentor. Nạp đủ số lượng sẽ mở cửa sang phòng tiếp theo. Lặp lại 3 phòng."
+          ]
+        }
+      }
+    },
+    {
+      "id": "herald-of-finality",
+      "name": "Herald of Finality",
+      "roles": {
+        "ping_pongers": {
+          "description": "Chuyền năng lượng qua lại giữa các bệ.",
+          "quantity": 6,
+          "types": [
+            "Mechanic"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Chuyền bóng (Ping Pong)",
+          "objective": "Sạc đầy hộp Conductor ở các khu vực Trái, Phải và Giữa.",
+          "steps": [
+            "Chia 3 cặp đứng ở 3 khu vực. Bắn vào hộp Conductor ở khu vực của mình để nhả ra Resonance.",
+            "Quy tắc Ping Pong: Người A bắn hộp, hộp nhả Resonance. Dây nối sẽ hướng về người A. Nhưng người A KHÔNG ĐƯỢC NHẶT. Thay vào đó, Người B phải chạy ra nhặt Resonance đó, mang về hộp bắn để nạp.",
+            "Lúc này dây nối đổi sang người B. Người A lại chạy ra nhặt Resonance mang về hộp... Cứ thế chuyền qua chuyền lại cho đến khi hộp đầy (Hộp đóng lại, sinh ra Subjugator).",
+            "Cảnh báo WIPE: Nếu bạn nhặt Resonance khi dây đang cắm vào người bạn, bạn sẽ chết ngay lập tức."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Gọi Boss và DPS",
+          "objective": "Khi cả 3 khu vực đều hoàn thành Ping Pong.",
+          "steps": [
+            "Giết 3 con Subjugators rớt ra Resonance Sáng/Tối. Cả team tập trung ở bệ Giữa.",
+            "Nạp các Resonance đó vào hộp trung tâm để khóa Boss (Herald of Finality) lại.",
+            "Boss sẽ đi tới giữa và bắt đầu gọi Wipe. Bắn vỡ đầu hắn (Damage Phase). Lặp lại nếu chưa chết."
+          ]
+        }
+      }
+    },
+    {
+      "id": "repository",
+      "name": "Repository (Kho Lưu Trữ)",
+      "roles": {
+        "runners": {
+          "description": "Ping pong y hệt ải 2 nhưng với bố cục phòng khác.",
+          "quantity": 6,
+          "types": [
+            "Runner"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Ping Pong leo tháp",
+          "objective": "Ải này hoàn toàn giống ải Herald, nhưng không có Boss. Chỉ là một cuộc chạy đua Ping Pong qua 3 căn phòng có địa hình phức tạp.",
+          "steps": [
+            "Chia 3 cặp: Trái, Phải, Giữa. Áp dụng quy tắc Ping Pong chuyền bóng.",
+            "Khác biệt là Subjugators và Tormentors sẽ xuất hiện dày đặc cực kỳ khó chịu. Phải dùng Super và Vũ khí hạng nặng liên tục để sinh tồn.",
+            "Hoàn thành nạp hộp trung tâm ở mỗi phòng để mở đường đi lên tháp. Hoàn thành 3 phòng là qua ải."
+          ]
+        }
+      }
+    },
+    {
+      "id": "verity",
+      "name": "Verity (Sự Thật Khắc Nghiệt)",
+      "roles": {
+        "solo_players": {
+          "description": "3 người bị hút vào 3 căn phòng kín, giải đố biểu tượng.",
+          "quantity": 3,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "outside_team": {
+          "description": "3 người ở ngoài, mổ xẻ hiệp sĩ để tạo khối 3D.",
+          "quantity": 3,
+          "types": [
+            "Mechanic"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Bên trong phòng Solo (Inside)",
+          "objective": "Tạo ra 2 biểu tượng KHÁC VỚI biểu tượng bức tượng của mình.",
+          "steps": [
+            "3 người (Inside) sẽ bị hút vào 3 phòng riêng biệt. Trong phòng có bức tượng của chính mình cầm 1 biểu tượng (Vuông, Tròn, hoặc Tam giác).",
+            "Trên tường có 2 con Knights. Giết Knight rớt ra biểu tượng. Bạn phải 'Gửi' biểu tượng đi cho người khác bằng cách đập biểu tượng đó vào bức tượng của người đó trong phòng mình.",
+            "Mục tiêu tối thượng: Nếu tượng của bạn cầm Vuông, bạn phải trao đổi sao cho 2 con Knight cuối cùng trong phòng bạn rớt ra Tròn và Tam giác. KHÔNG ĐƯỢC CÓ VUÔNG.",
+            "Khi đã có đủ Tròn và Tam giác, nhặt cả 2 lên, bạn sẽ có chìa khóa thoát ra ngoài."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Đội bên ngoài (Outside)",
+          "objective": "Tạo hình 3D khớp với yêu cầu của đội Inside.",
+          "steps": [
+            "Đội Outside cũng thấy 3 bức tượng. Họ phải xem tượng của 3 người Inside cầm gì (VD: Vuông, Tròn, Tam giác).",
+            "Đội Outside giết Knight nhặt biểu tượng, đập vào bệ trước bức tượng để ghép thành khối 3D (VD: Vuông + Tròn = Hình trụ).",
+            "Mục tiêu khối 3D phải được ghép từ 2 biểu tượng MÀ ĐỘI INSIDE ĐANG CẦN. (Ví dụ người Inside có Tượng Vuông, tức là họ đang giữ chìa khóa Tròn+Tam Giác. Thì bệ của người đó bên ngoài phải được ghép thành khối 3D bằng Tròn + Tam Giác = Hình Nón).",
+            "Khi Outside ghép đúng 3 khối 3D, Đội Inside sẽ được thả ra ngoài."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Phân thân và Sống lại",
+          "objective": "Cứu người chết.",
+          "steps": [
+            "Khi cả 6 tập hợp, Witness sẽ đóng băng và giết 5 người (chỉ để 1 người sống).",
+            "Người sống sót nhìn vào cái bóng của 5 người kia. Cái bóng nào không mang quần áo/giáp giống bản gốc thì đó là bóng giả.",
+            "Nhặt biểu tượng rớt ra từ bóng giả, đập vào cái bóng thật tương ứng để hồi sinh đồng đội. Làm đủ là qua ải."
+          ]
+        }
+      }
+    },
+    {
+      "id": "the-witness",
+      "name": "The Witness (Hình Bóng Cuối Cùng)",
+      "roles": {
+        "bracelet_breakers": {
+          "description": "Phá vòng tay của The Witness để tạo vùng an toàn.",
+          "quantity": 2,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "glyph_readers": {
+          "description": "Bắn nút áo, đọc biểu tượng.",
+          "quantity": 2,
+          "types": [
+            "Callout"
+          ]
+        },
+        "runners": {
+          "description": "Nhặt Resonance đập vào nút áo của The Witness.",
+          "quantity": 2,
+          "types": [
+            "Runner"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đọc nút áo",
+          "objective": "Phát hiện xem The Witness cần Resonance hình gì.",
+          "steps": [
+            "Trên người Witness có các nút áo phát sáng. Bắn vào tay của hắn khi hắn tấn công, hắn sẽ để lộ 1 biểu tượng (Vuông, Tròn hoặc Tam giác) trên nút áo.",
+            "Người đọc hô to biểu tượng đó (VD: 'Nút trên là Vuông!').",
+            "Cùng lúc, 1 người nhảy lên bắn vỡ cái vòng sáng trên tay của The Witness để lấy buff 'Test' (Giúp bạn nhìn thấy các biểu tượng rơi vãi trên sàn)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Nạp Resonance",
+          "objective": "Sạc vỡ các nút áo của The Witness.",
+          "steps": [
+            "Dựa theo biểu tượng vừa hô, Runner nhặt ĐÚNG Resonance đó trên sàn.",
+            "Sau khi nhặt đủ, chạy vào bục giữa, bắn vỡ cái nút áo tương ứng của The Witness.",
+            "Lặp lại cho đến khi phá hết 6 nút áo của hắn. Damage Phase bắt đầu."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Nhảy nhót và DPS",
+          "objective": "Xả sát thương vào ngực The Witness trong khi phải né đòn quét chết người.",
+          "steps": [
+            "Cả team nhảy lên bục cao ở giữa. Ngực của The Witness (chứa đầy hồn ma) sẽ mở ra.",
+            "Trong lúc team đang bắn xối xả (bằng Still Hunt, Linear, Sniper), The Witness sẽ liên tục chém tay.",
+            "Cực kỳ tập trung: Nếu hắn giơ tay TRÁI, hắn sẽ quét nửa bên TRÁI bệ -> Chạy sang PHẢI. Nếu hắn giơ tay PHẢI -> Chạy sang TRÁI. Nếu hắn giơ CẢ HAI TAY hoặc MẮT SÁNG CỰC MẠNH -> PHẢI NHẢY LÊN KHÔNG TRUNG.",
+            "Nếu bị chém trúng là CHẾT TƯƠI. Đòi hỏi độ tập trung khủng khiếp vừa nhảy né vừa ngắm bắn.",
+            "Final Stand: Bắn cho đến khi hắn hóa thành cột ánh sáng vỡ vụn. Kết thúc kỷ nguyên Ánh Sáng và Bóng Tối."
+          ]
+        }
+      }
+    }
+  ]
 }

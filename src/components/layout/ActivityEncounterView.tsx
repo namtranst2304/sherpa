@@ -1,4 +1,7 @@
+"use client"
+
 import * as React from "react"
+import { motion, AnimatePresence } from "motion/react"
 import Image from "next/image"
 import { GuideSidebar } from "@/components/layout/GuideSidebar"
 import { GuideTemplate } from "@/components/layout/GuideTemplate"
@@ -66,11 +69,16 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
         activeEncounterId={isOverview ? "overview" : activeEncounter?.id}
       />
 
-      <div 
-        key={isOverview ? "overview" : activeEncounter?.id} 
-        className="flex-1 overflow-hidden h-full animate-cyber-fade"
-      >
-        {isOverview ? (
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={isOverview ? "overview" : activeEncounter?.id} 
+          className="flex-1 overflow-hidden h-full"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+        >
+          {isOverview ? (
           <ActivityOverviewTemplate activityData={activityData} />
         ) : (
           <GuideTemplate
@@ -84,9 +92,9 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
 
                   return walkthroughEntries.map(([phaseKey, phaseVal]: [string, ActivityEncounterPhase], index) => {
                     let phaseTitle = phaseVal.name || phaseKey.toUpperCase()
-                    if (!hasMultiplePhases) {
-                      phaseTitle = phaseTitle.replace(/^(Giai đoạn 1:\s*|Phase 1:\s*)/i, '')
-                    }
+                    // Always remove redundant "Phase X:" prefix since we have the numbered badge
+                    phaseTitle = phaseTitle.replace(/^(Giai đoạn \d+:\s*|Phase \d+:\s*)/i, '')
+                    
                     const phaseObjective = phaseVal.objective
                     const steps = phaseVal.steps || phaseVal.details || []
                     return (
@@ -278,7 +286,8 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
             }
           />
         )}
-      </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 }

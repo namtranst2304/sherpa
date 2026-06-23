@@ -1,205 +1,44 @@
 {
   "raid_name": "Last Wish",
   "active_orbit": "The Dreaming City",
-  "encounters": [
-    {
-      "name": "Kalli, the Corrupted",
-      "roles": {
-        "plate_standers": {
-          "description": "Tìm đúng bệ biểu tượng, tránh quả cầu đen, giết Knight.",
-          "quantity": 6
-        }
-      },
-      "secrets": [],
-      "id": "kalli-the-corrupted",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Giải biểu tượng con rắn rồng, đứng bệ thanh tẩy và nhảy xuống hầm trú ẩn (doors) khi Boss cast chiêu tất sát.",
-          "steps": [
-            "Quan sát 3 cặp biểu tượng (symbols) bay lơ lửng giữa phòng. Sẽ có 6 biểu tượng khác nhau (ví dụ: Rắn vô cực, chim nhìn trái...).",
-            "Chia 6 người tìm 6 cái bệ dưới đất ở xung quanh map. Mỗi bệ có hình 1 biểu tượng. Ai tìm được biểu tượng trùng với trên trời thì đứng vào.",
-            "Bệ có 3 mảnh, 2 mảnh có quả cầu đen (bẫy), 1 mảnh an toàn. Đứng lên mảnh an toàn, khi quả cầu đổi chỗ thì di chuyển theo.",
-            "Sẽ sinh ra 1 con Knight, giết nó. Khi cả 6 người giết xong, tập trung ở giữa map để gây sát thương Kalli.",
-            "Trong lúc gây sát thương, Kalli sẽ giơ tay cast Wipe (chia thành 3 đợt). Cửa hầm ở dưới phòng sẽ mở. Mỗi người chui vào 1 cửa (cửa rất nhỏ chỉ vừa 1 người). Đợi Kalli nổ xong thì ra ngoài bắn tiếp."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Shuro Chi, the Corrupted",
-      "roles": {
-        "prism_shooters": {
-          "description": "Nhặt vũ khí laze, nhảy lên bệ và nối tia với nhau phá khiên Boss.",
-          "quantity": 3
-        },
-        "puzzle_solvers": {
-          "description": "Nhìn tranh và nhảy vào đúng bệ còn thiếu để giải câu đố.",
-          "quantity": 4
-        }
-      },
-      "secrets": [],
-      "id": "shuro-chi-the-corrupted",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Đuổi theo Shuro Chi qua các tầng. Dùng Prism Weapon để phá khiên và giải câu đố xếp hình (Puzzle Room) để mở khóa các tầng.",
-          "steps": [
-            "Dọn quái thật nhanh để hết giờ wipe (Tempo). Sẽ có 3 cái đĩa (Prism Weapons) rớt ra.",
-            "Khi Shuro Chi đứng vào vòng tròn, 3 người nhặt Prism Weapon nhảy lên 3 bệ quanh Boss. Bắn tia laze vào người đứng bên phải mình để tạo thành hình tam giác bao quanh Boss, phá khiên và bắt đầu bắn Boss.",
-            "Mỗi tầng bắn Boss 2 lần. Sau đó vào phòng Giải đố (Puzzle Room).",
-            "Trên tường có 3 bức tranh chiếu hình 3x3 bị khuyết 4 ô. Dưới sàn có 9 bệ tương ứng.",
-            "Cần 4 người nhảy lên 4 bệ bị khuyết TRÊN CÙNG LÚC để điền vào hình. Không ai được đứng trùng bệ đã đứng. (Cần nhớ số bệ đã đứng).",
-            "Giải xong 3 bức tranh thì bệ đá xuất hiện để nhảy lên tầng tiếp theo. Lặp lại cho tới tầng trên cùng."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Morgeth, the Spirekeeper",
-      "roles": {
-        "strength_eaters": {
-          "description": "Nhặt các quả cầu đen, phân công cụ thể mỗi người không quá 2 quả.",
-          "quantity": 6
-        },
-        "eye_runner": {
-          "description": "Nhặt Eye of Riven, giải cứu đồng đội và Stun Boss.",
-          "quantity": 1
-        }
-      },
-      "secrets": [],
-      "id": "morgeth-the-spirekeeper",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Boss Ogre khổng lồ. Team phải thu thập 10 cục Taken Strength (cục đen) rải rác quanh map. Ai ăn quá 2 cục sẽ chết, nên phải chia đều mỗi người 2 cục.",
-          "steps": [
-            "Cục đen (Taken Strength) xuất hiện theo đợt. Chia đội hình để nhặt.",
-            "Sẽ có 1 người bị Boss giam (Tornado). Người này gọi vị trí mình. Ai đó nhặt Eye of Riven (bóng do con Eye of Riven rớt ra), dùng chiêu Grenade của Eye bắn vào người bị giam để giải thoát.",
-            "Việc giải thoát sẽ chuyển toàn bộ Taken Strength của người bị giam sang người cầm Eye. Do đó phải tính toán ai ăn mấy cục để không ai vượt quá 2 cục.",
-            "Khi quả đen cuối cùng (quả thứ 10) xuất hiện ở giữa map, người được phân công ăn quả đó sẽ kích hoạt Damage Phase.",
-            "Đứng chung vào vòng tròn, bắn vào bướu sưng trên lưng Morgeth. Nếu Morgeth vươn vai xả chiêu (Axion Darts), người đang cầm Eye of Riven phải dùng chiêu Super để làm gián đoạn."
-          ]
-        }
-      }
-    },
-    {
-      "name": "The Vault",
-      "roles": {
-        "readers": {
-          "description": "Đứng bệ trung tâm đọc và tìm sự trùng khớp biểu tượng.",
-          "quantity": 3
-        },
-        "runners": {
-          "description": "Nhặt bóng, chạy vòng qua đường ống và ném vào bệ (Penumbra/Antumbra).",
-          "quantity": 3
-        }
-      },
-      "secrets": [],
-      "id": "the-vault",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Bảo vệ kho tiền. Giải câu đố biểu tượng bằng cách đọc Penumbra (Trái) và Antumbra (Phải), kết hợp với việc nhặt Eye of Riven để dọn bệ.",
-          "steps": [
-            "Map có 3 khu vực: Stairs (Cầu thang), Trees (Cây), Rock (Đá). Ở giữa là máy khóa hình cầu hiển thị 3 biểu tượng ở 3 hướng.",
-            "Đọc biểu tượng: Ai thấy biểu tượng giữa trùng với biểu tượng bên TRÁI của người khác là Penumbra. Trùng bên PHẢI là Antumbra.",
-            "Ba khu vực sẽ bị chặn tường forcefield. Phải diệt Eye of Riven rớt ra bóng.",
-            "Người nhặt bóng nhìn vào khu vực của mình xem gọi là Penumbra hay Antumbra. Chạy ra khỏi khu vực đó qua đường ống, tìm đến bệ có yêu cầu trùng khớp.",
-            "Dùng lựu đạn bóng ném vào bệ để mở khóa (Dunk). Ví dụ cần Penumbra thì dùng bóng Penumbra.",
-            "Làm thành công 3 bệ thì hoàn thành 1 phase. Lặp lại 3 lần. Nhớ bảo vệ máy khóa giữa map không cho Knight cắm cờ (Wipe)."
-          ]
-        }
-      }
-    },
-    {
-      "name": "Riven of a Thousand Voices",
-      "roles": {
-        "dps": {
-          "description": "Sử dụng vũ khí và Super mạnh nhất để Burst Damage chết Boss trước khi mechanic bắt đầu.",
-          "quantity": 6
-        }
-      },
-      "secrets": [],
-      "id": "riven-of-a-thousand-voices",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Cách chơi chuẩn (Legit) rất phức tạp liên quan đến việc hướng dẫn nhau bắn các con mắt của Riven qua gương. Tuy nhiên, 99% cộng đồng chơi trò dồn Damage hỏa lực (Cheese). Dưới đây là chiến thuật Cheese.",
-          "steps": [
-            "Cheese Strategy: Toàn bộ 6 người nhảy xuống cùng một hầm (thường là phòng Blue/Crystal).",
-            "Áp sát góc tường sát nách Riven để không bị vướng Hitbox.",
-            "Riven hiện ra mặt hoặc chân. Cả team dùng Behemoth Titan, Strand Titan, hoặc hỏa lực cực mạnh như Cursed Thrall, Grenade Launcher dồn sát thương vào càng của Riven.",
-            "Giết nó ngay trong vòng vài giây đầu tiên.",
-            "Sau đó sẽ dịch chuyển lên vương quốc Ascendant, chạy Parkour (tránh bị rớt) đến bóng sáng cuối cùng.",
-            "Rơi xuống họng của Riven, bắn nổ cục hạch (Trái tim Riven) để kết liễu."
-          ]
-        }
-      }
-    },
-    {
-      "name": "The Queenswalk",
-      "roles": {
-        "heart_carrier": {
-          "description": "Ôm tim chạy, gọi thời gian đếm ngược.",
-          "quantity": 1
-        },
-        "inside_team": {
-          "description": "Nhặt hạt ánh sáng để reset giờ cho người ôm tim.",
-          "quantity": 5
-        }
-      },
-      "secrets": [],
-      "id": "the-queenswalk",
-      "walkthrough": {
-        "phase_1": {
-          "name": "Cơ chế chính",
-          "objective": "Bê trái tim của Riven (như quả bóng) chạy ngược từ phòng cuối về đầu rào chắn (Techeun).",
-          "steps": [
-            "Hệ thống sẽ chọn ngẫu nhiên 1 người nhặt tim (Fate's Chosen). Người này ôm tim bắt đầu chạy. Có một vùng hào quang xung quanh bảo vệ team khỏi bóng tối.",
-            "Khi đếm ngược trên người ôm tim hết giờ, người đó sẽ bị hút vào chiều không gian khác (Bên Trong) cùng với trái tim rớt lại (Để người ngẫu nhiên khác bên ngoài bốc).",
-            "Người cầm tim có thể nhặt quả cầu ánh sáng trên đường để gia hạn thời gian 1 lần.",
-            "Bên Trong không gian: Không gian thu hẹp liên tục, người bên trong phải đánh quái nhặt hạt ánh sáng (Taken Strength) để giải trừ debuff kéo dài vòng đời cho người cầm tim bên ngoài.",
-            "Lặp lại trò rớt tim, nhặt lại, người vào trong kéo dài giờ cho tới khi người cuối cùng ôm tim nhét vào rương ở lối vào mỏ (Kalli room) là kết thúc Raid."
-          ]
-        }
-      }
-    }
-  ],
   "preface": {
-    "formatting_rules": "Hãy học thuộc bảng biểu tượng (Bird looking left, Infinity Snake, Fish...) để giao tiếp nhanh ở ải Vault và Kalli.",
+    "formatting_rules": "Đây là Raid có biểu tượng cực kỳ phức tạp (bảng 16 biểu tượng loài thú, rồng, chim, cá). Bạn bắt buộc phải có hình ảnh Bảng Biểu Tượng Last Wish mở sẵn trên điện thoại hoặc màn hình phụ để giao tiếp (Ví dụ: 'Chim nhìn trái đậu trên cành', 'Rồng hình số 8').",
     "non_linear_mechanic": {
-      "description": "Bạn có thể sử dụng bức tường điều ước (Wall of Wishes) ở đầu Raid để teleport qua mặt bất kỳ ải nào.",
+      "description": "Hành trình tiêu diệt Riven - Sinh vật Ahamkara cuối cùng (Rồng điều ước) bị thao túng bởi bóng tối. Raid có Bức tường Điều Ước (Wall of Wishes) cho phép bạn dịch chuyển thẳng đến bất kỳ ải nào bằng cách nhập code.",
       "elevator_plates": []
     }
   },
   "loadout_tips": {
-    "note": "Vì hầu hết các team đều áp dụng chiến thuật Cheese Riven, hỏa lực dồn sát thương bạo kích (Burst DPS) vào chân Riven là quan trọng nhất (Behemoth Titan, Grenade Launchers).",
+    "note": "Do chiến thuật 'Cheese Riven' đã trở thành quốc dân, hỏa lực tập trung vào cận chiến hạng nặng hoặc Burst DPS cực kỳ quan trọng ở ải Riven. Ở các ải khác, kiếm (Swords) là meta số 1.",
     "warlocks": {
       "supers": [
         {
           "name": "Well of Radiance",
-          "utility": "Bắt buộc cho mọi ải để có buff sát thương ổn định."
+          "utility": "Chìa khóa cho mọi pha DPS, từ Kalli, Shuro Chi, Morgeth cho tới Riven."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Sunbracers",
-          "recommendation": "Ném lựu đạn mặt trời liên tục để chặn cổng sinh quái ở Shuro Chi."
+          "recommendation": "Ở ải Shuro Chi, quái sinh ra liên tục theo từng đàn. Một Warlock ném Sunbracers có thể diệt sạch cả sàn đấu trong 3 giây."
         }
       ]
     },
     "titans": {
       "supers": [
         {
-          "name": "Glacial Quake (Behemoth)",
-          "utility": "Đây là SUPER MẠNH NHẤT để Cheese Riven. Tinh thể băng (Stasis Crystals) nổ ở móng vuốt Riven gây damage lỗi cực to."
+          "name": "Glacial Quake (Stasis Behemoth)",
+          "utility": "Super BẮT BUỘC để Cheese Riven. Tinh thể băng nổ ở móng vuốt Riven tạo ra sát thương lỗi game siêu to."
+        },
+        {
+          "name": "Twilight Arsenal",
+          "utility": "Lựa chọn tốt để phóng rìu từ xa nếu không dùng Behemoth."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Synthoceps",
-          "recommendation": "Giúp nổ tinh thể băng to hơn hoặc chém búa nát gáo Morgeth."
+          "recommendation": "Buff sát thương Super của Behemoth lên mức hủy diệt."
         }
       ]
     },
@@ -207,19 +46,224 @@
       "supers": [
         {
           "name": "Golden Gun (Marksman)",
-          "utility": "Bắn Celestial Nighthawk vào miệng Riven nếu không có Titan Behemoth."
+          "utility": "Nếu team không có Titan Behemoth, Hunter Golden Gun bắn vào mồm Riven là giải pháp thay thế hoàn hảo."
         },
         {
-          "name": "Blade Barrage",
-          "utility": "Dọn quái cực nhanh ở Shuro Chi."
+          "name": "Shadowshot",
+          "utility": "Trói quái ở ải Vault cực kỳ tiện lợi."
         }
       ],
       "exotics_and_abilities": [
         {
-          "name": "Star-Eater Scales",
-          "recommendation": "Sạc đầy 4 cục Orb để có Super mạnh nhất game dội vào Boss."
+          "name": "Celestial Nighthawk",
+          "recommendation": "Nhấn chìm Kalli và Riven bằng 1 viên đạn sát thương tối đa."
         }
       ]
     }
-  }
+  },
+  "encounters": [
+    {
+      "id": "kalli-the-corrupted",
+      "name": "Kalli, The Corrupted",
+      "roles": {
+        "plate_standers": {
+          "description": "Đứng lên 6 bệ xung quanh map tương ứng với biểu tượng đúng.",
+          "quantity": 6,
+          "types": [
+            "Mechanic"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đọc biểu tượng và Dẫm Bệ",
+          "objective": "Kích hoạt bệ để thanh tẩy Kalli.",
+          "steps": [
+            "Nhìn quanh khu vực hố giữa map, sẽ có 3 biểu tượng (thường là Hình Rắn) treo lơ lửng.",
+            "Chia nhau đi tìm xung quanh rìa map 6 cái bệ đá. Dưới đất của mỗi bệ có khắc 1 biểu tượng.",
+            "Người chơi CHỈ ĐƯỢC DẪM LÊN BỆ CÓ BIỂU TƯỢNG TRÙNG VỚI 1 TRONG 3 BIỂU TƯỢNG Ở GIỮA MAP.",
+            "Khi dẫm lên, bệ sẽ chia làm 3 múi. 2 múi an toàn và 1 múi sinh ra quả bom Blight đen. Khi bom nổ, dẫm sang múi an toàn. Xử lý xong, bệ sẽ hiện ra một con Taken Knight, giết nó để hoàn thành bệ."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Trốn vào Cửa và DPS",
+          "objective": "Kalli sẽ chuẩn bị tung chiêu quét Wipe toàn bản đồ.",
+          "steps": [
+            "Khi cả 6 bệ được thanh tẩy, Kalli hiện ra ở giữa map. Bắt đầu bắn Kalli (Damage Phase).",
+            "Đang bắn dở, Kalli giơ tay lên tụ phép. Bên dưới bục giữa map sẽ có 6 ô cửa nhỏ tự động mở ra ngẫu nhiên.",
+            "CẢ TEAM hô to: 'TÌM CỬA TRỐN!'. Mỗi người chui vào 1 cửa khác nhau (Nếu 2 người chui chung 1 cửa, 1 người sẽ bị đẩy ra và chết).",
+            "Cửa sập xuống, Kalli thả chiêu Wipe. Cửa mở ra lại, ra ngoài tiếp tục DPS. Lặp lại 3 lần như vậy."
+          ]
+        }
+      }
+    },
+    {
+      "id": "shuro-chi-the-corrupted",
+      "name": "Shuro Chi, The Corrupted",
+      "roles": {
+        "puzzle_solvers": {
+          "description": "Nhảy lên bệ giải đố hình ảnh trên tường.",
+          "quantity": 4,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "crystal_holders": {
+          "description": "Nhặt Prism Laser bắn vào nhau để phá khiên Shuro Chi.",
+          "quantity": 3,
+          "types": [
+            "Runner"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đua tốc độ và Phá khiên",
+          "objective": "Shuro Chi có đếm ngược bài ca tử thần (Wipe). Chạy thật nhanh giết quái.",
+          "steps": [
+            "Đuổi theo Shuro Chi lên bậc thang. Gặp ả, ả sẽ tạo khiên. Quanh ả có 3 bệ đá rơi ra 3 cục Eye of Riven (Laser Prism).",
+            "Cử 3 người nhặt 3 cục Prism, đứng lên 3 cái bệ quanh Shuro Chi.",
+            "Người 1 bấm bắn tia Laser vào Người 2, Người 2 bắn vào Người 3, Người 3 bắn VÀO NGƯỜI SHURO CHI (tạo thành 1 mạch nối tam giác).",
+            "Khiên ả bị vỡ, dồn sát thương ngay lập tức (Chỉ được đánh rớt 1/6 cây máu của ả, đạt ngưỡng là ả bất tử). Tiếp tục rượt đuổi lên tầng trên."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Giải đố Puzzle trên tường",
+          "objective": "Giữa mỗi chặng, team bị nhốt trong phòng có các bảng xếp hình 3x3 trên tường.",
+          "steps": [
+            "Nhìn lên bảng hình ảnh trên tường, nó bị thiếu vài mảnh (ô trống). Bạn phải biến các bệ dưới sàn nhà tương ứng với các ô trống đó.",
+            "Cử 4 người nhảy lên các bệ trên sàn nhà TƯƠNG ỨNG với vị trí các ô bị khuyết trên tường.",
+            "LƯU Ý: Một người KHÔNG ĐƯỢC DẪM 2 LẦN VÀO CÙNG 1 BỆ. Nếu ô đó cần dẫm lần 2, người khác phải thay thế. Dẫm đúng sẽ điền đầy hình ảnh.",
+            "Giải đố 3 mặt tường thành công, cửa mở. Lại leo tháp và lặp lại quá trình rượt đuổi -> Phá khiên."
+          ]
+        }
+      }
+    },
+    {
+      "id": "morgeth-the-spirekeeper",
+      "name": "Morgeth, The Spirekeeper",
+      "roles": {
+        "taken_strength_eaters": {
+          "description": "Nhặt bùa Taken Strength rải rác trên map.",
+          "quantity": 4,
+          "types": [
+            "Runner"
+          ]
+        },
+        "cleanser": {
+          "description": "Nhặt Eye of Riven để giải cứu người bị trói.",
+          "quantity": 1,
+          "types": [
+            "Mechanic"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Ăn Taken Strength",
+          "objective": "Cơ chế chính là các quả cầu sương đen 'Taken Strength'. Một người dẫm vào sẽ ăn 1 quả, nhưng nếu ăn quả thứ 3, người đó SẼ CHẾT.",
+          "steps": [
+            "Morgeth có một cục u cực to sau lưng. Xung quanh hắn sinh ra các quả cầu Taken Strength.",
+            "Phân công người ăn bùa. Mục tiêu là nhặt tổng cộng 10 quả cầu trên map.",
+            "Bất ngờ, Morgeth sẽ chọn 1 người đang ăn bùa (Góc dưới màn hình hiện Morgeth traps...). Người đó bị nhốt trong một cái lốc xoáy đen không thể cử động."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Giải cứu và Damage Phase",
+          "objective": "Giải cứu người bị nhốt và kích hoạt DPS.",
+          "steps": [
+            "Một con Taken Captain (Eye of Riven) hiện ra, giết nó rớt cục Prism.",
+            "Một người khác (Cleanser) chạy đến nhặt Prism, đến gần người đang bị lốc xoáy trói, bấm phím Ném lựu đạn (Grenade button) để Giải cứu (Cleanse) người đó.",
+            "Quyền năng Taken Strength của người bị trói sẽ chuyển sang cho Cleanser. Vì vậy Cleanser phải là người chưa ăn quá 2 quả (nếu không sẽ chết vì vượt 2).",
+            "Khi quả cầu thứ 10 hiện ra ngay giữa mặt Morgeth, người cuối cùng ăn nó. Damage Phase ngay lập tức bắt đầu.",
+            "Cả team quây quần sau lưng Morgeth, xả đạn (Whisper, Rocket, Xenophage) thẳng vào khối u phát sáng của hắn."
+          ]
+        }
+      }
+    },
+    {
+      "id": "the-vault",
+      "name": "The Vault (Phòng Két Sắt)",
+      "roles": {
+        "readers": {
+          "description": "Đọc 3 biểu tượng ở giữa và xác định cổng Penumbra/Antumbra.",
+          "quantity": 3,
+          "types": [
+            "Callout"
+          ]
+        },
+        "runners": {
+          "description": "Giết Knight, nhặt Eye of Riven chạy sang phòng khác để mở khóa.",
+          "quantity": 1,
+          "types": [
+            "Runner"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đọc cơ chế Pen/Ant",
+          "objective": "Một trong những ải hại não nhất Destiny. Có 3 bệ (Cây, Trái Đất, Đá).",
+          "steps": [
+            "3 người đứng lên bệ. Nhìn vào hologram ở giữa. Mỗi người sẽ thấy 3 biểu tượng (1 Giữa, 1 Trái, 1 Phải).",
+            "Người 1 đọc biểu tượng GIỮA của mình. Người 2 và Người 3 tìm xem biểu tượng đó nằm ở BÊN TRÁI hay BÊN PHẢI của mình.",
+            "Quy tắc vàng: BÊN TRÁI = PENUMBRA. BÊN PHẢI = ANTUMBRA.",
+            "Lặp lại để tìm ra chính xác khóa của mỗi bệ (Ví dụ: Bệ Cây là Penumbra, bệ Đá là Antumbra)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Chạy nhặt Eye of Riven",
+          "objective": "Đưa bóng vào đúng khóa.",
+          "steps": [
+            "Các cửa xung quanh sẽ đóng/mở luân phiên. Cửa nào mở, Runner chạy vào tìm giết con Taken Captain nhặt Eye of Riven.",
+            "Khi nhặt Eye, nhìn bên lề trái màn hình, nó sẽ ghi là Penumbra hay Antumbra.",
+            "Nếu là Penumbra, Runner phải chạy lại dẫm vào Bệ có khóa Penumbra lúc nãy tìm được, bấm nút đập cận chiến (Cleanse).",
+            "Cứ dọn quái, ngăn Knight xông vào bệ và giải đố như thế 3 lần để mở hầm chứa."
+          ]
+        }
+      }
+    },
+    {
+      "id": "riven-of-a-thousand-voices",
+      "name": "Riven of a Thousand Voices",
+      "roles": {
+        "cheese_team": {
+          "description": "6 người tập trung chém ngón chân Riven.",
+          "quantity": 6,
+          "types": [
+            "Burst Damage"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Cheese Riven (Meta Quốc Dân)",
+          "objective": "Thay vì chơi Legit (rất dài và cực kỳ phức tạp với đọc hàng chục biểu tượng mắt), 99% cộng đồng sử dụng chiến thuật 'Cheese' phá game hợp lệ.",
+          "steps": [
+            "Cả 6 người đi vào CÙNG 1 CĂN PHÒNG (thường là phòng Pha Lê bên trái hoặc phòng Cây bên phải). Đứng ép sát vào tường, lắng nghe bóng của Riven đi qua.",
+            "Riven sẽ thò cái móng vuốt khổng lồ của ả vào phòng. ĐÂY LÀ ĐIỂM YẾU LỖI.",
+            "Ngay khi ả thả vuốt xuống, Titan Behemoth bật Glacial Quake, tạo ra một đống tinh thể băng đập vào móng vuốt ả (Sát thương vỡ băng x2 x3 trên hitbox vuốt).",
+            "5 người còn lại cắm Well, vác Kiếm Lament hoặc chém cận chiến/Grenade Launcher xả điên cuồng vào ngón chân móng vuốt của Riven.",
+            "Sát thương từ móng vuốt truyền thẳng vào máu chính mà không kích hoạt cơ chế Wipe của 10 con mắt."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Bắn mồm và Chui vào cuống họng",
+          "objective": "Final Stand của Riven.",
+          "steps": [
+            "Bằng sức mạnh của Cheese, máu Riven tụt xuống vạch cuối cùng. Cả team sẽ bị kéo vào khoảng không, dần dần rớt xuống.",
+            "Nhắm bắn vào mấy cục u mụn trên thân thể Riven trong lúc rơi để hạ cánh.",
+            "Khi đáp đất, Riven há to mồm lần cuối. Cả team XẢ TẤT CẢ VŨ KHÍ HẠNG NẶNG vào miệng ả trước khi ả thổi lửa Wipe.",
+            "Khi ả gục xuống, miệng ả hé mở. Cả team BƯỚC THẲNG VÀO TRONG MIỆNG Ả, chạy dọc theo thực quản đi sâu vào trong cuống họng.",
+            "Bên trong bụng Riven có 1 trái tim khổng lồ màu đen. Đập nát nó để kết liễu hoàn toàn sinh vật Ahamkara cuối cùng."
+          ]
+        }
+      }
+    }
+  ]
 }
