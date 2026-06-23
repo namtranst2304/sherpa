@@ -1,0 +1,115 @@
+{
+  "dungeon_name": "The Whisper",
+  "location": "Into The Light Rotator",
+  "bannerImage": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+  "overview": "Nhiệm vụ Exotic huyền thoại đưa Guardians quay trở lại hầm ngầm của Io để thu thập khẩu súng ngắm Whisper of the Worm. Trong phiên bản làm lại (Into The Light), nhiệm vụ có thêm các rương ẩn để nâng cấp Catalyst và perk.",
+  "loot_table": [
+    {
+      "weapon": "Whisper of the Worm",
+      "type": "Sniper Rifle",
+      "frame": "Heavy (Solar)",
+      "source": "Hoàn thành nhiệm vụ",
+      "tier": "S",
+      "isNew": false,
+      "image": "https://www.bungie.net/common/destiny2_content/icons/9e3f16ebcb58a36ba47dd9c7713d3cb0.jpg",
+      "perks": {
+        "column_3": ["Mulligan", "Field Prep", "No Distractions", "Enlightened Action"],
+        "column_4": ["White Nail"],
+        "recommended_pve": ["Field Prep", "White Nail"],
+        "recommended_pvp": ["No Distractions", "White Nail"]
+      }
+    }
+  ],
+  "encounters": [
+    {
+      "id": "jumping-puzzle",
+      "name": "Jumping Puzzle & Khởi động",
+      "walkthrough": {
+        "Phase 1": {
+          "name": "Vượt qua The Grove of Ulan-Tan",
+          "objective": "Tìm đường xuống hầm ngầm của Io.",
+          "steps": [
+            "Bắt đầu nhiệm vụ, nhảy qua các bục đá trên cao.",
+            "Đi theo ánh sáng đỏ để tìm đường chính xác.",
+            "Bạn sẽ gặp một khu vực có các hố đá trượt (slide), hãy căn chỉnh cẩn thận để không bị rơi xuống vực."
+          ]
+        },
+        "Phase 2": {
+          "name": "Căn phòng ngàn hố (The Green Room)",
+          "objective": "Đi qua các hố tử thần",
+          "steps": [
+            "Phòng này có rất nhiều lối đi bị bịt kín. Bạn cần tìm đúng hố có ánh sáng le lói.",
+            "Hoặc bạn có thể đi men theo gờ tường bên hông (shortcut) để tiết kiệm thời gian."
+          ]
+        }
+      },
+      "secrets": [
+        {
+          "title": "Bí ẩn rương giấu kín (Catalyst & Intrinsic)",
+          "description": "Trong bản làm lại, có 3 nhiệm vụ từ Eris Morn (Whispers of the Past) yêu cầu bạn tìm các mảnh Blight ẩn trong Jumping Puzzle.",
+          "steps": [
+            "Tuần 1: Rương đầu tiên nằm ngay trước căn phòng hố đỏ (Red Room). Bắn vỡ viên Vex Oracle để rương hiện ra.",
+            "Tuần 2: Nằm trong góc tối ở phía trên căn phòng rêu xanh (Green Room).",
+            "Tuần 3: Gần cuối Jumping puzzle, rẽ trái thay vì đi thẳng xuống hố chót."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combat-rooms",
+      "name": "Tiêu diệt Taken (Combat Rooms)",
+      "walkthrough": {
+        "Room 1": {
+          "name": "Phòng số 1",
+          "objective": "Quét sạch kẻ thù",
+          "steps": [
+            "Sử dụng súng có sát thương AOE (như Sunshot, Graviton Lance) để dọn dẹp Taken Thrall và Taken Captain nhanh chóng.",
+            "Phá các Blight đen để giảm chỗ núp của địch."
+          ]
+        },
+        "Room 2": {
+          "name": "Phòng số 2 (Phòng Sniper)",
+          "objective": "Tránh hỏa lực",
+          "steps": [
+            "Ưu tiên bắn hạ Taken Hobgoblin đứng trên các cột cao.",
+            "Cẩn thận Taken Knight spam lửa."
+          ]
+        }
+      }
+    },
+    {
+      "id": "boss-room",
+      "name": "Boss Room: Taken Champions",
+      "walkthrough": {
+        "Phase 1": {
+          "name": "Dọn dẹp quái và phá Blight",
+          "objective": "Tạo khoảng trống",
+          "steps": [
+            "Khi nhảy xuống, ngay lập tức dùng Super và Heavy để phá các Blight to ở phía trước và dọn sạch Centurion.",
+            "Cẩn thận các con Taken Centurion sẽ spam cầu đen Axion Dart bay theo bạn."
+          ]
+        },
+        "Phase 2": {
+          "name": "3 Boss Xuất hiện",
+          "objective": "Tiêu diệt Drevis, Urzok, và Ta'aurc",
+          "steps": [
+            "Boss sẽ ra từng đợt hoặc cùng lúc tùy vào tốc độ của bạn.",
+            "Sử dụng Polaris Lance hoặc Outbreak Perfected nếu hết đạn Heavy.",
+            "Đứng ở trong hầm nhỏ dưới sàn (nếu bị áp đảo) để bắn lén chân boss hoặc hồi máu, nhưng hãy cẩn thận kẻ địch tràn xuống."
+          ]
+        }
+      },
+      "secrets": [
+        {
+          "title": "Cách lấy Full Catalyst và Crafting",
+          "description": "Hướng dẫn chi tiết mở khóa toàn bộ sức mạnh của Whisper of the Worm.",
+          "steps": [
+            "1. Hoàn thành The Whisper ở độ khó Legend: Bạn sẽ nhận được Whisper of the Worm Catalyst gốc.",
+            "2. Hoàn thành Quest Whispers of the Past I, II, III: Nói chuyện với Eris Morn để nhận quest. Đi vào độ khó Legend, tìm bắn các Oracles và lấy rương ẩn để mở khóa White Nail II, III, IV.",
+            "3. Nâng cấp Perk: Với mỗi mức Intrinsic White Nail mở khóa, bạn sẽ có thể craft thêm perk ở Enclave (như Field Prep, No Distractions)."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "dungeon_name": "Derealize",
+  "location": "Exotic Mission Rotator / Pinnacle Ops",
+  "bannerImage": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+  "overview": "Nhiệm vụ Exotic Derealize (thuộc Episode: Heresy) cho phép người chơi thu thập và nâng cấp vũ khí Barrow-Dyad. Khác với các nhiệm vụ cũ, bạn không cần giải puzzle rương ẩn mà chỉ cần đi lại độ khó Master.",
+  "loot_table": [
+    {
+      "weapon": "Barrow-Dyad",
+      "type": "Submachine Gun",
+      "frame": "Exotic",
+      "source": "Hoàn thành nhiệm vụ",
+      "tier": "S",
+      "isNew": true,
+      "image": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+      "perks": {
+        "column_3": [
+          "Placeholder 1",
+          "Placeholder 2"
+        ],
+        "column_4": [
+          "Placeholder 3",
+          "Placeholder 4"
+        ],
+        "recommended_pve": [
+          "Placeholder 1",
+          "Placeholder 3"
+        ],
+        "recommended_pvp": [
+          "Placeholder 2",
+          "Placeholder 4"
+        ]
+      }
+    }
+  ],
+  "encounters": [
+    {
+      "id": "encounter-1",
+      "name": "Khám phá & Cơ chế",
+      "walkthrough": {
+        "Bước 1": {
+          "name": "Bắt đầu nhiệm vụ",
+          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+          "steps": [
+            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
+            "Chú ý các lối đi ẩn và manh mối trên tường."
+          ]
+        }
+      },
+      "secrets": [
+        {
+          "title": "Cách lấy Catalyst cho Barrow-Dyad",
+          "description": "Tin vui là Derealize áp dụng cơ chế rớt Catalyst kiểu mới của năm 2025: Không cần đi tìm rương ẩn hay giải puzzle rối não!",
+          "steps": [
+            "1. Mở khóa súng & Catalyst 1: Hoàn thành nhiệm vụ lần đầu ở bất kỳ độ khó nào.",
+            "2. Lấy Catalyst 2, 3 và 4: Chỉ cần hoàn thành nhiệm vụ ở độ khó Master (hoặc cao hơn).",
+            "3. Cơ chế Knockout: Mỗi lần đi Master chắc chắn rớt 1 Catalyst tiếp theo cho tới khi bạn có đủ toàn bộ.",
+            "4. Nâng cấp: Tới The Enclave trên Sao Hỏa (Mars) để craft và lắp các perk mong muốn."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "name": "Boss Cuối",
+      "walkthrough": {
+        "Combat": {
+          "name": "Tiêu diệt Boss",
+          "objective": "Phá khiên và gây sát thương",
+          "steps": [
+            "Thực hiện cơ chế của nhiệm vụ để phá lớp khiên miễn nhiễm (Immunity Shield) của Boss.",
+            "Dồn sát thương (DPS) vào Boss. Cẩn thận quái nhỏ (adds) spawn liên tục."
+          ]
+        }
+      }
+    }
+  ]
+}

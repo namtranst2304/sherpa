@@ -1,0 +1,76 @@
+{
+  "dungeon_name": "Starcrossed",
+  "location": "Exotic Mission Rotator / Pinnacle Ops",
+  "bannerImage": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+  "overview": "Nhiệm vụ Exotic Starcrossed cho phép người chơi thu thập và nâng cấp vũ khí Wish-Keeper. Người chơi có thể tìm các rương ẩn để mở khóa các bản nâng cấp Intrinsic (Catalyst) và thay đổi perk theo ý muốn tại Enclave.",
+  "loot_table": [
+    {
+      "weapon": "Wish-Keeper",
+      "type": "Combat Bow",
+      "frame": "Energy (Strand)",
+      "source": "Hoàn thành nhiệm vụ",
+      "tier": "S",
+      "isNew": false,
+      "image": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+      "perks": {
+        "column_3": [
+          "Hatchling",
+          "Vorpal Weapon"
+        ],
+        "column_4": [
+          "Enduring Snipe",
+          "Archer's Tempo"
+        ],
+        "recommended_pve": [
+          "Hatchling",
+          "Enduring Snipe"
+        ],
+        "recommended_pvp": [
+          "Vorpal Weapon",
+          "Archer's Tempo"
+        ]
+      }
+    }
+  ],
+  "encounters": [
+    {
+      "id": "encounter-1",
+      "name": "Khám phá & Cơ chế",
+      "walkthrough": {
+        "Bước 1": {
+          "name": "Bắt đầu nhiệm vụ",
+          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+          "steps": [
+            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
+            "Chú ý các lối đi ẩn và manh mối trên tường."
+          ]
+        }
+      },
+      "secrets": [
+        {
+          "title": "Cách lấy Catalyst cho Wish-Keeper (Rotator)",
+          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+          "steps": [
+            "1. Hoàn thành Starcrossed ở độ khó Normal để nhận súng.",
+            "2. Hoàn thành Starcrossed ở độ khó Legend để mở khóa các nâng cấp Catalyst (Enduring Snare, Hatchling, Multi-Threaded, Vorpal).",
+            "3. Bạn có thể làm các quest tìm chòm sao (Constellations) ẩn trong map để tăng tiến trình hoặc lấy Triumph."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "name": "Boss Cuối",
+      "walkthrough": {
+        "Combat": {
+          "name": "Tiêu diệt Boss",
+          "objective": "Phá khiên và gây sát thương",
+          "steps": [
+            "Thực hiện cơ chế của nhiệm vụ để phá lớp khiên miễn nhiễm (Immunity Shield) của Boss.",
+            "Dồn sát thương (DPS) vào Boss. Cẩn thận quái nhỏ (adds) spawn liên tục."
+          ]
+        }
+      }
+    }
+  ]
+}

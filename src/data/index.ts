@@ -61,3 +61,29 @@ export const PANTHEON_DATA: Record<string, ActivityData> = {
   "week-3": week3 as unknown as ActivityData,
   "week-4": week4 as unknown as ActivityData,
 }
+
+import theWhisper from "./exotic-missions/the-whisper.json"
+import zeroHour from "./exotic-missions/zero-hour.json"
+import presage from "./exotic-missions/presage.json"
+import voxObscura from "./exotic-missions/vox-obscura.json"
+import seraphsShield from "./exotic-missions/seraphs-shield.json"
+import avalon from "./exotic-missions/avalon.json"
+import starcrossed from "./exotic-missions/starcrossed.json"
+import encore from "./exotic-missions/encore.json"
+import dualDestiny from "./exotic-missions/dual-destiny.json"
+import derealize from "./exotic-missions/derealize.json"
+import heliostat from "./exotic-missions/heliostat.json"
+
+export const EXOTIC_MISSIONS_DATA: Record<string, ActivityData> = {
+  "the-whisper": theWhisper as unknown as ActivityData,
+  "zero-hour": zeroHour as unknown as ActivityData,
+  "presage": presage as unknown as ActivityData,
+  "vox-obscura": voxObscura as unknown as ActivityData,
+  "seraphs-shield": seraphsShield as unknown as ActivityData,
+  "avalon": avalon as unknown as ActivityData,
+  "starcrossed": starcrossed as unknown as ActivityData,
+  "encore": encore as unknown as ActivityData,
+  "dual-destiny": dualDestiny as unknown as ActivityData,
+  "derealize": derealize as unknown as ActivityData,
+  "heliostat": heliostat as unknown as ActivityData,
+}

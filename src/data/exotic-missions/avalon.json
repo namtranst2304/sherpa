@@ -1,0 +1,77 @@
+{
+  "dungeon_name": "//NODE.OVRD.AVALON//",
+  "location": "Exotic Mission Rotator / Pinnacle Ops",
+  "bannerImage": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+  "overview": "Nhiệm vụ Exotic //NODE.OVRD.AVALON// cho phép người chơi thu thập và nâng cấp vũ khí Vexcalibur. Người chơi có thể tìm các rương ẩn để mở khóa các bản nâng cấp Intrinsic (Catalyst) và thay đổi perk theo ý muốn tại Enclave.",
+  "loot_table": [
+    {
+      "weapon": "Vexcalibur",
+      "type": "Glaive",
+      "frame": "Energy (Void)",
+      "source": "Hoàn thành nhiệm vụ",
+      "tier": "S",
+      "isNew": false,
+      "image": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+      "perks": {
+        "column_3": [
+          "Grave Robber",
+          "Replenishing Aegis"
+        ],
+        "column_4": [
+          "Feedback",
+          "Immovable Object"
+        ],
+        "recommended_pve": [
+          "Grave Robber",
+          "Feedback"
+        ],
+        "recommended_pvp": [
+          "Replenishing Aegis",
+          "Immovable Object"
+        ]
+      }
+    }
+  ],
+  "encounters": [
+    {
+      "id": "encounter-1",
+      "name": "Khám phá & Cơ chế",
+      "walkthrough": {
+        "Bước 1": {
+          "name": "Bắt đầu nhiệm vụ",
+          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+          "steps": [
+            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
+            "Chú ý các lối đi ẩn và manh mối trên tường."
+          ]
+        }
+      },
+      "secrets": [
+        {
+          "title": "Cách lấy Catalyst cho Vexcalibur (Rotator)",
+          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+          "steps": [
+            "1. Hoàn thành nhiệm vụ //NODE.OVRD.AVALON// ở độ khó Legend.",
+            "2. Bạn không bắt buộc phải mở các rương ẩn bằng mã Vex như trước đây để lấy Catalyst.",
+            "3. Cứ mỗi lần clear Legend (1 lần/tuần), bạn sẽ nhận được 1 nâng cấp Catalyst (như Robber Refit, Feedback Refit).",
+            "4. Chế tạo lại vũ khí tại The Enclave."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boss",
+      "name": "Boss Cuối",
+      "walkthrough": {
+        "Combat": {
+          "name": "Tiêu diệt Boss",
+          "objective": "Phá khiên và gây sát thương",
+          "steps": [
+            "Thực hiện cơ chế của nhiệm vụ để phá lớp khiên miễn nhiễm (Immunity Shield) của Boss.",
+            "Dồn sát thương (DPS) vào Boss. Cẩn thận quái nhỏ (adds) spawn liên tục."
+          ]
+        }
+      }
+    }
+  ]
+}

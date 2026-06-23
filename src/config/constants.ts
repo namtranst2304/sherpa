@@ -1,5 +1,5 @@
-import { ShieldAlert, Swords, Crown, type LucideIcon } from "lucide-react"
-import { RAIDS_DATA, DUNGEONS_DATA, PANTHEON_DATA } from "@/data"
+import { ShieldAlert, Swords, Crown, Target, type LucideIcon } from "lucide-react"
+import { RAIDS_DATA, DUNGEONS_DATA, PANTHEON_DATA, EXOTIC_MISSIONS_DATA } from "@/data"
 import { ActivityData } from "@/types"
 
 
@@ -44,6 +44,14 @@ const mapPantheonToItems = (): ActivityItem[] => {
   }))
 }
 
+const mapExoticMissionsToItems = (): ActivityItem[] => {
+  return Object.entries(EXOTIC_MISSIONS_DATA).map(([slug, data]: [string, ActivityData]) => ({
+    title: data.dungeon_name || data.raid_name || "Unknown Mission",
+    href: `/exotic-missions/${slug}`,
+    description: data.location || data.active_orbit || "Mission Location",
+  }))
+}
+
 
 
 export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
@@ -73,5 +81,14 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     icon: Crown,
     items: mapPantheonToItems(),
     themeColor: "cyan"
+  },
+  exotic_missions: {
+    id: "exotic-missions",
+    title: "Exotic Missions",
+    href: "/exotic-missions",
+    description: "Nhiệm vụ đặc biệt ẩn chứa những món vũ khí Exotic uy lực nhất.",
+    icon: Target,
+    items: mapExoticMissionsToItems(),
+    themeColor: "yellow"
   }
 }
