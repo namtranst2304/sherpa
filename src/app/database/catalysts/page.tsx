@@ -22,8 +22,12 @@ export default function CatalystsPage() {
             
             {/* Weapon Info Sidebar */}
             <div className="w-full md:w-64 bg-zinc-900/50 border-r border-zinc-800 p-6 flex flex-col gap-4 items-center md:items-start justify-center">
-              <div className="w-20 h-20 bg-black/50 rounded border border-amber-500/30 flex items-center justify-center text-4xl group-hover:border-amber-500 transition-colors shadow-[0_0_15px_rgba(245,158,11,0.1)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)]">
-                {cat.icon}
+              <div className="flex-shrink-0 w-16 h-16 bg-black rounded border border-zinc-800 flex items-center justify-center overflow-hidden group-hover:border-amber-500 transition-colors shadow-[0_0_15px_rgba(245,158,11,0.1)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)]">
+                {cat.icon ? (
+                  <img src={cat.icon} alt={cat.weaponName} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-3xl">🌟</span>
+                )}
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-lg font-black uppercase text-amber-500 tracking-wider leading-tight">{cat.weaponName}</h3>

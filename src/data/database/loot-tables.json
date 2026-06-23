@@ -8,12 +8,32 @@
         "order": 1,
         "name": "Substratum",
         "weapons": [
-          { "name": "Non-Denominational", "type": "Combat Bow", "icon": "🏹", "tier": "Legendary" },
-          { "name": "Imminence", "type": "Submachine Gun", "icon": "🔫", "tier": "Legendary" }
+          {
+            "name": "Non-Denouement",
+            "icon": "https://www.bungie.net/common/destiny2_content/icons/e56caaf523a140ff834905da55d3b046.jpg",
+            "type": "Combat Bow",
+            "tier": "Legendary"
+          },
+          {
+            "name": "Imminence",
+            "icon": "https://www.bungie.net/common/destiny2_content/icons/0a636f8e1f115bcb825e7ab60ef6c302.jpg",
+            "type": "Submachine Gun",
+            "tier": "Legendary"
+          }
         ],
         "armor": [
-          { "name": "Promised Reign Helm", "icon": "🪖" },
-          { "name": "Promised Reign Gauntlets", "icon": "🧤" }
+          {
+            "name": "Promised Reign Helm",
+            "icon": "",
+            "type": "Unknown",
+            "tier": "Unknown"
+          },
+          {
+            "name": "Promised Reign Gauntlets",
+            "icon": "",
+            "type": "Unknown",
+            "tier": "Unknown"
+          }
         ],
         "exotic": null
       },
@@ -21,14 +41,33 @@
         "order": 5,
         "name": "The Witness",
         "weapons": [
-          { "name": "Euphony", "type": "Linear Fusion Rifle", "icon": "🌟", "tier": "Exotic" },
-          { "name": "Nullify", "type": "Pulse Rifle", "icon": "🔫", "tier": "Legendary" },
-          { "name": "Critical Anomaly", "type": "Sniper Rifle", "icon": "🎯", "tier": "Legendary" }
+          {
+            "name": "Nullify",
+            "icon": "https://www.bungie.net/common/destiny2_content/icons/03de9a5e297c2a9521e9ef360066417a.jpg",
+            "type": "Pulse Rifle",
+            "tier": "Legendary"
+          },
+          {
+            "name": "Critical Anomaly",
+            "icon": "https://www.bungie.net/common/destiny2_content/icons/64ce229d4c03c5cca04e9de5855146a2.jpg",
+            "type": "Sniper Rifle",
+            "tier": "Legendary"
+          }
         ],
         "armor": [
-          { "name": "Promised Reign Robes", "icon": "🧥" }
+          {
+            "name": "Promised Reign Robes",
+            "icon": "",
+            "type": "Unknown",
+            "tier": "Unknown"
+          }
         ],
-        "exotic": { "name": "Euphony", "icon": "🌟" }
+        "exotic": {
+          "name": "Euphony",
+          "icon": "https://www.bungie.net/common/destiny2_content/icons/fe16110003f0cc75145eed012458a667.jpg",
+          "type": "Linear Fusion Rifle",
+          "tier": "Exotic"
+        }
       }
     ]
   }

@@ -52,20 +52,37 @@ export default function ArmorSetsPage() {
                   <span className="text-xs font-mono font-bold uppercase tracking-widest text-zinc-500">Armor Pieces</span>
                 </div>
                 
-                <div className="grid grid-cols-5 gap-2">
-                  {set.pieces.map(piece => (
-                    <div key={piece.name} className="flex flex-col items-center gap-2 group/piece cursor-help" title={piece.name}>
-                      <div className="w-full aspect-square bg-zinc-900 rounded border border-zinc-800 flex items-center justify-center text-2xl group-hover/piece:border-neon-cyan/50 transition-colors">
-                        {piece.icon}
+                <div className="grid grid-cols-1 gap-2">
+                  {set.pieces.map((item) => (
+                    <div key={item.name} className="flex items-center gap-3 bg-black/40 p-2 rounded border border-zinc-800 hover:border-zinc-500 transition-colors group">
+                      <div className="w-12 h-12 bg-zinc-900 rounded overflow-hidden flex items-center justify-center shrink-0 border border-zinc-800 group-hover:border-zinc-500/50">
+                        {item.icon ? (
+                          <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
+                        ) : (
+                          <span className="text-2xl">🪖</span>
+                        )}
                       </div>
-                      <span className="text-[9px] font-mono uppercase text-zinc-600 text-center">{piece.slot}</span>
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-sm font-bold text-zinc-200 truncate">{item.name}</span>
+                        <span className="text-[10px] font-mono uppercase text-zinc-500">{item.slot}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-auto pt-2 flex items-center justify-between">
-                <span className="text-xs font-mono text-zinc-600">Stat Bias: <span className="text-zinc-300">{set.stats}</span></span>
+              <div className="mt-auto pt-4 flex flex-col gap-2 border-t border-zinc-800/50">
+                <span className="text-xs font-mono text-zinc-600 mb-1">SET BONUS / ORIGIN TRAIT</span>
+                {set.setBonus ? Object.entries(set.setBonus).map(([key, desc]) => (
+                  <div key={key} className="bg-black/40 p-3 rounded border border-zinc-800/50 flex flex-col gap-1">
+                    <span className="text-xs font-bold text-neon-cyan uppercase">
+                      {key === 'raid_mod' ? 'Raid Mod Socket' : 
+                       key === 'origin_trait' ? 'Origin Trait' : 
+                       key === 'rep_bonus' ? 'Reputation Bonus' : key}
+                    </span>
+                    <span className="text-sm text-zinc-400">{String(desc)}</span>
+                  </div>
+                )) : null}
               </div>
             </div>
           </CyberCard>

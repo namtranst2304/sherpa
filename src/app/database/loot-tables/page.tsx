@@ -37,8 +37,12 @@ export default function LootTablesPage() {
                       <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
                         {enc.weapons.map(item => (
                           <div key={item.name} className="flex items-center gap-3 bg-black/40 p-2 rounded border border-zinc-800 hover:border-neon-cyan/50 transition-colors group">
-                            <div className="w-10 h-10 bg-zinc-900 rounded flex items-center justify-center text-xl shrink-0 group-hover:bg-neon-cyan/10 transition-colors border border-zinc-800 group-hover:border-neon-cyan/30">
-                              {item.icon}
+                            <div className="w-10 h-10 bg-zinc-900 rounded overflow-hidden flex items-center justify-center shrink-0 border border-zinc-800 group-hover:border-neon-cyan/30">
+                              {item.icon ? (
+                                <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-xl">🔫</span>
+                              )}
                             </div>
                             <div className="flex flex-col min-w-0">
                               <span className={`text-sm font-bold truncate ${item.tier === 'Exotic' ? 'text-amber-500' : 'text-zinc-200 group-hover:text-neon-cyan'}`}>
@@ -59,8 +63,12 @@ export default function LootTablesPage() {
                       <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
                         {enc.armor.map(item => (
                           <div key={item.name} className="flex items-center gap-3 bg-black/40 p-2 rounded border border-zinc-800 hover:border-zinc-500 transition-colors group">
-                            <div className="w-10 h-10 bg-zinc-900 rounded flex items-center justify-center text-xl shrink-0 group-hover:bg-zinc-800 transition-colors border border-zinc-800">
-                              {item.icon}
+                            <div className="w-10 h-10 bg-zinc-900 rounded overflow-hidden flex items-center justify-center shrink-0 border border-zinc-800 group-hover:border-zinc-500/50">
+                              {item.icon ? (
+                                <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
+                              ) : (
+                                <span className="text-xl">🪖</span>
+                              )}
                             </div>
                             <div className="flex flex-col min-w-0">
                               <span className="text-sm font-bold text-zinc-200 truncate group-hover:text-white">
@@ -79,8 +87,12 @@ export default function LootTablesPage() {
                     <div className="w-full md:w-48 shrink-0">
                       <h5 className="text-[10px] font-mono font-bold uppercase tracking-widest text-amber-500/50 mb-3">Exotic Drop</h5>
                       <div className="flex items-center gap-3 bg-amber-950/20 p-2 rounded border border-amber-900/50 hover:border-amber-500 transition-colors group">
-                        <div className="w-10 h-10 bg-amber-900/30 rounded flex items-center justify-center text-xl shrink-0 border border-amber-500/30">
-                          {enc.exotic.icon}
+                        <div className="w-10 h-10 bg-amber-900/30 rounded overflow-hidden flex items-center justify-center shrink-0 border border-amber-500/30">
+                          {enc.exotic.icon ? (
+                            <img src={enc.exotic.icon} alt={enc.exotic.name} className="w-full h-full object-cover" />
+                          ) : (
+                            <span className="text-xl">🌟</span>
+                          )}
                         </div>
                         <div className="flex flex-col min-w-0">
                           <span className="text-sm font-bold text-amber-500 truncate">{enc.exotic.name}</span>
