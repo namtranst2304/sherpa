@@ -37,27 +37,33 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Cơ Chế Modul Vex",
+          "objective": "Sử dụng các khối Lõi Vex",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Nhiệm vụ trên Nessus sử dụng cơ chế Module Vex: Khối Xanh lá (Connection), Khối Xanh dương (Partition), Khối Vàng (Access).",
+            "Lấy các khối này từ thiết bị nhả khối, sau đó cắm vào các bệ trống tương ứng.",
+            "Cắm khối xanh lá sẽ tạo ra các cây cầu ánh sáng. Khối xanh dương mở các cổng kết nối hắc ám. Bạn phải cầm khối chạy qua lại để liên tục tạo đường đi mới."
+          ]
+        },
+        "phase-2": {
+          "name": "Lõi Hành Tinh & Đánh Minotaur",
+          "objective": "Giải đố phòng diện tích lớn",
+          "steps": [
+            "Đến khu vực trung tâm lõi Nessus, bạn sẽ gặp các con Boss Minotaur. Tiêu diệt chúng để lấy Module.",
+            "Mang Module chạy quanh phòng, thiết lập các kết nối mạng lưới Vex. Nhớ để ý các công tắc nằm ở trên cao hoặc sau vách tường."
+          ]
+        },
+        "phase-3": {
+          "name": "Choral Mind Boss",
+          "objective": "Tiêu diệt con Vex Hydra khổng lồ",
+          "steps": [
+            "Boss sẽ thả các khối Module xuống. Nhiệm vụ của bạn là phải nhặt các khối đó cắm vào thiết bị để dỡ bỏ khiên của Boss.",
+            "Cẩn thận các vòng sáng laze quét qua quét lại trên sàn nhà. Hãy nhảy lên để né.",
+            "Sau khi cắm đủ Module, khiên Boss sụp đổ, xả hỏa lực mạnh nhất vào mặt nó. Lặp lại 2-3 lần là chiến thắng."
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst cho Choir of One",
-          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
-          "steps": [
-            "1. Nhận chuỗi Quest (Overture, Concerto, Coda) từ Banshee-44.",
-            "2. Trong nhiệm vụ Encore, tìm các mã lệnh Vex (Command Nodes) ẩn để mở các cổng phụ và giải Puzzle.",
-            "3. Hoàn thành các Puzzle và điểu kiện đánh Boss bí mật để mở rương lấy Intrinsic Upgrades.",
-            "4. Hoàn thành nhiệm vụ ở độ khó Expert để nhận Catalyst."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -73,5 +79,15 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst cho Choir of One",
+    "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+    "steps": [
+      "1. Nhận chuỗi Quest (Overture, Concerto, Coda) từ Banshee-44.",
+      "2. Trong nhiệm vụ Encore, tìm các mã lệnh Vex (Command Nodes) ẩn để mở các cổng phụ và giải Puzzle.",
+      "3. Hoàn thành các Puzzle và điểu kiện đánh Boss bí mật để mở rương lấy Intrinsic Upgrades.",
+      "4. Hoàn thành nhiệm vụ ở độ khó Expert để nhận Catalyst."
+    ]
+  }
 }

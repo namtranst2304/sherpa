@@ -37,12 +37,31 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Ánh Sáng & Bóng Tối",
+          "objective": "Phối hợp thu thập Mote",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Nhiệm vụ này CHỈ ĐI ĐƯỢC 2 NGƯỜI. Một người sẽ là Ánh Sáng (Light), người kia là Bóng Tối (Dark).",
+            "Người mang Light chỉ có thể nhặt hạt Mote Ánh Sáng và ngược lại.",
+            "Liên tục tiêu diệt quái, nhặt Mote và cắm vào các trụ tương ứng. Trong quá trình đó, bạn sẽ thấy các Biểu tượng (Symbols) trên tường. Người Light sẽ nhìn thấy ký hiệu khác người Dark. Cả hai phải call-out cho nhau để bắn đúng ký hiệu chung."
+          ]
+        },
+        "phase-2": {
+          "name": "Đồng Hồ Vex (The Clocks)",
+          "objective": "Đọc và bắn các nút giao trên đồng hồ",
+          "steps": [
+            "Bạn sẽ đối mặt với một mặt đồng hồ Vex khổng lồ. Sẽ có 3 nút giao phát sáng trên đồng hồ.",
+            "Người mang Light sẽ thấy một mẫu đồng hồ, người mang Dark thấy mẫu khác. Cả hai phải đọc to vị trí các nút giao sáng (ví dụ: 12h, 3h, 9h).",
+            "Sau khi tổng hợp, cả 2 sẽ tìm ra các nút trùng nhau. Đếm từ 1 đến 3 và cùng bắn vào nút trùng đó."
+          ]
+        },
+        "phase-3": {
+          "name": "Savathûn's Copies",
+          "objective": "Giết Boss Light và Boss Dark",
+          "steps": [
+            "Hai con Boss sẽ xuất hiện (Một con có khiên Light, một con có khiên Dark). Bạn mang buff nào thì chỉ đánh được con Boss có khiên đó.",
+            "Trong lúc đánh, chúng sẽ liên tục đổi buff, bạn phải đổi mục tiêu theo.",
+            "Sau khi đánh bại, sẽ có màn Đồng hồ Vex cuối cùng cực kỳ căng thẳng. Giải đố đúng, bạn sẽ nhận được phần thưởng Exotic Item (Exotic Class Item)."
           ]
         }
       },

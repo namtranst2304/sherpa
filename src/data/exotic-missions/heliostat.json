@@ -37,27 +37,34 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Hive Runes",
+          "objective": "Giải mã các ký tự Hive",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Tiến vào khu vực Heresy, bạn sẽ gặp các bức tường có khắc ký tự Hive (Runes).",
+            "Tìm con quái Hive Knight có tên đặc biệt (Rune Keeper), giết nó để lấy buff 'Truesight'.",
+            "Khi có Truesight, bạn sẽ thấy ký tự thật sự cần bắn trên tường. Bắn đúng ký tự để mở cửa."
+          ]
+        },
+        "phase-2": {
+          "name": "Dung Nham & Nhảy Parkour",
+          "objective": "Vượt qua bể dung nham Hive",
+          "steps": [
+            "Khu vực này yêu cầu bạn bay nhảy qua một hồ dung nham khổng lồ. Sẽ có các con lắc dao cạo đu đưa.",
+            "Sử dụng súng bắn tỉa để dọn dẹp bọn Hive Sniper ở bờ bên kia trước khi nhảy.",
+            "Dẫm lên các mỏm đá phát sáng để hồi lại kỹ năng nhảy."
+          ]
+        },
+        "phase-3": {
+          "name": "Boss: The Heretic",
+          "objective": "Tiêu diệt phù thủy Hive",
+          "steps": [
+            "Boss Wizard bay lơ lửng ở giữa map. Dưới đất là các mảng sàn bị nguyền rủa (sẽ mất máu nếu dẫm lâu).",
+            "Bạn phải cầm thanh kiếm Relic (rớt ra từ Knight) để phá khiên Boss.",
+            "Cơ chế: Dùng đòn đánh nặng (Heavy Attack) của Kiếm phóng tia năng lượng vào Boss để vỡ khiên, sau đó đổi sang súng Heavy xả sát thương."
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst cho Wolfsbane",
-          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
-          "steps": [
-            "Heliostat áp dụng cơ chế rớt Catalyst tuần tự của năm 2025.",
-            "1. Hoàn thành nhiệm vụ lần đầu để lấy súng.",
-            "2. Hoàn thành nhiệm vụ ở độ khó Master. Mỗi lần clear thành công ở Master sẽ mở khóa 1 Catalyst.",
-            "3. Bạn có thể farm liên tục (Knockout system) cho đến khi lấy đủ toàn bộ Catalyst mà không cần phải chờ reset tuần."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -73,5 +80,15 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst cho Wolfsbane",
+    "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+    "steps": [
+      "Heliostat áp dụng cơ chế rớt Catalyst tuần tự của năm 2025.",
+      "1. Hoàn thành nhiệm vụ lần đầu để lấy súng.",
+      "2. Hoàn thành nhiệm vụ ở độ khó Master. Mỗi lần clear thành công ở Master sẽ mở khóa 1 Catalyst.",
+      "3. Bạn có thể farm liên tục (Knockout system) cho đến khi lấy đủ toàn bộ Catalyst mà không cần phải chờ reset tuần."
+    ]
+  }
 }

@@ -37,27 +37,44 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Lên Tàu Glykon & Cơ Chế Bào Tử",
+          "objective": "Tìm đường xâm nhập vào con tàu ma Glykon",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Bắt đầu nhiệm vụ, bạn không thể đi qua cánh cửa chính. Hãy nhìn ra bên trái ngoài không gian, nhảy qua các mỏm đá đỏ nhỏ để luồn vào đường ống dẫn vào trong tàu.",
+            "Cơ chế chính của màn này là Egregore Link (Bào tử nấm). Khi bạn đứng gần những chùm nấm xanh và bắn chúng, bạn sẽ nhận được buff 'Egregore Link' kéo dài 15 giây.",
+            "Bạn bắt buộc phải có buff Egregore Link để có thể bước qua những vách ngăn có màu đen kịt (giống như bức màn hắc ám) mà không bị đốt máu đến chết.",
+            "Liên tục tìm các chùm nấm, lấy buff, và di chuyển qua các khu vực khác nhau. Hãy chú ý các cầu dao điện để mở cửa hoặc làm tường di chuyển."
+          ],
+          "images": [
+            {
+              "url": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+              "caption": "Bắn vào chùm nấm để lấy buff Egregore Link"
+            }
+          ]
+        },
+        "phase-2": {
+          "name": "Khu Máy Ép Rác (Trash Compactor)",
+          "objective": "Thoát khỏi căn phòng bị kẹp nát",
+          "steps": [
+            "Sau khi nhảy xuống một căn phòng đầy rác, cánh cửa sẽ khóa lại và hai bức tường bắt đầu ép vào giữa.",
+            "Nhiệm vụ của bạn là phải bắn vỡ các tấm lưới sát dưới sàn nhà để chui xuống bên dưới trước khi bị ép chết.",
+            "Tuy nhiên, sẽ có quái Screeb (con bò nổ) liên tục lao ra. Hãy dọn quái thật nhanh.",
+            "Lưu ý: Có 3 bóng đèn cầu dao phát sáng xung quanh phòng, bạn KHÔNG cần bắn chúng để qua ải, chỉ cần tìm đúng tấm vỉ lưới bị hở và phá nó để chui xuống (hoặc bắn cầu dao để reset thời gian nếu cần)."
+          ]
+        },
+        "phase-3": {
+          "name": "Đánh Boss: Locus of Communion",
+          "objective": "Tiêu diệt con trùm Scorn",
+          "steps": [
+            "Phòng Boss có 2 tầng: Tầng trên mát mẻ và tầng dưới hầm đang bốc cháy (bạn sẽ bị đốt chết nếu nhảy xuống).",
+            "Đầu tiên, dọn quái ở tầng trên. Có 3 bảng điều khiển (Computer Terminals) nằm xung quanh phòng.",
+            "Kích hoạt đủ 3 bảng điều khiển sẽ xả hết lửa ở tầng dưới hầm. Lúc này bạn có khoảng 30-40 giây để nhảy xuống và xả sát thương vào Boss Locus of Communion.",
+            "Khi lửa bắt đầu bùng lên lại (có thông báo), lập tức nhảy lên tầng trên để tránh bị thiêu chết.",
+            "Lặp lại quá trình: Dọn quái -> Bật 3 công tắc -> Nhảy xuống đánh Boss cho đến khi tiêu diệt được hắn."
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst cho Dead Man's Tale (Rotator)",
-          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
-          "steps": [
-            "Trong Exotic Mission Rotator, bạn không cần phải nhặt các Data Pad (Captain's Log) nữa.",
-            "1. Hoàn thành nhiệm vụ ở độ khó Normal để nhận vũ khí gốc và Intrinsic (Cranial Spike) đầu tiên.",
-            "2. Hoàn thành nhiệm vụ ở độ khó Legend mỗi tuần để nhận 1 nâng cấp Catalyst.",
-            "3. Lặp lại cho tới khi mở khóa toàn bộ tùy chọn Perk, sau đó tới The Enclave để craft."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -73,5 +90,15 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst cho Dead Man's Tale (Rotator)",
+    "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+    "steps": [
+      "Trong Exotic Mission Rotator, bạn không cần phải nhặt các Data Pad (Captain's Log) nữa.",
+      "1. Hoàn thành nhiệm vụ ở độ khó Normal để nhận vũ khí gốc và Intrinsic (Cranial Spike) đầu tiên.",
+      "2. Hoàn thành nhiệm vụ ở độ khó Legend mỗi tuần để nhận 1 nâng cấp Catalyst.",
+      "3. Lặp lại cho tới khi mở khóa toàn bộ tùy chọn Perk, sau đó tới The Enclave để craft."
+    ]
+  }
 }

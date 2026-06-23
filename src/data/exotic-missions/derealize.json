@@ -37,27 +37,34 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Xâm Nhập & Cơ Chế Bóng Tối",
+          "objective": "Vượt qua hàng phòng thủ Scorn",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Tiến vào khu vực sào huyệt của Revenant Scorn. Khu vực này có rất nhiều hố bẫy Stasis làm chậm.",
+            "Cơ chế chính: Bạn cần tiêu diệt quái vật mang buff đặc biệt (Revenant Weaver) để cướp lấy 'Tia sáng rực rỡ' (Radiant Spark).",
+            "Sử dụng Tia sáng này để đốt cháy các bức tường chắn màu đen."
+          ]
+        },
+        "phase-2": {
+          "name": "Phòng Tế Lễ (Ritual Room)",
+          "objective": "Ngăn chặn Scorn hồi sinh",
+          "steps": [
+            "Tại đây có 4 trụ đá. Quái vật sẽ liên tục hiến tế máu vào các trụ.",
+            "Bạn phải đứng vào vòng tròn quanh trụ để chiếm quyền kiểm soát (như chiếm cứ điểm).",
+            "Đồng thời bắn các quả cầu Stasis nổ lơ lửng trên không để tránh bị đóng băng."
+          ]
+        },
+        "phase-3": {
+          "name": "Boss Cuối",
+          "objective": "Tiêu diệt con trùm Scorn",
+          "steps": [
+            "Boss có 3 thanh máu. Mỗi lần tụt 1 thanh máu, hắn sẽ hóa bất tử và triệu hồi bão tuyết (Blizzard).",
+            "Bạn phải tìm các nguồn nhiệt (Campfires) trong phòng để đứng gần nếu không sẽ chết cóng.",
+            "Bắn vỡ 3 viên pha lê băng trên trần nhà để phá khiên của Boss, sau đó dồn sát thương."
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst cho Barrow-Dyad",
-          "description": "Tin vui là Derealize áp dụng cơ chế rớt Catalyst kiểu mới của năm 2025: Không cần đi tìm rương ẩn hay giải puzzle rối não!",
-          "steps": [
-            "1. Mở khóa súng & Catalyst 1: Hoàn thành nhiệm vụ lần đầu ở bất kỳ độ khó nào.",
-            "2. Lấy Catalyst 2, 3 và 4: Chỉ cần hoàn thành nhiệm vụ ở độ khó Master (hoặc cao hơn).",
-            "3. Cơ chế Knockout: Mỗi lần đi Master chắc chắn rớt 1 Catalyst tiếp theo cho tới khi bạn có đủ toàn bộ.",
-            "4. Nâng cấp: Tới The Enclave trên Sao Hỏa (Mars) để craft và lắp các perk mong muốn."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -73,5 +80,15 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst cho Barrow-Dyad",
+    "description": "Tin vui là Derealize áp dụng cơ chế rớt Catalyst kiểu mới của năm 2025: Không cần đi tìm rương ẩn hay giải puzzle rối não!",
+    "steps": [
+      "1. Mở khóa súng & Catalyst 1: Hoàn thành nhiệm vụ lần đầu ở bất kỳ độ khó nào.",
+      "2. Lấy Catalyst 2, 3 và 4: Chỉ cần hoàn thành nhiệm vụ ở độ khó Master (hoặc cao hơn).",
+      "3. Cơ chế Knockout: Mỗi lần đi Master chắc chắn rớt 1 Catalyst tiếp theo cho tới khi bạn có đủ toàn bộ.",
+      "4. Nâng cấp: Tới The Enclave trên Sao Hỏa (Mars) để craft và lắp các perk mong muốn."
+    ]
+  }
 }

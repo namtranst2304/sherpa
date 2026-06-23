@@ -37,26 +37,33 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Cơ chế: Sire's Obligation (Xanh dương)",
+          "objective": "Giết quái bất tử",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Chạy qua khu vườn Black Garden. Bạn sẽ gặp các vũng nước sáng màu xanh dương.",
+            "Đứng vào vũng nước để lấy buff Sire's Obligation. Buff này cho phép bạn gây sát thương lên những con quái có khiên trắng sáng (bất tử nếu không có buff).",
+            "Tiêu diệt các con Phalanx gác cổng để mở cửa."
+          ]
+        },
+        "phase-2": {
+          "name": "Cơ chế: Dam's Gift (Đỏ cam)",
+          "objective": "Đi qua vùng khói độc",
+          "steps": [
+            "Bạn sẽ gặp một đám khói cam bao trùm, đi vào sẽ bị sát thương liên tục.",
+            "Tìm vũng nước màu cam/đỏ, dẫm vào lấy buff Dam's Gift.",
+            "Buff này bảo vệ bạn khỏi lớp khói độc. Đi qua khói độc, giết con quái lấy chìa khóa."
+          ]
+        },
+        "phase-3": {
+          "name": "Kết hợp & Đánh Boss",
+          "objective": "Crown by Dragons và Boss Phalanx",
+          "steps": [
+            "Các khu vực cuối yêu cầu bạn có cả 2 buff. Dẫm vào vũng Xanh dương -> Dẫm qua vũng Cam -> Buff biến thành 'Crowned by Dragons'.",
+            "Vừa chống được độc, vừa bắn xuyên được khiên. Đánh Boss Phalanx ở cuối bằng cách duy trì buff này liên tục (hết buff thì chạy đi lấy lại)."
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst cho Wish-Keeper (Rotator)",
-          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
-          "steps": [
-            "1. Hoàn thành Starcrossed ở độ khó Normal để nhận súng.",
-            "2. Hoàn thành Starcrossed ở độ khó Legend để mở khóa các nâng cấp Catalyst (Enduring Snare, Hatchling, Multi-Threaded, Vorpal).",
-            "3. Bạn có thể làm các quest tìm chòm sao (Constellations) ẩn trong map để tăng tiến trình hoặc lấy Triumph."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -72,5 +79,14 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst cho Wish-Keeper (Rotator)",
+    "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+    "steps": [
+      "1. Hoàn thành Starcrossed ở độ khó Normal để nhận súng.",
+      "2. Hoàn thành Starcrossed ở độ khó Legend để mở khóa các nâng cấp Catalyst (Enduring Snare, Hatchling, Multi-Threaded, Vorpal).",
+      "3. Bạn có thể làm các quest tìm chòm sao (Constellations) ẩn trong map để tăng tiến trình hoặc lấy Triumph."
+    ]
+  }
 }

@@ -37,27 +37,36 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Cơ Chế: Hình Khối (Shapes)",
+          "objective": "Nhập đúng mật mã Vex",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Đi sâu vào mạng lưới Vex. Ở khu vực đầu tiên, bạn sẽ thấy một cột Vex lớn ở giữa.",
+            "Tìm một dải sáng trên tường/đất (thường ở góc khuất) hiển thị một chuỗi các hình khối: Vuông, Tròn, Tam giác.",
+            "Đọc chuỗi đó (từ trên xuống hoặc trái sang phải), rồi bắn vào các khối hình nổi bồng bềnh xung quanh cái cột ở giữa THEO ĐÚNG THỨ TỰ ĐÓ.",
+            "Lặp lại 3 lần để qua màn."
+          ]
+        },
+        "phase-2": {
+          "name": "Data Nullifier (Trốn Xuống Hầm)",
+          "objective": "Thu thập Data và né Wipe",
+          "steps": [
+            "Khu vực có con Boss Hydra. Sẽ có quái Vex không đầu (Goblin) rớt ra các hạt Data màu tím.",
+            "Thu thập đủ Data, mang vào cắm ở trụ trung tâm.",
+            "Sau khi cắm đủ, Boss sẽ xả skill Xóa Dữ Liệu (Wipe). Lập tức nhảy xuống CÁI LỖ TRÒN vừa mở ra dưới chân trụ trung tâm để trốn. Đợi skill quét qua rồi đi lên tiếp tục.",
+            "Lặp lại vài lần rồi tiêu diệt Boss."
+          ]
+        },
+        "phase-3": {
+          "name": "Boss Cuối: Brakion",
+          "objective": "Đánh bại Brakion qua 3 Phase",
+          "steps": [
+            "Phase 1: Brakion đi lang thang, tránh vách tường laze và rỉa máu nó.",
+            "Phase 2: Brakion trốn sau tường khiên bất tử. Phải giết quái, tìm chuỗi hình khối dưới đất, bắn đúng chuỗi để phá khiên, rồi đâm sát thương.",
+            "Phase 3: Brakion giận dữ đuổi theo bạn. Cứ chạy vòng tròn quanh map và xả sát thương, cẩn thận đừng rơi xuống hố."
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst cho Vexcalibur (Rotator)",
-          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
-          "steps": [
-            "1. Hoàn thành nhiệm vụ //NODE.OVRD.AVALON// ở độ khó Legend.",
-            "2. Bạn không bắt buộc phải mở các rương ẩn bằng mã Vex như trước đây để lấy Catalyst.",
-            "3. Cứ mỗi lần clear Legend (1 lần/tuần), bạn sẽ nhận được 1 nâng cấp Catalyst (như Robber Refit, Feedback Refit).",
-            "4. Chế tạo lại vũ khí tại The Enclave."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -73,5 +82,15 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst cho Vexcalibur (Rotator)",
+    "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+    "steps": [
+      "1. Hoàn thành nhiệm vụ //NODE.OVRD.AVALON// ở độ khó Legend.",
+      "2. Bạn không bắt buộc phải mở các rương ẩn bằng mã Vex như trước đây để lấy Catalyst.",
+      "3. Cứ mỗi lần clear Legend (1 lần/tuần), bạn sẽ nhận được 1 nâng cấp Catalyst (như Robber Refit, Feedback Refit).",
+      "4. Chế tạo lại vũ khí tại The Enclave."
+    ]
+  }
 }

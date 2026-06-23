@@ -13,10 +13,23 @@
       "isNew": false,
       "image": "https://www.bungie.net/common/destiny2_content/icons/9e3f16ebcb58a36ba47dd9c7713d3cb0.jpg",
       "perks": {
-        "column_3": ["Mulligan", "Field Prep", "No Distractions", "Enlightened Action"],
-        "column_4": ["White Nail"],
-        "recommended_pve": ["Field Prep", "White Nail"],
-        "recommended_pvp": ["No Distractions", "White Nail"]
+        "column_3": [
+          "Mulligan",
+          "Field Prep",
+          "No Distractions",
+          "Enlightened Action"
+        ],
+        "column_4": [
+          "White Nail"
+        ],
+        "recommended_pve": [
+          "Field Prep",
+          "White Nail"
+        ],
+        "recommended_pvp": [
+          "No Distractions",
+          "White Nail"
+        ]
       }
     }
   ],
@@ -25,35 +38,34 @@
       "id": "jumping-puzzle",
       "name": "Jumping Puzzle & Khởi động",
       "walkthrough": {
-        "Phase 1": {
-          "name": "Vượt qua The Grove of Ulan-Tan",
-          "objective": "Tìm đường xuống hầm ngầm của Io.",
+        "phase-1": {
+          "name": "Vượt Chướng Ngại Vật (Parkour)",
+          "objective": "Hoàn thành đoạn đường nhảy siêu dài trong thời gian ngắn",
           "steps": [
-            "Bắt đầu nhiệm vụ, nhảy qua các bục đá trên cao.",
-            "Đi theo ánh sáng đỏ để tìm đường chính xác.",
-            "Bạn sẽ gặp một khu vực có các hố đá trượt (slide), hãy căn chỉnh cẩn thận để không bị rơi xuống vực."
+            "Sau khi rơi xuống hố, bạn sẽ bắt đầu chuỗi nhảy (Parkour) vô cùng hóc búa. Hãy chuẩn bị các class nhảy cao/xa (như St0mp-EEs, Lion Rampant).",
+            "Khu vực đáng chú ý nhất là Căn phòng Xanh lá (Green Room). Mặc dù có đường nhảy men theo các gờ tường, nhưng có một LỖ HỔNG BÍ MẬT dưới hầm để bạn rơi xuống và đi tắt qua màn này cực nhanh.",
+            "Cẩn thận với các cọc đẩy (boop walls) ở các mép tường, canh nhịp cẩn thận để không bị đẩy rớt xuống vực."
           ]
         },
-        "Phase 2": {
-          "name": "Căn phòng ngàn hố (The Green Room)",
-          "objective": "Đi qua các hố tử thần",
+        "phase-2": {
+          "name": "Dọn Dẹp Các Phòng Quái Taken",
+          "objective": "Tiêu diệt toàn bộ Taken Blight và quái để mở cửa",
           "steps": [
-            "Phòng này có rất nhiều lối đi bị bịt kín. Bạn cần tìm đúng hố có ánh sáng le lói.",
-            "Hoặc bạn có thể đi men theo gờ tường bên hông (shortcut) để tiết kiệm thời gian."
+            "Vượt qua khu Parkour, bạn sẽ rơi vào các căn phòng tràn ngập quái Taken và các quả cầu Taken Blight đen.",
+            "Có 3 phòng lớn. Bạn bắt buộc phải TIÊU DIỆT TẤT CẢ QUÁI trong phòng thì cửa vách đá mới tan biến để đi tiếp.",
+            "Mẹo: Bắn vỡ các quả cầu Taken Blight trước để quái mất chỗ núp, ưu tiên giết các con Sniper và Taken Captain."
+          ]
+        },
+        "phase-3": {
+          "name": "3 Boss Taken",
+          "objective": "Tiêu diệt Drevis, Ta'aurc, và Urzok",
+          "steps": [
+            "Tại căn phòng cuối cùng, bạn phải phá các quả cầu Blight để triệu hồi 3 con Boss Taken khổng lồ xuất hiện cùng lúc.",
+            "Tập trung hỏa lực giết từng con một. Căn phòng này rất nhiều chỗ nấp (các đường hầm bên dưới), hãy tận dụng để né sát thương.",
+            "Sử dụng các loại súng hạng nặng (Heavy) và Super dồn sát thương nhanh nhất có thể trước khi hết thời gian 20 phút."
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Bí ẩn rương giấu kín (Catalyst & Intrinsic)",
-          "description": "Trong bản làm lại, có 3 nhiệm vụ từ Eris Morn (Whispers of the Past) yêu cầu bạn tìm các mảnh Blight ẩn trong Jumping Puzzle.",
-          "steps": [
-            "Tuần 1: Rương đầu tiên nằm ngay trước căn phòng hố đỏ (Red Room). Bắn vỡ viên Vex Oracle để rương hiện ra.",
-            "Tuần 2: Nằm trong góc tối ở phía trên căn phòng rêu xanh (Green Room).",
-            "Tuần 3: Gần cuối Jumping puzzle, rẽ trái thay vì đi thẳng xuống hố chót."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "combat-rooms",
@@ -111,5 +123,14 @@
         }
       ]
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Bí ẩn rương giấu kín (Catalyst & Intrinsic)",
+    "description": "Trong bản làm lại, có 3 nhiệm vụ từ Eris Morn (Whispers of the Past) yêu cầu bạn tìm các mảnh Blight ẩn trong Jumping Puzzle.",
+    "steps": [
+      "Tuần 1: Rương đầu tiên nằm ngay trước căn phòng hố đỏ (Red Room). Bắn vỡ viên Vex Oracle để rương hiện ra.",
+      "Tuần 2: Nằm trong góc tối ở phía trên căn phòng rêu xanh (Green Room).",
+      "Tuần 3: Gần cuối Jumping puzzle, rẽ trái thay vì đi thẳng xuống hố chót."
+    ]
+  }
 }

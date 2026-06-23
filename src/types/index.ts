@@ -106,5 +106,11 @@ export interface ActivityData {
   loot_table: LootWeapon[];
   armor_table?: LootArmorSet[];
   encounters: ActivityEncounter[];
+  catalyst_guide?: {
+    title: string;
+    description?: string;
+    steps?: string[];
+    images?: { url: string; caption?: string }[];
+  };
   [key: string]: unknown;
 }

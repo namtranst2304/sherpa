@@ -37,27 +37,34 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Sân Bay Cabal & Xe Tăng",
+          "objective": "Chiếm xe tăng và đập tan cửa kho chứa",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Khởi đầu, dọn dẹp lính Cabal để hack chiếc Interceptor. Sau đó dùng nó để dọn dẹp các xe thiết giáp của địch.",
+            "Khi đã dọn xong khu vực sân bay, bạn sẽ được triệu hồi xe tăng Drake. Sử dụng xe tăng để bắn nát các tháp pháo và một con Goliath Tank cản đường.",
+            "Bắn xe tăng vào cửa chính của căn cứ Bunker để phá vỡ nó và xông vào trong."
+          ]
+        },
+        "phase-2": {
+          "name": "Phá Hủy Các Tháp Tín Hiệu",
+          "objective": "Hack các bảng điều khiển trong hầm",
+          "steps": [
+            "Vào trong Bunker, bạn sẽ có một bộ đếm ngược 10 phút. Bắt đầu từ bây giờ, mọi thứ phải thật nhanh.",
+            "Có 3 khu vực phòng chứa tháp tín hiệu (Signal Towers). Trong mỗi phòng sẽ có một con Psion Commander được bảo vệ trong bong bóng.",
+            "Lao vào trong bong bóng và đấm cận chiến con Psion để tắt khiên. Sau đó hack vào các máy tính để phá hủy khu vực đó."
+          ]
+        },
+        "phase-3": {
+          "name": "Boss: Qabix, Insurgent",
+          "objective": "Tiêu diệt Boss Psion trước khi hết giờ",
+          "steps": [
+            "Đến phòng điều khiển trung tâm, Boss Qabix sẽ xuất hiện. Hắn có khiên và liên tục ném các đòn đánh lửa.",
+            "Khi máu Boss tụt xuống các mốc, hắn sẽ kích hoạt khiên bất tử. Lập tức tìm 3 con Psion Commander xuất hiện ở các góc phòng, đấm chúng để phá khiên.",
+            "Xả sát thương cực mạnh ngay sau khi phá khiên vì thời gian đếm ngược 10 phút vẫn đang chạy!"
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst cho Dead Messenger (Rotator)",
-          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
-          "steps": [
-            "Trong Exotic Mission Rotator, hệ thống rớt Catalyst đã được đơn giản hóa:",
-            "1. Hoàn thành nhiệm vụ ở độ khó Normal để nhận súng.",
-            "2. Hoàn thành nhiệm vụ ở độ khó Master/Legend để nhận lần lượt các Catalyst (như Turnabout, Demolitionist).",
-            "3. Mỗi tuần hoàn thành Legend sẽ cho bạn 1 Catalyst chưa mở khóa."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -73,5 +80,15 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst cho Dead Messenger (Rotator)",
+    "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+    "steps": [
+      "Trong Exotic Mission Rotator, hệ thống rớt Catalyst đã được đơn giản hóa:",
+      "1. Hoàn thành nhiệm vụ ở độ khó Normal để nhận súng.",
+      "2. Hoàn thành nhiệm vụ ở độ khó Master/Legend để nhận lần lượt các Catalyst (như Turnabout, Demolitionist).",
+      "3. Mỗi tuần hoàn thành Legend sẽ cho bạn 1 Catalyst chưa mở khóa."
+    ]
+  }
 }

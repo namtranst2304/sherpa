@@ -37,27 +37,37 @@
       "id": "encounter-1",
       "name": "Khám phá & Cơ chế",
       "walkthrough": {
-        "Bước 1": {
-          "name": "Bắt đầu nhiệm vụ",
-          "objective": "Tiến vào khu vực nhiệm vụ và giải các puzzle",
+        "phase-1": {
+          "name": "Tower Ruins & Tường Thành",
+          "objective": "Di chuyển nhanh qua đống đổ nát của The Tower",
           "steps": [
-            "Vượt qua các đoạn Jumping Puzzle phức tạp.",
-            "Chú ý các lối đi ẩn và manh mối trên tường."
+            "Bắt đầu dọn dẹp quái vật ở quảng trường đầu tiên. Sau khi dọn sạch, lối đi sẽ mở ra. Tiếp tục di chuyển và tiêu diệt nhóm quái có 3 con Servitor.",
+            "Bạn sẽ đi ra ngoài vách tường của The Tower. Bắt đầu màn Parkour nhảy qua các giàn giáo. Cẩn thận các cánh quạt khổng lồ đang quay, hãy tìm kẽ hở hoặc đợi chúng xoay đến phần bị hỏng để chui qua.",
+            "Tiếp tục chạy trên hệ thống ống thông gió ngoài trời. Khi gặp các nắp hầm màu đỏ, hãy nhảy lên để nó mở ra và rơi xuống dưới."
+          ]
+        },
+        "phase-2": {
+          "name": "Mê Cung TR3-VR",
+          "objective": "Bật 4 công tắc và sống sót khỏi TR3-VR",
+          "steps": [
+            "Bạn sẽ rơi xuống một mê cung vuông vức dưới hầm. Đây là lãnh địa của TR3-VR (Trevor) - một cỗ máy nghiền nát đi tuần tra liên tục.",
+            "Cả team cần chia ra tìm 4 công tắc nằm ở 4 góc của mê cung (chia làm các khu: Trái-Trên, Trái-Dưới, Phải-Trên, Phải-Dưới).",
+            "Mẹo: Nếu nghe thấy tiếng bíp bíp chói tai và ánh sáng đỏ rực, TR3-VR đang tới! Lập tức chui vào các hốc nhỏ trên vách tường để trốn.",
+            "Khi đã gạt đủ 4 công tắc, chạy về phía cửa ra ở cuối hầm. Cửa sẽ mở ra để bạn trượt qua bãi tia laser."
+          ]
+        },
+        "phase-3": {
+          "name": "Boss: Siriks, Loyal to Eramis",
+          "objective": "Tiêu diệt Boss và dọn sạch quái trong phòng",
+          "steps": [
+            "Bạn sẽ tiến vào bãi đỗ thuyền. Boss Siriks sẽ ở đây.",
+            "Bắn Boss cho đến khi hắn biến mất. Lúc này, 2 con nhện máy (Spider Tanks) và hàng loạt quái Servitor sẽ xuất hiện.",
+            "Ưu tiên: Tiêu diệt hết Servitor để dập khiên bất tử của bọn quái nhỏ, sau đó tập trung sát thương phá hủy 2 Spider Tanks.",
+            "Khi tiêu diệt xong Spider Tanks, Siriks sẽ quay lại. Tiếp tục bắn hắn cho đến chết.",
+            "LƯU Ý: Phải giết SẠCH TẤT CẢ QUÁI trong phòng (kể cả quái nhỏ) thì đồng hồ mới dừng lại và tính là hoàn thành!"
           ]
         }
-      },
-      "secrets": [
-        {
-          "title": "Cách lấy Catalyst và Intrinsic Upgrades (Bản Rework)",
-          "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
-          "steps": [
-            "1. Hoàn thành nhiệm vụ Zero Hour ở độ khó Legend để nhận Catalyst gốc của Outbreak Perfected.",
-            "2. Nhận chuỗi Quest 'Outbreak Refined' từ Ada-1/Eris.",
-            "3. Chạy lại độ khó Legend, tìm các bảng điều khiển ẩn (SIVA switches) rải rác trong bản đồ và giải mã Vault puzzle ở cuối.",
-            "4. Tới The Enclave để craft và lắp các perk mới (như Rewind Rounds, Rapid Hit)."
-          ]
-        }
-      ]
+      }
     },
     {
       "id": "boss",
@@ -73,5 +83,15 @@
         }
       }
     }
-  ]
+  ],
+  "catalyst_guide": {
+    "title": "Cách lấy Catalyst và Intrinsic Upgrades (Bản Rework)",
+    "description": "Thông tin đã được cập nhật theo cơ chế mới nhất của Destiny 2.",
+    "steps": [
+      "1. Hoàn thành nhiệm vụ Zero Hour ở độ khó Legend để nhận Catalyst gốc của Outbreak Perfected.",
+      "2. Nhận chuỗi Quest 'Outbreak Refined' từ Ada-1/Eris.",
+      "3. Chạy lại độ khó Legend, tìm các bảng điều khiển ẩn (SIVA switches) rải rác trong bản đồ và giải mã Vault puzzle ở cuối.",
+      "4. Tới The Enclave để craft và lắp các perk mới (như Rewind Rounds, Rapid Hit)."
+    ]
+  }
 }

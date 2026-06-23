@@ -1,9 +1,10 @@
 import { EXOTIC_MISSIONS_DATA } from "@/data"
-import { createActivityPage } from "@/lib/page-utils"
+import { ExoticMissionView } from "@/features/activity/components/ExoticMissionView"
+import { notFound } from "next/navigation"
 
 interface PageProps {
   params: Promise<{ slug: string }>
-  searchParams: Promise<{ enc?: string }>
+  searchParams: Promise<{ tab?: string }>
 }
 
 export async function generateStaticParams() {
@@ -11,5 +12,19 @@ export async function generateStaticParams() {
 }
 
 export default async function ExoticMissionPage({ params, searchParams }: PageProps) {
-  return await createActivityPage(params, searchParams, EXOTIC_MISSIONS_DATA)
+  const resolvedParams = await params
+  const resolvedSearchParams = await searchParams
+
+  const data = EXOTIC_MISSIONS_DATA[resolvedParams.slug]
+
+  if (!data) {
+    notFound()
+  }
+
+  return (
+    <ExoticMissionView 
+      activityData={data} 
+      activeTabId={resolvedSearchParams.tab || "overview"}
+    />
+  )
 }
