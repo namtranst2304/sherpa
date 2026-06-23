@@ -98,9 +98,9 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     description: "Cơ sở dữ liệu chọn lọc các trang bị META và mạnh nhất Destiny 2.",
     icon: Database,
     items: [
-      { title: "Meta Weapons", href: "/database/weapons", description: "Vũ khí và God Roll khuyên dùng cho PvE & PvP." },
-      { title: "Exotic Armors", href: "/database/armors", description: "Các trang bị Exotic mạnh nhất và hướng dẫn Build." },
-      { title: "Perks & Traits", href: "/database/perks", description: "Tra cứu chỉ số ẩn và phần trăm sát thương của Perk." }
+      { title: "Loot Tables", href: "/database/loot-tables", description: "Bảng tra cứu phần thưởng của từng ải Raid & Dungeon." },
+      { title: "Armor Sets", href: "/database/armor-sets", description: "Tổng hợp các bộ giáp và hiệu ứng Set Bonus trong Destiny 2." },
+      { title: "Exotic Catalysts", href: "/database/catalysts", description: "Tra cứu hiệu ứng nâng cấp Catalyst của các vũ khí Exotic." }
     ],
     themeColor: "zinc"
   }
