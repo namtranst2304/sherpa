@@ -1,5 +1,5 @@
 import { Gem } from "lucide-react"
-import { CyberCard } from "@/components/ui/CyberComponents"
+import { CyberCard } from "@/components/common/CyberComponents"
 import { ActivityData } from "@/types"
 
 interface OverviewLootTableProps {

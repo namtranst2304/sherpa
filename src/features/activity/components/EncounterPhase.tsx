@@ -1,8 +1,8 @@
 import { Map } from "lucide-react"
 import ReactMarkdown from "react-markdown"
 import { ActivityEncounterPhase } from "@/types"
-import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
-import { ImageCarousel } from "@/components/ui/ImageCarousel"
+import { CyberCard, CyberBadge } from "@/components/common/CyberComponents"
+import { ImageCarousel } from "@/components/common/ImageCarousel"
 import { markdownComponents } from "./EncounterMarkdown"
 
 interface EncounterPhaseProps {

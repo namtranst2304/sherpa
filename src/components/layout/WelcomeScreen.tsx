@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { DoorOverlay } from "@/components/ui/DoorOverlay";
+import { DoorOverlay } from "@/components/common/DoorOverlay";
 
 export function WelcomeScreen() {
   const [isOpened, setIsOpened] = useState(false);

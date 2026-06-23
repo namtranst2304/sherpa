@@ -1,5 +1,5 @@
 import { Map } from "lucide-react"
-import { ZoomableImage } from "@/components/ui/ZoomableImage"
+import { ZoomableImage } from "@/components/common/ZoomableImage"
 
 interface EncounterMapProps {
   images?: { url: string; caption?: string }[]

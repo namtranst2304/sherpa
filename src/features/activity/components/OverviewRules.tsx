@@ -1,5 +1,5 @@
 import { BookOpen, Map } from "lucide-react"
-import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
+import { CyberCard, CyberBadge } from "@/components/common/CyberComponents"
 import { ActivityData } from "@/types"
 
 interface OverviewRulesProps {

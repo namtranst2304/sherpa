@@ -1,6 +1,6 @@
 
 import { motion } from "motion/react";
-import { CyberBadge } from "@/components/ui/CyberComponents";
+import { CyberBadge } from "@/components/common/CyberComponents";
 import { TimelineEvent } from "@/data/timeline/index";
 import { getTheme } from "@/lib/theme";
 

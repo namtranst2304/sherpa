@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { DoorOverlay } from "@/components/ui/DoorOverlay";
+import { DoorOverlay } from "@/components/common/DoorOverlay";
 
 export function TimelineDoorTransition() {
   const [isOpened, setIsOpened] = useState(false);

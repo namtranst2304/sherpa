@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { AnimatedScrollText } from "@/features/timeline/components/AnimatedScrollText";
-import { DoorOverlay } from "@/components/ui/DoorOverlay";
+import { DoorOverlay } from "@/components/common/DoorOverlay";
 
 export function LandingPage() {
   const router = useRouter();

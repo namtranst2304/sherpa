@@ -1,5 +1,5 @@
 import { DestinyTimeline } from "@/features/timeline/components/DestinyTimeline"
-import { MatrixRain } from "@/components/ui/matrix-rain"
+import { MatrixRain } from "@/components/common/MatrixRain"
 import { TimelineDoorTransition } from "@/components/layout/TimelineDoorTransition"
 
 export default function TimelinePage() {

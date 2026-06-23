@@ -1,7 +1,7 @@
 import React from "react"
 import { Map, Users, Settings, Sparkles } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { CyberCard } from "@/components/ui/CyberComponents"
+import { CyberCard } from "@/components/common/CyberComponents"
 
 interface GuideTemplateProps {
     title: string

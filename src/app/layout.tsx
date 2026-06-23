@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { ThemeProvider } from "@/components/common/theme-provider";
+import { ThemeProvider } from "@/components/common/ThemeProvider";
 import { TopNav } from "@/components/layout/TopNav";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";

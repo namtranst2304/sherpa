@@ -1,6 +1,6 @@
 import { Sparkles } from "lucide-react"
 import ReactMarkdown from "react-markdown"
-import { ImageCarousel } from "@/components/ui/ImageCarousel"
+import { ImageCarousel } from "@/components/common/ImageCarousel"
 import { markdownComponents } from "./EncounterMarkdown"
 
 interface EncounterSecretsProps {

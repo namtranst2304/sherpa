@@ -1,5 +1,5 @@
 import { Shield, Target, Sword } from "lucide-react"
-import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
+import { CyberCard, CyberBadge } from "@/components/common/CyberComponents"
 import { ActivityRole, ActivityEncounter } from "@/types"
 
 interface EncounterRolesProps {
