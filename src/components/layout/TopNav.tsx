@@ -125,7 +125,7 @@ export function TopNav() {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className={topNavDropdownVariants({ variant: currentVariant })}>
-                        <li className="w-[35%] shrink-0">
+                        <li className="w-[30%] shrink-0">
                           {category.locked ? (
                             <div
                               className={topNavCardBgVariants({ variant: currentVariant })}
@@ -158,10 +158,10 @@ export function TopNav() {
                           )}
                         </li>
 
-                        <li className="flex-1">
-                          <ul className="grid grid-cols-2 gap-3 content-start h-full">
+                        <li className="flex-1 overflow-hidden">
+                          <ul className="grid grid-cols-2 lg:grid-cols-3 gap-3 content-start">
                             {/* Map qua từng item nhỏ bên trong */}
-                            {category.items.slice(0, 12).map((item) => (
+                            {category.items.map((item) => (
                               <ListItem key={item.title} href={item.href} title={item.title} hoverClass={topNavHoverItemVariants({ variant: currentVariant })} descClass={topNavDescVariants({ variant: currentVariant })}>
                                 {item.description}
                               </ListItem>

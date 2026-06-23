@@ -18,7 +18,7 @@ export const topNavTriggerVariants = cva(
 )
 
 export const topNavDropdownVariants = cva(
-  "flex gap-6 p-6 md:w-[600px] lg:w-[800px] bg-black/95 backdrop-blur-xl border",
+  "flex gap-6 p-6 md:w-[700px] lg:w-[950px] bg-black/95 backdrop-blur-xl border max-h-[90vh]",
   {
     variants: {
       variant: {
