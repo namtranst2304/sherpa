@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "motion/react";
 import { CyberBadge } from "@/components/ui/CyberComponents";
 import { TimelineEvent } from "@/data/timeline/index";

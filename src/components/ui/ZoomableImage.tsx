@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react"
+import { useState } from "react"
 import { createPortal } from "react-dom"
 import Image from "next/image"
 import { X, ZoomIn } from "lucide-react"

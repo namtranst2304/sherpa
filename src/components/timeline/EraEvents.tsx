@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "motion/react";
 import { TimelineEra } from "@/data/timeline/index";
 import { getTheme } from "@/lib/theme";

@@ -52,7 +52,10 @@ export function GuideSidebar({
     }
 
     const handleScroll = () => {
-      const sections = groups.flatMap((g) => g.items).map((item) => document.getElementById(item.id));
+      const sections = groups.reduce((acc, g) => {
+        g.items.forEach(item => acc.push(document.getElementById(item.id)));
+        return acc;
+      }, [] as (HTMLElement | null)[]);
       let currentId = "";
       
       for (const section of sections) {

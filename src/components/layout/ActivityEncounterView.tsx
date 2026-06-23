@@ -1,8 +1,6 @@
 "use client"
 
-import * as React from "react"
 import { motion, AnimatePresence } from "motion/react"
-import Image from "next/image"
 import { GuideSidebar } from "@/components/layout/GuideSidebar"
 import { GuideTemplate } from "@/components/layout/GuideTemplate"
 import { ActivityOverviewTemplate } from "@/components/layout/ActivityOverviewTemplate"

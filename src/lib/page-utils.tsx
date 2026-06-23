@@ -1,4 +1,4 @@
-import React from "react"
+
 import { notFound } from "next/navigation"
 import { ActivityEncounterView } from "@/components/layout/ActivityEncounterView"
 import { ActivityData } from "@/types"

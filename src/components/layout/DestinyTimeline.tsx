@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { DESTINY_TIMELINE } from "@/data/timeline/index";
 import { EraNav } from "../timeline/EraNav";
 import { ScrollProgress } from "../timeline/ScrollProgress";
