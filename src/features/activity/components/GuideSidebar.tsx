@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
+import { useIsMobile } from "@/hooks/use-mobile";
+import * as React from "react";
+import { createPortal } from "react-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -42,8 +45,14 @@ export function GuideSidebar({
   groups: SidebarGroup[];
   activeEncounterId?: string;
 }) {
+  const isMobile = useIsMobile();
+  const [mounted, setMounted] = React.useState(false);
   const { setOpenMobile } = useSidebar();
   
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Flatten item IDs to pass to the hook
   const itemIds = groups.reduce((acc, g) => {
     g.items.forEach(item => acc.push(item.id));
@@ -52,8 +61,50 @@ export function GuideSidebar({
 
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId);
 
+  // Render Portal on Mobile
+  if (isMobile && mounted) {
+    const portalTarget = document.getElementById("mobile-guide-toc-portal");
+    if (portalTarget) {
+      return createPortal(
+        <div className="flex flex-col w-full animate-in fade-in zoom-in-95">
+           <div className="text-[10px] font-black tracking-widest uppercase text-neon-yellow break-words mb-4 px-2 py-1 bg-neon-yellow/10 border border-neon-yellow/30 inline-block w-fit">
+             Current Guide: {title}
+           </div>
+           {groups.map((group, idx) => (
+              <div key={idx} className="flex flex-col gap-2 mb-4">
+                 {group.title && <div className="text-[10px] font-mono uppercase text-neon-red">{group.title}</div>}
+                 <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
+                    {group.items.map(item => {
+                       const isActive = activeId === item.id;
+                       return (
+                          <Link 
+                            key={item.id} 
+                            href={item.href || `#${item.id}`}
+                            className={cn("py-1.5 text-sm font-mono transition-colors", isActive ? "text-neon-yellow font-bold" : "text-zinc-400")}
+                            // We don't have access to TopNav's Sheet state directly, 
+                            // but Next.js router handles the navigation.
+                            // To close the sheet, users can click the backdrop or we can dispatch an Escape key event.
+                            onClick={() => {
+                               document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+                            }}
+                          >
+                             {item.title}
+                          </Link>
+                       )
+                    })}
+                 </div>
+              </div>
+           ))}
+        </div>,
+        portalTarget
+      );
+    }
+    return null;
+  }
+
+  // Render Sidebar on Desktop
   return (
-    <Sidebar className="top-[3.5rem] h-[calc(100vh-3.5rem)] border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid" collapsible="icon">
+    <Sidebar className="hidden md:flex top-[3.5rem] h-[calc(100vh-3.5rem)] border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid" collapsible="icon">
       <SidebarHeader className="border-b-2 border-neon-yellow p-4 relative overflow-hidden bg-zinc-950">
         {/* Decorative cyber corner */}
         <div className="absolute top-0 right-0 w-8 h-8 bg-neon-yellow -rotate-45 translate-x-4 -translate-y-4" />

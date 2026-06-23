@@ -1,7 +1,6 @@
 import React from "react"
 import { Map, Users, Settings, Sparkles } from "lucide-react"
-import { SidebarTrigger } from "@/components/ui/sidebar"
-import { CyberCard } from "@/components/common/CyberComponents"
+import { CyberCard, CyberHeading } from "@/components/common/CyberComponents"
 
 interface GuideTemplateProps {
     title: string
@@ -21,12 +20,11 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
             <div className="w-full space-y-8 relative z-10">
 
                 {/* Header with mobile sidebar toggle */}
-                <div className="flex items-center gap-4 border-b border-primary/30 pb-6">
-                    <SidebarTrigger className="md:hidden" />
+                <div className="border-b border-primary/30 pb-6">
                     <div>
-                        <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange text-glow-cyan">
+                        <CyberHeading variant="gradient" size="lg">
                             {title}
-                        </h1>
+                        </CyberHeading>
                         <p className="text-muted-foreground mt-2 text-lg font-mono tracking-wide">
                             {description}
                         </p>

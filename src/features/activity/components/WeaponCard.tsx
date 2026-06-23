@@ -1,7 +1,7 @@
 import React from "react"
 import { Gem, Crosshair, Swords } from "lucide-react"
 import Image from "next/image"
-import { CyberCard, CyberBadge } from "@/components/common/CyberComponents"
+import { CyberCard, CyberBadge, CyberHeading } from "@/components/common/CyberComponents"
 import { LootWeapon } from "@/types"
 
 const NEW_PERKS = ["Chaos Reshaped", "Air Trigger", "Rimestealer", "Circle of Life", "Physic"];
@@ -12,7 +12,7 @@ function PerkDisplay({ name }: { name: string }) {
   return (
     <span className="relative inline-flex items-center gap-1 group/perk">
       <span className="text-neon-orange font-bold drop-shadow-[0_0_5px_rgba(255,165,0,0.8)]">{name}</span>
-      <span className="px-1 py-0.5 rounded-[3px] bg-neon-orange/20 border border-neon-orange text-[8px] font-black uppercase text-neon-orange animate-pulse">New</span>
+      <CyberBadge variant="orange" size="xs" pulse={true}>New</CyberBadge>
     </span>
   )
 }
@@ -60,9 +60,9 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
       <div className="p-5 flex flex-col flex-grow">
         <div className="mb-4">
           <div className="flex justify-between items-start gap-2">
-            <h3 className={`text-2xl font-black uppercase tracking-wider mb-1 ${isExotic ? 'text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]' : 'text-purple-400 drop-shadow-[0_0_10px_rgba(192,132,252,0.5)]'}`}>
+            <CyberHeading variant={isExotic ? 'exotic' : 'legendary'} size="md" className="mb-1">
               {name}
-            </h3>
+            </CyberHeading>
             {weapon.tier && (
               <CyberBadge variant="zinc" className="border-cyan-500/50 text-cyan-400 bg-cyan-950/30 whitespace-nowrap">
                 Tier: {weapon.tier}

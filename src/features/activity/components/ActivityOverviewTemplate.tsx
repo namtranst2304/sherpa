@@ -1,9 +1,9 @@
-import { SidebarTrigger } from "@/components/ui/sidebar"
 import { ActivityData } from "@/types"
 import { OverviewRules } from "./OverviewRules"
 import { OverviewLoadouts } from "./OverviewLoadouts"
 import { OverviewEpicMode } from "./OverviewEpicMode"
 import { OverviewLootTable } from "./OverviewLootTable"
+import { CyberHeading } from "@/components/common/CyberComponents"
 
 interface ActivityOverviewTemplateProps {
   activityData: ActivityData
@@ -17,12 +17,11 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
     <div className="flex-1 overflow-y-auto w-full bg-background p-4 md:p-8">
       <div className="w-full space-y-8">
         {/* Header */}
-        <div className="flex items-center gap-4 border-b border-border pb-6">
-          <SidebarTrigger className="md:hidden" />
+        <div className="border-b border-border pb-6">
           <div>
-            <h1 className="text-3xl md:text-4xl font-extrabold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange text-glow-cyan">
+            <CyberHeading variant="gradient" size="lg">
               {title} - Overview
-            </h1>
+            </CyberHeading>
             {preface?.author_notes && (
               <p className="text-muted-foreground mt-2 text-lg font-mono tracking-wide">
                 {preface.author_notes}

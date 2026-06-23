@@ -1,6 +1,6 @@
 import { LootArmorSet } from "@/types";
 import Image from "next/image";
-import { CyberCard } from "@/components/common/CyberComponents";
+import { CyberCard, CyberHeading, CyberVariant } from "@/components/common/CyberComponents";
 import { Shield } from "lucide-react";
 
 export function ArmorCard({ armor }: { armor: LootArmorSet }) {
@@ -8,9 +8,9 @@ export function ArmorCard({ armor }: { armor: LootArmorSet }) {
   const isHunter = armor.class === "Hunter";
   const isWarlock = armor.class === "Warlock";
 
-  let classColor = "cyan";
+  let classColor: CyberVariant = "cyan";
   if (isTitan) classColor = "orange";
-  else if (isWarlock) classColor = "purple";
+  else if (isWarlock) classColor = "yellow";
   else if (isHunter) classColor = "zinc";
 
   return (
@@ -37,7 +37,7 @@ export function ArmorCard({ armor }: { armor: LootArmorSet }) {
           <div className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-1">
             {armor.class} Armor Set
           </div>
-          <h3 className="font-bold text-lg text-white truncate">{armor.name}</h3>
+          <CyberHeading variant="default" size="sm" className="truncate text-white">{armor.name}</CyberHeading>
           <div className="text-xs text-zinc-500 line-clamp-1 mt-1">
             Source: {armor.source}
           </div>
