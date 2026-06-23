@@ -2,10 +2,10 @@
 
 import { useEffect, useRef } from "react";
 import { DESTINY_TIMELINE } from "@/data/timeline/index";
-import { EraNav } from "../timeline/EraNav";
-import { ScrollProgress } from "../timeline/ScrollProgress";
-import { EraHeader } from "../timeline/EraHeader";
-import { EraEvents } from "../timeline/EraEvents";
+import { EraNav } from "./EraNav";
+import { ScrollProgress } from "./ScrollProgress";
+import { EraHeader } from "./EraHeader";
+import { EraEvents } from "./EraEvents";
 
 export function DestinyTimeline() {
   const eraRefs = useRef<Map<string, HTMLElement>>(new Map());

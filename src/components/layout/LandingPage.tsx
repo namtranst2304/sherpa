@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { ChevronDown } from "lucide-react";
-import { AnimatedScrollText } from "../timeline/AnimatedScrollText";
+import { AnimatedScrollText } from "@/features/timeline/components/AnimatedScrollText";
 import { DoorOverlay } from "@/components/ui/DoorOverlay";
 
 export function LandingPage() {

@@ -1,4 +1,4 @@
-import { DestinyTimeline } from "@/components/layout/DestinyTimeline"
+import { DestinyTimeline } from "@/features/timeline/components/DestinyTimeline"
 import { MatrixRain } from "@/components/ui/matrix-rain"
 import { TimelineDoorTransition } from "@/components/layout/TimelineDoorTransition"
 

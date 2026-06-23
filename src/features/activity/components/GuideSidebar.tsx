@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
+import { useScrollSpy } from "@/hooks/use-scroll-spy";
 import {
   Sidebar,
   SidebarContent,
@@ -42,41 +42,15 @@ export function GuideSidebar({
   groups: SidebarGroup[];
   activeEncounterId?: string;
 }) {
-  const [activeId, setActiveId] = useState<string>(activeEncounterId || "");
   const { setOpenMobile } = useSidebar();
+  
+  // Flatten item IDs to pass to the hook
+  const itemIds = groups.reduce((acc, g) => {
+    g.items.forEach(item => acc.push(item.id));
+    return acc;
+  }, [] as string[]);
 
-  useEffect(() => {
-    if (activeEncounterId) {
-      setActiveId(activeEncounterId);
-      return;
-    }
-
-    const handleScroll = () => {
-      const sections = groups.reduce((acc, g) => {
-        g.items.forEach(item => acc.push(document.getElementById(item.id)));
-        return acc;
-      }, [] as (HTMLElement | null)[]);
-      let currentId = "";
-      
-      for (const section of sections) {
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          // Adjust threshold based on your top nav height
-          if (rect.top <= 120) {
-            currentId = section.id;
-          }
-        }
-      }
-      
-      if (currentId !== activeId) {
-        setActiveId(currentId);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check on mount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [groups, activeId, activeEncounterId]);
+  const activeId = useScrollSpy(itemIds, 120, activeEncounterId);
 
   return (
     <Sidebar className="top-[3.5rem] h-[calc(100vh-3.5rem)] border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid" collapsible="icon">
