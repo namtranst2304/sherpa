@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { CyberCard } from "@/components/common/CyberComponents"
 
 import MOCK_LOOT_TABLES from "@/data/database/loot-tables.json"
@@ -39,7 +40,7 @@ export default function LootTablesPage() {
                           <div key={item.name} className="flex items-center gap-3 bg-black/40 p-2 rounded border border-zinc-800 hover:border-neon-cyan/50 transition-colors group">
                             <div className="w-10 h-10 bg-zinc-900 rounded overflow-hidden flex items-center justify-center shrink-0 border border-zinc-800 group-hover:border-neon-cyan/30">
                               {item.icon ? (
-                                <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
+                                <Image src={item.icon} alt={item.name} width={40} height={40} className="w-full h-full object-cover" unoptimized />
                               ) : (
                                 <span className="text-xl">🔫</span>
                               )}
@@ -65,7 +66,7 @@ export default function LootTablesPage() {
                           <div key={item.name} className="flex items-center gap-3 bg-black/40 p-2 rounded border border-zinc-800 hover:border-zinc-500 transition-colors group">
                             <div className="w-10 h-10 bg-zinc-900 rounded overflow-hidden flex items-center justify-center shrink-0 border border-zinc-800 group-hover:border-zinc-500/50">
                               {item.icon ? (
-                                <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
+                                <Image src={item.icon} alt={item.name} width={40} height={40} className="w-full h-full object-cover" unoptimized />
                               ) : (
                                 <span className="text-xl">🪖</span>
                               )}
@@ -89,7 +90,7 @@ export default function LootTablesPage() {
                       <div className="flex items-center gap-3 bg-amber-950/20 p-2 rounded border border-amber-900/50 hover:border-amber-500 transition-colors group">
                         <div className="w-10 h-10 bg-amber-900/30 rounded overflow-hidden flex items-center justify-center shrink-0 border border-amber-500/30">
                           {enc.exotic.icon ? (
-                            <img src={enc.exotic.icon} alt={enc.exotic.name} className="w-full h-full object-cover" />
+                            <Image src={enc.exotic.icon} alt={enc.exotic.name} width={40} height={40} className="w-full h-full object-cover" unoptimized />
                           ) : (
                             <span className="text-xl">🌟</span>
                           )}

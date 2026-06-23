@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { CyberCard } from "@/components/common/CyberComponents"
 import { Sparkles, Target, Crosshair } from "lucide-react"
 
@@ -24,7 +25,7 @@ export default function CatalystsPage() {
             <div className="w-full md:w-64 bg-zinc-900/50 border-r border-zinc-800 p-6 flex flex-col gap-4 items-center md:items-start justify-center">
               <div className="flex-shrink-0 w-16 h-16 bg-black rounded border border-zinc-800 flex items-center justify-center overflow-hidden group-hover:border-amber-500 transition-colors shadow-[0_0_15px_rgba(245,158,11,0.1)] group-hover:shadow-[0_0_20px_rgba(245,158,11,0.2)]">
                 {cat.icon ? (
-                  <img src={cat.icon} alt={cat.weaponName} className="w-full h-full object-cover" />
+                  <Image src={cat.icon} alt={cat.weaponName} width={64} height={64} className="w-full h-full object-cover" unoptimized />
                 ) : (
                   <span className="text-3xl">🌟</span>
                 )}

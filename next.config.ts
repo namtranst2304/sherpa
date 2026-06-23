@@ -7,6 +7,16 @@ const nextConfig: NextConfig = {
       'node_modules/sharp/**',
     ],
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.bungie.net',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   experimental: {
     serverActions: {
       bodySizeLimit: "20mb",

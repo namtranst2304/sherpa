@@ -3,8 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { CyberContainer } from "@/components/common/CyberComponents"
-import { Shield, Database, Sword, Sparkles } from "lucide-react"
+import { Shield, Database, Sparkles } from "lucide-react"
 
 export default function DatabaseLayout({
   children,
@@ -20,7 +19,7 @@ export default function DatabaseLayout({
   ]
 
   return (
-    <CyberContainer className="py-8">
+    <div className="max-w-7xl mx-auto px-4 w-full py-8">
       <div className="flex flex-col gap-8">
         <div>
           <h1 className="text-3xl md:text-5xl font-black tracking-widest uppercase text-neon-cyan text-glow-cyan mb-4">
@@ -58,6 +57,6 @@ export default function DatabaseLayout({
           {children}
         </div>
       </div>
-    </CyberContainer>
+    </div>
   )
 }
