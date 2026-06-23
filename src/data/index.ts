@@ -74,6 +74,12 @@ import dualDestiny from "./exotic-missions/dual-destiny.json"
 import derealize from "./exotic-missions/derealize.json"
 import heliostat from "./exotic-missions/heliostat.json"
 
+import weaponsData from "./database/weapons.json"
+import armorsData from "./database/armors.json"
+
+export const DATABASE_WEAPONS = weaponsData;
+export const DATABASE_ARMORS = armorsData;
+
 export const EXOTIC_MISSIONS_DATA: Record<string, ActivityData> = {
   "the-whisper": theWhisper as unknown as ActivityData,
   "zero-hour": zeroHour as unknown as ActivityData,

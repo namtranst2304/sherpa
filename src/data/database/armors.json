@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cenotaph-mask",
+    "name": "Cenotaph Mask",
+    "class": "Warlock",
+    "element": "Any",
+    "image": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+    "perk_name": "High Priority",
+    "perk_description": "Steady reload cho Trace Rifles. Gây sát thương lên mini-boss/boss/champion bằng Trace Rifle sẽ đánh dấu (mark) mục tiêu. Tiêu diệt mục tiêu bị đánh dấu sẽ rớt đạn Heavy cho đồng đội."
+  },
+  {
+    "id": "celestial-nighthawk",
+    "name": "Celestial Nighthawk",
+    "class": "Hunter",
+    "element": "Solar",
+    "image": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+    "perk_name": "Hawkeye Hack",
+    "perk_description": "Chuyển Golden Gun thành 1 viên đạn duy nhất gây lượng sát thương khổng lồ. Tiêu diệt mục tiêu bằng viên đạn đó sẽ nổ và hoàn trả một lượng Super."
+  }
+]

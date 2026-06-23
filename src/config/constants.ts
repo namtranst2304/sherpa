@@ -1,4 +1,4 @@
-import { ShieldAlert, Swords, Crown, Target, type LucideIcon } from "lucide-react"
+import { ShieldAlert, Swords, Crown, Target, Database, type LucideIcon } from "lucide-react"
 import { RAIDS_DATA, DUNGEONS_DATA, PANTHEON_DATA, EXOTIC_MISSIONS_DATA } from "@/data"
 import { ActivityData } from "@/types"
 
@@ -90,5 +90,18 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     icon: Target,
     items: mapExoticMissionsToItems(),
     themeColor: "yellow"
+  },
+  database: {
+    id: "database",
+    title: "Database",
+    href: "/database",
+    description: "Cơ sở dữ liệu chọn lọc các trang bị META và mạnh nhất Destiny 2.",
+    icon: Database,
+    items: [
+      { title: "Meta Weapons", href: "/database/weapons", description: "Vũ khí và God Roll khuyên dùng cho PvE & PvP." },
+      { title: "Exotic Armors", href: "/database/armors", description: "Các trang bị Exotic mạnh nhất và hướng dẫn Build." },
+      { title: "Perks & Traits", href: "/database/perks", description: "Tra cứu chỉ số ẩn và phần trăm sát thương của Perk." }
+    ],
+    themeColor: "zinc"
   }
 }
