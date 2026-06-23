@@ -1,0 +1,35 @@
+[
+  {
+    "id": "salvations-edge",
+    "name": "Salvation's Edge",
+    "type": "Raid",
+    "encounters": [
+      {
+        "order": 1,
+        "name": "Substratum",
+        "weapons": [
+          { "name": "Non-Denominational", "type": "Combat Bow", "icon": "🏹", "tier": "Legendary" },
+          { "name": "Imminence", "type": "Submachine Gun", "icon": "🔫", "tier": "Legendary" }
+        ],
+        "armor": [
+          { "name": "Promised Reign Helm", "icon": "🪖" },
+          { "name": "Promised Reign Gauntlets", "icon": "🧤" }
+        ],
+        "exotic": null
+      },
+      {
+        "order": 5,
+        "name": "The Witness",
+        "weapons": [
+          { "name": "Euphony", "type": "Linear Fusion Rifle", "icon": "🌟", "tier": "Exotic" },
+          { "name": "Nullify", "type": "Pulse Rifle", "icon": "🔫", "tier": "Legendary" },
+          { "name": "Critical Anomaly", "type": "Sniper Rifle", "icon": "🎯", "tier": "Legendary" }
+        ],
+        "armor": [
+          { "name": "Promised Reign Robes", "icon": "🧥" }
+        ],
+        "exotic": { "name": "Euphony", "icon": "🌟" }
+      }
+    ]
+  }
+]

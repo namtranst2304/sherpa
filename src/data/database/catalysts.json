@@ -1,0 +1,35 @@
+[
+  {
+    "id": "outbreak-perfected",
+    "weaponName": "Outbreak Perfected",
+    "weaponType": "Pulse Rifle",
+    "icon": "🦠",
+    "catalystName": "Disease Vector",
+    "effect": "Tăng sát thương cho nanites (bọ máy). Những kẻ địch bị chết do nanites bám vào sẽ sinh ra thêm nanites mới bay sang kẻ địch khác.",
+    "source": "Hoàn thành nhiệm vụ Zero Hour (Legend).",
+    "objective": "Tiêu diệt 500 kẻ địch bằng phát bắn headshot.",
+    "isCompleted": true
+  },
+  {
+    "id": "witherhoard",
+    "weaponName": "Witherhoard",
+    "weaponType": "Grenade Launcher",
+    "icon": "🕳️",
+    "catalystName": "Silent Alarm",
+    "effect": "Tăng vạch Handling (tốc độ rút súng/nhắm bắn). Tự động nạp đạn lại cho súng này khi bạn cất nó đi (Auto-loading Holster).",
+    "source": "Nhận quest từ Banshee-44 tại Tower.",
+    "objective": "Thu thập 300 Lucre, giết 300 mạng bằng Grenade Launcher, giết 100 Guardian bằng Grenade Launcher.",
+    "isCompleted": false
+  },
+  {
+    "id": "quicksilver-storm",
+    "weaponName": "Quicksilver Storm",
+    "weaponType": "Auto Rifle",
+    "icon": "🌩️",
+    "catalystName": "Strand Control",
+    "effect": "Chuyển hệ sát thương của súng từ Kinetic sang Strand. Kẻ địch chết do quả lựu đạn bắn ra từ súng sẽ rớt ra Tangle.",
+    "source": "Nhiệm vụ 'Any Data Port in a Storm' trên Neomuna.",
+    "objective": "Giết 700 kẻ địch bằng súng này.",
+    "isCompleted": true
+  }
+]

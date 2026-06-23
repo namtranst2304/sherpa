@@ -1,39 +1,63 @@
+"use client"
+
 import * as React from "react"
-import { Database, Swords, Shield } from "lucide-react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { CyberContainer } from "@/components/common/CyberComponents"
+import { Shield, Database, Sword, Sparkles } from "lucide-react"
 
 export default function DatabaseLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-black">
-      {/* Database Sidebar */}
-      <aside className="w-full md:w-64 border-r-2 border-zinc-800/50 bg-black/50 p-6 flex flex-col gap-6">
-        <div className="flex items-center gap-3 text-neon-cyan mb-4">
-          <Database className="w-6 h-6" />
-          <h2 className="text-xl font-black tracking-widest uppercase">Database</h2>
-        </div>
-        
-        <nav className="flex flex-col gap-2">
-          <Link href="/database/weapons" className="flex items-center gap-3 px-4 py-3 rounded-md bg-zinc-900/50 hover:bg-neon-cyan/20 border border-transparent hover:border-neon-cyan/50 text-zinc-300 hover:text-neon-cyan transition-colors">
-            <Swords className="w-4 h-4" />
-            <span className="font-mono text-sm uppercase tracking-wider">Meta Weapons</span>
-          </Link>
-          <Link href="/database/armors" className="flex items-center gap-3 px-4 py-3 rounded-md bg-zinc-900/50 hover:bg-neon-cyan/20 border border-transparent hover:border-neon-cyan/50 text-zinc-300 hover:text-neon-cyan transition-colors">
-            <Shield className="w-4 h-4" />
-            <span className="font-mono text-sm uppercase tracking-wider">Exotic Armors</span>
-          </Link>
-        </nav>
-      </aside>
+  const pathname = usePathname()
 
-      {/* Main Content */}
-      <main className="flex-1 p-6 md:p-12 overflow-y-auto">
-        <div className="max-w-7xl mx-auto">
+  const tabs = [
+    { name: "Loot Tables", href: "/database/loot-tables", icon: Database },
+    { name: "Armor Sets", href: "/database/armor-sets", icon: Shield },
+    { name: "Catalysts", href: "/database/catalysts", icon: Sparkles },
+  ]
+
+  return (
+    <CyberContainer className="py-8">
+      <div className="flex flex-col gap-8">
+        <div>
+          <h1 className="text-3xl md:text-5xl font-black tracking-widest uppercase text-neon-cyan text-glow-cyan mb-4">
+            Destiny 2 Database
+          </h1>
+          <p className="text-zinc-400 font-mono max-w-2xl">
+            Trung tâm dữ liệu Sherpa. Tra cứu bảng rớt đồ (Loot Tables), các bộ áo giáp (Armor Sets) và hiệu ứng nâng cấp súng (Catalysts).
+          </p>
+        </div>
+
+        {/* Tab Navigation */}
+        <div className="flex flex-wrap gap-2 border-b border-zinc-800 pb-2">
+          {tabs.map((tab) => {
+            const isActive = pathname.startsWith(tab.href)
+            const Icon = tab.icon
+            return (
+              <Link
+                key={tab.name}
+                href={tab.href}
+                className={`flex items-center gap-2 px-6 py-3 rounded-t-lg transition-all border-b-2 font-black uppercase tracking-wider text-sm ${
+                  isActive
+                    ? "border-neon-cyan text-neon-cyan bg-neon-cyan/10"
+                    : "border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/50"
+                }`}
+              >
+                <Icon className="w-4 h-4" />
+                {tab.name}
+              </Link>
+            )
+          })}
+        </div>
+
+        {/* Tab Content Area */}
+        <div className="min-h-[500px]">
           {children}
         </div>
-      </main>
-    </div>
+      </div>
+    </CyberContainer>
   )
 }

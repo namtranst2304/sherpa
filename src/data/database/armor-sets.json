@@ -1,0 +1,32 @@
+[
+  {
+    "id": "promised-reign",
+    "name": "Promised Reign Suit",
+    "source": "Salvation's Edge Raid",
+    "description": "Bộ giáp phong cách Hắc Diện (Obsidian) với các chi tiết màu vàng của cộng đồng The Witness.",
+    "stats": "High Resilience / Recovery Bias",
+    "icon": "🪖",
+    "pieces": [
+      { "name": "Promised Reign Helm", "slot": "Helmet", "icon": "🪖" },
+      { "name": "Promised Reign Gauntlets", "slot": "Arms", "icon": "🧤" },
+      { "name": "Promised Reign Robes", "slot": "Chest", "icon": "🧥" },
+      { "name": "Promised Reign Boots", "slot": "Legs", "icon": "👢" },
+      { "name": "Promised Reign Bond", "slot": "Class Item", "icon": "🎗️" }
+    ]
+  },
+  {
+    "id": "techeun-regalia",
+    "name": "Techeun's Regalia",
+    "source": "Season of Defiance",
+    "description": "Bộ giáp nghi lễ của hội Techeun thuộc Awoken. Mang năng lượng phép thuật mạnh mẽ.",
+    "stats": "Balanced Stats",
+    "icon": "🔮",
+    "pieces": [
+      { "name": "Techeun's Hood", "slot": "Helmet", "icon": "🪖" },
+      { "name": "Techeun's Gloves", "slot": "Arms", "icon": "🧤" },
+      { "name": "Techeun's Vestments", "slot": "Chest", "icon": "🧥" },
+      { "name": "Techeun's Strides", "slot": "Legs", "icon": "👢" },
+      { "name": "Techeun's Mark", "slot": "Class Item", "icon": "🎗️" }
+    ]
+  }
+]

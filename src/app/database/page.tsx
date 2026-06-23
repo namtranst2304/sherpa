@@ -1,6 +1,5 @@
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation"
 
-export default function DatabaseRootPage() {
-  // Redirect to weapons by default
-  redirect('/database/weapons')
+export default function DatabasePage() {
+  redirect("/database/loot-tables")
 }
