@@ -1,0 +1,174 @@
+{
+  "dungeon_name": "Pit of Heresy",
+  "active_orbit": "The Moon",
+  "preface": {
+    "formatting_rules": "Pit of Heresy tập trung vào cơ chế 3 loại kiếm Hive (Kiếm cận chiến, Kiếm bắn chưởng, Kiếm đỡ khiên) và tiêu diệt các loại quái đặc thù bằng đúng loại kiếm đó. Môi trường chật hẹp, đầy bẫy gai và vực thẳm.",
+    "non_linear_mechanic": {
+      "description": "Thâm nhập vào lòng đất Mặt Trăng để ngăn chặn nghi thức tà giáo của Zulmak.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Bạn sẽ phải đối phó với rất nhiều Knight và Ogre. Các vũ khí dọn quái diện rộng (Trinity Ghoul, Riskrunner) và sống sót (Heal Clip) là cực kỳ quan trọng.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Sống sót tại Chamber of Suffering (Ải khó nhất) và Damage Boss cuối Zulmak."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Devour (Voidwalker)",
+          "recommendation": "Hồi máu liên tục mỗi khi giết quái, biến bạn thành cỗ xe tăng bất tử."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Ward of Dawn",
+          "utility": "Cung cấp lá chắn bảo vệ an toàn để đứng capture các điểm."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Heart of Inmost Light",
+          "recommendation": "Spam kỹ năng liên tục để dọn đám Hive sinh sôi nảy nở."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot (Tether)",
+          "utility": "Trói chân và vô hiệu hóa đám Knight, Cursed Thrall đang lao vào bạn."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Assassin's Cowl / Graviton Forfeit",
+          "recommendation": "Tàng hình liên tục để đi qua các khu vực mê cung nguy hiểm (Tunnels of Despair, The Harrow) mà không bị giết."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "necropolis",
+      "name": "Necropolis (Thành Phố Tội Lỗi)",
+      "roles": {
+        "swordbearers": {
+          "description": "Người cầm Kiếm Hive đi săn các Mini-Boss.",
+          "quantity": 3,
+          "types": ["Mechanic", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Mở Khóa Cửa Xuống Hố",
+          "objective": "Tiêu diệt 3 con Mini-Boss đặc thù bằng Kiếm Hive tại các tòa tháp được chỉ định.",
+          "steps": [
+            "Bắt đầu ải, nhìn vào các biểu tượng Rune bay lơ lửng ở khu vực xuất phát. Có 3 biểu tượng. Mỗi biểu tượng đại diện cho một tòa tháp treo dọc theo vách đá.",
+            "Di chuyển tới tòa tháp có biểu tượng tương ứng. Tại mỗi tòa tháp, tiêu diệt con 'Pit Heretic' (Knight) để nhặt Kiếm Relic (Hive Sword).",
+            "Mỗi tòa tháp sẽ có 1 con Mini-Boss cụ thể. Bạn BẮT BUỘC phải dùng một cơ chế riêng của cây Kiếm để giết chúng: ",
+            "- **Knight (Swarmers)**: Chỉ bị sát thương khi bạn DÙNG KIẾM ĐÁNH CẬN CHIẾN (Light/Heavy attack).",
+            "- **Wizard (Omen)**: Chỉ bị sát thương khi bạn BẮN CHƯỞNG TỪ KIẾM (Nút bắn/ngắm).",
+            "- **Shrieker (Terror)**: Chỉ bị sát thương khi bạn DÙNG KIẾM ĐỠ ĐÒN (Nút Block/Nhắm) để PHẢN SÁT THƯƠNG lại đòn bắn của nó.",
+            "Sau khi tiêu diệt 3 Mini-boss tại 3 tòa tháp, một chùm tia sáng sẽ bắn ra ở trung tâm, cánh cửa dưới đáy vực mở ra."
+          ]
+        }
+      }
+    },
+    {
+      "id": "tunnels_of_despair",
+      "name": "Tunnels of Despair (Hành Lang Tuyệt Vọng)",
+      "roles": {
+        "runners": {
+          "description": "Luồn lách trốn Ogre và cắm ngọc.",
+          "quantity": 3,
+          "types": ["Runner"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Luồn lách và Đặt Ngọc Void",
+          "objective": "Giết Knight, nhặt 3 quả ngọc Void và cắm vào cửa mà không bị 3 con Ogre vô địch dẫm nát.",
+          "steps": [
+            "Đây là một khu vực hành lang hang động với 3 con Ogre khổng lồ đi tuần tra. CHÚNG MIỄN NHIỄM SÁT THƯƠNG. Bạn không thể giết chúng.",
+            "Mục tiêu là tìm những đường hầm nhỏ (hang sâu) bên hông các vách tường. Vào đó, tìm giết con Knight (Heretic Knight).",
+            "Giết Knight sẽ rớt ra quả ngọc Void. Nhặt lấy nó, chạy lén lút trốn khỏi tầm nhìn của Ogre (Tàng hình của Hunter cực kỳ hữu ích ở đây).",
+            "Cắm 3 quả ngọc vào 3 lỗ cắm ở phía cuối hành lang để mở cửa đi tiếp. Nếu Ogre phát hiện, hãy chạy thụt mạng vào các khe hẹp."
+          ]
+        }
+      }
+    },
+    {
+      "id": "chamber_of_suffering",
+      "name": "Chamber of Suffering (Phòng Đau Khổ)",
+      "roles": {
+        "plate_defender": {
+          "description": "Đứng thủ vững trên Plate không được rời đi.",
+          "quantity": 1,
+          "types": ["Add Clear"]
+        },
+        "orb_runners": {
+          "description": "Đi săn Knight lấy ngọc Void mang về.",
+          "quantity": 2,
+          "types": ["Mechanic"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Bảo Vệ Đĩa (Totem) và Gom 6 Ngọc",
+          "objective": "Cắm 6 quả ngọc Void trong khi liên tục chống lại các đợt quái hung hãn để không bị Wipe.",
+          "steps": [
+            "Ải khó nhất Dungeon. Có một cái Đĩa (Totem) giữa phòng. Ngay khi bước lên đĩa, cơ chế kích hoạt. PHẢI CÓ ÍT NHẤT 1 NGƯỜI LUÔN ĐỨNG TRÊN ĐĨA. Nếu không, Totem sẽ đỏ lên và team Wipe sau vài giây.",
+            "Người đứng đĩa (Plate Defender) sẽ chịu sát thương liên tục từ hàng đàn Acolyte, Thrall, Cursed Thrall và các Sniper ở trên cao. Hãy dùng Well of Radiance, Ward of Dawn, hoặc Devour.",
+            "Mỗi khi bạn cắm được 1 quả Ngọc, bầy quái sẽ Reset, đồng thời xuất hiện Boomer Knights phía trên trần nhà nhả đạn rất rát. Defender phải ưu tiên xử lý bọn này.",
+            "2 người Orb Runners chạy sang 2 bên căn phòng, tìm giết Heretic Knight để nhặt Ngọc Void.",
+            "Mang Ngọc về cắm vào sau cái Totem. Cắm đủ 6 quả Ngọc, cửa sẽ mở, ải hoàn thành."
+          ]
+        }
+      }
+    },
+    {
+      "id": "zulmak",
+      "name": "Zulmak, Instrument of Torment",
+      "roles": {
+        "swordbearers": {
+          "description": "Cầm kiếm tiêu diệt 3 Mini-Boss xung quanh để lấy ngọc.",
+          "quantity": 3,
+          "types": ["Mechanic"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Giết 3 Mini-Boss để lấy 3 Ngọc",
+          "objective": "Sử dụng quy tắc Kiếm Hive ở ải 1 để giết 3 loại Mini-Boss xung quanh sân.",
+          "steps": [
+            "Ở trung tâm là Boss Zulmak, hắn miễn nhiễm. Xung quanh sân có 3 đền thờ nhỏ, mỗi đền thờ có 1 loại Mini-Boss: Knight, Wizard, Shrieker.",
+            "Xung quanh sân sẽ xuất hiện các con Pit Heretic (Knight). Giết nó để rớt Kiếm Hive.",
+            "Mang kiếm đi giết 3 Mini-Boss bằng đúng cơ chế tương ứng (như Ải 1): Cận chiến cho Knight, Bắn chưởng cho Wizard, Đỡ đòn để phản sát thương cho Shrieker.",
+            "Mỗi con Mini-Boss chết sẽ rớt 1 quả Ngọc Void. Mang 3 quả Ngọc này về thả vào 3 lỗ cắm xung quanh đài trung tâm của Boss Zulmak."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase",
+          "objective": "Gây sát thương vào Boss khi ngọn lửa ở đài trung tâm cháy sáng.",
+          "steps": [
+            "Ngay khi cắm quả Ngọc thứ 3, đài trung tâm phát sáng màu xanh lục, lớp khiên của Zulmak vỡ vụn.",
+            "Cả team BẮT BUỘC phải đứng trong vùng trung tâm đó (vùng sáng) mới có thể gây sát thương cho Boss.",
+            "Zulmak sẽ liên tục dùng kiếm quét sát thương lửa. Cắm Well of Radiance để hồi máu và dồn đạn súng máy, Linear, hoặc Grenade Launcher vào hắn.",
+            "Chú ý: Khi thấy Zulmak GIƠ KIẾM CHUẨN BỊ PHÓNG XUỐNG ĐẤT, hãy NHẢY KHỎI VÙNG TRUNG TÂM NGAY LẬP TỨC. Hắn sẽ tung đòn xóa sổ tất cả những ai đứng trong đó, kết thúc Damage phase.",
+            "Lặp lại quá trình tìm ngọc nếu Boss chưa chết."
+          ]
+        }
+      }
+    }
+  ]
+}

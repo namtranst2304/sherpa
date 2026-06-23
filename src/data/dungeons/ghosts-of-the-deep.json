@@ -1,0 +1,157 @@
+{
+  "dungeon_name": "Ghosts of the Deep",
+  "active_orbit": "Titan",
+  "preface": {
+    "formatting_rules": "Ghosts of the Deep yêu cầu bạn sử dụng cơ chế Deepsight để nhìn thấy các bức tượng ẩn, và thu thập Vestige of Light từ lũ Lucent Hive để nạp vào các bức tượng đó.",
+    "non_linear_mechanic": {
+      "description": "Lặn sâu xuống đại dương mê-tan của Titan để ngăn chặn nghi thức tà giáo nhằm hồi sinh Oryx của Lucent Hive.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Khu vực dưới nước sẽ làm bạn chậm lại và giới hạn oxy (Cần nhặt bọt khí). Cả 2 Boss đều có khiên cực dày (Cần vũ khí Arbalest hoặc Super mạnh để phá khiên trước khi sát thương). Quái vật tàng hình (Moths) là nguyên nhân gây chết nhiều nhất.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cứu cánh bắt buộc khi đứng sát thương Boss Ecthar vì hắn chém cực rát."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Hammer of Sol (Bonk)",
+          "utility": "Sống sót vô hạn khi dọn quái xung quanh phòng, đặc biệt hữu dụng khi phải đi lẻ loi lấy buff."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Gathering Storm / Golden Gun",
+          "utility": "Sát thương cao, có thể trang bị Assassin's Cowl để tàng hình khi lặn dưới nước hoặc đi lấy buff."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "hive-ritual",
+      "name": "Hive Ritual (Nghi thức phá ấn)",
+      "roles": {
+        "mechanic": {
+          "description": "Chạy lấy buff Deepsight, tìm biểu tượng, giết Hive Guardian và cắm buff.",
+          "quantity": 3,
+          "types": ["Mechanic", "Runner"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cắm 4 Tượng bằng Vestige of Light",
+          "objective": "Đi theo vết mòn để tiêu diệt Wizard, đọc biểu tượng, giết Lucent Hive để lấy buff.",
+          "steps": [
+            "Tại khu vực trung tâm, có một đốm sáng Deepsight. Kích hoạt nó để nhận buff Deepsight (Tồn tại 15 giây).",
+            "Khi có Deepsight, bạn sẽ thấy dấu chân mờ ảo dẫn bạn đi qua khu rừng rậm đến một điểm tụ tập của quái.",
+            "Tại đó, giết con Wizard (Soulfire Binder). Một biểu tượng Hive sẽ hiện ra giữa không trung.",
+            "Ghi nhớ biểu tượng, tiếp tục đi theo dấu chân đến khi bạn gặp một con Lucent Hive (Knight hoặc Acolyte có ánh sáng). Tiêu diệt nó VÀ DÙNG FINISHER ĐỂ BÓP NÁT CON GHOST CỦA NÓ.",
+            "Bạn nhận được buff 'Vestige of Light' (Tồn tại khoảng 1 phút).",
+            "Chạy ngay về khu vực trung tâm (nơi bắt đầu). Kích hoạt Deepsight lần nữa để làm xuất hiện các bức tượng.",
+            "Mỗi bức tượng tương ứng với một biểu tượng Hive. CHỌN ĐÚNG bức tượng có biểu tượng giống với cái bạn đã thấy, và Tương tác (Imbue) để cắm buff vào.",
+            "Làm thao tác này 4 lần với 4 bức tượng khác nhau để phá ấn và xuống dưới đại dương."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ecthar",
+      "name": "Ecthar, the Shield of Savathûn",
+      "roles": {
+        "diver": {
+          "description": "Lặn xuống nước để chạm vào biểu tượng.",
+          "quantity": 1,
+          "types": ["Runner"]
+        },
+        "add_clear": {
+          "description": "Bảo vệ phòng trên, giết Keeper of the Deep.",
+          "quantity": 2,
+          "types": ["Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Lặn xuống đáy tìm 3 Biểu Tượng",
+          "objective": "Lặn xuống bể nước, nhớ và kích hoạt 3 biểu tượng bị giấu.",
+          "steps": [
+            "Boss Ecthar ở trên bờ cùng bạn. Giết 3 con Blistered Knights xung quanh phòng, một con Ogre (Keeper of the Deep) sẽ xuất hiện ở giữa. Giết nó để mở lỗ hổng dưới nước.",
+            "1 Người Lặn (Diver) nhảy xuống nước. Boss Ecthar cũng sẽ nhảy xuống theo và săn lùng bạn. Ở dưới nước bạn KHÔNG THỂ DÙNG VŨ KHÍ và di chuyển chậm.",
+            "Diver phải lặn quanh các rạn san hô, tìm và CHẠM (Interact) vào 3 Biểu Tượng Hive phát sáng được giấu rải rác dưới đáy.",
+            "Mỗi lần chạm 1 biểu tượng, nhớ lấy hình thù của nó. (Có tổng cộng 3 biểu tượng khác nhau).",
+            "Sau khi chạm đủ 3 biểu tượng, các cửa cống mở ra, hãy bơi lên lại bờ. (Cẩn thận đừng để hết Oxy, hãy nhặt bong bóng khí)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Giết Lucent Hive và Nạp 3 Tượng",
+          "objective": "Giết Lucent Hive trên bờ để lấy buff cắm vào 3 bức tượng.",
+          "steps": [
+            "Khi Diver lên bờ, 3 con Lucent Hive (Lightbearer Wizards) sẽ xuất hiện tại các góc của căn phòng.",
+            "Tiêu diệt chúng và Bóp nát Ghost để nhận buff 'Vestige of Light'.",
+            "Kích hoạt đốm Deepsight ở giữa phòng để làm các Bức Tượng hiện lên (Xung quanh lan can).",
+            "Mỗi người giữ Vestige phải cắm nó vào đúng 3 bức tượng có biểu tượng TRÙNG VỚI 3 BIỂU TƯỢNG MÀ DIVER ĐÃ THẤY DƯỚI NƯỚC.",
+            "Nếu cắm sai, bạn sẽ chết lập tức."
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Damage Phase",
+          "objective": "Giết con Knight để rớt vùng năng lượng, đứng vào đó phá khiên Boss.",
+          "steps": [
+            "Khi cắm xong bức tượng thứ 3, một con Knight (Wellkeeper) sẽ ra. Giết nó, nó rớt một vũng nước xanh lục (Cuddle Puddle).",
+            "CẢ TEAM PHẢI ĐỨNG TRONG VŨNG ĐÓ để phá vỡ lớp khiên của Ecthar. Lớp khiên này cực kỳ dày, hãy dùng Arbalest (1 viên phá ngay lập tức) hoặc Super.",
+            "Khi khiên vỡ, Damage Phase bắt đầu. Cắm Well of Radiance và dùng Kiếm (Lament/Falling Guillotine) hoặc Shotgun nã vào hắn vì hắn cận chiến rất rát.",
+            "Khi Damage Phase kết thúc, Boss lấy lại khiên. Lặp lại quá trình từ Bước 1."
+          ]
+        }
+      }
+    },
+    {
+      "id": "simmumah",
+      "name": "Šimmumah ur-Nokru",
+      "roles": {
+        "mechanic": {
+          "description": "Kết hợp mọi cơ chế: Deepsight, Bơi qua vòng, Tìm biểu tượng và Giết Lucent Hive.",
+          "quantity": 3,
+          "types": ["Mechanic", "Runner", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Kích hoạt Deepsight và Điểm Danh 3 Khu Vực",
+          "objective": "Nạp Vestige vào 3 bộ phận trên cơ thể của thây ma Oryx.",
+          "steps": [
+            "Boss Šimmumah (Wizard) đang tế lễ thây ma khổng lồ của Oryx. Kích hoạt Deepsight ở giữa để nhận biết 3 điểm phát sáng trên cơ thể Oryx (Ví dụ: Tay trái, Ngực, Đầu gối).",
+            "Đứng tại một trong các điểm sáng đó, nhìn lơ lửng trên không trung, bạn sẽ thấy một biểu tượng (Hình O, Hình /\\\\. v.v).",
+            "Nhảy qua chiếc nhẫn ánh sáng đó để đi theo dấu vết (Một loạt các vòng tròn lơ lửng) dẫn bạn đến 1 trong 3 căn phòng ở các góc.",
+            "Vào phòng, đánh quái, ở cuối phòng có một con Lucent Hive (Acolyte, Knight hoặc Wizard). Tiêu diệt nó, Bóp nát Ghost để lấy 'Vestige of Light'.",
+            "NHÌN LÊN BỨC TƯỜNG TRONG PHÒNG ĐÓ. Sẽ có 1 biểu tượng Hive lớn. Bạn BẮT BUỘC PHẢI NHỚ BIỂU TƯỢNG NÀY."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Cắm Vestige và Phá Khiên Boss",
+          "objective": "Cắm buff vào đúng bộ phận của Oryx theo Biểu tượng Deepsight, sau đó dùng vùng năng lượng để bắn Boss.",
+          "steps": [
+            "Mang buff về khu vực Oryx. Kích hoạt Deepsight lần nữa để nhìn thấy biểu tượng ở các điểm trên cơ thể Oryx.",
+            "Bạn phải cắm buff vào ĐIỂM SÁNG TRÊN CƠ THỂ ORYX CÓ BIỂU TƯỢNG TRÙNG VỚI BIỂU TƯỢNG BẠN NHÌN THẤY Ở TRONG PHÒNG LÚC NÃY.",
+            "Lặp lại toàn bộ quá trình này 3 lần cho đủ 3 điểm trên người Oryx.",
+            "Khi cắm điểm thứ 3 xong, 3 vùng ánh sáng xanh lục (Cuddle Puddles) sẽ xuất hiện tại 3 điểm đó. Boss bắt đầu di chuyển quanh phòng.",
+            "Bạn BẮT BUỘC PHẢI ĐỨNG TRONG 1 VÙNG XANH ĐÓ thì mới phá được khiên của Boss. Khiên của Šimmumah cũng rất dày (Arbalest là lựa chọn tối ưu).",
+            "Khi khiên vỡ, Damage Phase mở ra. Cắm Well và dùng Linear Fusion Rifle hoặc Leviathan's Breath để bắn vì Boss trôi nổi và dịch chuyển.",
+            "Nếu chưa chết, lặp lại toàn bộ quá trình."
+          ]
+        }
+      }
+    }
+  ]
+}

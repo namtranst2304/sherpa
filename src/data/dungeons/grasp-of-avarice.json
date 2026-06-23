@@ -1,0 +1,150 @@
+{
+  "dungeon_name": "Grasp of Avarice",
+  "active_orbit": "Cosmodrome",
+  "preface": {
+    "formatting_rules": "Cơ chế chính của Dungeon này là Gánh Nặng Tham Lam (Burden of Riches). Bạn sẽ phải nhặt các Engram vàng giả mạo (Fake Exotic Engrams) và thả chúng vào các viên Tinh thể (Crystals) để không bị nổ tung.",
+    "non_linear_mechanic": {
+      "description": "Lên đường tìm kiếm kho báu của tên cướp biển vũ trụ Wilhelm-7 trong Động loot huyền thoại Loot Cave.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Khu vực này có mật độ quái dày đặc, bao gồm Hive và Fallen. Các vũ khí nổ diện rộng, súng máy và Gjallarhorn sẽ là những trang bị trấn phái.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cứu cánh sinh tồn tại các khu vực nạp Engram và giai đoạn bắn Boss."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Thundercrash / Twilight Arsenal",
+          "utility": "Sát thương bùng nổ tốt lên Boss Ogre và Boss Cuối."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Gathering Storm",
+          "utility": "Sát thương và dọn quái xung quanh con Boss siêu hiệu quả."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "phryzhia",
+      "name": "Phry'zhia the Insatiable",
+      "roles": {
+        "engram_runners": {
+          "description": "Nhặt Engram và mang về kết tinh Pha lê.",
+          "quantity": 3,
+          "types": ["Runner", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Thu Thập Engram Vàng",
+          "objective": "Mở các phòng bên hông, giết quái nhặt Engram và nạp vào Pha lê.",
+          "steps": [
+            "Boss Phry'zhia (Ogre) nằm ở giữa, bắn tỉa liên tục và bất tử. Có một khối Pha Lê lớn ở phía đối diện Boss.",
+            "Ở 2 bên tường (Trái và Phải) có các cánh cửa bị khóa. Tìm các thiết bị kiểm soát (Công tắc) để mở cửa. Khi cửa mở, một bầy Fallen và Vandal sẽ tràn ra.",
+            "Tiêu diệt chúng, chúng sẽ rớt ra rất nhiều Quả Cầu Engram Vàng (Trông giống Exotic Engrams).",
+            "Nhặt Engram bạn sẽ nhận buff 'Burden of Riches'. Mỗi engram nhặt thêm sẽ tăng stack (x1, x2, ...).",
+            "CẢNH BÁO: Buff này đếm ngược 30 giây. Mỗi khi nhặt thêm 1 engram, đồng hồ reset lại 30s. Nếu về 0, bạn sẽ nổ tung và CHẾT.",
+            "Chạy thật nhanh về khối Pha Lê trung tâm, đứng CẠNH nó. Số lượng Burden of Riches trên người bạn sẽ tự động được hút vào Pha Lê và thanh lọc dần dần."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase",
+          "objective": "Nạp đủ 25 Engrams để phá khiên Boss.",
+          "steps": [
+            "Khi cả đội nạp TỔNG CỘNG 25 Engram vào Pha lê, nó sẽ sạc đầy và phát nổ năng lượng Ánh sáng, xóa bỏ khiên bảo vệ của Ogre.",
+            "Damage Phase bắt đầu. Cắm Well/Bubble và dồn toàn bộ hỏa lực vào con Ogre. Hắn sẽ giật và thỉnh thoảng lao tới, hãy tránh xa.",
+            "Hết Damage Phase, khiên hồi phục. Lặp lại việc tìm và nạp Engram."
+          ]
+        }
+      }
+    },
+    {
+      "id": "fallen-shield",
+      "name": "Fallen Shield (Bảo Vệ Vệ Tinh)",
+      "roles": {
+        "cannon_shooters": {
+          "description": "Sử dụng Scorch Cannon kích hoạt các bệ đẩy.",
+          "quantity": 1,
+          "types": ["Mechanic"]
+        },
+        "engram_runners": {
+          "description": "Gom Engram nạp vào các khẩu pháo năng lượng.",
+          "quantity": 2,
+          "types": ["Runner"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Định vị và Nạp năng lượng Đảo Vệ Tinh",
+          "objective": "Gom Engram tại các hòn đảo để hủy các máy phát điện trên không.",
+          "steps": [
+            "Đây là một khu vực khổng lồ với nhiều hòn đảo nổi. Có một lớp khiên khổng lồ cản đường bạn đi lên.",
+            "Tìm và tiêu diệt con Scorch Vandal để cướp khẩu súng Scorch Cannon. Dùng khẩu súng này bắn vào cỗ máy kích hoạt cạnh bệ nhảy (Man Cannon). Nạp đạn càng lâu (giữ nút bắn) bệ đẩy sẽ càng mạnh.",
+            "Bay sang các hòn đảo có Servitor. Tại đảo này, tiêu diệt quái xung quanh để nhặt Engram Vàng (Burden of Riches).",
+            "Tìm một khối Pha Lê nhỏ trong các căn lều trên đảo và đứng cạnh để nạp Engram vào đó. (Cần khoảng 20 Engram mỗi đảo).",
+            "Khi nạp đủ, hệ thống pháo phòng không (Servitor) trên đảo sẽ được kích hoạt năng lượng. Khối cầu Servitor mất khiên."
+          ]
+        },
+        "phase_2": {
+          "name": "Đẩy Servitor Phá Khiên",
+          "objective": "Đẩy quả bóng Servitor vào bệ nhảy để nó bắn nát máy phát điện.",
+          "steps": [
+            "Lúc này Servitor không còn khiên bất tử nhưng bạn không bắn nó. Thay vào đó, bạn đẩy sát thương vật lý lên nó.",
+            "Đẩy quả bóng Servitor LĂN XUỐNG DƯỚI BỆ PHÓNG (Man Cannon).",
+            "Sau đó, người cầm Scorch Cannon bắn vào công tắc để kích hoạt bệ phóng. Bệ phóng sẽ hất quả bóng Servitor bay thẳng lên không trung, va vào máy phát điện và phá hủy nó.",
+            "Hoàn thành tương tự ở 4 hòn đảo khác nhau để phá tan 4 máy phát điện, khiên khổng lồ ở giữa sẽ biến mất, cho phép bạn bay lên sào huyệt Boss cuối."
+          ]
+        }
+      }
+    },
+    {
+      "id": "captain-avarokk",
+      "name": "Captain Avarokk the Ruin",
+      "roles": {
+        "mechanic": {
+          "description": "Chia nhau xử lý Scorch Cannon và thu nhặt Engram.",
+          "quantity": 3,
+          "types": ["Mechanic", "Runner"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Mở Rương Loot và Gom Engram",
+          "objective": "Sử dụng Scorch Cannon kích hoạt các công tắc để đổ Engram ra từ vỏ rương.",
+          "steps": [
+            "Boss cuối Avarokk (Fallen Captain) ngồi trên một núi vàng khổng lồ cùng với Sniper và 1 con Vandal cầm Scorch Cannon.",
+            "Giết con Vandal để cướp Scorch Cannon. Xung quanh phòng có 3 công tắc năng lượng (Các cỗ máy phát ra tia sét).",
+            "Dùng Scorch Cannon bắn và giữ tụ lực (Hold) vào 1 công tắc cho đến khi nó nổ tối đa.",
+            "Điều này kích hoạt một hệ thống 'nhả' Engrams. Các trụ gần đó sẽ tuôn ra hàng chục quả Engram Vàng.",
+            "Chạy thu nhặt tất cả chúng (lưu ý đếm ngược 30s) và tập trung vào khối Pha Lê nằm ngay giữa phòng để nạp (Ngay trước mặt Boss)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase",
+          "objective": "Nạp đủ 60 Engrams để hạ khiên Boss.",
+          "steps": [
+            "Khác với Ogre, con Boss này yêu cầu tận 60 Engram. Bạn sẽ phải kích hoạt ít nhất 2 cụm công tắc để có đủ Engram nạp vào Pha Lê.",
+            "Khi đạt đủ 60 Engram, Avarokk sẽ bị choáng và mất khiên. Damage Phase bắt đầu.",
+            "Hắn di chuyển cực nhanh và né đạn mạnh. Khuyến cáo dùng đạn đạo theo dõi (Gjallarhorn) hoặc nhắm ngay dưới chân hắn với súng phóng lựu.",
+            "Lặp lại nếu Boss chưa chết. Nhớ xử lý bọn Sniper R-M80 vì chúng bắn cực rát."
+          ]
+        }
+      }
+    }
+  ]
+}

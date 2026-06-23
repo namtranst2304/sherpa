@@ -1,0 +1,157 @@
+{
+  "dungeon_name": "The Shattered Throne",
+  "active_orbit": "The Dreaming City",
+  "preface": {
+    "formatting_rules": "Dungeon đầu tiên của Destiny 2. Tập trung vào việc tìm kiếm và định vị các biểu tượng (Symbols) của Mara Sov/Awoken. Môi trường tối tăm, nhiều vực sâu và Taken.",
+    "non_linear_mechanic": {
+      "description": "Thâm nhập vào không gian Ascendant Plane của Nữ hoàng Mara Sov, nay đã bị Taken tha hóa bởi Dûl Incaru.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Kẻ thù chủ đạo là Taken. Bạn sẽ cần vũ khí tầm xa tốt (Scout, Sniper, Bow) cho các khu vực rộng lớn, và sát thương diện rộng tốt để xử lý đám Taken Thrall, Psions.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Sống sót và cung cấp sát thương ở các ải Boss Vorgeth và Dûl Incaru."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Phoenix Protocol / Sunbracers",
+          "recommendation": "Dọn quái diện rộng và hồi Well nhanh."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Ward of Dawn / Hammer of Sol",
+          "utility": "Bảo vệ đội hình hoặc dọn quái từ xa."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Synthoceps",
+          "recommendation": "Tăng sát thương cận chiến, đặc biệt hữu dụng khi bị bao vây bởi Taken."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot (Tether)",
+          "utility": "Khống chế đám đông và debuff Boss."
+        },
+        {
+          "name": "Golden Gun",
+          "utility": "Gây sát thương sốc cực mạnh lên Boss cuối Dûl Incaru."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Celestial Nighthawk",
+          "recommendation": "Dùng với Golden Gun để 1-shot Boss (hoặc các mục tiêu lớn)."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "erebus",
+      "name": "Erebus (Mê Cung Biểu Tượng)",
+      "roles": {
+        "navigators": {
+          "description": "Người tìm đường, ghi nhớ các biểu tượng và dẫn dắt team.",
+          "quantity": 3,
+          "types": ["Mechanic", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Tìm kiếm và Tiêu diệt Architect",
+          "objective": "Tiêu diệt 7 con Taken Architect tương ứng với 7 biểu tượng để mở cánh cửa trung tâm.",
+          "steps": [
+            "Bạn sẽ bước vào một mê cung khổng lồ với nhiều đền thờ khác nhau. Bắt đầu bằng việc đi thẳng tới đền thờ trung tâm và tìm biểu tượng đầu tiên phát sáng.",
+            "Các biểu tượng thường là hình vẽ của Awoken (Rồng cuộn tròn, Rồng lặn, Chim cú, Rắn hình số 8, Rắn hình chữ U, v.v).",
+            "Mỗi đền thờ trong mê cung gắn liền với 1 biểu tượng. Dựa vào biểu tượng bạn thấy, hãy chạy đến đền thờ tương ứng.",
+            "Tại đền thờ đó, một con Mini-Boss tên là 'Labyrinth Architect' (Taken Elite) cùng bầy quái sẽ xuất hiện.",
+            "Tiêu diệt con Architect này. Ngay tại nơi nó chết, một biểu tượng MỚI sẽ hiện ra (kèm hình ảnh chiếu trên sàn). Biểu tượng mới này chỉ điểm đền thờ tiếp theo bạn phải tới.",
+            "Lặp lại quá trình này 7 lần cho đến khi biểu tượng cuối cùng đưa bạn quay về cánh cửa lớn ở trung tâm. Cánh cửa sẽ mở ra."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vorgeth",
+      "name": "Vorgeth, the Boundless Hunger",
+      "roles": {
+        "add_clear": {
+          "description": "Tiêu diệt quái và làm yếu các con Wizard (Keepers).",
+          "quantity": 3,
+          "types": ["Add Clear", "Mechanic"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Lấy Buff 'Petitioner's Mark'",
+          "objective": "Tiêu diệt 4 con Wizard (Keepers) xung quanh phòng để lấy buff giải trừ khiên của Vorgeth.",
+          "steps": [
+            "Boss Vorgeth (Taken Ogre) có một lớp khiên miễn nhiễm sát thương. Xung quanh phòng (Trái, Phải, Trước, Sau) có 4 con Keeper of Petitions (Wizard).",
+            "Mỗi khi bạn giết 1 con Wizard, nó sẽ rớt ra một quả cầu Void. Nhặt nó sẽ cho bạn buff 'Petitioner's Mark' tồn tại 45 giây.",
+            "Nếu thời gian buff đếm ngược về 0, bạn sẽ chết. Bạn PHẢI nhặt quả cầu tiếp theo trước khi hết giờ. Mỗi lần nhặt, thời gian reset và cộng dồn số lượng Mark.",
+            "Bí quyết: ĐỪNG giết Wizard vội. Hãy bắn cả 4 con Wizard cho chúng còn tí máu. Sau đó cử 1 người chạy vòng quanh phòng kết liễu và nhặt 4 quả cầu liên tiếp thật nhanh.",
+            "Khi nhặt quả cầu thứ 4, buff của bạn sẽ biến thành 'Petitioner's Burden'."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase",
+          "objective": "Dập tắt 1 trong 4 ngọn lửa để phá khiên và gây sát thương.",
+          "steps": [
+            "Người đang giữ buff 'Petitioner's Burden' phải nhanh chóng chạy đến 1 trong 4 đài lửa xung quanh Boss và Tương tác (Extinguish) để dập tắt lửa.",
+            "Ngay lập tức, lớp khiên của Vorgeth sẽ vỡ ra.",
+            "Cắm Well of Radiance và dồn toàn bộ sát thương vào Vorgeth. Hắn sẽ bắn các quả cầu bám đuổi màu đen (Taken Axion Darts), hãy BẮN VỠ chúng nếu không sẽ bị nhận sát thương lớn.",
+            "Nếu hết Damage Phase mà Boss chưa chết, lớp khiên sẽ phục hồi và bạn phải lặp lại Giai đoạn 1."
+          ]
+        }
+      }
+    },
+    {
+      "id": "dul-incaru",
+      "name": "Dûl Incaru, the Eternal Return",
+      "roles": {
+        "add_clear": {
+          "description": "Tiêu diệt Knight và Psion, sau đó dồn sát thương vào Boss.",
+          "quantity": 3,
+          "types": ["Add Clear", "Mechanic"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Tiêu diệt Fatesmiths để lấy Buff",
+          "objective": "Giết 3 con Abyssal Champion (Knight) để lấy buff Finite Thought, cho phép gây sát thương lên Boss.",
+          "steps": [
+            "Boss Dûl Incaru (Taken Wizard) miễn nhiễm sát thương. Có 3 con Knight to lớn (Fatesmiths) đi lại quanh phòng và rất nhiều Taken Psion sinh sản liên tục.",
+            "Bắt đầu: Ưu tiên dọn dẹp ĐÁM PSION ngay lập tức bằng Lựu đạn hoặc súng diện rộng. Chúng nhân bản rất nhanh và có thể làm bạn ngập ngụa.",
+            "Bắn 3 con Knight cho chúng còn cực kỳ ít máu. KHI VÀ CHỈ KHI cả 3 con đều yếu máu, hãy dứt điểm tiêu diệt chúng cùng 1 lúc.",
+            "Khi Knight chết, nó rớt ra một quả cầu sáng. Nhặt nó cho bạn buff 'Finite Thought' (tăng sát thương cực lớn). Nếu bạn giết cả 3 con, hãy cử 1 người nhặt cả 3 quả (sẽ cộng dồn x3 sát thương)."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase và Cơ chế Xóa Buff",
+          "objective": "Sử dụng Finite Thought x3 để tiêu diệt Boss nhanh chóng, hoặc dọn dẹp tinh thể để tránh bị Wipe.",
+          "steps": [
+            "Khi có buff Finite Thought, lập tức dồn toàn bộ sát thương (Super, Heavy) vào Dûl Incaru. Với buff x3, Boss sẽ chết cực kỳ nhanh.",
+            "LƯU Ý QUAN TRỌNG: Buff Finite Thought có bộ đếm ngược. NẾU NÓ ĐẾM VỀ 0, bạn sẽ CHẾT.",
+            "Nếu bạn không thể giết Boss trong 1 lượt (điều hiếm xảy ra hiện nay), bạn phải ĐỂ Ý cái pha lê (Crystal) xuất hiện giữa phòng khi Dûl Incaru thực hiện phép thuật (khiên ảo ảnh).",
+            "Bắn vỡ cái pha lê đó sẽ XÓA buff Finite Thought của bạn, cứu bạn khỏi cái chết, nhưng sẽ bắt đầu lại Giai đoạn 1."
+          ]
+        }
+      }
+    }
+  ]
+}

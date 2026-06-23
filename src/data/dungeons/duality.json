@@ -1,0 +1,153 @@
+{
+  "dungeon_name": "Duality",
+  "active_orbit": "The Leviathan",
+  "preface": {
+    "formatting_rules": "Cơ chế xương sống là việc chuyển đổi qua lại giữa 2 thế giới: Thế giới thực (Normal) và Thế giới ác mộng (Nightmare Realm) bằng cách bắn vào chiếc chuông (Bell).",
+    "non_linear_mechanic": {
+      "description": "Thâm nhập vào tâm trí của Calus để đánh cắp những bí mật đen tối nhất của hắn thông qua cõi Ác mộng.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Ở thế giới Ác mộng (Nightmare Realm), bạn sẽ chết nếu không thoát ra trước khi hết giờ (Khoảng 1 phút). Dọn quái cực nhanh là điều sống còn.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cần thiết ở Boss Caiatl vì sát thương của bà ta rất rát."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Hammer of Sol (Bonk Titan) / Strand",
+          "utility": "Sống sót và dọn quái cận chiến vô hạn, đập chuông tiết kiệm đạn."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot / Blade Barrage",
+          "utility": "Dọn phòng tức thời ở thế giới Nightmare để lấy thêm thời gian."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "gahlran",
+      "name": "Nightmare of Gahlran",
+      "roles": {
+        "bell_shooters": {
+          "description": "Canh giữ và bắn chuông để chuyển thế giới.",
+          "quantity": 1,
+          "types": ["Mechanic"]
+        },
+        "standard_bearers": {
+          "description": "Vào thế giới Nightmare tiêu diệt Standard Bearer để lấy cờ.",
+          "quantity": 2,
+          "types": ["Runner"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Lấy Cờ Tiêu Chuẩn (Standard)",
+          "objective": "Chuyển sang Nightmare, giết Standard Bearer nhặt cờ và mang về thế giới thực.",
+          "steps": [
+            "Boss Gahlran đứng ở giữa phòng, bất tử. Nhìn quanh phòng, bạn sẽ thấy 2 ký hiệu bị khóa (Chó, Chén, Búa, Mặt trời).",
+            "Đứng GẦN CHUÔNG. Bắn vào chuông để dịch chuyển cả team sang Nightmare Realm. Nhớ vị trí 2 ký hiệu bị khóa ở thế giới thực, bạn phải chạy đến đúng 2 phòng có ký hiệu đó ở thế giới Nightmare.",
+            "Tại 2 phòng đó có 2 con Mini-boss (Standard Bearers). Tiêu diệt chúng sẽ rớt ra 2 cây cờ tương ứng (Ví dụ cờ Chó và cờ Chén).",
+            "Mỗi người nhặt 1 cờ. Nhanh chóng chạy về đứng gần chuông và bắn chuông để quay lại thế giới thực trước khi hết giờ 'Nightmare Collapsing'.",
+            "Cắm 2 cây cờ vào 2 lỗ cắm tương ứng ở thế giới thực."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase",
+          "objective": "Mở khóa phòng phụ để làm yếu Gahlran ở thế giới Nightmare.",
+          "steps": [
+            "Khi cắm đủ 2 cờ, cánh cửa của 2 căn phòng đó (ở thế giới thực) sẽ mở ra.",
+            "Bắn chuông lần nữa để sang Nightmare. Lần này, bên trong 2 căn phòng đó sẽ là hàng đống quái vật Gahlran (Visions of Gahlran).",
+            "Tiêu diệt SẠCH SẼ lũ Visions đó. Khi con Vision cuối cùng chết, Boss Gahlran thật sẽ trở nên dễ tổn thương (Mất khiên).",
+            "Cắm Well, dồn sát thương cận chiến (Kiếm/Shotgun/Fusion) vào hắn. Hắn sẽ chém bạn rất đau, nên cần Well hoặc hồi máu liên tục.",
+            "Bắn chuông quay về thế giới thực khi thanh thời gian sắp hết. Lặp lại nếu Boss chưa chết."
+          ]
+        }
+      }
+    },
+    {
+      "id": "vault",
+      "name": "Unlock the Vault",
+      "roles": {
+        "runners": {
+          "description": "Đi săn các Standard Bearers.",
+          "quantity": 2,
+          "types": ["Runner"]
+        },
+        "add_clear": {
+          "description": "Bảo vệ chuông khỏi lũ Bellkeepers.",
+          "quantity": 1,
+          "types": ["Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Tìm và cắm cờ (Vault)",
+          "objective": "Lấy tổng cộng 6 cây cờ để mở khóa kho báu.",
+          "steps": [
+            "Khu vực này có 3 tầng. Bạn cần đọc 2 biểu tượng ở giữa phòng (Ví dụ: Mặt Trời và Chó).",
+            "Bắn chuông sang Nightmare. Trong Nightmare, bạn ở một bản đồ rộng hơn. Phải chạy đến các bệ tương ứng với Mặt Trời và Chó để giết Standard Bearers và nhặt cờ.",
+            "LƯU Ý QUAN TRỌNG: Ở Nightmare sẽ xuất hiện lũ CABAL BELLKEEPERS. Bạn PHẢI giết bọn chúng thì chiếc Chuông mới mở khóa để bắn về.",
+            "Giết Bellkeepers, đứng cạnh Chuông, bắn nó để về thế giới thực.",
+            "Cắm 2 cờ vào giữa phòng. Làm vòng lặp này 3 lần (Tổng cộng 6 cờ) để qua ải. Phải tiêu diệt lũ Mini-Boss xuất hiện sau mỗi lần cắm cờ."
+          ]
+        }
+      }
+    },
+    {
+      "id": "caiatl",
+      "name": "Nightmare of Caiatl, Princess-Imperial",
+      "roles": {
+        "runners": {
+          "description": "Đi lấy cờ ở thế giới Nightmare.",
+          "quantity": 2,
+          "types": ["Runner"]
+        },
+        "add_clear": {
+          "description": "Dọn dẹp sàn đấu và giữ sạch Chuông.",
+          "quantity": 1,
+          "types": ["Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đánh cắp cờ của Caiatl",
+          "objective": "Thu thập 4 cây cờ và cắm vào chuông để ép Caiatl vào chuông.",
+          "steps": [
+            "Boss Caiatl đứng ở giữa sân. Xung quanh có 4 biểu tượng (Chó, Chén, Búa, Mặt trời). Xem 2 biểu tượng nào đang hiện lên.",
+            "Giết bọn Bellkeepers ở thế giới thực để mở khóa chuông. Bắn chuông sang Nightmare.",
+            "Trong Nightmare, chạy đi giết 2 con Standard Bearers ở 2 ban công tương ứng với 2 biểu tượng đã đọc. Lấy cờ.",
+            "Bắn chuông quay về thế giới thực, cắm cờ. Lặp lại 1 lần nữa để cắm đủ 4 cờ."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase (Chuông ngưng đọng)",
+          "objective": "Bắt kịp Caiatl tại chiếc chuông cô ta chạy đến để làm cô ta choáng và gây sát thương.",
+          "steps": [
+            "Khi cắm đủ 4 cờ, bắn vào chuông lớn giữa sân để kích hoạt Damage Phase. Cả team sẽ bị kéo vào Nightmare.",
+            "Ngay khi vào Nightmare, Caiatl sẽ BẮT ĐẦU CHẠY về phía 1 trong 3 chiếc chuông (Trái, Giữa, Phải).",
+            "CẢ TEAM PHẢI CHẠY THEO CÔ TA. Giết sạch 2 con Bellkeepers ở cái chuông cô ta đang nhắm tới.",
+            "Khi Caiatl BƯỚC VÀO VÙNG TRÒN CỦA CHUÔNG, hãy BẮN VÀO CHUÔNG ĐÓ. Điều này sẽ làm Caiatl bị CHOÁNG (Stunned) và phát sáng màu xanh lam.",
+            "Khi cô ta bị choáng, dồn sát thương vào cô ta. (Lưu ý: Bạn phải đứng GẦN CHUÔNG để nhận buff sát thương).",
+            "Sau khi tỉnh dậy, Caiatl sẽ chạy sang 1 chiếc chuông khác. Bạn phải ĐÓN ĐẦU cô ta ở chuông tiếp theo, giết Bellkeepers, và bắn chuông làm cô ta choáng lần nữa.",
+            "Lặp lại tới khi hết 3 chiếc chuông. Hết 3 chiếc, bạn bị dịch chuyển về thế giới thực."
+          ]
+        }
+      }
+    }
+  ]
+}

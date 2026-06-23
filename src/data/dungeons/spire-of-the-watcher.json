@@ -1,0 +1,144 @@
+{
+  "dungeon_name": "Spire of the Watcher",
+  "active_orbit": "Mars",
+  "preface": {
+    "formatting_rules": "Cơ chế duy nhất yếu cốt lõi là 'Nối Dây Cáp' (Connecting the nodes). Bạn phải bắn vào các nút năng lượng (Nodes) theo đúng thứ tự mọc ra dọc theo dây cáp từ điểm xuất phát (Máy phát) đến điểm đích.",
+    "non_linear_mechanic": {
+      "description": "Thâm nhập vào cơ sở Ares Spire trên Sao Hỏa để ngăn chặn lực lượng Vex chiếm quyền kiểm soát hệ thống phòng thủ Warsat.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Kẻ thù chủ yếu là Vex. Cơ chế đòi hỏi bạn phải di chuyển liên tục dọc theo các dây cáp, đôi khi ở trên không trung hoặc vách tường. Submachine gun (SMG) và súng phóng lựu (GL) rất hiệu quả. Boss yêu cầu sát thương chính xác (Linear Fusion Rifles) hoặc Rockets.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Sống sót và Damage ở Boss Harpy và Boss Wyvern."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Thundercrash / Ward of Dawn",
+          "utility": "Cứu nguy, bay lượn và sát thương dồn."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Blade Barrage / Gathering Storm",
+          "utility": "Gây sát thương khủng lên Boss."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "ascend-the-spire",
+      "name": "Ascend the Spire (Leo Tháp)",
+      "roles": {
+        "node_shooters": {
+          "description": "Theo dõi dây cáp và bắn các nút năng lượng.",
+          "quantity": 3,
+          "types": ["Mechanic", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Nối cáp điện",
+          "objective": "Bắn các nút năng lượng theo thứ tự từ nguồn phát để cấp điện cho hệ thống thang máy.",
+          "steps": [
+            "Giết con Vex Minotaur (Conduit Minotaur) để nó rớt ra một vũng năng lượng trắng (Arctrician buff).",
+            "Đứng vào vũng năng lượng để nhận buff 'Arctrician'. Buff này kéo dài 30 giây, cho phép bạn kích hoạt các nút năng lượng (Nodes) khi bắn vào chúng.",
+            "Tìm Nút Khởi Đầu (Nút to nhất, thường nằm ở các bảng điều khiển lớn). Bắn vào nó, nút sẽ chuyển sang màu xanh dương.",
+            "Đi theo SỢI DÂY CÁP MÀU VÀNG chạy ra từ nút đó, tìm nút thứ 2. Bắn nó.",
+            "Tiếp tục chạy dọc theo dây cáp, bắn nút thứ 3, thứ 4... cho đến khi đến nút Cuối Cùng (Ở cổng, hoặc máy nén).",
+            "LƯU Ý: Phải bắn đúng thứ tự dọc theo dây cáp. Nếu bắn sai nút (bỏ cóc), nút sẽ không kích hoạt.",
+            "Nối đủ tất cả các đường dây cáp trong khu vực để mở khóa thang máy và leo lên tầng trên."
+          ]
+        }
+      }
+    },
+    {
+      "id": "akelous",
+      "name": "Akelous, the Siren's Current",
+      "roles": {
+        "runners": {
+          "description": "Nối dây điện trên 4 nhánh đường dẫn.",
+          "quantity": 2,
+          "types": ["Mechanic"]
+        },
+        "add_clear": {
+          "description": "Bắn Vex và giết Minotaur lấy buff.",
+          "quantity": 1,
+          "types": ["Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Kích hoạt 4 Nhánh Tháp",
+          "objective": "Sử dụng buff Arctrician để nối cáp từ trung tâm ra 4 nhánh tháp.",
+          "steps": [
+            "Boss Akelous (Một con Harpy khổng lồ) ở giữa sân, bất tử.",
+            "Giết Conduit Minotaur để lấy buff Arctrician. Ở khu vực trung tâm có 4 Nút Khởi Đầu.",
+            "Bắn vào 1 Nút Khởi Đầu, sau đó lần theo dây cáp nối ra các nhánh tháp dài. Vừa chạy vừa bắn các nút trên dây cáp (Một số nút ẩn sau cột, dưới gầm sàn).",
+            "Bắn đến Nút Cuối Cùng ở đầu mút của nhánh tháp. Nút sẽ chuyển sang sáng trắng.",
+            "Hoàn thành việc nối cả 4 nhánh tháp để kích hoạt Damage Phase."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase",
+          "objective": "Bắn vỡ các mắt của Harpy trước khi gây sát thương vào lõi.",
+          "steps": [
+            "Ngay khi nhánh thứ 4 được nối xong, Boss Akelous sẽ bay ra đó và mở các con Mắt đỏ (Red Eyes) xung quanh thân nó.",
+            "Cả team phải NHANH CHÓNG BẮN VỠ TẤT CẢ CÁC MẮT. Dùng SMG hoặc Trace Rifle lướt qua các mắt thật nhanh.",
+            "Khi toàn bộ mắt vỡ, lõi trung tâm của Boss mở ra. Damage Phase bắt đầu.",
+            "Cắm Well, bắn Linear Fusion hoặc Sniper vào lõi của nó. Boss sẽ VỪA LÙI VỪA BẮN, nên bạn phải đi theo nó một chút.",
+            "Khi Boss nạp năng lượng để nổ tung, lùi lại ngay lập tức. Nếu nó chưa chết, lặp lại Pha 1."
+          ]
+        }
+      }
+    },
+    {
+      "id": "persys",
+      "name": "Persys, Primordial Ruin",
+      "roles": {
+        "mechanic": {
+          "description": "Nối dây đóng/mở cửa phòng.",
+          "quantity": 3,
+          "types": ["Mechanic", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Cô lập Boss vào Phòng Lò Phản Ứng",
+          "objective": "Mở cửa, dẫn dụ Boss vào phòng sau, và kích hoạt Lò Phản Ứng (Reactor).",
+          "steps": [
+            "Boss Persys (Wyvern khổng lồ) bất tử và đi theo bạn. Sân đấu có 2 phòng: Phòng Chính (Sảnh) và Phòng Lò Phản Ứng (Reactor Room) bị ngăn bởi cửa đóng.",
+            "Giết 2 con Minotaurs để lấy buff Arctrician. Bắn 4 Nút Đỏ ở các cột để MỞ CỬA Phòng Lò Phản Ứng.",
+            "Khi cửa mở, 2 người chạy vào trong Lò Phản Ứng. Dụ Boss bước vào theo.",
+            "Trong phòng Lò Phản Ứng, người có buff Arctrician phải bắn kích hoạt 2 sợi dây cáp (Dây Vàng - Dây Vàng sậm).",
+            "Khi nối xong cáp trong phòng Reactor, CHẠY NGAY RA NGOÀI PHÒNG CHÍNH."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Đóng Cửa và Phá Khiên",
+          "objective": "Khóa Boss bên trong Lò Phản Ứng và để lõi năng lượng phát nổ phá khiên nó.",
+          "steps": [
+            "Khi team đã chạy ra ngoài Phòng Chính, NHANH CHÓNG bắn các dây cáp điều khiển cửa (Dây cáp dọc hành lang).",
+            "Nối xong dây điều khiển, CỬA SẼ ĐÓNG LẠI, giam Boss Persys ở bên trong Phòng Lò Phản Ứng.",
+            "Bạn sẽ nghe thấy tiếng còi hú và tiếng nổ lớn. Lõi lò phản ứng phát nổ, phá hủy lớp khiên bất tử của Boss.",
+            "Cửa tự động mở ra. Lúc này Boss bị dính hiệu ứng cháy (mất khiên). Cắm Well và XẢ TOÀN BỘ SÁT THƯƠNG (Rockets, Super) vào nó.",
+            "Hết thời gian, Boss lấy lại khiên. Lặp lại quá trình trên."
+          ]
+        }
+      }
+    }
+  ]
+}

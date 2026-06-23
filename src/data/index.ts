@@ -32,8 +32,24 @@ import week4 from "./pantheon/week-4.json"
 import equilibrium from "./dungeons/equilibrium.json"
 import vespersHost from "./dungeons/vespers-host.json"
 import sunderedDoctrine from "./dungeons/sundered-doctrine.json"
+import shatteredThrone from "./dungeons/shattered-throne.json"
+import pitOfHeresy from "./dungeons/pit-of-heresy.json"
+import prophecy from "./dungeons/prophecy.json"
+import graspOfAvarice from "./dungeons/grasp-of-avarice.json"
+import duality from "./dungeons/duality.json"
+import spireOfTheWatcher from "./dungeons/spire-of-the-watcher.json"
+import ghostsOfTheDeep from "./dungeons/ghosts-of-the-deep.json"
+import warlordsRuin from "./dungeons/warlords-ruin.json"
 
 export const DUNGEONS_DATA: Record<string, ActivityData> = {
+  "shattered-throne": shatteredThrone as unknown as ActivityData,
+  "pit-of-heresy": pitOfHeresy as unknown as ActivityData,
+  "prophecy": prophecy as unknown as ActivityData,
+  "grasp-of-avarice": graspOfAvarice as unknown as ActivityData,
+  "duality": duality as unknown as ActivityData,
+  "spire-of-the-watcher": spireOfTheWatcher as unknown as ActivityData,
+  "ghosts-of-the-deep": ghostsOfTheDeep as unknown as ActivityData,
+  "warlords-ruin": warlordsRuin as unknown as ActivityData,
   "equilibrium": equilibrium as unknown as ActivityData,
   "vespers-host": vespersHost as unknown as ActivityData,
   "sundered-doctrine": sunderedDoctrine as unknown as ActivityData,

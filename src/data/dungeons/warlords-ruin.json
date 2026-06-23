@@ -1,0 +1,152 @@
+{
+  "dungeon_name": "Warlord's Ruin",
+  "active_orbit": "EDZ",
+  "preface": {
+    "formatting_rules": "Cơ chế chính là sống sót trong Bão Tuyết (Biting Cold), chuyển Lời Nguyền (Hex of Vengeful Fury) sang bọn Scorn Melee, và Đứng vòng thu phục Lồng Đèn (Scorn Lanterns) để lấy thời gian sát thương Boss.",
+    "non_linear_mechanic": {
+      "description": "Leo lên tòa lâu đài hoang tàn ở núi Alps để ngăn chặn lực lượng Scorn hồi sinh một con Ahamkara chết.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Rất nhiều quái vật cận chiến Scorn và Chieftain khó chịu. Súng máy, Shotgun, và các lớp nhân vật sinh tồn tốt là ưu tiên hàng đầu. Boss cuối cần sát thương dồn (Burst DPS) trong thời gian ngắn.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Sát thương Boss và chống lại hiệu ứng Biting Cold."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Banner of War (Strand)",
+          "utility": "Hồi máu nhóm cực mạnh, chống lại đám Scorn càn quét."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Celestial Nighthawk (Solar)",
+          "utility": "Bắn 1 hit cực đau vào Boss Cuối vì thời gian Damage Phase ở mỗi mâm của hắn rất ngắn."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "rathil",
+      "name": "Rathil, First Broken Knight of Fikrul",
+      "roles": {
+        "mechanic": {
+          "description": "Bắn lồng nhốt và đứng nạp các Totem (Lanterns).",
+          "quantity": 3,
+          "types": ["Mechanic", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Bị nhốt và Bắn Lồng Đèn",
+          "objective": "Thoát khỏi lồng sắt và đứng vào vùng sáng của Totem để kích hoạt thời gian Damage.",
+          "steps": [
+            "Boss Rathil (Scorn Chieftain) miễn nhiễm. Dọn quái xung quanh để câu giờ.",
+            "Boss sẽ thực hiện một nghi thức, DỊCH CHUYỂN TOÀN BỘ TEAM VÀO NHỮNG CÁI LỒNG SẮT TREO LƠ LỬNG TRÊN KHÔNG.",
+            "Các lồng sắt sẽ dần dần đóng lại bằng những con mắt Taken. Bạn phải nhìn ngang sang các lồng của đồng đội, dùng súng BẮN VỠ 3 CÁI CON MẮT TAKEN đang bám trên lồng của đồng đội (Bạn không thể tự bắn mắt trên lồng của mình).",
+            "Khi các lồng mở ra, nhảy xuống sân. Lúc này trên sân có các Lồng Đèn (Scorn Lanterns) tỏa ra vòng tròn ánh sáng.",
+            "CẢ TEAM PHẢI ĐỨNG VÀO TRONG VÒNG TRÒN ĐÓ. Khi đèn chuyển từ Đỏ sang Xanh lam, Lồng đèn đó đã được thu phục (Captured). Thu phục càng nhiều lồng đèn, thời gian Damage Phase càng dài."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase (Naeem's Wish Empowerment)",
+          "objective": "Gây sát thương khi Boss mất khiên.",
+          "steps": [
+            "Khi thông báo 'Naeem's Wish Empowerment' hiện lên kèm theo bộ đếm thời gian, khiên của Rathil sẽ vỡ.",
+            "Dồn toàn bộ sát thương vào hắn. Boss không quá trâu, có thể dùng Súng Máy hoặc Kiếm để làm gỏi hắn nhanh chóng.",
+            "Hết giờ, hắn lấy lại khiên. Lặp lại pha nhốt lồng."
+          ]
+        }
+      }
+    },
+    {
+      "id": "locus-of-wailing-grief",
+      "name": "Locus of Wailing Grief",
+      "roles": {
+        "mechanic": {
+          "description": "Bắn lồng đèn, thắp lửa đống lửa, sinh tồn trong bão tuyết.",
+          "quantity": 3,
+          "types": ["Mechanic", "Runner"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Bão Tuyết (Biting Cold) và Lồng Đèn",
+          "objective": "Giết Blighted Eyes, thu phục Lồng đèn và nhặt Tinh thể Lửa để sưởi ấm.",
+          "steps": [
+            "Sân đấu bao quanh bởi một cơn Bão Tuyết chết người. Nếu đứng ngoài tuyết, bạn sẽ bị stack 'Biting Cold'. Khi stack lên 10x, bạn CHẾT. Đứng quanh các trụ đuốc ở trung tâm để giảm stack.",
+            "Giết các con Mắt Taken (Blighted Eyes) bay lơ lửng xung quanh sàn đấu. Khi 6 con Mắt bị phá, 2 con Broken Knights sẽ spawn.",
+            "Tiêu diệt 2 con Broken Knights. Tại nơi chúng chết sẽ rớt ra các Lồng Đèn. ĐỨNG VÀO VÒNG LỒNG ĐÈN ĐỂ THU PHỤC NÓ (Cẩn thận bị chết cóng lúc đang đứng vòng).",
+            "Sau khi thu phục lồng đèn, ở giữa sân sẽ xuất hiện quả cầu năng lượng (Solar Orbs). Nhặt nó và mang về cắm vào các đài Đuốc lớn quanh khu vực trung tâm để Thắp Lửa.",
+            "Thắp đủ 4 đài lửa để kích hoạt Damage Phase."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase quanh Đống Lửa",
+          "objective": "Đứng cạnh các đài lửa để có buff sát thương và dồn dam vào Boss Ogre.",
+          "steps": [
+            "Khi 4 đống lửa được thắp, Boss (Scorn Ogre khổng lồ) ở giữa sẽ mất khiên.",
+            "Bạn CHỈ CÓ THỂ GÂY SÁT THƯƠNG KHI ĐỨNG CẠNH ĐỐNG LỬA ĐANG CHÁY.",
+            "Tuy nhiên, Boss Ogre sẽ từ từ Rút năng lượng của đống lửa đó, khiến đống lửa TẮT ĐI sau vài giây.",
+            "Cả team phải LẬP TỨC DI CHUYỂN sang đống lửa CÒN CHÁY tiếp theo để tiếp tục Damage.",
+            "Làm liên tục như vậy qua 4 đống lửa để tối đa hóa sát thương."
+          ]
+        }
+      }
+    },
+    {
+      "id": "hefnd",
+      "name": "Hefnd's Vengeance, Blighted Chimaera",
+      "roles": {
+        "hex_passer": {
+          "description": "Chuyển lời nguyền chết chóc cho lũ Scorn.",
+          "quantity": 1,
+          "types": ["Mechanic"]
+        },
+        "add_clear": {
+          "description": "Dọn dẹp quái và thu phục lồng đèn.",
+          "quantity": 2,
+          "types": ["Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Chuyền Lời Nguyền (Hex of Vengeful Fury)",
+          "objective": "Truyền lời nguyền cho bọn Scorn Melee trước khi đếm ngược kết thúc để sống sót, và đứng vòng thu phục Lồng đèn.",
+          "steps": [
+            "Trận chiến diễn ra trên các mảnh đảo bay. Boss là một con Meatball (Servitor thịt) lơ lửng giữa không trung.",
+            "Bắn vỡ các con Mắt Taken xung quanh Boss. Khi Mắt vỡ, 2 con Broken Knights sẽ rớt xuống đảo.",
+            "Giết chúng sẽ rớt Lồng Đèn. Cùng lúc đó, Boss sẽ nguyền rủa 1 người chơi ngẫu nhiên với debuff 'Hex of Vengeful Fury' (Bộ đếm 15 giây). Về 0 là chết.",
+            "Xung quanh sẽ có những con quái Scorn Cầm Đuốc Lao Tới (Hex Corrupted). Người BỊ NGUYỀN PHẢI CHẠY LẠI ĐẤM CẬN CHIẾN (Melee) con Scorn đó để TRUYỀN LỜI NGUYỀN SANG CHO NÓ.",
+            "Lưu ý: Nếu nó đấm lại bạn, nó sẽ truyền lời nguyền ngược lại cho bạn! Hãy đấm nó lúc 1-2 giây cuối hoặc đấm xong né thật xa.",
+            "Trong lúc đó, những người khác phải đứng vào Lồng Đèn để thu phục."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase leo Đảo Bay",
+          "objective": "Sát thương Boss theo từng mâm, bắn thật nhanh.",
+          "steps": [
+            "Ngay khi thông báo Naeem's Wish Empowerment hiện lên, Boss mở khiên. Dồn sát thương vào nó.",
+            "Thời gian Boss mất khiên phụ thuộc vào việc bạn thu phục được bao nhiêu lồng đèn (Tối đa 3).",
+            "Khi hết giờ, Boss sẽ BAY LÊN HÒN ĐẢO PHÍA TRÊN. Cả team phải nhảy bám theo lên đảo tiếp theo để làm lại cơ chế.",
+            "Đến Hòn Đảo Trên Cùng (Đỉnh tháp): Boss sẽ mở 3 bệ. Đứng vào từng bệ một để gây sát thương liên tục cho đến khi máu Boss chạm vạch Final Stand.",
+            "FINAL STAND: Bạn sẽ bị dịch chuyển lên tầng cao nhất. Dồn tất cả đạn dược, Super còn lại để kết liễu nó trước khi nó WIPE cả đội."
+          ]
+        }
+      }
+    }
+  ]
+}

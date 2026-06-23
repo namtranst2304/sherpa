@@ -1,0 +1,133 @@
+{
+  "dungeon_name": "Prophecy",
+  "active_orbit": "Unknown Space",
+  "preface": {
+    "formatting_rules": "Prophecy sử dụng hệ thống Động lực Ánh sáng/Bóng tối (Light/Dark Motes). Bạn đứng ở vùng sáng sẽ ra motes sáng, vùng tối ra motes tối.",
+    "non_linear_mechanic": {
+      "description": "Thăm dò Cõi Vô Tận của The Nine để hỏi về bản chất của Ánh Sáng và Bóng Tối, đối đầu với sức mạnh của Taken.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Cơ chế yêu cầu nhặt Motes ở cự ly gần nên các vũ khí như Shotgun, Submachine Gun, và Kiếm rất hữu dụng.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Sống sót và bắn Boss Kell Echo trong các phòng nhỏ."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Ward of Dawn",
+          "utility": "Bảo vệ an toàn trong lúc gom Motes tại các vị trí nguy hiểm."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot",
+          "utility": "Tether dọn đám Psion nhân bản nhanh chóng."
+        }
+      ]
+    }
+  },
+  "encounters": [
+    {
+      "id": "phalanx-echo",
+      "name": "Phalanx Echo",
+      "roles": {
+        "mote_gatherers": {
+          "description": "Tiêu diệt Knight để lấy hạt Sáng/Tối và giải mã các đài.",
+          "quantity": 3,
+          "types": ["Mechanic"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Gom hạt Motes Sáng và Tối",
+          "objective": "Giải mã 4 đài Sáng và Tối quanh phòng để phá khiên Boss.",
+          "steps": [
+            "Boss Phalanx Echo có khiên bất tử. Nhìn quanh phòng bạn sẽ thấy các trụ sáng (Ánh Sáng) hoặc có khói đen (Bóng Tối).",
+            "Xung quanh có các Taken Knights. MÀU SẮC CỦA HẠT MOTES NÓ RỚT RA PHỤ THUỘC VÀO VỊ TRÍ CỦA BẠN (Người kết liễu nó).",
+            "- Nếu bạn ĐỨNG TRONG BÓNG TỐI khi giết Knight: Nó rớt Hạt Tối (Dark Motes).",
+            "- Nếu bạn ĐỨNG Ở CHỖ SÁNG khi giết Knight: Nó rớt Hạt Sáng (Light Motes).",
+            "Mỗi người có thể nhặt tối đa 5 hạt. Khi bạn nhặt đủ 5 hạt Sáng, năng lượng đầy (Full Light). Bạn chạy đến cái trụ Ánh Sáng (Trắng) và bấm nút Tương Tác (Cleanse). Trụ sẽ được giải mã.",
+            "Làm tương tự với trụ Bóng Tối: Nhặt 5 hạt Tối và Cleanse trụ Đen. Giải mã xong tất cả các trụ, khiên Boss vỡ."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Damage Phase",
+          "objective": "Gây sát thương vào Phalanx Echo.",
+          "steps": [
+            "Khiên vỡ, hãy dồn sát thương vào Boss. Hắn sẽ liên tục ném khiên hất văng bạn. Sử dụng Kiếm (Swords) là cách tốt nhất để chống bị hất văng vì mỗi lần chém sẽ hút bạn lại gần hắn.",
+            "Lặp lại pha gom Motes nếu chưa giết xong."
+          ]
+        }
+      }
+    },
+    {
+      "id": "hexahedron",
+      "name": "The Hexahedron (Mê Cung Lục Giác)",
+      "roles": {
+        "navigators": {
+          "description": "Xác định hướng đi và thu thập hạt Motes.",
+          "quantity": 3,
+          "types": ["Mechanic"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Xoay Chiều Không Gian Lục Giác",
+          "objective": "Nhìn theo vị trí của quả cầu sáng (Tolland) và cleanse cái bệ ở dưới quả cầu đó để xoay phòng.",
+          "steps": [
+            "Đây là một căn phòng hình lập phương. Nhìn lên tường, trần nhà hoặc các mặt, bạn sẽ thấy một quả cầu ánh sáng nhỏ (Tolland).",
+            "Mục tiêu của bạn là phải Cleanse cái bệ tương ứng với MẶT PHẲNG mà Tolland đang ở đó.",
+            "Ví dụ: Nếu Tolland ở trên bức tường phía Đông, bạn phải tìm cái bệ Tối/Sáng trên bức tường đó. Thu thập 5 hạt Sáng (hoặc Tối) tương ứng với cái bệ đó và Cleanse.",
+            "Sau khi Cleanse, cả team chạy ra giữa phòng đứng. Căn phòng sẽ XOAY CHIỀU, bức tường vừa Cleanse sẽ biến thành mặt đất.",
+            "Liên tục đi theo Tolland, xoay căn phòng khoảng 6 lần, bạn sẽ đến phòng đối đầu với 2 con Boss Centurion. Giết chúng để qua ải."
+          ]
+        }
+      }
+    },
+    {
+      "id": "kell-echo",
+      "name": "Kell Echo",
+      "roles": {
+        "mechanic": {
+          "description": "Xử lý các góc Sáng/Tối trong phòng tam giác.",
+          "quantity": 3,
+          "types": ["Mechanic", "Add Clear"]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Mở cổng trong Phòng Tam Giác",
+          "objective": "Làm sạch 3 góc của phòng bằng cơ chế Motes.",
+          "steps": [
+            "Bạn ở trong một căn phòng tam giác lớn với Boss đứng ở giữa, miễn nhiễm sát thương. Có 3 góc phòng, mỗi góc có một cái bệ Sáng hoặc Tối (Màu ngẫu nhiên do Boss tạo ra).",
+            "3 con ngự lâm Taken Knight sẽ xuất hiện. Dùng cơ chế ánh sáng / bóng tối để nhặt 5 Motes và cleanse cả 3 bệ.",
+            "Mỗi khi một góc được cleanse, một con Ogre sẽ xuất hiện ở đó. Nhanh chóng tiêu diệt Ogre.",
+            "Khi cả 3 góc đã sạch, cánh cổng dịch chuyển ở trung tâm sẽ mở ra. Đứng vào đó để xuống đường cao tốc không gian."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Rượt đuổi và Damage Phase",
+          "objective": "Gây sát thương lên Boss trong khi chạy trên đường thẳng dài và tránh Đòn Cắt Không Gian.",
+          "steps": [
+            "Bạn được dịch chuyển xuống một con đường dài. Boss Kell Echo sẽ từ từ rút lui về phía cuối đường.",
+            "Sát thương Boss liên tục trên đường đi. Chú ý: Boss sẽ phát ra vòng hào quang (Aura) có hiệu ứng 'Dark Entropy'. Bạn PHẢI đứng gần Boss. Nếu đứng quá xa, thanh Dark Entropy đếm đến 10x là bạn chết lập tức.",
+            "Boss thỉnh thoảng bắn ra những quả cầu không gian (Tự động bay về phía bạn). Nếu dính phải, bạn bị dịch chuyển lùi ngược về phía sau, rất dễ gây ra cái chết do hết giờ Dark Entropy.",
+            "Vừa bắn vừa chạy theo sát Boss. Đến cuối đường, hắn sẽ biến mất. Nhảy vào cổng dịch chuyển để quay lại Phòng Tam Giác lặp lại cơ chế."
+          ]
+        }
+      }
+    }
+  ]
+}
