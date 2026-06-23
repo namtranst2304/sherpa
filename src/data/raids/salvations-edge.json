@@ -69,6 +69,294 @@
       ]
     }
   },
+  "loot_table": [
+    {
+      "weapon": "Nullify",
+      "type": "Pulse Rifle",
+      "frame": "Heavy Burst",
+      "source": "Herald of Finality, Repository, The Witness",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/4629deed92fe5ef7513686850fb9cbb7.jpg",
+      "element": "Solar",
+      "ammoType": "Primary",
+      "stats": {
+        "impact": 35,
+        "range": 60,
+        "stability": 50,
+        "handling": 40,
+        "reload_speed": 45,
+        "aim_assist": 55,
+        "zoom": 17,
+        "rpm": 395,
+        "magazine": 34
+      },
+      "perks": {
+        "column_3": [
+          "Heal Clip",
+          "Demolitionist",
+          "Firefly",
+          "Rapid Hit"
+        ],
+        "column_4": [
+          "Incandescent",
+          "Chaos Reshaped",
+          "Desperado",
+          "Multikill Clip"
+        ],
+        "recommended_pve": [
+          "Heal Clip",
+          "Incandescent",
+          "Chaos Reshaped"
+        ],
+        "recommended_pvp": [
+          "Rapid Hit",
+          "Chaos Reshaped"
+        ]
+      },
+      "tier": "Monument"
+    },
+    {
+      "weapon": "Euphony (Exotic)",
+      "type": "Linear Fusion Rifle",
+      "frame": "Exotic",
+      "source": "The Witness",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/fe16110003f0cc75145eed012458a667.jpg",
+      "element": "Strand",
+      "ammoType": "Special",
+      "stats": {
+        "impact": 41,
+        "range": 55,
+        "stability": 60,
+        "handling": 50,
+        "reload_speed": 40,
+        "aim_assist": 62,
+        "zoom": 25,
+        "rpm": 533,
+        "magazine": 6
+      },
+      "perks": {
+        "column_3": [
+          "Unwound (Intrinsic)"
+        ],
+        "column_4": [
+          "Spindle (Trait)"
+        ],
+        "recommended_pve": [
+          "Unwound",
+          "Spindle"
+        ]
+      },
+      "tier": "Monument"
+    },
+    {
+      "weapon": "Non-Denouement",
+      "type": "Combat Bow",
+      "frame": "Precision Frame",
+      "source": "Subjugation, Herald of Finality, The Witness",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/e56caaf523a140ff834905da55d3b046.jpg",
+      "element": "Arc",
+      "ammoType": "Primary",
+      "stats": {
+        "impact": 76,
+        "range": 68,
+        "stability": 55,
+        "handling": 65,
+        "reload_speed": 46,
+        "aim_assist": 72,
+        "zoom": 18,
+        "draw_time": 684
+      },
+      "perks": {
+        "column_3": [
+          "Archer's Tempo",
+          "Dragonfly",
+          "Snapshot Sights"
+        ],
+        "column_4": [
+          "Voltshot",
+          "Chaos Reshaped",
+          "Explosive Head"
+        ],
+        "recommended_pve": [
+          "Archer's Tempo",
+          "Voltshot",
+          "Chaos Reshaped"
+        ],
+        "recommended_pvp": [
+          "Archer's Tempo",
+          "Explosive Head"
+        ]
+      },
+      "tier": "Monument"
+    },
+    {
+      "weapon": "Imminence",
+      "type": "Submachine Gun",
+      "frame": "Lightweight Frame",
+      "source": "Subjugation, Herald of Finality, Verity",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/0a636f8e1f115bcb825e7ab60ef6c302.jpg",
+      "element": "Strand",
+      "ammoType": "Primary",
+      "stats": {
+        "impact": 15,
+        "range": 35,
+        "stability": 45,
+        "handling": 70,
+        "reload_speed": 35,
+        "aim_assist": 55,
+        "zoom": 13,
+        "rpm": 900,
+        "magazine": 36
+      },
+      "perks": {
+        "column_3": [
+          "Demolitionist",
+          "Enlightened Action",
+          "Dynamic Sway Reduction",
+          "Slice"
+        ],
+        "column_4": [
+          "Chaos Reshaped",
+          "Desperate Measures",
+          "Target Lock",
+          "Kill Clip"
+        ],
+        "recommended_pve": [
+          "Demolitionist",
+          "Chaos Reshaped"
+        ],
+        "recommended_pvp": [
+          "Slice",
+          "Kill Clip"
+        ]
+      },
+      "tier": "Monument"
+    },
+    {
+      "weapon": "Summum Bonum",
+      "type": "Sword",
+      "frame": "Wave Frame",
+      "source": "Herald of Finality, Repository",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/e6087e2af1907deb1f7d28e5b90195dd.jpg",
+      "element": "Arc",
+      "ammoType": "Heavy",
+      "stats": {
+        "impact": 65,
+        "range": 40,
+        "efficiency": 50,
+        "defense": 50,
+        "charge_rate": 35,
+        "magazine": 60
+      },
+      "perks": {
+        "column_3": [
+          "Relentless Strikes",
+          "Tireless Blade",
+          "Duelist's Trance"
+        ],
+        "column_4": [
+          "Bait and Switch",
+          "Chaos Reshaped",
+          "Chain Reaction",
+          "Surrounded"
+        ],
+        "recommended_pve": [
+          "Relentless Strikes",
+          "Bait and Switch",
+          "Chaos Reshaped"
+        ],
+        "recommended_pvp": [
+          "Tireless Blade",
+          "Chain Reaction"
+        ]
+      },
+      "tier": "Monument"
+    },
+    {
+      "weapon": "Critical Anomaly",
+      "type": "Sniper Rifle",
+      "frame": "Aggressive Frame",
+      "source": "Repository, Verity, The Witness",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/64ce229d4c03c5cca04e9de5855146a2.jpg",
+      "element": "Stasis",
+      "ammoType": "Special",
+      "stats": {
+        "impact": 90,
+        "range": 75,
+        "stability": 30,
+        "handling": 35,
+        "reload_speed": 40,
+        "aim_assist": 45,
+        "zoom": 45,
+        "rpm": 72,
+        "magazine": 3
+      },
+      "perks": {
+        "column_3": [
+          "Chill Clip",
+          "Rewind Rounds",
+          "Reconstruction",
+          "Quickdraw"
+        ],
+        "column_4": [
+          "Chaos Reshaped",
+          "Bait and Switch",
+          "Snapshot Sights",
+          "Firing Line"
+        ],
+        "recommended_pve": [
+          "Chill Clip",
+          "Chaos Reshaped"
+        ],
+        "recommended_pvp": [
+          "Quickdraw",
+          "Snapshot Sights"
+        ]
+      },
+      "tier": "Monument"
+    },
+    {
+      "weapon": "Forthcoming Deviance",
+      "type": "Glaive",
+      "frame": "Rapid-Fire Frame",
+      "source": "Herald of Finality, Repository",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/3383698dee3df48089b8d18f956f9476.jpg",
+      "element": "Void",
+      "ammoType": "Special",
+      "stats": {
+        "impact": 55,
+        "range": 50,
+        "shield_duration": 45,
+        "handling": 60,
+        "reload_speed": 55,
+        "aim_assist": 65,
+        "rpm": 80,
+        "magazine": 6
+      },
+      "perks": {
+        "column_3": [
+          "Reconstruction",
+          "Impulse Amplifier",
+          "Disruption Break"
+        ],
+        "column_4": [
+          "Desperate Measures",
+          "Chain Reaction",
+          "Close to Melee",
+          "Chaos Reshaped"
+        ],
+        "recommended_pve": [
+          "Reconstruction",
+          "Chain Reaction",
+          "Chaos Reshaped"
+        ],
+        "recommended_pvp": [
+          "Impulse Amplifier",
+          "Close to Melee"
+        ]
+      },
+      "tier": "Monument"
+    }
+  ],
   "encounters": [
     {
       "id": "subjugation",
@@ -283,6 +571,29 @@
           ]
         }
       }
+    }
+  ],
+  "armor_table": [
+    {
+      "name": "Promised Reunion",
+      "class": "Titan",
+      "source": "Salvation's Edge Encounters",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/8c8d8b16c1a8a81eb8ed9100778a3c89.jpg",
+      "setBonus": "Stable Resonance"
+    },
+    {
+      "name": "Promised Reign",
+      "class": "Hunter",
+      "source": "Salvation's Edge Encounters",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/c57c4b6932402130ff3cbfafbe232da1.jpg",
+      "setBonus": "Stable Resonance"
+    },
+    {
+      "name": "Promised Victory",
+      "class": "Warlock",
+      "source": "Salvation's Edge Encounters",
+      "image": "https://www.bungie.net/common/destiny2_content/icons/e76ab6de8dcf2821dd4b6d4db1c7848f.jpg",
+      "setBonus": "Stable Resonance"
     }
   ]
 }

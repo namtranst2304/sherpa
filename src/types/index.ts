@@ -30,6 +30,49 @@ export interface ActivityEncounter {
   [key: string]: unknown;
 }
 
+export interface LootWeapon {
+  weapon: string;
+  type: string;
+  frame?: string;
+  source: string;
+  image?: string;
+  element?: string;
+  ammoType?: string;
+  stats?: {
+    impact?: number;
+    range?: number;
+    stability?: number;
+    handling?: number;
+    reload_speed?: number;
+    aim_assist?: number;
+    zoom?: number;
+    rpm?: number;
+    magazine?: number;
+    draw_time?: number;
+    efficiency?: number;
+    defense?: number;
+    charge_rate?: number;
+    shield_duration?: number;
+  };
+  perks?: {
+    column_3?: string[];
+    column_4?: string[];
+    recommended_pve?: string[];
+    recommended_pvp?: string[];
+  };
+  tier?: string;
+  isNew?: boolean;
+  [key: string]: unknown;
+}
+
+export interface LootArmorSet {
+  name: string;
+  class: "Warlock" | "Titan" | "Hunter";
+  source: string;
+  image?: string;
+  setBonus?: string;
+}
+
 export interface ActivityData {
   raid_name?: string;
   dungeon_name?: string;
@@ -60,7 +103,8 @@ export interface ActivityData {
     emblems_and_titles?: string[];
     encounter_changes?: { name: string; changes: string }[];
   };
-  loot_table?: { weapon: string; type: string; frame: string; source: string }[];
+  loot_table: LootWeapon[];
+  armor_table?: LootArmorSet[];
   encounters: ActivityEncounter[];
   [key: string]: unknown;
 }

@@ -35,7 +35,7 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
           {preface && <OverviewRules preface={preface} />}
           {loadout_tips && <OverviewLoadouts loadout_tips={loadout_tips} />}
           {epic_mode && <OverviewEpicMode epic_mode={epic_mode} />}
-          {loot_table && <OverviewLootTable loot_table={loot_table} />}
+          {loot_table && <OverviewLootTable loot_table={loot_table} armor_table={activityData.armor_table} />}
         </div>
       </div>
     </div>
