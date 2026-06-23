@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Shield, Database, Sparkles } from "lucide-react"
+import { Shield, Database, Sparkles, Shirt } from "lucide-react"
 
 export default function DatabaseLayout({
   children,
@@ -13,7 +13,7 @@ export default function DatabaseLayout({
   const pathname = usePathname()
 
   const tabs = [
-    { name: "Loot Tables", href: "/database/loot-tables", icon: Database },
+    { name: "Exotic Armor", href: "/database/exotic-armor", icon: Shirt },
     { name: "Armor Sets", href: "/database/armor-sets", icon: Shield },
     { name: "Catalysts", href: "/database/catalysts", icon: Sparkles },
   ]

@@ -98,7 +98,7 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     description: "Cơ sở dữ liệu chọn lọc các trang bị META và mạnh nhất Destiny 2.",
     icon: Database,
     items: [
-      { title: "Loot Tables", href: "/database/loot-tables", description: "Bảng tra cứu phần thưởng của từng ải Raid & Dungeon." },
+      { title: "Exotic Armor", href: "/database/exotic-armor", description: "Tra cứu hệ thống giáp Exotic của 3 class và Exotic Class Items." },
       { title: "Armor Sets", href: "/database/armor-sets", description: "Tổng hợp các bộ giáp và hiệu ứng Set Bonus trong Destiny 2." },
       { title: "Exotic Catalysts", href: "/database/catalysts", description: "Tra cứu hiệu ứng nâng cấp Catalyst của các vũ khí Exotic." }
     ],
