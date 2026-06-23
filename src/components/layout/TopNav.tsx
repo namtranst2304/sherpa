@@ -172,8 +172,8 @@ export function TopNav() {
                       {category.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className={`grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-black/95 backdrop-blur-xl border ${currentStyle.dropdown}`}>
-                        <li className="row-span-4">
+                      <ul className={`flex gap-6 p-6 md:w-[600px] lg:w-[800px] bg-black/95 backdrop-blur-xl border ${currentStyle.dropdown}`}>
+                        <li className="w-[35%] shrink-0">
                           {category.locked ? (
                             <div
                               className={`flex h-full w-full select-none flex-col justify-start rounded-md p-6 outline-none relative overflow-hidden ${currentStyle.cardBg}`}
@@ -206,12 +206,16 @@ export function TopNav() {
                           )}
                         </li>
 
-                        {/* Map qua từng item nhỏ bên trong */}
-                        {category.items.slice(0, 4).map((item) => (
-                          <ListItem key={item.title} href={item.href} title={item.title} hoverClass={currentStyle.hoverItem} arrowClass={currentStyle.arrow}>
-                            {item.description}
-                          </ListItem>
-                        ))}
+                        <li className="flex-1">
+                          <ul className="grid grid-cols-2 gap-3 content-start h-full">
+                            {/* Map qua từng item nhỏ bên trong */}
+                            {category.items.slice(0, 12).map((item) => (
+                              <ListItem key={item.title} href={item.href} title={item.title} hoverClass={currentStyle.hoverItem} arrowClass={currentStyle.arrow}>
+                                {item.description}
+                              </ListItem>
+                            ))}
+                          </ul>
+                        </li>
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>

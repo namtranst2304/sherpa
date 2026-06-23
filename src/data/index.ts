@@ -2,13 +2,26 @@
 import desertPerpetual from "./raids/desert-perpetual.json"
 import gardenOfSalvation from "./raids/garden-of-salvation.json"
 import deepStoneCrypt from "./raids/deep-stone-crypt.json"
+import crotasEnd from "./raids/crotas-end.json"
+import vaultOfGlass from "./raids/vault-of-glass.json"
+import vowOfTheDisciple from "./raids/vow-of-the-disciple.json"
+import lastWish from "./raids/last-wish.json"
+import kingsFall from "./raids/kings-fall.json"
+import rootOfNightmares from "./raids/root-of-nightmares.json"
+import salvationsEdge from "./raids/salvations-edge.json"
 import { ActivityData } from "@/types"
 
 export const RAIDS_DATA: Record<string, ActivityData> = {
-  // Sửa key ở đây thành "the-desert-perpetual" để khớp với URL
   "the-desert-perpetual": desertPerpetual as unknown as ActivityData,
   "garden-of-salvation": gardenOfSalvation as unknown as ActivityData,
   "deep-stone-crypt": deepStoneCrypt as unknown as ActivityData,
+  "crotas-end": crotasEnd as unknown as ActivityData,
+  "vault-of-glass": vaultOfGlass as unknown as ActivityData,
+  "vow-of-the-disciple": vowOfTheDisciple as unknown as ActivityData,
+  "last-wish": lastWish as unknown as ActivityData,
+  "kings-fall": kingsFall as unknown as ActivityData,
+  "root-of-nightmares": rootOfNightmares as unknown as ActivityData,
+  "salvations-edge": salvationsEdge as unknown as ActivityData,
 }
 
 import week1 from "./pantheon/week-1.json"

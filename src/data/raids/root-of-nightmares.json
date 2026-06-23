@@ -1,0 +1,185 @@
+{
+  "raid_name": "Root of Nightmares",
+  "active_orbit": "Essence",
+  "encounters": [
+    {
+      "name": "Cataclysm",
+      "roles": {
+        "runners": {
+          "description": "Lấy buff Field of Light và nối mạng lưới hạt giống.",
+          "quantity": 2
+        },
+        "add_clears": {
+          "description": "Giết Psions trong lồng, dụ và giết Tormentors để gia hạn giờ.",
+          "quantity": 4
+        }
+      },
+      "secrets": [],
+      "id": "cataclysm",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Nối các hạt giống ánh sáng (Light seeds) thành một mạng lưới xuyên suốt căn phòng để gia hạn thời gian Wipe (Sweeping Terror).",
+          "steps": [
+            "Bắn vào quả cầu Ánh sáng (Light node) bắt đầu. Một người nhận buff 'Field of Light'.",
+            "Người có buff nhìn thấy một mũi tên chỉ hướng hạt giống tiếp theo cần kích hoạt. Chạy đến hạt giống đó và bắn.",
+            "Lưu ý: Chỉ bắn khi đang ĐỨNG TRONG VÒNG của hạt giống mới, nó sẽ nảy mầm và kéo dài mạch ánh sáng. Khi buff hết, quay lại hạt giống đã nảy mầm trước đó bắn để nhận lại buff.",
+            "Quá trình nối mạng lưới sẽ tạo thêm thời gian. Sẽ có Psions xuất hiện trong lồng bong bóng, cận chiến giết chúng sẽ sinh ra lũ Tormentors.",
+            "Add Clears phải giết Tormentors để gia hạn thêm bộ đếm giờ 'Sweeping Terror'.",
+            "Nối mạng lưới thành công tới hạt giống cuối cùng sẽ hoàn thành 1 phase. Lặp lại vài phase cho tới cuối phòng."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Scission",
+      "roles": {
+        "light_runner": {
+          "description": "Nối mạng lưới Field of Light zigzag qua các tầng.",
+          "quantity": 1
+        },
+        "dark_runner": {
+          "description": "Nối mạng lưới Flux of Darkness zigzag qua các tầng.",
+          "quantity": 1
+        },
+        "add_clears": {
+          "description": "Nhận buff để phá khiên quái và bảo vệ Runner.",
+          "quantity": 4
+        }
+      },
+      "secrets": [],
+      "id": "scission",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Nối hai mạng lưới hạt giống Ánh sáng (Light) và Bóng tối (Dark) song song qua các vực thẳm và tầng lầu bằng cách dùng bệ phóng (Jump pads).",
+          "steps": [
+            "Chia 2 đội Trái (Dark) và Phải (Light). Mỗi đội cử 1 Runner.",
+            "Runner đội Light nối mạng lưới Ánh sáng. Runner đội Dark nối mạng lưới Bóng tối.",
+            "Sau mỗi lần kích hạt, Runner dùng Jump pads bay qua vực sang phe đối diện để kích hạt bên đó (vì mạng lưới đan chéo nhau).",
+            "Add Clears theo sát Runner, dùng Jump pads nhảy theo. Quái ở bên Light có giáp Light (chỉ ai có buff Light mới bắn được) và ngược lại.",
+            "Nối thành công 1 tầng, dọn sạch quái. Sau đó nhảy lên tầng tiếp theo.",
+            "Lặp lại 3 tầng là qua màn."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Macrocosm (Zo'aurc, Explicator of Planets)",
+      "roles": {
+        "planet_movers": {
+          "description": "Giết Colossus, xem màu hành tinh và trao đổi chéo cho nhau.",
+          "quantity": 4
+        },
+        "add_clears": {
+          "description": "Xử lý quái cản đường ở giữa map và diệt boss nhỏ.",
+          "quantity": 2
+        }
+      },
+      "secrets": [],
+      "id": "macrocosm-zoaurc-explicator-of-planets",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Sắp xếp lại các hành tinh lơ lửng. Bên trái phải toàn Light, bên phải phải toàn Dark. Sau đó dùng hành tinh để ném Boss.",
+          "steps": [
+            "Map có 4 bệ tam giác tương ứng với 4 cụm hành tinh: 2 cụm Trái (Light base), 2 cụm Phải (Dark base).",
+            "Giết con Centurions sinh ra các con Lieutenants (Colossus). Người trên bệ giết Colossus để nhận buff 'Planetary Insight'.",
+            "Người có buff nhìn lên trời sẽ thấy màu của các hành tinh ở cụm của mình. Sẽ có 1 hành tinh bị lạc loài (ví dụ cụm Trái có 1 hành tinh Dark).",
+            "Gọi tên hành tinh bị lạc (ví dụ L1, L2, L3). Chạy đến ngay dưới hành tinh đó tương tác (Planetary Shift).",
+            "Chạy qua bên kia sân, tìm vị trí hành tinh lạc loài mà đồng đội bên kia vừa gọi, tương tác đổi chỗ.",
+            "Sau khi đổi chỗ thành công, 3 hành tinh ở giữa sân sẽ hiện màu. Giết đợt Colossus thứ 2 lấy Insight, xem màu của 3 hành tinh giữa sân là gì (Ví dụ: Trắng, Đen, Trắng).",
+            "Lấy buff tương ứng từ các cụm đã sắp xếp (buff Light cho hành tinh Trắng, Dark cho Đen) và nạp (Dunk) vào 3 bệ ở giữa sân.",
+            "Damage Phase: Boss sẽ có khiên màu. Nếu khiên Trắng, đứng trên bệ Trắng nãy vừa nạp để bắn. Khiên đổi màu thì đổi bệ."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Nezarec, Final God of Pain",
+      "roles": {
+        "runners": {
+          "description": "Nối song song 2 mạch điện Light/Dark và tạo Shelter khi cần.",
+          "quantity": 2
+        },
+        "gaze_holder": {
+          "description": "Bắn ngực Boss hút sự chú ý, báo màu vai Boss.",
+          "quantity": 1
+        },
+        "shoulder_shooters": {
+          "description": "Bắn nổ vai Boss để nó ngừng Spam chiêu nhảy chém liên tục.",
+          "quantity": 1
+        }
+      },
+      "secrets": [],
+      "id": "nezarec-final-god-of-pain",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Nối hoàn chỉnh 2 mạng lưới Light và Dark cùng lúc trong khi trốn các đòn tất sát (Wipe) của Nezarec.",
+          "steps": [
+            "Chia 2 Runner (Light và Dark) nối mạng y như các màn trước thật nhanh.",
+            "Boss sẽ liên tục thả 'Nezarec's Hatred' lên một người ngẫu nhiên. Người này (Gaze Holder) phải bắn vào ngực Boss để hút sự chú ý, dắt Boss chạy vòng quanh để tránh nó đập chết Runners.",
+            "Khi Boss sáng vai (Trắng hoặc Cam/Đỏ), bắn nổ 2 vai Boss. Màu sáng phát ra từ 2 vai (Light hay Dark) sẽ báo hiệu chiêu Wipe tiếp theo.",
+            "Ví dụ nếu nó nổ sáng Trắng (Light), team phải tạo ngay một vùng an toàn (Shelter) ở bên Dark bằng cách: Runner Dark bắn cục Ánh sáng, lấy buff Light chạy sang bắn vào hạt giống Dark chưa kích hoạt.",
+            "Team nấp vào vùng an toàn đó để sống sót qua chiêu Wipe.",
+            "Khi 2 mạng lưới Light/Dark được nối xong xuôi, Damage Phase bắt đầu. Boss bị mù mắt và quỵ xuống, team dồn sát thương.",
+            "Final Stand: Boss sẽ liên tục phóng dao và nhảy chém, team phải bắn gục hắn trước khi bị Wipe."
+          ]
+        }
+      }
+    }
+  ],
+  "preface": {
+    "formatting_rules": "Hãy làm quen với việc chạy mạng lưới Field of Light (trắng) và Flux of Darkness (cam). Thông thường mỗi team chỉ cần 2 Runners, 4 người còn lại phụ trách dọn quái.",
+    "non_linear_mechanic": {
+      "description": "Đi theo các mầm cây Ánh Sáng của Traveler nảy mầm xuyên qua chiến hạm Kim Tự Tháp của Witness.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Nezarec di chuyển cực kỳ hỗn loạn nên Rocket Launcher rất dễ bị trượt hoặc tự sát. Các loại vũ khí bắn liên tục như Thunderlord, súng máy, hoặc Grenade Launcher là lựa chọn ổn định.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Thiết yếu. Đặt Well trên các lá cây ở ải Nezarec để team đứng cao không bị hắn đập nát."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Sunbracers / Osmiomancy",
+          "recommendation": "Add-clear ở Raid này là một công việc nặng nhọc. Hãy mang setup dọn quái mạnh nhất."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Bladefury (Strand)",
+          "utility": "Quăng lưới treo giò bọn Tormentors, khiến chúng bất lực hoàn toàn."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Abeyant Leap",
+          "recommendation": "Kỹ năng Barricade phóng ra 3 tia Strand trói cổ lũ Tormentor từ xa cực an toàn."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Gathering Storm",
+          "utility": "Ném vào Nezarec để điện giật liên tục kể cả khi hắn nhảy nhót khắp nơi."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Star-Eater Scales",
+          "recommendation": "Tối đa hóa sát thương Super."
+        }
+      ]
+    }
+  }
+}

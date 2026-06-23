@@ -14,7 +14,7 @@ export function ActivityOverviewTemplate({ activityData }: ActivityOverviewTempl
 
   return (
     <div className="flex-1 overflow-y-auto w-full bg-background p-4 md:p-8">
-      <div className="max-w-6xl mx-auto space-y-8">
+      <div className="w-full space-y-8">
         {/* Header */}
         <div className="flex items-center gap-4 border-b border-border pb-6">
           <SidebarTrigger className="md:hidden" />

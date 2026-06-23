@@ -1,0 +1,187 @@
+{
+  "raid_name": "Vow of the Disciple",
+  "active_orbit": "Savathûn's Throne World",
+  "encounters": [
+    {
+      "name": "Acquisition",
+      "roles": {
+        "runners": {
+          "description": "Chạy vào các phòng tìm và đọc ký hiệu.",
+          "quantity": 3
+        },
+        "defenders": {
+          "description": "Bảo vệ trụ Obelisk, dọn quái và đọc vị trí Glyphkeeper cho Runner.",
+          "quantity": 3
+        }
+      },
+      "secrets": [],
+      "id": "acquisition",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Team chia làm 3 nhóm bảo vệ 3 khu vực (Obelisks). Các Obelisk này sẽ sạc đầy và quét team nếu không nạp đúng 3 ký hiệu mật mã (Glyphs).",
+          "steps": [
+            "Mỗi khu vực có 1 Obelisk. Chia 2 người/khu vực: 1 người Defend (diệt quái), 1 người Runner (đi tìm ký hiệu).",
+            "Bắn cục pha lê Compass để lộ ra con Knight. Giết Knight sẽ hiện ra ký hiệu chỉ dẫn (ví dụ: Pyramid).",
+            "Runner chạy đi tìm phòng chứa có biểu tượng tương ứng (Pyramid). Đi vào phòng giết 2 con Glyphkeepers (1 Dark, 1 Light).",
+            "Một con rớt ký hiệu, gọi đọc tên ký hiệu đó lên (Callout).",
+            "Lặp lại cho đủ 3 khu vực, team sẽ có tổng cộng 3 ký hiệu mật mã.",
+            "Quan sát Obelisk, nếu Obelisk nào sáng lên hiển thị cả 3 ký hiệu mật mã đó, tất cả chạy lại bắn cả 3 ký hiệu cùng lúc để nạp (Offer).",
+            "Thực hiện thành công 3 lần để qua màn."
+          ]
+        }
+      }
+    },
+    {
+      "name": "The Caretaker",
+      "roles": {
+        "stunners": {
+          "description": "Gây sát thương vào lưng Caretaker để Stun, kìm chân Boss.",
+          "quantity": 2
+        },
+        "runners": {
+          "description": "Vào phòng tối nhặt ký hiệu và bắn lên Obelisk.",
+          "quantity": 2
+        },
+        "add_clears": {
+          "description": "Dọn dẹp quái vật xung quanh trụ.",
+          "quantity": 2
+        }
+      },
+      "secrets": [],
+      "id": "the-caretaker",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Ngăn chặn con Caretaker đi đến trụ Obelisk. Trong khi đó, Runner phải chạy vào phòng tối thu thập các ký hiệu (Glyphs) và mang ra bắn lên trụ để mở cầu thang lên lầu.",
+          "steps": [
+            "Stun Team (2 người): Chọc mù Caretaker. Người bắn đầu/mặt (để nó mở rương sau lưng) và người bắn rương trên lưng để gây Stun. Gây stun liên tục không cho nó đến Obelisk.",
+            "Add Clear (2 người): Dọn quái, bắn những hạt ruồi đen bay ra từ Caretaker, bảo vệ Obelisk.",
+            "Runner Team (2 người): Luân phiên mở cửa chạy vào phòng tối. Nhặt 1-3 ký hiệu ngẫu nhiên, sau đó gọi đọc tên ký hiệu.",
+            "Chạy ra ngoài, bắn 3 ký hiệu vừa nhặt lên mặt của Obelisk. Bắn đủ 9 ký hiệu thì Damage Phase sẽ bắt đầu.",
+            "Damage Phase: Đứng lên các bệ phát sáng dưới đất để gây sát thương. Khi bệ tắt, chuyển sang bệ sáng tiếp theo.",
+            "Leo lên các tầng lầu và lặp lại cơ chế cho đến khi lên sân thượng và kết liễu Boss."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Exhibition (Upnd)",
+      "roles": {
+        "relic_runners": {
+          "description": "Luân phiên nhặt và sử dụng các Relic (Nut, Shield, Taken) để dọn đường.",
+          "quantity": 6
+        }
+      },
+      "secrets": [],
+      "id": "exhibition-upnd",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Khu vực chạy nước rút (Relay). Team phải mang 3 loại Relics (Shield, Nut, Taken Essence) qua các căn phòng, sử dụng chúng để giết quái, giải ký hiệu và gia hạn thời gian sống sót.",
+          "steps": [
+            "Room 1: Một người nhặt Nut (Laser) bắn con quái cầm khiên. Đọc ký hiệu giết Glyphkeeper. Bắn đúng 2 ký hiệu trùng nhau để mở cửa.",
+            "Room 2: Nhặt thêm Shield (Khiên VoG). Nut bắn quái khiên. Shield thì đấm chém, đặc biệt là đấm vào con Blight để Cleanse cho team. Tiếp tục giải ký hiệu để qua phòng.",
+            "Room 3: Nhặt thêm Taken Essence (Trái banh bóng tối). Bắn con Taken Blight để xóa màng miễn nhiễm. Shield tiếp tục Cleanse. Nut giết quái khiên. Giải ký hiệu.",
+            "Room 4: Sử dụng cả 3 Relics nhuần nhuyễn. Chạy cực nhanh, tiêu diệt Glyphkeeper, đọc ký hiệu, bắn tường mở cửa.",
+            "Lưu ý: Bất kỳ ai nhặt Relic rồi, khi bỏ xuống căn phòng tiếp theo sẽ bị cooldown (khóa) không được nhặt Relic ở phòng kế. Phải đổi người cầm Relic liên tục."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Rhulk, Disciple of the Witness",
+      "roles": {
+        "splitters": {
+          "description": "Chia sẻ buff Leeching Force.",
+          "quantity": 2
+        },
+        "dunkers": {
+          "description": "Chuyển hóa Emanating và cắm vào trụ.",
+          "quantity": 2
+        },
+        "readers": {
+          "description": "Giết Glyphkeeper và đọc ký hiệu.",
+          "quantity": 2
+        }
+      },
+      "secrets": [],
+      "id": "rhulk-disciple-of-the-witness",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Team phải chuyền một buff gọi là Leeching Force, chuyển hóa nó thành Emanating Force thông qua các đòn tấn công của Rhulk, rồi đem cắm vào các cột ký hiệu để kích hoạt Damage Phase.",
+          "steps": [
+            "Phase 1 (Dưới sảnh): Rhulk thả cái kim tự tháp lơ lửng. Một người bắn tinh thể để nhận buff Leeching. Cần 2 người khác nhận buff chia sẻ bằng cách cùng bắn tinh thể.",
+            "Người cầm buff chạy vào luồng tia laze của Rhulk để biến đổi Leeching thành Emanating Force.",
+            "Đọc ký hiệu rớt ra từ Glyphkeeper. Tìm cột có ký hiệu tương ứng. Người có Emanating chạy đến cột đó cắm buff vào (Dunk). Lặp lại 6 lần để đẩy Rhulk lên sàn đấu trên.",
+            "Phase 2 (Trên võ đài): Cả team đuổi theo Rhulk lên sàn. Một người lấy Leeching bằng cách bắn vũ khí của hắn. Người này tiếp tục đỡ laze để lấy Emanating.",
+            "Rhulk sẽ hiện biểu tượng điểm yếu (ví dụ Light/Dark). Người cầm Emanating Dunk vào góc tương ứng để phá giáp Rhulk (hiện điểm yếu ở vai/chân). Bắn vỡ 4 điểm yếu.",
+            "Damage Phase bắt đầu. Rhulk sẽ chạy lại đá và lướt rất nhanh, liên tục vừa né vừa dồn sát thương.",
+            "Thanh máu còn 1 khúc cuối (Final Stand): Rhulk sẽ tỏa năng lượng chết chóc liên tục, cả team dồn toàn bộ sát thương có thể trước khi bị bóp chết (Wipe)."
+          ]
+        }
+      }
+    }
+  ],
+  "preface": {
+    "formatting_rules": "Raid này yêu cầu khả năng ghi nhớ 27 biểu tượng (Symbols) khác nhau. Hãy đảm bảo cả team dùng chung 1 bảng tên gọi biểu tượng.",
+    "non_linear_mechanic": {
+      "description": "Tiến trình tuyến tính khám phá con tàu Kim tự tháp (Pyramid Ship) của Rhulk trong Đầm lầy Savathun.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Rhulk là một con Boss không đứng yên, hắn sẽ liên tục đi lại và đá bạn bay màu. Không xài Rocket Launcher ở đây vì rất dễ tự sát, hãy dùng Linear Fusion Rifle hoặc Grenade Launcher.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Bắt buộc cho ải Caretaker. Ở ải Rhulk, cắm Well cẩn thận để không bị hắn đá vỡ."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Cenotaph Mask",
+          "recommendation": "Dùng chung với Divinity để debuff Rhulk và buff đạn cho team."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Thundercrash",
+          "utility": "Dùng để Burst sát thương Rhulk trong những giây cuối cùng."
+        },
+        {
+          "name": "Banner of War (Strand)",
+          "utility": "Cực kỳ hiệu quả để sinh tồn khi đi nhặt biểu tượng (Runner) ở ải Exhibition."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Synthoceps",
+          "recommendation": "Kết hợp với Strand để dọn quái cực mạnh."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot (Deadfall)",
+          "utility": "Debuff 30% sát thương lên Rhulk và Caretaker."
+        },
+        {
+          "name": "Gathering Storm",
+          "utility": "Ném giáo sét ghim vào Rhulk, mặc kệ hắn chạy đi đâu thì vẫn dính sát thương liên tục."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Star-Eater Scales",
+          "recommendation": "Tối đa hóa lượng sát thương của Gathering Storm."
+        }
+      ]
+    }
+  }
+}

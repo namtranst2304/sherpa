@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 import { GuideSidebar } from "@/components/layout/GuideSidebar"
 import { GuideTemplate } from "@/components/layout/GuideTemplate"
 import { ActivityOverviewTemplate } from "@/components/layout/ActivityOverviewTemplate"
@@ -6,6 +7,7 @@ import { Shield, Target, Sword, Map, Sparkles } from "lucide-react"
 import { ActivityData, ActivityEncounter, ActivityEncounterPhase, ActivityRole } from "@/types"
 import { CyberCard, CyberBadge } from "@/components/ui/CyberComponents"
 import { ImageCarousel } from "@/components/ui/ImageCarousel"
+import { ZoomableImage } from "@/components/ui/ZoomableImage"
 import ReactMarkdown, { Components } from "react-markdown"
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -98,9 +100,11 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                       )}
                       <ul className="space-y-3">
                         {steps.map((step: string, i: number) => (
-                          <li key={i} className="text-sm text-foreground/80 leading-relaxed pl-5 relative">
-                            <span className="text-neon-cyan font-bold absolute left-0">{i + 1}.</span>
-                            <ReactMarkdown components={markdownComponents}>{step}</ReactMarkdown>
+                          <li key={i} className="text-sm text-foreground/80 leading-relaxed flex items-start gap-1.5">
+                            <span className="text-neon-cyan font-bold shrink-0 min-w-[20px]">{i + 1}.</span>
+                            <div className="flex-1">
+                              <ReactMarkdown components={markdownComponents}>{step}</ReactMarkdown>
+                            </div>
                           </li>
                         ))}
                       </ul>
@@ -126,7 +130,19 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
             map={
               activeEncounter!.images && activeEncounter!.images.length > 0 ? (
                 <div className="w-full flex flex-col gap-6 p-4">
-                  <ImageCarousel images={activeEncounter!.images} />
+                  {activeEncounter!.images.map((img, idx) => (
+                    <div key={idx} className="flex flex-col items-center gap-3 w-full">
+                      <ZoomableImage 
+                        src={img.url} 
+                        alt={img.caption || "Encounter map"} 
+                        width={1200} 
+                        height={800} 
+                        unoptimized={true}
+                        className="w-full"
+                      />
+                      {img.caption && <p className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800">{img.caption}</p>}
+                    </div>
+                  ))}
                 </div>
               ) : (
                 <div className="text-center text-muted-foreground flex flex-col items-center justify-center gap-4 p-8 w-full h-full min-h-[300px] border border-dashed border-zinc-800 rounded-none bg-black/50">
@@ -139,7 +155,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
             roles={
               <div className="space-y-6">
                 {activeEncounter!.roles && (activeEncounter!.roles.option_1 || activeEncounter!.roles.option_2) ? (
-                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6">
                     {['option_1', 'option_2'].map((opt) => {
                       if (!activeEncounter!.roles![opt]) return null;
                       const rolesForOption = activeEncounter!.roles![opt] as Record<string, ActivityRole>;
@@ -182,7 +198,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
                     })}
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-6">
                     {Object.entries((activeEncounter!.roles as Record<string, ActivityRole>) || {}).map(([roleKey, roleVal]: [string, ActivityRole], idx: number) => {
                       const isRunner = roleKey.toLowerCase().includes("runner");
                       const isShooter = roleKey.toLowerCase().includes("shooter");

@@ -18,7 +18,7 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
             {/* Subtle background scanlines for the whole guide */}
             <div className="absolute inset-0 pointer-events-none opacity-5 bg-scanline z-0" />
             
-            <div className="max-w-6xl mx-auto space-y-8 relative z-10">
+            <div className="w-full space-y-8 relative z-10">
 
                 {/* Header with mobile sidebar toggle */}
                 <div className="flex items-center gap-4 border-b border-primary/30 pb-6">

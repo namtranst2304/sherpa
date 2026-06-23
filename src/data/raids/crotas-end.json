@@ -1,0 +1,180 @@
+{
+  "raid_name": "Crota's End",
+  "active_orbit": "The Moon",
+  "encounters": [
+    {
+      "name": "The Abyss",
+      "roles": {
+        "chalice_passers": {
+          "description": "Luân chuyển Chalice liên tục để lấy buff Enlightened và thắp đèn.",
+          "quantity": 6
+        }
+      },
+      "secrets": [],
+      "id": "the-abyss",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Khu vực tối tăm có debuff Weight of Darkness làm chậm di chuyển và cấm nhảy. Phải truyền chiếc ly ánh sáng (Chalice of Light) qua lại giữa các thành viên để nạp các cây đèn (Lamps) chiếu sáng đường đi và giải debuff.",
+          "steps": [
+            "Nhặt Chalice ở điểm xuất phát. Cả team di chuyển cùng nhau từ đèn này sang đèn khác.",
+            "Người cầm Chalice sẽ nạp thanh ánh sáng (Enlightened). Khi thanh nạp đầy, người đó có buff Enlightened, nhưng Chalice cũng sắp cạn (Engulfed in Light) gây chết người nếu cầm quá lâu.",
+            "Một người khác phải tương tác giật (Take) Chalice từ người đó. Người vừa bị giật sẽ giữ lại buff Enlightened.",
+            "Người có buff Enlightened tương tác với cây đèn (Dunk) để thắp sáng nó, giảm debuff Weight of Darkness cho cả team.",
+            "Đèn sẽ chuẩn bị nổ sau khi thắp sáng một lúc, team phải di chuyển tiếp sang đèn kế tiếp.",
+            "Lặp lại trò chuyền Chalice và thắp đèn cho đến điểm cuối cùng.",
+            "Tại điểm cuối, thắp sáng bệ đài và sinh tồn trước đàn Thrall và Ogres cho đến khi cây cầu được xây xong, chạy qua cầu."
+          ]
+        }
+      }
+    },
+    {
+      "name": "The Bridge",
+      "roles": {
+        "plate_builders": {
+          "description": "Đứng bệ giữa và 2 Totems để xây cầu.",
+          "quantity": 3
+        },
+        "sword_runners": {
+          "description": "Lấy buff Chalice, nhặt kiếm, chạy qua bờ bên kia diệt Gatekeeper.",
+          "quantity": 6
+        }
+      },
+      "secrets": [],
+      "id": "the-bridge",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Team phải xây cầu băng qua bờ bên kia. Chỉ người cầm kiếm (Sword) mới được đi qua cầu.",
+          "steps": [
+            "Bờ xuất phát: Cử 3 người đứng lên bệ xây cầu (1 bệ giữa, 2 bệ trái/phải gọi là Totems). Nếu người đứng bệ giữa đi ra mà 2 bệ Totems có người, Totems sẽ đỏ lên và wipe team. Nên bệ giữa phải luôn có người khi xây.",
+            "Tiếp tục cơ chế chuyền Chalice giống màn trước. Chỉ người cầm Chalice mới lấy được Kiếm từ Swordbearer (Ogre xanh/Knight).",
+            "Giết Swordbearer, nhặt kiếm, chạy ngay qua cầu. Sang bờ bên kia, dùng kiếm giết con Gatekeeper (chỉ kiếm mới giết được nó).",
+            "Khi người đầu tiên qua cầu, để lại Chalice ở bệ chứa (Preserve) để người bên này bốc tiếp.",
+            "Cứ thế đưa ít nhất 3 người qua bờ bên kia. Sau đó, nhóm bên kia sẽ tự đứng bệ xây cầu cho những người còn lại đi sang.",
+            "Khi cả 6 qua hết, hàng loạt Gatekeepers sẽ xuất hiện, team phải nhặt nhiều kiếm cùng lúc để diệt chúng."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ir Yût, the Deathsinger",
+      "roles": {
+        "scouts": {
+          "description": "Đi vào các phòng dò tìm Wizard và callout.",
+          "quantity": 3
+        },
+        "wizard_killers": {
+          "description": "Nhận buff Enlightened, xông vào phòng và hạ gục Wizard cùng lúc.",
+          "quantity": 3
+        }
+      },
+      "secrets": [],
+      "id": "ir-yt-the-deathsinger",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Ir Yût chuẩn bị hát bài ca tử thần (Wipe). Team phải lấy buff Enlightened đi vào các phòng có kết giới xanh lá để phát hiện và tiêu diệt các Phù thủy (Wizards).",
+          "steps": [
+            "Team bắt đầu luân chuyển Chalice để có buff Enlightened.",
+            "Bên dưới đấu trường, xuất hiện các con Shriekers. Phải giết Shriekers để mở cửa phòng trên tháp.",
+            "Có 7 phòng trên tháp. Người có buff Enlightened đi xuyên màng xanh lá vào các phòng để kiểm tra. Nếu thấy Wizard, hô to vị trí (ví dụ: Trái Dưới, Phải Trên...).",
+            "Phase 1 cần giết 3 Wizards. Team cử 3 người có buff Enlightened vào 3 phòng cùng lúc. (Người không có buff nếu vào sẽ dính debuff rỉ máu).",
+            "Giết cả 3 Wizards xong, Damage Phase bắt đầu. Tập trung sát thương hạ gục Ir Yût nhanh nhất có thể trước khi bài hát kết thúc."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Crota, Son of Oryx",
+      "roles": {
+        "sword_bearers": {
+          "description": "Nhận Enlightened, nhặt kiếm, áp sát và chém vỡ khiên Crota.",
+          "quantity": 2
+        },
+        "oversoul_shooter": {
+          "description": "Giữ buff Enlightened, chờ callout để bắn nổ Oversoul trên trời.",
+          "quantity": 1
+        },
+        "chalice_manager": {
+          "description": "Điều phối việc luân chuyển Chalice liên tục để đảm bảo luôn có người có buff.",
+          "quantity": 3
+        }
+      },
+      "secrets": [],
+      "id": "crota-son-of-oryx",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Boss Crota có khiên bất tử. Phải dùng Kiếm (Swords) phá khiên Crota, và đánh rớt thanh Oversoul trên trời bằng buff Enlightened.",
+          "steps": [
+            "Tiếp tục cơ chế chuyền Chalice để lấy buff Enlightened liên tục.",
+            "Giết Boomer Knights trên cao. Swordbearer (Knight xanh) sẽ xuất hiện, giết nó để rớt Kiếm.",
+            "Người có buff Enlightened mới có thể nhặt Kiếm. Cần 2-3 thanh Kiếm để phá vỡ khiên của Crota.",
+            "Cùng lúc đó, Crota sẽ gọi Oversoul (mặt trời xanh trên không). Oversoul đếm ngược wipe team. Phải có 1 người giữ buff Enlightened (gọi là Oversoul Shooter) dùng buff đó bắn nổ Oversoul.",
+            "Khi đội Kiếm báo sẵn sàng (ví dụ đã cầm 2 kiếm áp sát Crota), team hô 'Đánh'. Đội Kiếm chém nặng (Heavy attack) vào Crota.",
+            "Khiên vỡ, Damage Phase bắt đầu. Cả team dùng Heavy bắn Crota, trong khi đội Kiếm dùng Super kiếm và chém tiếp.",
+            "Đồng thời, Oversoul Shooter phải căn sát thời điểm vỡ khiên để bắn nổ Oversoul, nếu bắn quá sớm khiên sẽ không vỡ, bắn quá trễ sẽ Wipe.",
+            "Lặp lại cho tới lúc Final Stand. Ở Final Stand Crota lập tức gọi Oversoul, team phải dồn sát thương kết liễu Crota và bắn nổ Oversoul cùng lúc."
+          ]
+        }
+      }
+    }
+  ],
+  "preface": {
+    "formatting_rules": "Tất cả thành viên đều phải tham gia chuyền chiếc Ly ánh sáng (Chalice of Light). Hãy để ý thanh Enlightened ở góc màn hình.",
+    "non_linear_mechanic": {
+      "description": "Raid tuyến tính từ trên mặt trăng nhảy xuống vực sâu (The Abyss) và chiến đấu với Crota.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Crota nhận thêm sát thương từ Kiếm (Swords). Do đó toàn bộ team nên xài kiếm The Lament, Bequest hoặc Falling Guillotine thay vì súng.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cắm thẳng dưới chân Crota, cả team cầm kiếm xông vào chém hội đồng."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Karnstein Armlets",
+          "recommendation": "Sinh tồn tuyệt đối trong ải Bóng Tối (The Abyss) bằng các đòn cận chiến."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Bladefury (Strand)",
+          "utility": "Banner of War là Vua ở Raid này. Hồi máu điên cuồng và buff sát thương cận chiến/kiếm cho cả team."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Synthoceps / Stronghold",
+          "recommendation": "Stronghold giúp Titan cầm kiếm đỡ đòn của Crota không mất máu, tự tin làm chim mồi."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Gathering Storm / Blade Barrage",
+          "utility": "Phóng Super nhanh gọn lẹ rồi tiếp tục rút Kiếm ra chém Crota."
+        },
+        {
+          "name": "Shadowshot",
+          "utility": "Rất hữu ích để dọn đống quái ở ải Cầu (The Bridge)."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Assassin's Cowl",
+          "recommendation": "Tàng hình liên tục, công cụ hoàn hảo cho Runner vượt qua The Abyss."
+        }
+      ]
+    }
+  }
+}

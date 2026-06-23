@@ -1,0 +1,221 @@
+{
+  "raid_name": "King's Fall",
+  "active_orbit": "The Dreadnaught",
+  "encounters": [
+    {
+      "name": "Totems",
+      "roles": {
+        "aura_holders": {
+          "description": "Đứng bệ Totem, cầm Aura giết quái lấy điểm.",
+          "quantity": 2
+        },
+        "brand_claimers": {
+          "description": "Giết Wizard, nhặt Brand chạy vào giật Aura thay ca.",
+          "quantity": 2
+        },
+        "dunkers": {
+          "description": "Bị giật Aura xong chạy ra bệ giữa nộp điểm.",
+          "quantity": 2
+        }
+      },
+      "secrets": [],
+      "id": "totems",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Team chia làm 2 bên (Trái/Phải). Truyền Aura để sinh tồn độc khí (Annihilator Totems), giết quái lấy Deathsinger's Power và nộp vào bệ giữa để mở cửa.",
+          "steps": [
+            "Mỗi bên 3 người. Có 1 quả cầu Aura ở mỗi bên. Ai cầm Aura sẽ có vòng sáng bảo vệ khỏi độc khí.",
+            "Người 1 cầm Aura chạy vào bệ Totem đứng để Totem không nổ. Đứng trong Aura và giết quái để tích lũy Deathsinger's Power.",
+            "Người 2 giết Wizard trên bục giữa, Knight rớt ra cục Brand Claimer (buff đổi Aura). Chạy vào Totem giật Aura từ người 1.",
+            "Người 1 (vừa bị giật Aura) mang số Deathsinger's Power chạy ra bệ giữa nộp (Dunk). Nộp xong thì giết Wizard/Knight chờ lấy Brand Claimer để giật lại.",
+            "Người 3 dự bị đứng giữa giết quái. Cứ thế 3 người xoay tua vòng tròn: Cầm Aura -> Bị giật -> Nộp Power -> Lấy Brand Claimer -> Giật Aura.",
+            "Nộp đủ 200 điểm Power tổng cộng cả 2 bên thì cửa mở."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Warpriest",
+      "roles": {
+        "plate_readers": {
+          "description": "Dẫm bệ và đọc thứ tự đá phát sáng.",
+          "quantity": 3
+        },
+        "brand_stealers": {
+          "description": "Giết Blightguard nhặt buff chạy về vòng sáng để giật Aura gia hạn Damage Phase.",
+          "quantity": 2
+        }
+      },
+      "secrets": [],
+      "id": "warpriest",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Giải câu đố đá (Glyph Sequence) để lấy Aura bảo vệ, dùng Aura để tránh bị Warpriest đốt cháy trong Damage Phase.",
+          "steps": [
+            "Chia 3 khu vực: Trái, Giữa, Phải. Đầu tiên chia nhau giết Hive Knights (Revenants).",
+            "Khi chữ 'Glyph sequence started' hiện, người đứng bệ giữa bước lên bệ nhìn mặt sau của tảng đá trái/phải/giữa xem đá nào sáng.",
+            "Đọc tên đá sáng (ví dụ: Trái). Người bên Trái bước lên bệ. Bệ Trái sẽ nhìn ra đá tiếp theo sáng. Lặp lại cho đủ 3 bệ.",
+            "Người dẫm bệ cuối cùng sẽ nhận được 'Brand of the Initiate' (vòng sáng bảo vệ màu đỏ).",
+            "Cả team tập trung vào trong vòng sáng đó để gây sát thương lên Warpriest.",
+            "Để duy trì vòng sáng, người cầm vòng (Aura) phải đi tìm và giết 1 con Blightguard (Knight) đúng lúc đồng hồ đếm ngược gần hết (giật ca).",
+            "Có thể giật ca 2 lần. Khi Aura mất, mọi người trốn sau bóng của 1 tảng đá còn nguyên để không bị Boss Wipe (Oculus).",
+            "Tảng đá đó sẽ vỡ. Lặp lại quy trình cho đến khi Boss chết hoặc hết 3 tảng đá."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Golgoroth",
+      "roles": {
+        "gaze_holders": {
+          "description": "Bắn lưng Boss lấy Gaze, đỡ đạn độc, điều hướng mặt Boss cho team bắn.",
+          "quantity": 2
+        },
+        "dps_team": {
+          "description": "Nhảy xuống hố, dẫm vũng nước và bắn vào bụng (phần thịt trắng) của Golgoroth.",
+          "quantity": 4
+        }
+      },
+      "secrets": [],
+      "id": "golgoroth",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Trận chiến con mắt. Bắn lưng Golgoroth để lấy Gaze (Sự chú ý), dụ nó quay mặt hở bụng để team bắn Damage Phase dưới vũng nước sáng.",
+          "steps": [
+            "Dọn quái. Chia 2 người làm Gaze Holders (Người giữ mắt). 4 người còn lại là DPS (Người bắn bụng).",
+            "Team DPS bắn nổ bong bóng nước trên trần nhà cho rớt xuống hố.",
+            "Gaze Holder 1 bắn vào bướu trên lưng Golgoroth. Nó sẽ nhìn vào người đó (Golgoroth's Gaze) trong 20 giây. Bụng nó sẽ hở ra.",
+            "Gaze Holder 1 phải đứng sao cho bụng Golgoroth quay về phía vũng nước sáng dưới hố.",
+            "Team DPS nhảy xuống vũng nước bắn cực mạnh vào bụng nó.",
+            "Khi đếm ngược Gaze còn 3 giây, Gaze Holder 2 bắn lưng Golgoroth để giật Gaze. Golgoroth sẽ quay sang nhìn Gaze Holder 2.",
+            "Team DPS bắn rớt bong bóng nước tiếp theo, di chuyển sang vũng nước mới và bắn bụng tiếp.",
+            "Luân chuyển Gaze đủ 6 lần hoặc hết bong bóng. Lưu ý debuff 'Unstable Light' sẽ nổ chết đồng đội, ai bị dính phải chạy ra xa team."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Daughters of Oryx",
+      "roles": {
+        "plate_builders": {
+          "description": "Đứng trên bệ đá theo đúng thứ tự để xây cầu tàng hình.",
+          "quantity": 4
+        },
+        "torn_runner": {
+          "description": "Người bị chọn ngẫu nhiên, nhảy parkour trên không để lấy mảnh giáp đập khiên Boss.",
+          "quantity": 1
+        }
+      },
+      "secrets": [],
+      "id": "daughters-of-oryx",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Hai chị em Phù Thủy. Phải xây cầu tàng hình trên không trung để một người được chọn (Torn) leo lên lấy mảnh giáp, rồi đập vỡ khiên của Phù Thủy.",
+          "steps": [
+            "Có 4 bệ đá. Sẽ có 1 bệ phát sáng xanh. Người được chọn ngẫu nhiên (Torn Between Dimensions - có màn hình sương mù) phải đứng đợi ở bệ sáng.",
+            "Người bệ đối diện chéo (cùng trục) nhảy lên bệ của mình. Người bệ sáng nhảy lên bệ sáng, cầu tàng hình sẽ hình thành.",
+            "Người Torn leo lên cầu chạy lấy mảnh giáp (Piece) lơ lửng trên cao.",
+            "Nhảy xuống, đập (Dunk) vào một trong hai đứa con gái (Ir Anûk hoặc Ir Halak) đang có khiên bảo vệ.",
+            "Khi đập xong, team có Aura bất tử tạm thời, đứng chụm lại dồn sát thương vào đứa con gái vừa bị mất khiên.",
+            "Giết nó hoặc rút đủ máu, sau đó lặp lại quy trình để giết đứa thứ 2. Nhớ là phải giết trong đợt hát (Dirge) trước khi hết giờ nếu không sẽ Wipe."
+          ]
+        }
+      }
+    },
+    {
+      "name": "Oryx, the Taken King",
+      "roles": {
+        "plate_holders": {
+          "description": "Dẫm bệ xây cầu, giết Ogre và dẫm nổ bom Corrupted Light.",
+          "quantity": 4
+        },
+        "runner": {
+          "description": "Chạy parkour lấy Aura bất tử từ Vessel of Oryx.",
+          "quantity": 1
+        },
+        "floater": {
+          "description": "Đứng giữa map phụ bắn Ogre và Knight để bảo vệ bom.",
+          "quantity": 1
+        }
+      },
+      "secrets": [],
+      "id": "oryx-the-taken-king",
+      "walkthrough": {
+        "phase_1": {
+          "name": "Cơ chế chính",
+          "objective": "Tương tự như Daughters nhưng kết hợp thêm giết Ogre, ăn bom Corrupted Light, bắn ngực Oryx và hạ gục Hắn.",
+          "steps": [
+            "Oryx đập tay vào bệ nào, bệ đó là điểm bắt đầu. 4 người giữ 4 bệ xây cầu giống y như màn Daughters.",
+            "Mỗi khi một người nhảy lên bệ, 1 con Light-Eater Ogre sẽ spawn gần bệ đó. Giết Ogre thật nhanh. Ogre chết để lại 1 quả bom đen (Corrupted Light). Đừng dẫm vào bom lúc này.",
+            "Người Torn leo lên trên không lấy mảnh giáp, nhảy xuống Vessel of Oryx (con Knight chạy lăng xăng), đập nó để cướp Aura bất tử.",
+            "Khi cướp được Aura bất tử, Oryx sẽ gọi 'Doxology'. Bụng (ngực) Oryx sẽ mở ra sáng trắng.",
+            "Bắn ngực Oryx liên tục để làm Hắn choáng (Stun).",
+            "Ngay khi Stun, 4 người giữ bệ chạy vào ăn 4 quả bom đen cùng lúc (dẫm vào bom cho đến khi hiện tên mình trên góc trái) rồi lập tức chạy về vòng Aura bất tử ở giữa để tránh sát thương nổ bom.",
+            "Bom nổ sẽ gây sát thương khủng khiếp lên Oryx.",
+            "Lặp lại tới khi Oryx về Final Stand. Lúc này hắn sẽ dời lên đầu map dơ ngực ra, team dồn toàn bộ hỏa lực bắn ngực để kết liễu trước khi bị Wipe."
+          ]
+        }
+      }
+    }
+  ],
+  "preface": {
+    "formatting_rules": "Kiểm soát thứ tự bước lên bệ (Plates) là cốt lõi của Raid này (ở Warpriest, Daughters, Oryx). Hãy lắng nghe người gọi bệ đầu tiên.",
+    "non_linear_mechanic": {
+      "description": "Khám phá chiến hạm Dreadnaught khổng lồ của Vua Hắc Ám Oryx qua các cửa ải tuyến tính.",
+      "elevator_plates": []
+    }
+  },
+  "loadout_tips": {
+    "note": "Các Boss (Warpriest, Golgoroth, Oryx) có hitbox rất to và đứng xa, thời gian Damage Phase rất dài nên Whisper of the Worm, Leviathan's Breath hoặc Linear Fusion Rifles là chân ái.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cắm Well ở Aura bất tử để team xả đạn thoải mái vào bụng Oryx và Golgoroth."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Lunafaction Boots",
+          "recommendation": "Tăng tốc độ nạp đạn cho cả team đứng trong Well, cực kỳ quan trọng ở Warpriest."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Ward of Dawn",
+          "utility": "Đặt bong bóng ở phía sau để team lùi lại lấy thêm buff Weapons of Light."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Loreley Splendor",
+          "recommendation": "Sinh tồn tuyệt đối, giúp bạn dễ dàng giữ bệ một mình (Solo Plate) ở ải Oryx."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Golden Gun (Marksman)",
+          "utility": "Phá khiên hoặc dồn damage bồi thêm ở Golgoroth/Oryx."
+        },
+        {
+          "name": "Shadowshot",
+          "utility": "Dùng để kiểm soát quái vật tràn ngập ở ải Totems."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Orpheus Rig",
+          "recommendation": "Hồi lại Super Tether liên tục ở ải Totems."
+        }
+      ]
+    }
+  }
+}
