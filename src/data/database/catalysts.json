@@ -3257,6 +3257,33 @@
     "source": ""
   },
   {
+    "id": 3865920552,
+    "name": "Wolfsbane Refits",
+    "weaponName": "Wolfsbane",
+    "weaponIcon": "/common/destiny2_content/icons/6acdff9af5ae274c70055f816aab2389.jpg",
+    "icon": "/common/destiny2_content/icons/ad4bb4c9e36674ca879310b733a6e6a3.png",
+    "description": "[Light Attack]  : Landing three light-attack hits within a short time grants Sword ammo.",
+    "objectives": [],
+    "effects": [
+      {
+        "name": "Relentless Strikes",
+        "description": "[Light Attack]  : Landing three light-attack hits within a short time grants Sword ammo.",
+        "icon": "/common/destiny2_content/icons/ad4bb4c9e36674ca879310b733a6e6a3.png"
+      },
+      {
+        "name": "Attrition Orbs",
+        "description": "Dealing sustained damage creates an Orb of Power.",
+        "icon": "/common/destiny2_content/icons/c2092fae6ae58ca77a7f9b4434e688ef.png"
+      },
+      {
+        "name": "Burning Ambition",
+        "description": "Dealing sustained damage scorches the target. Dealing damage to a scorched target inflicts scorch.",
+        "icon": "/common/destiny2_content/icons/f7a2484668486f64020a612bd3dd5ab9.png"
+      }
+    ],
+    "source": ""
+  },
+  {
     "id": 1637046321,
     "name": "Worldline Catalyst",
     "weaponName": "Worldline Zero",

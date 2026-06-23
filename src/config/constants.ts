@@ -99,8 +99,8 @@ export const DESTINY_ACTIVITIES: Record<string, ActivityCategory> = {
     icon: Database,
     items: [
       { title: "Exotic Armor", href: "/database/exotic-armor", description: "Tra cứu hệ thống giáp Exotic của 3 class và Exotic Class Items." },
-      { title: "Armor Sets", href: "/database/armor-sets", description: "Tổng hợp các bộ giáp và hiệu ứng Set Bonus trong Destiny 2." },
-      { title: "Exotic Catalysts", href: "/database/catalysts", description: "Tra cứu hiệu ứng nâng cấp Catalyst của các vũ khí Exotic." }
+      { title: "Exotic Weapons", href: "/database/exotic-weapons", description: "Tra cứu thông tin và cách lấy các loại vũ khí Exotic." },
+      { title: "Armor Sets", href: "/database/armor-sets", description: "Tổng hợp các bộ giáp và hiệu ứng Set Bonus trong Destiny 2." }
     ],
     themeColor: "zinc"
   }

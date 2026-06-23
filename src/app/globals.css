@@ -86,11 +86,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-neon-cyan: #00f3ff;
-  --color-neon-orange: #ff8c00;
-  --color-neon-yellow: #fce205;
-  --color-neon-red: #ff0000;
-  --color-neon-green: #39ff14;
+  --color-neon-cyan: #06b6d4;
+  --color-neon-orange: #f97316;
+  --color-neon-yellow: #eab308;
+  --color-neon-red: #ef4444;
+  --color-neon-green: #22c55e;
 
   --animate-cyber-fade: cyber-fade 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   --animate-cyber-scan: cyber-scan 3s linear infinite;
@@ -115,65 +115,65 @@
 /* Cyberpunk Custom Utilities */
 @utility cyber-grid {
   background-image: 
-    linear-gradient(to right, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
   background-size: 32px 32px;
 }
 
 @utility text-glow-cyan {
-  text-shadow: 0 0 5px #00f3ff;
+  text-shadow: 0 0 3px rgba(6, 182, 212, 0.6);
 }
 @utility text-glow-orange {
-  text-shadow: 0 0 5px #ff8c00;
+  text-shadow: 0 0 3px rgba(249, 115, 22, 0.6);
 }
 @utility text-glow-yellow {
-  text-shadow: 0 0 5px #fce205;
+  text-shadow: 0 0 3px rgba(234, 179, 8, 0.6);
 }
 @utility text-glow-red {
-  text-shadow: 0 0 5px #ff0000;
+  text-shadow: 0 0 3px rgba(239, 68, 68, 0.6);
 }
 @utility text-glow-green {
-  text-shadow: 0 0 5px #39ff14;
+  text-shadow: 0 0 3px rgba(34, 197, 94, 0.6);
 }
 
 @utility shadow-neon-cyan {
-  box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.15);
 }
 @utility shadow-neon-cyan-hover {
   &:hover {
-    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.25);
   }
 }
 @utility shadow-neon-orange {
-  box-shadow: 0 0 10px rgba(255, 0, 255, 0.2);
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.15);
 }
 @utility shadow-neon-orange-hover {
   &:hover {
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.4);
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.25);
   }
 }
 @utility shadow-neon-yellow {
-  box-shadow: 0 0 10px rgba(252, 226, 5, 0.2);
+  box-shadow: 0 0 8px rgba(234, 179, 8, 0.15);
 }
 @utility shadow-neon-yellow-hover {
   &:hover {
-    box-shadow: 0 0 15px rgba(252, 226, 5, 0.4);
+    box-shadow: 0 0 12px rgba(234, 179, 8, 0.25);
   }
 }
 @utility shadow-neon-red {
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.15);
 }
 @utility shadow-neon-red-hover {
   &:hover {
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
   }
 }
 @utility shadow-neon-green {
-  box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.15);
 }
 @utility shadow-neon-green-hover {
   &:hover {
-    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.25);
   }
 }
 
