@@ -13,7 +13,10 @@
       "title": "Bảng Biểu Tượng Last Wish",
       "description": "Bảng tổng hợp 16 biểu tượng thường dùng để callout trong toàn bộ Raid Last Wish (Rồng, Chim, Cá, Rắn).",
       "images": [
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-raid-symbol-callouts.jpg", "caption": "Bảng Biểu Tượng Last Wish" }
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-raid-symbol-callouts.jpg",
+          "caption": "Bảng Biểu Tượng Last Wish"
+        }
       ]
     },
     {
@@ -24,8 +27,14 @@
         "**Chest 2 (Khu vực trước Morgeth):** Sau khi đánh xong Shuro Chi, leo lên ngọn tháp và đi tới khu vực cầu. Trước khi bước vào Ascendant Plane, hãy trèo lên các thân cây lớn ở bên phải vách núi, dọc theo vách đá bạn sẽ thấy rương bí mật nằm trên một mỏm đá."
       ],
       "images": [
-        { "url": "/images/raids/last-wish/secret-chest-1.webp", "caption": "Rương 1: Lỗ hổng trên trụ cầu" },
-        { "url": "/images/raids/last-wish/secret-chest-2.webp", "caption": "Rương 2: Nhảy lên cây lớn bên phải vách núi" }
+        {
+          "url": "/images/raids/last-wish/secret-chest-1.webp",
+          "caption": "Rương 1: Lỗ hổng trên trụ cầu"
+        },
+        {
+          "url": "/images/raids/last-wish/secret-chest-2.webp",
+          "caption": "Rương 2: Nhảy lên cây lớn bên phải vách núi"
+        }
       ]
     },
     {
@@ -48,20 +57,62 @@
         "**Wish 14:** Triệu hồi các Corrupted Eggs quanh Raid (Bắn bằng cung Wish-Ender)"
       ],
       "images": [
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-1-first-wish.jpg", "caption": "Wish 1" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-2-second-wish.jpg", "caption": "Wish 2" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-3-third-wish.jpg", "caption": "Wish 3" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-4-fourth-wish.jpg", "caption": "Wish 4" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-5-fifth-wish.jpg", "caption": "Wish 5" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-6-sixth-wish.jpg", "caption": "Wish 6" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-7-seventh-wish.jpg", "caption": "Wish 7" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-8-eighth-wish.jpg", "caption": "Wish 8" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-9-ninth-wish.jpg", "caption": "Wish 9" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-wish-10-tenth-wish.jpg", "caption": "Wish 10" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-11-eleventh-wish.jpg", "caption": "Wish 11" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-12-twelfth-wish.jpg", "caption": "Wish 12" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-wish-13-thirteenth-wish.jpg", "caption": "Wish 13 (Petra's Run)" },
-        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-14-fourteenth-wish.jpg", "caption": "Wish 14" }
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-1-first-wish.jpg",
+          "caption": "Wish 1"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-2-second-wish.jpg",
+          "caption": "Wish 2"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-3-third-wish.jpg",
+          "caption": "Wish 3"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-4-fourth-wish.jpg",
+          "caption": "Wish 4"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-5-fifth-wish.jpg",
+          "caption": "Wish 5"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-6-sixth-wish.jpg",
+          "caption": "Wish 6"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-7-seventh-wish.jpg",
+          "caption": "Wish 7"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-8-eighth-wish.jpg",
+          "caption": "Wish 8"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-9-ninth-wish.jpg",
+          "caption": "Wish 9"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-wish-10-tenth-wish.jpg",
+          "caption": "Wish 10"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-11-eleventh-wish.jpg",
+          "caption": "Wish 11"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-12-twelfth-wish.jpg",
+          "caption": "Wish 12"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-wish-13-thirteenth-wish.jpg",
+          "caption": "Wish 13 (Petra's Run)"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-14-fourteenth-wish.jpg",
+          "caption": "Wish 14"
+        }
       ]
     }
   ],
@@ -135,9 +186,18 @@
             "Khi bom nổ, bệ sạc 1 cộng dồn. Đủ 3 cộng dồn, một con Taken Knight xuất hiện. Tiêu diệt nó để thanh tẩy bệ thành công."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-symbols.jpg", "caption": "Nhìn các cặp biểu tượng treo lơ lửng ở giữa phòng" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-plate-symbol.jpg", "caption": "Tìm bệ đá có biểu tượng tương ứng để dẫm" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-symbols-callouts.jpg", "caption": "Vị trí tham khảo các bệ đá quanh phòng Kalli" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-symbols.jpg",
+              "caption": "Nhìn các cặp biểu tượng treo lơ lửng ở giữa phòng"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-plate-symbol.jpg",
+              "caption": "Tìm bệ đá có biểu tượng tương ứng để dẫm"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-symbols-callouts.jpg",
+              "caption": "Vị trí tham khảo các bệ đá quanh phòng Kalli"
+            }
           ]
         },
         "phase_2": {
@@ -151,8 +211,14 @@
             "Lặp lại việc chui cửa tối đa 3 lần mỗi chu kỳ DPS."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-damage-phase.jpg", "caption": "Tập trung bắn Kalli ở hố trung tâm" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-safe-rooms.jpg", "caption": "Trốn vào các ô cửa an toàn bên dưới đài" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-damage-phase.jpg",
+              "caption": "Tập trung bắn Kalli ở hố trung tâm"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-safe-rooms.jpg",
+              "caption": "Trốn vào các ô cửa an toàn bên dưới đài"
+            }
           ]
         }
       }
@@ -196,8 +262,14 @@
             "Khiên vỡ, dồn sát thương ngay lập tức để trừ đi 1/6 thanh máu của ả. Nếu ả tụ phép Wipe, dùng Super bồi vào để ngắt đòn."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-enemies.jpg", "caption": "Đua tốc độ dọn quái" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-prism-weapons.jpg", "caption": "Dùng tia Prism nối tam giác phá khiên Shuro Chi" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-enemies.jpg",
+              "caption": "Đua tốc độ dọn quái"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-prism-weapons.jpg",
+              "caption": "Dùng tia Prism nối tam giác phá khiên Shuro Chi"
+            }
           ]
         },
         "phase_2": {
@@ -210,8 +282,14 @@
             "Hoàn thành 3 bức tranh, cửa mở, leo lên các nửa quả cầu xoay để lên tầng trên và lặp lại Phase 1."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-puzzles.jpg", "caption": "Nhìn tranh trên tường để tìm ô bị khuyết" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-puzzle-room-buttons.jpg", "caption": "Dẫm lên bệ sàn tương ứng" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-puzzles.jpg",
+              "caption": "Nhìn tranh trên tường để tìm ô bị khuyết"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-puzzle-room-buttons.jpg",
+              "caption": "Dẫm lên bệ sàn tương ứng"
+            }
           ]
         }
       }
@@ -246,8 +324,14 @@
             "Sau một khoảng thời gian, Morgeth sẽ khóa mục tiêu một người đã nhặt Taken Strength và trói người đó bằng một lốc xoáy đen."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-strength.jpg", "caption": "Nhặt quả cầu sương đen Taken Strength" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-essence.jpg", "caption": "Morgeth trói người chơi bằng lốc xoáy đen" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-strength.jpg",
+              "caption": "Nhặt quả cầu sương đen Taken Strength"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-essence.jpg",
+              "caption": "Morgeth trói người chơi bằng lốc xoáy đen"
+            }
           ]
         },
         "phase_2": {
@@ -261,15 +345,21 @@
             "Cả đội bắn vũ khí hạng nặng vào cục u to phát sáng trên lưng Morgeth. Nếu hắn tụ quả cầu lớn (Axion Darts), bắn nổ chúng để tránh bị chết."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-crit-spot.jpg", "caption": "Bắn vào cục u to phát sáng trên lưng Morgeth" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-orbs.jpg", "caption": "Bắn nổ các quả cầu Axion Darts để tránh chết" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-crit-spot.jpg",
+              "caption": "Bắn vào cục u to phát sáng trên lưng Morgeth"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-orbs.jpg",
+              "caption": "Bắn nổ các quả cầu Axion Darts để tránh chết"
+            }
           ]
         }
       }
     },
     {
       "id": "the-vault",
-      "name": "The Vault (Phòng Két Sắt)",
+      "name": "The Vault",
       "roles": {
         "readers": {
           "description": "Đứng bệ, đọc 3 biểu tượng ở giữa và phân tích cơ chế khóa.",
@@ -299,8 +389,14 @@
             "Lặp lại cho người 2 và 3 để xác định trạng thái của cả 3 bệ."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-symbols.jpg", "caption": "Nhìn Hologram hiển thị 3 biểu tượng" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-vault-symbol-example.jpg", "caption": "Ví dụ về cách đọc Penumbra/Antumbra" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-symbols.jpg",
+              "caption": "Nhìn Hologram hiển thị 3 biểu tượng"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-vault-symbol-example.jpg",
+              "caption": "Ví dụ về cách đọc Penumbra/Antumbra"
+            }
           ]
         },
         "phase_2": {
@@ -314,8 +410,14 @@
             "Thanh tẩy đủ 3 bệ sẽ hoàn thành 1 vòng. Làm như vậy 3 vòng để hoàn thành ải."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-taken-essence-penumbra.jpg", "caption": "Nhặt bùa và nhìn dòng chữ Antumbra/Penumbra" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-might-of-riven.jpg", "caption": "Tiêu diệt Might of Riven trước khi chúng cắm kiếm" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-taken-essence-penumbra.jpg",
+              "caption": "Nhặt bùa và nhìn dòng chữ Antumbra/Penumbra"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-might-of-riven.jpg",
+              "caption": "Tiêu diệt Might of Riven trước khi chúng cắm kiếm"
+            }
           ]
         }
       }
@@ -344,8 +446,14 @@
             "Toàn bộ sát thương truyền thẳng vào thanh máu của Riven mà không kích hoạt cơ chế Wipe của các con mắt."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-room-appearance.jpg", "caption": "Phòng Riven" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-tentacle-bait.jpg", "caption": "Bắn vào móng vuốt/xúc tu của Riven" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-room-appearance.jpg",
+              "caption": "Phòng Riven"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-tentacle-bait.jpg",
+              "caption": "Bắn vào móng vuốt/xúc tu của Riven"
+            }
           ]
         },
         "phase_2": {
@@ -359,9 +467,18 @@
             "Tìm thấy Trái Tim Đen (Taken Heart) của Riven, bắn nát nó để kết thúc sinh mệnh của con rồng."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-climbing-light.jpg", "caption": "Nhảy các bậc đá trong Ascendant Realm" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-final-stand.jpg", "caption": "Riven mở miệng, bắn thẳng vào cổ họng" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-inside-mouth.jpg", "caption": "Chạy sâu vào thực quản Riven bắn nát trái tim" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-climbing-light.jpg",
+              "caption": "Nhảy các bậc đá trong Ascendant Realm"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-final-stand.jpg",
+              "caption": "Riven mở miệng, bắn thẳng vào cổ họng"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-inside-mouth.jpg",
+              "caption": "Chạy sâu vào thực quản Riven bắn nát trái tim"
+            }
           ]
         }
       }
@@ -396,8 +513,14 @@
             "Người ôm tim cứ ôm chạy dọc theo hành lang ngược lại về phía Vault. Hết 15 giây, người đó bị hút vào một chiều không gian khác."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-mouth.jpg", "caption": "Nhặt trái tim để bắt đầu chạy" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-creeping-darkness.jpg", "caption": "Luôn đứng trong vòng sáng để không bị dính Creeping Darkness" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-mouth.jpg",
+              "caption": "Nhặt trái tim để bắt đầu chạy"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-creeping-darkness.jpg",
+              "caption": "Luôn đứng trong vòng sáng để không bị dính Creeping Darkness"
+            }
           ]
         },
         "phase_2": {
@@ -410,8 +533,14 @@
             "Hành động này làm RESET lại 15 giây đếm ngược cho người ôm tim bên ngoài. Quá trình tiếp diễn cho đến khi đội bên ngoài quăng được Trái Tim vào bệ đá ở cuối chặng đường để tịnh hóa."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-beams-of-light.jpg", "caption": "Bóng ánh sáng Taken trong không gian của Tim" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-dunk-the-heart.jpg", "caption": "Tịnh hóa Trái tim Riven" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-beams-of-light.jpg",
+              "caption": "Bóng ánh sáng Taken trong không gian của Tim"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-dunk-the-heart.jpg",
+              "caption": "Tịnh hóa Trái tim Riven"
+            }
           ]
         }
       }
