@@ -28,7 +28,7 @@ export function ZoomableImage({ src, alt, width = 1200, height = 800, className,
           width={width}
           height={height}
           unoptimized={unoptimized}
-          className="rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)] border border-border max-w-full h-auto transition-transform duration-300 group-hover:scale-[1.01]"
+          className="rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)] border border-border max-w-full h-auto transition-all duration-300 group-hover:shadow-[0_0_25px_rgba(0,243,255,0.3)]"
         />
         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-lg">
           <div className="bg-background/80 p-3 rounded-full border border-neon-cyan/50 text-neon-cyan backdrop-blur-sm shadow-[0_0_15px_rgba(0,243,255,0.3)]">

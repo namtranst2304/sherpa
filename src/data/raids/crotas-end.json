@@ -75,8 +75,8 @@
       "name": "The Abyss",
       "images": [
         {
-          "url": "/images/raids/crotas-end/CE_1S.jpg",
-          "caption": "Quang cảnh mê cung bóng tối The Abyss"
+          "url": "/images/raids/crotas-end/enc_1_abyss_map.webp",
+          "caption": "Bản đồ 3D The Abyss / Lamp Room (Credit: Blake Robinson)"
         }
       ],
       "roles": {
@@ -94,12 +94,7 @@
         "phase_1": {
           "name": "Giai đoạn 1: Sạc Chén Thánh và Thắp Đèn",
           "objective": "Đi qua bóng tối bằng cách luân chuyển Chén Thánh và thắp sáng các ngọn đèn để xóa debuff Weight of Darkness.",
-          "images": [
-            {
-              "url": "/images/raids/crotas-end/abyss_lamp.jpg",
-              "caption": "Thắp sáng ngọn đèn Abyssal Lamp"
-            }
-          ],
+          "images": [],
           "steps": [
             "Lấy Chalice of Light ở bục xuất phát. Thanh năng lượng sẽ tự động sạc. Nếu bị quái đánh, quá trình sạc có thể nhanh hơn.",
             "Khi thanh đầy, người cầm sẽ bị 'Engulfed in Light'. Đếm ngược 10 giây bắt đầu, MỘT NGƯỜI KHÁC phải tương tác để lấy Chén đi. Người đầu tiên sẽ nhận được buff 'Enlightened'.",
@@ -111,12 +106,7 @@
         "phase_2": {
           "name": "Giai đoạn 2: Xây Cầu",
           "objective": "Giữ vững vị trí ở cuối đường để xây cầu trốn thoát.",
-          "images": [
-            {
-              "url": "/images/raids/crotas-end/abyss_bridge.jpg",
-              "caption": "Phòng thủ trên đĩa cuối cùng để xây cầu"
-            }
-          ],
+          "images": [],
           "steps": [
             "Khi đến cuối đường (The Plate), người có buff 'Enlightened' tương tác với chiếc đĩa để bắt đầu xây cầu.",
             "Cả đội phòng thủ trong 60 giây chống lại đám quái vật tràn tới.",
@@ -130,8 +120,8 @@
       "name": "The Oversoul Throne Bridge",
       "images": [
         {
-          "url": "/images/raids/crotas-end/CE_2S.jpg",
-          "caption": "Khu vực xây cầu tại The Bridge"
+          "url": "/images/raids/crotas-end/enc_2_bridge_map.webp",
+          "caption": "Sơ đồ The Oversoul Throne Bridge (Credit: sca@steam)"
         }
       ],
       "roles": {
@@ -155,13 +145,8 @@
       "walkthrough": {
         "phase_1": {
           "name": "Giai đoạn 1: Xây cầu và Băng qua (Nhóm 1)",
-          "objective": "Lần lượt đưa 3 người chơi sang bờ bên kia bằng Kiếm Hive.",
-          "images": [
-            {
-              "url": "/images/raids/crotas-end/bridge_totem.jpg",
-              "caption": "Đứng dưới Annihilator Totem để ngăn Wipe"
-            }
-          ],
+          "objective": "Xây cầu, cầm Kiếm qua cầu tiêu diệt Gatekeeper, và giữ vững Annihilator Totems.",
+          "images": [],
           "steps": [
             "Để bắt đầu, 2 người chơi đầu tiên nhận buff Enlightened sẽ tương tác với đĩa trung tâm để thiết lập cầu. Từ lúc này, phải LUÔN có 1 người đứng trên đĩa giữa, và 2 người đứng dưới 2 cái Annihilator Totems (nếu không toàn đội sẽ chết).",
             "Tiêu diệt quái vật để gọi ra Swordbearer (Hiệp sĩ cầm kiếm). Giết nó, nó sẽ rớt ra thanh kiếm.",
@@ -172,13 +157,8 @@
         },
         "phase_2": {
           "name": "Giai đoạn 2: Xây cầu từ bờ bên kia (Nhóm 2)",
-          "objective": "Đổi vị trí đứng đĩa và đưa 3 người còn lại sang.",
-          "images": [
-            {
-              "url": "/images/raids/crotas-end/bridge_crossing.jpg",
-              "caption": "Mang Kiếm Hive băng qua cầu"
-            }
-          ],
+          "objective": "Hoàn tất việc qua cầu và tiêu diệt các mục tiêu lớn để qua ải.",
+          "images": [],
           "steps": [
             "Khi đã có 3 người ở bờ bên kia, họ sẽ tiếp quản việc đứng đĩa giữa và 2 trụ Annihilator Totems ở bờ của mình. Nhóm 3 người bên xuất phát có thể rời khỏi đĩa.",
             "Nhóm xuất phát giết Swordbearer, người có buff Enlightened nhặt kiếm băng qua cầu, giết Gatekeeper.",
@@ -194,8 +174,8 @@
       "name": "Ir Yût, the Deathsinger",
       "images": [
         {
-          "url": "/images/raids/crotas-end/CE_3S.jpg",
-          "caption": "Trận chiến với Ir Yût, the Deathsinger"
+          "url": "/images/raids/crotas-end/enc_4_chalice_map.webp",
+          "caption": "Sơ đồ vị trí Chén Thánh (Chalices Options A & B)"
         }
       ],
       "roles": {
@@ -219,12 +199,7 @@
         "phase_1": {
           "name": "Giai đoạn 1: Trinh sát và Chuẩn bị",
           "objective": "Định vị 3 con Wizards đang nấp sau các màng chắn xanh.",
-          "images": [
-            {
-              "url": "/images/raids/crotas-end/ir_yut_wizards.jpg",
-              "caption": "Xác định vị trí các Hive Wizards sau màng chắn"
-            }
-          ],
+          "images": [],
           "steps": [
             "Bắt đầu ải bằng việc dọn sạch quái vật, tiêu diệt Blistering Knights ở tháp để gọi ra Swordbearer.",
             "Người trinh sát (Scout) đi quanh đấu trường, nhìn vào 7 căn phòng có màng chắn xanh. Nếu bên trong là Wizard thì báo cáo cho đội. Nếu là Shrieker thì bỏ qua. Sẽ có 3 con Wizards ở phase đầu (tăng lên 4 và 5 ở các phase sau).",
@@ -234,12 +209,7 @@
         "phase_2": {
           "name": "Giai đoạn 2: Dark Liturgy và DPS",
           "objective": "Tiêu diệt đồng loạt Wizards và dồn sát thương vào Ir Yût.",
-          "images": [
-            {
-              "url": "/images/raids/crotas-end/ir_yut_dps.jpg",
-              "caption": "Dồn sát thương vào Ir Yût trước khi bài hát kết thúc"
-            }
-          ],
+          "images": [],
           "steps": [
             "Cả 3 người có buff đếm ngược để CÙNG LÚC đi xuyên qua màng chắn xanh (mất buff) và tiêu diệt Wizards.",
             "Ngay khi con Wizard ĐẦU TIÊN chết, Ir Yût sẽ bắt đầu hát bài 'Dark Liturgy'. Một đồng hồ đếm ngược 45 giây sẽ xuất hiện.",
@@ -255,8 +225,8 @@
       "name": "Crota, Son of Oryx",
       "images": [
         {
-          "url": "/images/raids/crotas-end/CE_4S.jpg",
-          "caption": "Crota đang được triệu hồi"
+          "url": "/images/raids/crotas-end/crota_arena.webp",
+          "caption": "Quang cảnh Crota Arena"
         }
       ],
       "roles": {
@@ -281,12 +251,7 @@
         "phase_1": {
           "name": "Giai đoạn 1: Lấy Kiếm",
           "objective": "Luân chuyển Chén Thánh trong các chùm sáng để nhận buff và lấy Kiếm.",
-          "images": [
-            {
-              "url": "/images/raids/crotas-end/crota_chalice_light.jpg",
-              "caption": "Truyền Chén Thánh bên trong chùm sáng chói lóa"
-            }
-          ],
+          "images": [],
           "steps": [
             "Debuff 'Presence of Crota' luôn luôn kích hoạt, ngăn cản việc tự động hồi máu. Cách hồi máu duy nhất là nhặt/truyền Chén Thánh hoặc dùng kỹ năng hồi máu (như Well of Radiance, Banner of War).",
             "Bắt đầu ải bằng việc giết Knights trong tháp để gọi Swordbearer. Giết chúng để rớt ra Kiếm.",
@@ -299,8 +264,8 @@
           "objective": "Phá vỡ khiên miễn nhiễm của Crota và dồn sát thương kết liễu.",
           "images": [
             {
-              "url": "/images/raids/crotas-end/crota_getting_back_up.jpg",
-              "caption": "Crota đứng dậy sau khi quỳ, kết thúc lượt Damage"
+              "url": "/images/raids/crotas-end/eg_1.webp",
+              "caption": "Crota, Son of Oryx"
             }
           ],
           "steps": [
@@ -319,19 +284,19 @@
       "description": "Để nhận một rương chứa vũ khí viền đỏ (Deepsight) rớt ra khi hoàn thành Raid, bạn cần đọc mã 3 cặp bức tượng đầu Raid và thắp sáng đúng 3 bức tượng tương ứng trong quá trình đi Raid.",
       "images": [
         {
-          "url": "/images/raids/crotas-end/red_border_statues_start.jpg",
+          "url": "/images/raids/crotas-end/red_border_start.webp",
           "caption": "Ghi nhớ cặp tượng Hive bị bốc cháy đầu Raid"
         },
         {
-          "url": "/images/raids/crotas-end/red_border_bridge_start.jpg",
+          "url": "/images/raids/crotas-end/red_border_bridge_start.webp",
           "caption": "Tượng ở phòng phụ dưới cầu thang lúc bắt đầu ải Bridge"
         },
         {
-          "url": "/images/raids/crotas-end/red_border_bridge_end.jpg",
+          "url": "/images/raids/crotas-end/red_border_bridge_end.webp",
           "caption": "Tượng ở cuối khu vực vòng cung phía bên kia cầu"
         },
         {
-          "url": "/images/raids/crotas-end/red_border_crystal_room.jpg",
+          "url": "/images/raids/crotas-end/red_border_crystal_room.webp",
           "caption": "Tượng nằm ngay phía trên phòng pha lê (Crystal room)"
         }
       ],
@@ -348,7 +313,7 @@
       "description": "Nằm ngay trong ải đầu tiên (The Abyss/Lanterns).",
       "images": [
         {
-          "url": "/images/raids/crotas-end/secret_chest_1.jpg",
+          "url": "/images/raids/crotas-end/secret_chest_1.webp",
           "caption": "Cánh cửa phát sáng chứa rương ẩn trong The Abyss"
         }
       ],
@@ -363,7 +328,7 @@
       "description": "Nằm ở đường hầm dài sau ải The Bridge (Thrallway).",
       "images": [
         {
-          "url": "/images/raids/crotas-end/secret_chest_2.jpg",
+          "url": "/images/raids/crotas-end/secret_chest_2.webp",
           "caption": "Chạy đua vào cánh cửa đang đóng sập để lấy rương thứ 2"
         }
       ],
