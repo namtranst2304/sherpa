@@ -211,8 +211,8 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Đổi chỗ Hành tinh (Planetary Shift)",
-          "objective": "Sắp xếp lại cho toàn bộ hành tinh Sáng nằm bên Trái, Tối nằm bên Phải.",
+          "name": "Giai đoạn 1: Sắp xếp lại các Hành tinh (Planetary Shift)",
+          "objective": "Sáng nằm bên Trái, Tối nằm bên Phải.",
           "images": [
             {
               "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-explicator-lieutenant.jpg",
@@ -290,7 +290,7 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Nối mạng lưới đôi và Tạo Hầm Trú Ẩn (Refuge)",
+          "name": "Giai đoạn 1: Nối mạng lưới đôi Sáng/Tối và Tạo Nơi Trú Ẩn (Refuge)",
           "objective": "Hoàn thành 2 đường nối Sáng/Tối và sống sót qua đòn Wipe của Nezarec.",
           "images": [
             {
@@ -316,7 +316,7 @@
           "images": [
             {
               "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2023/03/destiny-2-root-of-nightmares-nezarec-damage.jpg",
-              "caption": "Tụ tập trên bục cao để né sát thương và dồn damage"
+              "caption": "Tập hợp trên bục cao để né sát thương và dồn damage"
             }
           ],
           "steps": [
