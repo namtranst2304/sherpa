@@ -1,30 +1,26 @@
 {
   "raid_name": "Crota's End",
-  "active_orbit": "The Moon",
+  "active_orbit": "Ocean of Storms, Moon",
   "preface": {
-    "formatting_rules": "Cơ chế xương sống của toàn bộ Raid này là chiếc ly ánh sáng 'Chalice of Light' và bùa chú 'Enlightened'. Hãy đảm bảo bạn hiểu rõ quy tắc giật ly và bảo quản ly.",
+    "formatting_rules": "Cơ chế xương sống của Raid này là Chén Thánh (Chalice of Light). Người cầm Chén sẽ tích tụ năng lượng, khi đầy sẽ bị 'Engulfed in Light' (chết sau 10 giây nếu không có ai lấy). Người lấy Chén sẽ giúp người cầm đầu tiên nhận buff 'Enlightened', dùng để thắp đèn, xây cầu, đi xuyên màng chắn hoặc nhặt kiếm Hive.",
     "non_linear_mechanic": {
-      "description": "Hành trình đẫm máu đi xuống đáy vực sâu của Hellmouth trên Mặt Trăng để tiêu diệt Crota, con trai của Vua Hắc Ám Oryx.",
+      "description": "Hành trình đẫm hài hước đi xuống đáy vực sâu của Hellmouth trên Mặt Trăng để tiêu diệt Crota, con trai của Vua Hắc Ám Oryx.",
       "elevator_plates": []
     }
   },
   "loadout_tips": {
-    "note": "Raid này là thánh địa của cận chiến (Melee) và Kiếm (Swords). Crota bị lỗi nhận thêm sát thương từ Kiếm, do đó The Lament, Bequest hoặc Falling Guillotine là những vũ khí DPS mạnh nhất.",
+    "note": "Hai ải cuối (Ir Yût và Crota) yêu cầu khả năng dồn sát thương (DPS) cực cao. Đối với Crota, sát thương cận chiến bằng Kiếm (như The Lament) kết hợp với Tractor Cannon là lựa chọn tối ưu nhất. Ở ải cuối, debuff 'Presence of Crota' sẽ ngăn bạn tự hồi máu, do đó các kỹ năng hồi phục nhóm là bắt buộc.",
     "warlocks": {
       "supers": [
         {
           "name": "Well of Radiance",
-          "utility": "Bắt buộc phải có để cắm dưới chân Crota, giúp cả team xông vào chém kiếm mà không bị Crota đập chết."
-        },
-        {
-          "name": "Needlestorm (Strand)",
-          "utility": "Nếu team đã có 2 Well, sử dụng Needlestorm ném vào Crota trước khi xông vào chém kiếm."
+          "utility": "Cực kỳ thiết yếu ở ải Crota để giữ cả đội sống sót và tăng sát thương khi chém boss do bị vô hiệu hóa khả năng tự hồi máu."
         }
       ],
       "exotics_and_abilities": [
         {
-          "name": "Karnstein Armlets",
-          "recommendation": "Sinh tồn tuyệt đối. Khi bạn dùng đòn cận chiến kết liễu quái, bạn sẽ được hồi máu liên tục, cực kỳ hữu ích khi chạy trốn trong màn The Abyss tăm tối."
+          "name": "Cenotaph Mask / Divinity",
+          "recommendation": "Đánh dấu quái vật để tạo đạn Heavy cho team và buff debuff lên boss Ir Yût."
         }
       ]
     },
@@ -53,12 +49,12 @@
     "hunters": {
       "supers": [
         {
-          "name": "Gathering Storm (Arc)",
-          "utility": "Phóng giáo sét ghim vào người Crota, tạo sát thương giật liên tục cực mạnh."
+          "name": "Gathering Storm (Arc) / Blade Barrage (Solar)",
+          "utility": "Lựa chọn dồn sát thương (Burst DPS) tuyệt vời, xả chiêu nhanh rồi lập tức quay lại chém kiếm."
         },
         {
-          "name": "Blade Barrage (Solar)",
-          "utility": "Burst sát thương tức thì vào Ir Yut hoặc Crota."
+          "name": "Shadowshot",
+          "utility": "Bắn Tether trói chân hàng đống quái vật ở ải The Abyss và The Bridge."
         }
       ],
       "exotics_and_abilities": [
@@ -77,53 +73,142 @@
     {
       "id": "the-abyss",
       "name": "The Abyss",
+      "images": [
+        {
+          "url": "/images/raids/crotas-end/CE_1S.jpg",
+          "caption": "Quang cảnh mê cung bóng tối The Abyss"
+        }
+      ],
       "roles": {
-        "chalice_passers": {
-          "description": "Luân chuyển Chalice liên tục để lấy buff Enlightened và thắp đèn.",
+        "runners": {
+          "description": "Người chơi lần lượt luân chuyển Chalice of Light cho nhau để lấy buff.",
           "quantity": 6,
           "types": [
-            "Runner"
+            "Runner",
+            "Mechanic"
           ]
         }
       },
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Bóng tối và Chiếc Ly Ánh Sáng",
-          "objective": "Khu vực này hoàn toàn tối đen và bạn sẽ liên tục bị cộng dồn debuff 'Weight of Darkness'. Điểm càng cao bạn càng đi chậm và không thể nhảy. Vũ khí duy nhất để sinh tồn là Chalice of Light.",
+          "name": "Giai đoạn 1: Sạc Chén Thánh và Thắp Đèn",
+          "objective": "Đi qua bóng tối bằng cách luân chuyển Chén Thánh và thắp sáng các ngọn đèn để xóa debuff Weight of Darkness.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/abyss_lamp.jpg",
+              "caption": "Thắp sáng ngọn đèn Abyssal Lamp"
+            }
+          ],
           "steps": [
-            "Bắt đầu bằng việc nhặt chiếc ly Chalice of Light ở ngay điểm xuất phát. Cả team (6 người) phải luôn ĐI CÙNG NHAU.",
-            "Người cầm Chalice sẽ thấy một thanh sạc (Enlightened). Khi thanh này đầy, người đó nhận được buff 'Enlightened'.",
-            "Cảnh báo: Nếu người cầm Chalice để thanh sạc đầy quá lâu (khoảng 10 giây) mà không ai lấy đi (Engulfed in Light), người đó SẼ CHẾT.",
-            "Người khác (chưa bị debuff Drained of Light) phải chạy lại gần, bấm nút tương tác để GIẬT (Take) chiếc ly đi. Người vừa bị giật ly sẽ giữ lại buff 'Enlightened' trên người."
+            "Lấy Chalice of Light ở bục xuất phát. Thanh năng lượng sẽ tự động sạc. Nếu bị quái đánh, quá trình sạc có thể nhanh hơn.",
+            "Khi thanh đầy, người cầm sẽ bị 'Engulfed in Light'. Đếm ngược 10 giây bắt đầu, MỘT NGƯỜI KHÁC phải tương tác để lấy Chén đi. Người đầu tiên sẽ nhận được buff 'Enlightened'.",
+            "Người đang có buff Enlightened tiến lại gần cây đèn tắt, bấm nút để Thắp sáng (Dunk) => reset thời gian. Đèn sáng sẽ xóa sạch debuff Weight of Darkness cho những ai đứng gần đó.",
+            "Tuy nhiên, cây đèn vừa thắp sẽ dần đổi màu thành đỏ và NỔ TUNG. Do đó sau khi thắp xong, cả team phải chạy tiếp sang cây đèn tiếp theo ngay lập tức.",
+            "Đôi khi sẽ có những hố sáng (Preserve Nodes). Cắm Chalice vào đó để mở đường hoặc để reset lại thời gian nếu cần. Cứ thế lặp lại quy trình Sạc Ly -> Giật Ly -> Thắp Đèn cho đến cuối đường.",
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Thắp Đèn và Bảo quản Ly",
-          "objective": "Sử dụng buff Enlightened để thắp sáng các cây đèn (Lamps) dẫn đường hoặc cất ly vào bệ bảo quản (Preserve).",
+          "name": "Giai đoạn 2: Xây Cầu",
+          "objective": "Giữ vững vị trí ở cuối đường để xây cầu trốn thoát.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/abyss_bridge.jpg",
+              "caption": "Phòng thủ trên đĩa cuối cùng để xây cầu"
+            }
+          ],
           "steps": [
-            "Người đang có buff Enlightened tiến lại gần cây đèn tắt, bấm nút để Thắp sáng (Dunk). Đèn sáng sẽ xóa sạch debuff Weight of Darkness cho những ai đứng gần đó.",
-            "Tuy nhiên, cây đèn vừa thắp sẽ dần đổi màu thành đỏ và NỔ TUNG. Do đó sau khi thắp xong, cả team phải chạy tiếp sang cây đèn tiếp theo ngay lập tức.",
-            "Đôi khi sẽ có những hố sáng (Preserve Nodes). Cắm Chalice vào đó để mở đường hoặc để reset lại chu kỳ nếu cần. Cứ thế lặp lại quy trình Sạc Ly -> Giật Ly -> Thắp Đèn cho đến cuối đường.",
-            "Cuối đường, team phải bảo vệ một bệ đài khỏi lũ Ogres và Unstoppable Champions trong lúc chờ cây cầu hình thành. Khi cầu xong, cắm đầu chạy qua ánh sáng là qua ải."
+            "Khi đến cuối đường (The Plate), người có buff 'Enlightened' tương tác với chiếc đĩa để bắt đầu xây cầu.",
+            "Cả đội phòng thủ trong 60 giây chống lại đám quái vật tràn tới.",
+            "Khi cầu được xây xong, cả đội chạy nhanh qua cầu và nhảy xuống hố Hellmouth để sang ải tiếp theo."
           ]
         }
       }
     },
     {
       "id": "the-bridge",
-      "name": "The Bridge",
+      "name": "The Oversoul Throne Bridge",
+      "images": [
+        {
+          "url": "/images/raids/crotas-end/CE_2S.jpg",
+          "caption": "Khu vực xây cầu tại The Bridge"
+        }
+      ],
       "roles": {
-        "plate_builders": {
-          "description": "Đứng bệ giữa và 2 bệ Totems để xây cầu.",
-          "quantity": 3,
+        "runners": {
+          "description": "Người nhận buff Enlightened, cầm kiếm qua cầu và diệt Gatekeeper.",
+          "quantity": 6,
           "types": [
-            "Add Clear"
+            "Runner",
+            "Mechanic"
           ]
         },
-        "sword_runners": {
-          "description": "Cầm Chalice để nhặt Kiếm và chạy qua cầu chém Gatekeeper.",
-          "quantity": 6,
+        "plate_defenders": {
+          "description": "Bảo vệ đĩa trung tâm và đứng dưới Annihilator Totems.",
+          "quantity": 3,
+          "types": [
+            "Defense"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Xây cầu và Băng qua (Nhóm 1)",
+          "objective": "Lần lượt đưa 3 người chơi sang bờ bên kia bằng Kiếm Hive.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/bridge_totem.jpg",
+              "caption": "Đứng dưới Annihilator Totem để ngăn Wipe"
+            }
+          ],
+          "steps": [
+            "Để bắt đầu, 2 người chơi đầu tiên nhận buff Enlightened sẽ tương tác với đĩa trung tâm để thiết lập cầu. Từ lúc này, phải LUÔN có 1 người đứng trên đĩa giữa, và 2 người đứng dưới 2 cái Annihilator Totems (nếu không toàn đội sẽ chết).",
+            "Tiêu diệt quái vật để gọi ra Swordbearer (Hiệp sĩ cầm kiếm). Giết nó, nó sẽ rớt ra thanh kiếm.",
+            "Người đang có buff Enlightened nhặt thanh kiếm này và chạy qua cầu sang bờ bên kia.",
+            "Ở bờ bên kia, dùng thanh kiếm đó để giết con Gatekeeper (chỉ nhận sát thương từ kiếm Hive). Sau khi giết, cắm kiếm vào trạm (Node).",
+            "Tiếp tục luân chuyển Chén ở bờ xuất phát và lặp lại cho đến khi có 3 người chơi an toàn sang bờ bên kia."
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Xây cầu từ bờ bên kia (Nhóm 2)",
+          "objective": "Đổi vị trí đứng đĩa và đưa 3 người còn lại sang.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/bridge_crossing.jpg",
+              "caption": "Mang Kiếm Hive băng qua cầu"
+            }
+          ],
+          "steps": [
+            "Khi đã có 3 người ở bờ bên kia, họ sẽ tiếp quản việc đứng đĩa giữa và 2 trụ Annihilator Totems ở bờ của mình. Nhóm 3 người bên xuất phát có thể rời khỏi đĩa.",
+            "Nhóm xuất phát giết Swordbearer, người có buff Enlightened nhặt kiếm băng qua cầu, giết Gatekeeper.",
+            "Ở 2 người cuối cùng, 1 người sẽ nhặt Kiếm, người còn lại CẦM LUÔN CHÉN THÁNH và cả hai cùng chạy qua cầu (Lưu ý: Bạn có thể qua cầu nếu cầm Kiếm HOẶC cầm Chén).",
+            "Khi tất cả qua cầu, sạc Chén để 5 người có buff Enlightened, người thứ 6 cắm Chén vào trạm ở giữa.",
+            "Nhiều Gatekeepers sẽ xuất hiện. Những người có buff nhặt các thanh kiếm đã cắm và tiêu diệt chúng để qua ải."
+          ]
+        }
+      }
+    },
+    {
+      "id": "ir-yut",
+      "name": "Ir Yût, the Deathsinger",
+      "images": [
+        {
+          "url": "/images/raids/crotas-end/CE_3S.jpg",
+          "caption": "Trận chiến với Ir Yût, the Deathsinger"
+        }
+      ],
+      "roles": {
+        "scout": {
+          "description": "Sử dụng Wish-Ender hoặc radar để nhìn xuyên tường, tìm đúng vị trí của Wizards.",
+          "quantity": 1,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "runners": {
+          "description": "Nhận buff Enlightened để vào tháp giết Wizards.",
+          "quantity": 3,
           "types": [
             "Runner"
           ]
@@ -132,81 +217,35 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Xây cầu",
-          "objective": "Nhiệm vụ là đưa cả 6 người chơi qua bờ bên kia vực thẳm. CHỈ CÓ NGƯỜI CẦM KIẾM (Sword) mới có thể đi qua cây cầu tàng hình, nếu không cầm kiếm đi lên sẽ rớt thẳng xuống vực.",
+          "name": "Giai đoạn 1: Trinh sát và Chuẩn bị",
+          "objective": "Định vị 3 con Wizards đang nấp sau các màng chắn xanh.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/ir_yut_wizards.jpg",
+              "caption": "Xác định vị trí các Hive Wizards sau màng chắn"
+            }
+          ],
           "steps": [
-            "Chia 3 người đứng lên 3 bệ: Bệ giữa (Center Plate) để xây cầu, 2 bệ trái phải (Totems) để giữ cho cầu không nổ.",
-            "LƯU Ý: Nếu có người đứng ở bệ giữa mà 2 bệ Totem KHÔNG CÓ người đứng, 2 Totem sẽ đỏ lên và Wipe cả team.",
-            "Tiếp tục cơ chế luân chuyển Chalice of Light giống ải trước để lấy buff Enlightened."
+            "Bắt đầu ải bằng việc dọn sạch quái vật, tiêu diệt Blistering Knights ở tháp để gọi ra Swordbearer.",
+            "Người trinh sát (Scout) đi quanh đấu trường, nhìn vào 7 căn phòng có màng chắn xanh. Nếu bên trong là Wizard thì báo cáo cho đội. Nếu là Shrieker thì bỏ qua. Sẽ có 3 con Wizards ở phase đầu (tăng lên 4 và 5 ở các phase sau).",
+            "Trong lúc đó, đội luân chuyển Chén Thánh cho đến khi có đủ 3 người mang buff Enlightened (đứng trước cửa phòng của 3 con Wizards đã được đánh dấu). Người thứ 4 đem Chén cắm vào trạm."
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Diệt Swordbearer và Qua cầu",
-          "objective": "Tìm kiếm và qua sông.",
+          "name": "Giai đoạn 2: Dark Liturgy và DPS",
+          "objective": "Tiêu diệt đồng loạt Wizards và dồn sát thương vào Ir Yût.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/ir_yut_dps.jpg",
+              "caption": "Dồn sát thương vào Ir Yût trước khi bài hát kết thúc"
+            }
+          ],
           "steps": [
-            "Sẽ xuất hiện con Swordbearer (Knight cầm kiếm). Diệt nó, nó sẽ rớt cây kiếm ra.",
-            "CHỈ NHỮNG NGƯỜI CÓ BUFF ENLIGHTENED mới có thể nhặt được cây kiếm này. Và khi nhặt kiếm, buff Enlightened sẽ biến mất.",
-            "Người cầm kiếm chạy thật nhanh qua cây cầu đang được 3 người kia xây. Vừa sang tới bờ bên kia, một con Gatekeeper (Knight xanh mờ) sẽ xuất hiện.",
-            "Gatekeeper chỉ nhận sát thương từ chính cây kiếm bạn đang cầm. Chém chết nó! Lặp lại quy trình để đưa ít nhất 3 người sang bờ bên kia."
-          ]
-        },
-        "phase_3": {
-          "name": "Giai đoạn 3: Đổi ca và Trận chiến cuối",
-          "objective": "Bên kia sông tự xây cầu.",
-          "steps": [
-            "Khi đã có 3 người qua bờ bên kia, họ sẽ thay thế nhiệm vụ xây cầu: Cử 3 người đó đứng lên bệ giữa và 2 Totems của bờ bên đó. Lúc này 3 người bờ bên này có thể rời bệ đi bắt Swordbearer.",
-            "Sau khi cả 6 người đã sang hết bờ bên kia. Hệ thống bệ xây cầu bị vô hiệu hóa.",
-            "Hàng đống Gatekeepers, Ogres và quái vật sẽ xuất hiện. Sẽ có rất nhiều kiếm rớt ra. Cả team nhặt kiếm múa điên cuồng chém chết hết Gatekeepers là hoàn thành ải."
-          ]
-        }
-      }
-    },
-    {
-      "id": "ir-yt-the-deathsinger",
-      "name": "Ir Yût, the Deathsinger",
-      "roles": {
-        "scouts": {
-          "description": "Đi vào các phòng dò tìm Wizard và callout.",
-          "quantity": 3,
-          "types": [
-            "Callout"
-          ]
-        },
-        "assassins": {
-          "description": "Nhận buff Enlightened, vào phòng và giết Wizard cùng lúc.",
-          "quantity": 3,
-          "types": [
-            "Burst Damage"
-          ]
-        }
-      },
-      "secrets": [],
-      "walkthrough": {
-        "phase_1": {
-          "name": "Giai đoạn 1: Truy tìm Phù Thủy",
-          "objective": "Ir Yût đang hát bài ca tử thần (Dark Liturgy). Bạn có khoảng 3 phút rưỡi trước khi bài hát kết thúc (Wipe). Khắp đấu trường có 7 căn phòng bị chắn bằng kết giới (Barrier) màu xanh lá. Bên trong một số phòng có Phù Thủy (Wizard).",
-          "steps": [
-            "Bắt đầu luân chuyển Chalice để có buff Enlightened.",
-            "Giết quái bên dưới, đặc biệt là các con Shriekers (mắt bay) ở 2 bên tháp. Việc giết Shriekers sẽ mở cổng cho các căn phòng.",
-            "Cử 1-2 người CÓ buff Enlightened chạy đi dò thám. Chỉ người có buff mới đi xuyên qua bức màn xanh lá được (Người không có buff chui vào sẽ bị tụt máu đến chết).",
-            "Nhìn vào phòng xem có Wizard (Wizard bay lơ lửng, không phải mấy con quái nhỏ) hay không. Nếu có, hô to vị trí phòng đó (Ví dụ: Tháp Trái Dưới, Giữa Trên, Tháp Phải Trên...)."
-          ]
-        },
-        "phase_2": {
-          "name": "Giai đoạn 2: Ám sát đồng loạt",
-          "objective": "Ở Damage Phase 1, sẽ có 3 con Wizards cần bị giết.",
-          "steps": [
-            "Chuẩn bị 3 người chơi có buff Enlightened, phân công mỗi người đứng trước 1 căn phòng có Wizard vừa được callout.",
-            "Đếm ngược 3-2-1, cả 3 người CÙNG LÚC chui vào phòng và giết Wizard của mình thật nhanh (dùng Shotgun, Fusion). Nếu chênh lệch thời gian giết quá lâu, bài hát của Ir Yut sẽ tăng tốc cực nhanh gây Wipe."
-          ]
-        },
-        "phase_3": {
-          "name": "Giai đoạn 3: Damage Phase",
-          "objective": "Sau khi cả 3 Wizards bị diệt, khiên bảo vệ của Ir Yut vỡ.",
-          "steps": [
-            "Tất cả tập trung ở vị trí an toàn (thường là trên nóc bệ đá giữa map hoặc dưới sảnh). Đặt Well of Radiance.",
-            "Ir Yut bay lộn xộn, xả đạn Linear Fusion hoặc Rocket/Leviathan's Breath vào đầu ả.",
-            "Nếu ả chưa chết, ả sẽ hồi khiên. Lặp lại Phase 1, nhưng đợt 2 sẽ có 4 Wizards cần giết (cần 4 người Enlightened). Đợt 3 có 5 Wizards. Rất khó, nên cố gắng dồn damage 1-2 phase là xong."
+            "Cả 3 người có buff đếm ngược để CÙNG LÚC đi xuyên qua màng chắn xanh (mất buff) và tiêu diệt Wizards.",
+            "Ngay khi con Wizard ĐẦU TIÊN chết, Ir Yût sẽ bắt đầu hát bài 'Dark Liturgy'. Một đồng hồ đếm ngược 45 giây sẽ xuất hiện.",
+            "Khi toàn bộ Wizards chết, khiên của Ir Yût sẽ vỡ. Cả đội lập tức cắm Well of Radiance và dồn toàn bộ hỏa lực vào cô ta (Sử dụng Divinity, Linear Fusion, hoặc Rocket).",
+            "Bạn BẮT BUỘC phải gây đủ sát thương đến vạch khấc trên thanh máu của Boss trước khi 45 giây kết thúc, nếu không toàn đội sẽ chết (Wipe). Nếu đạt ngưỡng, bạn vẫn có thể bắn tiếp đến hết giờ.",
+            "Lặp lại quá trình trên cho đến khi tiêu diệt được Boss (Tối đa 3 pha)."
           ]
         }
       }
@@ -214,54 +253,126 @@
     {
       "id": "crota-son-of-oryx",
       "name": "Crota, Son of Oryx",
+      "images": [
+        {
+          "url": "/images/raids/crotas-end/CE_4S.jpg",
+          "caption": "Crota đang được triệu hồi"
+        }
+      ],
       "roles": {
-        "sword_bearers": {
-          "description": "Nhận buff Enlightened, nhặt kiếm, áp sát và chém vỡ khiên Crota.",
+        "swordbearers": {
+          "description": "Lấy buff Enlightened, nhặt kiếm Hive để phá khiên của Crota.",
           "quantity": 2,
           "types": [
-            "Runner"
+            "Runner",
+            "Mechanic"
           ]
         },
-        "oversoul_shooter": {
-          "description": "Giữ buff Enlightened cuối cùng để bắn nổ mặt trời xanh trên trời.",
+        "tractor_cannon": {
+          "description": "Bắn Tractor Cannon vào Crota để debuff, giúp đồng đội chém phá khiên dễ hơn.",
           "quantity": 1,
           "types": [
-            "Sniper"
+            "Support"
           ]
         }
       },
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Chuẩn bị Kiếm",
-          "objective": "Crota có khiên bất tử. Chỉ có Kiếm của Swordbearer rớt ra mới chém vỡ được khiên hắn.",
+          "name": "Giai đoạn 1: Lấy Kiếm",
+          "objective": "Luân chuyển Chén Thánh trong các chùm sáng để nhận buff và lấy Kiếm.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/crota_chalice_light.jpg",
+              "caption": "Truyền Chén Thánh bên trong chùm sáng chói lóa"
+            }
+          ],
           "steps": [
-            "Luân chuyển Chalice liên tục để chuẩn bị ít nhất 3 người có buff Enlightened (2 người để cầm kiếm chém Crota, 1 người để bắn Oversoul).",
-            "Tiêu diệt Boomer Knights (Knight bắn súng) trên ban công cao 2 bên. Sau khi chết, Swordbearer (Knight xanh) sẽ xuất hiện ở dưới sảnh.",
-            "Giết Swordbearer, một cây kiếm rớt ra. Người có buff Enlightened ra nhặt kiếm. Cần ít nhất 2 cây kiếm để đảm bảo chém vỡ khiên Crota (có thể cần 3 nếu chém trượt)."
+            "Debuff 'Presence of Crota' luôn luôn kích hoạt, ngăn cản việc tự động hồi máu. Cách hồi máu duy nhất là nhặt/truyền Chén Thánh hoặc dùng kỹ năng hồi máu (như Well of Radiance, Banner of War).",
+            "Bắt đầu ải bằng việc giết Knights trong tháp để gọi Swordbearer. Giết chúng để rớt ra Kiếm.",
+            "LƯU Ý: Ở ải này, bạn KHÔNG THỂ truyền Chén Thánh ở bất cứ đâu. Hai người muốn đổi Chén BẮT BUỘC PHẢI đứng cùng nhau trong một khu vực có ánh sáng chói lóa (Vị trí chùm sáng sẽ thay đổi ngẫu nhiên liên tục).",
+            "Làm tương tự như các ải trước để có được 2 người mang buff Enlightened. Họ sẽ nhặt các thanh kiếm rớt ra."
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Phá khiên và Quả cầu Oversoul",
-          "objective": "Cơ chế song song: Vừa phải phá khiên Crota, vừa phải bắn nổ quả cầu Oversoul trên không trung.",
+          "name": "Giai đoạn 2: Phá Khiên và Damage Phase",
+          "objective": "Phá vỡ khiên miễn nhiễm của Crota và dồn sát thương kết liễu.",
+          "images": [
+            {
+              "url": "/images/raids/crotas-end/crota_getting_back_up.jpg",
+              "caption": "Crota đứng dậy sau khi quỳ, kết thúc lượt Damage"
+            }
+          ],
           "steps": [
-            "Crota sẽ liên tục bắn hỏa lực chùm cực đau. Khi 2-3 người cầm kiếm đã sẵn sàng, kêu gọi Warlock cắm Well dưới chân Crota, hoặc dùng người có khiên mạnh (Stronghold Titan) thu hút hỏa lực.",
-            "Cùng lúc đội Kiếm xông lên, Crota sẽ gọi Oversoul (Quả cầu xanh khổng lồ hiện ra trên trời đếm ngược Wipe).",
-            "Đội Kiếm (Sword Bearers) áp sát Crota, dùng đòn chém nặng (Heavy Attack / Nút bắn) chém liên tục 3-4 phát vào người hắn. Khiên hắn sẽ vỡ và hắn quỵ gối xuống.",
-            "Đồng thời lúc khiên vừa vỡ, Người bắn Oversoul (đang giữ buff Enlightened) dùng súng bắn thẳng vào quả cầu xanh trên trời. Chỉ người có buff mới gây sát thương cho Oversoul. Bắn nổ nó để ngăn Wipe."
-          ]
-        },
-        "phase_3": {
-          "name": "Giai đoạn 3: Damage Phase và Final Stand",
-          "objective": "Kết liễu Crota bằng mọi giá.",
-          "steps": [
-            "Ngay khi khiên vỡ và hắn quỵ gối (Damage Phase bắt đầu), CẢ TEAM đồng loạt rút Kiếm (The Lament, Bequest) lao vào chém xối xả vào Crota. Lưu ý: những người vừa xài Kiếm rớt (Relic Sword) để phá khiên lúc nãy hãy bấm thả khiên ra hoặc dùng chiêu Super của khiên rồi rút vũ khí chính ra chém hôi.",
-            "Khi hết thời gian choáng, hắn sẽ đứng lên và phát sáng đỏ (Miễn nhiễm). Chạy lùi lại ngay lập tức.",
-            "Final Stand: Khi lượng máu Crota tụt xuống vạch cuối cùng. Hắn sẽ lập tức đứng lên gọi Oversoul và hồi lại một ít máu/khiên nhẹ.",
-            "Tất cả team không được bỏ chạy, lao thẳng vào chém xối xả đòn kết liễu, dồn toàn bộ hỏa lực để giết Crota TRƯỚC KHI Oversoul nổ. (Trong trường hợp đánh chậm, vẫn phải có 1 người chừa buff Enlightened ra bắn nổ Oversoul, nếu không sẽ chết ngay cửa thiên đường)."
+            "Hai người cầm Kiếm tiếp cận Crota. Đội hỗ trợ bắn Tractor Cannon vào Crota. Người cầm Kiếm dùng Super và chém Heavy Attack liên tục để làm vỡ khiên của hắn.",
+            "Khi khiên vỡ, Crota sẽ quỳ xuống. Cắm Well of Radiance sát Boss và toàn đội xông vào dùng súng/kiếm của mình (The Lament) chém Boss điên cuồng.",
+            "Khi thanh kiếm biến mất hoặc Boss đứng dậy, sát thương kết thúc, lùi về vị trí an toàn, dọn quái và chuẩn bị cho phase tiếp theo.",
+            "Ở Final Stand (Ngưỡng máu cuối), dồn toàn bộ siêu năng lực và đạn dược Heavy để giết Boss trước khi hắn quét sạch cả đội."
           ]
         }
       }
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Guaranteed Red Border Chest (Rương vũ khí đỏ)",
+      "description": "Để nhận một rương chứa vũ khí viền đỏ (Deepsight) rớt ra khi hoàn thành Raid, bạn cần đọc mã 3 cặp bức tượng đầu Raid và thắp sáng đúng 3 bức tượng tương ứng trong quá trình đi Raid.",
+      "images": [
+        {
+          "url": "/images/raids/crotas-end/red_border_statues_start.jpg",
+          "caption": "Ghi nhớ cặp tượng Hive bị bốc cháy đầu Raid"
+        },
+        {
+          "url": "/images/raids/crotas-end/red_border_bridge_start.jpg",
+          "caption": "Tượng ở phòng phụ dưới cầu thang lúc bắt đầu ải Bridge"
+        },
+        {
+          "url": "/images/raids/crotas-end/red_border_bridge_end.jpg",
+          "caption": "Tượng ở cuối khu vực vòng cung phía bên kia cầu"
+        },
+        {
+          "url": "/images/raids/crotas-end/red_border_crystal_room.jpg",
+          "caption": "Tượng nằm ngay phía trên phòng pha lê (Crystal room)"
+        }
+      ],
+      "steps": [
+        "**Đọc mã đầu Raid:** Ngay khi mới thả xuống mặt trăng, hãy nhìn ra xa khu vực Hellmouth. Bạn sẽ thấy 3 cặp bức tượng Hive. Ghi chú lại bức tượng nào ĐANG BỐC CHÁY ở mỗi cặp (Trái hoặc Phải). Thứ tự nhìn: 1 cặp trên đồi bên trái, 1 cặp ở miệng hố bên phải, 1 cặp nằm sâu bên dưới bên phải. Ví dụ mật mã: Phải - Trái - Trái.",
+        "**Cặp tượng 1 (Trước ải Bridge):** Khi đến khu vực bắt đầu xây cầu (sau khi qua The Abyss), nhìn về hướng 2 căn phòng dưới cầu thang ở hai bên (Trái và Phải). Vào căn phòng tương ứng với mã số 1 và tương tác để thắp sáng bức tượng đó.",
+        "**Cặp tượng 2 (Sau ải Bridge):** Ở bờ bên kia của cầu, ngay cuối đấu trường vòng cung (trước khi leo cầu thang lên Thrallway). Có 2 bức tượng ở hai góc ban công Trái và Phải. Thắp sáng bức tượng tương ứng với mã số 2.",
+        "**Cặp tượng 3 (Khu vực Boss cuối):** Ở phòng đánh Ir Yût và Crota. Tượng nằm trên ban công cao nhất (Phía trên phòng Crystal). Lưu ý: Việc xác định Trái/Phải của cặp tượng này được căn cứ theo hướng bạn ĐỨNG QUAY MẶT NHÌN RA OVERSOUL (quả cầu khổng lồ). Thắp sáng bức tượng số 3. Dòng chữ 'A balance is reached. To the victor go the final spoils' sẽ hiện ra.",
+        "**Nhận thưởng:** Đánh bại Crota xong, rương phụ chứa vũ khí Red Border sẽ hiện ra cạnh rương chính."
+      ]
+    },
+    {
+      "title": "Secret Chest 1 (Rương ẩn 1 - The Abyss)",
+      "description": "Nằm ngay trong ải đầu tiên (The Abyss/Lanterns).",
+      "images": [
+        {
+          "url": "/images/raids/crotas-end/secret_chest_1.jpg",
+          "caption": "Cánh cửa phát sáng chứa rương ẩn trong The Abyss"
+        }
+      ],
+      "steps": [
+        "Trong khu vực mê cung bóng tối The Abyss, có các cánh cửa trên vách đá. Rương ẩn nằm sau một trong những cánh cửa này.",
+        "Cánh cửa chứa rương sẽ phát ra ánh sáng rực rỡ, nhưng vị trí sẽ thay đổi ngẫu nhiên mỗi lần đi Raid.",
+        "Đi men theo các mép tường và mở cửa để nhận rương mà không cần phải đánh xong ải."
+      ]
+    },
+    {
+      "title": "Secret Chest 2 (Rương ẩn 2 - Shrieker Hallway)",
+      "description": "Nằm ở đường hầm dài sau ải The Bridge (Thrallway).",
+      "images": [
+        {
+          "url": "/images/raids/crotas-end/secret_chest_2.jpg",
+          "caption": "Chạy đua vào cánh cửa đang đóng sập để lấy rương thứ 2"
+        }
+      ],
+      "steps": [
+        "Sau khi qua ải The Bridge, bạn sẽ phải dùng buff Enlightened để mở lớp màng chắn xanh và giết các Shriekers dọc hành lang.",
+        "Bạn chỉ có 60 giây để chạy đến cuối hành lang này. Tại điểm kết thúc là một cánh cửa lớn đang từ từ đóng lại.",
+        "Người cầm Chalice of Light phải chạy thục mạng qua cánh cửa này và cắm Chén vào trạm (Preservation Node) ngay bên trong TRƯỚC KHI cánh cửa đóng sập hoàn toàn.",
+        "Nếu làm đúng, cánh cửa sẽ mở lại và rương ẩn thứ 2 sẽ xuất hiện ở giữa phòng."
+      ]
     }
   ]
 }
