@@ -4,59 +4,108 @@
   "preface": {
     "formatting_rules": "Đây là Raid có biểu tượng cực kỳ phức tạp (bảng 16 biểu tượng loài thú, rồng, chim, cá). Bạn bắt buộc phải có hình ảnh Bảng Biểu Tượng Last Wish mở sẵn trên điện thoại hoặc màn hình phụ để giao tiếp (Ví dụ: 'Chim nhìn trái đậu trên cành', 'Rồng hình số 8').",
     "non_linear_mechanic": {
-      "description": "Hành trình tiêu diệt Riven - Sinh vật Ahamkara cuối cùng (Rồng điều ước) bị thao túng bởi bóng tối. Raid có Bức tường Điều Ước (Wall of Wishes) cho phép bạn dịch chuyển thẳng đến bất kỳ ải nào bằng cách nhập code.",
+      "description": "Hành trình tiêu diệt Riven - Sinh vật Ahamkara cuối cùng (Rồng điều ước) bị thao túng bởi bóng tối. Raid có Bức tường Điều Ước (Wall of Wishes) cho phép bạn dịch chuyển thẳng đến bất kỳ ải nào bằng cách nhập code và lấy rương bí mật.",
       "elevator_plates": []
     }
   },
+  "activity_secrets": [
+    {
+      "title": "Bảng Biểu Tượng Last Wish",
+      "description": "Bảng tổng hợp 16 biểu tượng thường dùng để callout trong toàn bộ Raid Last Wish (Rồng, Chim, Cá, Rắn).",
+      "images": [
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-raid-symbol-callouts.jpg", "caption": "Bảng Biểu Tượng Last Wish" }
+      ]
+    },
+    {
+      "title": "Secret Chest Locations (Rương Ẩn)",
+      "description": "Last Wish có 2 rương bí mật. Bạn có thể lấy trên đường đi raid bình thường hoặc dùng Wall of Wishes để dịch chuyển thẳng đến boss rồi quay lùi lại để lấy.",
+      "steps": [
+        "**Chest 1 (Dưới chân cầu Shuro Chi):** Dùng Wish 4 để dịch chuyển đến Shuro Chi. Quay ngược lại cây cầu, bám sát vách tường để nhảy vòng lại. Khi đến trụ cầu tiếp theo, hãy nhảy xuống một chút để tìm một lỗ hổng nhỏ trên tường. Chui vào đó để lấy rương.",
+        "**Chest 2 (Khu vực trước Morgeth):** Sau khi đánh xong Shuro Chi, leo lên ngọn tháp và đi tới khu vực cầu. Trước khi bước vào Ascendant Plane, hãy trèo lên các thân cây lớn ở bên phải vách núi, dọc theo vách đá bạn sẽ thấy rương bí mật nằm trên một mỏm đá."
+      ],
+      "images": [
+        { "url": "/images/raids/last-wish/secret-chest-1.webp", "caption": "Rương 1: Lỗ hổng trên trụ cầu" },
+        { "url": "/images/raids/last-wish/secret-chest-2.webp", "caption": "Rương 2: Nhảy lên cây lớn bên phải vách núi" }
+      ]
+    },
+    {
+      "title": "Wall of Wishes (Bức Tường Điều Ước)",
+      "description": "Bắn vào các vòng tròn trên tường để ghép thành hình tương ứng. Sau đó bước lên bệ tròn giữa phòng để kích hoạt. Dưới đây là 14 điều ước có thể nhập trong Raid.",
+      "steps": [
+        "**Wish 1:** Tặng 1 Ethereal Key (Mở rương cuối)",
+        "**Wish 2:** Xuất hiện rương giữa Morgeth và Vault (Cần Glittering Key)",
+        "**Wish 3:** Tặng Emblem Numbers of Power",
+        "**Wish 4:** Dịch chuyển đến Shuro Chi",
+        "**Wish 5:** Dịch chuyển đến Morgeth",
+        "**Wish 6:** Dịch chuyển đến The Vault",
+        "**Wish 7:** Dịch chuyển đến Riven",
+        "**Wish 8:** Phát nhạc Hope for the Future",
+        "**Wish 9:** Failsafe lồng tiếng thay Riven",
+        "**Wish 10:** Drifter lồng tiếng thay Riven",
+        "**Wish 11:** Hiệu ứng pháo hoa (Grunt Birthday Party) khi Headshot",
+        "**Wish 12:** Đeo hiệu ứng vương miện bướm",
+        "**Wish 13:** Kích hoạt Petra's Run (Chế độ Flawless, chết 1 người sẽ Wipe cả team về Orbit)",
+        "**Wish 14:** Triệu hồi các Corrupted Eggs quanh Raid (Bắn bằng cung Wish-Ender)"
+      ],
+      "images": [
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-1-first-wish.jpg", "caption": "Wish 1" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-2-second-wish.jpg", "caption": "Wish 2" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-3-third-wish.jpg", "caption": "Wish 3" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-4-fourth-wish.jpg", "caption": "Wish 4" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-5-fifth-wish.jpg", "caption": "Wish 5" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-6-sixth-wish.jpg", "caption": "Wish 6" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-7-seventh-wish.jpg", "caption": "Wish 7" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-8-eighth-wish.jpg", "caption": "Wish 8" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-9-ninth-wish.jpg", "caption": "Wish 9" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-wish-10-tenth-wish.jpg", "caption": "Wish 10" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-11-eleventh-wish.jpg", "caption": "Wish 11" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-12-twelfth-wish.jpg", "caption": "Wish 12" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-wish-13-thirteenth-wish.jpg", "caption": "Wish 13 (Petra's Run)" },
+        { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-wish-14-fourteenth-wish.jpg", "caption": "Wish 14" }
+      ]
+    }
+  ],
   "loadout_tips": {
-    "note": "Do chiến thuật 'Cheese Riven' đã trở thành quốc dân, hỏa lực tập trung vào cận chiến hạng nặng hoặc Burst DPS cực kỳ quan trọng ở ải Riven. Ở các ải khác, kiếm (Swords) là meta số 1.",
+    "note": "Ở các ải đầu (Kalli, Shuro Chi), vũ khí dọn quái nhanh và gây sát thương diện rộng là ưu tiên. Ở ải Riven, do chiến thuật 'Cheese' (Đánh nhanh rút gọn) đã trở thành quốc dân, hỏa lực tập trung vào cận chiến (Kiếm Lament) hoặc Burst DPS là cực kỳ quan trọng.",
     "warlocks": {
       "supers": [
         {
           "name": "Well of Radiance",
-          "utility": "Chìa khóa cho mọi pha DPS, từ Kalli, Shuro Chi, Morgeth cho tới Riven."
+          "utility": "Chìa khóa sinh tồn và buff sát thương cho mọi pha DPS, từ Kalli, Shuro Chi, Morgeth cho tới Riven."
         }
       ],
       "exotics_and_abilities": [
         {
-          "name": "Sunbracers",
-          "recommendation": "Ở ải Shuro Chi, quái sinh ra liên tục theo từng đàn. Một Warlock ném Sunbracers có thể diệt sạch cả sàn đấu trong 3 giây."
+          "name": "Sunbracers / Lunafaction Boots",
+          "recommendation": "Sunbracers dùng ở ải Shuro Chi để dọn sạch sàn đấu bằng lựu đạn lửa. Lunafaction Boots để tăng tầm bắn và tốc độ nạp đạn trong Well of Radiance."
         }
       ]
     },
     "titans": {
       "supers": [
         {
-          "name": "Glacial Quake (Stasis Behemoth)",
-          "utility": "Super BẮT BUỘC để Cheese Riven. Tinh thể băng nổ ở móng vuốt Riven tạo ra sát thương lỗi game siêu to."
-        },
-        {
-          "name": "Twilight Arsenal",
-          "utility": "Lựa chọn tốt để phóng rìu từ xa nếu không dùng Behemoth."
+          "name": "Ward of Dawn (Void) hoặc Thundercrash (Arc)",
+          "utility": "Ward of Dawn tạo khiên và buff sát thương vũ khí. Thundercrash kèm Cuirass of the Falling Star mang lại lượng DPS tức thời cực khủng."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Synthoceps",
-          "recommendation": "Buff sát thương Super của Behemoth lên mức hủy diệt."
+          "recommendation": "Buff sát thương Super và cận chiến khi bị bao vây, hữu ích khi dọn quái."
         }
       ]
     },
     "hunters": {
       "supers": [
         {
-          "name": "Golden Gun (Marksman)",
-          "utility": "Nếu team không có Titan Behemoth, Hunter Golden Gun bắn vào mồm Riven là giải pháp thay thế hoàn hảo."
-        },
-        {
-          "name": "Shadowshot",
-          "utility": "Trói quái ở ải Vault cực kỳ tiện lợi."
+          "name": "Golden Gun (Marksman) hoặc Shadowshot (Tether)",
+          "utility": "Golden Gun dùng để dồn sát thương trùm. Tether (Nightstalker) dùng để trói và chia sẻ sát thương lên đám đông quái ở Shuro Chi hoặc Vault."
         }
       ],
       "exotics_and_abilities": [
         {
-          "name": "Celestial Nighthawk",
-          "recommendation": "Nhấn chìm Kalli và Riven bằng 1 viên đạn sát thương tối đa."
+          "name": "Celestial Nighthawk / Orpheus Rig",
+          "recommendation": "Celestial Nighthawk cho phép dồn toàn bộ sát thương Golden Gun vào 1 viên duy nhất. Orpheus Rig giúp hồi nhanh Super Tether."
         }
       ]
     }
@@ -67,7 +116,7 @@
       "name": "Kalli, The Corrupted",
       "roles": {
         "plate_standers": {
-          "description": "Đứng lên 6 bệ xung quanh map tương ứng với biểu tượng đúng.",
+          "description": "Đứng lên 6 bệ xung quanh map tương ứng với biểu tượng đúng để kích hoạt Knight.",
           "quantity": 6,
           "types": [
             "Mechanic"
@@ -78,22 +127,32 @@
       "walkthrough": {
         "phase_1": {
           "name": "Giai đoạn 1: Đọc biểu tượng và Dẫm Bệ",
-          "objective": "Kích hoạt bệ để thanh tẩy Kalli.",
+          "objective": "Thanh tẩy 6 đĩa (plates) được chỉ định bởi các biểu tượng ở trung tâm.",
           "steps": [
-            "Nhìn quanh khu vực hố giữa map, sẽ có 3 biểu tượng (thường là Hình Rắn) treo lơ lửng.",
-            "Chia nhau đi tìm xung quanh rìa map 6 cái bệ đá. Dưới đất của mỗi bệ có khắc 1 biểu tượng.",
-            "Người chơi CHỈ ĐƯỢC DẪM LÊN BỆ CÓ BIỂU TƯỢNG TRÙNG VỚI 1 TRONG 3 BIỂU TƯỢNG Ở GIỮA MAP.",
-            "Khi dẫm lên, bệ sẽ chia làm 3 múi. 2 múi an toàn và 1 múi sinh ra quả bom Blight đen. Khi bom nổ, dẫm sang múi an toàn. Xử lý xong, bệ sẽ hiện ra một con Taken Knight, giết nó để hoàn thành bệ."
+            "Quan sát 3 cặp biểu tượng (tổng cộng 6 biểu tượng) treo lơ lửng quanh khu vực hố giữa map.",
+            "Người chơi tản ra tìm 6 bệ đá vòng ngoài có hình ảnh khớp với các biểu tượng đó.",
+            "Chỉ được dẫm lên bệ có biểu tượng trùng khớp. Bệ sẽ chia làm 3 phần. Đứng ở phần không có hắc ín đen (bom Blight).",
+            "Khi bom nổ, bệ sạc 1 cộng dồn. Đủ 3 cộng dồn, một con Taken Knight xuất hiện. Tiêu diệt nó để thanh tẩy bệ thành công."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-symbols.jpg", "caption": "Nhìn các cặp biểu tượng treo lơ lửng ở giữa phòng" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-plate-symbol.jpg", "caption": "Tìm bệ đá có biểu tượng tương ứng để dẫm" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-symbols-callouts.jpg", "caption": "Vị trí tham khảo các bệ đá quanh phòng Kalli" }
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Trốn vào Cửa và DPS",
-          "objective": "Kalli sẽ chuẩn bị tung chiêu quét Wipe toàn bản đồ.",
+          "name": "Giai đoạn 2: Sát thương (DPS) và Trốn vào Cửa",
+          "objective": "Gây sát thương lên Kalli và tránh đòn kết liễu Wipe.",
           "steps": [
-            "Khi cả 6 bệ được thanh tẩy, Kalli hiện ra ở giữa map. Bắt đầu bắn Kalli (Damage Phase).",
-            "Đang bắn dở, Kalli giơ tay lên tụ phép. Bên dưới bục giữa map sẽ có 6 ô cửa nhỏ tự động mở ra ngẫu nhiên.",
-            "CẢ TEAM hô to: 'TÌM CỬA TRỐN!'. Mỗi người chui vào 1 cửa khác nhau (Nếu 2 người chui chung 1 cửa, 1 người sẽ bị đẩy ra và chết).",
-            "Cửa sập xuống, Kalli thả chiêu Wipe. Cửa mở ra lại, ra ngoài tiếp tục DPS. Lặp lại 3 lần như vậy."
+            "Khi cả 6 bệ hoàn tất, tập trung ở trung tâm bản đồ dưới hố để bắn Kalli.",
+            "Sau một lúc, Kalli sẽ tụ phép chuẩn bị tung đòn Wipe toàn bản đồ. Lúc này 6 ô cửa nhỏ bên dưới đài trung tâm sẽ mở ra.",
+            "Mỗi người phải chui vào 1 cửa riêng biệt (Hai người chung 1 cửa sẽ làm 1 người bị đẩy ra ngoài và chết).",
+            "Cửa sập xuống bảo vệ người chơi. Kalli xả chiêu xong, cửa mở, lập tức ra ngoài tiếp tục gây sát thương.",
+            "Lặp lại việc chui cửa tối đa 3 lần mỗi chu kỳ DPS."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-damage-phase.jpg", "caption": "Tập trung bắn Kalli ở hố trung tâm" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-kalli-safe-rooms.jpg", "caption": "Trốn vào các ô cửa an toàn bên dưới đài" }
           ]
         }
       }
@@ -102,41 +161,57 @@
       "id": "shuro-chi-the-corrupted",
       "name": "Shuro Chi, The Corrupted",
       "roles": {
+        "crystal_holders": {
+          "description": "Nhặt Eye of Riven (Prism Laser) bắn vào nhau để phá khiên Shuro Chi.",
+          "quantity": 3,
+          "types": [
+            "Runner",
+            "Mechanic"
+          ]
+        },
         "puzzle_solvers": {
-          "description": "Nhảy lên bệ giải đố hình ảnh trên tường.",
+          "description": "Nhảy lên bệ giải đố hình ảnh trên tường ở phòng trung gian.",
           "quantity": 4,
           "types": [
             "Mechanic"
           ]
         },
-        "crystal_holders": {
-          "description": "Nhặt Prism Laser bắn vào nhau để phá khiên Shuro Chi.",
-          "quantity": 3,
+        "ad_clearers": {
+          "description": "Dọn dẹp quái vật cực nhanh để bảo vệ người giải đố.",
+          "quantity": 2,
           "types": [
-            "Runner"
+            "Ad Clear"
           ]
         }
       },
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Đua tốc độ và Phá khiên",
-          "objective": "Shuro Chi có đếm ngược bài ca tử thần (Wipe). Chạy thật nhanh giết quái.",
+          "name": "Giai đoạn 1: Đua tốc độ (Speedrun) và Phá khiên",
+          "objective": "Dọn quái nhanh, tiếp cận Shuro Chi trước khi ả hoàn thành bài ca tử thần.",
           "steps": [
-            "Đuổi theo Shuro Chi lên bậc thang. Gặp ả, ả sẽ tạo khiên. Quanh ả có 3 bệ đá rơi ra 3 cục Eye of Riven (Laser Prism).",
-            "Cử 3 người nhặt 3 cục Prism, đứng lên 3 cái bệ quanh Shuro Chi.",
-            "Người 1 bấm bắn tia Laser vào Người 2, Người 2 bắn vào Người 3, Người 3 bắn VÀO NGƯỜI SHURO CHI (tạo thành 1 mạch nối tam giác).",
-            "Khiên ả bị vỡ, dồn sát thương ngay lập tức (Chỉ được đánh rớt 1/6 cây máu của ả, đạt ngưỡng là ả bất tử). Tiếp tục rượt đuổi lên tầng trên."
+            "Giết quái vật liên tục và đuổi theo Shuro Chi. Ả sẽ dừng lại ở một đài hiến tế và tạo khiên.",
+            "Tiêu diệt Eye of Riven (Knight) để rớt ra các quả cầu Prism. 3 người nhặt 3 quả cầu, đứng lên 3 bệ đá quanh Shuro Chi.",
+            "Cùng lúc ngắm bắn tia Laser vào nhau để tạo thành mạch tam giác (Người 1 bắn Người 2, Người 2 bắn Người 3, Người 3 bắn vào Shuro Chi).",
+            "Khiên vỡ, dồn sát thương ngay lập tức để trừ đi 1/6 thanh máu của ả. Nếu ả tụ phép Wipe, dùng Super bồi vào để ngắt đòn."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-enemies.jpg", "caption": "Đua tốc độ dọn quái" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-prism-weapons.jpg", "caption": "Dùng tia Prism nối tam giác phá khiên Shuro Chi" }
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Giải đố Puzzle trên tường",
-          "objective": "Giữa mỗi chặng, team bị nhốt trong phòng có các bảng xếp hình 3x3 trên tường.",
+          "name": "Giai đoạn 2: Giải đố Puzzle phòng tranh",
+          "objective": "Hoàn thành 3 bức tranh trên tường để mở đường lên tháp.",
           "steps": [
-            "Nhìn lên bảng hình ảnh trên tường, nó bị thiếu vài mảnh (ô trống). Bạn phải biến các bệ dưới sàn nhà tương ứng với các ô trống đó.",
-            "Cử 4 người nhảy lên các bệ trên sàn nhà TƯƠNG ỨNG với vị trí các ô bị khuyết trên tường.",
-            "LƯU Ý: Một người KHÔNG ĐƯỢC DẪM 2 LẦN VÀO CÙNG 1 BỆ. Nếu ô đó cần dẫm lần 2, người khác phải thay thế. Dẫm đúng sẽ điền đầy hình ảnh.",
-            "Giải đố 3 mặt tường thành công, cửa mở. Lại leo tháp và lặp lại quá trình rượt đuổi -> Phá khiên."
+            "Sau 2 lần phá khiên, đội tiến vào phòng giải đố. Có 3 bức tranh trên tường bị khuyết các mảnh ghép.",
+            "4 người chơi phải nhảy lên các bệ trên sàn nhà TƯƠNG ỨNG với vị trí các ô bị khuyết trên tường (nhìn sàn như 1 ma trận 3x3).",
+            "QUY TẮC: Khi nhảy lên bệ sẽ nhận sát thương. Không ai được dẫm một bệ quá 1 lần trong 1 bức tranh. Nếu ô đó cần dẫm lần nữa ở hình tiếp theo, người khác phải thay thế.",
+            "Hoàn thành 3 bức tranh, cửa mở, leo lên các nửa quả cầu xoay để lên tầng trên và lặp lại Phase 1."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-puzzles.jpg", "caption": "Nhìn tranh trên tường để tìm ô bị khuyết" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-shuro-chi-puzzle-room-buttons.jpg", "caption": "Dẫm lên bệ sàn tương ứng" }
           ]
         }
       }
@@ -146,15 +221,15 @@
       "name": "Morgeth, The Spirekeeper",
       "roles": {
         "taken_strength_eaters": {
-          "description": "Nhặt bùa Taken Strength rải rác trên map.",
+          "description": "Nhặt các quả cầu sương đen 'Taken Strength'.",
           "quantity": 4,
           "types": [
             "Runner"
           ]
         },
-        "cleanser": {
-          "description": "Nhặt Eye of Riven để giải cứu người bị trói.",
-          "quantity": 1,
+        "cleansers": {
+          "description": "Nhặt Eye of Riven (Relic) để giải cứu người bị Morgeth trói.",
+          "quantity": 2,
           "types": [
             "Mechanic"
           ]
@@ -163,23 +238,31 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Ăn Taken Strength",
-          "objective": "Cơ chế chính là các quả cầu sương đen 'Taken Strength'. Một người dẫm vào sẽ ăn 1 quả, nhưng nếu ăn quả thứ 3, người đó SẼ CHẾT.",
+          "name": "Giai đoạn 1: Thu thập Taken Strength",
+          "objective": "Thu thập đủ 10 quả cầu Taken Strength để kích hoạt Damage Phase.",
           "steps": [
-            "Morgeth có một cục u cực to sau lưng. Xung quanh hắn sinh ra các quả cầu Taken Strength.",
-            "Phân công người ăn bùa. Mục tiêu là nhặt tổng cộng 10 quả cầu trên map.",
-            "Bất ngờ, Morgeth sẽ chọn 1 người đang ăn bùa (Góc dưới màn hình hiện Morgeth traps...). Người đó bị nhốt trong một cái lốc xoáy đen không thể cử động."
+            "Map chia làm 2 bên (Trái - Phải). Morgeth đứng ở giữa. Các quả cầu sương đen (Taken Strength) sẽ xuất hiện dần.",
+            "Người chơi chạy vào nhặt quả cầu. QUY TẮC: Mỗi người chỉ được nhặt TỐI ĐA 2 quả. Nhặt quả thứ 3 sẽ chết ngay lập tức.",
+            "Sau một khoảng thời gian, Morgeth sẽ khóa mục tiêu một người đã nhặt Taken Strength và trói người đó bằng một lốc xoáy đen."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-strength.jpg", "caption": "Nhặt quả cầu sương đen Taken Strength" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-essence.jpg", "caption": "Morgeth trói người chơi bằng lốc xoáy đen" }
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Giải cứu và Damage Phase",
-          "objective": "Giải cứu người bị nhốt và kích hoạt DPS.",
+          "name": "Giai đoạn 2: Giải cứu và Tấn công (DPS)",
+          "objective": "Dùng Relic giải cứu đồng đội và xả đạn vào lưng trùm.",
           "steps": [
-            "Một con Taken Captain (Eye of Riven) hiện ra, giết nó rớt cục Prism.",
-            "Một người khác (Cleanser) chạy đến nhặt Prism, đến gần người đang bị lốc xoáy trói, bấm phím Ném lựu đạn (Grenade button) để Giải cứu (Cleanse) người đó.",
-            "Quyền năng Taken Strength của người bị trói sẽ chuyển sang cho Cleanser. Vì vậy Cleanser phải là người chưa ăn quá 2 quả (nếu không sẽ chết vì vượt 2).",
-            "Khi quả cầu thứ 10 hiện ra ngay giữa mặt Morgeth, người cuối cùng ăn nó. Damage Phase ngay lập tức bắt đầu.",
-            "Cả team quây quần sau lưng Morgeth, xả đạn (Whisper, Rocket, Xenophage) thẳng vào khối u phát sáng của hắn."
+            "Một Eye of Riven (Captain) xuất hiện. Giết nó để nhặt quả cầu Relic.",
+            "Người nhặt Relic (Cleanser) chạy đến chỗ người bị trói, bấm nút Lựu đạn (Grenade) để giải cứu.",
+            "Toàn bộ cộng dồn Taken Strength của người bị trói sẽ chuyển sang Cleanser (Do đó Cleanser lúc nhặt Relic phải đang có 0 cộng dồn Taken Strength).",
+            "Khi quả cầu thứ 10 xuất hiện ngay trước mặt Morgeth, người cuối cùng ăn nó. Giai đoạn sát thương (DPS) bắt đầu.",
+            "Cả đội bắn vũ khí hạng nặng vào cục u to phát sáng trên lưng Morgeth. Nếu hắn tụ quả cầu lớn (Axion Darts), bắn nổ chúng để tránh bị chết."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-crit-spot.jpg", "caption": "Bắn vào cục u to phát sáng trên lưng Morgeth" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-morgeth-taken-orbs.jpg", "caption": "Bắn nổ các quả cầu Axion Darts để tránh chết" }
           ]
         }
       }
@@ -189,15 +272,15 @@
       "name": "The Vault (Phòng Két Sắt)",
       "roles": {
         "readers": {
-          "description": "Đọc 3 biểu tượng ở giữa và xác định cổng Penumbra/Antumbra.",
+          "description": "Đứng bệ, đọc 3 biểu tượng ở giữa và phân tích cơ chế khóa.",
           "quantity": 3,
           "types": [
             "Callout"
           ]
         },
         "runners": {
-          "description": "Giết Knight, nhặt Eye of Riven chạy sang phòng khác để mở khóa.",
-          "quantity": 1,
+          "description": "Giết Knight, nhặt Eye of Riven chạy sang phòng khác để mở khóa bệ.",
+          "quantity": 3,
           "types": [
             "Runner"
           ]
@@ -206,23 +289,33 @@
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Đọc cơ chế Pen/Ant",
-          "objective": "Một trong những ải hại não nhất Destiny. Có 3 bệ (Cây, Trái Đất, Đá).",
+          "name": "Giai đoạn 1: Đọc cơ chế Penumbra/Antumbra",
+          "objective": "Xác định 3 bệ đá cần dùng bùa gì để mở.",
           "steps": [
-            "3 người đứng lên bệ. Nhìn vào hologram ở giữa. Mỗi người sẽ thấy 3 biểu tượng (1 Giữa, 1 Trái, 1 Phải).",
-            "Người 1 đọc biểu tượng GIỮA của mình. Người 2 và Người 3 tìm xem biểu tượng đó nằm ở BÊN TRÁI hay BÊN PHẢI của mình.",
-            "Quy tắc vàng: BÊN TRÁI = PENUMBRA. BÊN PHẢI = ANTUMBRA.",
-            "Lặp lại để tìm ra chính xác khóa của mỗi bệ (Ví dụ: Bệ Cây là Penumbra, bệ Đá là Antumbra)."
+            "Phòng có 3 bệ (Thường gọi là Cây - Trái Đất - Đá). 3 người đứng lên bệ sẽ thấy hệ thống Hologram ở trung tâm hiện 3 biểu tượng (Giữa, Trái, Phải).",
+            "Người ở bệ 1 đọc biểu tượng GIỮA của mình. Hai người còn lại tìm xem biểu tượng đó xuất hiện ở BÊN TRÁI hay BÊN PHẢI trên màn hình của họ.",
+            "Nếu nó nằm bên TRÁI -> Bệ của người 1 là PENUMBRA.",
+            "Nếu nó nằm bên PHẢI -> Bệ của người 1 là ANTUMBRA.",
+            "Lặp lại cho người 2 và 3 để xác định trạng thái của cả 3 bệ."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-symbols.jpg", "caption": "Nhìn Hologram hiển thị 3 biểu tượng" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-vault-symbol-example.jpg", "caption": "Ví dụ về cách đọc Penumbra/Antumbra" }
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Chạy nhặt Eye of Riven",
-          "objective": "Đưa bóng vào đúng khóa.",
+          "name": "Giai đoạn 2: Chạy bộ nhặt bùa (Eye of Riven)",
+          "objective": "Đưa bùa Taken vào đúng bệ để thanh tẩy.",
           "steps": [
-            "Các cửa xung quanh sẽ đóng/mở luân phiên. Cửa nào mở, Runner chạy vào tìm giết con Taken Captain nhặt Eye of Riven.",
-            "Khi nhặt Eye, nhìn bên lề trái màn hình, nó sẽ ghi là Penumbra hay Antumbra.",
-            "Nếu là Penumbra, Runner phải chạy lại dẫm vào Bệ có khóa Penumbra lúc nãy tìm được, bấm nút đập cận chiến (Cleanse).",
-            "Cứ dọn quái, ngăn Knight xông vào bệ và giải đố như thế 3 lần để mở hầm chứa."
+            "Các cửa phòng hai bên sẽ mở luân phiên. Runner chạy vào phòng đang mở, giết Taken Captain để nhặt bùa Eye of Riven.",
+            "Khi nhặt, để ý dòng chữ nhỏ bên trái màn hình báo hiệu Runner đang cầm bùa PENUMBRA hay ANTUMBRA.",
+            "Runner chạy ra ngoài, tìm đúng cái bệ yêu cầu bùa đó (đã xác định ở Phase 1) và bấm đập cận chiến (Cleanse).",
+            "Cùng lúc, các Hiệp sĩ (Might of Riven) sẽ lững thững đi về phía các bệ. Đội phòng thủ phải tiêu diệt chúng ngay lập tức, nếu chúng cắm kiếm vào bệ -> Wipe.",
+            "Thanh tẩy đủ 3 bệ sẽ hoàn thành 1 vòng. Làm như vậy 3 vòng để hoàn thành ải."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-taken-essence-penumbra.jpg", "caption": "Nhặt bùa và nhìn dòng chữ Antumbra/Penumbra" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/09/destiny-2-last-wish-vault-might-of-riven.jpg", "caption": "Tiêu diệt Might of Riven trước khi chúng cắm kiếm" }
           ]
         }
       }
@@ -232,7 +325,7 @@
       "name": "Riven of a Thousand Voices",
       "roles": {
         "cheese_team": {
-          "description": "6 người tập trung chém ngón chân Riven.",
+          "description": "6 người tập trung hỏa lực chém ngón chân/vuốt Riven để bỏ qua cơ chế.",
           "quantity": 6,
           "types": [
             "Burst Damage"
@@ -243,24 +336,82 @@
       "walkthrough": {
         "phase_1": {
           "name": "Giai đoạn 1: Cheese Riven (Meta Quốc Dân)",
-          "objective": "Thay vì chơi Legit (rất dài và cực kỳ phức tạp với đọc hàng chục biểu tượng mắt), 99% cộng đồng sử dụng chiến thuật 'Cheese' phá game hợp lệ.",
+          "objective": "Bỏ qua toàn bộ cơ chế đọc biểu tượng phức tạp, dồn sát thương một phát chết luôn Riven.",
           "steps": [
-            "Cả 6 người đi vào CÙNG 1 CĂN PHÒNG (thường là phòng Pha Lê bên trái hoặc phòng Cây bên phải). Đứng ép sát vào tường, lắng nghe bóng của Riven đi qua.",
-            "Riven sẽ thò cái móng vuốt khổng lồ của ả vào phòng. ĐÂY LÀ ĐIỂM YẾU LỖI.",
-            "Ngay khi ả thả vuốt xuống, Titan Behemoth bật Glacial Quake, tạo ra một đống tinh thể băng đập vào móng vuốt ả (Sát thương vỡ băng x2 x3 trên hitbox vuốt).",
-            "5 người còn lại cắm Well, vác Kiếm Lament hoặc chém cận chiến/Grenade Launcher xả điên cuồng vào ngón chân móng vuốt của Riven.",
-            "Sát thương từ móng vuốt truyền thẳng vào máu chính mà không kích hoạt cơ chế Wipe của 10 con mắt."
+            "Cả 6 người đi vào CÙNG 1 CĂN PHÒNG (thường là phòng Pha Lê bên trái). Đứng ép sát vào tường, lắng nghe bóng của Riven đi qua xem ả có ở phòng này không.",
+            "Riven sẽ thò cái móng vuốt khổng lồ của ả vào phòng.",
+            "Đội sử dụng Tractor Cannon, Well of Radiance, Titan bong bóng... và đồng loạt xả Kiếm The Lament hoặc vũ khí hạng nặng (Grenade Launcher) vào phần móng vuốt.",
+            "Toàn bộ sát thương truyền thẳng vào thanh máu của Riven mà không kích hoạt cơ chế Wipe của các con mắt."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-room-appearance.jpg", "caption": "Phòng Riven" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-tentacle-bait.jpg", "caption": "Bắn vào móng vuốt/xúc tu của Riven" }
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Bắn mồm và Chui vào cuống họng",
-          "objective": "Final Stand của Riven.",
+          "name": "Giai đoạn 2: Bắn miệng và Cuống họng Riven (Final Stand)",
+          "objective": "Giết hẳn Riven và phá hủy Trái Tim.",
           "steps": [
-            "Bằng sức mạnh của Cheese, máu Riven tụt xuống vạch cuối cùng. Cả team sẽ bị kéo vào khoảng không, dần dần rớt xuống.",
-            "Nhắm bắn vào mấy cục u mụn trên thân thể Riven trong lúc rơi để hạ cánh.",
-            "Khi đáp đất, Riven há to mồm lần cuối. Cả team XẢ TẤT CẢ VŨ KHÍ HẠNG NẶNG vào miệng ả trước khi ả thổi lửa Wipe.",
-            "Khi ả gục xuống, miệng ả hé mở. Cả team BƯỚC THẲNG VÀO TRONG MIỆNG Ả, chạy dọc theo thực quản đi sâu vào trong cuống họng.",
-            "Bên trong bụng Riven có 1 trái tim khổng lồ màu đen. Đập nát nó để kết liễu hoàn toàn sinh vật Ahamkara cuối cùng."
+            "Khi máu Riven tụt xuống vạch cuối, cả team bị dịch chuyển vào không gian Ascendant Realm và rơi tự do.",
+            "Bắn vỡ các khối u (Blights) trên người Riven khi đang rơi để đáp đất an toàn.",
+            "Riven ngoi lên há miệng lần cuối. Đội xả mọi vũ khí hạng nặng vào thẳng CỔ HỌNG (vùng phát sáng) trước khi ả thổi lửa Wipe cả đội.",
+            "Khi Riven gục, chạy vào trong cái mồm khổng lồ của ả, đi sâu vào thực quản.",
+            "Tìm thấy Trái Tim Đen (Taken Heart) của Riven, bắn nát nó để kết thúc sinh mệnh của con rồng."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-climbing-light.jpg", "caption": "Nhảy các bậc đá trong Ascendant Realm" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-final-stand.jpg", "caption": "Riven mở miệng, bắn thẳng vào cổ họng" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-riven-inside-mouth.jpg", "caption": "Chạy sâu vào thực quản Riven bắn nát trái tim" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "queenswalk",
+      "name": "Queenswalk (Chạy trốn cùng Trái Tim)",
+      "roles": {
+        "heart_carrier": {
+          "description": "Người được chọn ngẫu nhiên ôm Trái Tim Riven chạy.",
+          "quantity": 1,
+          "types": [
+            "Runner"
+          ]
+        },
+        "inside_team": {
+          "description": "Những người bị hút vào trong chiều không gian của tim.",
+          "quantity": "Tăng dần",
+          "types": [
+            "Mechanic"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Ôm Tim chạy trốn",
+          "objective": "Chuyển Trái tim Riven về đền thờ của hội Techeun.",
+          "steps": [
+            "Một người ngẫu nhiên (Fate's Chosen) nhặt Trái tim lên. Đồng hồ đếm ngược 15 giây xuất hiện.",
+            "Người ôm tim phát ra một vòng tròn hào quang. NHỮNG NGƯỜI CÒN LẠI PHẢI ĐI TRONG VÒNG TRÒN ĐÓ. Nếu đi ra ngoài, sẽ bị dính debuff 'Creeping Darkness' cộng dồn đến 10 là chết.",
+            "Người ôm tim cứ ôm chạy dọc theo hành lang ngược lại về phía Vault. Hết 15 giây, người đó bị hút vào một chiều không gian khác."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-mouth.jpg", "caption": "Nhặt trái tim để bắt đầu chạy" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-creeping-darkness.jpg", "caption": "Luôn đứng trong vòng sáng để không bị dính Creeping Darkness" }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Gia hạn thời gian",
+          "objective": "Người bên trong nhặt bóng ánh sáng để reset giờ cho người cầm tim bên ngoài.",
+          "steps": [
+            "Người bên ngoài thứ 2 ngẫu nhiên nhặt tim lên và tiếp tục chạy. ",
+            "Người đã bị hút vào không gian trong Tim (Inside Realm) sẽ thấy các luồng ánh sáng Taken (Blights) rơi xuống.",
+            "Người cầm tim bên ngoài đếm lùi thời gian (Ví dụ: 'Còn 3 giây, 2 giây, 1 giây... NHẶT!'). Ngay lập tức, người bên trong ăn quả bóng ánh sáng.",
+            "Hành động này làm RESET lại 15 giây đếm ngược cho người ôm tim bên ngoài. Quá trình tiếp diễn cho đến khi đội bên ngoài quăng được Trái Tim vào bệ đá ở cuối chặng đường để tịnh hóa."
+          ],
+          "images": [
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-beams-of-light.jpg", "caption": "Bóng ánh sáng Taken trong không gian của Tim" },
+            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2018/10/destiny-2-last-wish-raid-rivens-heart-dunk-the-heart.jpg", "caption": "Tịnh hóa Trái tim Riven" }
           ]
         }
       }
