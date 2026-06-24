@@ -105,7 +105,7 @@
             "Khi thanh đầy, người cầm sẽ bị 'Engulfed in Light'. Đếm ngược 10 giây bắt đầu, MỘT NGƯỜI KHÁC phải tương tác để lấy Chén đi. Người đầu tiên sẽ nhận được buff 'Enlightened'.",
             "Người đang có buff Enlightened tiến lại gần cây đèn tắt, bấm nút để Thắp sáng (Dunk) => reset thời gian. Đèn sáng sẽ xóa sạch debuff Weight of Darkness cho những ai đứng gần đó.",
             "Tuy nhiên, cây đèn vừa thắp sẽ dần đổi màu thành đỏ và NỔ TUNG. Do đó sau khi thắp xong, cả team phải chạy tiếp sang cây đèn tiếp theo ngay lập tức.",
-            "Đôi khi sẽ có những hố sáng (Preserve Nodes). Cắm Chalice vào đó để mở đường hoặc để reset lại thời gian nếu cần. Cứ thế lặp lại quy trình Sạc Ly -> Giật Ly -> Thắp Đèn cho đến cuối đường.",
+            "Đôi khi sẽ có những hố sáng (Preserve Nodes). Cắm Chalice vào đó để mở đường hoặc để reset lại thời gian nếu cần. Cứ thế lặp lại quy trình Sạc Ly -> Giật Ly -> Thắp Đèn cho đến cuối đường."
           ]
         },
         "phase_2": {
