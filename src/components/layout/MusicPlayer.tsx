@@ -70,7 +70,7 @@ export function MusicPlayer() {
 
   return (
     <>
-      <audio id="global-bg-audio" ref={audioRef} src="/audio/timeline-theme.mp3" loop preload="auto" />
+      <audio id="global-bg-audio" ref={audioRef} src="/audio/timeline-theme.mp3" loop preload="none" />
 
       <div className="fixed bottom-8 left-8 z-50 flex items-center gap-3">
         {/* Nút Play/Pause kèm hiệu ứng nháy sáng (pulse) khi scroll */}
