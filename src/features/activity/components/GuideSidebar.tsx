@@ -53,11 +53,12 @@ export function GuideSidebar({
     setMounted(true);
   }, []);
 
-  // Flatten item IDs to pass to the hook
-  const itemIds = groups.reduce((acc, g) => {
-    g.items.forEach(item => acc.push(item.id));
-    return acc;
-  }, [] as string[]);
+  // Memoize itemIds so the array reference stays stable across renders.
+  // Without this, useScrollSpy re-registers the scroll listener every render.
+  const itemIds = React.useMemo(
+    () => groups.reduce((acc, g) => { g.items.forEach(item => acc.push(item.id)); return acc; }, [] as string[]),
+    [groups]
+  );
 
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId);
 

@@ -14,8 +14,8 @@ export default function DatabaseLayout({
 
   const tabs = [
     { name: "Exotic Armor", href: "/database/exotic-armor", icon: Shirt },
+    { name: "Exotic Weapons", href: "/database/exotic-weapons", icon: Sparkles },
     { name: "Armor Sets", href: "/database/armor-sets", icon: Shield },
-    { name: "Catalysts", href: "/database/catalysts", icon: Sparkles },
   ]
 
   return (
@@ -26,7 +26,7 @@ export default function DatabaseLayout({
             Destiny 2 Database
           </h1>
           <p className="text-zinc-400 font-mono max-w-2xl">
-            Trung tâm dữ liệu Sherpa. Tra cứu bảng rớt đồ (Loot Tables), các bộ áo giáp (Armor Sets) và hiệu ứng nâng cấp súng (Catalysts).
+            Trung tâm dữ liệu Sherpa. Tra cứu Loot Tables, Armor Sets và Catalysts.
           </p>
         </div>
 
@@ -39,11 +39,10 @@ export default function DatabaseLayout({
               <Link
                 key={tab.name}
                 href={tab.href}
-                className={`flex items-center gap-2 px-6 py-3 rounded-t-lg transition-all border-b-2 font-black uppercase tracking-wider text-sm ${
-                  isActive
+                className={`flex items-center gap-2 px-6 py-3 rounded-t-lg transition-all border-b-2 font-black uppercase tracking-wider text-sm ${isActive
                     ? "border-neon-cyan text-neon-cyan bg-neon-cyan/10"
                     : "border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/50"
-                }`}
+                  }`}
               >
                 <Icon className="w-4 h-4" />
                 {tab.name}

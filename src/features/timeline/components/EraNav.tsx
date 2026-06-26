@@ -22,10 +22,13 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
   const smoothProgress = useSpring(rawProgress, { stiffness: 400, damping: 40, mass: 1 });
   const progressWidth = useTransform(smoothProgress, (p) => `${p}%`);
 
-  const [autoScrollState, setAutoScrollState] = useState<{ start: number, target: number } | null>(null);
+  // Use ref for autoScrollState so the scroll listener doesn't need to re-register
+  // every time auto-scroll state changes (avoids listener thrashing)
+  const autoScrollStateRef = useRef<{ start: number, target: number } | null>(null);
+  const [autoScrollTarget, setAutoScrollTarget] = useState<number | null>(null);
   const autoScrollTimer = useRef<NodeJS.Timeout | null>(null);
 
-  const effectiveActiveIndex = autoScrollState ? autoScrollState.target : navActiveIndex;
+  const effectiveActiveIndex = autoScrollTarget !== null ? autoScrollTarget : navActiveIndex;
   const activeEra = DESTINY_TIMELINE[effectiveActiveIndex] || DESTINY_TIMELINE[0];
   const activeTheme = getTheme(activeEra.themeColor);
   const activeChapterRoman = romanNumerals[effectiveActiveIndex] || String(effectiveActiveIndex + 1);
@@ -62,8 +65,11 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
       rawProgress.set((currentIndex + progress) * (100 / (DESTINY_TIMELINE.length - 1)));
 
       // If auto-scrolling and we reached the target, clear it
-      if (autoScrollState && currentIndex === autoScrollState.target) {
-        setAutoScrollState(null);
+      // Read from ref — no dependency needed, avoids re-registering listener
+      const currentAutoScroll = autoScrollStateRef.current;
+      if (currentAutoScroll && currentIndex === currentAutoScroll.target) {
+        autoScrollStateRef.current = null;
+        setAutoScrollTarget(null);
         if (autoScrollTimer.current) clearTimeout(autoScrollTimer.current);
       }
     };
@@ -71,15 +77,17 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [eraRefs, rawProgress, autoScrollState]);
+  }, [eraRefs, rawProgress]); // autoScrollState removed — using ref instead
 
   const scrollToEra = useCallback((id: string) => {
     const targetIdx = DESTINY_TIMELINE.findIndex(e => e.id === id);
-    setAutoScrollState({ start: navActiveIndex, target: targetIdx });
+    autoScrollStateRef.current = { start: navActiveIndex, target: targetIdx };
+    setAutoScrollTarget(targetIdx);
 
     if (autoScrollTimer.current) clearTimeout(autoScrollTimer.current);
     autoScrollTimer.current = setTimeout(() => {
-      setAutoScrollState(null);
+      autoScrollStateRef.current = null;
+      setAutoScrollTarget(null);
     }, 1500); // Failsafe timeout
 
     eraRefs.current?.get(id)?.scrollIntoView({ behavior: "smooth" });
@@ -146,8 +154,8 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
 
           {/* Nodes */}
           {DESTINY_TIMELINE.map((era, idx) => {
-            const isAutoScrolling = autoScrollState !== null;
-            const isActive = isAutoScrolling ? (idx === autoScrollState.target) : (idx === navActiveIndex);
+            const isAutoScrolling = autoScrollTarget !== null;
+            const isActive = isAutoScrolling ? (idx === autoScrollTarget) : (idx === navActiveIndex);
             const isHovered = hoveredEraId === era.id;
             const isPast = idx <= effectiveActiveIndex;
             const theme = getTheme(era.themeColor);

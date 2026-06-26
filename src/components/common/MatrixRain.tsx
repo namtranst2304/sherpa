@@ -69,6 +69,17 @@ export const MatrixRain = ({ speed = 50, color = '#00f3ff', opacity = 0.2 }: Mat
 
         const interval = setInterval(draw, speed);
 
+        // Pause rendering when tab is not visible to save CPU
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                clearInterval(interval);
+            } else {
+                // Resume by re-drawing — the outer effect will re-run if needed
+                draw();
+            }
+        };
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
         const handleResize = () => {
             setCanvasSize();
             columns = canvas.width / fontSize;
@@ -84,6 +95,7 @@ export const MatrixRain = ({ speed = 50, color = '#00f3ff', opacity = 0.2 }: Mat
         return () => {
             clearInterval(interval);
             window.removeEventListener('resize', handleResize);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
     }, [speed, color]);
 
