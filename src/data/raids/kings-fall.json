@@ -6,7 +6,13 @@
     "non_linear_mechanic": {
       "description": "Thâm nhập vào con tàu Dreadnaught vĩ đại của Oryx lơ lửng trên vành đai sao Thổ để tiêu diệt Vua Hắc Ám.",
       "elevator_plates": []
-    }
+    },
+    "images": [
+      {
+        "url": "https://assetsio.gnwcdn.com/destiny_2_kingsfall_orb_entrance.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+        "caption": "Cổng vào King's Fall (Nguồn: Eurogamer)"
+      }
+    ]
   },
   "loadout_tips": {
     "note": "Các con Boss trong King's Fall đều đứng ở rất xa, hitbox tĩnh và thời gian DPS kéo dài. Vì vậy, Whisper of the Worm, Leviathan's Breath, và Linear Fusion Rifles là hoàng đế của sát thương ở đây.",
@@ -113,7 +119,17 @@
             "Cứ luân chuyển vòng tròn 1-2-3 liên tục như vậy cho đến khi bệ đá ở giữa phòng nạp đủ 200 stack. Cánh cửa vào gặp Warpriest sẽ mở ra."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_totems_diagram_V20cKaz.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Sơ đồ luân chuyển Totems (Nguồn: Eurogamer)"
+        },
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_totems_orb.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Cục Aura (Brand) ở giữa phòng (Nguồn: Eurogamer)"
+        }
+      ]
     },
     {
       "id": "the-warpriest",
@@ -164,7 +180,17 @@
             "Oculus sẽ thiêu rụi cái cột đá đó. Nghĩa là bạn chỉ có tối đa 4 lần Damage Phase (vì có 3 cột đá). Lặp lại Phase 1."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_red_aura.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Đứng túm tụm trong vòng Aura Đỏ (Nguồn: Eurogamer)"
+        },
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_oculus.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Nấp sau cột đá tránh quả cầu Oculus (Nguồn: Eurogamer)"
+        }
+      ]
     },
     {
       "id": "golgoroth",
@@ -215,7 +241,17 @@
             "LƯU Ý WIPE: Trong lúc DPS, ngẫu nhiên 1 người trong đội DPS sẽ bị dính debuff 'Unstable Light' (Màn hình nhấp nháy xanh chói). Khi hết giờ, người này sẽ nổ tung và GIẾT CHẾT CẢ TEAM đứng cạnh. Phải lập tức hô to 'TAO BỊ NỔ!' và tách chạy ra xa khỏi team (cố gắng chạy vào đống quái để vụ nổ giết quái)."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_Golgoroth_back_open.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Bắn vỡ khối u trên lưng để lấy Gaze (Nguồn: Eurogamer)"
+        },
+        {
+          "url": "https://assetsio.gnwcdn.com/golgoroth.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Bắn bụng Golgoroth từ trong vũng nước (Nguồn: Eurogamer)"
+        }
+      ]
     },
     {
       "id": "daughters-of-oryx",
@@ -258,7 +294,17 @@
             "Đánh bại 1 con, bài ca tử thần sẽ dừng lại. Lặp lại toàn bộ quy trình cho con Phù Thủy thứ 2 ở bên kia."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_Kingsfall_daughters_diagram.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Sơ đồ ải Daughters (Nguồn: Eurogamer)"
+        },
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_kingsfalll_deathsingers_torn_platforms.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Leo lên các nền tảng tàng hình (Nguồn: Eurogamer)"
+        }
+      ]
     },
     {
       "id": "oryx-the-taken-king",
@@ -320,7 +366,62 @@
             "Sống sót xong, lặp lại Phase 1. Làm như vậy tầm 2-3 lần đến Final Stand, Oryx sẽ hiện ra ngay chính giữa map há mồm chuẩn bị nổ. Dồn toàn lực bắn vào ngực hắn để tiễn hắn về với chúa trời."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_Kingsfall_Oryx_layout.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Sơ đồ ải Oryx (Nguồn: Eurogamer)"
+        },
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_oryx_fist_smash.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Oryx đập tay kích hoạt bệ số 1 (Nguồn: Eurogamer)"
+        },
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_kingsfall_bomb_detonation.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Chạy vào vòng đen để kích bom (Nguồn: Eurogamer)"
+        }
+      ]
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Red Border Puzzle (Giải đố Viền Đỏ)",
+      "description": "Ngay khi vào khu vực đầu tiên của Raid (Hall of Souls), hãy chui xuống gầm cầu khu vực cổng để tìm 3 biểu tượng (Rune) phát sáng. Việc của bạn là tìm đúng 3 biểu tượng đó được giấu rải rác trong suốt Raid và bắn nó. Làm đúng sẽ nhận 1 vũ khí Red Border ở cuối.",
+      "steps": [
+        "**Vị trí 1:** Ngay tại ải mở cổng, trèo lên cái cột xích (Pendulum) bên phải.",
+        "**Vị trí 2:** Ở khu vực Tomb Ships, trên cái rìa đá chỗ có secret chest.",
+        "**Vị trí 3:** Trước cửa phòng Totems, nằm trên đỉnh cái cột cổng.",
+        "**Vị trí 4:** Ở phòng Warpriest, nhìn lên ban công bên phải (nhìn từ hướng spawn).",
+        "**Vị trí 5:** Mê cung Golgoroth's Cellar, nằm ở cái hố cuối cùng.",
+        "**Vị trí 6:** Trong phòng đánh Golgoroth, nằm dưới gầm cái hố bên trái.",
+        "**Vị trí 7:** Piston Jumping puzzle, ngay gần chỗ lấy secret chest.",
+        "**Vị trí 8:** Phòng Daughters/Oryx, trèo lên bức tường trên không ngay phía trên đầu lúc mới nhảy vào phòng."
+      ],
+      "images": [
+        {
+          "url": "https://assetsio.gnwcdn.com/kings-fall-red-border-chest.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Bắn các biểu tượng Rune ẩn (Nguồn: Eurogamer)"
+        }
+      ]
+    },
+    {
+      "title": "Secret Chest Locations (Rương Ẩn)",
+      "description": "King's Fall có 3 rương ẩn nằm rải rác, cung cấp Spoils of Conquest và trang bị đã mở khóa.",
+      "steps": [
+        "**Chest 1 (Tomb Ships Jumping Puzzle):** Khi bạn đang nhảy qua các con tàu bay, ở đoạn cuối có một mép tường đá bên hông trái. Trèo lên đó leo dọc theo hẻm núi để lấy rương.",
+        "**Chest 2 (Mê cung Golgoroth):** Trong mê cung Golgoroth's Cellar có 4 cái bệ đá ẩn. Cả team (4 người) phải đứng lên 4 bệ đá đó THEO ĐÚNG THỨ TỰ (dựa vào mảnh giấy ghi chú hoặc theo chuỗi). Đạp đúng cửa sẽ mở ra rương.",
+        "**Chest 3 (Piston Jumping Puzzle):** Ở vách đá đẩy người (Piston wall) ngay trước ải Daughters, hãy móc Ghost ra (bấm Tab) để nhìn thấy các bệ tàng hình. Nhảy theo các bệ tàng hình đó để lấy rương ẩn nằm trên tường."
+      ],
+      "images": [
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_kingsfall_tomb_ships.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Khu vực Tomb Ships - Gần Rương ẩn 1 (Nguồn: Eurogamer)"
+        },
+        {
+          "url": "https://assetsio.gnwcdn.com/destiny_2_golgoroths_cellar_maze.jpg?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
+          "caption": "Bản đồ Mê cung Golgoroth (Secret Chest 2) (Nguồn: Eurogamer)"
+        }
+      ]
     }
   ]
 }

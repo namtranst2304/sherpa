@@ -387,6 +387,12 @@
             "Tại mỗi bên sẽ có một cái hộp chữ nhật (Conductor). Để bắt đầu, bắn vào cái hộp đó để sinh ra năng lượng Resonance (các cục vuông lơ lửng).",
             "Sẽ có 1 người chạy ra nhặt Resonance. Nhặt Resonance sẽ có buff đếm ngược. Trước khi hết giờ, phải chạy tới cái hộp và bắn nó để đóng nắp hộp lại (Deposit).",
             "Sau khi đóng, khu vực đó sẽ sinh ra rất nhiều quái và 1 con Subjugator."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/salvations-edge/se-enc1-pyramidical.webp",
+              "caption": "Mảnh năng lượng Kim Tự Tháp (Pyramidical Resonance)"
+            }
           ]
         },
         "phase_2": {
@@ -397,9 +403,21 @@
             "Nhặt Resonance đó mang về Bệ Trung Tâm (Khu vực có 2 Defender đang đứng).",
             "Tại bệ trung tâm có 1 cái hộp lớn. Bắn nó để nạp. Làm như vậy cho cả cánh Trái và Phải.",
             "Tormentor sẽ liên tục xuất hiện quấy phá ở giữa, Defender phải ưu tiên diệt Tormentor. Nạp đủ số lượng sẽ mở cửa sang phòng tiếp theo. Lặp lại 3 phòng."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/salvations-edge/se-enc1-totem.webp",
+              "caption": "Trụ Totem đã được đóng (Closed Totem)"
+            }
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/salvations-edge/se-enc1-layout.webp",
+          "caption": "Bản đồ ải 1: Subjugation (Nguồn: Grindout)"
+        }
+      ]
     },
     {
       "id": "herald-of-finality",
@@ -423,6 +441,12 @@
             "Quy tắc Ping Pong: Người A bắn hộp, hộp nhả Resonance. Dây nối sẽ hướng về người A. Nhưng người A KHÔNG ĐƯỢC NHẶT. Thay vào đó, Người B phải chạy ra nhặt Resonance đó, mang về hộp bắn để nạp.",
             "Lúc này dây nối đổi sang người B. Người A lại chạy ra nhặt Resonance mang về hộp... Cứ thế chuyền qua chuyền lại cho đến khi hộp đầy (Hộp đóng lại, sinh ra Subjugator).",
             "Cảnh báo WIPE: Nếu bạn nhặt Resonance khi dây đang cắm vào người bạn, bạn sẽ chết ngay lập tức."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/salvations-edge/se-enc2-spherical.webp",
+              "caption": "Mảnh năng lượng Hình Cầu (Spherical Resonance)"
+            }
           ]
         },
         "phase_2": {
@@ -434,7 +458,13 @@
             "Boss sẽ đi tới giữa và bắt đầu gọi Wipe. Bắn vỡ đầu hắn (Damage Phase). Lặp lại nếu chưa chết."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/salvations-edge/se-enc2-layout.webp",
+          "caption": "Bản đồ ải 2: Herald of Finality (Nguồn: Grindout)"
+        }
+      ]
     },
     {
       "id": "repository",
@@ -457,9 +487,21 @@
             "Chia 3 cặp: Trái, Phải, Giữa. Áp dụng quy tắc Ping Pong chuyền bóng.",
             "Khác biệt là Subjugators và Tormentors sẽ xuất hiện dày đặc cực kỳ khó chịu. Phải dùng Super và Vũ khí hạng nặng liên tục để sinh tồn.",
             "Hoàn thành nạp hộp trung tâm ở mỗi phòng để mở đường đi lên tháp. Hoàn thành 3 phòng là qua ải."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/salvations-edge/se-enc3-room1.webp",
+              "caption": "Cấu trúc phòng đầu tiên"
+            }
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/salvations-edge/se-enc3-layout.webp",
+          "caption": "Sơ đồ cơ bản ải 3: Repository (Nguồn: Grindout)"
+        }
+      ]
     },
     {
       "id": "verity",
@@ -490,6 +532,12 @@
             "Trên tường có 2 con Knights. Giết Knight rớt ra biểu tượng. Bạn phải 'Gửi' biểu tượng đi cho người khác bằng cách đập biểu tượng đó vào bức tượng của người đó trong phòng mình.",
             "Mục tiêu tối thượng: Nếu tượng của bạn cầm Vuông, bạn phải trao đổi sao cho 2 con Knight cuối cùng trong phòng bạn rớt ra Tròn và Tam giác. KHÔNG ĐƯỢC CÓ VUÔNG.",
             "Khi đã có đủ Tròn và Tam giác, nhặt cả 2 lên, bạn sẽ có chìa khóa thoát ra ngoài."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/salvations-edge/se-enc4-verity-statue.webp",
+              "caption": "Nhận diện hình khối trên tay tượng"
+            }
           ]
         },
         "phase_2": {
@@ -511,7 +559,17 @@
             "Nhặt biểu tượng rớt ra từ bóng giả, đập vào cái bóng thật tương ứng để hồi sinh đồng đội. Làm đủ là qua ải."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/salvations-edge/se-enc4-verity-shapes.webp",
+          "caption": "Cơ chế chia 3D shapes ở Encounter 4 - Verity (Nguồn: Shacknews)"
+        },
+        {
+          "url": "/images/raids/salvations-edge/se-enc4-map.webp",
+          "caption": "Bản đồ phòng ải 4: Verity (Nguồn: Grindout)"
+        }
+      ]
     },
     {
       "id": "the-witness",
@@ -570,7 +628,13 @@
             "Final Stand: Bắn cho đến khi hắn hóa thành cột ánh sáng vỡ vụn. Kết thúc kỷ nguyên Ánh Sáng và Bóng Tối."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/salvations-edge/se-enc5-witness-shapes.webp",
+          "caption": "Các dạng đòn đánh tay của The Witness (Nguồn: Shacknews)"
+        }
+      ]
     }
   ],
   "armor_table": [
@@ -594,6 +658,38 @@
       "source": "Salvation's Edge Encounters",
       "image": "https://www.bungie.net/common/destiny2_content/icons/e76ab6de8dcf2821dd4b6d4db1c7848f.jpg",
       "setBonus": "Stable Resonance"
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Red Border Puzzle (Giải đố Viền Đỏ)",
+      "description": "Hoàn thành giải đố này trong một run liên tục để nhận 1 vũ khí Red Border (vũ khí chế tạo) chắc chắn ở rương cuối.",
+      "steps": [
+        "**Bước 1 - Đọc code:** Ngay đầu raid, sau khi bước vào khối Monolith, bạn sẽ thấy một bức tường có 8 cột biểu tượng. Hãy nhìn vào **cột thứ 3 từ trái đếm sang**, và ghi nhớ 3 biểu tượng từ dưới lên trên (Dưới = Phòng 1, Giữa = Phòng 2, Trên = Phòng 3).",
+        "**Bước 2 - Các phòng ẩn:** Trong Raid có 5 phòng giải đố ẩn, nhưng mỗi tuần chỉ có 3 phòng kích hoạt (tương ứng với 3 biểu tượng bạn vừa đọc). Nếu gặp phòng có bàn thờ báo 'You are lacking', hãy bỏ qua.",
+        "**Bước 3 - Nạp Resonance:** Trong 3 phòng được kích hoạt, bạn phải tìm một bệ Conductor đang phát sáng, sau đó nhặt đúng loại Resonance (Tròn, Tam Giác, hoặc Vuông) tương ứng với biểu tượng đã đọc ở tường để nạp vào bệ.",
+        "**Bước 4 - Hoàn thành:** Làm đúng cả 3 phòng, dòng chữ xác nhận sẽ hiện lên và bạn sẽ nhận được Red Border ở rương boss cuối cùng."
+      ],
+      "images": [
+        {
+          "url": "https://grindout.com/storage/guide-images/155/verity-key.jpg",
+          "caption": "Bảng nhận diện Hạt Giống Đỏ (Red Border Puzzle)"
+        }
+      ]
+    },
+    {
+      "title": "Secret Chest Locations (Rương Ẩn)",
+      "description": "Salvation's Edge có 2 rương ẩn nằm trong các phân đoạn Jumping Puzzle, cung cấp Spoils of Conquest và trang bị đã mở khóa.",
+      "steps": [
+        "**Chest 1 (Giữa ải 2 và 3):** Nằm trong phân đoạn nhảy dài sau khi đánh bại Herald of Finality. Hãy chú ý tìm ở khu vực có các khối lập phương lớn và chất lỏng màu cam.",
+        "**Chest 2 (Giữa ải 4 và 5):** Nằm trong phân đoạn jumping puzzle sau ải 4 (Verity), ngay trước khi bước vào phòng đánh The Witness."
+      ],
+      "images": [
+        {
+          "url": "https://grindout.com/storage/guide-images/155/2nd-to-3rd-traversal.jpg",
+          "caption": "Khu vực Jumping Puzzle chứa rương ẩn"
+        }
+      ]
     }
   ]
 }

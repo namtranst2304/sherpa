@@ -100,6 +100,12 @@
             "Các nhóm di chuyển về vị trí bệ được phân công. Mỗi người bước vào bệ và đứng yên bên trong cho đến khi viền tròn của bệ chuyển sang màu trắng hoàn toàn (chiếm quyền kiểm soát).",
             "Ngay khi cả 3 bệ được chiếm, một trụ tháp (The Spire) ở giữa khu vực sẽ bắt đầu hình thành từ từ bằng các vòng năng lượng Vex.",
             "Lưu ý: Bạn không cần phải liên tục đứng trong bệ sau khi nó đã trắng. Bạn có thể đứng bên ngoài để tiện bắn quái, miễn là không có con Vex nào chạm vào bệ."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-1-vex-plates.webp",
+              "caption": "Bảo vệ các Sync Plates để xây Spire"
+            }
           ]
         },
         "phase_2": {
@@ -112,7 +118,13 @@
             "Giữ vững cả 3 bệ trong khoảng 3-5 phút cho đến khi The Spire hoàn tất, một tia sáng bắn ra mở toang cánh cửa dưới lòng đất."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-1-raise-the-spire.webp",
+          "caption": "The Spire in Waking Ruins"
+        }
+      ]
     },
     {
       "id": "confluxes",
@@ -138,7 +150,13 @@
             "Cách giải debuff: Ở khu vực thấp nhất giữa bản đồ, có một bệ đá tròn phát ra cột sáng màu trắng rực rỡ (gọi là vũng Cleanse). Nếu bị dính Mark, hãy hô to cho đồng đội biết, nhảy xuống chạy vào trong cột sáng đó để gột rửa (Cleanse) bản thân."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-2-confluxes-wyverns.webp",
+          "caption": "Phòng thủ Confluxes trước lũ Vex"
+        }
+      ]
     },
     {
       "id": "oracles",
@@ -173,7 +191,13 @@
             "Hình phạt: Nếu bắn sai thứ tự, bắn quá chậm, hoặc bắn nhầm, toàn team sẽ bị đánh dấu 'Mark of Negation'. Ngay lập tức, tất cả mọi người phải bỏ vị trí, cắm đầu nhảy xuống vũng sáng ở giữa bản đồ để Cleanse trước khi Templar gọi chiêu (khoảng 5 giây). Sau khi Cleanse, bạn sẽ phải làm lại đợt Wave đó."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-3-oracles.webp",
+          "caption": "Xác định và tiêu diệt Oracles theo thứ tự"
+        }
+      ]
     },
     {
       "id": "the-templar",
@@ -224,7 +248,13 @@
             "Lưu ý: Đổi lại việc chặn Teleport, Boss sẽ liên tục đẻ ra các con Minotaurs tinh anh rất rát. Team DPS phải chú ý sống sót và quăng lựu đạn dọn bớt quái."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-4-templar-damage-strategy.webp",
+          "caption": "Chiến thuật dồn sát thương vào Templar"
+        }
+      ]
     },
     {
       "id": "gorgons-labyrinth",
@@ -292,7 +322,13 @@
             "Hàng loạt Minotaurs và Praetorians có giáp Vô địch sẽ đổ ra liên tục. Người đang cầm khiên Aegis phải múa kiếm liên tục để phá giáp bọn chúng cho đồng đội bắn. Thủ vững cho đến khi hết quái là qua màn."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-5-gatekeeper-relic.webp",
+          "caption": "Sử dụng Aegis (Khiên) để tiêu diệt Praetorians"
+        }
+      ]
     },
     {
       "id": "atheon-times-conflux",
@@ -322,6 +358,12 @@
             "Bên trong (Inside Team): Một người lập tức nhặt khiên Aegis rớt dưới đất. Nhìn quang cảnh xung quanh để biết mình đang ở đâu (Cây cỏ xanh mướt là Venus, sa mạc đỏ là Mars) và hô to lên: 'Tụi tao ở Venus/Mars!'. Tất cả chạy vào góc trong cùng đối diện cánh cổng.",
             "Bên ngoài (Outside Team): Nghe callout, lập tức đứng vào bệ Sync Plate tương ứng (Venus thì bệ Trái, Mars thì bệ Phải) để mở cổng cho team Inside về.",
             "Đọc Oracles (Outside): Ngay lập tức quan sát bầu trời phía trên cao ở giữa map. Oracles sẽ hiện nháp màu đỏ thành từng đợt 3 cục. Sẽ có 6 vị trí (Far Left, Far Mid, Far Right, Near Left, Near Mid, Near Right). Người ở ngoài phải đọc thật chuẩn xác TÍNH TỪ TRÁI SANG PHẢI vị trí của 3 cục đó. (Ví dụ: Trái Gần, Giữa Xa, Phải Gần)."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-6-atheon-main-room-oracles.webp",
+              "caption": "Đọc thứ tự xuất hiện của Oracles"
+            }
           ]
         },
         "phase_2": {
@@ -342,9 +384,39 @@
             "LƯU Ý CỰC KỲ QUAN TRỌNG: Ở giây thứ 15 của Damage Phase, một người chơi ngẫu nhiên sẽ bị debuff 'Imminent Detain' đếm ngược 5 giây. Khi hết đếm ngược, người đó sẽ bị bọc trong một quả bóng giam cầm (Detain bubble).",
             "Nếu người bị Detain đứng chung với đồng đội, QUẢ BÓNG SẼ GIAM CẢ TEAM VÀ WIPE. Do đó, ai thấy debuff Imminent Detain trên màn hình, phải lập tức hô to và TÁCH RA KHỎI ĐỘI HÌNH nhảy ra mép map, đợi bị giam rồi đồng đội bắn vỡ quả bóng để cứu.",
             "Khi Time's Vengeance kết thúc, Atheon sẽ đóng khiên lại. Lặp lại toàn bộ quy trình từ Giai đoạn 1."
+          ],
+          "images": [
+            {
+              "url": "/images/raids/vault-of-glass/destiny-2-vault-of-glass-guide-6-atheon-damage-sniper.webp",
+              "caption": "Dồn sát thương vào Atheon từ trên bục giữa"
+            }
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/raids/vault-of-glass/vault-of-glass-atheon-oracle-call-out.webp",
+          "caption": "Sơ đồ Callout các Oracles (Atheon)"
+        }
+      ]
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Secret Chest Locations (Rương Ẩn)",
+      "description": "Vault of Glass có tổng cộng 4 rương ẩn. Các rương này rớt Spoils of Conquest, raid mods, và các trang bị bạn đã từng mở khóa trước đó trong Raid. Nhặt đủ 4 rương sẽ hoàn thành Triumph 'Temporal Caches' để lấy danh hiệu Fatebreaker.",
+      "steps": [
+        "**Chest 1 (Khu vực Waking Ruins):** Ngay sau khi mở cổng The Spire thành công và bước vào khu vực đầu tiên của Vault, bạn sẽ tìm thấy rương nằm ở một góc nhỏ gần đường đi chính.",
+        "**Chest 2 (Đường tới Templar):** Nằm trên một con đường bí mật trong phân đoạn nhảy platforming (Jumping puzzle) để đi xuống khu vực Confluxes/Templar.",
+        "**Chest 3 (Gorgon's Labyrinth):** Rương này bị khóa sau một cánh cửa. Trong mê cung Gorgon, bạn phải tìm và bắn vỡ 3 cục Vex nodes trong cùng một run. Khi bắn đủ 3 cục, dòng chữ 'A door has opened...' sẽ hiện lên. Rương nằm sau cánh cửa đó.",
+        "**Chest 4 (Trước ải Gatekeeper):** Nằm trong khu vực jumping puzzle ngay trước khi bước vào ải Gatekeeper/Atheon. Nằm ở một gờ đá khuất."
+      ],
+      "images": [
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/05/23/vault-of-glass-raid-guide-destiny-2_feature.jpg",
+          "caption": "Vault of Glass - Secret Chests"
+        }
+      ]
     }
   ]
 }
