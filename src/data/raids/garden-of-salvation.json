@@ -6,7 +6,13 @@
     "non_linear_mechanic": {
       "description": "Raid này diễn ra theo trình tự tuyến tính từ đầu đến cuối. Xuyên suốt Raid là một chuỗi Quest ẩn để lấy khẩu Trace Rifle Exotic Divinity. Hướng dẫn này sẽ tập trung vào cơ chế chính của các Encounter tiêu chuẩn.",
       "elevator_plates": []
-    }
+    },
+    "images": [
+      {
+        "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Farticle%2F2019%2F10%2F07%2Fgarden-of-salvation-raid-guide-destiny-2_feature.jpg&width=1032",
+        "caption": "Cổng vào Black Garden (Nguồn: Shacknews)"
+      }
+    ]
   },
   "loadout_tips": {
     "note": "Raid này đòi hỏi sự phân chia rõ ràng giữa việc chạy cơ chế (bảo vệ trạm, nhặt hạt) và dồn sát thương Boss. Các ải đầu tập trung mạnh vào Add Clear (dọn quái) và sinh tồn, trong khi 2 ải cuối yêu cầu burst DPS cực mạnh kết hợp khả năng bắn điểm yếu (Crit Spot) chuẩn xác do Boss di chuyển rất khó chịu.",
@@ -158,7 +164,12 @@
           ]
         }
       ],
-      "images": []
+      "images": [
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-evade-consecrated-mind-open-gate.jpg&width=986",
+          "caption": "Mở cổng đuổi theo Boss (Nguồn: Shacknews)"
+        }
+      ]
     },
     {
       "id": "enc_2",
@@ -216,7 +227,16 @@
           ]
         }
       ],
-      "images": []
+      "images": [
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-undergrowth-map.jpg&width=986",
+          "caption": "Sơ đồ bệ Undergrowth (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fdestiny-2-garden-of-salvation-summon-consecrated-mind-start-encounter.jpg&width=986",
+          "caption": "Bắt đầu ải 2 (Nguồn: Shacknews)"
+        }
+      ]
     },
     {
       "id": "enc_3",
@@ -266,7 +286,16 @@
           ]
         }
       },
-      "images": []
+      "images": [
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-defeat-consecrated-mind-map.jpg&width=986",
+          "caption": "Sơ đồ ải 3 (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-defeat-consecrated-mind-damage-phase.jpg&width=986",
+          "caption": "Damage Phase Consecrated Mind (Nguồn: Shacknews)"
+        }
+      ]
     },
     {
       "id": "enc_4",
@@ -322,7 +351,16 @@
           ]
         }
       },
-      "images": []
+      "images": [
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-sanctified-mind-platforms.jpg&width=986",
+          "caption": "Xây lại nền tảng đã mất (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-sanctified-mind-damage-phase.jpg&width=986",
+          "caption": "Damage Phase Sanctified Mind (Nguồn: Shacknews)"
+        }
+      ]
     }
   ]
 }

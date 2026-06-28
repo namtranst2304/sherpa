@@ -6,7 +6,13 @@
     "non_linear_mechanic": {
       "description": "Thâm nhập vào con tàu Sunken Pyramid của The Witness nằm sâu trong đầm lầy Disciple's Bog để tiêu diệt Rhulk - Đệ tử đầu tiên của The Witness.",
       "elevator_plates": []
-    }
+    },
+    "images": [
+      {
+        "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-vow-of-the-disciple-raid-symbols-v2.jpg&width=986",
+        "caption": "Bảng biểu tượng (Symbols) trong Vow of the Disciple (Nguồn: Shacknews)"
+      }
+    ]
   },
   "loadout_tips": {
     "note": "Raid này yêu cầu khả năng Dọn quái (Add clear) cực mạnh ở ải 3 và dồn sát thương mục tiêu di động ở ải cuối. Rhulk cực kỳ lanh lẹ và liên tục lướt tới đá người chơi, vì vậy Súng Tuyến Tính (Linear Fusion Rifle), Súng Máy, hoặc Divinity kết hợp Rocket là những lựa chọn tốt nhất. Caretaker là một bài kiểm tra DPS yêu cầu lượng đạn dồi dào.",
@@ -61,6 +67,10 @@
         {
           "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2022/03/destiny-2-vow-of-the-disciple-reference-pillar.jpg",
           "caption": "Cột tháp chỉ dẫn (Reference Pillar) tại ải Acquisition"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-vow-of-the-disciple-obelisk-encounter-reference-pillar.jpg&width=986",
+          "caption": "Cột Obelisk (Nguồn: Shacknews)"
         }
       ],
       "roles": {
@@ -112,7 +122,16 @@
     {
       "id": "caretaker",
       "name": "The Caretaker",
-      "images": [],
+      "images": [
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-vow-of-the-disciple-caretaker-symbols.jpg&width=986",
+          "caption": "Biểu tượng trên cột Caretaker (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-vow-of-the-disciple-caretaker-damage-phase.jpg&width=986",
+          "caption": "Damage Phase Caretaker (Nguồn: Shacknews)"
+        }
+      ],
       "roles": {
         "runners": {
           "description": "2 người luân phiên chạy vào phòng tối thu thập biểu tượng.",
@@ -166,7 +185,12 @@
     {
       "id": "exhibition",
       "name": "Exhibition (The Upended)",
-      "images": [],
+      "images": [
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-artifacts-exhibition-map.jpg&width=986",
+          "caption": "Sơ đồ ải Exhibition (Nguồn: Shacknews)"
+        }
+      ],
       "roles": {
         "relic_holders": {
           "description": "Người cầm Cổ vật (Laser, Khiên Aegis, Mắt Riven).",
@@ -217,6 +241,14 @@
         {
           "url": "https://shacknews-www.s3.amazonaws.com/assets/article/2022/03/10/vow-of-the-disciple-rhulk-extra-chest-symbol-locations-destiny-2_feature.jpg",
           "caption": "Boss cuối Rhulk, Disciple of the Witness"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-vow-of-the-disciple-rhulk-leeching-force-cycle.jpg&width=986",
+          "caption": "Vòng lặp chia sẻ Leeching Force (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-vow-of-the-disciple-rhulk-damage-phase.jpg&width=986",
+          "caption": "Bắn vỡ điểm yếu của Rhulk (Nguồn: Shacknews)"
         }
       ],
       "roles": {
@@ -295,6 +327,10 @@
         {
           "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2022/03/destiny-2-vow-of-the-disciple-symbol-room-darkness.jpg",
           "caption": "Vị trí phòng biểu tượng Darkness"
+        },
+        {
+          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2022%2F03%2Fdestiny-2-vow-of-the-disciple-payload-hidden-chest-location.jpg&width=986",
+          "caption": "Vị trí Rương Ẩn 1 (Payload) (Nguồn: Shacknews)"
         }
       ],
       "steps": [
