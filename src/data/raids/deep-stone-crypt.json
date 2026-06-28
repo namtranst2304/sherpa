@@ -132,12 +132,18 @@
             "Rương nằm trên một gờ đá cao nhô ra vực thẳm."
           ],
           "images": [
-            { "url": "https://editors.charlieintel.com/wp-content/uploads/2020/11/How-to-find-the-Deep-Stone-Crypt-secret-chests-in-Destiny-2_-Beyond-Light-chest-1.jpg", "caption": "Vị trí Hidden Chest 1: Gờ đá nhô ra vách núi" }
+            {
+              "url": "https://editors.charlieintel.com/wp-content/uploads/2020/11/How-to-find-the-Deep-Stone-Crypt-secret-chests-in-Destiny-2_-Beyond-Light-chest-1.jpg",
+              "caption": "Vị trí Hidden Chest 1: Gờ đá nhô ra vách núi"
+            }
           ]
         }
       ],
       "images": [
-        { "url": "/images/raids/deep-stone-crypt/enc_0_desolation.webp", "caption": "Bản đồ tuyến đường an toàn (Desolation) - Encounter 0 (Credit: TheRedDelilah)" }
+        {
+          "url": "/images/raids/deep-stone-crypt/enc_0_desolation.webp",
+          "caption": "Bản đồ tuyến đường an toàn (Desolation) - Encounter 0 (Credit: TheRedDelilah)"
+        }
       ]
     },
     {
@@ -171,9 +177,18 @@
             "Operator bắn đúng 4 bảng (2 Dark, 2 Light). Hệ thống sẽ thông báo phòng bảo vệ đã mở."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-room-layout.jpg", "caption": "Sơ đồ phòng Security (Dark/Light)" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-basement-keypad.jpg", "caption": "Bảng điều khiển (Panels) phát sáng màu vàng dưới hầm" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-augmentation-terminal.jpg", "caption": "Máy luân chuyển Buff (Terminal)" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-room-layout.jpg",
+              "caption": "Sơ đồ phòng Security (Dark/Light)"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-basement-keypad.jpg",
+              "caption": "Bảng điều khiển (Panels) phát sáng màu vàng dưới hầm"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-augmentation-terminal.jpg",
+              "caption": "Máy luân chuyển Buff (Terminal)"
+            }
           ]
         },
         "phase_2": {
@@ -189,14 +204,26 @@
             "Lưu ý: Nếu không phá đủ 6 ống trong 1 lượt, phòng hầm sẽ bị bốc cháy. Operator mới trên mặt đất phải bắn cửa hầm thả người khác xuống để đổi ca, lặp lại Phase 1."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-fuses-basement.jpg", "caption": "Cầu chì phát sáng khi nhìn từ dưới hầm" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-fuses-exposed.jpg", "caption": "Các ống cầu chì mở ra ở trên mặt đất" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-fuses-basement.jpg",
+              "caption": "Cầu chì phát sáng khi nhìn từ dưới hầm"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-security-fuses-exposed.jpg",
+              "caption": "Các ống cầu chì mở ra ở trên mặt đất"
+            }
           ]
         }
       },
       "images": [
-        { "url": "/images/raids/deep-stone-crypt/enc_1_callout.webp", "caption": "Bản đồ Callout chi tiết Encounter 1: Security (Credit: TheRedDelilah)" },
-        { "url": "/images/raids/deep-stone-crypt/enc_1_basement.webp", "caption": "Bản đồ chi tiết Tầng Hầm (Basement) - Security (Credit: TheRedDelilah)" }
+        {
+          "url": "/images/raids/deep-stone-crypt/enc_1_callout.webp",
+          "caption": "Bản đồ Callout chi tiết Encounter 1: Security (Credit: TheRedDelilah)"
+        },
+        {
+          "url": "/images/raids/deep-stone-crypt/enc_1_basement.webp",
+          "caption": "Bản đồ chi tiết Tầng Hầm (Basement) - Security (Credit: TheRedDelilah)"
+        }
       ]
     },
     {
@@ -224,9 +251,18 @@
             "Ví dụ Space DPS trước: Scanner ở Space soi xem trong 4 con Boss, con nào phát sáng màu Vàng rực. Gọi cả đội áp sát con đó."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-operator.jpg", "caption": "Buff Operator rớt ở Earth" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-scanner.jpg", "caption": "Buff Scanner rớt ở Space" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-sentinel-servitor.jpg", "caption": "Sentinel Servitor (phải giết để rơi buff)" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-operator.jpg",
+              "caption": "Buff Operator rớt ở Earth"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-scanner.jpg",
+              "caption": "Buff Scanner rớt ở Space"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-sentinel-servitor.jpg",
+              "caption": "Sentinel Servitor (phải giết để rơi buff)"
+            }
           ]
         },
         "phase_2": {
@@ -241,7 +277,10 @@
             "Operator (Đỏ) ở Space bắn vào bảng điều khiển cửa Air-lock để mở. Những người ôm cầu chạy vào trong, Operator bắn rơi quả cầu khỏi người họ, họ chạy ra ngoài. Air-lock đóng lại, hút toàn bộ quả cầu ra ngoài vũ trụ."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-replication-debuff.jpg", "caption": "Quả cầu Debuff Replication (phải nhặt sau khi chém Boss)" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-replication-debuff.jpg",
+              "caption": "Quả cầu Debuff Replication (phải nhặt sau khi chém Boss)"
+            }
           ]
         },
         "phase_3": {
@@ -253,7 +292,10 @@
             "Chém vỡ 1 con, soi tiếp con khác sáng, chém đến khi sạch máu Boss. Không cần nhặt cầu ở phase này."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-last-stand.jpg", "caption": "Tất cả 8 phân thân xuất hiện ở Final Stand" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-atraks-1-last-stand.jpg",
+              "caption": "Tất cả 8 phân thân xuất hiện ở Final Stand"
+            }
           ]
         }
       },
@@ -267,13 +309,22 @@
             "Nhảy lên đó và đi dọc theo gờ tường để tìm rương."
           ],
           "images": [
-            { "url": "https://editors.charlieintel.com/wp-content/uploads/2020/11/How-to-find-the-Deep-Stone-Crypt-secret-chests-in-Destiny-2_-Beyond-Light-chest-2.jpg", "caption": "Vị trí Hidden Chest 2: Nằm trên gờ của một giàn giáo ngoài không gian" }
+            {
+              "url": "https://editors.charlieintel.com/wp-content/uploads/2020/11/How-to-find-the-Deep-Stone-Crypt-secret-chests-in-Destiny-2_-Beyond-Light-chest-2.jpg",
+              "caption": "Vị trí Hidden Chest 2: Nằm trên gờ của một giàn giáo ngoài không gian"
+            }
           ]
         }
       ],
       "images": [
-        { "url": "/images/raids/deep-stone-crypt/enc_2_downstairs.webp", "caption": "Bản đồ Callout chi tiết Mặt Đất (Downstairs) - Atraks-1 (Credit: TheRedDelilah)" },
-        { "url": "/images/raids/deep-stone-crypt/enc_2_space.webp", "caption": "Bản đồ Callout chi tiết Không Gian (Space) - Atraks-1 (Credit: TheRedDelilah)" }
+        {
+          "url": "/images/raids/deep-stone-crypt/enc_2_downstairs.webp",
+          "caption": "Bản đồ Callout chi tiết Mặt Đất (Downstairs) - Atraks-1 (Credit: TheRedDelilah)"
+        },
+        {
+          "url": "/images/raids/deep-stone-crypt/enc_2_space.webp",
+          "caption": "Bản đồ Callout chi tiết Không Gian (Space) - Atraks-1 (Credit: TheRedDelilah)"
+        }
       ]
     },
     {
@@ -307,8 +358,14 @@
             "Lúc Boss choáng, các thùng Bins mới chính thức mở nắp. Người ôm lõi lập tức NẠP (Dunk) lõi vào thùng."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-nuclear-core.jpg", "caption": "Nuclear Core rơi ra từ các bệ phóng" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-suppressor.jpg", "caption": "Suppressor (Xanh biển) đứng dưới drone bảo vệ để bắn choáng Boss" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-nuclear-core.jpg",
+              "caption": "Nuclear Core rơi ra từ các bệ phóng"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-suppressor.jpg",
+              "caption": "Suppressor (Xanh biển) đứng dưới drone bảo vệ để bắn choáng Boss"
+            }
           ]
         },
         "phase_2": {
@@ -320,7 +377,10 @@
             "Lặp lại quy trình Nhặt Lõi -> Soi Thùng -> Bắn Choáng Boss -> Nạp Lõi -> Đổi Buff khoảng 6 lần cho đến khi cửa trung tâm mở ra."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-deactivated-augment.jpg", "caption": "Buff bị khóa (màu đỏ) cần được cất vào máy Terminal" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-deactivated-augment.jpg",
+              "caption": "Buff bị khóa (màu đỏ) cần được cất vào máy Terminal"
+            }
           ]
         },
         "phase_3": {
@@ -331,12 +391,18 @@
             "Dùng khiên chặn, hồi máu hoặc chạy thục mạng tới căn phòng trú ẩn an toàn ở cuối đường."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-hatch-run.jpg", "caption": "Chạy trốn qua đường hầm trạm vũ trụ rơi" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-reborn-hatch-run.jpg",
+              "caption": "Chạy trốn qua đường hầm trạm vũ trụ rơi"
+            }
           ]
         }
       },
       "images": [
-        { "url": "/images/raids/deep-stone-crypt/enc_3_rapture.webp", "caption": "Bản đồ Callout chi tiết Encounter 3: The Descent / Rapture (Credit: TheRedDelilah)" }
+        {
+          "url": "/images/raids/deep-stone-crypt/enc_3_rapture.webp",
+          "caption": "Bản đồ Callout chi tiết Encounter 3: The Descent / Rapture (Credit: TheRedDelilah)"
+        }
       ]
     },
     {
@@ -371,11 +437,26 @@
             "Suppressor chạy dưới 3 Drone, bắn Taniks 3 lần để choáng hắn. Chú ý: Bắn choáng CÀNG CHẬM thì người ôm lõi càng có thời gian di chuyển, nhưng chậm quá họ sẽ chết vì phóng xạ. Canh lúc họ vừa tới thùng thì bắn phát thứ 3 mở nắp."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-arena-labels.jpg", "caption": "Sơ đồ 3 khu vực (Spawn, Trái, Phải)" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-scanner-bucket.jpg", "caption": "Scanner soi 2 thùng rác phát sáng vàng" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-take-nuclear-core.jpg", "caption": "Bắn 2 điểm sáng quanh Taniks để rớt Lõi Hạt Nhân" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-drones.jpg", "caption": "Suppressor bắn choáng Boss dưới Drone" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-detained.jpg", "caption": "Lồng giam màu tím nhốt người ôm lõi (Operator phải giải cứu)" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-arena-labels.jpg",
+              "caption": "Sơ đồ 3 khu vực (Spawn, Trái, Phải)"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-scanner-bucket.jpg",
+              "caption": "Scanner soi 2 thùng rác phát sáng vàng"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-take-nuclear-core.jpg",
+              "caption": "Bắn 2 điểm sáng quanh Taniks để rớt Lõi Hạt Nhân"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-drones.jpg",
+              "caption": "Suppressor bắn choáng Boss dưới Drone"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-detained.jpg",
+              "caption": "Lồng giam màu tím nhốt người ôm lõi (Operator phải giải cứu)"
+            }
           ]
         },
         "phase_2": {
@@ -396,14 +477,46 @@
             "Khi máu sát đáy (Final Stand), Boss sẽ liên tục xả thiên thạch tím và teleport nhẹ. Nhồi toàn bộ sát thương còn lại để kết liễu."
           ],
           "images": [
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-damage-phase.jpg", "caption": "Phase DPS: Nhảy vào vòng xoáy năng lượng của Taniks" },
-            { "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-last-stand.jpg", "caption": "Final Stand: Taniks ném mưa thiên thạch" }
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-damage-phase.jpg",
+              "caption": "Phase DPS: Nhảy vào vòng xoáy năng lượng của Taniks"
+            },
+            {
+              "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2020/11/destiny-2-deep-stone-crypt-taniks-abomination-last-stand.jpg",
+              "caption": "Final Stand: Taniks ném mưa thiên thạch"
+            }
           ]
         }
       },
       "images": [
-        { "url": "/images/raids/deep-stone-crypt/enc_4_taniks.webp", "caption": "Bản đồ Callout chi tiết Final Encounter: Taniks (Credit: TheRedDelilah)" }
+        {
+          "url": "/images/raids/deep-stone-crypt/enc_4_taniks.webp",
+          "caption": "Bản đồ Callout chi tiết Final Encounter: Taniks (Credit: TheRedDelilah)"
+        }
       ]
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Secret Chest Locations (Rương Ẩn)",
+      "description": "Deep Stone Crypt có 2 rương ẩn giúp rơi ra Raid mods (như Enhanced Scanner/Operator/Suppressor) và các vũ khí/giáp bạn đã từng nhận được.",
+      "steps": [
+        "**Chest 1 (Sparrow Section - Desolation):** Ngay phần đầu tiên của Raid. Ở khu vực bão tuyết cuối cùng (bọt khí nhiệt an toàn cuối cùng) trước khi tiến vào cơ sở, thay vì đi thẳng tới cửa, hãy men theo bờ vực băng giá bên tay trái, trèo lên gờ đá hẹp và đi vòng ra phía sau tảng băng để tìm rương.",
+        "**Chest 2 (Space Walk - Morning Star):** Ở khu vực nhảy ngoài không gian (Space Walk) sau ải Atraks-1 (Lullaby phase). Sau khi ra ngoài không gian, đi dọc theo những giàn giáo kim loại. Tới đoạn bạn phải nhảy qua một khoảng trống dài, thay vì nhảy sang phải theo đường chính, hãy nhảy sang các bệ kim loại nhỏ bên tay trái trên cao, trèo dọc theo thân vệ tinh để tìm một khu vực ẩn chứa rương."
+      ],
+      "images": []
+    },
+    {
+      "title": "Ghost Shell Collectibles (Stranger's Data / Exo Logs)",
+      "description": "Nhặt đủ 5 cuốn nhật ký Exo (Exo Stranger Logs/Datapads) giấu rải rác trong raid sẽ hoàn thành Triumph và cho bạn Vỏ Ghost độc quyền của Raid DSC (No Love Lost).",
+      "steps": [
+        "**Log 1:** Trong vùng bão tuyết Desolation, ngay tại trạm nhiệt đầu tiên khi bạn dùng Sparrow.",
+        "**Log 2:** Khu vực đường hầm bí mật giấu Secret Chest 1 (như đã nói ở trên).",
+        "**Log 3:** Bên trong phòng thí nghiệm lạnh giá trước ải Atraks-1, ở khu vực có các đường ống trên cao.",
+        "**Log 4:** Khu vực Jump Puzzle ngoài không gian (Spacewalk), trên con đường đi lấy Secret Chest 2.",
+        "**Log 5:** Trong hầm ngầm của Ải 3 (Nuclear Descent), nấp sau các cột trụ lớn."
+      ],
+      "images": []
     }
   ]
 }

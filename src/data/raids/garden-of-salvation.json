@@ -382,21 +382,72 @@
   "activity_secrets": [
     {
       "title": "Divinity Exotic Quest (Giải đố lấy súng Divinity)",
-      "description": "Garden of Salvation có một chuỗi 7 câu đố nối dây (Tether Puzzles) rải rác từ đầu đến cuối Raid. Hoàn thành toàn bộ 7 câu đố trong cùng 1 lần đi (không được out ra) và đánh bại boss cuối, bạn sẽ nhận được súng Exotic Trace Rifle 'Divinity'. Bạn cần phải có quest 'Divine Fragmentation' ở bước cuối cùng trước khi vào raid.",
+      "description": "Quest lấy súng Exotic Trace Rifle 'Divinity' yêu cầu bạn hoàn thành các bước bên ngoài, sau đó giải 7 câu đố nối dây (Tether Puzzles) rải rác trong suốt Raid Garden of Salvation VÀ diệt boss cuối trong cùng một lần đi (không được về Quỹ Đạo).",
       "steps": [
-        "**Puzzle 1 (Trước ải 1):** Dưới gầm khu vực nhảy đầu tiên, xoay người nhìn lại vách đá sẽ thấy bệ kích hoạt.",
-        "**Puzzle 2 (Sau ải 1):** Bên trái khu vực đầy hoa màu hồng, trước khi tụt xuống hố.",
-        "**Puzzle 3 (Trong khu vực nhảy của ải 2):** Trong rừng cây Undergrowth khổng lồ, trên những nhánh cây lớn.",
-        "**Puzzle 4 (Gần ải 3):** Phía trên bức tường cao sau ải 2.",
-        "**Puzzle 5 (Sau ải 3):** Câu đố 'Tether di động'. Cả team phải nối dây và di chuyển dọc theo hành lang mà không làm đứt dây để nối vào cục đích.",
-        "**Puzzle 6 (Khu vực hang động thác nước):** Khu vực hang động nhảy nhót rộng lớn. Phải nối dây qua luân phiên 2 bên hẻm núi.",
-        "**Puzzle 7 (Câu đố trên sàn nhà - Cuối hang):** 6 người phải nối dây tạo thành các hình khối (hình thoi/tam giác) sao cho khớp với sơ đồ phát sáng trên sàn nhà để hoàn thành 6 lần.",
-        "Hoàn thành xong 7 Puzzle, đánh bại Sanctified Mind (Boss cuối). Một cánh cửa ẩn dưới gầm hầm sẽ mở ra rương chứa Divinity."
+        "**PHẦN 1: QUEST BÊN NGOÀI (PRE-RAID)**",
+        "1. Tới Lunar Battlegrounds trên Mặt Trăng (đi từ Sorrow's Harbor). Giết Vex tới khi boss Zeteon xuất hiện. Giết boss nhặt item để nhận Quest.",
+        "2. Tới Nessus, vào 3 Lost Sector: The Orrery, Ancient’s Haunt, và The Conflux. Tìm phòng ẩn, Scan các Oracle, giết Vex xuất hiện, rồi Scan lại.",
+        "3. Giết 120 Vex ở bất kỳ đâu (Khuyên dùng Vex Offensive hoặc farm trên Mặt Trăng).",
+        "4. Tới Lectern of Enchantment (Mặt trăng) mua Empowered Decryption Core với giá 30 Phantasmal Fragments.",
+        "",
+        "**PHẦN 2: 7 CÂU ĐỐ TRONG RAID**",
+        "*(Lưu ý: Vì cơ chế nối dây phức tạp và yêu cầu di chuyển liên tục, khuyến nghị cả team nên xem [Video Hướng Dẫn Giải Đố Divinity của Datto](https://www.youtube.com/watch?v=2IQ6M43gEus) để dễ hình dung nhất)*",
+        "**• Bật chế độ Quest:** Ngay từ lúc mới vào raid, lúc vừa nhảy xuống vực ở khu rừng đầu tiên, hãy quay đầu lại và thả người rơi xuống một hốc ẩn ngay mép vực. Kích hoạt thiết bị Vex để bắt đầu chuỗi puzzle.",
+        "**• Puzzle 1 (Trước Ải 1):** Nằm ngay tại khu vực khởi đầu. 2 lỗ nằm 2 bên khe nứt. Nối dây từ hộc phát sáng sang hộc đích.",
+        "**• Puzzle 2 (Sau Ải 1):** Đi qua khu vực cánh đồng hoa hồng, nhìn sang bên phải (hoặc trái) có một hốc cây nhỏ. Cả team chui vào trong, nối dây vòng vèo qua những hốc kẹt chật hẹp.",
+        "**• Puzzle 3 (Undergrowth - Khu rừng lớn trước ải 2):** Khi bắt đầu leo trèo trên những cành cây cổ thụ, tìm hộp kích hoạt trên một nhánh cây cao. Team phải nối dây xuyên qua các lá cây và rễ cây khổng lồ.",
+        "**• Puzzle 4 (Hành lang nhảy nhót trước Ải 3):** Ở khu vực vách đá có những khối Vex xoay tròn. Bạn phải thả người rơi xuống để nối dây.",
+        "**• Puzzle 5 (Gần Ải 3):** Ngay sau puzzle 4. Đây là câu đố 'Tether di động'. Bạn phải giữ đội hình nối dây và cùng nhau đi bộ/nhảy dọc theo vách đá tiến về phía trước để cắm vào đích mà không làm đứt kết nối.",
+        "**• Puzzle 6 (Hang động thác nước trước Ải 4):** Một khu vực rộng lớn. Team chia làm 2 nhóm đứng dọc 2 bên vách đá của hẻm núi để nối dây chéo qua lại từ bên này sang bên kia vực thẳm.",
+        "**• Puzzle 7 (Câu đố trên sàn - Trước phòng boss):** Khu vực sàn nhà có những đường vẽ phát sáng. 6 người chơi sẽ phải tạo đội hình nối dây theo CÁC HÌNH KHỐI (tam giác, hình thoi) để khớp với họa tiết hiện trên sàn nhà. Phải làm chuẩn 6 lần liên tiếp.",
+        "",
+        "**PHẦN 3: NHẬN THƯỞNG**",
+        "Sau khi hoàn tất cả 7 puzzle, hạ gục boss Sanctified Mind. Không về Quỹ Đạo vội! Quay trở lại chỗ hố sâu thả đồ loot, đi xuống dưới sẽ có một căn phòng ẩn được mở ra với bức tượng Vex và Rương chứa Divinity!"
       ],
       "images": [
         {
           "url": "https://grindout.com/storage/guide-images/162/Screenshot-10.jpg",
           "caption": "Môi trường trong Garden of Salvation (Nguồn: Grindout)"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/divine-fragmentation-lunar-battlegrounds-destiny-2.jpg",
+          "caption": "Giết Boss Vex tại Lunar Battlegrounds để nhận Quest (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/divine-fragmentation-vex-cores-analyzed-destiny-2.jpg",
+          "caption": "Scan Vex Oracle tại 3 Lost Sector trên Nessus (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/divine-fragmentation-core-of-nightmares-empowered-destiny-2.jpg",
+          "caption": "Mua Empowered Decryption Core tại Lectern of Enchantment (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://www.gamespot.com/wp-content/uploads/original/1581/15811374/3589730-a%20(2).jpg",
+          "caption": "Puzzle 1 - Trước Ải 1 (Nguồn: GameSpot)"
+        },
+        {
+          "url": "https://www.gamespot.com/wp-content/uploads/original/1581/15811374/3589739-destiny%202%20divinity%20first%20encounter.jpg",
+          "caption": "Puzzle 2 - Sau Ải 1 (Nguồn: GameSpot)"
+        },
+        {
+          "url": "https://www.gamespot.com/wp-content/uploads/original/1581/15811374/3589746-a%20(3).jpg",
+          "caption": "Puzzle 3 - Khu vực Undergrowth (Nguồn: GameSpot)"
+        },
+        {
+          "url": "https://www.gamespot.com/wp-content/uploads/original/1581/15811374/3589737-destiny%202%20divinity%20loop%20third%20encounter.jpg",
+          "caption": "Puzzle 4 & 5 - Lối đi xoay tròn (Nguồn: GameSpot)"
+        },
+        {
+          "url": "https://www.gamespot.com/wp-content/uploads/original/1581/15811374/3589728-destiny%202%20divinity%20waterfall%20cave%20tree%20lock.jpg",
+          "caption": "Puzzle 6 - Hang động thác nước (Nguồn: GameSpot)"
+        },
+        {
+          "url": "https://www.gamespot.com/wp-content/uploads/original/1581/15811374/3589726-destiny%202%20divinity%20final%20puzzle.jpg",
+          "caption": "Puzzle 7 - Câu đố trên sàn (Nguồn: GameSpot)"
+        },
+        {
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/divinity-destiny-2.JPG",
+          "caption": "Vũ khí Exotic Divinity (Nguồn: Shacknews)"
         }
       ]
     },
