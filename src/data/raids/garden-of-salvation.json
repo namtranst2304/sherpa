@@ -9,7 +9,7 @@
     },
     "images": [
       {
-        "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Farticle%2F2019%2F10%2F07%2Fgarden-of-salvation-raid-guide-destiny-2_feature.jpg&width=1032",
+        "url": "https://shacknews-www.s3.amazonaws.com/assets/article/2019/10/07/garden-of-salvation-raid-guide-destiny-2_feature.jpg",
         "caption": "Cổng vào Black Garden (Nguồn: Shacknews)"
       }
     ]
@@ -166,8 +166,12 @@
       ],
       "images": [
         {
-          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-evade-consecrated-mind-open-gate.jpg&width=986",
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/garden-of-salvation-evade-consecrated-mind-open-gate.jpg",
           "caption": "Mở cổng đuổi theo Boss (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://grindout.com/storage/guide-images/162/first-encounter-arena.jpg",
+          "caption": "Khu vực Ải 1 (Nguồn: Grindout)"
         }
       ]
     },
@@ -229,11 +233,11 @@
       ],
       "images": [
         {
-          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-undergrowth-map.jpg&width=986",
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/garden-of-salvation-undergrowth-map.jpg",
           "caption": "Sơ đồ bệ Undergrowth (Nguồn: Shacknews)"
         },
         {
-          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fdestiny-2-garden-of-salvation-summon-consecrated-mind-start-encounter.jpg&width=986",
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/destiny-2-garden-of-salvation-summon-consecrated-mind-start-encounter.jpg",
           "caption": "Bắt đầu ải 2 (Nguồn: Shacknews)"
         }
       ]
@@ -288,12 +292,16 @@
       },
       "images": [
         {
-          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-defeat-consecrated-mind-map.jpg&width=986",
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/garden-of-salvation-defeat-consecrated-mind-map.jpg",
           "caption": "Sơ đồ ải 3 (Nguồn: Shacknews)"
         },
         {
-          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-defeat-consecrated-mind-damage-phase.jpg&width=986",
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/garden-of-salvation-defeat-consecrated-mind-damage-phase.jpg",
           "caption": "Damage Phase Consecrated Mind (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://grindout.com/storage/guide-images/162/consecrated-mind-eyes.jpg",
+          "caption": "Bắn vỡ mắt đỏ của Boss (Nguồn: Grindout)"
         }
       ]
     },
@@ -353,12 +361,56 @@
       },
       "images": [
         {
-          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-sanctified-mind-platforms.jpg&width=986",
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/garden-of-salvation-sanctified-mind-platforms.jpg",
           "caption": "Xây lại nền tảng đã mất (Nguồn: Shacknews)"
         },
         {
-          "url": "https://d1lss44hh2trtw.cloudfront.net/resize?type=webp&url=https%3A%2F%2Fshacknews-www.s3.amazonaws.com%2Fassets%2Feditorial%2F2019%2F10%2Fgarden-of-salvation-sanctified-mind-damage-phase.jpg&width=986",
+          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2019/10/garden-of-salvation-sanctified-mind-damage-phase.jpg",
           "caption": "Damage Phase Sanctified Mind (Nguồn: Shacknews)"
+        },
+        {
+          "url": "https://grindout.com/storage/guide-images/162/sanctified-mind.jpg",
+          "caption": "Sanctified Mind (Nguồn: Grindout)"
+        },
+        {
+          "url": "https://grindout.com/storage/guide-images/162/sanctified-mind-arena.jpg",
+          "caption": "Khu vực Ải Cuối (Nguồn: Grindout)"
+        }
+      ]
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Divinity Exotic Quest (Giải đố lấy súng Divinity)",
+      "description": "Garden of Salvation có một chuỗi 7 câu đố nối dây (Tether Puzzles) rải rác từ đầu đến cuối Raid. Hoàn thành toàn bộ 7 câu đố trong cùng 1 lần đi (không được out ra) và đánh bại boss cuối, bạn sẽ nhận được súng Exotic Trace Rifle 'Divinity'. Bạn cần phải có quest 'Divine Fragmentation' ở bước cuối cùng trước khi vào raid.",
+      "steps": [
+        "**Puzzle 1 (Trước ải 1):** Dưới gầm khu vực nhảy đầu tiên, xoay người nhìn lại vách đá sẽ thấy bệ kích hoạt.",
+        "**Puzzle 2 (Sau ải 1):** Bên trái khu vực đầy hoa màu hồng, trước khi tụt xuống hố.",
+        "**Puzzle 3 (Trong khu vực nhảy của ải 2):** Trong rừng cây Undergrowth khổng lồ, trên những nhánh cây lớn.",
+        "**Puzzle 4 (Gần ải 3):** Phía trên bức tường cao sau ải 2.",
+        "**Puzzle 5 (Sau ải 3):** Câu đố 'Tether di động'. Cả team phải nối dây và di chuyển dọc theo hành lang mà không làm đứt dây để nối vào cục đích.",
+        "**Puzzle 6 (Khu vực hang động thác nước):** Khu vực hang động nhảy nhót rộng lớn. Phải nối dây qua luân phiên 2 bên hẻm núi.",
+        "**Puzzle 7 (Câu đố trên sàn nhà - Cuối hang):** 6 người phải nối dây tạo thành các hình khối (hình thoi/tam giác) sao cho khớp với sơ đồ phát sáng trên sàn nhà để hoàn thành 6 lần.",
+        "Hoàn thành xong 7 Puzzle, đánh bại Sanctified Mind (Boss cuối). Một cánh cửa ẩn dưới gầm hầm sẽ mở ra rương chứa Divinity."
+      ],
+      "images": [
+        {
+          "url": "https://grindout.com/storage/guide-images/162/Screenshot-10.jpg",
+          "caption": "Môi trường trong Garden of Salvation (Nguồn: Grindout)"
+        }
+      ]
+    },
+    {
+      "title": "Secret Chest Locations (Rương Ẩn)",
+      "description": "Garden of Salvation có 2 rương ẩn, rớt Raid mods và giáp/vũ khí đã mở khóa.",
+      "steps": [
+        "**Chest 1 (Khu vực Undergrowth - Giữa ải 1 và 2):** Nằm trong khu vực rừng cây khổng lồ, đi theo con đường mòn bí mật bên mép vực thay vì đi đường chính.",
+        "**Chest 2 (Khu vực cối xay gió / Thác nước - Giữa ải 3 và 4):** Trèo lên những cái cây vĩ đại trong hẻm núi có thác nước. Rương nằm ẩn ở một bệ đá trên cao."
+      ],
+      "images": [
+        {
+          "url": "https://grindout.com/storage/guide-images/162/Screenshot-11.jpg",
+          "caption": "Khu vực tìm rương ẩn (Nguồn: Grindout)"
         }
       ]
     }
