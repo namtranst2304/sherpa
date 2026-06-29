@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export function ScrollToTop() {
   const [visible, setVisible] = useState(false);
   const [isLaunching, setIsLaunching] = useState(false);
   // Stop smoke particles after rocket leaves viewport (saves GPU from infinite-repeat animations)
   const [showParticles, setShowParticles] = useState(false);
+  const pathname = usePathname();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +39,8 @@ export function ScrollToTop() {
     // Hoặc user tự cuộn, reset sau 1.5s
     setTimeout(() => setIsLaunching(false), 1500);
   };
+
+  if (pathname === "/timeline") return null;
 
   return (
     <AnimatePresence>
