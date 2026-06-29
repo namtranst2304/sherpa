@@ -210,4 +210,98 @@
   25% { height: 100%; }
   50% { height: 40%; }
   75% { height: 80%; }
+}
+
+/* ==============================================================
+   TopNav D2 Sherpa Cyber Text Effect
+============================================================== */
+.cyber-text-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cyber-text {
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  /* Destiny 2 Arc/Stasis Theme Gradient */
+  background: linear-gradient(90deg, #0891b2 0%, #22d3ee 25%, #ffffff 50%, #22d3ee 75%, #0891b2 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 4s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(34,211,238,0.4));
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 10;
+}
+
+.cyber-text-container:hover .cyber-text {
+  /* Bright Arc / Splicer Cyan Glow on hover */
+  filter: drop-shadow(0 0 10px rgba(92,242,242,0.8)) drop-shadow(0 0 20px rgba(92,242,242,0.4));
+  transform: scale(1.05);
+  letter-spacing: 0.3em;
+}
+
+.cyber-text::before,
+.cyber-text::after {
+  content: "D2 SHERPA";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Splicer Pink Glitch */
+.cyber-text-container:hover .cyber-text::before {
+  opacity: 0.85;
+  color: #F1518D;
+  filter: blur(1.5px);
+  transform: translate(-3px, 1px);
+  -webkit-text-fill-color: #F1518D;
+  animation: glitch-anim-1 0.3s infinite linear alternate-reverse;
+}
+
+/* Splicer Cyan Glitch */
+.cyber-text-container:hover .cyber-text::after {
+  opacity: 0.85;
+  color: #5CF2F2;
+  filter: blur(1.5px);
+  transform: translate(3px, -1px);
+  -webkit-text-fill-color: #5CF2F2;
+  animation: glitch-anim-2 0.25s infinite linear alternate-reverse;
+}
+
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0); }
+  20% { clip-path: inset(60% 0 10% 0); }
+  40% { clip-path: inset(40% 0 50% 0); }
+  60% { clip-path: inset(80% 0 5% 0); }
+  80% { clip-path: inset(10% 0 70% 0); }
+  100% { clip-path: inset(30% 0 40% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 60% 0); }
+  20% { clip-path: inset(30% 0 20% 0); }
+  40% { clip-path: inset(70% 0 10% 0); }
+  60% { clip-path: inset(20% 0 50% 0); }
+  80% { clip-path: inset(50% 0 30% 0); }
+  100% { clip-path: inset(5% 0 80% 0); }
 }

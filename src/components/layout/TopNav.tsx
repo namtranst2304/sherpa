@@ -58,11 +58,15 @@ export function TopNav() {
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] sm:w-[400px]">
         <nav className="flex flex-col mt-8 overflow-y-auto max-h-[calc(100vh-4rem)] pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-          <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6">
-            <div className="flex items-center justify-center w-8 h-8 rounded-sm overflow-hidden mix-blend-screen">
+          <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6 cyber-text-container group">
+            <div className="flex items-center justify-center w-8 h-8 rounded-sm overflow-hidden mix-blend-screen group-hover:scale-110 transition-transform duration-500">
               <Image src="/logo.ico" alt="D2 Sherpa Logo" width={32} height={32} className="w-full h-full object-contain" unoptimized />
             </div>
-            <span>D2 Sherpa</span>
+            <div className="relative flex items-center">
+              <span className="cyber-text">
+                D2 Sherpa
+              </span>
+            </div>
           </Link>
           
           {/* Guide TOC for Mobile */}
@@ -130,10 +134,10 @@ export function TopNav() {
     <header className={cn(
       "w-full transition-all duration-300",
       isTimeline
-        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)]"
+        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 bg-transparent"
         : isHome
           ? "absolute top-0 left-0 z-50 bg-transparent"
-          : "sticky top-0 z-50 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)] relative"
+          : "sticky top-0 z-50 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)]"
     )}>
       {(!isHome && !isTimeline) && <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />}
       <div className="flex h-14 w-full items-center px-4 md:px-6">
@@ -145,13 +149,15 @@ export function TopNav() {
 
         {/* Desktop Logo */}
         <div className="mr-8 hidden md:flex">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="flex items-center justify-center w-10 h-10 rounded-sm overflow-hidden mix-blend-screen transition-transform group-hover:scale-105">
-              <Image src="/logo.ico" alt="D2 Sherpa Logo" width={40} height={40} className="w-full h-full object-contain group-hover:animate-pulse" unoptimized />
+          <Link href="/" className="flex items-center gap-2 cyber-text-container group">
+            <div className="flex items-center justify-center w-10 h-10 rounded-sm overflow-hidden mix-blend-screen transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_15px_rgba(0,243,255,0.8)]">
+              <Image src="/logo.ico" alt="D2 Sherpa Logo" width={40} height={40} className="w-full h-full object-contain" unoptimized />
             </div>
-            <span className="hidden font-black sm:inline-block tracking-widest uppercase text-neon-cyan text-glow-cyan text-lg">
-              D2 Sherpa
-            </span>
+            <div className="relative flex items-center">
+              <span className="hidden sm:inline-block cyber-text">
+                D2 Sherpa
+              </span>
+            </div>
           </Link>
         </div>
 
@@ -245,7 +251,20 @@ export function TopNav() {
     )
   }
 
-  return headerElement;
+  return (
+    <>
+      <div className={cn("w-full z-[60]", isHome ? "absolute top-0 left-0" : "sticky top-0")}>
+        {headerElement}
+      </div>
+      
+      {/* Mobile Floating Menu Button for Home */}
+      {isHome && (
+        <div className="fixed top-4 left-4 z-[60] md:hidden">
+          {renderMobileMenu(true)}
+        </div>
+      )}
+    </>
+  );
 }
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a"> & { title: string, hoverClass?: string, descClass?: string }>(
