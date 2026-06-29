@@ -13,6 +13,30 @@ import { GuideTOCProvider } from "@/hooks/use-guide-toc";
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
   description: "Comprehensive guides to master Destiny 2 endgame content.",
+  metadataBase: new URL("https://d2sherpa.com"),
+  keywords: ["Destiny 2", "Sherpa", "Guides", "Dungeons", "Raids", "Timeline", "Lore"],
+  openGraph: {
+    title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
+    description: "Comprehensive guides to master Destiny 2 endgame content.",
+    url: "https://d2sherpa.com",
+    siteName: "Destiny 2 Sherpa",
+    images: [
+      {
+        url: "/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Destiny 2 Sherpa",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Destiny 2 Sherpa",
+    description: "Comprehensive guides to master Destiny 2 endgame content.",
+    images: ["/og-default.jpg"],
+  },
 };
 
 export default function RootLayout({

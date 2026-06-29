@@ -4,7 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import { TimelineEra } from "@/data/timeline/index";
 import { getTheme, type ThemeColorTokens } from "@/lib/theme";
-import { motion } from "motion/react";
+import { motion, useReducedMotion, type Transition } from "motion/react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CyberBadge } from "@/components/common/CyberComponents";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -61,6 +61,9 @@ export function EraCinematicScene({
   const theme = getTheme(era.themeColor);
   const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
   const chapterRoman = romanNumerals[index] || String(index + 1);
+  const shouldReduceMotion = useReducedMotion();
+  const transitionProps: Transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeOut" };
+  const delayedTransitionProps: Transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.8, delay: 0.2, ease: "easeOut" };
 
   return (
     <section className="relative w-full h-[100dvh] flex flex-col justify-center overflow-hidden snap-center">
@@ -99,10 +102,10 @@ export function EraCinematicScene({
             {/* Left Side: Era Title (~25%) */}
             <motion.div
               className="w-full lg:w-[25%] flex flex-col"
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, ease: "easeOut" }} 
+              transition={transitionProps} 
             >
               <div className="flex items-center gap-4 mb-4 lg:mb-8">
                 <div className="w-12 h-[1px]" style={{ backgroundColor: theme.hex }} />
@@ -129,10 +132,10 @@ export function EraCinematicScene({
             {/* Right Side: Carousel (~75%) */}
             <motion.div
               className="w-full lg:w-[75%] h-full flex flex-col justify-center relative"
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={delayedTransitionProps}
             >
               <CarouselContent className="-ml-4 md:-ml-8">
                 {era.events.map((event, eIdx) => {

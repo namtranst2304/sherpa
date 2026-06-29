@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { Play, Pause, Music } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -12,6 +12,7 @@ export function MusicPlayer() {
   const [showPulseHint, setShowPulseHint] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const wasPlayingRef = useRef(false);
+  const shouldReduceMotion = useReducedMotion();
 
   // Chỉ hiển thị và phát nhạc ở trang chủ và timeline
   const isVisible = pathname === "/" || pathname === "/timeline";
@@ -111,7 +112,7 @@ export function MusicPlayer() {
           )}
 
           <AnimatePresence>
-            {isPlaying && (
+            {isPlaying && !shouldReduceMotion && (
               <motion.div
                 className="absolute inset-0 rounded-full border border-neon-cyan"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.8, 0, 0.8] }}
@@ -134,7 +135,7 @@ export function MusicPlayer() {
                 className="w-1 bg-neon-cyan rounded-t-sm"
                 style={{
                   height: isPlaying ? undefined : '20%',
-                  animation: isPlaying ? `equalizer ${1 + i * 0.2}s ease-in-out infinite` : 'none',
+                  animation: (isPlaying && !shouldReduceMotion) ? `equalizer ${1 + i * 0.2}s ease-in-out infinite` : 'none',
                 }}
               />
             ))}
