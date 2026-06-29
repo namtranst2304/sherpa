@@ -1,89 +1,137 @@
-// Import file json
-import desertPerpetual from "./raids/desert-perpetual.json"
-import gardenOfSalvation from "./raids/garden-of-salvation.json"
-import deepStoneCrypt from "./raids/deep-stone-crypt.json"
-import crotasEnd from "./raids/crotas-end.json"
-import vaultOfGlass from "./raids/vault-of-glass.json"
-import vowOfTheDisciple from "./raids/vow-of-the-disciple.json"
-import lastWish from "./raids/last-wish.json"
-import kingsFall from "./raids/kings-fall.json"
-import rootOfNightmares from "./raids/root-of-nightmares.json"
-import salvationsEdge from "./raids/salvations-edge.json"
+// Dynamic imports — data is only loaded when requested, not bundled upfront.
+// This avoids loading ~550KB of JSON into every page's client bundle.
+
 import { ActivityData } from "@/types"
 
-export const RAIDS_DATA: Record<string, ActivityData> = {
-  "the-desert-perpetual": desertPerpetual as unknown as ActivityData,
-  "garden-of-salvation": gardenOfSalvation as unknown as ActivityData,
-  "deep-stone-crypt": deepStoneCrypt as unknown as ActivityData,
-  "crotas-end": crotasEnd as unknown as ActivityData,
-  "vault-of-glass": vaultOfGlass as unknown as ActivityData,
-  "vow-of-the-disciple": vowOfTheDisciple as unknown as ActivityData,
-  "last-wish": lastWish as unknown as ActivityData,
-  "kings-fall": kingsFall as unknown as ActivityData,
-  "root-of-nightmares": rootOfNightmares as unknown as ActivityData,
-  "salvations-edge": salvationsEdge as unknown as ActivityData,
+// --- Slug registries for route generation (generateStaticParams) ---
+// These are lightweight string arrays, NOT the full JSON data.
+
+export const RAID_SLUGS = [
+  "the-desert-perpetual",
+  "garden-of-salvation",
+  "deep-stone-crypt",
+  "crotas-end",
+  "vault-of-glass",
+  "vow-of-the-disciple",
+  "last-wish",
+  "kings-fall",
+  "root-of-nightmares",
+  "salvations-edge",
+] as const;
+
+export const DUNGEON_SLUGS = [
+  "shattered-throne",
+  "pit-of-heresy",
+  "prophecy",
+  "grasp-of-avarice",
+  "duality",
+  "spire-of-the-watcher",
+  "ghosts-of-the-deep",
+  "warlords-ruin",
+  "equilibrium",
+  "vespers-host",
+  "sundered-doctrine",
+] as const;
+
+export const PANTHEON_SLUGS = [
+  "calus-resplendent",
+  "morgeth-surpassing",
+  "insurrection-prime-revolution",
+] as const;
+
+export const EXOTIC_MISSION_SLUGS = [
+  "the-whisper",
+  "zero-hour",
+  "presage",
+  "vox-obscura",
+  "seraphs-shield",
+  "avalon",
+  "starcrossed",
+  "encore",
+  "dual-destiny",
+  "derealize",
+  "heliostat",
+] as const;
+
+// --- Dynamic data loaders ---
+// Each function loads only the requested JSON file via dynamic import().
+// Next.js will code-split these into separate chunks automatically.
+
+const raidImports: Record<string, () => Promise<{ default: unknown }>> = {
+  "the-desert-perpetual": () => import("./raids/desert-perpetual.json"),
+  "garden-of-salvation": () => import("./raids/garden-of-salvation.json"),
+  "deep-stone-crypt": () => import("./raids/deep-stone-crypt.json"),
+  "crotas-end": () => import("./raids/crotas-end.json"),
+  "vault-of-glass": () => import("./raids/vault-of-glass.json"),
+  "vow-of-the-disciple": () => import("./raids/vow-of-the-disciple.json"),
+  "last-wish": () => import("./raids/last-wish.json"),
+  "kings-fall": () => import("./raids/kings-fall.json"),
+  "root-of-nightmares": () => import("./raids/root-of-nightmares.json"),
+  "salvations-edge": () => import("./raids/salvations-edge.json"),
+};
+
+const dungeonImports: Record<string, () => Promise<{ default: unknown }>> = {
+  "shattered-throne": () => import("./dungeons/shattered-throne.json"),
+  "pit-of-heresy": () => import("./dungeons/pit-of-heresy.json"),
+  "prophecy": () => import("./dungeons/prophecy.json"),
+  "grasp-of-avarice": () => import("./dungeons/grasp-of-avarice.json"),
+  "duality": () => import("./dungeons/duality.json"),
+  "spire-of-the-watcher": () => import("./dungeons/spire-of-the-watcher.json"),
+  "ghosts-of-the-deep": () => import("./dungeons/ghosts-of-the-deep.json"),
+  "warlords-ruin": () => import("./dungeons/warlords-ruin.json"),
+  "equilibrium": () => import("./dungeons/equilibrium.json"),
+  "vespers-host": () => import("./dungeons/vespers-host.json"),
+  "sundered-doctrine": () => import("./dungeons/sundered-doctrine.json"),
+};
+
+const pantheonImports: Record<string, () => Promise<{ default: unknown }>> = {
+  "calus-resplendent": () => import("./pantheon/calus-resplendent.json"),
+  "morgeth-surpassing": () => import("./pantheon/morgeth-surpassing.json"),
+  "insurrection-prime-revolution": () => import("./pantheon/insurrection-prime-revolution.json"),
+};
+
+const exoticMissionImports: Record<string, () => Promise<{ default: unknown }>> = {
+  "the-whisper": () => import("./exotic-missions/the-whisper.json"),
+  "zero-hour": () => import("./exotic-missions/zero-hour.json"),
+  "presage": () => import("./exotic-missions/presage.json"),
+  "vox-obscura": () => import("./exotic-missions/vox-obscura.json"),
+  "seraphs-shield": () => import("./exotic-missions/seraphs-shield.json"),
+  "avalon": () => import("./exotic-missions/avalon.json"),
+  "starcrossed": () => import("./exotic-missions/starcrossed.json"),
+  "encore": () => import("./exotic-missions/encore.json"),
+  "dual-destiny": () => import("./exotic-missions/dual-destiny.json"),
+  "derealize": () => import("./exotic-missions/derealize.json"),
+  "heliostat": () => import("./exotic-missions/heliostat.json"),
+};
+
+/** Load a single raid's data by slug. Returns null if slug not found. */
+export async function getRaidData(slug: string): Promise<ActivityData | null> {
+  const loader = raidImports[slug];
+  if (!loader) return null;
+  const mod = await loader();
+  return mod.default as unknown as ActivityData;
 }
 
-import calusResplendent from "./pantheon/calus-resplendent.json"
-import morgethSurpassing from "./pantheon/morgeth-surpassing.json"
-import insurrectionPrimeRevolution from "./pantheon/insurrection-prime-revolution.json"
-
-import equilibrium from "./dungeons/equilibrium.json"
-import vespersHost from "./dungeons/vespers-host.json"
-import sunderedDoctrine from "./dungeons/sundered-doctrine.json"
-import shatteredThrone from "./dungeons/shattered-throne.json"
-import pitOfHeresy from "./dungeons/pit-of-heresy.json"
-import prophecy from "./dungeons/prophecy.json"
-import graspOfAvarice from "./dungeons/grasp-of-avarice.json"
-import duality from "./dungeons/duality.json"
-import spireOfTheWatcher from "./dungeons/spire-of-the-watcher.json"
-import ghostsOfTheDeep from "./dungeons/ghosts-of-the-deep.json"
-import warlordsRuin from "./dungeons/warlords-ruin.json"
-
-export const DUNGEONS_DATA: Record<string, ActivityData> = {
-  "shattered-throne": shatteredThrone as unknown as ActivityData,
-  "pit-of-heresy": pitOfHeresy as unknown as ActivityData,
-  "prophecy": prophecy as unknown as ActivityData,
-  "grasp-of-avarice": graspOfAvarice as unknown as ActivityData,
-  "duality": duality as unknown as ActivityData,
-  "spire-of-the-watcher": spireOfTheWatcher as unknown as ActivityData,
-  "ghosts-of-the-deep": ghostsOfTheDeep as unknown as ActivityData,
-  "warlords-ruin": warlordsRuin as unknown as ActivityData,
-  "equilibrium": equilibrium as unknown as ActivityData,
-  "vespers-host": vespersHost as unknown as ActivityData,
-  "sundered-doctrine": sunderedDoctrine as unknown as ActivityData,
+/** Load a single dungeon's data by slug. Returns null if slug not found. */
+export async function getDungeonData(slug: string): Promise<ActivityData | null> {
+  const loader = dungeonImports[slug];
+  if (!loader) return null;
+  const mod = await loader();
+  return mod.default as unknown as ActivityData;
 }
 
-export const PANTHEON_DATA: Record<string, ActivityData> = {
-  "calus-resplendent": calusResplendent as unknown as ActivityData,
-  "morgeth-surpassing": morgethSurpassing as unknown as ActivityData,
-  "insurrection-prime-revolution": insurrectionPrimeRevolution as unknown as ActivityData,
+/** Load a single pantheon's data by slug. Returns null if slug not found. */
+export async function getPantheonData(slug: string): Promise<ActivityData | null> {
+  const loader = pantheonImports[slug];
+  if (!loader) return null;
+  const mod = await loader();
+  return mod.default as unknown as ActivityData;
 }
 
-import theWhisper from "./exotic-missions/the-whisper.json"
-import zeroHour from "./exotic-missions/zero-hour.json"
-import presage from "./exotic-missions/presage.json"
-import voxObscura from "./exotic-missions/vox-obscura.json"
-import seraphsShield from "./exotic-missions/seraphs-shield.json"
-import avalon from "./exotic-missions/avalon.json"
-import starcrossed from "./exotic-missions/starcrossed.json"
-import encore from "./exotic-missions/encore.json"
-import dualDestiny from "./exotic-missions/dual-destiny.json"
-import derealize from "./exotic-missions/derealize.json"
-import heliostat from "./exotic-missions/heliostat.json"
-
-
-
-export const EXOTIC_MISSIONS_DATA: Record<string, ActivityData> = {
-  "the-whisper": theWhisper as unknown as ActivityData,
-  "zero-hour": zeroHour as unknown as ActivityData,
-  "presage": presage as unknown as ActivityData,
-  "vox-obscura": voxObscura as unknown as ActivityData,
-  "seraphs-shield": seraphsShield as unknown as ActivityData,
-  "avalon": avalon as unknown as ActivityData,
-  "starcrossed": starcrossed as unknown as ActivityData,
-  "encore": encore as unknown as ActivityData,
-  "dual-destiny": dualDestiny as unknown as ActivityData,
-  "derealize": derealize as unknown as ActivityData,
-  "heliostat": heliostat as unknown as ActivityData,
-}
+/** Load a single exotic mission's data by slug. Returns null if slug not found. */
+export async function getExoticMissionData(slug: string): Promise<ActivityData | null> {
+  const loader = exoticMissionImports[slug];
+  if (!loader) return null;
+  const mod = await loader();
+  return mod.default as unknown as ActivityData;
+}

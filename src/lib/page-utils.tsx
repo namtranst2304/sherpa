@@ -6,12 +6,12 @@ import { ActivityData } from "@/types"
 export async function createActivityPage(
   params: Promise<{ slug: string }>,
   searchParams: Promise<{ enc?: string }>,
-  dataSource: Record<string, ActivityData>
+  dataLoader: (slug: string) => Promise<ActivityData | null>
 ) {
   const resolvedParams = await params
   const resolvedSearchParams = await searchParams
 
-  const data = dataSource[resolvedParams.slug]
+  const data = await dataLoader(resolvedParams.slug)
 
   if (!data) {
     notFound()
@@ -24,3 +24,4 @@ export async function createActivityPage(
     />
   )
 }
+

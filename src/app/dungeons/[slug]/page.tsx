@@ -1,4 +1,4 @@
-import { DUNGEONS_DATA } from "@/data"
+import { DUNGEON_SLUGS, getDungeonData } from "@/data"
 import { createActivityPage } from "@/lib/page-utils"
 
 interface PageProps {
@@ -7,9 +7,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(DUNGEONS_DATA).map((slug) => ({ slug }))
+  return DUNGEON_SLUGS.map((slug) => ({ slug }))
 }
 
 export default async function DungeonEncounterPage({ params, searchParams }: PageProps) {
-  return await createActivityPage(params, searchParams, DUNGEONS_DATA)
+  return await createActivityPage(params, searchParams, getDungeonData)
 }

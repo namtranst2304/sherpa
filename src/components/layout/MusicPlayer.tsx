@@ -111,16 +111,12 @@ export function MusicPlayer() {
           <Music className="w-4 h-4 text-neon-cyan/70" />
           <div className="flex items-end gap-[2px] h-4">
             {[1, 2, 3, 4].map((i) => (
-              <motion.div
+              <div
                 key={i}
                 className="w-1 bg-neon-cyan rounded-t-sm"
-                animate={isPlaying ? {
-                  height: ["20%", "100%", "40%", "80%", "20%"]
-                } : { height: "20%" }}
-                transition={{
-                  duration: 1 + i * 0.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
+                style={{
+                  height: isPlaying ? undefined : '20%',
+                  animation: isPlaying ? `equalizer ${1 + i * 0.2}s ease-in-out infinite` : 'none',
                 }}
               />
             ))}

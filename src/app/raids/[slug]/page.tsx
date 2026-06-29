@@ -1,4 +1,4 @@
-import { RAIDS_DATA } from "@/data"
+import { RAID_SLUGS, getRaidData } from "@/data"
 import { createActivityPage } from "@/lib/page-utils"
 
 interface PageProps {
@@ -7,9 +7,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(RAIDS_DATA).map((slug) => ({ slug }))
+  return RAID_SLUGS.map((slug) => ({ slug }))
 }
 
 export default async function RaidEncounterPage({ params, searchParams }: PageProps) {
-  return await createActivityPage(params, searchParams, RAIDS_DATA)
+  return await createActivityPage(params, searchParams, getRaidData)
 }

@@ -1,4 +1,4 @@
-import { PANTHEON_DATA } from "@/data"
+import { PANTHEON_SLUGS, getPantheonData } from "@/data"
 import { createActivityPage } from "@/lib/page-utils"
 
 interface PageProps {
@@ -7,9 +7,9 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(PANTHEON_DATA).map((slug) => ({ slug }))
+  return PANTHEON_SLUGS.map((slug) => ({ slug }))
 }
 
 export default async function PantheonEncounterPage({ params, searchParams }: PageProps) {
-  return await createActivityPage(params, searchParams, PANTHEON_DATA)
+  return await createActivityPage(params, searchParams, getPantheonData)
 }

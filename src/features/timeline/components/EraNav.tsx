@@ -34,49 +34,59 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
   const activeChapterRoman = romanNumerals[effectiveActiveIndex] || String(effectiveActiveIndex + 1);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (DESTINY_TIMELINE.length < 2) return;
+    let rafId: number | null = null;
 
-      const offset = window.innerHeight * 0.4;
-      let currentIndex = 0, progress = 0;
+    const onScroll = () => {
+      if (rafId !== null) return; // Already scheduled
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
 
-      for (let i = 0; i < DESTINY_TIMELINE.length - 1; i++) {
-        const el1 = eraRefs.current?.get(DESTINY_TIMELINE[i].id);
-        const el2 = eraRefs.current?.get(DESTINY_TIMELINE[i + 1].id);
-        if (!el1 || !el2) continue;
+        if (DESTINY_TIMELINE.length < 2) return;
 
-        const top1 = el1.getBoundingClientRect().top;
-        const top2 = el2.getBoundingClientRect().top;
+        const offset = window.innerHeight * 0.4;
+        let currentIndex = 0, progress = 0;
 
-        if (top1 - offset <= 0 && top2 - offset > 0) {
-          currentIndex = i;
-          progress = Math.max(0, Math.min(1, -(top1 - offset) / (top2 - top1)));
-          break;
+        for (let i = 0; i < DESTINY_TIMELINE.length - 1; i++) {
+          const el1 = eraRefs.current?.get(DESTINY_TIMELINE[i].id);
+          const el2 = eraRefs.current?.get(DESTINY_TIMELINE[i + 1].id);
+          if (!el1 || !el2) continue;
+
+          const top1 = el1.getBoundingClientRect().top;
+          const top2 = el2.getBoundingClientRect().top;
+
+          if (top1 - offset <= 0 && top2 - offset > 0) {
+            currentIndex = i;
+            progress = Math.max(0, Math.min(1, -(top1 - offset) / (top2 - top1)));
+            break;
+          }
         }
-      }
 
-      const lastEl = eraRefs.current?.get(DESTINY_TIMELINE[DESTINY_TIMELINE.length - 1].id);
-      if (lastEl && lastEl.getBoundingClientRect().top - offset <= 0) {
-        currentIndex = DESTINY_TIMELINE.length - 1;
-        progress = 0;
-      }
+        const lastEl = eraRefs.current?.get(DESTINY_TIMELINE[DESTINY_TIMELINE.length - 1].id);
+        if (lastEl && lastEl.getBoundingClientRect().top - offset <= 0) {
+          currentIndex = DESTINY_TIMELINE.length - 1;
+          progress = 0;
+        }
 
-      setNavActiveIndex((prev) => (prev !== currentIndex ? currentIndex : prev));
-      rawProgress.set((currentIndex + progress) * (100 / (DESTINY_TIMELINE.length - 1)));
+        setNavActiveIndex((prev) => (prev !== currentIndex ? currentIndex : prev));
+        rawProgress.set((currentIndex + progress) * (100 / (DESTINY_TIMELINE.length - 1)));
 
-      // If auto-scrolling and we reached the target, clear it
-      // Read from ref — no dependency needed, avoids re-registering listener
-      const currentAutoScroll = autoScrollStateRef.current;
-      if (currentAutoScroll && currentIndex === currentAutoScroll.target) {
-        autoScrollStateRef.current = null;
-        setAutoScrollTarget(null);
-        if (autoScrollTimer.current) clearTimeout(autoScrollTimer.current);
-      }
+        // If auto-scrolling and we reached the target, clear it
+        // Read from ref — no dependency needed, avoids re-registering listener
+        const currentAutoScroll = autoScrollStateRef.current;
+        if (currentAutoScroll && currentIndex === currentAutoScroll.target) {
+          autoScrollStateRef.current = null;
+          setAutoScrollTarget(null);
+          if (autoScrollTimer.current) clearTimeout(autoScrollTimer.current);
+        }
+      });
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [eraRefs, rawProgress]); // autoScrollState removed — using ref instead
 
   const scrollToEra = useCallback((id: string) => {

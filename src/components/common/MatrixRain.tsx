@@ -36,6 +36,11 @@ export const MatrixRain = ({ speed = 50, color = '#00f3ff', opacity = 0.2 }: Mat
             drops[x] = Math.random() * -100;
         }
 
+        // --- RAF-based rendering with frame throttling ---
+        let rafId: number | null = null;
+        let lastFrameTime = 0;
+        const paused = { current: false };
+
         const draw = () => {
             // Translucent black background to create trail effect
             ctx.fillStyle = 'rgba(15, 17, 21, 0.1)'; 
@@ -67,33 +72,63 @@ export const MatrixRain = ({ speed = 50, color = '#00f3ff', opacity = 0.2 }: Mat
             }
         };
 
-        const interval = setInterval(draw, speed);
+        const loop = (timestamp: number) => {
+            if (paused.current) {
+                // Keep the loop alive but skip rendering
+                rafId = requestAnimationFrame(loop);
+                return;
+            }
+
+            // Throttle to respect the speed prop (e.g. 50ms = ~20 FPS)
+            if (timestamp - lastFrameTime >= speed) {
+                lastFrameTime = timestamp;
+                draw();
+            }
+
+            rafId = requestAnimationFrame(loop);
+        };
+
+        rafId = requestAnimationFrame(loop);
 
         // Pause rendering when tab is not visible to save CPU
         const handleVisibilityChange = () => {
             if (document.hidden) {
-                clearInterval(interval);
+                paused.current = true;
+                // Cancel RAF entirely when tab is hidden — browser throttles it anyway
+                if (rafId !== null) {
+                    cancelAnimationFrame(rafId);
+                    rafId = null;
+                }
             } else {
-                // Resume by re-drawing — the outer effect will re-run if needed
-                draw();
+                paused.current = false;
+                lastFrameTime = 0; // Reset to draw immediately on resume
+                if (rafId === null) {
+                    rafId = requestAnimationFrame(loop);
+                }
             }
         };
         document.addEventListener('visibilitychange', handleVisibilityChange);
 
+        // Debounced resize handler
+        let resizeTimer: ReturnType<typeof setTimeout> | null = null;
         const handleResize = () => {
-            setCanvasSize();
-            columns = canvas.width / fontSize;
-            const newDrops = [];
-            for (let x = 0; x < columns; x++) {
-                newDrops[x] = drops[x] || Math.random() * -100;
-            }
-            drops = newDrops;
+            if (resizeTimer) clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                setCanvasSize();
+                columns = canvas.width / fontSize;
+                const newDrops = [];
+                for (let x = 0; x < columns; x++) {
+                    newDrops[x] = drops[x] || Math.random() * -100;
+                }
+                drops = newDrops;
+            }, 150);
         };
 
         window.addEventListener('resize', handleResize);
 
         return () => {
-            clearInterval(interval);
+            if (rafId !== null) cancelAnimationFrame(rafId);
+            if (resizeTimer) clearTimeout(resizeTimer);
             window.removeEventListener('resize', handleResize);
             document.removeEventListener('visibilitychange', handleVisibilityChange);
         };
@@ -103,7 +138,7 @@ export const MatrixRain = ({ speed = 50, color = '#00f3ff', opacity = 0.2 }: Mat
         <canvas
             ref={canvasRef}
             className="fixed inset-0 z-0 pointer-events-none"
-            style={{ opacity }}
+            style={{ opacity, willChange: 'transform' }}
             aria-hidden="true"
         />
     );

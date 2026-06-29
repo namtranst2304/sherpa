@@ -8,12 +8,15 @@ import { cn } from "@/lib/utils";
 export function ScrollToTop() {
   const [visible, setVisible] = useState(false);
   const [isLaunching, setIsLaunching] = useState(false);
+  // Stop smoke particles after rocket leaves viewport (saves GPU from infinite-repeat animations)
+  const [showParticles, setShowParticles] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
       setVisible(window.scrollY > window.innerHeight);
       if (window.scrollY === 0) {
         setIsLaunching(false);
+        setShowParticles(false);
       }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -23,8 +26,12 @@ export function ScrollToTop() {
 
   const handleLaunch = () => {
     setIsLaunching(true);
+    setShowParticles(true);
     // Smooth scroll lên top
     window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Kill particles after rocket animation completes (1.2s matches the y animation duration)
+    setTimeout(() => setShowParticles(false), 1200);
     
     // Đề phòng trường hợp trang quá ngắn scroll lên top nhanh hơn hiệu ứng
     // Hoặc user tự cuộn, reset sau 1.5s
@@ -83,7 +90,7 @@ export function ScrollToTop() {
 
           {/* Smoke Particles */}
           <AnimatePresence>
-            {isLaunching && (
+            {showParticles && (
               <>
                 {/* Center thick smoke */}
                 <motion.div
