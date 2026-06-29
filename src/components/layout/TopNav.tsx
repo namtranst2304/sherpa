@@ -46,15 +46,18 @@ export function TopNav() {
   const { title: tocTitle, groups: tocGroups, activeEncounterId } = useGuideTOC() || { groups: [] };
 
   const isTimeline = pathname === "/timeline";
+  const isHome = pathname === "/";
 
   const headerElement = (
     <header className={cn(
-      "w-full border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)] relative",
+      "w-full transition-all duration-300",
       isTimeline
-        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100"
-        : "sticky top-0 z-50"
+        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)]"
+        : isHome
+          ? "absolute top-0 left-0 z-50 bg-transparent"
+          : "sticky top-0 z-50 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)] relative"
     )}>
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />
+      {(!isHome && !isTimeline) && <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />}
       <div className="flex h-14 w-full items-center px-4 md:px-6">
 
         {/* Mobile Menu */}

@@ -28,7 +28,7 @@ export function LandingPage() {
   };
 
   return (
-    <div className="relative h-[calc(100vh-4rem)] min-h-[500px] flex flex-col items-center justify-between px-4 overflow-hidden w-full bg-black">
+    <div className="relative h-[100dvh] min-h-[500px] flex flex-col items-center justify-between px-4 overflow-hidden w-full bg-black">
       
       {/* Background from HeroSection */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-start justify-center">
