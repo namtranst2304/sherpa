@@ -59,7 +59,7 @@ export function EraCinematicScene({
   }, [api]);
 
   const theme = getTheme(era.themeColor);
-  const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+  const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
   const chapterRoman = romanNumerals[index] || String(index + 1);
 
   return (
@@ -104,22 +104,21 @@ export function EraCinematicScene({
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.8, ease: "easeOut" }} 
             >
-              <div className="flex items-center gap-4 mb-3 lg:mb-6">
-                <div className="w-8 h-[2px]" style={{ backgroundColor: theme.hex }} />
-                <span className={`font-mono text-[10px] md:text-xs 2xl:text-sm tracking-[0.3em] uppercase opacity-80`} style={{ color: theme.hex }}>
+              <div className="flex items-center gap-4 mb-4 lg:mb-8">
+                <div className="w-12 h-[1px]" style={{ backgroundColor: theme.hex }} />
+                <span className={`font-sans text-[10px] md:text-xs 2xl:text-sm tracking-[0.4em] uppercase opacity-80`} style={{ color: theme.hex }}>
                   Chương {chapterRoman}
                 </span>
               </div>
               
-              {/* Title smaller as requested, using old elegant text-transparent gradient */}
               <h2 
-                className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-sans font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-white via-white/90 to-white/40 mb-2 lg:mb-4 leading-tight uppercase"
-                style={{ filter: `drop-shadow(0 0 20px rgba(${theme.rgb}, 0.3))` }}
+                className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-sans font-normal tracking-[0.15em] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-200 to-zinc-500 mb-4 lg:mb-8 leading-snug uppercase"
+                style={{ filter: `drop-shadow(0 0 15px rgba(${theme.rgb}, 0.15))` }}
               >
                 {era.name}
               </h2>
 
-              <p className="text-zinc-400 text-xs md:text-sm 2xl:text-base font-light leading-relaxed hidden md:block">
+              <p className="text-zinc-400 text-sm md:text-base 2xl:text-lg font-sans font-light leading-loose hidden md:block opacity-80 text-justify">
                 {era.description}
               </p>
               

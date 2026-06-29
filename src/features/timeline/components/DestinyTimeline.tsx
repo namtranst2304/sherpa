@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { useInView } from "motion/react";
 import { DESTINY_TIMELINE, type TimelineEra } from "@/data/timeline/index";
 import { EraNav } from "./EraNav";
-import { ScrollProgress } from "./ScrollProgress";
 import { EraCinematicScene } from "./EraCinematicScene";
 
 // Lazy wrapper to prevent rendering all 16 carousels at once, saving massive amounts of RAM and DOM nodes.
@@ -28,7 +27,6 @@ export function DestinyTimeline() {
       id="timeline-scroll-container"
       className="bg-[#050505] h-[100dvh] w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth font-sans text-zinc-100 selection:bg-neon-cyan/30 selection:text-white [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
     >
-      <ScrollProgress />
       <EraNav eraRefs={eraRefs} />
 
       {/* TIMELINE CONTENT */}

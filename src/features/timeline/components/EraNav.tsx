@@ -76,7 +76,6 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
   const effectiveActiveIndex = autoScrollTarget !== null ? autoScrollTarget : navActiveIndex;
   const activeEra = DESTINY_TIMELINE[effectiveActiveIndex] || DESTINY_TIMELINE[0];
   const activeTheme = getTheme(activeEra.themeColor);
-  const activeChapterRoman = romanNumerals[effectiveActiveIndex] || String(effectiveActiveIndex + 1);
 
   useEffect(() => {
     let rafId: number | null = null;
@@ -136,42 +135,6 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
 
   return (
     <>
-      {/* Active Chapter Overlay */}
-      <div className="fixed top-4 left-4 md:top-8 md:left-8 z-50 pointer-events-none group cursor-default">
-        <div className="flex flex-col items-start justify-center h-full">
-           
-           {/* Chapter Number with Flanking Lines */}
-           <div className="flex items-center gap-3 mb-1 md:mb-1.5 opacity-60 transition-all duration-700">
-              <div 
-                className={`w-1 h-1 md:w-1.5 md:h-1.5 rotate-45 ${activeTheme.bg}`} 
-                style={{ boxShadow: `0 0 10px rgba(${activeTheme.rgb}, 0.8)` }} 
-              />
-              <span className={`text-[9px] md:text-[11px] font-sans font-medium tracking-widest uppercase ${activeTheme.text}`}>
-                CHƯƠNG {activeChapterRoman}
-              </span>
-              <div className="h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-white/40" />
-           </div>
-
-           {/* Era Name with Cinematic Animation */}
-           <div className="relative overflow-hidden flex items-center h-[20px] md:h-[24px]">
-             <AnimatePresence mode="wait">
-               <motion.span
-                  key={activeEra.id}
-                  initial={{ opacity: 0, filter: "blur(8px)", y: 10 }}
-                  animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                  exit={{ opacity: 0, filter: "blur(8px)", y: -10 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="text-xs md:text-[15px] font-sans tracking-widest uppercase text-zinc-100 transition-colors duration-700 whitespace-nowrap pl-1"
-                  style={{ textShadow: `0 2px 10px rgba(${activeTheme.rgb}, 0.4)` }}
-               >
-                  {activeEra.name}
-               </motion.span>
-             </AnimatePresence>
-           </div>
-
-        </div>
-      </div>
-
       <motion.nav
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
