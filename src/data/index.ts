@@ -24,10 +24,9 @@ export const RAIDS_DATA: Record<string, ActivityData> = {
   "salvations-edge": salvationsEdge as unknown as ActivityData,
 }
 
-import week1 from "./pantheon/week-1.json"
-import week2 from "./pantheon/week-2.json"
-import week3 from "./pantheon/week-3.json"
-import week4 from "./pantheon/week-4.json"
+import calusResplendent from "./pantheon/calus-resplendent.json"
+import morgethSurpassing from "./pantheon/morgeth-surpassing.json"
+import insurrectionPrimeRevolution from "./pantheon/insurrection-prime-revolution.json"
 
 import equilibrium from "./dungeons/equilibrium.json"
 import vespersHost from "./dungeons/vespers-host.json"
@@ -56,10 +55,9 @@ export const DUNGEONS_DATA: Record<string, ActivityData> = {
 }
 
 export const PANTHEON_DATA: Record<string, ActivityData> = {
-  "week-1": week1 as unknown as ActivityData,
-  "week-2": week2 as unknown as ActivityData,
-  "week-3": week3 as unknown as ActivityData,
-  "week-4": week4 as unknown as ActivityData,
+  "calus-resplendent": calusResplendent as unknown as ActivityData,
+  "morgeth-surpassing": morgethSurpassing as unknown as ActivityData,
+  "insurrection-prime-revolution": insurrectionPrimeRevolution as unknown as ActivityData,
 }
 
 import theWhisper from "./exotic-missions/the-whisper.json"
