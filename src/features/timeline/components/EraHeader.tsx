@@ -79,7 +79,8 @@ export function EraHeader({ era, index }: { era: TimelineEra; index: number }) {
               className="w-full h-auto object-cover transition-opacity duration-1000 opacity-90 hover:opacity-100 aspect-video" 
               width={1280}
               height={720}
-              loading="lazy"
+              priority={index === 0}
+              loading={index === 0 ? undefined : "lazy"}
             />
           </motion.div>
         )}

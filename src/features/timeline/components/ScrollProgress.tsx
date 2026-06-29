@@ -1,6 +1,5 @@
 "use client";
 
-
 import { motion, useScroll, useTransform } from "motion/react";
 
 export function ScrollProgress() {
@@ -9,7 +8,7 @@ export function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-14 left-0 right-0 h-[2px] bg-neon-cyan/60 z-50 origin-left"
+      className="fixed top-14 left-0 right-0 h-[2px] bg-[#00f3ff] z-50 origin-left opacity-60"
       style={{ scaleX }}
     />
   );
