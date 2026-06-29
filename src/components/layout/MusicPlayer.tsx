@@ -11,6 +11,7 @@ export function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPulseHint, setShowPulseHint] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+  const wasPlayingRef = useRef(false);
 
   // Chỉ hiển thị và phát nhạc ở trang chủ và timeline
   const isVisible = pathname === "/" || pathname === "/timeline";
@@ -50,9 +51,26 @@ export function MusicPlayer() {
       };
     });
 
+    // Quản lý việc tự động dừng/phát nhạc khi chuyển tab hoặc chuyển app trên mobile
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (!audio.paused) {
+          wasPlayingRef.current = true;
+          audio.pause();
+        }
+      } else {
+        if (wasPlayingRef.current) {
+          audio.play().catch(() => {});
+          wasPlayingRef.current = false;
+        }
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
     return () => {
       audio.removeEventListener("play", syncState);
       audio.removeEventListener("pause", syncState);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [isVisible]);
 
