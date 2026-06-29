@@ -25,13 +25,15 @@ export function EncounterPhase({ walkthrough }: EncounterPhaseProps) {
 
         return (
           <CyberCard key={phaseKey} variant="zinc" withCorners className="flex flex-col gap-2">
-            <h3 className="text-xl font-bold text-neon-cyan mb-3 flex items-center gap-3 text-glow-cyan">
+            <h3 className="text-xl font-bold text-neon-cyan mb-3 flex items-start gap-3 text-glow-cyan">
               {hasMultiplePhases && (
-                <CyberBadge variant="cyan">
+                <CyberBadge variant="cyan" className="shrink-0 mt-1">
                   {index + 1}
                 </CyberBadge>
               )}
-              {phaseTitle}
+              <span className="break-words min-w-0 flex-1 leading-tight">
+                {phaseTitle}
+              </span>
             </h3>
             {phaseObjective && (
               <p className="text-muted-foreground italic mb-4 border-l-2 border-neon-cyan pl-4 py-1 text-sm bg-neon-cyan/5 rounded-r-lg">

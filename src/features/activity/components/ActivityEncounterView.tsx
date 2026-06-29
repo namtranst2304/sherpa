@@ -109,7 +109,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       <AnimatePresence mode="wait">
         <motion.div 
           key={isOverview ? "overview" : activeEncounterId === "secrets" ? "secrets" : activeEncounter?.id} 
-          className="flex-1 overflow-hidden h-full"
+          className="flex-1 flex flex-col overflow-hidden h-full relative"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}

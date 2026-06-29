@@ -30,13 +30,15 @@ export function EncounterRoles({ roles }: EncounterRolesProps) {
                     return (
                       <div key={idx} className="bg-black/60 p-4 border border-zinc-800 hover:border-neon-cyan/50 hover:shadow-neon-cyan transition-all">
                         <h5 className="font-bold text-foreground flex items-center gap-2 mb-2">
-                          <div className="p-1.5 bg-neon-cyan/10 rounded-md">
+                          <div className="p-1.5 bg-neon-cyan/10 rounded-md shrink-0">
                             <Icon className="w-4 h-4 text-neon-cyan" />
                           </div>
-                          {roleKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                          <CyberBadge variant="zinc" className="ml-auto" withIndicator={false}>x{roleVal.quantity || 1}</CyberBadge>
+                          <span className="break-words min-w-0 flex-1 leading-tight">
+                            {roleKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                          </span>
+                          <CyberBadge variant="zinc" className="ml-auto shrink-0" withIndicator={false}>x{roleVal.quantity || 1}</CyberBadge>
                         </h5>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed break-words">
                           {roleVal.description || "N/A"}
                         </p>
                         {roleVal.types && (
@@ -72,13 +74,15 @@ export function EncounterRoles({ roles }: EncounterRolesProps) {
               </div>
               <div className="relative z-10">
                 <h3 className="font-bold text-lg text-foreground flex items-center gap-3 mb-3">
-                  <div className="p-2 bg-neon-cyan/10 rounded-md shadow-sm">
+                  <div className="p-2 bg-neon-cyan/10 rounded-md shadow-sm shrink-0">
                     <Icon className="w-5 h-5 text-neon-cyan" />
                   </div>
-                  {roleKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-                  <CyberBadge variant="zinc" className="ml-auto" withIndicator={false}>x{roleVal.quantity || 1}</CyberBadge>
+                  <span className="break-words min-w-0 flex-1 leading-tight">
+                    {roleKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                  </span>
+                  <CyberBadge variant="zinc" className="ml-auto shrink-0" withIndicator={false}>x{roleVal.quantity || 1}</CyberBadge>
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm leading-relaxed break-words">
                   {roleVal.description}
                 </p>
                 {roleVal.types && (

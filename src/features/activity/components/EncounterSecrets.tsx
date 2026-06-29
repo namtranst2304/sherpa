@@ -19,8 +19,11 @@ export function EncounterSecrets({ secrets }: EncounterSecretsProps) {
     <div className="space-y-6">
       {secrets.map((secret, idx) => (
         <div key={idx} className="bg-black/40 border border-neon-cyan/30 rounded-lg p-5">
-          <h4 className="text-lg font-bold text-neon-cyan mb-3 flex items-center gap-2">
-            <Sparkles className="w-4 h-4" /> {secret.title}
+          <h4 className="text-lg font-bold text-neon-cyan mb-3 flex items-start gap-2">
+            <Sparkles className="w-4 h-4 mt-1 shrink-0" />
+            <span className="break-words min-w-0 flex-1 leading-tight">
+              {secret.title}
+            </span>
           </h4>
           {secret.description && (
             <p className="text-muted-foreground text-sm mb-4">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useScrollSpy } from "@/hooks/use-scroll-spy";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useGuideTOC } from "@/hooks/use-guide-toc";
 import * as React from "react";
 import { createPortal } from "react-dom";
 import {
@@ -62,44 +63,15 @@ export function GuideSidebar({
 
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId);
 
-  // Render Portal on Mobile
-  if (isMobile && mounted) {
-    const portalTarget = document.getElementById("mobile-guide-toc-portal");
-    if (portalTarget) {
-      return createPortal(
-        <div className="flex flex-col w-full animate-in fade-in zoom-in-95">
-           <div className="text-[10px] font-black tracking-widest uppercase text-neon-yellow break-words mb-4 px-2 py-1 bg-neon-yellow/10 border border-neon-yellow/30 inline-block w-fit">
-             Current Guide: {title}
-           </div>
-           {groups.map((group, idx) => (
-              <div key={idx} className="flex flex-col gap-2 mb-4">
-                 {group.title && <div className="text-[10px] font-mono uppercase text-neon-red">{group.title}</div>}
-                 <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
-                    {group.items.map(item => {
-                       const isActive = activeId === item.id;
-                       return (
-                          <Link 
-                            key={item.id} 
-                            href={item.href || `#${item.id}`}
-                            className={cn("py-1.5 text-sm font-mono transition-colors", isActive ? "text-neon-yellow font-bold" : "text-zinc-400")}
-                            // We don't have access to TopNav's Sheet state directly, 
-                            // but Next.js router handles the navigation.
-                            // To close the sheet, users can click the backdrop or we can dispatch an Escape key event.
-                            onClick={() => {
-                               document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
-                            }}
-                          >
-                             {item.title}
-                          </Link>
-                       )
-                    })}
-                 </div>
-              </div>
-           ))}
-        </div>,
-        portalTarget
-      );
-    }
+  const { setTOC } = useGuideTOC();
+
+  React.useEffect(() => {
+    setTOC(title, subtitle, orbit, groups, activeEncounterId);
+    return () => setTOC("", "", undefined, []);
+  }, [title, subtitle, orbit, groups, activeEncounterId, setTOC]);
+
+  // Mobile rendering is now handled by TopNav using useGuideTOC
+  if (isMobile) {
     return null;
   }
 

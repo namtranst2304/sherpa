@@ -15,8 +15,9 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { DESTINY_ACTIVITIES } from "@/config/constants"
+import { useGuideTOC } from "@/hooks/use-guide-toc"
 
 const THEME_TEXT = {
   cyan: 'text-neon-cyan',
@@ -40,6 +41,7 @@ import {
 
 export function TopNav() {
   const activities = Object.values(DESTINY_ACTIVITIES)
+  const { title: tocTitle, groups: tocGroups, activeEncounterId } = useGuideTOC() || { groups: [] };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)] relative">
@@ -64,8 +66,36 @@ export function TopNav() {
                   <span>D2 Sherpa</span>
                 </Link>
                 
-                {/* Portal target for Activity Guide TOC on mobile */}
-                <div id="mobile-guide-toc-portal" className="empty:hidden flex flex-col gap-6 border-b-2 border-zinc-800/50 pb-6 mb-6" />
+                {/* Guide TOC for Mobile */}
+                {tocGroups && tocGroups.length > 0 && (
+                  <div className="flex flex-col gap-6 border-b-2 border-zinc-800/50 pb-6 mb-6">
+                    <div className="flex flex-col w-full animate-in fade-in zoom-in-95">
+                      <div className="text-[10px] font-black tracking-widest uppercase text-neon-yellow break-words mb-4 px-2 py-1 bg-neon-yellow/10 border border-neon-yellow/30 inline-block w-fit">
+                        Current Guide: {tocTitle}
+                      </div>
+                      {tocGroups.map((group, idx) => (
+                        <div key={`toc-group-${idx}`} className="flex flex-col gap-2 mb-4">
+                          {group.title && <div className="text-[10px] font-mono uppercase text-neon-red">{group.title}</div>}
+                          <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
+                            {group.items.map(item => {
+                              const isActive = activeEncounterId === item.id;
+                              return (
+                                <SheetClose asChild key={`toc-item-${item.id}`}>
+                                  <Link 
+                                    href={item.href || `#${item.id}`}
+                                    className={cn("py-1.5 text-sm font-mono transition-colors break-words whitespace-normal", isActive ? "text-neon-yellow font-bold" : "text-zinc-400 hover:text-foreground")}
+                                  >
+                                    {item.title}
+                                  </Link>
+                                </SheetClose>
+                              )
+                            })}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div className="flex flex-col gap-6">
                   {activities.map((act) => {
@@ -82,7 +112,7 @@ export function TopNav() {
                             <Link 
                               key={`mobile-item-${item.title}`} 
                               href={act.locked ? "#" : item.href} 
-                              className={`py-1.5 text-sm font-mono transition-colors ${act.locked ? 'text-zinc-600 cursor-not-allowed' : 'text-zinc-400 hover:text-foreground'}`}
+                              className={`py-1.5 text-sm font-mono transition-colors break-words whitespace-normal ${act.locked ? 'text-zinc-600 cursor-not-allowed' : 'text-zinc-400 hover:text-foreground'}`}
                             >
                               {item.title}
                             </Link>
