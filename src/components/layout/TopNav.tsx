@@ -48,11 +48,89 @@ export function TopNav() {
   const isTimeline = pathname === "/timeline";
   const isHome = pathname === "/";
 
+  const renderMobileMenu = (isFloating: boolean = false) => (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant={isFloating ? "outline" : "ghost"} size="icon" className={cn("h-9 w-9", isFloating && "bg-black/50 backdrop-blur-md border-white/20 text-white rounded-full shadow-lg")}>
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Toggle menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+        <nav className="flex flex-col mt-8 overflow-y-auto max-h-[calc(100vh-4rem)] pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+          <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6">
+            <div className="flex items-center justify-center w-8 h-8 rounded-sm overflow-hidden mix-blend-screen">
+              <Image src="/logo.ico" alt="D2 Sherpa Logo" width={32} height={32} className="w-full h-full object-contain" unoptimized />
+            </div>
+            <span>D2 Sherpa</span>
+          </Link>
+          
+          {/* Guide TOC for Mobile */}
+          {tocGroups && tocGroups.length > 0 && (
+            <div className="flex flex-col gap-6 border-b-2 border-zinc-800/50 pb-6 mb-6">
+              <div className="flex flex-col w-full animate-in fade-in zoom-in-95">
+                <div className="text-[10px] font-black tracking-widest uppercase text-neon-yellow break-words mb-4 px-2 py-1 bg-neon-yellow/10 border border-neon-yellow/30 inline-block w-fit">
+                  Current Guide: {tocTitle}
+                </div>
+                {tocGroups.map((group, idx) => (
+                  <div key={`toc-group-${idx}`} className="flex flex-col gap-2 mb-4">
+                    {group.title && <div className="text-[10px] font-mono uppercase text-neon-red">{group.title}</div>}
+                    <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
+                      {group.items.map(item => {
+                        const isActive = activeEncounterId === item.id;
+                        return (
+                          <SheetClose asChild key={`toc-item-${item.id}`}>
+                            <Link 
+                              href={item.href || `#${item.id}`}
+                              className={cn("py-1.5 text-sm font-mono transition-colors break-words whitespace-normal", isActive ? "text-neon-yellow font-bold" : "text-zinc-400 hover:text-foreground")}
+                            >
+                              {item.title}
+                            </Link>
+                          </SheetClose>
+                        )
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-col gap-6">
+            {activities.map((act) => {
+              const theme = act.themeColor || "cyan";
+              const titleColor = act.locked ? 'text-neon-red' : THEME_TEXT[theme as keyof typeof THEME_TEXT] || THEME_TEXT.zinc
+              return (
+                <div key={`mobile-${act.id}`} className="flex flex-col gap-2">
+                  <div className={`text-xs font-bold tracking-widest uppercase ${titleColor}`}>
+                    {act.title}
+                    {act.locked && <span className="ml-2 text-[8px] border border-neon-red px-1 bg-neon-red/20 text-neon-red">LOCKED</span>}
+                  </div>
+                  <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
+                    {act.items.map((item) => (
+                      <Link 
+                        key={`mobile-item-${item.title}`} 
+                        href={act.locked ? "#" : item.href} 
+                        className={`py-1.5 text-sm font-mono transition-colors break-words whitespace-normal ${act.locked ? 'text-zinc-600 cursor-not-allowed' : 'text-zinc-400 hover:text-foreground'}`}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </nav>
+      </SheetContent>
+    </Sheet>
+  );
+
   const headerElement = (
     <header className={cn(
       "w-full transition-all duration-300",
       isTimeline
-        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)]"
+        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)]"
         : isHome
           ? "absolute top-0 left-0 z-50 bg-transparent"
           : "sticky top-0 z-50 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)] relative"
@@ -62,81 +140,7 @@ export function TopNav() {
 
         {/* Mobile Menu */}
         <div className="md:hidden flex items-center mr-4">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="h-9 w-9">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col mt-8 overflow-y-auto max-h-[calc(100vh-4rem)] pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-                <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-sm overflow-hidden mix-blend-screen">
-                    <Image src="/logo.ico" alt="D2 Sherpa Logo" width={32} height={32} className="w-full h-full object-contain" unoptimized />
-                  </div>
-                  <span>D2 Sherpa</span>
-                </Link>
-                
-                {/* Guide TOC for Mobile */}
-                {tocGroups && tocGroups.length > 0 && (
-                  <div className="flex flex-col gap-6 border-b-2 border-zinc-800/50 pb-6 mb-6">
-                    <div className="flex flex-col w-full animate-in fade-in zoom-in-95">
-                      <div className="text-[10px] font-black tracking-widest uppercase text-neon-yellow break-words mb-4 px-2 py-1 bg-neon-yellow/10 border border-neon-yellow/30 inline-block w-fit">
-                        Current Guide: {tocTitle}
-                      </div>
-                      {tocGroups.map((group, idx) => (
-                        <div key={`toc-group-${idx}`} className="flex flex-col gap-2 mb-4">
-                          {group.title && <div className="text-[10px] font-mono uppercase text-neon-red">{group.title}</div>}
-                          <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
-                            {group.items.map(item => {
-                              const isActive = activeEncounterId === item.id;
-                              return (
-                                <SheetClose asChild key={`toc-item-${item.id}`}>
-                                  <Link 
-                                    href={item.href || `#${item.id}`}
-                                    className={cn("py-1.5 text-sm font-mono transition-colors break-words whitespace-normal", isActive ? "text-neon-yellow font-bold" : "text-zinc-400 hover:text-foreground")}
-                                  >
-                                    {item.title}
-                                  </Link>
-                                </SheetClose>
-                              )
-                            })}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <div className="flex flex-col gap-6">
-                  {activities.map((act) => {
-                    const theme = act.themeColor || "cyan";
-                    const titleColor = act.locked ? 'text-neon-red' : THEME_TEXT[theme as keyof typeof THEME_TEXT] || THEME_TEXT.zinc
-                    return (
-                      <div key={`mobile-${act.id}`} className="flex flex-col gap-2">
-                        <div className={`text-xs font-bold tracking-widest uppercase ${titleColor}`}>
-                          {act.title}
-                          {act.locked && <span className="ml-2 text-[8px] border border-neon-red px-1 bg-neon-red/20 text-neon-red">LOCKED</span>}
-                        </div>
-                        <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
-                          {act.items.map((item) => (
-                            <Link 
-                              key={`mobile-item-${item.title}`} 
-                              href={act.locked ? "#" : item.href} 
-                              className={`py-1.5 text-sm font-mono transition-colors break-words whitespace-normal ${act.locked ? 'text-zinc-600 cursor-not-allowed' : 'text-zinc-400 hover:text-foreground'}`}
-                            >
-                              {item.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
+          {renderMobileMenu(false)}
         </div>
 
         {/* Desktop Logo */}
@@ -227,9 +231,17 @@ export function TopNav() {
 
   if (isTimeline) {
     return (
-      <div className="fixed top-0 left-0 w-full h-6 z-[60] group">
-        {headerElement}
-      </div>
+      <>
+        {/* Desktop Hover Nav */}
+        <div className="fixed top-0 left-0 w-full h-6 z-[60] group hidden md:block">
+          {headerElement}
+        </div>
+        
+        {/* Mobile Floating Menu Button */}
+        <div className="fixed top-4 left-4 z-[60] md:hidden">
+          {renderMobileMenu(true)}
+        </div>
+      </>
     )
   }
 
