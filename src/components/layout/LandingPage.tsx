@@ -14,7 +14,7 @@ export function LandingPage() {
 
   const handleEnter = () => {
     setIsTransitioning(true);
-    
+
     // Play backgound music
     const audio = document.getElementById("global-bg-audio") as HTMLAudioElement;
     if (audio) {
@@ -29,13 +29,13 @@ export function LandingPage() {
 
   return (
     <div className="relative h-[100dvh] min-h-[500px] flex flex-col items-center justify-between px-4 overflow-hidden w-full bg-black">
-      
+
       {/* Background from HeroSection */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-start justify-center">
-        <Image 
-          src="/images/timeline/heroBG.webp" 
-          alt="Destiny Universe Background" 
-          className="w-full h-auto opacity-40 mix-blend-luminosity" 
+        <Image
+          src="/images/timeline/heroBG.webp"
+          alt="Destiny Universe Background"
+          className="w-full h-auto opacity-40 mix-blend-luminosity"
           width={1920}
           height={1080}
           priority
@@ -69,12 +69,6 @@ export function LandingPage() {
         </motion.div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl 2xl:text-[7rem] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500 mb-4 relative text-center">Destiny Universe</h1>
-        <motion.span
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.3 }}
-          className="block text-lg sm:text-xl md:text-3xl 2xl:text-4xl font-bold tracking-[0.2em] md:tracking-[0.3em] text-zinc-400 uppercase drop-shadow-md text-center"
-        >Timeline</motion.span>
       </motion.div>
 
       {/* Bottom section with Enter Button */}
@@ -86,21 +80,21 @@ export function LandingPage() {
           className="flex flex-col items-center gap-4 cursor-pointer group shrink-0"
           onClick={handleEnter}
         >
-        <AnimatedScrollText />
-        
-        {/* Cascading Chevrons */}
-        <div className="flex flex-col items-center -space-y-3 pt-2">
-          {[
-            { delay: 0, styles: "w-4 h-4 text-neon-cyan/40" },
-            { delay: 0.2, styles: "w-5 h-5 text-neon-cyan/70" },
-            { delay: 0.4, styles: "w-6 h-6 text-neon-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" }
-          ].map((chevron, i) => (
-            <motion.div key={i} animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: chevron.delay }}>
-               <ChevronDown className={chevron.styles} />
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+          <AnimatedScrollText />
+
+          {/* Cascading Chevrons */}
+          <div className="flex flex-col items-center -space-y-3 pt-2">
+            {[
+              { delay: 0, styles: "w-4 h-4 text-neon-cyan/40" },
+              { delay: 0.2, styles: "w-5 h-5 text-neon-cyan/70" },
+              { delay: 0.4, styles: "w-6 h-6 text-neon-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" }
+            ].map((chevron, i) => (
+              <motion.div key={i} animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: chevron.delay }}>
+                <ChevronDown className={chevron.styles} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       {/* Door Transition Animation overlay (Starts OPEN, Closes on Enter) */}
