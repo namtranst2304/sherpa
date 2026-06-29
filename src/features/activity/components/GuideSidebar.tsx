@@ -99,7 +99,7 @@ export function GuideSidebar({
                   const isActive = activeId === item.id;
                   const linkHref = item.href || `#${item.id}`;
                   return (
-                    <SidebarMenuItem key={item.id}>
+                    <SidebarMenuItem key={item.id} className="min-w-0">
                       <SidebarMenuButton
                         asChild
                         isActive={isActive}
