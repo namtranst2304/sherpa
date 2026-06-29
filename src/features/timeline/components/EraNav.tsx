@@ -2,10 +2,8 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "motion/react";
-import { DESTINY_TIMELINE, type TimelineEra } from "@/data/timeline/index";
+import { DESTINY_TIMELINE, ROMAN_NUMERALS, type TimelineEra } from "@/data/timeline/index";
 import { getTheme, type ThemeColorTokens } from "@/lib/theme";
-
-const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
 
 function TimelineNode({ era, idx, total, isActive, isPast, activeTheme, onClick }: { era: TimelineEra, idx: number, total: number, isActive: boolean, isPast: boolean, activeTheme: ThemeColorTokens, onClick: () => void }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -47,7 +45,7 @@ function TimelineNode({ era, idx, total, isActive, isPast, activeTheme, onClick 
           >
             <div className="absolute right-[-21px] top-1/2 w-5 h-[1px] bg-white/20" />
             <span className={`text-[9px] md:text-[10px] font-sans font-medium tracking-widest uppercase ${theme.text} mb-1 opacity-90 whitespace-nowrap`}>
-              CHƯƠNG {romanNumerals[idx] || String(idx + 1)}
+              CHƯƠNG {ROMAN_NUMERALS[idx] || String(idx + 1)}
             </span>
             <span className="text-sm md:text-base font-sans tracking-widest text-white whitespace-nowrap uppercase" style={{ textShadow: `0 2px 10px rgba(${theme.rgb}, 0.5)` }}>
               {era.name}

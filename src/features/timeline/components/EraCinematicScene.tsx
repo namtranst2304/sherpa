@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { TimelineEra } from "@/data/timeline/index";
+import { TimelineEra, ROMAN_NUMERALS } from "@/data/timeline/index";
 import { getTheme, type ThemeColorTokens } from "@/lib/theme";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -59,8 +59,7 @@ export function EraCinematicScene({
   }, [api]);
 
   const theme = getTheme(era.themeColor);
-  const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
-  const chapterRoman = romanNumerals[index] || String(index + 1);
+  const chapterRoman = ROMAN_NUMERALS[index] || String(index + 1);
   const shouldReduceMotion = useReducedMotion();
   const transitionProps: Transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeOut" };
   const delayedTransitionProps: Transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.8, delay: 0.2, ease: "easeOut" };

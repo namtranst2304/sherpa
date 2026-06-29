@@ -33,6 +33,8 @@ export interface TimelineEra {
   events: TimelineEvent[];
 }
 
+export const ROMAN_NUMERALS = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"];
+
 export const DESTINY_TIMELINE: TimelineEra[] = [
   theAncientPast as unknown as TimelineEra,
   historyOfTheCabal as unknown as TimelineEra,
