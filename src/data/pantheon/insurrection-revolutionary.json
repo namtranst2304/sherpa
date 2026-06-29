@@ -79,17 +79,12 @@
         "runners": {
           "description": "Nhặt Vex Craniums (sọ Vex) đem về sạc ở bệ nguyên tố đúng màu.",
           "quantity": 3,
-          "types": [
-            "Runner",
-            "Mechanic"
-          ]
+          "types": ["Runner", "Mechanic"]
         },
         "defenders": {
           "description": "Đứng bảo vệ bệ sạc, diệt Minotaur (khiên Void) và clear quái.",
           "quantity": 3,
-          "types": [
-            "Ad Clear"
-          ]
+          "types": ["Ad Clear"]
         }
       },
       "secrets": [],
@@ -149,16 +144,12 @@
         "blessed_players": {
           "description": "Một người trong mỗi cặp có buff Witch's Blessing.",
           "quantity": 3,
-          "types": [
-            "Mechanic"
-          ]
+          "types": ["Mechanic"]
         },
         "unblessed_players": {
           "description": "Người không có buff.",
           "quantity": 3,
-          "types": [
-            "Ad Clear"
-          ]
+          "types": ["Ad Clear"]
         }
       },
       "secrets": [],
@@ -219,18 +210,12 @@
         "throne_room_team": {
           "description": "Đội ở lại phòng ngai vàng, nghe callout biểu tượng và giết Psion ở bệ KHÔNG được gọi.",
           "quantity": 3,
-          "types": [
-            "Mechanic",
-            "Ad Clear"
-          ]
+          "types": ["Mechanic", "Ad Clear"]
         },
         "shadow_realm_team": {
           "description": "Đội bị hút vào không gian bóng tối, đọc 3 biểu tượng trên trán Calus và bắn đầu lâu tích buff.",
           "quantity": 3,
-          "types": [
-            "Callout",
-            "Ad Clear"
-          ]
+          "types": ["Callout", "Ad Clear"]
         }
       },
       "secrets": [],
@@ -291,18 +276,12 @@
         "plate_readers": {
           "description": "Đứng trên 3 bệ để đọc thứ tự bệ phát sáng.",
           "quantity": 3,
-          "types": [
-            "Callout",
-            "Mechanic"
-          ]
+          "types": ["Callout", "Mechanic"]
         },
         "aura_holders": {
           "description": "Người giữ buff Brand of the Initiate, phải giết quái để duy trì buff.",
           "quantity": 3,
-          "types": [
-            "Runner",
-            "Ad Clear"
-          ]
+          "types": ["Runner", "Ad Clear"]
         }
       },
       "secrets": [],
@@ -361,17 +340,12 @@
         "mote_team": {
           "description": "Team đi theo con Minotaur để nhặt Voltaic Motes và cắm vào Relay.",
           "quantity": 3,
-          "types": [
-            "Runner"
-          ]
+          "types": ["Runner"]
         },
         "boss_team": {
           "description": "Team đi theo Boss để ăn buff Voltaic Overflow và bắn mắt.",
           "quantity": 3,
-          "types": [
-            "Mechanic",
-            "Callout"
-          ]
+          "types": ["Mechanic", "Callout"]
         }
       },
       "secrets": [],
@@ -429,17 +403,12 @@
         "strength_gatherers": {
           "description": "Nhặt các quả cầu Taken Strength rải rác quanh map (mỗi người tối đa 2 quả).",
           "quantity": 4,
-          "types": [
-            "Mechanic"
-          ]
+          "types": ["Mechanic"]
         },
         "eye_of_riven": {
           "description": "Giết con Eye of Riven (Captain), nhặt quả cầu Tinh thể để giải cứu đồng đội bị khóa.",
           "quantity": 2,
-          "types": [
-            "Runner",
-            "Callout"
-          ]
+          "types": ["Runner", "Callout"]
         }
       },
       "secrets": [],
@@ -500,24 +469,17 @@
         "map_reader": {
           "description": "Đọc bản đồ ngầm để báo vị trí Berserkers và bệ sạc năng lượng.",
           "quantity": 1,
-          "types": [
-            "Callout"
-          ]
+          "types": ["Callout"]
         },
         "runners": {
           "description": "Giết Berserkers trên mặt đất, nhặt bóng năng lượng và đem cắm vào bệ sạc.",
           "quantity": 4,
-          "types": [
-            "Runner",
-            "Ad Clear"
-          ]
+          "types": ["Runner", "Ad Clear"]
         },
         "sniper": {
           "description": "Bắn các điểm yếu trên người Boss để giải cứu Runners khi bị Boss khóa mục tiêu.",
           "quantity": 1,
-          "types": [
-            "Mechanic"
-          ]
+          "types": ["Mechanic"]
         }
       },
       "secrets": [],

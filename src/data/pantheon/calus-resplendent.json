@@ -5,11 +5,7 @@
     "formatting_rules": "Pantheon 2.0 - Sự kiện vĩnh viễn từ bản cập nhật Monument of Triumph. Hoạt động này yêu cầu Fireteam 6 người và có Power handicap -5.",
     "mechanic": {
       "description": "Calus Resplendent là hoạt động đầu tiên của Pantheon 2.0, tập trung vào các Boss từ những Raid đã bị vault: Argos, Gahlran và Calus. Chú ý modifier 'Shot Caller' luôn kích hoạt: bắn trúng điểm yếu (precision hits) liên tục sẽ tăng sát thương vũ khí.",
-      "boss_list": [
-        "Argos",
-        "Gahlran",
-        "Calus"
-      ]
+      "boss_list": ["Argos", "Gahlran", "Calus"]
     }
   },
   "loadout_tips": {
@@ -71,17 +67,12 @@
         "runners": {
           "description": "Nhặt Vex Craniums (sọ Vex) đem về sạc ở bệ nguyên tố đúng màu.",
           "quantity": 3,
-          "types": [
-            "Runner",
-            "Mechanic"
-          ]
+          "types": ["Runner", "Mechanic"]
         },
         "defenders": {
           "description": "Đứng bảo vệ bệ sạc, diệt Minotaur (khiên Void) và clear quái.",
           "quantity": 3,
-          "types": [
-            "Ad Clear"
-          ]
+          "types": ["Ad Clear"]
         }
       },
       "secrets": [],
@@ -141,16 +132,12 @@
         "blessed_players": {
           "description": "Một người trong mỗi cặp có buff Witch's Blessing.",
           "quantity": 3,
-          "types": [
-            "Mechanic"
-          ]
+          "types": ["Mechanic"]
         },
         "unblessed_players": {
           "description": "Người không có buff.",
           "quantity": 3,
-          "types": [
-            "Ad Clear"
-          ]
+          "types": ["Ad Clear"]
         }
       },
       "secrets": [],
@@ -211,18 +198,12 @@
         "throne_room_team": {
           "description": "Đội ở lại phòng ngai vàng, nghe callout biểu tượng và giết Psion ở bệ KHÔNG được gọi.",
           "quantity": 3,
-          "types": [
-            "Mechanic",
-            "Ad Clear"
-          ]
+          "types": ["Mechanic", "Ad Clear"]
         },
         "shadow_realm_team": {
           "description": "Đội bị hút vào không gian bóng tối, đọc 3 biểu tượng trên trán Calus và bắn đầu lâu tích buff.",
           "quantity": 3,
-          "types": [
-            "Callout",
-            "Ad Clear"
-          ]
+          "types": ["Callout", "Ad Clear"]
         }
       },
       "secrets": [],

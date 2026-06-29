@@ -5,11 +5,7 @@
     "formatting_rules": "Pantheon 2.0 - Sự kiện vĩnh viễn từ bản cập nhật Monument of Triumph. Hoạt động này yêu cầu Fireteam 6 người và có Power handicap -10.",
     "mechanic": {
       "description": "Morgeth Surpassing là hoạt động thứ hai của Pantheon 2.0, tập trung vào Warpriest (King's Fall), Consecrated Mind (Garden of Salvation), và Morgeth (Last Wish). Chú ý modifier 'Shot Caller' luôn kích hoạt.",
-      "boss_list": [
-        "Warpriest",
-        "Consecrated Mind",
-        "Morgeth"
-      ]
+      "boss_list": ["Warpriest", "Consecrated Mind", "Morgeth"]
     }
   },
   "loadout_tips": {
@@ -75,18 +71,12 @@
         "plate_readers": {
           "description": "Đứng trên 3 bệ để đọc thứ tự bệ phát sáng.",
           "quantity": 3,
-          "types": [
-            "Callout",
-            "Mechanic"
-          ]
+          "types": ["Callout", "Mechanic"]
         },
         "aura_holders": {
           "description": "Người giữ buff Brand of the Initiate, phải giết quái để duy trì buff.",
           "quantity": 3,
-          "types": [
-            "Runner",
-            "Ad Clear"
-          ]
+          "types": ["Runner", "Ad Clear"]
         }
       },
       "secrets": [],
@@ -145,17 +135,12 @@
         "mote_team": {
           "description": "Team đi theo con Minotaur để nhặt Voltaic Motes và cắm vào Relay.",
           "quantity": 3,
-          "types": [
-            "Runner"
-          ]
+          "types": ["Runner"]
         },
         "boss_team": {
           "description": "Team đi theo Boss để ăn buff Voltaic Overflow và bắn mắt.",
           "quantity": 3,
-          "types": [
-            "Mechanic",
-            "Callout"
-          ]
+          "types": ["Mechanic", "Callout"]
         }
       },
       "secrets": [],
@@ -213,17 +198,12 @@
         "strength_gatherers": {
           "description": "Nhặt các quả cầu Taken Strength rải rác quanh map (mỗi người tối đa 2 quả).",
           "quantity": 4,
-          "types": [
-            "Mechanic"
-          ]
+          "types": ["Mechanic"]
         },
         "eye_of_riven": {
           "description": "Giết con Eye of Riven (Captain), nhặt quả cầu Tinh thể để giải cứu đồng đội bị khóa.",
           "quantity": 2,
-          "types": [
-            "Runner",
-            "Callout"
-          ]
+          "types": ["Runner", "Callout"]
         }
       },
       "secrets": [],
