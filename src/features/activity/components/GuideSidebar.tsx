@@ -6,7 +6,6 @@ import { useScrollSpy } from "@/hooks/use-scroll-spy";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useGuideTOC } from "@/hooks/use-guide-toc";
 import * as React from "react";
-import { createPortal } from "react-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -47,12 +46,7 @@ export function GuideSidebar({
   activeEncounterId?: string;
 }) {
   const isMobile = useIsMobile();
-  const [mounted, setMounted] = React.useState(false);
   const { setOpenMobile } = useSidebar();
-  
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Memoize itemIds so the array reference stays stable across renders.
   // Without this, useScrollSpy re-registers the scroll listener every render.
@@ -63,7 +57,7 @@ export function GuideSidebar({
 
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId);
 
-  const { setTOC } = useGuideTOC();
+  const { setTOC } = useGuideTOC() || { setTOC: () => {} };
 
   React.useEffect(() => {
     setTOC(title, subtitle, orbit, groups, activeEncounterId);
