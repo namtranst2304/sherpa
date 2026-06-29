@@ -1,0 +1,281 @@
+{
+  "raid_name": "Morgeth Surpassing",
+  "active_orbit": "Power Delta -10",
+  "preface": {
+    "formatting_rules": "Pantheon 2.0 - Sự kiện vĩnh viễn từ bản cập nhật Monument of Triumph. Hoạt động này yêu cầu Fireteam 6 người và có Power handicap -10.",
+    "mechanic": {
+      "description": "Morgeth Surpassing là hoạt động thứ hai của Pantheon 2.0, tập trung vào Warpriest (King's Fall), Consecrated Mind (Garden of Salvation), và Morgeth (Last Wish). Chú ý modifier 'Shot Caller' luôn kích hoạt.",
+      "boss_list": [
+        "Warpriest",
+        "Consecrated Mind",
+        "Morgeth"
+      ]
+    }
+  },
+  "loadout_tips": {
+    "note": "Meta năm 2026 với Anti-Champion 2.0. Warpriest cần Linear Fusion Rifles hoặc Sniper (Whisper of the Worm). Consecrated Mind yêu cầu súng di chuyển nhanh. Morgeth cần Shotgun (như The Legend of Acrius) hoặc Rocket Launchers.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Tối quan trọng cho Phase DPS của cả 3 Boss, đặc biệt là Morgeth."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Lunafaction Boots / Cenotaph Mask",
+          "recommendation": "Lunafaction cho Warpriest, Cenotaph cho Consecrated Mind."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Ward of Dawn / Thundercrash",
+          "utility": "Bubble buff sát thương, Thundercrash dồn dam vào Morgeth."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Cuirass of the Falling Star",
+          "recommendation": "Gây sát thương lớn vào Morgeth."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot / Gathering Storm",
+          "utility": "Gathering Storm hiệu quả khi boss đứng im như Morgeth."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Star-Eater Scales",
+          "recommendation": "Tối đa hóa sát thương Super."
+        }
+      ]
+    },
+    "weapons": [
+      {
+        "name": "Whisper of the Worm",
+        "description": "Hiệu quả cao nhất trên Warpriest."
+      },
+      {
+        "name": "Legend of Acrius",
+        "description": "Vũ khí cận chiến rất mạnh đối với Morgeth."
+      }
+    ]
+  },
+  "encounters": [
+    {
+      "id": "warpriest-kings-fall",
+      "name": "Warpriest (King's Fall)",
+      "roles": {
+        "plate_readers": {
+          "description": "Đứng trên 3 bệ để đọc thứ tự bệ phát sáng.",
+          "quantity": 3,
+          "types": [
+            "Callout",
+            "Mechanic"
+          ]
+        },
+        "aura_holders": {
+          "description": "Người giữ buff Brand of the Initiate, phải giết quái để duy trì buff.",
+          "quantity": 3,
+          "types": [
+            "Runner",
+            "Ad Clear"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đọc Bệ và Lấy Brand",
+          "objective": "Dẫm lên bệ đúng thứ tự để gọi Brand of the Initiate.",
+          "steps": [
+            "Giết quái và các Hiệp Sĩ (Knights) để bắt đầu Sequence.",
+            "Nhìn mặt sau của các tảng đá, nếu nó phát sáng, người ở bệ đó phải dẫm lên đầu tiên. Người dẫm bệ sẽ nhìn thấy bệ tiếp theo phát sáng.",
+            "Dẫm đúng thứ tự 3 bệ. Người dẫm bệ thứ 3 sẽ nhận được buff 'Brand of the Initiate'."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-plates.jpg",
+              "caption": "Dẫm lên bệ theo thứ tự phát sáng để gọi Brand"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Sát Thương và Đổi Buff",
+          "objective": "Tập trung sát thương trong hào quang và luân chuyển buff.",
+          "steps": [
+            "Cả đội gom lại chỗ người có Brand để được xả sát thương vào Warpriest (nếu đứng ngoài Brand sẽ không gây sát thương được).",
+            "Người cầm Brand sẽ thấy đồng hồ đếm ngược. Trước khi về 0, người này PHẢI giết 1 con quái (Acolyte) để gia hạn đồng hồ (tối đa 5 lần).",
+            "Trong lúc đó, 2 người khác (Aura Holders) phải đi tìm và giết con Blightguard Knight để nhặt cục 'Brand Claimer'. Đem về đứng cạnh người cầm Brand và bấm nút cướp buff khi đồng hồ sắp hết."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-brand.jpg",
+              "caption": "Giữ Brand và bắn Acolytes để gia hạn thời gian"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Trốn Oculus",
+          "objective": "Nấp sau tảng đá để không bị chiêu Wipe giết.",
+          "steps": [
+            "Sau khi đổi buff 2 lần và hết giờ, Warpriest sẽ gọi ra Oculus (mặt trời khổng lồ).",
+            "Cả đội phải trốn vào bóng râm phía sau 1 trong 3 tảng đá lớn. Tảng đá đó sẽ bị thiêu rụi.",
+            "Lặp lại Phase 1 (bạn chỉ có tối đa 4 vòng DPS vì chỉ có 3 tảng đá)."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-oculus.jpg",
+              "caption": "Nấp sau tảng đá để né Oculus"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "consecrated-mind-garden",
+      "name": "Consecrated Mind (Garden of Salvation)",
+      "roles": {
+        "mote_team": {
+          "description": "Team đi theo con Minotaur để nhặt Voltaic Motes và cắm vào Relay.",
+          "quantity": 3,
+          "types": [
+            "Runner"
+          ]
+        },
+        "boss_team": {
+          "description": "Team đi theo Boss để ăn buff Voltaic Overflow và bắn mắt.",
+          "quantity": 3,
+          "types": [
+            "Mechanic",
+            "Callout"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Thu thập Motes",
+          "objective": "Nhặt 30 Voltaic Motes đem cắm vào Vex Relay.",
+          "steps": [
+            "Đội chia làm 2 nhóm: Mote Team (3 người) và Boss Team (3 người).",
+            "Mote Team đi tìm và giết con Minotaur phát sáng, nhặt Motes (mỗi người tối đa 10 cục) và chạy về Vex Relay để cắm vào. Khi cắm đủ 30 cục, Boss sẽ di chuyển ra giữa để chuẩn bị DPS."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/voltaic-motes.jpg",
+              "caption": "Nhặt Voltaic Motes do Minotaur rớt ra"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Bắn Mắt Boss (Voltaic Overflow)",
+          "objective": "Cản Boss không được Wipe team.",
+          "steps": [
+            "Trong lúc Mote team đi nhặt bóng, Boss Team bám theo Boss (Consecrated Mind). Boss sẽ nhả ra 1 cục Voltaic Overflow.",
+            "Một người trong team nhặt cục này sẽ thấy cánh quạt của Boss mở ra, để lộ các điểm yếu (mắt) màu đỏ. 2 người còn lại phải bắn nát các mắt đỏ (bắn mắt trắng sẽ Wipe).",
+            "Người nhặt cục Overflow sẽ bị debuff Voltaic. Không được nhặt cục thứ 2 liên tiếp nếu chưa hết debuff (đó là lý do cần 3 người luân phiên nhặt)."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/consecrated-eyes.jpg",
+              "caption": "Bắn các mắt màu đỏ trên cánh quạt"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: DPS Vừa Chạy Vừa Bắn",
+          "objective": "Đuổi theo Boss và xả sát thương.",
+          "steps": [
+            "Khi đủ 30 Motes, Boss đi ra giữa và mở toàn bộ cánh quạt. Tất cả các mắt chuyển sang màu đỏ.",
+            "Cả đội bắn vỡ TẤT CẢ các mắt đỏ cùng một lúc. Lớp vỏ sẽ bật ra để lộ điểm yếu (cái lõi sáng giữa thân).",
+            "Boss sẽ vừa lùi lại vừa chạy trốn. Cả đội phải đuổi theo và xả sát thương liên tục trước khi hắn đóng lại."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/consecrated-dps.jpg",
+              "caption": "Đuổi theo Boss và bắn vào lõi giữa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "morgeth-spirekeeper",
+      "name": "Morgeth, the Spirekeeper (Last Wish)",
+      "roles": {
+        "strength_gatherers": {
+          "description": "Nhặt các quả cầu Taken Strength rải rác quanh map (mỗi người tối đa 2 quả).",
+          "quantity": 4,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "eye_of_riven": {
+          "description": "Giết con Eye of Riven (Captain), nhặt quả cầu Tinh thể để giải cứu đồng đội bị khóa.",
+          "quantity": 2,
+          "types": [
+            "Runner",
+            "Callout"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Nhặt Taken Strength",
+          "objective": "Thu thập đủ 10 quả Taken Strength mà không ai bị chết vì quá tải (nhặt 3 quả = chết).",
+          "steps": [
+            "Morgeth sẽ liên tục gọi ra các quả cầu màu đen (Taken Strength). Team phải cử người ra ăn.",
+            "Mỗi người chỉ ăn được TỐI ĐA 2 QUẢ. Ăn quả thứ 3 sẽ chết lập tức.",
+            "Sau một lúc, Morgeth sẽ chọn ngẫu nhiên 1 người đang cầm Taken Strength và nhốt người đó vào lốc xoáy, khóa chặt lại (Torn between Dimensions)."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/taken-strength.jpg",
+              "caption": "Ăn tối đa 2 quả Taken Strength"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Giải Cứu (Eye of Riven)",
+          "objective": "Dùng Tinh thể Eye of Riven để giải cứu người bị khóa và hút số lượng Taken Strength của họ.",
+          "steps": [
+            "Một con Taken Captain (Eye of Riven) sẽ xuất hiện. Giết nó, nó sẽ rớt ra 1 quả cầu Tinh thể phát sáng.",
+            "Người được phân công Eye of Riven nhặt tinh thể lên, chạy đến chỗ người đang bị lốc xoáy nhốt và ném (bấm nút lựu đạn) để giải cứu.",
+            "LÚC NÀY: Người giải cứu sẽ HÚT toàn bộ số Taken Strength của người bị nhốt. (Ví dụ: người bị nhốt có 2 quả, người giải cứu đang có 0 quả -> người giải cứu thành 2 quả).",
+            "Cứ tiếp tục chu kỳ cho đến khi quả Taken Strength THỨ 10 xuất hiện."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/eye-of-riven.jpg",
+              "caption": "Ném Tinh thể giải cứu đồng đội khỏi lốc xoáy"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Sát Thương (DPS)",
+          "objective": "Nhặt quả thứ 10 và bạo kích Morgeth.",
+          "steps": [
+            "Khi quả thứ 10 xuất hiện (thường ở ngay trước mặt Morgeth), nhặt nó lên để bắt đầu Phase DPS.",
+            "Mọi người tập trung dưới lưng Morgeth. Cái bướu khổng lồ phát sáng trên lưng hắn là điểm yếu.",
+            "Morgeth sẽ bắn ra các tia Axit theo hình vòng cung, có thể dùng khiên Bubble hoặc Banner Shield chặn lại.",
+            "Sát thương bằng Shotgun (Legend of Acrius) hoặc súng máy. Nếu không giết kịp trong 1 phase, phải phá mấy quả bóng năng lượng màu trắng đang bay tới."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/morgeth-dps.jpg",
+              "caption": "Tập trung bắn vào bướu lưng của Morgeth"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

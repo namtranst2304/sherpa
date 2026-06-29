@@ -1,0 +1,575 @@
+{
+  "raid_name": "The Gauntlet",
+  "active_orbit": "Power Delta -20",
+  "preface": {
+    "formatting_rules": "Pantheon 2.0 - Sự kiện vĩnh viễn từ bản cập nhật Monument of Triumph. Hoạt động này yêu cầu Fireteam 6 người và có Power handicap -20.",
+    "mechanic": {
+      "description": "The Gauntlet là thử thách khó nhất của Pantheon 2.0, chuỗi Boss Rush bao gồm 7 Boss liên tiếp với Power handicap -20.",
+      "boss_list": [
+        "Argos",
+        "Gahlran",
+        "Calus",
+        "Warpriest",
+        "Consecrated Mind",
+        "Morgeth",
+        "Insurrection Prime"
+      ]
+    }
+  },
+  "loadout_tips": {
+    "note": "Meta năm 2026. Chuỗi 7 Boss dài hơi yêu cầu khả năng sinh tồn và sát thương liên tục tốt (Shot Caller modifier). Chuẩn bị sẵn Cenotaph Mask và Heavy Ammo Finder.",
+    "warlocks": {
+      "supers": [
+        {
+          "name": "Well of Radiance",
+          "utility": "Cần tối thiểu 2 Warlock thay phiên Well để đảm bảo DPS."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Cenotaph Mask",
+          "recommendation": "Bơm đạn cho cả team."
+        }
+      ]
+    },
+    "titans": {
+      "supers": [
+        {
+          "name": "Banner of War / Bubble",
+          "utility": "Sinh tồn."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Synthoceps",
+          "recommendation": "Dọn dẹp quái nhanh."
+        }
+      ]
+    },
+    "hunters": {
+      "supers": [
+        {
+          "name": "Shadowshot / Golden Gun",
+          "utility": "Shadowshot là ưu tiên để khống chế quái."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Orpheus Rig",
+          "recommendation": "Hồi Tether nhanh nhất."
+        }
+      ]
+    },
+    "weapons": [
+      {
+        "name": "Whisper of the Worm",
+        "description": "Bắn xa (Warpriest, Insurrection, Calus)."
+      },
+      {
+        "name": "Legend of Acrius / Bane of Sorrow",
+        "description": "Cận chiến và Machine gun phá khiên."
+      }
+    ]
+  },
+  "encounters": [
+    {
+      "id": "argos-eater-of-worlds",
+      "name": "Argos (Eater of Worlds)",
+      "roles": {
+        "runners": {
+          "description": "Nhặt Vex Craniums (sọ Vex) đem về sạc ở bệ nguyên tố đúng màu.",
+          "quantity": 3,
+          "types": [
+            "Runner",
+            "Mechanic"
+          ]
+        },
+        "defenders": {
+          "description": "Đứng bảo vệ bệ sạc, diệt Minotaur (khiên Void) và clear quái.",
+          "quantity": 3,
+          "types": [
+            "Ad Clear"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Sạc Sọ Vex (Craniums) và Phá Khiên",
+          "objective": "Nấu sọ Vex theo đúng màu yêu cầu để phá khiên Argos.",
+          "steps": [
+            "Nhìn quả cầu phát sáng trên mặt Argos để biết cần nấu sọ Vex màu gì (Arc, Solar, Void).",
+            "3 người cầm sọ Vex đã nấu chín bắn ĐỒNG THỜI (3-2-1) vào 3 quả cầu để phá khiên."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/cranium.jpg",
+              "caption": "Nhặt và nấu sọ Vex ở các bệ nguyên tố"
+            },
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/unstable-energy.jpg",
+              "caption": "Bắn đồng thời để phá khiên và nhận buff"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Sát Thương và Né Chiêu",
+          "objective": "Gây sát thương lên Argos đồng thời né đòn bắt nhốt.",
+          "steps": [
+            "Cả đội gom lại bắn vào điểm yếu của Argos (đầu).",
+            "Né Detainment Prism (tia lưới) để không bị nhốt và chết."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/argos.jpg",
+              "caption": "Argos trong giai đoạn sát thương"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Phá Điểm Yếu (Gravity Smasher)",
+          "objective": "Phá hủy các khối điểm yếu màu trắng trên người Argos để không bị Wipe.",
+          "steps": [
+            "Argos tụ chiêu Wipe đếm ngược 30 giây.",
+            "Cả đội xả đạn phá vỡ ÍT NHẤT 2 khối điểm yếu màu trắng (1 cặp) trong thời gian 30s."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/weakpoints.jpg",
+              "caption": "Bắn nát khối điểm yếu màu trắng trên người Argos"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gahlran-crown-of-sorrow",
+      "name": "Gahlran (Crown of Sorrow)",
+      "roles": {
+        "blessed_players": {
+          "description": "Một người trong mỗi cặp có buff Witch's Blessing.",
+          "quantity": 3,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "unblessed_players": {
+          "description": "Người không có buff.",
+          "quantity": 3,
+          "types": [
+            "Ad Clear"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Quản lý Buff Witch's Blessing",
+          "objective": "Liên tục truyền buff cho nhau trước khi đồng hồ đếm ngược giết bạn.",
+          "steps": [
+            "Đội chia làm 3 cặp. Đổi buff liên tục (trước khi 60s đếm ngược về 0) bằng cách CÙNG BẮN vào quả cầu Witch's Vessel treo lơ lửng.",
+            "Người có buff bắn quái xanh, người không buff bắn quái thường. Cùng nhau bắn vỡ tinh thể (Crystals)."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/platform.jpg",
+              "caption": "Chia 3 cặp đứng 3 khu vực quanh bản sao Gahlran"
+            },
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/witch-blessing.jpg",
+              "caption": "Cùng nhau bắn vào Witch's Vessel để chuyển buff"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Hạ gục Deception",
+          "objective": "Dùng buff chém Gahlran's Deception, mượn rìu của Gahlran khổng lồ để giết hắn.",
+          "steps": [
+            "Cả 2 người (có buff và không buff) ĐỒNG THỜI melee tên Deception (mini-Gahlran).",
+            "Bắn vỡ tay đang sáng lên của Gahlran khổng lồ để hắn nện rìu xuống chém chết Deception."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/deception.jpg",
+              "caption": "Cận chiến Deception và bắn tay Gahlran khổng lồ"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: DPS Gahlran Thật",
+          "objective": "Tìm ra bản thể thật và dồn sát thương.",
+          "steps": [
+            "Bắn vào tay và đầu của 3 tên Gahlran khổng lồ để tìm ra bản thể THẬT.",
+            "Cả 6 người tập trung về khu vực của Gahlran thật và cắm Well/Bubble DPS.",
+            "Khi Gahlran giơ 2 tay lên và vận công (Immune), lập tức chuyển sang bắn vỡ 2 tay hắn rồi quay lại bắn đầu."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/dps.jpg",
+              "caption": "Tập trung bắn Gahlran thật, chú ý phá tay khi hắn immune"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "calus-leviathan",
+      "name": "Calus (Leviathan)",
+      "roles": {
+        "throne_room_team": {
+          "description": "Đội ở lại phòng ngai vàng, nghe callout biểu tượng và giết Psion ở bệ KHÔNG được gọi.",
+          "quantity": 3,
+          "types": [
+            "Mechanic",
+            "Ad Clear"
+          ]
+        },
+        "shadow_realm_team": {
+          "description": "Đội bị hút vào không gian bóng tối, đọc 3 biểu tượng trên trán Calus và bắn đầu lâu tích buff.",
+          "quantity": 3,
+          "types": [
+            "Callout",
+            "Ad Clear"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Phân tách và Đọc Biểu Tượng",
+          "objective": "Giao tiếp chuẩn xác giữa hai đội để sống sót qua các vách ngăn trong Shadow Realm.",
+          "steps": [
+            "Bắn rớt cái cốc trên tay Calus. CẢ ĐỘI sẽ bị hút vào Shadow Realm. 3 người Throne Team nhặt cầu sáng quay về.",
+            "Shadow Team đọc 3 biểu tượng (Cốc, Mặt Trời, Chó, Rìu).",
+            "Throne Team nghe biểu tượng và giết con Psion đứng ở bệ KHÔNG được gọi."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/chalice.jpg",
+              "caption": "Bắn rớt cốc của Calus để bắt đầu"
+            },
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/shadow-real.jpg",
+              "caption": "Đọc biểu tượng trên trán Calus khổng lồ tại Shadow Realm"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Tích Force of Will và Phá Khiên",
+          "objective": "Đội Shadow Realm bắn đầu lâu để kiếm buff sát thương trước khi quay về.",
+          "steps": [
+            "Shadow Team dùng vũ khí Arc bắn vỡ càng nhiều đầu lâu càng tốt (cần >70 stacks Force of Will).",
+            "Throne Team câu giờ, chờ Shadow Team đủ stack mới được phá vỡ lớp khiên của Calus."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/force-of-will.jpg",
+              "caption": "Bắn đầu lâu khạc ra từ mồm Calus để tích buff Force of Will"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Sát Thương (DPS)",
+          "objective": "Đứng chung trên bệ biểu tượng để xả sát thương vào điểm yếu của Calus.",
+          "steps": [
+            "Tất cả 6 người nhảy lên CÙNG 1 BỆ. Đặt Well và xả đạn headshot liên tục để kích hoạt Shot Caller.",
+            "Xoay vòng qua các bệ tiếp theo khi bệ cạn năng lượng."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/dps-1.jpg",
+              "caption": "Tập trung đứng trên bệ và bắn vào điểm yếu của Calus"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "warpriest-kings-fall",
+      "name": "Warpriest (King's Fall)",
+      "roles": {
+        "plate_readers": {
+          "description": "Đứng trên 3 bệ để đọc thứ tự bệ phát sáng.",
+          "quantity": 3,
+          "types": [
+            "Callout",
+            "Mechanic"
+          ]
+        },
+        "aura_holders": {
+          "description": "Người giữ buff Brand of the Initiate, phải giết quái để duy trì buff.",
+          "quantity": 3,
+          "types": [
+            "Runner",
+            "Ad Clear"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đọc Bệ và Lấy Brand",
+          "objective": "Dẫm lên bệ đúng thứ tự để gọi Brand of the Initiate.",
+          "steps": [
+            "Giết quái và các Hiệp Sĩ (Knights) để bắt đầu Sequence.",
+            "Nhìn mặt sau của các tảng đá, nếu nó phát sáng, người ở bệ đó phải dẫm lên đầu tiên. Người dẫm bệ sẽ nhìn thấy bệ tiếp theo phát sáng.",
+            "Dẫm đúng thứ tự 3 bệ. Người dẫm bệ thứ 3 sẽ nhận được buff 'Brand of the Initiate'."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-plates.jpg",
+              "caption": "Dẫm lên bệ theo thứ tự phát sáng để gọi Brand"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Sát Thương và Đổi Buff",
+          "objective": "Tập trung sát thương trong hào quang và luân chuyển buff.",
+          "steps": [
+            "Cả đội gom lại chỗ người có Brand để được xả sát thương vào Warpriest (nếu đứng ngoài Brand sẽ không gây sát thương được).",
+            "Người cầm Brand sẽ thấy đồng hồ đếm ngược. Trước khi về 0, người này PHẢI giết 1 con quái (Acolyte) để gia hạn đồng hồ (tối đa 5 lần).",
+            "Trong lúc đó, 2 người khác (Aura Holders) phải đi tìm và giết con Blightguard Knight để nhặt cục 'Brand Claimer'. Đem về đứng cạnh người cầm Brand và bấm nút cướp buff khi đồng hồ sắp hết."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-brand.jpg",
+              "caption": "Giữ Brand và bắn Acolytes để gia hạn thời gian"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Trốn Oculus",
+          "objective": "Nấp sau tảng đá để không bị chiêu Wipe giết.",
+          "steps": [
+            "Sau khi đổi buff 2 lần và hết giờ, Warpriest sẽ gọi ra Oculus (mặt trời khổng lồ).",
+            "Cả đội phải trốn vào bóng râm phía sau 1 trong 3 tảng đá lớn. Tảng đá đó sẽ bị thiêu rụi.",
+            "Lặp lại Phase 1 (bạn chỉ có tối đa 4 vòng DPS vì chỉ có 3 tảng đá)."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-oculus.jpg",
+              "caption": "Nấp sau tảng đá để né Oculus"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "consecrated-mind-garden",
+      "name": "Consecrated Mind (Garden of Salvation)",
+      "roles": {
+        "mote_team": {
+          "description": "Team đi theo con Minotaur để nhặt Voltaic Motes và cắm vào Relay.",
+          "quantity": 3,
+          "types": [
+            "Runner"
+          ]
+        },
+        "boss_team": {
+          "description": "Team đi theo Boss để ăn buff Voltaic Overflow và bắn mắt.",
+          "quantity": 3,
+          "types": [
+            "Mechanic",
+            "Callout"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Thu thập Motes",
+          "objective": "Nhặt 30 Voltaic Motes đem cắm vào Vex Relay.",
+          "steps": [
+            "Đội chia làm 2 nhóm: Mote Team (3 người) và Boss Team (3 người).",
+            "Mote Team đi tìm và giết con Minotaur phát sáng, nhặt Motes (mỗi người tối đa 10 cục) và chạy về Vex Relay để cắm vào. Khi cắm đủ 30 cục, Boss sẽ di chuyển ra giữa để chuẩn bị DPS."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/voltaic-motes.jpg",
+              "caption": "Nhặt Voltaic Motes do Minotaur rớt ra"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Bắn Mắt Boss (Voltaic Overflow)",
+          "objective": "Cản Boss không được Wipe team.",
+          "steps": [
+            "Trong lúc Mote team đi nhặt bóng, Boss Team bám theo Boss (Consecrated Mind). Boss sẽ nhả ra 1 cục Voltaic Overflow.",
+            "Một người trong team nhặt cục này sẽ thấy cánh quạt của Boss mở ra, để lộ các điểm yếu (mắt) màu đỏ. 2 người còn lại phải bắn nát các mắt đỏ (bắn mắt trắng sẽ Wipe).",
+            "Người nhặt cục Overflow sẽ bị debuff Voltaic. Không được nhặt cục thứ 2 liên tiếp nếu chưa hết debuff (đó là lý do cần 3 người luân phiên nhặt)."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/consecrated-eyes.jpg",
+              "caption": "Bắn các mắt màu đỏ trên cánh quạt"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: DPS Vừa Chạy Vừa Bắn",
+          "objective": "Đuổi theo Boss và xả sát thương.",
+          "steps": [
+            "Khi đủ 30 Motes, Boss đi ra giữa và mở toàn bộ cánh quạt. Tất cả các mắt chuyển sang màu đỏ.",
+            "Cả đội bắn vỡ TẤT CẢ các mắt đỏ cùng một lúc. Lớp vỏ sẽ bật ra để lộ điểm yếu (cái lõi sáng giữa thân).",
+            "Boss sẽ vừa lùi lại vừa chạy trốn. Cả đội phải đuổi theo và xả sát thương liên tục trước khi hắn đóng lại."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/consecrated-dps.jpg",
+              "caption": "Đuổi theo Boss và bắn vào lõi giữa"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "morgeth-spirekeeper",
+      "name": "Morgeth, the Spirekeeper (Last Wish)",
+      "roles": {
+        "strength_gatherers": {
+          "description": "Nhặt các quả cầu Taken Strength rải rác quanh map (mỗi người tối đa 2 quả).",
+          "quantity": 4,
+          "types": [
+            "Mechanic"
+          ]
+        },
+        "eye_of_riven": {
+          "description": "Giết con Eye of Riven (Captain), nhặt quả cầu Tinh thể để giải cứu đồng đội bị khóa.",
+          "quantity": 2,
+          "types": [
+            "Runner",
+            "Callout"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Nhặt Taken Strength",
+          "objective": "Thu thập đủ 10 quả Taken Strength mà không ai bị chết vì quá tải (nhặt 3 quả = chết).",
+          "steps": [
+            "Morgeth sẽ liên tục gọi ra các quả cầu màu đen (Taken Strength). Team phải cử người ra ăn.",
+            "Mỗi người chỉ ăn được TỐI ĐA 2 QUẢ. Ăn quả thứ 3 sẽ chết lập tức.",
+            "Sau một lúc, Morgeth sẽ chọn ngẫu nhiên 1 người đang cầm Taken Strength và nhốt người đó vào lốc xoáy, khóa chặt lại (Torn between Dimensions)."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/taken-strength.jpg",
+              "caption": "Ăn tối đa 2 quả Taken Strength"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Giải Cứu (Eye of Riven)",
+          "objective": "Dùng Tinh thể Eye of Riven để giải cứu người bị khóa và hút số lượng Taken Strength của họ.",
+          "steps": [
+            "Một con Taken Captain (Eye of Riven) sẽ xuất hiện. Giết nó, nó sẽ rớt ra 1 quả cầu Tinh thể phát sáng.",
+            "Người được phân công Eye of Riven nhặt tinh thể lên, chạy đến chỗ người đang bị lốc xoáy nhốt và ném (bấm nút lựu đạn) để giải cứu.",
+            "LÚC NÀY: Người giải cứu sẽ HÚT toàn bộ số Taken Strength của người bị nhốt. (Ví dụ: người bị nhốt có 2 quả, người giải cứu đang có 0 quả -> người giải cứu thành 2 quả).",
+            "Cứ tiếp tục chu kỳ cho đến khi quả Taken Strength THỨ 10 xuất hiện."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/eye-of-riven.jpg",
+              "caption": "Ném Tinh thể giải cứu đồng đội khỏi lốc xoáy"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Sát Thương (DPS)",
+          "objective": "Nhặt quả thứ 10 và bạo kích Morgeth.",
+          "steps": [
+            "Khi quả thứ 10 xuất hiện (thường ở ngay trước mặt Morgeth), nhặt nó lên để bắt đầu Phase DPS.",
+            "Mọi người tập trung dưới lưng Morgeth. Cái bướu khổng lồ phát sáng trên lưng hắn là điểm yếu.",
+            "Morgeth sẽ bắn ra các tia Axit theo hình vòng cung, có thể dùng khiên Bubble hoặc Banner Shield chặn lại.",
+            "Sát thương bằng Shotgun (Legend of Acrius) hoặc súng máy. Nếu không giết kịp trong 1 phase, phải phá mấy quả bóng năng lượng màu trắng đang bay tới."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/morgeth-dps.jpg",
+              "caption": "Tập trung bắn vào bướu lưng của Morgeth"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "insurrection-prime-scourge",
+      "name": "Insurrection Prime (Scourge of the Past)",
+      "roles": {
+        "map_reader": {
+          "description": "Đọc bản đồ ngầm để báo vị trí Berserkers và bệ sạc năng lượng.",
+          "quantity": 1,
+          "types": [
+            "Callout"
+          ]
+        },
+        "runners": {
+          "description": "Giết Berserkers trên mặt đất, nhặt bóng năng lượng và đem cắm vào bệ sạc.",
+          "quantity": 4,
+          "types": [
+            "Runner",
+            "Ad Clear"
+          ]
+        },
+        "sniper": {
+          "description": "Bắn các điểm yếu trên người Boss để giải cứu Runners khi bị Boss khóa mục tiêu.",
+          "quantity": 1,
+          "types": [
+            "Mechanic"
+          ]
+        }
+      },
+      "secrets": [],
+      "walkthrough": {
+        "phase_1": {
+          "name": "Giai đoạn 1: Đọc Map và Sạc Năng Lượng",
+          "objective": "Thu thập các quả bóng năng lượng để gọi xe tăng (Drake Tank).",
+          "steps": [
+            "Người đọc map (Map Reader) xuống lòng đất, nhìn vào màn hình Hologram để báo vị trí xuất hiện của Berserkers (điểm đỏ) và các bệ sạc cần cắm bóng (điểm tam giác).",
+            "Đội trên mặt đất (Runners) chạy đến vị trí Berserkers, phối hợp 2 người để bắn vỡ 2 cục khiên trước ngực và sau lưng hắn, nhặt bóng năng lượng rơi ra.",
+            "Người nhặt bóng sẽ bị debuff đếm ngược, phải chạy nhanh đến bệ sạc mà Map Reader đã gọi để cắm vào (Dunk).",
+            "Trong lúc đó, Boss sẽ khóa mục tiêu vào các Runners. Người bắn tỉa (Sniper) phải dùng súng ngắm bắn vỡ các điểm yếu phát sáng trên giáp Boss (đầu gối, lưng, vai) để ngắt đòn tấn công."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/scourge-map.jpg",
+              "caption": "Xem map ngầm để báo vị trí Berserker"
+            }
+          ]
+        },
+        "phase_2": {
+          "name": "Giai đoạn 2: Bắn vỡ khiên bằng Xe Tăng",
+          "objective": "Dùng xe tăng gọi xuống để phá hủy lớp giáp bảo vệ Boss.",
+          "steps": [
+            "Khi cắm đủ 4 quả bóng năng lượng, một chiếc xe tăng (Drake Tank) sẽ được gọi xuống ở khu vực trung tâm.",
+            "Một người lái xe tăng xả pháo thẳng vào Boss. Khi lớp khiên của Boss vỡ, Phase Sát Thương (DPS) bắt đầu."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/drake-tank.jpg",
+              "caption": "Gọi xe tăng Drake Tank bắn vỡ khiên Boss"
+            }
+          ]
+        },
+        "phase_3": {
+          "name": "Giai đoạn 3: Phân chia CAP và Sát Thương",
+          "objective": "Đứng đúng vị trí buff C-A-P để xả sát thương tối đa và không giết lẫn nhau.",
+          "steps": [
+            "Khi Boss mất khiên, trên người mỗi thành viên sẽ xuất hiện 1 trong 3 loại buff: C (Continuous), A (Angular), P (Parallel).",
+            "Cả đội tập trung về vị trí của xe tăng (hoặc vị trí đã phân chia từ trước: C bên trái, A ở giữa, P bên phải).",
+            "QUY TẮC SỐNG CÒN: Những người có buff GIỐNG NHAU phải đứng CẠNH NHAU (sẽ được nhân đôi sát thương). Những người có buff KHÁC NHAU tuyệt đối không được đứng gần, nếu không sẽ bị điện giật chết cả hai.",
+            "Trong quá trình bắn, buff C-A-P sẽ bị đổi ngẫu nhiên 1 lần. Cả đội phải nhanh chóng nhìn góc trái màn hình và di chuyển lại về đúng vị trí chữ của mình.",
+            "Cắm Well, xả đạn Sniper (ví dụ Alone as a God hoặc Whisper of the Worm) vào con Servitor bên trong ngực Boss."
+          ],
+          "images": [
+            {
+              "url": "https://grindout.com/storage/editor-uploads/guides/cap-buffs.jpg",
+              "caption": "Đứng đúng vị trí buff C-A-P để xả sát thương"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
