@@ -1,10 +1,10 @@
 {
-  "raid_name": "Insurrection Prime Revolutionary",
+  "raid_name": "Insurrection Prime Revolution",
   "active_orbit": "Power Delta -15",
   "preface": {
     "formatting_rules": "Pantheon 2.0 - Sự kiện vĩnh viễn từ bản cập nhật Monument of Triumph. Hoạt động này yêu cầu Fireteam 6 người và có Power handicap -15.",
     "mechanic": {
-      "description": "Insurrection Prime Revolutionary là hoạt động Power Delta -15 của Pantheon 2.0, chuỗi Boss Rush bao gồm 7 Boss liên tiếp.",
+      "description": "Insurrection Prime Revolution là gauntlet dài nhất và là thử thách tối thượng, kết hợp 6 Boss từ 2 đợt trước và mang trở lại Insurrection Prime.",
       "boss_list": [
         "Argos",
         "Gahlran",
@@ -16,19 +16,39 @@
       ]
     }
   },
+  "activity_secrets": [
+    {
+      "title": "Hệ thống Thử Thách (Feats)",
+      "description": "Bật tối thiểu 3 Feats để kích hoạt tỷ lệ rơi đồ Tier 5. Nếu bật đủ 5 Feat ở Gauntlet cuối cùng, bạn sẽ nhận Emblem độc quyền 'Hall of the Gods'.",
+      "steps": [
+        "**Token Limit:** Hạn chế số lần hồi sinh (+50% điểm).",
+        "**Additional Battalions:** Quái đông và trâu hơn (+50% điểm).",
+        "**Phase Limit:** Bắt buộc phải hạ Boss trong số phase giới hạn (+50% điểm).",
+        "**Encounter Challenges:** Kích hoạt thử thách ẩn của từng Boss (+100% điểm).",
+        "**Cutthroat Combat:** Sát thương nhận vào tăng đột biến (+300% điểm)."
+      ],
+      "images": []
+    },
+    {
+      "title": "Hall of the Gods & Loot",
+      "description": "Hoàn thành gauntlet 7 Boss với 5 Feat để lấy Emblem 'Hall of the Gods'. Drop toàn bộ vũ khí Raid Tier 4/5 (Chattering Bone, Threat Level, Zaouli's Bane, Reckless Oracle, Alone as a God).",
+      "steps": [],
+      "images": []
+    }
+  ],
   "loadout_tips": {
-    "note": "Meta năm 2026. Chuỗi 7 Boss dài hơi yêu cầu khả năng sinh tồn và sát thương liên tục tốt (Shot Caller modifier). Chuẩn bị sẵn Cenotaph Mask và Heavy Ammo Finder.",
+    "note": "Sống sót là trên hết ở Power Delta -15. Mang đầy đủ vũ khí Tier 5 như Threat Level, Zaouli's Bane, và Conditional Finality.",
     "warlocks": {
       "supers": [
         {
           "name": "Well of Radiance",
-          "utility": "Cần tối thiểu 2 Warlock thay phiên Well để đảm bảo DPS."
+          "utility": "Cần 2 Warlock."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Cenotaph Mask",
-          "recommendation": "Bơm đạn cho cả team."
+          "recommendation": "Bơm đạn liên tục."
         }
       ]
     },
@@ -36,38 +56,38 @@
       "supers": [
         {
           "name": "Banner of War / Bubble",
-          "utility": "Sinh tồn."
+          "utility": "Sinh tồn tốt nhất."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Synthoceps",
-          "recommendation": "Dọn dẹp quái nhanh."
+          "recommendation": "Dọn dẹp quái."
         }
       ]
     },
     "hunters": {
       "supers": [
         {
-          "name": "Shadowshot / Golden Gun",
-          "utility": "Shadowshot là ưu tiên để khống chế quái."
+          "name": "Shadowshot",
+          "utility": "Khống chế quái và hồi Orb."
         }
       ],
       "exotics_and_abilities": [
         {
           "name": "Orpheus Rig",
-          "recommendation": "Hồi Tether nhanh nhất."
+          "recommendation": "Hồi nhanh Tether."
         }
       ]
     },
     "weapons": [
       {
-        "name": "Whisper of the Worm",
-        "description": "Bắn xa (Warpriest, Insurrection, Calus)."
+        "name": "Whisper of the Worm / Alone as a God",
+        "description": "DPS khoảng cách xa."
       },
       {
-        "name": "Legend of Acrius / Bane of Sorrow",
-        "description": "Cận chiến và Machine gun phá khiên."
+        "name": "Conditional Finality",
+        "description": "Đóng băng và kích nổ quái to."
       }
     ]
   },

@@ -56,6 +56,10 @@
       {
         "name": "Bane of Sorrow / Alone as a God",
         "description": "Bane of Sorrow cho Argos/Gahlran. Alone as a God cho Calus."
+      },
+      {
+        "name": "Threat Level / Conditional Finality",
+        "description": "Vũ khí cận chiến hạng nặng từ Tier 5 Loot pool rất hiệu quả."
       }
     ]
   },
@@ -256,6 +260,29 @@
           ]
         }
       }
+    }
+  ],
+  "activity_secrets": [
+    {
+      "title": "Hệ thống Thử Thách (Feats)",
+      "description": "Bật tối thiểu 3 Feats để kích hoạt tỷ lệ rơi đồ Tier 5. Nếu bật đủ 5 Feat ở Gauntlet cuối cùng, bạn sẽ nhận Emblem độc quyền 'Hall of the Gods'.",
+      "steps": [
+        "**Token Limit:** Hạn chế số lần hồi sinh (+50% điểm).",
+        "**Additional Battalions:** Quái đông và trâu hơn (+50% điểm).",
+        "**Phase Limit:** Bắt buộc phải hạ Boss trong số phase giới hạn (+50% điểm).",
+        "**Encounter Challenges:** Kích hoạt thử thách ẩn của từng Boss (+100% điểm).",
+        "**Cutthroat Combat:** Sát thương nhận vào tăng đột biến (+300% điểm)."
+      ],
+      "images": []
+    },
+    {
+      "title": "Phần Thưởng Cố Định (Loot & Exotics)",
+      "description": "Nhận ngay vũ khí Tier 4 & Tier 5 (Adept/Harrowed) như Alone as a God, Threat Level. Đặc biệt: Hoàn thành node này để được ĐỔI THẲNG súng Exotic.",
+      "steps": [
+        "**Exotic Lựa Chọn:** Legend of Acrius HOẶC Tarrabah.",
+        "**Vũ Khí Meta Drop:** Conditional Finality (Shotgun)."
+      ],
+      "images": []
     }
   ]
 }
