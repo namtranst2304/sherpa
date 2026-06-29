@@ -81,10 +81,12 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
       });
     };
 
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const scrollContainer = document.getElementById("timeline-scroll-container") || window;
+    scrollContainer.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+    
     return () => {
-      window.removeEventListener("scroll", onScroll);
+      scrollContainer.removeEventListener("scroll", onScroll);
       if (rafId !== null) cancelAnimationFrame(rafId);
     };
   }, [eraRefs, rawProgress]); // autoScrollState removed — using ref instead

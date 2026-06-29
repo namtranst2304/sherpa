@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { DESTINY_TIMELINE } from "@/data/timeline/index";
 import { EraNav } from "./EraNav";
 import { ScrollProgress } from "./ScrollProgress";
@@ -11,16 +11,11 @@ import { EraCinematicScene } from "./EraCinematicScene";
 export function DestinyTimeline() {
   const eraRefs = useRef<Map<string, HTMLElement>>(new Map());
 
-  // Enable scroll snapping for the entire window while viewing the timeline
-  useEffect(() => {
-    document.documentElement.classList.add("snap-y", "snap-mandatory");
-    return () => {
-      document.documentElement.classList.remove("snap-y", "snap-mandatory");
-    };
-  }, []);
-
   return (
-    <div className="bg-[#050505] min-h-screen font-sans text-zinc-100 overflow-x-hidden selection:bg-neon-cyan/30 selection:text-white pb-8">
+    <div 
+      id="timeline-scroll-container"
+      className="bg-[#050505] h-[100dvh] w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory scroll-smooth font-sans text-zinc-100 selection:bg-neon-cyan/30 selection:text-white"
+    >
       <ScrollProgress />
       <EraNav eraRefs={eraRefs} />
 
