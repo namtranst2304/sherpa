@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Menu } from "lucide-react"
 
@@ -40,11 +41,19 @@ import {
 } from "./top-nav-variants"
 
 export function TopNav() {
+  const pathname = usePathname()
   const activities = Object.values(DESTINY_ACTIVITIES)
   const { title: tocTitle, groups: tocGroups, activeEncounterId } = useGuideTOC() || { groups: [] };
 
-  return (
-    <header className="sticky top-0 z-50 w-full border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)] relative">
+  const isTimeline = pathname === "/timeline";
+
+  const headerElement = (
+    <header className={cn(
+      "w-full border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)] relative",
+      isTimeline
+        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100"
+        : "sticky top-0 z-50"
+    )}>
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />
       <div className="flex h-14 w-full items-center px-4 md:px-6">
 
@@ -209,10 +218,19 @@ export function TopNav() {
 
         {/* Portal Target for Dynamic Headers (e.g., Timeline Active Chapter) */}
         <div id="topnav-portal-target" className="ml-auto flex h-full items-center" />
-
       </div>
     </header>
   )
+
+  if (isTimeline) {
+    return (
+      <div className="fixed top-0 left-0 w-full h-6 z-[60] group">
+        {headerElement}
+      </div>
+    )
+  }
+
+  return headerElement;
 }
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a"> & { title: string, hoverClass?: string, descClass?: string }>(
