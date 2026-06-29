@@ -1,10 +1,24 @@
 "use client";
 
 import { useRef } from "react";
-import { DESTINY_TIMELINE } from "@/data/timeline/index";
+import { useInView } from "motion/react";
+import { DESTINY_TIMELINE, type TimelineEra } from "@/data/timeline/index";
 import { EraNav } from "./EraNav";
 import { ScrollProgress } from "./ScrollProgress";
 import { EraCinematicScene } from "./EraCinematicScene";
+
+// Lazy wrapper to prevent rendering all 16 carousels at once, saving massive amounts of RAM and DOM nodes.
+function LazyEraScene({ era, index }: { era: TimelineEra, index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  // Mount when within 1 viewport of the screen. once: true means it stays mounted after scrolling past.
+  const isInView = useInView(ref, { once: true, margin: "100% 0px" });
+
+  return (
+    <div ref={ref} className="w-full h-full">
+      {isInView ? <EraCinematicScene era={era} index={index} /> : null}
+    </div>
+  );
+}
 
 export function DestinyTimeline() {
   const eraRefs = useRef<Map<string, HTMLElement>>(new Map());
@@ -28,7 +42,7 @@ export function DestinyTimeline() {
             }}
             className="w-full h-full snap-center snap-always shrink-0"
           >
-            <EraCinematicScene era={era} index={idx} />
+            <LazyEraScene era={era} index={idx} />
           </div>
         ))}
       </div>

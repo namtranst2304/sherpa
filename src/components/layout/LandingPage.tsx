@@ -63,17 +63,17 @@ export function LandingPage() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 0.15, scale: 1 }}
           transition={{ duration: 1.5, delay: 0.2 }}
-          className="absolute -top-12 md:-top-20 left-1/2 -translate-x-1/2 text-[5rem] sm:text-[8rem] md:text-[12rem] font-black text-neon-cyan leading-none pointer-events-none select-none whitespace-nowrap"
+          className="absolute -top-12 md:-top-20 left-1/2 -translate-x-1/2 text-[5rem] sm:text-[8rem] md:text-[12rem] 2xl:text-[16rem] font-black text-neon-cyan leading-none pointer-events-none select-none whitespace-nowrap"
         >
           DESTINY
         </motion.div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500 mb-4 relative text-center">Destiny Universe</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl 2xl:text-[7rem] font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500 mb-4 relative text-center">Destiny Universe</h1>
         <motion.span
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.3 }}
-          className="block text-lg sm:text-xl md:text-3xl font-bold tracking-[0.2em] md:tracking-[0.3em] text-zinc-400 uppercase drop-shadow-md text-center"
+          className="block text-lg sm:text-xl md:text-3xl 2xl:text-4xl font-bold tracking-[0.2em] md:tracking-[0.3em] text-zinc-400 uppercase drop-shadow-md text-center"
         >Timeline</motion.span>
       </motion.div>
 
@@ -90,15 +90,15 @@ export function LandingPage() {
         
         {/* Cascading Chevrons */}
         <div className="flex flex-col items-center -space-y-3 pt-2">
-          <motion.div animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0 }}>
-             <ChevronDown className="w-4 h-4 text-neon-cyan/40" />
-          </motion.div>
-          <motion.div animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}>
-             <ChevronDown className="w-5 h-5 text-neon-cyan/70" />
-          </motion.div>
-          <motion.div animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}>
-             <ChevronDown className="w-6 h-6 text-neon-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-          </motion.div>
+          {[
+            { delay: 0, styles: "w-4 h-4 text-neon-cyan/40" },
+            { delay: 0.2, styles: "w-5 h-5 text-neon-cyan/70" },
+            { delay: 0.4, styles: "w-6 h-6 text-neon-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" }
+          ].map((chevron, i) => (
+            <motion.div key={i} animate={{ opacity: [0.1, 1, 0.1], y: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: chevron.delay }}>
+               <ChevronDown className={chevron.styles} />
+            </motion.div>
+          ))}
         </div>
       </motion.div>
       </div>
