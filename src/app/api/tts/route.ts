@@ -1,66 +1,168 @@
 import { NextResponse } from 'next/server';
 
-// Split text into chunks of max 200 chars for Google TTS
-function splitText(text: string, maxLength: number = 200): string[] {
-  const words = text.split(' ');
-  const chunks = [];
-  let currentChunk = '';
+export const runtime = 'edge';
 
-  for (const word of words) {
-    if (currentChunk.length + word.length + 1 > maxLength) {
-      if (currentChunk) chunks.push(currentChunk);
-      currentChunk = word;
-    } else {
-      currentChunk = currentChunk ? `${currentChunk} ${word}` : word;
-    }
+function escapeXml(unsafe: string) {
+    return unsafe.replace(/[<>&"']/g, (c) => {
+        switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '"': return '&quot;';
+            case "'": return '&apos;';
+            default: return c;
+        }
+    });
+}
+
+function generateRequestId() {
+  return crypto.randomUUID().replace(/-/g, '');
+}
+
+async function generateSecMsGecToken() {
+    const TRUSTED_CLIENT_TOKEN = '6A5AA1D4EAFF4E9FB37E23D68491D6F4';
+    const WINDOWS_FILE_TIME_EPOCH = BigInt("11644473600");
+    const ticks = BigInt(Math.floor((Date.now() / 1000) + Number(WINDOWS_FILE_TIME_EPOCH))) * BigInt("10000000");
+    const roundedTicks = ticks - (ticks % BigInt("3000000000"));
+    const strToHash = `${roundedTicks}${TRUSTED_CLIENT_TOKEN}`;
+    
+    const encoder = new TextEncoder();
+    const data = encoder.encode(strToHash);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+
+async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
+  const gecToken = await generateSecMsGecToken();
+  const wsUrl = `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=${gecToken}&Sec-MS-GEC-Version=1-130.0.2849.68`;
+
+  let ws: any;
+  if (typeof (globalThis as any).WebSocketPair !== 'undefined') {
+    // Cloudflare Workers WebSocket client via fetch
+    const response = await fetch(wsUrl, {
+      headers: {
+        'Upgrade': 'websocket',
+        'Connection': 'Upgrade',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
+        'Origin': 'chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold'
+      }
+    });
+    ws = (response as any).webSocket;
+    if (!ws) throw new Error("No websocket returned from CF fetch");
+    ws.accept();
+  } else {
+    // Next.js Edge Runtime / Browser global WebSocket
+    ws = new WebSocket(wsUrl);
   }
-  if (currentChunk) chunks.push(currentChunk);
 
-  return chunks;
+  return new Promise((resolve, reject) => {
+    let audioChunks: Uint8Array[] = [];
+    let isCompleted = false;
+
+    const timeout = setTimeout(() => {
+      if (!isCompleted) {
+        ws.close();
+        reject(new Error("Edge TTS Timeout"));
+      }
+    }, 30000);
+
+    const onOpen = () => {
+      const configMessage = `Content-Type:application/json; charset=utf-8\r\nPath:speech.config\r\n\r\n{"context":{"synthesis":{"audio":{"metadataoptions":{"sentenceBoundaryEnabled":"false","wordBoundaryEnabled":"true"},"outputFormat":"audio-24khz-48kbitrate-mono-mp3"}}}}`;
+      ws.send(configMessage);
+
+      const requestId = generateRequestId();
+      const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="vi-VN"><voice name="${voice}"><prosody rate="default" pitch="default" volume="default">${escapeXml(text)}</prosody></voice></speak>`;
+      const ssmlMessage = `X-RequestId:${requestId}\r\nContent-Type:application/ssml+xml\r\nPath:ssml\r\n\r\n${ssml}`;
+      ws.send(ssmlMessage);
+    };
+
+    const onMessage = async (event: any) => {
+      const data = event.data;
+      if (typeof data === 'string') {
+        if (data.includes('Path:turn.end')) {
+          isCompleted = true;
+          clearTimeout(timeout);
+          ws.close();
+          
+          const totalLength = audioChunks.reduce((acc, chunk) => acc + chunk.length, 0);
+          const finalAudio = new Uint8Array(totalLength);
+          let offset = 0;
+          for (const chunk of audioChunks) {
+            finalAudio.set(chunk, offset);
+            offset += chunk.length;
+          }
+          resolve(finalAudio);
+        }
+      } else {
+        // Binary audio data
+        let buffer: ArrayBuffer;
+        if (typeof Blob !== 'undefined' && data instanceof Blob) {
+           buffer = await data.arrayBuffer();
+        } else {
+           buffer = data;
+        }
+
+        const uint8 = new Uint8Array(buffer);
+        // Find 'Path:audio\r\n' in the binary payload
+        const separatorStr = "Path:audio\r\n";
+        const encoder = new TextEncoder();
+        const separator = encoder.encode(separatorStr);
+        
+        let index = -1;
+        for (let i = 0; i < uint8.length - separator.length; i++) {
+          let match = true;
+          for (let j = 0; j < separator.length; j++) {
+            if (uint8[i + j] !== separator[j]) {
+              match = false;
+              break;
+            }
+          }
+          if (match) {
+            index = i + separator.length;
+            break;
+          }
+        }
+
+        if (index !== -1) {
+          audioChunks.push(uint8.slice(index));
+        }
+      }
+    };
+
+    const onError = (err: any) => {
+      clearTimeout(timeout);
+      reject(err);
+    };
+
+    if (ws.readyState === 1 /* OPEN */) {
+      onOpen();
+    } else {
+      ws.addEventListener('open', onOpen);
+    }
+    
+    ws.addEventListener('message', onMessage);
+    ws.addEventListener('error', onError);
+    ws.addEventListener('close', () => {
+      if (!isCompleted) {
+        clearTimeout(timeout);
+        reject(new Error("WebSocket closed unexpectedly"));
+      }
+    });
+  });
 }
 
 export async function POST(req: Request) {
   try {
-    const { text, voice } = await req.json();
+    const { text, voice = "vi-VN-NamMinhNeural" } = await req.json();
 
     if (!text) {
       return NextResponse.json({ error: "Text is required" }, { status: 400 });
     }
 
-    // node-edge-tts is incompatible with Cloudflare Workers because it uses 'fs' and 'ws' (net TCP sockets).
-    // We fall back to Google Translate TTS API which relies solely on edge-compatible fetch requests.
-    const chunks = splitText(text, 200);
-    const audioBuffers: Uint8Array[] = [];
-    let totalLength = 0;
+    const finalAudio = await getEdgeTTS(text, voice);
 
-    for (const chunk of chunks) {
-      const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(chunk)}`;
-      const response = await fetch(url, {
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-          'Referer': 'http://translate.google.com/',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`Google TTS failed for chunk with status ${response.status}`);
-      }
-
-      const buffer = await response.arrayBuffer();
-      const uint8Array = new Uint8Array(buffer);
-      audioBuffers.push(uint8Array);
-      totalLength += uint8Array.length;
-    }
-
-    // Concatenate all audio MP3 buffers
-    const finalAudio = new Uint8Array(totalLength);
-    let offset = 0;
-    for (const buf of audioBuffers) {
-      finalAudio.set(buf, offset);
-      offset += buf.length;
-    }
-
-    return new NextResponse(finalAudio, {
+    return new NextResponse(finalAudio as any, {
       headers: {
         'Content-Type': 'audio/mpeg',
         'Content-Length': finalAudio.length.toString(),
