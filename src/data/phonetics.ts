@@ -68,7 +68,7 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "Collapse": "Cồ láp",
   "Guardians": "Gác đi ần",
   "Guardian": "Gác đi ần",
-  "Eris Morn": "E rít mòn",
+  "Eris Morn": "E rít mon",
   "Eris": "E rít",
   "Calus": "Ca lút",
   "Caiatl": "Cai a tờ lờ",
