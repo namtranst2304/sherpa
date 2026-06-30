@@ -7,15 +7,88 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 
 import type { TimelineEvent } from "@/data/timeline/index";
 
+const DESTINY_PHONETICS: Record<string, string> = {
+  "The Final Shape": "Đờ Phai nồ sếp",
+  "The Witness": "Đờ Uýt nợt",
+  "The Traveler": "Đờ Tra vồ lờ",
+  "Black Fleet": "Bờ lách Phờ lít",
+  "Iron Lord": "Ai rờn lót",
+  "Clovis Bray": "Cờ lô vít Bờ rây",
+  "Beyond Light": "Bi don lai",
+  "Witch Queen": "Uých quin",
+  "Red War": "Rét oa",
+  "Ares One": "E rít oăn",
+  "Saint-14": "Xên mười bốn",
+  "Cayde-6": "Kây sáu",
+  "Mara Sov": "Ma ra xốp",
+  "Xivu Arath": "Xi vu A rát",
+  "Traveler": "Tra vồ lờ",
+  "Witness": "Uýt nợt",
+  "Eliksni": "Y lích xờ ni",
+  "Lightfall": "Lai phôn",
+  "Darkness": "Đác nớt",
+  "Vanguard": "Van gát",
+  "Warlock": "Oa lóc",
+  "Titan": "Tai tần",
+  "Hunter": "Hăn tờ",
+  "Ghost": "Gốut",
+  "Savathûn": "Xa va thun",
+  "Neomuna": "Nê ô mu na",
+  "Awoken": "A uốc cần",
+  "Destiny": "Đét xờ ti ni",
+  "Pyramid": "Pi ra mít",
+  "Fallen": "Phôn lờn",
+  "Taken": "Tây cần",
+  "Scorn": "Xờ con",
+  "Crucible": "Cờ ru xi bồ",
+  "Ishtar": "Ích ta",
+  "Rasputin": "Rát pu tin",
+  "Warmind": "Oa mai",
+  "Speaker": "Xờ pích cơ",
+  "Osiris": "Ô xai rít",
+  "Zavala": "Da va la",
+  "Ikora": "Ai cô ra",
+  "Uldren": "U đờ rần",
+  "Ahamkara": "A ham ca ra",
+  "Shadowkeep": "Sa đô kíp",
+  "Forsaken": "Pho sếch cần",
+  "Collapse": "Cồ láp",
+  "Light": "Lai",
+  "Hive": "Hai",
+  "Vex": "Véc",
+  "Cabal": "Ca ban",
+  "Oryx": "O rích",
+  "Crota": "Cờ rô ta",
+  "Rhulk": "Rúc",
+  "Exo": "Ếch xô",
+  "SIVA": "Si va",
+  "Crow": "Cờ râu",
+};
+
+const applyPhonetics = (text: string) => {
+  let result = text;
+  // Sắp xếp các từ theo độ dài giảm dần để ưu tiên thay cụm từ dài trước (tránh lỗi đè chữ)
+  const sortedKeys = Object.keys(DESTINY_PHONETICS).sort((a, b) => b.length - a.length);
+
+  sortedKeys.forEach(key => {
+    // Regex thay thế từ chính xác (case-insensitive)
+    const regex = new RegExp(`\\b${key}\\b`, 'gi');
+    result = result.replace(regex, DESTINY_PHONETICS[key]);
+  });
+  return result;
+}
+
 export interface TTSControlsProps {
   events: TimelineEvent[];
   currentEventIndex: number;
   theme?: ThemeColorTokens;
   onEventChange?: (index: number) => void;
   className?: string;
+  eraTitle?: string;
+  eraDescription?: string;
 }
 
-export function TTSButton({ events, currentEventIndex, theme, onEventChange, className }: TTSControlsProps) {
+export function TTSButton({ events, currentEventIndex, theme, onEventChange, className, eraTitle, eraDescription }: TTSControlsProps) {
   const instanceId = React.useId();
   const [mode, setMode] = React.useState<'NONE' | 'SINGLE' | 'CHAPTER'>('NONE');
   const [isPlaying, setIsPlaying] = React.useState(false);
@@ -26,8 +99,8 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
   // Lưu trữ các câu đã tải
   const playlistRef = React.useRef<{ audio: HTMLAudioElement; url: string; eventIndex: number }[]>([]);
   const currentIndexRef = React.useRef(0);
-  const stopRef = React.useRef<{ stop: () => void }>({ stop: () => {} });
-  
+  const stopRef = React.useRef<{ stop: () => void }>({ stop: () => { } });
+
   // Lưu state để biết đang đọc voice nào, event nào
   const currentVoiceRef = React.useRef("");
   const playingEventIndexRef = React.useRef(-1);
@@ -69,12 +142,12 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
       },
       { threshold: 0 }
     );
-    
+
     const currentContainer = containerRef.current;
     if (currentContainer) {
       observer.observe(currentContainer);
     }
-    
+
     return () => {
       if (currentContainer) observer.unobserve(currentContainer);
     };
@@ -144,24 +217,35 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
     setIsPlaying(true);
     setIsPaused(false);
     playingEventIndexRef.current = currentEventIndex;
-    
+
     window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: true } }));
     window.dispatchEvent(new CustomEvent('tts-play-started', { detail: { id: instanceId } }));
 
     // Chuẩn bị chunks
     const chunks: { text: string; eventIndex: number }[] = [];
-    
-    const eventsToProcess = targetMode === 'SINGLE' 
-      ? [{ text: events[currentEventIndex].description.replace(/\*\*(.*?)\*\*/g, '$1'), eIdx: currentEventIndex }] 
-      : events.map((e, idx) => ({ text: e.description.replace(/\*\*(.*?)\*\*/g, '$1'), eIdx: idx }));
-    
+
+    const eventsToProcess = targetMode === 'SINGLE'
+      ? [{ text: `${events[currentEventIndex].title}. ${events[currentEventIndex].description.replace(/\*\*(.*?)\*\*/g, '$1')}`, eIdx: currentEventIndex }]
+      : events.map((e, idx) => {
+        let text = `${e.title}. ${e.description.replace(/\*\*(.*?)\*\*/g, '$1')}`;
+        // Nối thêm tiêu đề và mô tả của chương vào sự kiện đầu tiên
+        if (idx === 0 && eraTitle) {
+          const prefix = `${eraTitle}. ${eraDescription ? eraDescription + ". " : ""}`;
+          text = prefix + text;
+        }
+        return { text, eIdx: idx };
+      });
+
     // Nếu Read Chapter, tự động nhảy về đầu tiên
     if (targetMode === 'CHAPTER' && onEventChange) {
-       onEventChange(0);
+      onEventChange(0);
     }
 
     eventsToProcess.forEach(({ text: txt, eIdx }) => {
-      const rawChunks = txt.split('\n')
+      // Áp dụng từ điển phiên âm trước khi chia câu
+      const phoneticText = applyPhonetics(txt);
+
+      const rawChunks = phoneticText.split('\n')
         .flatMap(line => line.match(/.*?[.!?](?:\s|$)|.+/g) || [])
         .map(s => s.trim())
         .filter(Boolean);
@@ -184,7 +268,7 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
   const startPlayLoop = async (chunksProvided?: { text: string; eventIndex: number }[]) => {
     // Lưu các biến local để loop
     const chunksToPlay = chunksProvided || playlistRef.current.map(p => ({ text: '', eventIndex: p.eventIndex })); // Fallback tạm
-    
+
     let isCancelled = false;
     stopRef.current.stop = () => { isCancelled = true; };
 
@@ -198,12 +282,12 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
       });
 
       if (!response.ok) throw new Error("TTS chunk failed");
-      
+
       const blob = await response.blob();
       const audioBlob = new Blob([blob], { type: 'audio/mpeg' });
       const url = URL.createObjectURL(audioBlob);
       const audio = new Audio(url);
-      
+
       const item = { audio, url, eventIndex: chunksToPlay[index].eventIndex };
       playlistRef.current[index] = item;
       return item;
@@ -215,7 +299,7 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
       }
 
       let lastNotifiedEventIndex = -1;
-      
+
       while (currentIndexRef.current < chunksToPlay.length) {
         if (isCancelled) break;
 
@@ -226,7 +310,7 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
           onEventChange(currentEventIndex);
           lastNotifiedEventIndex = currentEventIndex;
           playingEventIndexRef.current = currentEventIndex;
-          
+
           // Tắt cờ auto scroll sau 1s (chờ carousel trượt xong)
           setTimeout(() => { isAutoScrollingRef.current = false; }, 1000);
         }
@@ -235,14 +319,14 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
         setIsLoading(false);
 
         if (currentIndexRef.current + 1 < chunksToPlay.length) {
-          fetchChunk(currentIndexRef.current + 1).catch(() => {});
+          fetchChunk(currentIndexRef.current + 1).catch(() => { });
         }
         if (currentIndexRef.current + 2 < chunksToPlay.length) {
-          fetchChunk(currentIndexRef.current + 2).catch(() => {});
+          fetchChunk(currentIndexRef.current + 2).catch(() => { });
         }
 
         const audio = currentItem.audio;
-        
+
         await new Promise((resolve) => {
           audio.onended = resolve;
           audio.onerror = resolve;
@@ -286,7 +370,7 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
   const isActive = isPlaying || isLoading;
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={`tts-btn-group inline-flex items-center p-1 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-300 group shrink-0 ${className || ""}`}
       style={{
@@ -295,7 +379,7 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
       }}
     >
       {/* Read Single Button */}
-      <button 
+      <button
         onClick={() => handlePlay('SINGLE')}
         className="flex items-center justify-center gap-2.5 px-3 md:px-5 py-2 rounded-full hover:bg-white/10 transition-all text-[10px] md:text-xs font-mono tracking-widest uppercase"
         style={{ color: mode === 'SINGLE' && isActive ? (theme?.hex || '#22d3ee') : '#a1a1aa' }}
@@ -316,7 +400,7 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
       <div className="w-[1px] h-5 bg-white/10 mx-1" />
 
       {/* Read Chapter Button */}
-      <button 
+      <button
         onClick={() => handlePlay('CHAPTER')}
         className="flex items-center justify-center gap-2.5 px-3 md:px-5 py-2 rounded-full hover:bg-white/10 transition-all text-[10px] md:text-xs font-mono tracking-widest uppercase"
         style={{ color: mode === 'CHAPTER' && isActive ? (theme?.hex || '#22d3ee') : '#a1a1aa' }}
@@ -339,15 +423,15 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
       {/* Voice Settings */}
       <Popover>
         <PopoverTrigger asChild>
-          <button 
+          <button
             className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full hover:bg-white/10 transition-all text-zinc-400 hover:text-white"
             title="Voice Settings"
           >
             <Settings2 className="w-4 h-4" />
           </button>
         </PopoverTrigger>
-        <PopoverContent 
-          className="w-52 p-2 bg-black/95 backdrop-blur-2xl border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.8)] text-white" 
+        <PopoverContent
+          className="w-52 p-2 bg-black/95 backdrop-blur-2xl border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.8)] text-white"
           sideOffset={12}
         >
           <div className="space-y-1">
@@ -364,9 +448,9 @@ export function TTSButton({ events, currentEventIndex, theme, onEventChange, cla
               >
                 {v.name}
                 {selectedVoice === v.id && (
-                  <div 
-                    className="w-1.5 h-1.5 rounded-full shadow-[0_0_8px_currentColor]" 
-                    style={{ backgroundColor: theme?.hex || '#22d3ee', color: theme?.hex || '#22d3ee' }} 
+                  <div
+                    className="w-1.5 h-1.5 rounded-full shadow-[0_0_8px_currentColor]"
+                    style={{ backgroundColor: theme?.hex || '#22d3ee', color: theme?.hex || '#22d3ee' }}
                   />
                 )}
               </button>

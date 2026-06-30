@@ -241,7 +241,9 @@ export function EraCinematicScene({
                   events={era.events} 
                   currentEventIndex={current - 1} 
                   theme={theme} 
-                  onEventChange={(index) => api?.scrollTo(index)} 
+                  onEventChange={(index) => api?.scrollTo(index)}
+                  eraTitle={`Chương ${chapterRoman}. ${era.name}`}
+                  eraDescription={era.description}
                 />
               </div>
             </motion.div>
