@@ -460,6 +460,8 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "A Changing Planetoid": "a chên dình pờ la nết toi",
   "Changing": "chên dình",
   "Planetoid": "pờ la nết toi",
+  "gardener": "ga đờ nờ",
+  "Gardener": "ga đờ nờ",
   "Part I": "pát một",
   "Part II": "pát hai",
   "Part III": "pát ba",
