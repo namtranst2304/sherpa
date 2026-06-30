@@ -121,14 +121,14 @@ export function MusicPlayer() {
     <>
       <audio id="global-bg-audio" ref={audioRef} src="/audio/timeline-theme.mp3" loop preload="none" />
 
-      <div className="fixed bottom-8 left-8 z-50 flex items-center gap-3">
+      <div className="fixed bottom-4 left-4 md:bottom-8 md:left-8 z-50 flex items-center gap-2 md:gap-3">
         {/* Nút Play/Pause kèm hiệu ứng nháy sáng (pulse) khi scroll */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={togglePlay}
           className={cn(
-            "relative flex items-center justify-center w-12 h-12 rounded-full border backdrop-blur-md transition-all duration-300 group",
+            "relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border backdrop-blur-md transition-all duration-300 group",
             showPulseHint && !isPlaying ? "animate-pulse border-neon-cyan/80 bg-neon-cyan/20 shadow-[0_0_20px_rgba(34,211,238,0.5)]" : "",
             isPlaying
               ? "bg-neon-cyan/20 border-neon-cyan/50 text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.3)]"
@@ -136,9 +136,9 @@ export function MusicPlayer() {
           )}
         >
           {isPlaying ? (
-            <Pause className="w-5 h-5" />
+            <Pause className="w-4 h-4 md:w-5 md:h-5" />
           ) : (
-            <Play className={cn("w-5 h-5 ml-1", showPulseHint ? "text-white" : "")} />
+            <Play className={cn("w-4 h-4 md:w-5 md:h-5 ml-1", showPulseHint ? "text-white" : "")} />
           )}
 
           <AnimatePresence>
@@ -154,7 +154,7 @@ export function MusicPlayer() {
         </motion.button>
 
         <div className={cn(
-          "flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-zinc-800/50 transition-all duration-500",
+          "hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-zinc-800/50 transition-all duration-500",
           isPlaying ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
         )}>
           <Music className="w-4 h-4 text-neon-cyan/70" />
