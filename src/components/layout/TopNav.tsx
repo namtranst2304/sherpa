@@ -137,27 +137,17 @@ export function TopNav() {
     </header>
   )
 
-  if (isTimeline) {
-    return (
-      <>
-        {/* Desktop Hover Nav */}
+  return (
+    <>
+      {isTimeline ? (
         <div className="fixed top-0 left-0 w-full h-6 z-[60] group hidden md:block">
           {headerElement}
         </div>
-        
-        {/* Mobile Floating Menu Button (Always floating on mobile) */}
-        <div className="fixed top-2 left-4 z-[70] md:hidden">
-          <MobileNav />
+      ) : (
+        <div className={cn("hidden md:block w-full z-[60]", isHome ? "absolute top-0 left-0" : "sticky top-0")}>
+          {headerElement}
         </div>
-      </>
-    )
-  }
-
-  return (
-    <>
-      <div className={cn("hidden md:block w-full z-[60]", isHome ? "absolute top-0 left-0" : "sticky top-0")}>
-        {headerElement}
-      </div>
+      )}
       
       {/* Mobile Floating Menu Button (Always floating on mobile) */}
       <div className="fixed top-2 left-4 z-[70] md:hidden">

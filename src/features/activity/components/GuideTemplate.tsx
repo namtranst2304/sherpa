@@ -1,6 +1,7 @@
 import React from "react"
-import { Map, Users, Settings, Sparkles } from "lucide-react"
+import { Map, Users, Settings, Sparkles, LucideIcon } from "lucide-react"
 import { CyberCard, CyberHeading } from "@/components/common/CyberComponents"
+import { cn } from "@/lib/utils"
 
 interface GuideTemplateProps {
     title: string
@@ -9,6 +10,32 @@ interface GuideTemplateProps {
     map: React.ReactNode
     roles: React.ReactNode
     secrets?: React.ReactNode
+}
+
+interface GuideSectionProps {
+    icon: LucideIcon;
+    title: string;
+    children: React.ReactNode;
+    className?: string;
+    contentClassName?: string;
+}
+
+function GuideSection({ icon: Icon, title, children, className, contentClassName }: GuideSectionProps) {
+    if (!children) return null;
+    
+    return (
+        <CyberCard variant="zinc" withCorners className={className}>
+            <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
+                <div className="p-2 bg-neon-cyan/10 rounded-md">
+                    <Icon className="w-5 h-5 text-neon-cyan" />
+                </div>
+                <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">{title}</h2>
+            </div>
+            <div className={cn("relative z-10", contentClassName)}>
+                {children}
+            </div>
+        </CyberCard>
+    )
 }
 
 export function GuideTemplate({ title, description, mechanics, map, roles, secrets }: GuideTemplateProps) {
@@ -36,69 +63,38 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
                     {/* Left Column: Map and Mechanics */}
                     <div className="flex flex-col gap-8 w-full">
                         {/* Map */}
-                        {map && (
-                            <CyberCard variant="zinc" withCorners className="flex flex-col">
-                                <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                                    <div className="p-2 bg-neon-cyan/10 rounded-md">
-                                        <Map className="w-5 h-5 text-neon-cyan" />
-                                    </div>
-                                    <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Callout Map</h2>
-                                </div>
-                                <div className="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden relative z-10">
-                                    {/* Inner cyber frame for map */}
-                                    <div className="absolute inset-0 pointer-events-none border border-neon-cyan/20 m-2" />
-                                    {map}
-                                </div>
-                            </CyberCard>
-                        )}
+                        <GuideSection 
+                            icon={Map} 
+                            title="Callout Map" 
+                            className="flex flex-col relative" 
+                            contentClassName="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden"
+                        >
+                            <div className="absolute inset-0 pointer-events-none border border-neon-cyan/20 m-2" />
+                            {map}
+                        </GuideSection>
 
                         {/* Mechanics */}
-                        {mechanics && (
-                            <CyberCard variant="zinc" withCorners className="cyber-grid relative">
-                                <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                                    <div className="p-2 bg-neon-cyan/10 rounded-md">
-                                        <Settings className="w-5 h-5 text-neon-cyan" />
-                                    </div>
-                                    <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Encounter Mechanics</h2>
-                                </div>
-                                <div className="text-muted-foreground leading-relaxed relative z-10">
-                                    {mechanics}
-                                </div>
-                            </CyberCard>
-                        )}
+                        <GuideSection 
+                            icon={Settings} 
+                            title="Encounter Mechanics" 
+                            className="cyber-grid relative" 
+                            contentClassName="text-muted-foreground leading-relaxed"
+                        >
+                            {mechanics}
+                        </GuideSection>
                     </div>
 
                     {/* Right Column: Roles, Secrets */}
                     <div className="flex flex-col gap-8 w-full lg:sticky lg:top-8">
                         {/* Roles */}
-                        {roles && (
-                            <CyberCard variant="zinc" withCorners className="cyber-grid relative">
-                                <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                                    <div className="p-2 bg-neon-cyan/10 rounded-md">
-                                        <Users className="w-5 h-5 text-neon-cyan" />
-                                    </div>
-                                    <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">What to do (Roles)</h2>
-                                </div>
-                                <div className="relative z-10">
-                                    {roles}
-                                </div>
-                            </CyberCard>
-                        )}
+                        <GuideSection icon={Users} title="What to do (Roles)" className="cyber-grid relative">
+                            {roles}
+                        </GuideSection>
 
                         {/* Secrets & Hidden Chests */}
-                        {secrets && (
-                            <CyberCard variant="zinc" withCorners className="cyber-grid relative">
-                                <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-                                    <div className="p-2 bg-neon-cyan/10 rounded-md">
-                                        <Sparkles className="w-5 h-5 text-neon-cyan" />
-                                    </div>
-                                    <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Hidden Chests & Secrets</h2>
-                                </div>
-                                <div className="relative z-10">
-                                    {secrets}
-                                </div>
-                            </CyberCard>
-                        )}
+                        <GuideSection icon={Sparkles} title="Hidden Chests & Secrets" className="cyber-grid relative">
+                            {secrets}
+                        </GuideSection>
                     </div>
 
                 </div>
