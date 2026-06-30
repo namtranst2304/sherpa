@@ -1,42 +1,69 @@
 import { NextResponse } from 'next/server';
-import { EdgeTTS } from 'node-edge-tts';
-import fs from 'fs';
-import path from 'path';
-import os from 'os';
-import crypto from 'crypto';
+
+// Split text into chunks of max 200 chars for Google TTS
+function splitText(text: string, maxLength: number = 200): string[] {
+  const words = text.split(' ');
+  const chunks = [];
+  let currentChunk = '';
+
+  for (const word of words) {
+    if (currentChunk.length + word.length + 1 > maxLength) {
+      if (currentChunk) chunks.push(currentChunk);
+      currentChunk = word;
+    } else {
+      currentChunk = currentChunk ? `${currentChunk} ${word}` : word;
+    }
+  }
+  if (currentChunk) chunks.push(currentChunk);
+
+  return chunks;
+}
 
 export async function POST(req: Request) {
   try {
-    const { text, voice = "vi-VN-NamMinhNeural" } = await req.json();
+    const { text, voice } = await req.json();
 
     if (!text) {
       return NextResponse.json({ error: "Text is required" }, { status: 400 });
     }
 
-    const tts = new EdgeTTS({
-      voice: voice,
-      lang: "vi-VN",
-      outputFormat: "audio-24khz-48kbitrate-mono-mp3",
-      timeout: 60000,
-    });
+    // node-edge-tts is incompatible with Cloudflare Workers because it uses 'fs' and 'ws' (net TCP sockets).
+    // We fall back to Google Translate TTS API which relies solely on edge-compatible fetch requests.
+    const chunks = splitText(text, 200);
+    const audioBuffers: Uint8Array[] = [];
+    let totalLength = 0;
 
-    const tempFilePath = path.join(os.tmpdir(), `tts-${Date.now()}-${crypto.randomUUID()}.mp3`);
-    let audioBuffer: Buffer;
-    
-    try {
-      await tts.ttsPromise(text, tempFilePath);
-      audioBuffer = fs.readFileSync(tempFilePath);
-    } finally {
-      // Clean up luon luon chay du thanh cong hay that bai
-      if (fs.existsSync(tempFilePath)) {
-        fs.unlinkSync(tempFilePath);
+    for (const chunk of chunks) {
+      const url = `https://translate.google.com/translate_tts?ie=UTF-8&tl=vi&client=tw-ob&q=${encodeURIComponent(chunk)}`;
+      const response = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+          'Referer': 'http://translate.google.com/',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Google TTS failed for chunk with status ${response.status}`);
       }
+
+      const buffer = await response.arrayBuffer();
+      const uint8Array = new Uint8Array(buffer);
+      audioBuffers.push(uint8Array);
+      totalLength += uint8Array.length;
     }
 
-    return new NextResponse(new Uint8Array(audioBuffer), {
+    // Concatenate all audio MP3 buffers
+    const finalAudio = new Uint8Array(totalLength);
+    let offset = 0;
+    for (const buf of audioBuffers) {
+      finalAudio.set(buf, offset);
+      offset += buf.length;
+    }
+
+    return new NextResponse(finalAudio, {
       headers: {
         'Content-Type': 'audio/mpeg',
-        'Content-Length': audioBuffer.length.toString(),
+        'Content-Length': finalAudio.length.toString(),
       },
     });
   } catch (error: unknown) {
