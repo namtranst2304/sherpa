@@ -71,7 +71,7 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "Eris Morn": "e rít mon",
   "Eris": "e rít",
   "Calus": "ca lút",
-  "Caiatl": "cai a tờ lờ",
+  "Caiatl": "cai teo",
   "Ghaul": "gôn",
   "Mithrax": "mít rác",
   "Riven": "ri vần",
