@@ -33,14 +33,15 @@ export async function POST(req: Request) {
       }
     }
 
-    return new NextResponse(audioBuffer, {
+    return new NextResponse(new Uint8Array(audioBuffer), {
       headers: {
         'Content-Type': 'audio/mpeg',
         'Content-Length': audioBuffer.length.toString(),
       },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("TTS Error:", error);
-    return NextResponse.json({ error: "Failed to generate TTS", details: error.message }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    return NextResponse.json({ error: "Failed to generate TTS", details: errorMessage }, { status: 500 });
   }
 }

@@ -39,8 +39,9 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
 
   // Nghe sự kiện từ các thẻ khác để tự dừng nếu có người khác phát
   React.useEffect(() => {
-    const handleOtherPlay = (e: any) => {
-      if (e.detail?.text !== text) {
+    const handleOtherPlay = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail?.text !== text) {
         if (isPlaying) {
           stopRef.current.stop();
           if (playlistRef.current[currentIndexRef.current]) {
@@ -57,6 +58,7 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
 
   React.useEffect(() => {
     return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       stopRef.current.stop();
       playlistRef.current.forEach(item => {
         item.audio.pause();

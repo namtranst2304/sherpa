@@ -79,8 +79,9 @@ export function MusicPlayer() {
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     // Xử lý sự kiện tạm dừng từ TTS
-    const handleToggleGlobalMusic = (e: any) => {
-      if (e.detail?.pause) {
+    const handleToggleGlobalMusic = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail?.pause) {
         if (!audio.paused) {
           ttsWasPlayingRef.current = true;
           audio.pause();
