@@ -31,7 +31,7 @@ async function generateSecMsGecToken() {
 
 async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
   const gecToken = await generateSecMsGecToken();
-  const wsUrl = `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=${gecToken}&Sec-MS-GEC-Version=1-130.0.2849.68`;
+  const wsUrl = `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=${gecToken}&Sec-MS-GEC-Version=1-143.0.3650.75`;
 
   let ws: any;
   const isCloudflare = typeof (globalThis as any).WebSocketPair !== 'undefined';
@@ -43,7 +43,7 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
       headers: {
         'Upgrade': 'websocket',
         'Connection': 'Upgrade',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/143.0.3650.75',
         'Origin': 'chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold'
       }
     });
@@ -57,7 +57,7 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
     const WS = await eval("import('ws')");
     ws = new WS.default(wsUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/143.0.3650.75',
         'Origin': 'chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold'
       }
     });
