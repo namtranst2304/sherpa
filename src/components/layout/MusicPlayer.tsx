@@ -12,6 +12,7 @@ export function MusicPlayer() {
   const [showPulseHint, setShowPulseHint] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const wasPlayingRef = useRef(false);
+  const ttsWasPlayingRef = useRef(false);
   const shouldReduceMotion = useReducedMotion();
 
   // Chỉ hiển thị và phát nhạc ở trang chủ và timeline
@@ -35,11 +36,20 @@ export function MusicPlayer() {
     audio.addEventListener("pause", syncState);
 
     // 1. Thử auto-play ngay lập tức
+    const unlockAudio = (e: Event) => {
+      // Nếu user click vào nút TTS để nghe truyện, đừng tự bật nhạc nền (gây hiểu nhầm là TTS tự bật nhạc)
+      const target = e.target as HTMLElement;
+      if (target && target.closest && target.closest('.tts-btn-group')) return;
+      audio.play().catch(() => {});
+    };
+    const events = ["click", "keydown", "touchstart", "pointerdown"];
+    
+    const removeUnlockListeners = () => {
+      events.forEach((evt) => window.removeEventListener(evt, unlockAudio));
+    };
+
     audio.play().catch(() => {
       // 2. Nếu browser chặn, chờ tương tác đầu tiên của user để bật nhạc
-      const unlockAudio = () => audio.play().catch(() => {});
-      const events = ["click", "keydown", "touchstart", "pointerdown"];
-      
       events.forEach((evt) => window.addEventListener(evt, unlockAudio, { once: true, passive: true }));
 
       // 3. Nếu user cuộn trang mà nhạc vẫn chưa bật -> nháy sáng nút Play
@@ -47,7 +57,7 @@ export function MusicPlayer() {
       window.addEventListener("scroll", hintScroll, { once: true, passive: true });
 
       return () => {
-        events.forEach((evt) => window.removeEventListener(evt, unlockAudio));
+        removeUnlockListeners();
         window.removeEventListener("scroll", hintScroll);
       };
     });
@@ -68,10 +78,27 @@ export function MusicPlayer() {
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
+    // Xử lý sự kiện tạm dừng từ TTS
+    const handleToggleGlobalMusic = (e: any) => {
+      if (e.detail?.pause) {
+        if (!audio.paused) {
+          ttsWasPlayingRef.current = true;
+          audio.pause();
+        }
+      } else {
+        if (ttsWasPlayingRef.current) {
+          audio.play().catch(() => {});
+          ttsWasPlayingRef.current = false;
+        }
+      }
+    };
+    window.addEventListener('toggle-global-music', handleToggleGlobalMusic);
+
     return () => {
       audio.removeEventListener("play", syncState);
       audio.removeEventListener("pause", syncState);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener('toggle-global-music', handleToggleGlobalMusic);
     };
   }, [isVisible]);
 

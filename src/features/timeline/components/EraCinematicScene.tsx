@@ -7,6 +7,7 @@ import { getTheme, type ThemeColorTokens } from "@/lib/theme";
 import { motion, useReducedMotion, type Transition } from "motion/react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { CyberBadge } from "@/components/common/CyberComponents";
+import { TTSButton } from "@/components/common/TTSButton";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Carousel,
@@ -16,6 +17,8 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+
+
 
 function EraCarouselControls({ theme, className, iconSize = "w-5 h-5 md:w-6 md:h-6", sizeClass = "w-10 h-10 md:w-12 md:h-12" }: { theme: ThemeColorTokens, className?: string, iconSize?: string, sizeClass?: string }) {
   return (
@@ -171,13 +174,14 @@ export function EraCinematicScene({
                           className="relative w-full h-full px-6 py-5 md:px-10 md:py-8 xl:px-12 xl:py-10 2xl:px-16 2xl:py-12 flex flex-col z-10"
                           style={{ transform: "skewX(5deg)" }}
                         >
-                          {event.date && (
-                            <div className="mb-3 lg:mb-4">
+                          <div className="flex items-center justify-between gap-4 mb-3 lg:mb-4">
+                            {event.date && (
                               <span className={`inline-block text-[10px] md:text-xs 2xl:text-sm font-mono tracking-[0.2em] uppercase px-3 py-1 rounded-full bg-white/5 border border-white/10`} style={{ color: theme.hex }}>
                                 {event.date}
                               </span>
-                            </div>
-                          )}
+                            )}
+                            <TTSButton text={cleanDescription} theme={theme} />
+                          </div>
 
                           <h3 className="text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-white mb-4 lg:mb-6 drop-shadow-md">
                             {event.title}
