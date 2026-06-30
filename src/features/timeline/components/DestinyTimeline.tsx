@@ -3,14 +3,9 @@
 import { useRef } from "react";
 import { useInView } from "motion/react";
 import { DESTINY_TIMELINE, type TimelineEra } from "@/data/timeline/index";
-import dynamic from "next/dynamic";
 import { EraNav } from "./EraNav";
+import { EraCinematicScene } from "./EraCinematicScene";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
-
-const EraCinematicScene = dynamic(() => import("./EraCinematicScene").then(mod => mod.EraCinematicScene), {
-  ssr: false,
-  loading: () => <div className="w-full h-full flex items-center justify-center bg-[#050505] text-zinc-500 text-sm tracking-widest uppercase animate-pulse">Đang tải dữ liệu...</div>
-});
 
 // Lazy wrapper to prevent rendering all 16 carousels at once, saving massive amounts of RAM and DOM nodes.
 function LazyEraScene({ era, index }: { era: TimelineEra, index: number }) {
