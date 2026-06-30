@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
 
-export const runtime = 'edge';
-
 function escapeXml(unsafe: string) {
     return unsafe.replace(/[<>&"']/g, (c) => {
         switch (c) {
@@ -26,11 +24,9 @@ async function generateSecMsGecToken() {
     const roundedTicks = ticks - (ticks % BigInt("3000000000"));
     const strToHash = `${roundedTicks}${TRUSTED_CLIENT_TOKEN}`;
     
-    const encoder = new TextEncoder();
-    const data = encoder.encode(strToHash);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+    // We can use crypto module for hashing since we removed runtime='edge'
+    const cryptoModule = await import('crypto');
+    return cryptoModule.createHash('sha256').update(strToHash, 'ascii').digest('hex').toUpperCase();
 }
 
 async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
@@ -38,9 +34,12 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
   const wsUrl = `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=${gecToken}&Sec-MS-GEC-Version=1-130.0.2849.68`;
 
   let ws: any;
-  if (typeof (globalThis as any).WebSocketPair !== 'undefined') {
+  const isCloudflare = typeof (globalThis as any).WebSocketPair !== 'undefined';
+  
+  if (isCloudflare) {
     // Cloudflare Workers WebSocket client via fetch
-    const response = await fetch(wsUrl, {
+    const fetchUrl = wsUrl.replace('wss://', 'https://');
+    const response = await fetch(fetchUrl, {
       headers: {
         'Upgrade': 'websocket',
         'Connection': 'Upgrade',
@@ -52,8 +51,16 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
     if (!ws) throw new Error("No websocket returned from CF fetch");
     ws.accept();
   } else {
-    // Next.js Edge Runtime / Browser global WebSocket
-    ws = new WebSocket(wsUrl);
+    // Local Node.js environment
+    // Use ws package so we can pass the required Origin header
+    // Use eval to avoid Next.js attempting to bundle 'ws' for the edge unnecessarily
+    const WS = await eval("import('ws')");
+    ws = new WS.default(wsUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36 Edg/130.0.0.0',
+        'Origin': 'chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold'
+      }
+    });
   }
 
   return new Promise((resolve, reject) => {
@@ -77,8 +84,10 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
       ws.send(ssmlMessage);
     };
 
-    const onMessage = async (event: any) => {
-      const data = event.data;
+    const onMessage = async (eventOrData: any) => {
+      // the 'ws' package passes raw data as first argument instead of an event object
+      const data = isCloudflare ? eventOrData.data : eventOrData;
+      
       if (typeof data === 'string') {
         if (data.includes('Path:turn.end')) {
           isCompleted = true;
@@ -99,12 +108,13 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
         let buffer: ArrayBuffer;
         if (typeof Blob !== 'undefined' && data instanceof Blob) {
            buffer = await data.arrayBuffer();
+        } else if (data.buffer) { // Buffer or ArrayBufferView
+           buffer = data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
         } else {
            buffer = data;
         }
 
         const uint8 = new Uint8Array(buffer);
-        // Find 'Path:audio\r\n' in the binary payload
         const separatorStr = "Path:audio\r\n";
         const encoder = new TextEncoder();
         const separator = encoder.encode(separatorStr);
@@ -137,18 +147,31 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
 
     if (ws.readyState === 1 /* OPEN */) {
       onOpen();
-    } else {
+    } else if (isCloudflare) {
       ws.addEventListener('open', onOpen);
+    } else {
+      ws.on('open', onOpen);
     }
     
-    ws.addEventListener('message', onMessage);
-    ws.addEventListener('error', onError);
-    ws.addEventListener('close', () => {
-      if (!isCompleted) {
-        clearTimeout(timeout);
-        reject(new Error("WebSocket closed unexpectedly"));
-      }
-    });
+    if (isCloudflare) {
+      ws.addEventListener('message', onMessage);
+      ws.addEventListener('error', onError);
+      ws.addEventListener('close', () => {
+        if (!isCompleted) {
+          clearTimeout(timeout);
+          reject(new Error("WebSocket closed unexpectedly"));
+        }
+      });
+    } else {
+      ws.on('message', onMessage);
+      ws.on('error', onError);
+      ws.on('close', () => {
+        if (!isCompleted) {
+          clearTimeout(timeout);
+          reject(new Error("WebSocket closed unexpectedly"));
+        }
+      });
+    }
   });
 }
 
