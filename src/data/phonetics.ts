@@ -118,6 +118,7 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "Ana": "a na",
   "Strand": "xờ tran",
   "AI": "ây ai",
+  "ai": "ai",
   "Saladin": "sa la đin",
   "Imperium": "im pê ri ùm",
   "Lodi": "lô đi",
