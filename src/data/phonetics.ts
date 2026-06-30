@@ -623,4 +623,6 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "Quyển XVIII": "quyển mười tám",
   "Quyển XIX": "quyển mười chín",
   "Quyển XX": "quyển hai mươi",
+  "ABHORRENT IMPERATIVE": "áp ho rần im pê ri típ",
+
 };
