@@ -457,4 +457,7 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "rite": "rai",
   "rite of the nine": "rai ốp đờ nai",
   "Rite of the Nine": "rai ốp đờ nai",
+  "A Changing Planetoid": "a chên dình pờ la nết toi",
+  "Changing": "chên dình",
+  "Planetoid": "pờ la nết toi",
 };
