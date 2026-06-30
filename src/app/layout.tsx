@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: "Destiny 2 Sherpa",
     images: [
       {
-        url: "/og-default.jpg",
-        width: 1200,
-        height: 630,
+        url: "/images/destiny-loading-bg.jpg",
+        width: 1920,
+        height: 1080,
         alt: "Destiny 2 Sherpa",
       },
     ],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Destiny 2 Sherpa",
     description: "Comprehensive guides to master Destiny 2 endgame content.",
-    images: ["/og-default.jpg"],
+    images: ["/images/destiny-loading-bg.jpg"],
   },
 };
 

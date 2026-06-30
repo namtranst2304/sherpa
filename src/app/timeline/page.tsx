@@ -14,20 +14,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Destiny 2 Timeline",
     description: "Khám phá lịch sử đồ sộ của Destiny 2 qua từng kỷ nguyên.",
-    images: [
-      {
-        url: "/og-timeline.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Destiny 2 Timeline",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Destiny 2 Timeline",
     description: "Khám phá lịch sử đồ sộ của Destiny 2 qua từng kỷ nguyên.",
-    images: ["/og-timeline.jpg"],
   },
 };
 
