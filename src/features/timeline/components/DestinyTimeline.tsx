@@ -3,9 +3,21 @@
 import { useRef } from "react";
 import { useInView } from "motion/react";
 import { DESTINY_TIMELINE, type TimelineEra } from "@/data/timeline/index";
+import dynamic from "next/dynamic";
 import { EraNav } from "./EraNav";
-import { EraCinematicScene } from "./EraCinematicScene";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
+
+const EraCinematicScene = dynamic(
+  () => import("./EraCinematicScene").then(mod => mod.EraCinematicScene),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex items-center justify-center bg-[#050505] text-zinc-500 text-sm tracking-widest uppercase animate-pulse">
+        Đang tải...
+      </div>
+    ),
+  }
+);
 
 // Lazy wrapper to prevent rendering all 16 carousels at once, saving massive amounts of RAM and DOM nodes.
 function LazyEraScene({ era, index }: { era: TimelineEra, index: number }) {
@@ -28,7 +40,7 @@ export function DestinyTimeline() {
   return (
     <div 
       id="timeline-scroll-container"
-      className="bg-[#050505] h-[100dvh] w-full overflow-y-auto overflow-x-hidden font-sans text-zinc-100 selection:bg-neon-cyan/30 selection:text-white [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+      className="bg-[#050505] h-[100dvh] w-full overflow-y-auto overflow-x-hidden font-sans text-zinc-100 selection:bg-neon-cyan/30 selection:text-white [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] snap-y snap-mandatory overscroll-y-contain"
     >
       <EraNav eraRefs={eraRefs} />
 
@@ -41,7 +53,7 @@ export function DestinyTimeline() {
             ref={(el) => {
               if (el) eraRefs.current.set(era.id, el);
             }}
-            className="w-full h-[100dvh] shrink-0"
+            className="w-full h-[100dvh] shrink-0 snap-start snap-always"
           >
             <LazyEraScene era={era} index={idx} />
           </div>
