@@ -54,11 +54,13 @@ export function MusicPlayer() {
 
       // 3. Nếu user cuộn trang mà nhạc vẫn chưa bật -> nháy sáng nút Play
       const hintScroll = () => { if (audio.paused) setShowPulseHint(true); };
-      window.addEventListener("scroll", hintScroll, { once: true, passive: true });
+      window.addEventListener("wheel", hintScroll, { once: true, passive: true });
+      window.addEventListener("touchmove", hintScroll, { once: true, passive: true });
 
       return () => {
         removeUnlockListeners();
-        window.removeEventListener("scroll", hintScroll);
+        window.removeEventListener("wheel", hintScroll);
+        window.removeEventListener("touchmove", hintScroll);
       };
     });
 

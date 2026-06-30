@@ -23,6 +23,7 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
   React.useEffect(() => {
     // Reset playlist nếu nội dung hoặc giọng thay đổi
     if (text !== currentTextRef.current || selectedVoice !== currentVoiceRef.current) {
+      stopRef.current.stop();
       playlistRef.current.forEach(item => {
         item.audio.pause();
         URL.revokeObjectURL(item.url);
