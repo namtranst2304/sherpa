@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Menu } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 import {
   NavigationMenu,
@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { DESTINY_ACTIVITIES } from "@/config/constants"
 import { useGuideTOC } from "@/hooks/use-guide-toc"
+import { MobileNav } from "./MobileNav"
 
 const THEME_TEXT = {
   cyan: 'text-neon-cyan',
@@ -48,87 +49,7 @@ export function TopNav() {
   const isTimeline = pathname === "/timeline";
   const isHome = pathname === "/";
 
-  const renderMobileMenu = (isFloating: boolean = false) => (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button variant={isFloating ? "outline" : "ghost"} size="icon" className={cn("h-9 w-9", isFloating && "bg-black/50 backdrop-blur-md border-white/20 text-white rounded-full shadow-lg")}>
-          <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle menu</span>
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-        <nav className="flex flex-col mt-8 overflow-y-auto max-h-[calc(100vh-4rem)] pr-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
-          <Link href="/" className="flex items-center gap-2 text-lg font-black tracking-widest text-neon-cyan uppercase mb-6 cyber-text-container group">
-            <div className="flex items-center justify-center w-8 h-8 rounded-sm overflow-hidden mix-blend-screen group-hover:scale-110 transition-transform duration-500">
-              <Image src="/logo.ico" alt="D2 Sherpa Logo" width={32} height={32} className="w-full h-full object-contain" unoptimized />
-            </div>
-            <div className="relative flex items-center">
-              <span className="cyber-text">
-                D2 Sherpa
-              </span>
-            </div>
-          </Link>
-          
-          {/* Guide TOC for Mobile */}
-          {tocGroups && tocGroups.length > 0 && (
-            <div className="flex flex-col gap-6 border-b-2 border-zinc-800/50 pb-6 mb-6">
-              <div className="flex flex-col w-full animate-in fade-in zoom-in-95">
-                <div className="text-[10px] font-black tracking-widest uppercase text-neon-yellow break-words mb-4 px-2 py-1 bg-neon-yellow/10 border border-neon-yellow/30 inline-block w-fit">
-                  Current Guide: {tocTitle}
-                </div>
-                {tocGroups.map((group, idx) => (
-                  <div key={`toc-group-${idx}`} className="flex flex-col gap-2 mb-4">
-                    {group.title && <div className="text-[10px] font-mono uppercase text-neon-red">{group.title}</div>}
-                    <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
-                      {group.items.map(item => {
-                        const isActive = activeEncounterId === item.id;
-                        return (
-                          <SheetClose asChild key={`toc-item-${item.id}`}>
-                            <Link 
-                              href={item.href || `#${item.id}`}
-                              className={cn("py-1.5 text-sm font-mono transition-colors break-words whitespace-normal", isActive ? "text-neon-yellow font-bold" : "text-zinc-400 hover:text-foreground")}
-                            >
-                              {item.title}
-                            </Link>
-                          </SheetClose>
-                        )
-                      })}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
-          <div className="flex flex-col gap-6">
-            {activities.map((act) => {
-              const theme = act.themeColor || "cyan";
-              const titleColor = act.locked ? 'text-neon-red' : THEME_TEXT[theme as keyof typeof THEME_TEXT] || THEME_TEXT.zinc
-              return (
-                <div key={`mobile-${act.id}`} className="flex flex-col gap-2">
-                  <div className={`text-xs font-bold tracking-widest uppercase ${titleColor}`}>
-                    {act.title}
-                    {act.locked && <span className="ml-2 text-[8px] border border-neon-red px-1 bg-neon-red/20 text-neon-red">LOCKED</span>}
-                  </div>
-                  <div className="flex flex-col gap-1 pl-3 border-l-2 border-zinc-800">
-                    {act.items.map((item) => (
-                      <Link 
-                        key={`mobile-item-${item.title}`} 
-                        href={act.locked ? "#" : item.href} 
-                        className={`py-1.5 text-sm font-mono transition-colors break-words whitespace-normal ${act.locked ? 'text-zinc-600 cursor-not-allowed' : 'text-zinc-400 hover:text-foreground'}`}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </nav>
-      </SheetContent>
-    </Sheet>
-  );
 
   const headerElement = (
     <header className={cn(
@@ -141,11 +62,6 @@ export function TopNav() {
     )}>
       {(!isHome && !isTimeline) && <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />}
       <div className="flex h-14 w-full items-center px-4 md:px-6">
-
-        {/* Mobile Menu */}
-        <div className="md:hidden flex items-center mr-4">
-          {renderMobileMenu(false)}
-        </div>
 
         {/* Desktop Logo */}
         <div className="mr-8 hidden md:flex">
@@ -243,9 +159,9 @@ export function TopNav() {
           {headerElement}
         </div>
         
-        {/* Mobile Floating Menu Button */}
-        <div className="fixed top-4 left-4 z-[60] md:hidden">
-          {renderMobileMenu(true)}
+        {/* Mobile Floating Menu Button (Always floating on mobile) */}
+        <div className="fixed top-2 left-4 z-[70] md:hidden">
+          <MobileNav />
         </div>
       </>
     )
@@ -253,16 +169,14 @@ export function TopNav() {
 
   return (
     <>
-      <div className={cn("w-full z-[60]", isHome ? "absolute top-0 left-0" : "sticky top-0")}>
+      <div className={cn("hidden md:block w-full z-[60]", isHome ? "absolute top-0 left-0" : "sticky top-0")}>
         {headerElement}
       </div>
       
-      {/* Mobile Floating Menu Button for Home */}
-      {isHome && (
-        <div className="fixed top-4 left-4 z-[60] md:hidden">
-          {renderMobileMenu(true)}
-        </div>
-      )}
+      {/* Mobile Floating Menu Button (Always floating on mobile) */}
+      <div className="fixed top-2 left-4 z-[70] md:hidden">
+        <MobileNav />
+      </div>
     </>
   );
 }

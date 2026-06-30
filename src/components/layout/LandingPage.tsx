@@ -72,7 +72,7 @@ export function LandingPage() {
       </motion.div>
 
       {/* Bottom section with Enter Button */}
-      <div className="flex-1 w-full flex items-end justify-center pb-8 md:pb-16 z-20">
+      <div className="flex-1 w-full flex items-end justify-center pb-32 md:pb-16 z-20">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

@@ -1,6 +1,7 @@
 import React from "react"
 import { Map, Users, Settings, Sparkles } from "lucide-react"
 import { CyberCard, CyberHeading } from "@/components/common/CyberComponents"
+import { MobileGuideTOC } from "./MobileGuideTOC"
 
 interface GuideTemplateProps {
     title: string

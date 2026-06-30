@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { GuideSidebar } from "./GuideSidebar"
 import { GuideTemplate } from "./GuideTemplate"
 import { ActivityOverviewTemplate } from "./ActivityOverviewTemplate"
+import { MobileGuideTOC } from "./MobileGuideTOC"
 import { ActivityData, ActivityEncounter } from "@/types"
 import { EncounterPhase } from "./EncounterPhase"
 import { EncounterMap } from "./EncounterMap"
@@ -98,7 +99,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
   };
 
   return (
-    <div className="flex h-full w-full overflow-hidden">
+    <div className="flex h-full w-full md:overflow-hidden flex-col md:flex-row">
       <GuideSidebar 
         groups={sidebarGroups} 
         title={activityData.raid_name || activityData.dungeon_name || "Activity"} 
@@ -106,18 +107,22 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
         activeEncounterId={isOverview ? "overview" : activeEncounter?.id}
       />
 
-      <AnimatePresence mode="wait">
-        <motion.div 
-          key={isOverview ? "overview" : activeEncounterId === "secrets" ? "secrets" : activeEncounter?.id} 
-          className="flex-1 flex flex-col overflow-hidden h-full relative"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ opacity: { duration: 0.2, ease: "easeInOut" }, y: { duration: 0.2, ease: "easeInOut" } }}
-        >
-          {renderContent()}
-        </motion.div>
-      </AnimatePresence>
+      <MobileGuideTOC groups={sidebarGroups} activeEncounterId={isOverview ? "overview" : (activeEncounterId === "secrets" ? "secrets" : activeEncounter?.id)} title={activityData.raid_name || activityData.dungeon_name || "Activity"} />
+
+      <div className="flex-1 md:overflow-hidden relative">
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={isOverview ? "overview" : activeEncounterId === "secrets" ? "secrets" : activeEncounter?.id} 
+            className="w-full h-full flex flex-col"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ opacity: { duration: 0.2, ease: "easeInOut" }, y: { duration: 0.2, ease: "easeInOut" } }}
+          >
+            {renderContent()}
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   )
 }
