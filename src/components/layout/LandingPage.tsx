@@ -39,6 +39,7 @@ export function LandingPage() {
           width={1920}
           height={1080}
           priority
+          unoptimized={true}
         />
         {/* Gradient mask */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black" />

@@ -13,7 +13,7 @@ interface ZoomableImageProps {
   unoptimized?: boolean
 }
 
-export function ZoomableImage({ src, alt, width = 1200, height = 800, className, unoptimized }: ZoomableImageProps) {
+export function ZoomableImage({ src, alt, width = 1200, height = 800, className, unoptimized = true }: ZoomableImageProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (

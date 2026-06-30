@@ -83,6 +83,7 @@ export function EraCinematicScene({
               fill
               className="object-cover opacity-60 md:opacity-70"
               priority={index === 0}
+              unoptimized={true}
             />
           </motion.div>
         )}

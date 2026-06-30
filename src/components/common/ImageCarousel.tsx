@@ -102,8 +102,9 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
               src={images[currentIndex].url}
               alt={images[currentIndex].caption || `Image ${currentIndex + 1}`}
               fill
-              unoptimized={true}
               className="object-contain"
+              quality={100}
+              unoptimized={true}
             />
             {images[currentIndex].caption && (
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
