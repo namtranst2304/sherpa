@@ -104,11 +104,11 @@ export function EraCinematicScene({
           className="w-full h-full"
         >
           {/* Flex Layout: ~ 3/7 Split (Title vs Carousel) */}
-          <div className="w-full h-full flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between">
+          <div className="w-full h-full flex flex-col lg:flex-row gap-3 md:gap-6 lg:gap-12 items-center justify-between">
 
             {/* Left Side: Era Title (~25%) */}
             <motion.div
-              className="w-full lg:w-[25%] flex flex-col"
+              className="w-full lg:w-[25%] flex flex-col pt-16 md:pt-0 shrink-0"
               initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -40, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: false, amount: 0.3 }}
@@ -138,20 +138,20 @@ export function EraCinematicScene({
 
             {/* Right Side: Carousel (~75%) */}
             <motion.div
-              className="w-full lg:w-[75%] h-full flex flex-col justify-center relative"
+              className="w-full lg:w-[75%] flex-1 lg:flex-none lg:h-full flex flex-col justify-center relative min-h-0"
               initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 40, filter: "blur(4px)" }}
               whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
               viewport={{ once: false, amount: 0.3 }}
               transition={delayedTransitionProps}
             >
-              <CarouselContent className="-ml-4 md:-ml-8">
+              <CarouselContent className="-ml-4 md:-ml-8 h-full">
                 {era.events.map((event, eIdx) => {
                   const cleanDescription = event.description.replace(/\*\*(.*?)\*\*/g, '$1');
                   return (
-                    <CarouselItem key={eIdx} className="pl-4 md:pl-8 basis-full">
+                    <CarouselItem key={eIdx} className="pl-4 md:pl-8 basis-full h-full lg:h-auto">
 
                       {/* "Xéo xéo đẹp đẹp" - Slanted Card Design using CSS Skew */}
-                      <div className="group relative w-full h-[55vh] md:h-[60vh] lg:h-[70vh] 2xl:h-[75vh] p-1 overflow-hidden"
+                      <div className="group relative w-full h-full lg:h-[70vh] 2xl:h-[75vh] p-1 overflow-hidden"
                         style={{ transform: "skewX(-5deg)" }}>
 
                         {/* Slanted Glass Background */}
@@ -213,7 +213,7 @@ export function EraCinematicScene({
               </CarouselContent>
 
               {/* Carousel Controls for Mobile */}
-              <EraCarouselControls theme={theme} className="lg:hidden justify-end gap-3 mt-4 pr-2" sizeClass="w-10 h-10" iconSize="w-4 h-4" />
+              <EraCarouselControls theme={theme} className="lg:hidden justify-center gap-8 mt-6 mb-4" sizeClass="w-12 h-12" iconSize="w-5 h-5" />
 
               {/* Thematic Carousel Indicators */}
               <div className="flex justify-center gap-3 mt-4 lg:mt-6 pb-2">
