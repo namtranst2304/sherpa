@@ -7,7 +7,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { MusicPlayer } from "@/components/layout/MusicPlayer";
-import { WelcomeScreen } from "@/components/layout/WelcomeScreen";
+import { WelcomeScreen } from "@/features/home/components/WelcomeScreen";
 import { GuideTOCProvider } from "@/hooks/use-guide-toc";
 
 export const metadata: Metadata = {

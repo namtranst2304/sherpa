@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import { MatrixRain } from "@/components/common/MatrixRain";
-import { TimelineDoorTransition } from "@/components/layout/TimelineDoorTransition";
+import { TimelineDoorTransition } from "@/features/timeline/components/TimelineDoorTransition";
 
 const DestinyTimeline = dynamic(
   () => import("@/features/timeline/components/DestinyTimeline").then((mod) => mod.DestinyTimeline),
