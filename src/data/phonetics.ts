@@ -62,6 +62,7 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "Zavala": "da va la",
   "Ikora": "ai cô ra",
   "Uldren": "un đờ rần",
+  "Faction": "phách sần",
   "Ahamkara": "a ham ca ra",
   "Shadowkeep": "sa đô kíp",
   "Forsaken": "pho sếch cần",
