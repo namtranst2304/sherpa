@@ -33,8 +33,16 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
   const gecToken = await generateSecMsGecToken();
   const wsUrl = `wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=6A5AA1D4EAFF4E9FB37E23D68491D6F4&Sec-MS-GEC=${gecToken}&Sec-MS-GEC-Version=1-143.0.3650.75`;
 
-  let ws: any;
-  const isCloudflare = typeof (globalThis as any).WebSocketPair !== 'undefined';
+  interface EdgeWebSocket {
+    accept?: () => void;
+    send: (data: string | Uint8Array) => void;
+    close: () => void;
+    addEventListener: (event: string, listener: (...args: unknown[]) => void) => void;
+    on?: (event: string, listener: (...args: unknown[]) => void) => void;
+    readyState: number;
+  }
+  let ws: EdgeWebSocket;
+  const isCloudflare = typeof (globalThis as unknown as { WebSocketPair?: unknown }).WebSocketPair !== 'undefined';
   
   if (isCloudflare) {
     // Cloudflare Workers WebSocket client via fetch
@@ -47,9 +55,9 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
         'Origin': 'chrome-extension://jdiccldimpdaibmpdkjnbmckianbfold'
       }
     });
-    ws = (response as any).webSocket;
+    ws = (response as unknown as { webSocket: EdgeWebSocket }).webSocket;
     if (!ws) throw new Error("No websocket returned from CF fetch");
-    ws.accept();
+    ws.accept?.();
   } else {
     // Local Node.js environment
     // Use ws package so we can pass the required Origin header
@@ -64,7 +72,7 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
   }
 
   return new Promise((resolve, reject) => {
-    let audioChunks: Uint8Array[] = [];
+    const audioChunks: Uint8Array[] = [];
     let isCompleted = false;
 
     const timeout = setTimeout(() => {
@@ -84,9 +92,9 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
       ws.send(ssmlMessage);
     };
 
-    const onMessage = async (eventOrData: any) => {
+    const onMessage = async (eventOrData: unknown) => {
       // the 'ws' package passes raw data as first argument instead of an event object
-      const data = isCloudflare ? eventOrData.data : eventOrData;
+      const data = isCloudflare ? (eventOrData as { data: unknown }).data : eventOrData;
       
       if (typeof data === 'string') {
         if (data.includes('Path:turn.end')) {
@@ -108,10 +116,15 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
         let buffer: ArrayBuffer;
         if (typeof Blob !== 'undefined' && data instanceof Blob) {
            buffer = await data.arrayBuffer();
-        } else if (data.buffer) { // Buffer or ArrayBufferView
-           buffer = data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
+        } else if (data && typeof data === 'object' && 'buffer' in data) { // Buffer or ArrayBufferView
+           const dataView = data as { buffer: ArrayBuffer, byteOffset?: number, byteLength?: number };
+           if (dataView.byteOffset !== undefined && dataView.byteLength !== undefined) {
+             buffer = dataView.buffer.slice(dataView.byteOffset, dataView.byteOffset + dataView.byteLength);
+           } else {
+             buffer = dataView.buffer;
+           }
         } else {
-           buffer = data;
+           buffer = data as ArrayBuffer;
         }
 
         const uint8 = new Uint8Array(buffer);
@@ -140,7 +153,7 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
       }
     };
 
-    const onError = (err: any) => {
+    const onError = (err: unknown) => {
       clearTimeout(timeout);
       reject(err);
     };
@@ -150,7 +163,7 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
     } else if (isCloudflare) {
       ws.addEventListener('open', onOpen);
     } else {
-      ws.on('open', onOpen);
+      ws.on?.('open', onOpen);
     }
     
     if (isCloudflare) {
@@ -163,9 +176,9 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
         }
       });
     } else {
-      ws.on('message', onMessage);
-      ws.on('error', onError);
-      ws.on('close', () => {
+      ws.on?.('message', onMessage);
+      ws.on?.('error', onError);
+      ws.on?.('close', () => {
         if (!isCompleted) {
           clearTimeout(timeout);
           reject(new Error("WebSocket closed unexpectedly"));
@@ -185,7 +198,7 @@ export async function POST(req: Request) {
 
     const finalAudio = await getEdgeTTS(text, voice);
 
-    return new NextResponse(finalAudio as any, {
+    return new NextResponse(finalAudio as unknown as BodyInit, {
       headers: {
         'Content-Type': 'audio/mpeg',
         'Content-Length': finalAudio.length.toString(),
