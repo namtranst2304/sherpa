@@ -180,7 +180,6 @@ export function EraCinematicScene({
                                 {event.date}
                               </span>
                             )}
-                            <TTSButton text={cleanDescription} theme={theme} />
                           </div>
 
                           <h3 className="text-xl md:text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-white mb-4 lg:mb-6 drop-shadow-md">
@@ -234,6 +233,16 @@ export function EraCinematicScene({
                     aria-label={`Go to slide ${i + 1}`}
                   />
                 ))}
+              </div>
+
+              {/* TTS Controls Group */}
+              <div className="flex justify-center mt-3">
+                <TTSButton 
+                  events={era.events} 
+                  currentEventIndex={current - 1} 
+                  theme={theme} 
+                  onEventChange={(index) => api?.scrollTo(index)} 
+                />
               </div>
             </motion.div>
 

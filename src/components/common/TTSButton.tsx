@@ -1,48 +1,98 @@
 "use client";
 
 import * as React from "react";
-import { Volume2, Square, Settings2 } from "lucide-react";
+import { Volume2, Settings2, Square, BookOpen } from "lucide-react";
 import type { ThemeColorTokens } from "@/lib/theme";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
-export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTokens }) {
+import type { TimelineEvent } from "@/data/timeline/index";
+
+export interface TTSControlsProps {
+  events: TimelineEvent[];
+  currentEventIndex: number;
+  theme?: ThemeColorTokens;
+  onEventChange?: (index: number) => void;
+  className?: string;
+}
+
+export function TTSButton({ events, currentEventIndex, theme, onEventChange, className }: TTSControlsProps) {
+  const instanceId = React.useId();
+  const [mode, setMode] = React.useState<'NONE' | 'SINGLE' | 'CHAPTER'>('NONE');
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isPaused, setIsPaused] = React.useState(false);
   const [selectedVoice, setSelectedVoice] = React.useState("vi-VN-NamMinhNeural");
   const [isLoading, setIsLoading] = React.useState(false);
 
   // Lưu trữ các câu đã tải
-  const playlistRef = React.useRef<{ audio: HTMLAudioElement; url: string }[]>([]);
+  const playlistRef = React.useRef<{ audio: HTMLAudioElement; url: string; eventIndex: number }[]>([]);
   const currentIndexRef = React.useRef(0);
   const stopRef = React.useRef<{ stop: () => void }>({ stop: () => {} });
   
-  // Lưu state để biết đang đọc bài nào
-  const currentTextRef = React.useRef("");
+  // Lưu state để biết đang đọc voice nào, event nào
   const currentVoiceRef = React.useRef("");
+  const playingEventIndexRef = React.useRef(-1);
+  const isAutoScrollingRef = React.useRef(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  const stopPlayback = React.useCallback(() => {
+    stopRef.current.stop();
+    playlistRef.current.forEach(item => {
+      item.audio.pause();
+      URL.revokeObjectURL(item.url);
+    });
+    playlistRef.current = [];
+    currentIndexRef.current = 0;
+    setIsPlaying(false);
+    setIsPaused(false);
+    setMode('NONE');
+    window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: false } }));
+  }, []);
+
+  // Nếu user vuốt sang thẻ khác bằng tay thì tự tắt (dù là SINGLE hay CHAPTER)
+  React.useEffect(() => {
+    if (isPlaying && playingEventIndexRef.current !== -1 && playingEventIndexRef.current !== currentEventIndex) {
+      if (!isAutoScrollingRef.current) {
+        stopPlayback();
+      }
+    }
+  }, [currentEventIndex, isPlaying, stopPlayback]);
+
+  // Tự động tắt nếu người dùng cuộn sang chương khác (nút TTS bị khuất khỏi màn hình)
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting && isPlaying) {
+            stopPlayback();
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    
+    const currentContainer = containerRef.current;
+    if (currentContainer) {
+      observer.observe(currentContainer);
+    }
+    
+    return () => {
+      if (currentContainer) observer.unobserve(currentContainer);
+    };
+  }, [isPlaying, stopPlayback]);
 
   React.useEffect(() => {
-    // Reset playlist nếu nội dung hoặc giọng thay đổi
-    if (text !== currentTextRef.current || selectedVoice !== currentVoiceRef.current) {
-      stopRef.current.stop();
-      playlistRef.current.forEach(item => {
-        item.audio.pause();
-        URL.revokeObjectURL(item.url);
-      });
-      playlistRef.current = [];
-      currentIndexRef.current = 0;
-      currentTextRef.current = text;
+    // Reset playlist nếu giọng thay đổi
+    if (selectedVoice !== currentVoiceRef.current) {
+      stopPlayback();
       currentVoiceRef.current = selectedVoice;
-      setIsPlaying(false);
-      setIsPaused(false);
-      window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: false } }));
     }
-  }, [text, selectedVoice]);
+  }, [selectedVoice, stopPlayback]);
 
-  // Nghe sự kiện từ các thẻ khác để tự dừng nếu có người khác phát
+  // Nghe sự kiện từ các thẻ/instance khác để tự dừng
   React.useEffect(() => {
     const handleOtherPlay = (e: Event) => {
       const customEvent = e as CustomEvent;
-      if (customEvent.detail?.text !== text) {
+      if (customEvent.detail?.id !== instanceId) {
         if (isPlaying) {
           stopRef.current.stop();
           if (playlistRef.current[currentIndexRef.current]) {
@@ -55,24 +105,17 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
     };
     window.addEventListener('tts-play-started', handleOtherPlay);
     return () => window.removeEventListener('tts-play-started', handleOtherPlay);
-  }, [text, isPlaying]);
+  }, [instanceId, isPlaying]);
 
   React.useEffect(() => {
-    return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      stopRef.current.stop();
-      playlistRef.current.forEach(item => {
-        item.audio.pause();
-        URL.revokeObjectURL(item.url);
-      });
-      window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: false } }));
-    };
-  }, []);
+    return () => stopPlayback();
+  }, [stopPlayback]);
 
-  const handlePlay = async () => {
-    if (!text) return;
+  const handlePlay = async (targetMode: 'SINGLE' | 'CHAPTER') => {
+    if (!events || events.length === 0) return;
 
-    if (isPlaying) {
+    // Toggle pause/resume nếu bấm lại nút của mode đang chạy
+    if (mode === targetMode && isPlaying) {
       stopRef.current.stop();
       if (playlistRef.current[currentIndexRef.current]) {
         playlistRef.current[currentIndexRef.current].audio.pause();
@@ -83,30 +126,65 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
       return;
     }
 
+    if (mode === targetMode && isPaused) {
+      // Resume
+      setIsPlaying(true);
+      setIsPaused(false);
+      window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: true } }));
+      window.dispatchEvent(new CustomEvent('tts-play-started', { detail: { id: instanceId } }));
+      // Tiếp tục vòng lặp bằng cách gọi lại phần play (cần refactor một chút nếu muốn resume chuẩn)
+      // Để đơn giản, ta tái khởi động play loop từ currentIndex
+      startPlayLoop();
+      return;
+    }
+
+    // Nếu đổi mode hoặc play mới
+    stopPlayback();
+    setMode(targetMode);
     setIsPlaying(true);
     setIsPaused(false);
+    playingEventIndexRef.current = currentEventIndex;
+    
     window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: true } }));
-    window.dispatchEvent(new CustomEvent('tts-play-started', { detail: { text } }));
+    window.dispatchEvent(new CustomEvent('tts-play-started', { detail: { id: instanceId } }));
 
-    // Hàm chia nhỏ text theo câu thông minh hơn (tránh cắt sai số thập phân 3.14)
-    const rawChunks = text.split('\n')
-      .flatMap(line => line.match(/.*?[.!?](?:\s|$)|.+/g) || [])
-      .map(s => s.trim())
-      .filter(Boolean);
-
-    // Gom các câu quá ngắn lại với nhau (để chunk dài cỡ 80-150 ký tự, tối ưu số lượng request API)
-    const chunks: string[] = [];
-    let currentChunk = "";
-    for (const c of rawChunks) {
-      if (!currentChunk || currentChunk.length + c.length < 100) {
-        currentChunk += (currentChunk ? " " : "") + c;
-      } else {
-        chunks.push(currentChunk);
-        currentChunk = c;
-      }
+    // Chuẩn bị chunks
+    const chunks: { text: string; eventIndex: number }[] = [];
+    
+    const eventsToProcess = targetMode === 'SINGLE' 
+      ? [{ text: events[currentEventIndex].description.replace(/\*\*(.*?)\*\*/g, '$1'), eIdx: currentEventIndex }] 
+      : events.map((e, idx) => ({ text: e.description.replace(/\*\*(.*?)\*\*/g, '$1'), eIdx: idx }));
+    
+    // Nếu Read Chapter, tự động nhảy về đầu tiên
+    if (targetMode === 'CHAPTER' && onEventChange) {
+       onEventChange(0);
     }
-    if (currentChunk) chunks.push(currentChunk);
 
+    eventsToProcess.forEach(({ text: txt, eIdx }) => {
+      const rawChunks = txt.split('\n')
+        .flatMap(line => line.match(/.*?[.!?](?:\s|$)|.+/g) || [])
+        .map(s => s.trim())
+        .filter(Boolean);
+
+      let currentChunk = "";
+      for (const c of rawChunks) {
+        if (!currentChunk || currentChunk.length + c.length < 100) {
+          currentChunk += (currentChunk ? " " : "") + c;
+        } else {
+          chunks.push({ text: currentChunk, eventIndex: eIdx });
+          currentChunk = c;
+        }
+      }
+      if (currentChunk) chunks.push({ text: currentChunk, eventIndex: eIdx });
+    });
+
+    startPlayLoop(chunks);
+  };
+
+  const startPlayLoop = async (chunksProvided?: { text: string; eventIndex: number }[]) => {
+    // Lưu các biến local để loop
+    const chunksToPlay = chunksProvided || playlistRef.current.map(p => ({ text: '', eventIndex: p.eventIndex })); // Fallback tạm
+    
     let isCancelled = false;
     stopRef.current.stop = () => { isCancelled = true; };
 
@@ -116,7 +194,7 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
       const response = await fetch('/api/tts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: chunks[index], voice: selectedVoice })
+        body: JSON.stringify({ text: chunksToPlay[index].text, voice: selectedVoice })
       });
 
       if (!response.ok) throw new Error("TTS chunk failed");
@@ -126,7 +204,7 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
       const url = URL.createObjectURL(audioBlob);
       const audio = new Audio(url);
       
-      const item = { audio, url };
+      const item = { audio, url, eventIndex: chunksToPlay[index].eventIndex };
       playlistRef.current[index] = item;
       return item;
     };
@@ -136,23 +214,33 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
         setIsLoading(true);
       }
 
-      // Phát từng câu nối tiếp nhau
-      while (currentIndexRef.current < chunks.length) {
+      let lastNotifiedEventIndex = -1;
+      
+      while (currentIndexRef.current < chunksToPlay.length) {
         if (isCancelled) break;
 
-        // Tải câu hiện tại (rất nhanh vì đoạn ngắn)
+        const currentEventIndex = chunksToPlay[currentIndexRef.current].eventIndex;
+        if (onEventChange && currentEventIndex !== lastNotifiedEventIndex) {
+          // Bật cờ auto scroll để useEffect không hiểu nhầm là user tự vuốt
+          isAutoScrollingRef.current = true;
+          onEventChange(currentEventIndex);
+          lastNotifiedEventIndex = currentEventIndex;
+          playingEventIndexRef.current = currentEventIndex;
+          
+          // Tắt cờ auto scroll sau 1s (chờ carousel trượt xong)
+          setTimeout(() => { isAutoScrollingRef.current = false; }, 1000);
+        }
+
         const currentItem = await fetchChunk(currentIndexRef.current);
         setIsLoading(false);
 
-        // Phát ngầm 2 câu tiếp theo trong lúc câu hiện tại đang đọc để đảm bảo mượt mà
-        if (currentIndexRef.current + 1 < chunks.length) {
+        if (currentIndexRef.current + 1 < chunksToPlay.length) {
           fetchChunk(currentIndexRef.current + 1).catch(() => {});
         }
-        if (currentIndexRef.current + 2 < chunks.length) {
+        if (currentIndexRef.current + 2 < chunksToPlay.length) {
           fetchChunk(currentIndexRef.current + 2).catch(() => {});
         }
 
-        // Phát audio
         const audio = currentItem.audio;
         
         await new Promise((resolve) => {
@@ -171,11 +259,11 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
         }
       }
 
-      if (!isCancelled && currentIndexRef.current >= chunks.length) {
-        // Đọc xong toàn bộ
+      if (!isCancelled && currentIndexRef.current >= chunksToPlay.length) {
         setIsPlaying(false);
         setIsPaused(false);
-        currentIndexRef.current = 0; // reset
+        setMode('NONE');
+        currentIndexRef.current = 0;
         window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: false } }));
       }
     } catch (error) {
@@ -183,45 +271,72 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
       setIsPlaying(false);
       setIsPaused(false);
       setIsLoading(false);
+      setMode('NONE');
       window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: false } }));
     }
   };
 
-  if (!text) return null;
+  if (!events || events.length === 0) return null;
 
   const voices = [
     { id: "vi-VN-NamMinhNeural", name: "Nam Minh (Nam)" },
     { id: "vi-VN-HoaiMyNeural", name: "Hoài My (Nữ)" }
   ];
 
+  const isActive = isPlaying || isLoading;
+
   return (
     <div 
-      className="tts-btn-group inline-flex items-center p-1 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-300 group hover:border-white/20 shrink-0"
+      ref={containerRef}
+      className={`tts-btn-group inline-flex items-center p-1 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-all duration-300 group shrink-0 ${className || ""}`}
       style={{
-        boxShadow: isPlaying ? `0 0 20px ${theme?.hex || '#22d3ee'}30` : undefined,
-        borderColor: isPlaying ? `${theme?.hex || '#22d3ee'}50` : undefined
+        boxShadow: isActive ? `0 0 20px ${theme?.hex || '#22d3ee'}30` : undefined,
+        borderColor: isActive ? `${theme?.hex || '#22d3ee'}50` : undefined
       }}
     >
+      {/* Read Single Button */}
       <button 
-        onClick={handlePlay}
-        className="flex items-center justify-center gap-2.5 px-4 md:px-5 py-2 rounded-full hover:bg-white/10 transition-all text-xs font-mono tracking-widest uppercase"
-        style={{ color: isPlaying || isLoading ? (theme?.hex || '#22d3ee') : '#a1a1aa' }}
-        title={isPlaying ? "Pause Reading" : isPaused ? "Resume Reading" : "Read Story"}
+        onClick={() => handlePlay('SINGLE')}
+        className="flex items-center justify-center gap-2.5 px-3 md:px-5 py-2 rounded-full hover:bg-white/10 transition-all text-[10px] md:text-xs font-mono tracking-widest uppercase"
+        style={{ color: mode === 'SINGLE' && isActive ? (theme?.hex || '#22d3ee') : '#a1a1aa' }}
+        title={mode === 'SINGLE' && isPlaying ? "Pause Reading" : mode === 'SINGLE' && isPaused ? "Resume Reading" : "Read Current Card"}
       >
-        {isLoading ? (
+        {mode === 'SINGLE' && isLoading ? (
           <div className="relative w-4 h-4 flex items-center justify-center">
             <div className="absolute inset-0 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: theme?.hex || '#22d3ee', borderTopColor: 'transparent' }} />
           </div>
-        ) : isPlaying ? (
+        ) : mode === 'SINGLE' && isPlaying ? (
           <Square className="w-4 h-4 fill-current animate-pulse" />
         ) : (
           <Volume2 className="w-4 h-4 transition-transform group-hover:scale-110" />
         )}
-        <span className="hidden md:inline font-semibold">{isLoading ? "Loading" : isPlaying ? "Pause" : isPaused ? "Resume" : "Listen"}</span>
+        <span className="font-semibold">Read</span>
       </button>
 
       <div className="w-[1px] h-5 bg-white/10 mx-1" />
 
+      {/* Read Chapter Button */}
+      <button 
+        onClick={() => handlePlay('CHAPTER')}
+        className="flex items-center justify-center gap-2.5 px-3 md:px-5 py-2 rounded-full hover:bg-white/10 transition-all text-[10px] md:text-xs font-mono tracking-widest uppercase"
+        style={{ color: mode === 'CHAPTER' && isActive ? (theme?.hex || '#22d3ee') : '#a1a1aa' }}
+        title={mode === 'CHAPTER' && isPlaying ? "Pause Chapter" : mode === 'CHAPTER' && isPaused ? "Resume Chapter" : "Read Entire Chapter"}
+      >
+        {mode === 'CHAPTER' && isLoading ? (
+          <div className="relative w-4 h-4 flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: theme?.hex || '#22d3ee', borderTopColor: 'transparent' }} />
+          </div>
+        ) : mode === 'CHAPTER' && isPlaying ? (
+          <Square className="w-4 h-4 fill-current animate-pulse" />
+        ) : (
+          <BookOpen className="w-4 h-4 transition-transform group-hover:scale-110" />
+        )}
+        <span className="font-semibold">Read Chapter</span>
+      </button>
+
+      <div className="w-[1px] h-5 bg-white/10 mx-1" />
+
+      {/* Voice Settings */}
       <Popover>
         <PopoverTrigger asChild>
           <button 
