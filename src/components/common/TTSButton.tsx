@@ -88,8 +88,24 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
     window.dispatchEvent(new CustomEvent('toggle-global-music', { detail: { pause: true } }));
     window.dispatchEvent(new CustomEvent('tts-play-started', { detail: { text } }));
 
-    // Hàm chia nhỏ text theo câu
-    const chunks = text.match(/[^.!?\n]+[.!?\n]+/g)?.map(s => s.trim()).filter(Boolean) || [text];
+    // Hàm chia nhỏ text theo câu thông minh hơn (tránh cắt sai số thập phân 3.14)
+    const rawChunks = text.split('\n')
+      .flatMap(line => line.match(/.*?[.!?](?:\s|$)|.+/g) || [])
+      .map(s => s.trim())
+      .filter(Boolean);
+
+    // Gom các câu quá ngắn lại với nhau (để chunk dài cỡ 80-150 ký tự, tối ưu số lượng request API)
+    const chunks: string[] = [];
+    let currentChunk = "";
+    for (const c of rawChunks) {
+      if (!currentChunk || currentChunk.length + c.length < 100) {
+        currentChunk += (currentChunk ? " " : "") + c;
+      } else {
+        chunks.push(currentChunk);
+        currentChunk = c;
+      }
+    }
+    if (currentChunk) chunks.push(currentChunk);
 
     let isCancelled = false;
     stopRef.current.stop = () => { isCancelled = true; };
@@ -128,9 +144,12 @@ export function TTSButton({ text, theme }: { text: string; theme?: ThemeColorTok
         const currentItem = await fetchChunk(currentIndexRef.current);
         setIsLoading(false);
 
-        // Phát ngầm câu tiếp theo trong lúc câu hiện tại đang đọc
+        // Phát ngầm 2 câu tiếp theo trong lúc câu hiện tại đang đọc để đảm bảo mượt mà
         if (currentIndexRef.current + 1 < chunks.length) {
           fetchChunk(currentIndexRef.current + 1).catch(() => {});
+        }
+        if (currentIndexRef.current + 2 < chunks.length) {
+          fetchChunk(currentIndexRef.current + 2).catch(() => {});
         }
 
         // Phát audio
