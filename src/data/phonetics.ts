@@ -37,7 +37,7 @@ export const DESTINY_PHONETICS: Record<string, string> = {
   "Xivu Arath": "xi vu a rát",
   "Traveler": "tra vồ lờ",
   "Witness": "uýt nợt",
-  "Eliksni": "y lích xni",
+  "Eliksni": "y lích ni",
   "Lightfall": "lai phôn",
   "Darkness": "đác nớt",
   "Vanguard": "van gát",
