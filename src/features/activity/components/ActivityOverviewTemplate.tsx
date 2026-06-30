@@ -4,7 +4,6 @@ import { OverviewLoadouts } from "./OverviewLoadouts"
 import { OverviewEpicMode } from "./OverviewEpicMode"
 import { OverviewLootTable } from "./OverviewLootTable"
 import { CyberHeading } from "@/components/common/CyberComponents"
-import { MobileGuideTOC } from "./MobileGuideTOC"
 
 interface ActivityOverviewTemplateProps {
   activityData: ActivityData

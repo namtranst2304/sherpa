@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { Menu, X } from "lucide-react"
 
 import {
   NavigationMenu,
@@ -15,20 +14,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { DESTINY_ACTIVITIES } from "@/config/constants"
-import { useGuideTOC } from "@/hooks/use-guide-toc"
 import { MobileNav } from "./MobileNav"
-
-const THEME_TEXT = {
-  cyan: 'text-neon-cyan',
-  green: 'text-neon-green',
-  red: 'text-neon-red',
-  orange: 'text-neon-orange',
-  yellow: 'text-neon-yellow',
-  zinc: 'text-zinc-400'
-} as const;
 
 import {
   topNavTriggerVariants,
@@ -44,7 +31,6 @@ import {
 export function TopNav() {
   const pathname = usePathname()
   const activities = Object.values(DESTINY_ACTIVITIES)
-  const { title: tocTitle, groups: tocGroups, activeEncounterId } = useGuideTOC() || { groups: [] };
 
   const isTimeline = pathname === "/timeline";
   const isHome = pathname === "/";

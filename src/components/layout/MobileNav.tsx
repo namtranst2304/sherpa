@@ -5,12 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { usePathname } from "next/navigation";
 
 import { Popover, PopoverContent, PopoverTrigger, PopoverClose } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { DESTINY_ACTIVITIES } from "@/config/constants";
-import { useGuideTOC } from "@/hooks/use-guide-toc";
 
 const THEME_TEXT = {
   cyan: 'text-neon-cyan',
@@ -22,9 +20,7 @@ const THEME_TEXT = {
 } as const;
 
 export function MobileNav() {
-  const pathname = usePathname();
   const activities = Object.values(DESTINY_ACTIVITIES);
-  const tocContext = useGuideTOC();
   
   const [openCategories, setOpenCategories] = React.useState<Record<string, boolean>>({
     // Keep the first category open by default to show some content immediately

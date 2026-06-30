@@ -5,15 +5,19 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useGuideTOC } from "@/hooks/use-guide-toc";
 
+interface TOCGroup {
+  title: string;
+  items: { id: string; title: string; href?: string }[];
+}
+
 interface MobileGuideTOCProps {
-  groups?: any[];
+  groups?: TOCGroup[];
   activeEncounterId?: string | null;
   title?: string;
 }
 
-export function MobileGuideTOC({ groups, activeEncounterId: activeProp, title: titleProp }: MobileGuideTOCProps) {
+export function MobileGuideTOC({ groups, activeEncounterId: activeProp }: MobileGuideTOCProps) {
   const tocContext = useGuideTOC();
-  const tocTitle = titleProp || tocContext?.title || "";
   const tocGroups = groups || tocContext?.groups || [];
   const activeEncounterId = activeProp !== undefined ? activeProp : (tocContext?.activeEncounterId || null);
 
@@ -25,7 +29,7 @@ export function MobileGuideTOC({ groups, activeEncounterId: activeProp, title: t
       <div className="flex items-center overflow-x-auto w-full gap-2 pl-[5.5rem] pr-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
         {tocGroups.map((group) => (
           <React.Fragment key={`group-${group.title}`}>
-            {group.items.map((item: any) => {
+            {group.items.map((item: { id: string; title: string; href?: string }) => {
               const isActive = activeEncounterId === item.id;
               return (
                 <Link
