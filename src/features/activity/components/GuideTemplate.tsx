@@ -63,15 +63,17 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
                     {/* Left Column: Map and Mechanics */}
                     <div className="flex flex-col gap-8 w-full">
                         {/* Map */}
-                        <GuideSection 
-                            icon={Map} 
-                            title="Callout Map" 
-                            className="flex flex-col relative" 
-                            contentClassName="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden"
-                        >
-                            <div className="absolute inset-0 pointer-events-none border border-neon-cyan/20 m-2" />
-                            {map}
-                        </GuideSection>
+                        {map && (
+                            <GuideSection 
+                                icon={Map} 
+                                title="Callout Map" 
+                                className="flex flex-col relative" 
+                                contentClassName="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden"
+                            >
+                                <div className="absolute inset-0 pointer-events-none border border-neon-cyan/20 m-2" />
+                                {map}
+                            </GuideSection>
+                        )}
 
                         {/* Mechanics */}
                         <GuideSection 
