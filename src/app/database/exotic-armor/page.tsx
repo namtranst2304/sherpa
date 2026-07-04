@@ -5,6 +5,8 @@ import { Search } from 'lucide-react';
 import exoticArmorData from '@/data/database/exotic-armor.json';
 import { ExoticArmorCard, ExoticArmor } from '@/features/database/components/ExoticArmorCard';
 
+import { DatabaseHeader } from '@/features/database/components/DatabaseHeader';
+
 type ClassType = 'Titan' | 'Hunter' | 'Warlock';
 
 export default function ExoticArmorPage() {
@@ -35,51 +37,33 @@ export default function ExoticArmorPage() {
 
   const classes: ClassType[] = ['Titan', 'Hunter', 'Warlock'];
 
+  const headerActions = (
+    <div className="flex gap-2 p-1 bg-zinc-900/50 rounded-lg w-full sm:w-fit">
+      {classes.map(cls => (
+        <button
+          key={cls}
+          onClick={() => setActiveClass(cls)}
+          className={`flex-1 sm:flex-none px-6 py-2 rounded-md text-sm font-bold uppercase tracking-wider transition-all ${activeClass === cls
+              ? 'bg-neon-cyan text-black shadow-[0_0_15px_rgba(0,255,255,0.3)]'
+              : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
+            }`}
+        >
+          {cls}
+        </button>
+      ))}
+    </div>
+  );
+
   return (
-    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-
-      {/* Header */}
-      <div>
-        <h1 className="text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-cyan animate-cyber-scan uppercase drop-shadow-[0_0_10px_rgba(0,243,255,0.3)]">
-          Exotic Armor
-        </h1>
-        <p className="text-zinc-400 mt-2 font-mono text-sm max-w-2xl leading-relaxed">
-          Dữ liệu chi tiết về toàn bộ các giáp Exotic trong Destiny 2.
-        </p>
-      </div>
-
-      {/* Search and Filters */}
-      <div className="flex flex-col sm:flex-row gap-4 items-center">
-        {/* Search Input */}
-        <div className="relative group w-full sm:max-w-md">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search className="h-5 w-5 text-zinc-500 group-focus-within:text-neon-cyan transition-colors" />
-          </div>
-          <input
-            type="text"
-            className="block w-full pl-10 pr-3 py-2.5 border border-zinc-800 rounded-md leading-5 bg-zinc-900/50 text-zinc-300 placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-neon-cyan focus:border-neon-cyan sm:text-sm transition-all focus:bg-zinc-900"
-            placeholder="Tìm kiếm giáp hoặc perks..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-      </div>
-
-      {/* Class Tabs */}
-      <div className="flex gap-2 p-1 bg-zinc-900/50 rounded-lg w-fit">
-        {classes.map(cls => (
-          <button
-            key={cls}
-            onClick={() => setActiveClass(cls)}
-            className={`px-6 py-2 rounded-md text-sm font-bold uppercase tracking-wider transition-all ${activeClass === cls
-                ? 'bg-neon-cyan text-black shadow-[0_0_15px_rgba(0,255,255,0.3)]'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-800'
-              }`}
-          >
-            {cls}
-          </button>
-        ))}
-      </div>
+    <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
+      <DatabaseHeader
+        title="Exotic Armor"
+        description="Dữ liệu chi tiết về toàn bộ các giáp Exotic trong Destiny 2."
+        searchPlaceholder="Tìm kiếm giáp hoặc perks..."
+        searchValue={searchTerm}
+        onSearchChange={setSearchTerm}
+        actions={headerActions}
+      />
 
       {/* Armor Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">

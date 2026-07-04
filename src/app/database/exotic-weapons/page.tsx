@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react"
 import { Search, Filter } from "lucide-react"
 import data from "@/data/database/exotic-weapons.json"
 import { ExoticWeaponCard, ExoticWeapon } from "@/features/database/components/ExoticWeaponCard"
+import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"
 
 // Ensure valid typed data
 const exoticWeaponsData = data as unknown as ExoticWeapon[]
@@ -41,64 +42,40 @@ export default function ExoticWeaponsPage() {
     return matchesSearch && matchesSlot && matchesType
   })
 
+  const headerActions = (
+    <>
+      <div className="relative flex-1 sm:flex-none">
+        <select
+          value={selectedSlot}
+          onChange={(e) => setSelectedSlot(e.target.value)}
+          className="w-full pl-4 pr-8 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none"
+        >
+          {slots.map(s => <option key={s} value={s}>{s === "All" ? "All Slots" : s}</option>)}
+        </select>
+      </div>
+      <div className="relative flex-1 sm:flex-none">
+        <select
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)}
+          className="w-full px-4 pr-8 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none"
+        >
+          {weaponTypes.map(t => <option key={t} value={t}>{t === "All" ? "All Types" : t}</option>)}
+        </select>
+      </div>
+    </>
+  )
+
   return (
     <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
       
-      {/* Header & Filters */}
-      <div className="sticky top-0 z-20 pt-6 pb-4 bg-background/80 backdrop-blur-md border-b border-zinc-800/50">
-        <div className="flex flex-col gap-4">
-          <div>
-            <h1 className="text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-cyan animate-cyber-scan uppercase drop-shadow-[0_0_10px_rgba(0,243,255,0.3)]">
-              Exotic Weapons & Catalysts
-            </h1>
-            <p className="text-zinc-400 mt-2 font-mono text-sm max-w-2xl leading-relaxed">
-              Dữ liệu chi tiết về toàn bộ các vũ khí Exotic trong Destiny 2. Đã bao gồm hệ thống nâng cấp Catalyst và các tổ hợp Perk ngẫu nhiên.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
-            {/* Search */}
-            <div className="relative group w-full sm:max-w-md">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-zinc-500 group-focus-within:text-neon-cyan transition-colors" />
-              </div>
-              <input
-                type="text"
-                className="block w-full pl-10 pr-3 py-2.5 border border-zinc-800 rounded-md leading-5 bg-zinc-900/50 text-zinc-300 placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-neon-cyan focus:border-neon-cyan sm:text-sm transition-all focus:bg-zinc-900"
-                placeholder="Tìm kiếm tên súng, loại đạn, nguyên tố, trait..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-
-            {/* Filters */}
-            <div className="flex gap-2 w-full sm:w-auto">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Filter className="h-4 w-4 text-zinc-500" />
-                </div>
-                <select
-                  value={selectedSlot}
-                  onChange={(e) => setSelectedSlot(e.target.value)}
-                  className="pl-9 pr-8 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none"
-                >
-                  {slots.map(s => <option key={s} value={s}>{s === "All" ? "All Slots" : s}</option>)}
-                </select>
-              </div>
-
-              <div className="relative">
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="px-4 pr-8 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none"
-                >
-                  {weaponTypes.map(t => <option key={t} value={t}>{t === "All" ? "All Types" : t}</option>)}
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <DatabaseHeader
+        title="Exotic Weapons & Catalysts"
+        description="Dữ liệu chi tiết về toàn bộ các vũ khí Exotic trong Destiny 2. Đã bao gồm hệ thống nâng cấp Catalyst và các tổ hợp Perk ngẫu nhiên."
+        searchPlaceholder="Tìm kiếm tên súng, loại đạn, nguyên tố, trait..."
+        searchValue={searchTerm}
+        onSearchChange={setSearchTerm}
+        actions={headerActions}
+      />
 
       {/* Weapons Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
