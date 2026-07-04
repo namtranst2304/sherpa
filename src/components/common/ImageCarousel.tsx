@@ -1,4 +1,5 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "motion/react"

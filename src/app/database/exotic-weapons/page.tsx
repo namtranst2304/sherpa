@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useMemo } from "react"
-import { Search, Filter } from "lucide-react"
+
 import data from "@/data/database/exotic-weapons.json"
 import { ExoticWeaponCard, ExoticWeapon } from "@/features/database/components/ExoticWeaponCard"
 import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"

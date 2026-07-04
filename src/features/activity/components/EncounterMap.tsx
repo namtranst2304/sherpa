@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Map } from "lucide-react"
 import { ZoomableImage } from "@/components/common/ZoomableImage"
 import ReactMarkdown from "react-markdown"

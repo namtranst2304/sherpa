@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Search } from 'lucide-react';
+
 import exoticArmorData from '@/data/database/exotic-armor.json';
 import { ExoticArmorCard, ExoticArmor } from '@/features/database/components/ExoticArmorCard';
 
