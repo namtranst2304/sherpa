@@ -5,7 +5,11 @@
     "formatting_rules": "Pantheon 2.0 - Sự kiện vĩnh viễn từ bản cập nhật Monument of Triumph. Hoạt động này yêu cầu Fireteam 6 người và có Power handicap -5.",
     "mechanic": {
       "description": "Calus Resplendent là hoạt động đầu tiên của Pantheon 2.0, tập trung vào các Boss từ những Raid đã bị vault: Argos, Gahlran và Calus. Chú ý modifier 'Shot Caller' luôn kích hoạt: bắn trúng điểm yếu (precision hits) liên tục sẽ tăng sát thương vũ khí.",
-      "boss_list": ["Argos", "Gahlran", "Calus"]
+      "boss_list": [
+        "Argos",
+        "Gahlran",
+        "Calus"
+      ]
     }
   },
   "loadout_tips": {
@@ -71,60 +75,63 @@
         "runners": {
           "description": "Nhặt Vex Craniums (sọ Vex) đem về sạc ở bệ nguyên tố đúng màu.",
           "quantity": 3,
-          "types": ["Runner", "Mechanic"]
+          "types": [
+            "Runner",
+            "Mechanic"
+          ]
         },
         "defenders": {
           "description": "Đứng bảo vệ bệ sạc, diệt Minotaur (khiên Void) và clear quái.",
           "quantity": 3,
-          "types": ["Ad Clear"]
+          "types": [
+            "Ad Clear"
+          ]
         }
       },
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Sạc Sọ Vex (Craniums) và Phá Khiên",
-          "objective": "Nấu sọ Vex theo đúng màu yêu cầu để phá khiên Argos.",
+          "name": "Giai đoạn 1: Sạc Sọ Vex (Craniums)",
+          "objective": "Chia đội và sạc Sọ Vex liên tục ở 3 bệ nguyên tố.",
           "steps": [
-            "Nhìn quả cầu phát sáng trên mặt Argos để biết cần nấu sọ Vex màu gì (Arc, Solar, Void).",
-            "3 người cầm sọ Vex đã nấu chín bắn ĐỒNG THỜI (3-2-1) vào 3 quả cầu để phá khiên."
+            "Đội chia làm 3 cặp (2 người mỗi khu vực). Một người bảo vệ nền tảng, người còn lại nhặt Sọ Vex (Cranium).",
+            "Liên tục sạc Sọ Vex không ngừng nghỉ để chuẩn bị cho giai đoạn phá khiên."
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/cranium.jpg",
-              "caption": "Nhặt và nấu sọ Vex ở các bệ nguyên tố"
-            },
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/unstable-energy.jpg",
-              "caption": "Bắn đồng thời để phá khiên và nhận buff"
+              "url": "/images/pantheon/argos-guide.webp",
+              "caption": "Tổng quan cơ chế Argos"
             }
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Sát Thương và Né Chiêu",
-          "objective": "Gây sát thương lên Argos đồng thời né đòn bắt nhốt.",
+          "name": "Giai đoạn 2: Phá Khiên",
+          "objective": "Phá vỡ lớp khiên bằng cách bắn đúng màu nguyên tố.",
           "steps": [
-            "Cả đội gom lại bắn vào điểm yếu của Argos (đầu).",
-            "Né Detainment Prism (tia lưới) để không bị nhốt và chết."
+            "Quan sát 3 quả cầu phát sáng ở một mặt khiên của Argos (Arc, Solar, Void).",
+            "3 người cầm Sọ Vex ĐỒNG THỜI bắn tia vào 3 quả cầu để phá khiên."
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/argos.jpg",
-              "caption": "Argos trong giai đoạn sát thương"
+              "url": "/images/pantheon/argos-ingame.webp",
+              "caption": "Sạc sọ Vex tại các bệ nguyên tố"
             }
           ]
         },
         "phase_3": {
-          "name": "Giai đoạn 3: Phá Điểm Yếu (Gravity Smasher)",
-          "objective": "Phá hủy các khối điểm yếu màu trắng trên người Argos để không bị Wipe.",
+          "name": "Giai đoạn 3: Giai Đoạn Sát Thương (DPS)",
+          "objective": "Gây sát thương lên Argos đồng thời né đòn bắt nhốt và Harpy.",
           "steps": [
-            "Argos tụ chiêu Wipe đếm ngược 30 giây.",
-            "Cả đội xả đạn phá vỡ ÍT NHẤT 2 khối điểm yếu màu trắng (1 cặp) trong thời gian 30s."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/weakpoints.jpg",
-              "caption": "Bắn nát khối điểm yếu màu trắng trên người Argos"
-            }
+            "Cả đội gom lại bắn vào điểm yếu của Argos (đầu). Né Detainment Prism (tia lưới nhốt người).",
+            "Dùng vũ khí Arc (như Thunderlord, Riskrunner) để dọn dẹp Harpy (Supplicant) bay tới."
+          ]
+        },
+        "phase_4": {
+          "name": "Giai đoạn 4: Chiêu Hủy Diệt (Gravity Smasher)",
+          "objective": "Phá hủy các khối điểm yếu trên người Argos để sống sót.",
+          "steps": [
+            "Khi có thông báo 'Void energy rips the air', Argos tụ chiêu Wipe đếm ngược 30 giây.",
+            "Chia làm 3 cặp, xả đạn phá vỡ 6 điểm yếu phát sáng (Đầu, 2 Tay giữa, Lưng) trong thời gian 30s."
           ]
         }
       }
@@ -136,45 +143,46 @@
         "blessed_players": {
           "description": "Một người trong mỗi cặp có buff Witch's Blessing.",
           "quantity": 3,
-          "types": ["Mechanic"]
+          "types": [
+            "Mechanic"
+          ]
         },
         "unblessed_players": {
           "description": "Người không có buff.",
           "quantity": 3,
-          "types": ["Ad Clear"]
+          "types": [
+            "Ad Clear"
+          ]
         }
       },
       "secrets": [],
       "walkthrough": {
         "phase_1": {
-          "name": "Giai đoạn 1: Quản lý Buff Witch's Blessing",
-          "objective": "Liên tục truyền buff cho nhau trước khi đồng hồ đếm ngược giết bạn.",
+          "name": "Giai đoạn 1: Quản lý Buff Witch's Blessing & Tinh Thể",
+          "objective": "Quản lý buff, dọn quái và phá tinh thể (Crystals).",
           "steps": [
-            "Đội chia làm 3 cặp. Đổi buff liên tục (trước khi 60s đếm ngược về 0) bằng cách CÙNG BẮN vào quả cầu Witch's Vessel treo lơ lửng.",
+            "Đội chia 3 cặp, mỗi cặp đứng một khu vực. Luôn phải có 1 người cầm buff Witch's Blessing và 1 người không cầm buff.",
+            "Gọi đổi buff (trước khi 60s đếm ngược về 0) bằng cách CÙNG bắn vào quả cầu Witch's Vessel treo lơ lửng.",
             "Người có buff bắn quái xanh, người không buff bắn quái thường. Cùng nhau bắn vỡ tinh thể (Crystals)."
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/platform.jpg",
-              "caption": "Chia 3 cặp đứng 3 khu vực quanh bản sao Gahlran"
-            },
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/witch-blessing.jpg",
-              "caption": "Cùng nhau bắn vào Witch's Vessel để chuyển buff"
+              "url": "/images/pantheon/gahlran-guide.webp",
+              "caption": "Tổng quan cơ chế Gahlran"
             }
           ]
         },
         "phase_2": {
-          "name": "Giai đoạn 2: Hạ gục Deception",
-          "objective": "Dùng buff chém Gahlran's Deception, mượn rìu của Gahlran khổng lồ để giết hắn.",
+          "name": "Giai đoạn 2: Hạ gục Gahlran's Deception",
+          "objective": "Dùng buff phá khiên Deception, mượn rìu của Gahlran khổng lồ để giết hắn.",
           "steps": [
-            "Cả 2 người (có buff và không buff) ĐỒNG THỜI melee tên Deception (mini-Gahlran).",
-            "Bắn vỡ tay đang sáng lên của Gahlran khổng lồ để hắn nện rìu xuống chém chết Deception."
+            "Dụ Gahlran's Deception lại gần bản sao khổng lồ. Cả 2 người (có buff và không buff) ĐỒNG THỜI melee để phá khiên Deception.",
+            "Đợi Gahlran khổng lồ tung chiêu, bắn vỡ tay đang sáng lên để hắn nện rìu xuống chém chết Deception."
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/deception.jpg",
-              "caption": "Cận chiến Deception và bắn tay Gahlran khổng lồ"
+              "url": "/images/pantheon/gahlran-ingame.webp",
+              "caption": "Cùng nhau bắn Vessel để truyền buff"
             }
           ]
         },
@@ -182,15 +190,9 @@
           "name": "Giai đoạn 3: DPS Gahlran Thật",
           "objective": "Tìm ra bản thể thật và dồn sát thương.",
           "steps": [
-            "Bắn vào tay và đầu của 3 tên Gahlran khổng lồ để tìm ra bản thể THẬT.",
-            "Cả 6 người tập trung về khu vực của Gahlran thật và cắm Well/Bubble DPS.",
-            "Khi Gahlran giơ 2 tay lên và vận công (Immune), lập tức chuyển sang bắn vỡ 2 tay hắn rồi quay lại bắn đầu."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/dps.jpg",
-              "caption": "Tập trung bắn Gahlran thật, chú ý phá tay khi hắn immune"
-            }
+            "Bắn vào tay và đầu/vương miện của cả 3 bản sao Gahlran khổng lồ. 2 bản sao giả sẽ biến mất, lộ diện Gahlran THẬT.",
+            "Cả 6 người tập trung về khu vực của Gahlran thật và cắm Well/Bubble lên bệ cao để tránh sát thương cận chiến.",
+            "Khi Gahlran giơ tay vận công (Immune), ngưng bắn người, bắn vỡ 2 tay rồi bắn vương miện để tiếp tục DPS."
           ]
         }
       }
@@ -202,12 +204,18 @@
         "throne_room_team": {
           "description": "Đội ở lại phòng ngai vàng, nghe callout biểu tượng và giết Psion ở bệ KHÔNG được gọi.",
           "quantity": 3,
-          "types": ["Mechanic", "Ad Clear"]
+          "types": [
+            "Mechanic",
+            "Ad Clear"
+          ]
         },
         "shadow_realm_team": {
           "description": "Đội bị hút vào không gian bóng tối, đọc 3 biểu tượng trên trán Calus và bắn đầu lâu tích buff.",
           "quantity": 3,
-          "types": ["Callout", "Ad Clear"]
+          "types": [
+            "Callout",
+            "Ad Clear"
+          ]
         }
       },
       "secrets": [],
@@ -217,17 +225,13 @@
           "objective": "Giao tiếp chuẩn xác giữa hai đội để sống sót qua các vách ngăn trong Shadow Realm.",
           "steps": [
             "Bắn rớt cái cốc trên tay Calus. CẢ ĐỘI sẽ bị hút vào Shadow Realm. 3 người Throne Team nhặt cầu sáng quay về.",
-            "Shadow Team đọc 3 biểu tượng (Cốc, Mặt Trời, Chó, Rìu).",
-            "Throne Team nghe biểu tượng và giết con Psion đứng ở bệ KHÔNG được gọi."
+            "Shadow Team đọc 3 biểu tượng xuất hiện trên trán Calus (Cốc, Rìu, Mặt Trời, Chó).",
+            "Throne Team nghe biểu tượng và giết con Psion đứng ở bệ KHÔNG được gọi (biểu tượng thứ 4)."
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/chalice.jpg",
-              "caption": "Bắn rớt cốc của Calus để bắt đầu"
-            },
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/shadow-real.jpg",
-              "caption": "Đọc biểu tượng trên trán Calus khổng lồ tại Shadow Realm"
+              "url": "/images/pantheon/calus-guide.webp",
+              "caption": "Tổng quan cơ chế Calus"
             }
           ]
         },
@@ -235,13 +239,13 @@
           "name": "Giai đoạn 2: Tích Force of Will và Phá Khiên",
           "objective": "Đội Shadow Realm bắn đầu lâu để kiếm buff sát thương trước khi quay về.",
           "steps": [
-            "Shadow Team dùng vũ khí Arc bắn vỡ càng nhiều đầu lâu càng tốt (cần >70 stacks Force of Will).",
-            "Throne Team câu giờ, chờ Shadow Team đủ stack mới được phá vỡ lớp khiên của Calus."
+            "Shadow Team dùng vũ khí Arc bắn vỡ càng nhiều đầu lâu khạc ra từ miệng Calus càng tốt (cần >70 stacks Force of Will).",
+            "Throne Team câu giờ, chờ Shadow Team đủ stack mới được phá vỡ lớp khiên của Calus để kéo họ về Throne Room."
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/force-of-will.jpg",
-              "caption": "Bắn đầu lâu khạc ra từ mồm Calus để tích buff Force of Will"
+              "url": "/images/pantheon/calus-ingame.webp",
+              "caption": "Không gian bóng tối Shadow Realm"
             }
           ]
         },
@@ -249,14 +253,8 @@
           "name": "Giai đoạn 3: Sát Thương (DPS)",
           "objective": "Đứng chung trên bệ biểu tượng để xả sát thương vào điểm yếu của Calus.",
           "steps": [
-            "Tất cả 6 người nhảy lên CÙNG 1 BỆ. Đặt Well và xả đạn headshot liên tục để kích hoạt Shot Caller.",
-            "Xoay vòng qua các bệ tiếp theo khi bệ cạn năng lượng."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/dps-1.jpg",
-              "caption": "Tập trung đứng trên bệ và bắn vào điểm yếu của Calus"
-            }
+            "Tất cả 6 người nhảy lên CÙNG 1 BỆ biểu tượng. Đặt Well và xả đạn.",
+            "Khi bệ cạn năng lượng, xoay vòng qua các bệ tiếp theo. Né sát thương của Calus nếu cần nhưng phải quay lại bệ nhanh nhất."
           ]
         }
       }

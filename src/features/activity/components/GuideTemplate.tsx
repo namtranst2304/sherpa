@@ -58,10 +58,13 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px] gap-8 items-start">
+                <div className={cn(
+                    "flex flex-col lg:grid gap-8 items-start",
+                    (roles || secrets) ? "lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px]" : "lg:grid-cols-1"
+                )}>
 
                     {/* Left Column: Map and Mechanics */}
-                    <div className="flex flex-col gap-8 w-full">
+                    <div className="flex flex-col gap-8 w-full min-w-0">
                         {/* Map */}
                         {map && (
                             <GuideSection 
@@ -87,17 +90,23 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
                     </div>
 
                     {/* Right Column: Roles, Secrets */}
-                    <div className="flex flex-col gap-8 w-full lg:sticky lg:top-8">
-                        {/* Roles */}
-                        <GuideSection icon={Users} title="What to do (Roles)" className="cyber-grid relative">
-                            {roles}
-                        </GuideSection>
+                    {(roles || secrets) && (
+                        <div className="flex flex-col gap-8 w-full min-w-0 lg:sticky lg:top-8">
+                            {/* Roles */}
+                            {roles && (
+                                <GuideSection icon={Users} title="What to do (Roles)" className="cyber-grid relative">
+                                    {roles}
+                                </GuideSection>
+                            )}
 
-                        {/* Secrets & Hidden Chests */}
-                        <GuideSection icon={Sparkles} title="Hidden Chests & Secrets" className="cyber-grid relative">
-                            {secrets}
-                        </GuideSection>
-                    </div>
+                            {/* Secrets & Hidden Chests */}
+                            {secrets && (
+                                <GuideSection icon={Sparkles} title="Hidden Chests & Secrets" className="cyber-grid relative">
+                                    {secrets}
+                                </GuideSection>
+                            )}
+                        </div>
+                    )}
 
                 </div>
             </div>
