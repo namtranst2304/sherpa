@@ -1,5 +1,6 @@
 import { Map } from "lucide-react"
 import { ZoomableImage } from "@/components/common/ZoomableImage"
+import ReactMarkdown from "react-markdown"
 
 interface EncounterMapProps {
   images?: { url: string; caption?: string }[]
@@ -21,9 +22,16 @@ export function EncounterMap({ images, encounterName }: EncounterMapProps) {
               className="w-full"
             />
             {img.caption && (
-              <p className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800">
-                {img.caption}
-              </p>
+              <div className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800 w-full text-center">
+                <ReactMarkdown
+                  components={{
+                    a: ({ node, ...props }) => <a className="text-neon-cyan underline hover:text-white not-italic" target="_blank" rel="noreferrer" {...props} />,
+                    p: ({ node, ...props }) => <span {...props} />
+                  }}
+                >
+                  {img.caption}
+                </ReactMarkdown>
+              </div>
             )}
           </div>
         ))}

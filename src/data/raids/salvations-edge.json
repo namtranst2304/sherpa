@@ -562,12 +562,12 @@
       },
       "images": [
         {
-          "url": "/images/raids/salvations-edge/se-enc4-verity-shapes.webp",
-          "caption": "Cơ chế chia 3D shapes ở Encounter 4 - Verity (Nguồn: Shacknews)"
-        },
-        {
           "url": "/images/raids/salvations-edge/se-enc4-map.webp",
           "caption": "Bản đồ phòng ải 4: Verity (Nguồn: Grindout)"
+        },
+        {
+          "url": "/images/raids/salvations-edge/se-enc4-verity-shapes.webp",
+          "caption": "Cơ chế chia 3D shapes ở Encounter 4 - Verity - Tool tạo hình (3D Shapes Tool) hỗ trợ giải đố: [tại đây](https://verity.d2atlas.com/)"
         }
       ]
     },

@@ -3,6 +3,7 @@ import * as React from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "motion/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import ReactMarkdown from "react-markdown"
 
 export interface CarouselImage {
   url: string
@@ -32,7 +33,18 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
           unoptimized={true}
           className="rounded-lg shadow-[0_0_15px_rgba(0,243,255,0.1)] border border-zinc-700/50 max-w-full h-auto" 
         />
-        {img.caption && <p className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800">{img.caption}</p>}
+        {img.caption && (
+          <div className="text-sm text-muted-foreground italic bg-black/50 px-4 py-1.5 rounded-none border border-zinc-800 text-center w-full">
+            <ReactMarkdown
+              components={{
+                a: ({ node, ...props }) => <a className="text-neon-cyan underline hover:text-white not-italic" target="_blank" rel="noreferrer" {...props} />,
+                p: ({ node, ...props }) => <span {...props} />
+              }}
+            >
+              {img.caption}
+            </ReactMarkdown>
+          </div>
+        )}
       </div>
     )
   }
@@ -108,9 +120,16 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
             />
             {images[currentIndex].caption && (
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-                <p className="text-center text-sm md:text-base text-foreground font-medium drop-shadow-md">
-                  {images[currentIndex].caption}
-                </p>
+                <div className="text-center text-sm md:text-base text-foreground font-medium drop-shadow-md">
+                  <ReactMarkdown
+                    components={{
+                      a: ({ node, ...props }) => <a className="text-neon-cyan underline hover:text-white" target="_blank" rel="noreferrer" {...props} />,
+                      p: ({ node, ...props }) => <span {...props} />
+                    }}
+                  >
+                    {images[currentIndex].caption}
+                  </ReactMarkdown>
+                </div>
               </div>
             )}
           </motion.div>
