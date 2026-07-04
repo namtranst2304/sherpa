@@ -489,10 +489,6 @@
             {
               "url": "/images/pantheon/insurrection-guide.webp",
               "caption": "Tổng quan cơ chế Insurrection Prime"
-            },
-            {
-              "url": "/images/pantheon/insurrection-map.webp",
-              "caption": "Bản đồ Hologram (Map Reader)"
             }
           ]
         },
@@ -527,7 +523,13 @@
             }
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/pantheon/insurrection-map.webp",
+          "caption": "Bản đồ Hologram (Map Reader)"
+        }
+      ]
     }
   ]
 }
