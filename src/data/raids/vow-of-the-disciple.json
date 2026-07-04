@@ -187,8 +187,8 @@
       "name": "Exhibition (The Upended)",
       "images": [
         {
-          "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2022/03/destiny-2-artifacts-exhibition-map.jpg",
-          "caption": "Sơ đồ ải Exhibition (Nguồn: Shacknews)"
+          "url": "/images/raids/votd-exhibition.webp",
+          "caption": "Sơ đồ ải Exhibition (Tác giả: MilkTeaBoba)"
         }
       ],
       "roles": {
@@ -239,8 +239,8 @@
       "name": "Rhulk, Disciple of the Witness",
       "images": [
         {
-          "url": "https://shacknews-www.s3.amazonaws.com/assets/article/2022/03/10/vow-of-the-disciple-rhulk-extra-chest-symbol-locations-destiny-2_feature.jpg",
-          "caption": "Boss cuối Rhulk, Disciple of the Witness"
+          "url": "/images/raids/votd-rhulk.webp",
+          "caption": "Sơ đồ ải Rhulk (Tác giả: FMLAD)"
         },
         {
           "url": "https://shacknews-www.s3.amazonaws.com/assets/editorial/2022/03/destiny-2-vow-of-the-disciple-rhulk-leeching-force-cycle.jpg",
