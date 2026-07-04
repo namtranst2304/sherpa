@@ -95,8 +95,8 @@
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-plates.jpg",
-              "caption": "Dẫm lên bệ theo thứ tự phát sáng để gọi Brand"
+              "url": "/images/pantheon/warpriest-guide.webp",
+              "caption": "Tổng quan cơ chế Warpriest"
             }
           ]
         },
@@ -107,12 +107,6 @@
             "Cả đội gom lại chỗ người có Brand để được xả sát thương vào Warpriest (nếu đứng ngoài Brand sẽ không gây sát thương được).",
             "Người cầm Brand sẽ thấy đồng hồ đếm ngược. Trước khi về 0, người này PHẢI giết 1 con quái (Acolyte) để gia hạn đồng hồ (tối đa 5 lần).",
             "Trong lúc đó, 2 người khác (Aura Holders) phải đi tìm và giết con Blightguard Knight để nhặt cục 'Brand Claimer'. Đem về đứng cạnh người cầm Brand và bấm nút cướp buff khi đồng hồ sắp hết."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-brand.jpg",
-              "caption": "Giữ Brand và bắn Acolytes để gia hạn thời gian"
-            }
           ]
         },
         "phase_3": {
@@ -122,12 +116,6 @@
             "Sau khi đổi buff 2 lần và hết giờ, Warpriest sẽ gọi ra Oculus (mặt trời khổng lồ).",
             "Cả đội phải trốn vào bóng râm phía sau 1 trong 3 tảng đá lớn. Tảng đá đó sẽ bị thiêu rụi.",
             "Lặp lại Phase 1 (bạn chỉ có tối đa 4 vòng DPS vì chỉ có 3 tảng đá)."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/warpriest-oculus.jpg",
-              "caption": "Nấp sau tảng đá để né Oculus"
-            }
           ]
         }
       }
@@ -158,8 +146,8 @@
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/voltaic-motes.jpg",
-              "caption": "Nhặt Voltaic Motes do Minotaur rớt ra"
+              "url": "/images/pantheon/consecrated-guide.webp",
+              "caption": "Tổng quan cơ chế Consecrated Mind"
             }
           ]
         },
@@ -170,12 +158,6 @@
             "Trong lúc Mote team đi nhặt bóng, Boss Team bám theo Boss (Consecrated Mind). Boss sẽ nhả ra 1 cục Voltaic Overflow.",
             "Một người trong team nhặt cục này sẽ thấy cánh quạt của Boss mở ra, để lộ các điểm yếu (mắt) màu đỏ. 2 người còn lại phải bắn nát các mắt đỏ (bắn mắt trắng sẽ Wipe).",
             "Người nhặt cục Overflow sẽ bị debuff Voltaic. Không được nhặt cục thứ 2 liên tiếp nếu chưa hết debuff (đó là lý do cần 3 người luân phiên nhặt)."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/consecrated-eyes.jpg",
-              "caption": "Bắn các mắt màu đỏ trên cánh quạt"
-            }
           ]
         },
         "phase_3": {
@@ -185,12 +167,6 @@
             "Khi đủ 30 Motes, Boss đi ra giữa và mở toàn bộ cánh quạt. Tất cả các mắt chuyển sang màu đỏ.",
             "Cả đội bắn vỡ TẤT CẢ các mắt đỏ cùng một lúc. Lớp vỏ sẽ bật ra để lộ điểm yếu (cái lõi sáng giữa thân).",
             "Boss sẽ vừa lùi lại vừa chạy trốn. Cả đội phải đuổi theo và xả sát thương liên tục trước khi hắn đóng lại."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/consecrated-dps.jpg",
-              "caption": "Đuổi theo Boss và bắn vào lõi giữa"
-            }
           ]
         }
       }
@@ -222,8 +198,8 @@
           ],
           "images": [
             {
-              "url": "https://grindout.com/storage/editor-uploads/guides/taken-strength.jpg",
-              "caption": "Ăn tối đa 2 quả Taken Strength"
+              "url": "/images/pantheon/morgeth-guide.webp",
+              "caption": "Tổng quan cơ chế Morgeth"
             }
           ]
         },
@@ -235,12 +211,6 @@
             "Người được phân công Eye of Riven nhặt tinh thể lên, chạy đến chỗ người đang bị lốc xoáy nhốt và ném (bấm nút lựu đạn) để giải cứu.",
             "LÚC NÀY: Người giải cứu sẽ HÚT toàn bộ số Taken Strength của người bị nhốt. (Ví dụ: người bị nhốt có 2 quả, người giải cứu đang có 0 quả -> người giải cứu thành 2 quả).",
             "Cứ tiếp tục chu kỳ cho đến khi quả Taken Strength THỨ 10 xuất hiện."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/eye-of-riven.jpg",
-              "caption": "Ném Tinh thể giải cứu đồng đội khỏi lốc xoáy"
-            }
           ]
         },
         "phase_3": {
@@ -251,12 +221,6 @@
             "Mọi người tập trung dưới lưng Morgeth. Cái bướu khổng lồ phát sáng trên lưng hắn là điểm yếu.",
             "Morgeth sẽ bắn ra các tia Axit theo hình vòng cung, có thể dùng khiên Bubble hoặc Banner Shield chặn lại.",
             "Sát thương bằng Shotgun (Legend of Acrius) hoặc súng máy. Nếu không giết kịp trong 1 phase, phải phá mấy quả bóng năng lượng màu trắng đang bay tới."
-          ],
-          "images": [
-            {
-              "url": "https://grindout.com/storage/editor-uploads/guides/morgeth-dps.jpg",
-              "caption": "Tập trung bắn vào bướu lưng của Morgeth"
-            }
           ]
         }
       }
