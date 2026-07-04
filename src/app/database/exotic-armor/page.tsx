@@ -38,23 +38,29 @@ export default function ExoticArmorPage() {
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
 
-      {/* Header and Search */}
-      <div className="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-        <h2 className="text-2xl font-bold text-white flex items-center gap-3">
-          <span className="text-neon-cyan/50">|</span>
+      {/* Header */}
+      <div>
+        <h1 className="text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-cyan animate-cyber-scan uppercase drop-shadow-[0_0_10px_rgba(0,243,255,0.3)]">
           Exotic Armor
-        </h2>
+        </h1>
+        <p className="text-zinc-400 mt-2 font-mono text-sm max-w-2xl leading-relaxed">
+          Dữ liệu chi tiết về toàn bộ các giáp Exotic trong Destiny 2.
+        </p>
+      </div>
 
-        <div className="relative w-full md:w-72">
+      {/* Search and Filters */}
+      <div className="flex flex-col sm:flex-row gap-4 items-center">
+        {/* Search Input */}
+        <div className="relative group w-full sm:max-w-md">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <Search className="w-4 h-4 text-zinc-500" />
+            <Search className="h-5 w-5 text-zinc-500 group-focus-within:text-neon-cyan transition-colors" />
           </div>
           <input
             type="text"
-            placeholder="Search armors or perks..."
+            className="block w-full pl-10 pr-3 py-2.5 border border-zinc-800 rounded-md leading-5 bg-zinc-900/50 text-zinc-300 placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-neon-cyan focus:border-neon-cyan sm:text-sm transition-all focus:bg-zinc-900"
+            placeholder="Tìm kiếm giáp hoặc perks..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="block w-full pl-10 pr-3 py-2 border border-zinc-800 rounded-md leading-5 bg-zinc-950 text-zinc-300 placeholder-zinc-600 focus:outline-none focus:bg-black focus:border-neon-cyan/50 focus:ring-1 focus:ring-neon-cyan/50 sm:text-sm transition-colors font-mono"
           />
         </div>
       </div>

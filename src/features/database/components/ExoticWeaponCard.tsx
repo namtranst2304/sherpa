@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Sparkles, Zap, Orbit, Snowflake, Combine } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export interface ExoticWeapon {
   id: number;
@@ -30,23 +30,29 @@ export interface ExoticWeapon {
 }
 
 const DamageTypeIcon = ({ type }: { type: string }) => {
+  let url = '';
   switch (type.toLowerCase()) {
-    case 'kinetic': return <div className="w-3 h-3 rounded-full bg-zinc-300" />;
-    case 'solar': return <Zap className="w-3 h-3 text-orange-500" />;
-    case 'arc': return <Zap className="w-3 h-3 text-cyan-400" />;
-    case 'void': return <Orbit className="w-3 h-3 text-purple-500" />;
-    case 'stasis': return <Snowflake className="w-3 h-3 text-blue-400" />;
-    case 'strand': return <Combine className="w-3 h-3 text-green-500" />;
-    default: return <div className="w-3 h-3 rounded-full bg-zinc-500" />;
+    case 'kinetic': url = 'https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_3385a924fd3ccb92c343ade19f19a370.png'; break;
+    case 'solar': url = 'https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_2a1773e10968f2d088b97c22b22bba9e.png'; break;
+    case 'arc': url = 'https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_092d066688b879c807c3b460afdd61e6.png'; break;
+    case 'void': url = 'https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_ceb2f6197dccf3958bb31cc783eb97a0.png'; break;
+    case 'stasis': url = 'https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_530c4c3e7981dc2aefd24fd3293482bf.png'; break;
+    case 'strand': url = 'https://www.bungie.net/common/destiny2_content/icons/DestinyDamageTypeDefinition_b2fe51a94f3533f97079dfa0d27a4096.png'; break;
+    default: return <div className="w-3 h-3 rounded-full bg-zinc-500" title={type} />;
   }
+  return <Image src={url} alt={type} title={type} width={16} height={16} unoptimized className="drop-shadow-md" />;
 };
 
 const AmmoTypeIcon = ({ type }: { type: string }) => {
   switch (type.toLowerCase()) {
-    case 'primary': return <div className="w-3 h-4 bg-white rounded-sm" />;
-    case 'special': return <div className="w-3 h-4 bg-green-500 rounded-sm" />;
-    case 'heavy': return <div className="w-3 h-4 bg-purple-500 rounded-sm" />;
-    default: return <div className="w-3 h-4 bg-zinc-500 rounded-sm" />;
+    case 'primary': 
+      return null;
+    case 'special': 
+      return <Image src="/images/ammo/special.png" alt="Special" title="Special" width={20} height={20} unoptimized className="drop-shadow-md" />;
+    case 'heavy': 
+      return <Image src="/images/ammo/heavy.png" alt="Heavy" title="Heavy" width={20} height={20} unoptimized className="drop-shadow-md" />;
+    default: 
+      return null;
   }
 };
 
@@ -75,9 +81,11 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
             <div className="flex items-center gap-1 opacity-80" title={weapon.damageType}>
               <DamageTypeIcon type={weapon.damageType} />
             </div>
-            <div className="flex items-center gap-1 opacity-80" title={weapon.ammoType}>
-              <AmmoTypeIcon type={weapon.ammoType} />
-            </div>
+            {weapon.ammoType.toLowerCase() !== 'primary' && weapon.ammoType !== 'None' && (
+              <div className="flex items-center gap-1 opacity-80" title={weapon.ammoType}>
+                <AmmoTypeIcon type={weapon.ammoType} />
+              </div>
+            )}
           </div>
         </div>
       </div>

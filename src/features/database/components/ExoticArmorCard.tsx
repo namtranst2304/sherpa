@@ -67,7 +67,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
                       <h4 className="text-sm font-bold text-zinc-300 uppercase mb-3 tracking-wider text-neon-cyan/80">Column 1</h4>
                       <div className="flex flex-col gap-4">
                         {armor.trait.perkPool.column1.map((perk, i) => (
-                          <div key={i} className="flex gap-3">
+                          <div key={i} className="flex gap-3 items-start">
                             {perk.icon && <Image src={`https://www.bungie.net${perk.icon}`} alt={perk.name} width={32} height={32} className="rounded shrink-0 bg-black" unoptimized />}
                             <div className="flex flex-col">
                               <span className="text-sm font-bold text-zinc-200">{perk.name}</span>
@@ -81,7 +81,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
                       <h4 className="text-sm font-bold text-zinc-300 uppercase mb-3 tracking-wider text-neon-cyan/80">Column 2</h4>
                       <div className="flex flex-col gap-4">
                         {armor.trait.perkPool.column2.map((perk, i) => (
-                          <div key={i} className="flex gap-3">
+                          <div key={i} className="flex gap-3 items-start">
                             {perk.icon && <Image src={`https://www.bungie.net${perk.icon}`} alt={perk.name} width={32} height={32} className="rounded shrink-0 bg-black" unoptimized />}
                             <div className="flex flex-col">
                               <span className="text-sm font-bold text-zinc-200">{perk.name}</span>
@@ -105,7 +105,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
                         <React.Fragment key={i}>
                           {/* Column 1 Perk */}
                           {perk1 ? (
-                            <div className="flex gap-3">
+                            <div className="flex gap-3 items-start">
                               {perk1.icon && <Image src={`https://www.bungie.net${perk1.icon}`} alt={perk1.name} width={32} height={32} className="rounded shrink-0 bg-black shadow-md border border-zinc-700/50" unoptimized />}
                               <div className="flex flex-col">
                                 <span className="text-sm font-bold text-zinc-200">{perk1.name}</span>
@@ -116,7 +116,7 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
 
                           {/* Column 2 Perk */}
                           {perk2 ? (
-                            <div className="flex gap-3">
+                            <div className="flex gap-3 items-start">
                               {perk2.icon && <Image src={`https://www.bungie.net${perk2.icon}`} alt={perk2.name} width={32} height={32} className="rounded shrink-0 bg-black shadow-md border border-zinc-700/50" unoptimized />}
                               <div className="flex flex-col">
                                 <span className="text-sm font-bold text-zinc-200">{perk2.name}</span>
