@@ -11,20 +11,56 @@
   "loadout_tips": {
     "note": "Kẻ địch là Hive/Scorn với số lượng đông đảo và trâu bò, đặc biệt là quân đoàn Dread. Đòi hỏi di chuyển liên tục, dọn quái diện rộng và không để bị kẹt góc.",
     "warlocks": {
-      "supers": [ { "name": "Nova Bomb / Song of Flame", "utility": "Dọn dẹp quái vật Elite (Grim, Subjugator) và giải vây cực nhanh." } ],
-      "exotics_and_abilities": [ { "name": "Getaway Artist / Osmiomancy Gloves", "recommendation": "Tạo Arc Soul liên tục hỗ trợ bắn quái hoặc đóng băng toàn bộ sàn đấu trong lúc bạn bận chạy cơ chế." } ]
+      "supers": [
+        {
+          "name": "Nova Bomb / Song of Flame",
+          "utility": "Dọn dẹp quái vật Elite (Grim, Subjugator) và giải vây cực nhanh."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Getaway Artist / Osmiomancy Gloves",
+          "recommendation": "Tạo Arc Soul liên tục hỗ trợ bắn quái hoặc đóng băng toàn bộ sàn đấu trong lúc bạn bận chạy cơ chế."
+        }
+      ]
     },
     "titans": {
-      "supers": [ { "name": "Twilight Arsenal", "utility": "Khống chế từ xa và dồn sát thương lên Kerrev." } ],
-      "exotics_and_abilities": [ { "name": "Synthoceps", "recommendation": "Tăng tối đa sát thương diện rộng và cận chiến khi bị bầy Dread vây hãm." } ]
+      "supers": [
+        {
+          "name": "Twilight Arsenal",
+          "utility": "Khống chế từ xa và dồn sát thương lên Kerrev."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Synthoceps",
+          "recommendation": "Tăng tối đa sát thương diện rộng và cận chiến khi bị bầy Dread vây hãm."
+        }
+      ]
     },
     "hunters": {
-      "supers": [ { "name": "Shadowshot: Deadfall", "utility": "Trói chân đám Hive/Scorn tiến tới từ nhiều hướng, gom chúng lại một chỗ." } ],
-      "exotics_and_abilities": [ { "name": "Gyrfalcon's Hauberk", "recommendation": "Bắn đạn Volatile dọn dẹp Add siêu nhanh và tàng hình liên tục để chạy cơ chế an toàn." } ]
+      "supers": [
+        {
+          "name": "Shadowshot: Deadfall",
+          "utility": "Trói chân đám Hive/Scorn tiến tới từ nhiều hướng, gom chúng lại một chỗ."
+        }
+      ],
+      "exotics_and_abilities": [
+        {
+          "name": "Gyrfalcon's Hauberk",
+          "recommendation": "Bắn đạn Volatile dọn dẹp Add siêu nhanh và tàng hình liên tục để chạy cơ chế an toàn."
+        }
+      ]
     },
     "weapons": [
-      { "name": "Machine Guns (Commemoration / Hammerhead)", "description": "Rất hiệu quả ở encounter 1 và 2 để phòng thủ và kiểm soát đám đông khổng lồ." },
-      { "name": "Linear Fusion Rifles / Whisper of the Worm", "description": "Vũ khí Hit-scan, sát thương chính xác là bắt buộc để DPS Boss cuối Kerrev the Erased vì hắn bay lượn liên tục." }
+      {
+        "name": "Machine Guns (Commemoration / Hammerhead)",
+        "description": "Rất hiệu quả ở encounter 1 và 2 để phòng thủ và kiểm soát đám đông khổng lồ."
+      },
+      {
+        "name": "Linear Fusion Rifles / Whisper of the Worm",
+        "description": "Vũ khí Hit-scan, sát thương chính xác là bắt buộc để DPS Boss cuối Kerrev the Erased vì hắn bay lượn liên tục."
+      }
     ]
   },
   "encounters": [
@@ -32,8 +68,14 @@
       "id": "sd_riddle",
       "name": "Encounter 1 - Solve the Riddle",
       "roles": {
-        "symbol_reader": { "quantity": 1, "description": "Đi săn Truth Seekers để tìm ra biểu tượng đúng (Truth)." },
-        "beam_aligner": { "quantity": 2, "description": "Điều chỉnh các lăng kính phản chiếu tia sáng theo lệnh của Reader." }
+        "symbol_reader": {
+          "quantity": 1,
+          "description": "Đi săn Truth Seekers để tìm ra biểu tượng đúng (Truth)."
+        },
+        "beam_aligner": {
+          "quantity": 2,
+          "description": "Điều chỉnh các lăng kính phản chiếu tia sáng theo lệnh của Reader."
+        }
       },
       "walkthrough": {
         "phase_1": {
@@ -64,14 +106,26 @@
             "Sẽ có một khe hẹp phát ra ánh sáng vàng nhạt hắt ra. Nhảy vào khe đó và đi hết đường hầm nhỏ để lấy rương."
           ]
         }
+      ],
+      "images": [
+        {
+          "url": "/images/dungeons/sundered-doctrine/encounter1.jpg",
+          "caption": "Bản đồ Encounter 1 - Nguồn: aequorde"
+        }
       ]
     },
     {
       "id": "sd_lockset",
       "name": "Encounter 2 - Zoetic Lockset",
       "roles": {
-        "defenders": { "quantity": 2, "description": "Bảo vệ các chốt chặn, bắn hạ Shriekers và kìm hãm đợt sóng quái." },
-        "runner": { "quantity": 1, "description": "Xoay vòng quay bánh răng Zoetic và khớp biểu tượng." }
+        "defenders": {
+          "quantity": 2,
+          "description": "Bảo vệ các chốt chặn, bắn hạ Shriekers và kìm hãm đợt sóng quái."
+        },
+        "runner": {
+          "quantity": 1,
+          "description": "Xoay vòng quay bánh răng Zoetic và khớp biểu tượng."
+        }
       },
       "walkthrough": {
         "phase_1": {
@@ -101,7 +155,10 @@
       "id": "sd_kerrev",
       "name": "Final Encounter - Kerrev, the Erased",
       "roles": {
-        "mechanic_team": { "quantity": 3, "description": "Cả ba người phải tự linh động thay phiên nhau bẻ tia sáng và đọc biểu tượng." }
+        "mechanic_team": {
+          "quantity": 3,
+          "description": "Cả ba người phải tự linh động thay phiên nhau bẻ tia sáng và đọc biểu tượng."
+        }
       },
       "walkthrough": {
         "phase_1": {
@@ -124,19 +181,63 @@
             "Lặp lại pha phá khiên nếu hắn chưa chết."
           ]
         }
-      }
+      },
+      "images": [
+        {
+          "url": "/images/dungeons/sundered-doctrine/encounter3.jpg",
+          "caption": "Bản đồ Final Encounter - Nguồn: aequorde"
+        }
+      ]
     }
   ],
   "loot_table": [
-    { "weapon": "Finality's Auger", "type": "Linear Fusion Rifle", "frame": "Exotic Stasis", "source": "Kerrev, the Erased (Rare Drop)" },
-    { "weapon": "Unworthy", "type": "Scout Rifle", "frame": "Rapid-Fire", "source": "All Encounters" },
-    { "weapon": "Unloved", "type": "Hand Cannon", "frame": "Strand", "source": "All Encounters" },
-    { "weapon": "Unsworn", "type": "Trace Rifle", "frame": "Strand", "source": "All Encounters" },
-    { "weapon": "Unvoiced", "type": "Shotgun", "frame": "Void", "source": "All Encounters" },
-    { "weapon": "Flain Suit", "type": "Armor", "frame": "Artifice (Master Mode)", "source": "All Encounters" }
+    {
+      "weapon": "Finality's Auger",
+      "type": "Linear Fusion Rifle",
+      "frame": "Exotic Stasis",
+      "source": "Kerrev, the Erased (Rare Drop)"
+    },
+    {
+      "weapon": "Unworthy",
+      "type": "Scout Rifle",
+      "frame": "Rapid-Fire",
+      "source": "All Encounters"
+    },
+    {
+      "weapon": "Unloved",
+      "type": "Hand Cannon",
+      "frame": "Strand",
+      "source": "All Encounters"
+    },
+    {
+      "weapon": "Unsworn",
+      "type": "Trace Rifle",
+      "frame": "Strand",
+      "source": "All Encounters"
+    },
+    {
+      "weapon": "Unvoiced",
+      "type": "Shotgun",
+      "frame": "Void",
+      "source": "All Encounters"
+    },
+    {
+      "weapon": "Flain Suit",
+      "type": "Armor",
+      "frame": "Artifice (Master Mode)",
+      "source": "All Encounters"
+    }
   ],
   "master_mode": {
-    "requirements": [ "Khóa Power Delta -10", "Thêm các Champions (Unstoppable/Overload)", "Số lượng Dread Subjugators tăng gấp đôi" ],
-    "rewards": [ "Trang bị Artifice Armor (Flain Suit) với 1 slot mod kháng cự", "Farm vũ khí Legendary có tỷ lệ ra perk tốt cao hơn", "Seal / Title progress" ]
+    "requirements": [
+      "Khóa Power Delta -10",
+      "Thêm các Champions (Unstoppable/Overload)",
+      "Số lượng Dread Subjugators tăng gấp đôi"
+    ],
+    "rewards": [
+      "Trang bị Artifice Armor (Flain Suit) với 1 slot mod kháng cự",
+      "Farm vũ khí Legendary có tỷ lệ ra perk tốt cao hơn",
+      "Seal / Title progress"
+    ]
   }
 }
