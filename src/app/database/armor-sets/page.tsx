@@ -7,13 +7,20 @@ import armorSetsData from "@/data/armor-sets.json"
 import { CyberCard, CyberHeading, CyberBadge } from "@/components/common/CyberComponents"
 import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"
 
+interface ArmorSet {
+  name: string;
+  bonuses: { pieces: number; description: string; icon?: string }[];
+  screenshot?: string;
+  source?: string;
+}
+
 export default function ArmorSetsPage() {
   const [searchQuery, setSearchQuery] = React.useState("")
   const [sortOrder, setSortOrder] = React.useState<"asc" | "desc">("asc")
 
   // Filter and sort the data
   const filteredAndSortedSets = React.useMemo(() => {
-    let result = [...armorSetsData]
+    let result = [...(armorSetsData as ArmorSet[])]
 
     // Search
     if (searchQuery.trim()) {
@@ -80,6 +87,18 @@ export default function ArmorSetsPage() {
                 {set.name}
               </CyberHeading>
               
+              {set.screenshot && (
+                <div className="relative w-full aspect-[21/9] mb-4 border-b border-zinc-800/50 bg-black/50 overflow-hidden rounded">
+                  <Image 
+                    src={`https://www.bungie.net${set.screenshot}`} 
+                    alt={`${set.name} screenshot`} 
+                    fill 
+                    className="object-cover opacity-80 mix-blend-screen" 
+                    unoptimized 
+                  />
+                </div>
+              )}
+              
               <div className="space-y-4 flex-1">
                 {set.bonuses.map((bonus, j) => (
                   <div key={j} className="flex gap-4 p-3 bg-black/40 rounded-lg border border-zinc-800/50">
@@ -108,6 +127,15 @@ export default function ArmorSetsPage() {
                   </div>
                 ))}
               </div>
+
+              {set.source && (
+                <div className="mt-4 pt-3 border-t border-zinc-800/50">
+                  <div className="flex gap-2 text-xs">
+                    <span className="text-zinc-500 font-bold uppercase tracking-wider shrink-0">Source:</span>
+                    <span className="text-zinc-300 italic">{set.source.replace(/^Source:\s*/, '')}</span>
+                  </div>
+                </div>
+              )}
             </CyberCard>
           ))}
         </div>

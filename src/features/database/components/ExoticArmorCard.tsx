@@ -17,6 +17,8 @@ export interface ExoticArmor {
       column2: { name: string; description: string; icon: string }[];
     };
   };
+  screenshot?: string;
+  source?: string;
 }
 
 export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
@@ -41,6 +43,18 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
           </div>
         </div>
       </div>
+
+      {armor.screenshot && (
+        <div className="relative w-full aspect-[21/9] border-b border-zinc-800 bg-black/50">
+          <Image 
+            src={`https://www.bungie.net${armor.screenshot}`} 
+            alt={`${armor.name} screenshot`} 
+            fill 
+            className="object-cover opacity-80 mix-blend-screen" 
+            unoptimized 
+          />
+        </div>
+      )}
 
       {/* Content */}
       <div className="p-4 flex flex-col gap-4">
@@ -133,6 +147,15 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
             </div>
           </div>
         </div>
+        
+        {armor.source && (
+          <div className="mt-2 pt-3 border-t border-zinc-800/50">
+            <div className="flex gap-2 text-xs">
+              <span className="text-zinc-500 font-bold uppercase tracking-wider shrink-0">Source:</span>
+              <span className="text-zinc-300 italic">{armor.source.replace(/^Source:\s*/, '')}</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

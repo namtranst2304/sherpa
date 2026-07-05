@@ -12,7 +12,9 @@
         "description": "While you have Radiant, Restoration, or Cure, your melee hits release a burst that will scorch the target.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/a4ce3890548fa343ab97556f6ef1bac7.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/404887494.jpg",
+    "source": "Source: \"Pit of Heresy\" Dungeon"
   },
   {
     "name": "Atheon's Memory",
@@ -27,7 +29,9 @@
         "description": "While you have a subclass buff, dealing sustained damage creates an Orb of Power.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/19fd2268026b9e381de699a3dc941741.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/3352305223.jpg",
+    "source": "Source: Vault of Glass Raid"
   },
   {
     "name": "Circuit",
@@ -42,7 +46,9 @@
         "description": "Sliding while Speed Booster is active jolts combatants in front of you.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/014d2db087e06c17703e3f48f1135e5d.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/3381988877.jpg",
+    "source": "Source: Sparrow Racing League"
   },
   {
     "name": "CODA",
@@ -57,7 +63,9 @@
         "description": "Final blows with Light weapons grants additional grenade energy. Final blows with Dark or Kinetic weapons grants additional melee energy. Rapid final blows that alternate between Light and Darkness grant a short period of damage resistance.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/e9dc45fc2e1f56748d5ddb414ebdf99d.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/508076356.jpg",
+    "source": "Source: \"Prophecy\" Dungeon"
   },
   {
     "name": "Crota's Memory",
@@ -72,7 +80,9 @@
         "description": "Being in combat for a duration grants progressively more flinch resistance and damage resistance versus combatants.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/63000cbeef61981c3efe32992739789b.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1261894567.jpg",
+    "source": "Source: Crota's End Raid"
   },
   {
     "name": "Cruel Electrum",
@@ -87,7 +97,9 @@
         "description": "Final blows with Primary ammo weapons remove you from radar for a short time. Drawing a weapon that does not use Primary ammo will immediately end this effect.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/72b47646330904d1a46cf54a779be28a.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/381670717.jpg",
+    "source": "Source: Trials of Osiris Challenges"
   },
   {
     "name": "Crystocrene",
@@ -102,7 +114,9 @@
         "description": "After being out of combat for a moderate duration, slowly gain Frost Armor until you reenter combat.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/046a5d59d06ab9cfb7488faacdc4b6eb.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/333761922.jpg",
+    "source": "Source: Europa Activities"
   },
   {
     "name": "Cyberserpent Null",
@@ -117,7 +131,9 @@
         "description": "While Adrenal Rush is active, final blows grant Special Ammo progress. Final Blows against powerful combatants, Guardians, and Taken grants additional progress.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/c23f5d490b3084d0f051395dc16bdb42.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1239854366.jpg",
+    "source": "Source: Complete Gambit matches and earn rank-up packages from the Drifter."
   },
   {
     "name": "Dark Age",
@@ -132,7 +148,9 @@
         "description": "While you have Initiative, using your class ability creates a stationary healing aura. The aura gains increased healing based on the number of Initiative stacks.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/0273d18ef76b07eadc49e9ca2d131e73.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/169689932.jpg",
+    "source": "Source: Warlord's Ruin Dungeon"
   },
   {
     "name": "Deep Explorer",
@@ -147,7 +165,9 @@
         "description": "When you stow a weapon, restore health based on the number of Built Bitter stacks lost.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/2160d0b4551f285830bdf344f47a8a9d.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/145651147.jpg",
+    "source": "Source: Duality Dungeon"
   },
   {
     "name": "Dreambane",
@@ -162,7 +182,9 @@
         "description": "When you have Unstable Essence, rapid weapon damage or final blows heal you and begin health regeneration.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/8d927506b9d4310414df97a1da85210e.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/175015316.jpg",
+    "source": "Source: Moon Activities"
   },
   {
     "name": "Eutechnology",
@@ -177,7 +199,9 @@
         "description": "After collecting a Void breach, your next final blow with a Void weapon triggers a detonation. The detonation is more powerful if it is triggered quickly after collecting a Void breach.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/7a80a0a2d1abacd0ce64e71bafff34f3.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/433193440.jpg",
+    "source": "Source: Episode: Revenant Activities"
   },
   {
     "name": "Exodus Down",
@@ -192,7 +216,9 @@
         "description": "Whenever you gain, lose, or spend an Armor Charge, heal and gain damage reduction for a short time.\n\nThis effect scales with the amount of Armor Charge gained, lost, or spent.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/98a8854b4477cb8a722024a7015dcf89.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/126418248.jpg",
+    "source": "Source: Complete activities and earn rank-up packages on Nessus."
   },
   {
     "name": "First Ascent",
@@ -207,7 +233,9 @@
         "description": "While Transcendence is active, using your grenade ability consumes all stacks of Stack 'Em Up to grant an escalating amount of grenade energy.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/65a58789810d5617352736c279d51edb.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1139897377.jpg",
+    "source": "Source: Exploring the Pale Heart"
   },
   {
     "name": "Flain",
@@ -222,7 +250,9 @@
         "description": "For a short time after your shields break, your next several Threadling hits restore health.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/4b3cbd3ca5f5ffa0b6d484f139d1c006.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/283174091.jpg",
+    "source": "Source: Seasonal Activities"
   },
   {
     "name": "Great Hunt",
@@ -237,7 +267,9 @@
         "description": "Grenade final blows grant additional Heavy ammo progress.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/738273f563c6cc73bfde01357418adde.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/146275556.jpg",
+    "source": "Source: Last Wish Raid"
   },
   {
     "name": "Iron Battalion",
@@ -252,7 +284,9 @@
         "description": "Final blows while your Super is active refund Super energy when it ends.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/d8a71c6aa15a6a1d14ab7fc8e13e203c.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/63725907.jpg",
+    "source": "Source: Iron Banner"
   },
   {
     "name": "Kentarch 3",
@@ -267,7 +301,9 @@
         "description": "Weapon final blows grant the wearer and nearby allies melee energy.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/67080f11f3487aa8e442609becfdae93.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/440521013.jpg",
+    "source": "Source: Garden of Salvation Raid"
   },
   {
     "name": "Legacy's Oath",
@@ -282,7 +318,9 @@
         "description": "When your shields are broken by a combatant, or upon casting your Super, release a swarm of heat seeking micro-missiles.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/a33ab7d65a4aa836142ee869b0423c66.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/751162931.jpg",
+    "source": "Source: Deep Stone Crypt Raid"
   },
   {
     "name": "Luminopotent",
@@ -297,7 +335,9 @@
         "description": "Final blows with Jolt or against jolted combatants create Ionic Traces.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/bdd6424d0b5dbee52505d969653c69e0.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2883433250.jpg",
+    "source": "Source: Episode: Revenant Activities"
   },
   {
     "name": "Nezarec's Nightmare",
@@ -312,7 +352,9 @@
         "description": "Performing a finisher versus a powerful combatant grants Devour. While you have Devour, gain damage resistance versus combatants.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/7c6a982de9632a3a04dbe1c9a51fc150.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2597227950.jpg",
+    "source": "Source: Root of Nightmares Raid"
   },
   {
     "name": "Oryx's Memory",
@@ -327,7 +369,9 @@
         "description": "After a final blow on a powerful combatant, the next time your shields are broken, you become invisible.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/e1e76d3824a761cf038e1f9d9be7c84f.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/804869182.jpg",
+    "source": "Source: King's Fall Raid"
   },
   {
     "name": "Pantheos Resplendent",
@@ -342,7 +386,9 @@
         "description": "Sustained damage on minibosses, Champions, and bosses increases weapon damage versus base and powerful combatants. Weapon final blows consume one stack each.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/f0a2eb584d440e878d7fe9e9c7884e3b.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/751380107.jpg",
+    "source": "Source: Pantheon"
   },
   {
     "name": "Per Audacia",
@@ -357,7 +403,9 @@
         "description": "Increases mobility and grants enhanced sprint speed and slide distance.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/6c68d32bd7dd8a61b059c44ac1218272.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/107146958.jpg",
+    "source": "Source: Glory Matches in Crucible"
   },
   {
     "name": "Promised",
@@ -372,7 +420,9 @@
         "description": "While you have Stable Resonance, continued weapon damage occasionally generates a resonance burst that damages and exhausts targets.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/e4510ff158987fee7ac3953391f6435e.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1286143186.jpg",
+    "source": "Source: Salvation's Edge Raid"
   },
   {
     "name": "Resonant Fury",
@@ -387,7 +437,9 @@
         "description": "Gain stacks of Siphoning Touch for weapon or Glaive melee hits. Switching weapons heals you and consumes all stacks.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/4678088483fa5ea38f509a02e24faf21.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1461764245.jpg",
+    "source": "Source: \"Vow of the Disciple\" Raid"
   },
   {
     "name": "Reverie Dawn",
@@ -402,7 +454,9 @@
         "description": "When the Protective Wish expires, it cures you. \n\nRapid final blows prematurely end the Protective Wish.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/6882c7bf6dbcd564e9ef00a41818c9fd.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/757360370.jpg",
+    "source": "Source: Dreaming City Activities"
   },
   {
     "name": "Seventh Seraph",
@@ -417,7 +471,9 @@
         "description": "While you have Warmind Charges, defeating powerful combatants, destroying a construct, or destroying a Tangle releases a Solar detonation that damages combatants and heals allies.\n\nConstructs include barricades, turrets, Stasis crystals, and other objects created in the field.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/991a1596482cd22ca393a748c2aa412c.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/618725557.jpg",
+    "source": "Source: Dares of Eternity / World Drops"
   },
   {
     "name": "Spacewalk",
@@ -432,7 +488,9 @@
         "description": "Your grenade abilities release an additional disorienting pulse shortly after detonating.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/fe4bf02ec75185ba071c0a30b53f8037.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/480133716.jpg",
+    "source": "Source: Vesper's Host"
   },
   {
     "name": "Taken King",
@@ -447,7 +505,9 @@
         "description": "Collecting Orbs of Power extends the Ceremony. While it is active, ability final blows occasionally spawn allied Arc moths.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/a0480d71e1dea57fbea74496dd31e13a.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/42941848.jpg",
+    "source": "Source: \"Ghosts of the Deep\" Dungeon"
   },
   {
     "name": "Techeun's Regalia",
@@ -462,7 +522,9 @@
         "description": "Gain increasing damage resistance when you deal damage or land final blows. Finishers grant accelerated progress. At max stacks, the recharge rate of your abilities is also increased.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/4449e9beedbec136551849b5a8802b35.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/826300973.jpg",
+    "source": "Source: Season of Defiance"
   },
   {
     "name": "Thunderhead",
@@ -477,7 +539,9 @@
         "description": "Defeating an unraveled combatant grants grenade ability energy. If you have max grenade energy, you are granted Special ammo meter progress instead.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/39749db8864643f96bb20296732d4e8d.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/535551193.jpg",
+    "source": "Source: Exploring Neomuna"
   },
   {
     "name": "TM Custom",
@@ -492,7 +556,9 @@
         "description": "Freshly drawn weapons deal increased precision damage to combatants for a short period. Weapons with the Tex Balanced Stock Origin Trait equipped or Exotics manufactured by the Tex Mechanica Foundry gain further increased benefits.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/14b1ff03aa7eab854f220fdd32adf0ec.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/436695703.jpg",
+    "source": "Source: \"Spire of the Watcher\" Dungeon"
   },
   {
     "name": "Triumphal Anthem",
@@ -507,7 +573,9 @@
         "description": "Dealing damage with your weapons temporarily grants enhanced sliding. Sliding provides damage resistance.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/69c0437e7a2926aeb72b0395f4b88beb.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/350102826.jpg",
+    "source": "Source: Vanguard Operations"
   },
   {
     "name": "Veritas",
@@ -522,7 +590,9 @@
         "description": "Performing a finisher on powerful combatants heals you and generates loyal Void moths.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/9ca2d24cfb79d72ec09ddd3c78a19e75.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/905917400.jpg",
+    "source": "Source: Throne World / Wellspring"
   },
   {
     "name": "Wildwood",
@@ -537,7 +607,9 @@
         "description": "Precision final blows with any weapon grant a stacking bonus to reload speed, target acquisition, and weapon damage against non-boss combatants for a short duration.\n\nWeapon final blows with non-precision direct hits end this effect early.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/5311ea5b6731e151e9778deac078710c.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/10307688.jpg",
+    "source": "Source: EDZ Activities"
   },
   {
     "name": "Yearning Echo",
@@ -552,7 +624,9 @@
         "description": "While you have stacks of Untold Greed, Orbs of Power and Elemental pickups provide more of their respective energy, and Strand Tangles deal increased damage. When your shields are broken, all stacks are converted into a fountain of Orbs of Power.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/9589b92d6863ebf09f776aad4dfbc2e3.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1286143186.jpg",
+    "source": "Source: Salvation's Edge Raid"
   },
   {
     "name": "Ferropotent",
@@ -567,7 +641,9 @@
         "description": "While your reserves are low, combatant final blows with weapons provide additional ammo progress based on their ammo type.  Primary ammo weapons boost Special ammo progress, and Special ammo weapons boost Heavy ammo progress.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/354d07625ba9f6806c4062e2711c5f0f.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2849508185.jpg",
+    "source": "Source: Iron Banner"
   },
   {
     "name": "New Demotic",
@@ -582,7 +658,9 @@
         "description": "Your weapons gain a temporary increase to handling and aim-down-sights speed when an ally is defeated or you revive an ally.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/8702ce0687c6933b63075a7456620954.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2195018204.jpg",
+    "source": "Source: Trials of Osiris Challenges"
   },
   {
     "name": "Sage Protector",
@@ -597,7 +675,9 @@
         "description": "Briefly guard with a Sword to ready Blade Focus. While Blade Focus is readied, hitting a target with your sword increases Sword damage and lunge distance for a moderate duration.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/a19540f5e54c76044c91fbac06f697ed.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/279565494.jpg",
+    "source": "Source: Equilibrium"
   },
   {
     "name": "Shrewd Survivor",
@@ -612,7 +692,9 @@
         "description": "Dealing final blows while Reflex Action is active grants a bonus to weapon stat and increases stability, reload, and aim assist for Heat weapons, Submachine Guns, and Hand Cannons for a moderate duration.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/04b973a7cfccbd68319667558dcbe82c.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2629237079.jpg",
+    "source": "Source: Renegades"
   },
   {
     "name": "Swordmaster",
@@ -627,7 +709,9 @@
         "description": "Blocking attacks with a Sword or Glaive grants a short period of damage resistance against targets when you next drop your guard.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/837bdc2b437d0ed6da5d665b59af7ebc.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/262826703.jpg",
+    "source": "Source: Crucible Matches"
   },
   {
     "name": "Thriving Survivor",
@@ -642,7 +726,9 @@
         "description": "Multiple final blows with Heat weapons or Primary ammo weapons grant bonuses to weapon and grenade stats and increased ammo generation for Heat weapons and Primary ammo weapons.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/319e1b357fb1e2b7108f489f792c31ed.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/365930261.jpg",
+    "source": "Source: Renegades"
   },
   {
     "name": "Wild Anthem",
@@ -657,7 +743,9 @@
         "description": "Reloading a weapon grants it a bonus to handling and reduces incoming flinch for a short time. Weapons with the SUROS Synergy Origin Trait are granted increased range instead.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/d3959132415be3779f6e2a46dbb531f6.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/10307688.jpg",
+    "source": "Source: Source: Season Pass Reward"
   },
   {
     "name": "AION Adapter",
@@ -672,7 +760,9 @@
         "description": "When Force Absorption is active, taking melee damage causes you to emit a disorienting burst once.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/96a637543fc3a60cf55d6b333ad87661.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2528292701.jpg",
+    "source": "Source: Exploring Kepler"
   },
   {
     "name": "AION Renewal",
@@ -687,7 +777,9 @@
         "description": "Once per activation of Force Converter, sprinting while at critical health, being suspended, or being slowed by a Stasis effect will immediately grant Speed Booster for a short duration.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/609405930d800a057c5e6eef3edac14e.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2528292701.jpg",
+    "source": "Source: Exploring Kepler"
   },
   {
     "name": "Bushido",
@@ -702,7 +794,9 @@
         "description": "Bow, Shotgun, or Sword final blows temporarily reduce incoming damage. Damaging targets with those weapons extends the effect.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/533277959c64b90c06bdea0a6dbaa723.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1154629600.jpg",
+    "source": "Source: World Drops"
   },
   {
     "name": "Collective Psyche",
@@ -717,7 +811,9 @@
         "description": "Suspend, unravel, and sever effects applied to targets, and radiant and restoration effects applied to you have increased duration.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/a96cbdea0b06d28d2780e100ac0ae51f.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1880646964.jpg",
+    "source": "Source: \"The Desert Perpetual\" Raid"
   },
   {
     "name": "Disaster Corps",
@@ -732,7 +828,9 @@
         "description": "When you reach critical health or heal an ally at critical health, Auto Rifles, Scout Rifles, and Sidearms gain a period of increased range, stability, and reload speed.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/5dee6c3209d00db6558954aec7fa7219.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/438409602.jpg",
+    "source": "Source: Vanguard Operations"
   },
   {
     "name": "Iron Panoply",
@@ -747,7 +845,9 @@
         "description": "When your shields become broken, you gain increased ammo generation, flinch resistance, and damage resistance against nearby combatants for a short time. Final blows extend this effect.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/729f24f6efeca3f59162885c8eddbaf3.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/63725907.jpg",
+    "source": "Source: Iron Banner"
   },
   {
     "name": "Last Discipline",
@@ -762,7 +862,9 @@
         "description": "Picking up an Orb of Power grants Special ammo progress.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/c918b80d815f1a54755a0b9b8fcbf7ed.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1459620921.jpg",
+    "source": "Source: Crucible Matches"
   },
   {
     "name": "Lustrous",
@@ -777,7 +879,9 @@
         "description": "Rapid Solar final blows heal you.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/fb229a054586415903e6539ea363f63a.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1809917548.jpg",
+    "source": "Source: Solstice Event"
   },
   {
     "name": "Smoke Jumper",
@@ -792,7 +896,9 @@
         "description": "Defeating a powerful combatant with a finisher grants you Special ammo progress and replenishes a small amount of health.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/a76d27306334a934577ef92a037f2ce0.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/2348082405.jpg",
+    "source": "Source: Vanguard Operations"
   },
   {
     "name": "Techsec",
@@ -807,7 +913,9 @@
         "description": "Defeating powerful combatants or breaking a combatant shield with Kinetic damage releases a disorienting Kinetic shockwave.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/56a10b99ed0b4b28d33696ec828b29b5.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/503854896.jpg",
+    "source": "Source: Episode: Echoes Activities"
   },
   {
     "name": "Twofold Crown",
@@ -822,7 +930,9 @@
         "description": "Final blows with Primary ammo weapons grant you briefly increased radar resolution.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/d45b0c7e60cb34ef703d20c85e3737a5.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1230148081.jpg",
+    "source": "Source: Trials of Osiris Challenges"
   },
   {
     "name": "Wayward Psyche",
@@ -837,6 +947,8 @@
         "description": "After dealing damage with your Super, health and shields regenerate over time while you are in motion. Additional Super damage refreshes this effect.",
         "icon": "https://www.bungie.net/common/destiny2_content/icons/bfaac852d350fb7cabb9a7a06deef4a6.png"
       }
-    ]
+    ],
+    "screenshot": "/common/destiny2_content/screenshots/1182916911.jpg",
+    "source": "Source: \"The Desert Perpetual\" Epic Raid"
   }
 ]

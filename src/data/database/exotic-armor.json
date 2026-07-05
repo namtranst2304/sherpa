@@ -9,7 +9,9 @@
       "name": "Puppeteer's Control",
       "description": "Improves Drengr's Lash and spawns additional projectiles. These projectiles track targets more aggressively, travel farther, and suspend stronger. Gain Woven Mail when you suspend a target.",
       "icon": "/common/destiny2_content/icons/245108de9d46cabc0ca3f16c665321dd.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3849355625.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1035680664,
@@ -21,7 +23,9 @@
       "name": "Fury Conductors",
       "description": "Melee hits grant Armor Charge, and you take less melee damage from combatants while you have Armor Charge. Taking melee damage causes you to emit a burst of damaging Arc energy that jolts targets, consuming your Armor Charge and dealing more damage based on the number of stacks consumed.",
       "icon": "/common/destiny2_content/icons/e6d3adfc397494ea66a79df3f42547c8.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3649264718.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 458095281,
@@ -33,7 +37,9 @@
       "name": "Auto-Loading Link",
       "description": "Steadily reloads a portion of your equipped Auto Rifle or Machine Gun's magazine from reserves. Final blows with Auto Rifles or Machine Guns boost their stability, ammo generation, and damage. Provides a moderate benefit to their airborne effectiveness.",
       "icon": "/common/destiny2_content/icons/da340d0b0754087bb15d64a8897f5e3b.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3768376419.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 197761153,
@@ -45,7 +51,9 @@
       "name": "Transfusion Matrix",
       "description": "Final blows with Arc melees trigger health regeneration and fully restore a melee charge. Melee hits grant Arc melee energy.",
       "icon": "/common/destiny2_content/icons/319afd66efbe058013f6cf040c183587.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1407595207.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 81398002,
@@ -57,7 +65,9 @@
       "name": "Reflective Vents",
       "description": "While sliding with full class ability energy, you gain a frontal shield that reflects incoming damage. After reflecting damage, your class ability energy is depleted based on the amount of damage reflected.",
       "icon": "/common/destiny2_content/icons/dfe3093d5854f9d2e956592604e8338b.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/81398002.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 132452792,
@@ -69,7 +79,9 @@
       "name": "Insatiable",
       "description": "Immediately regenerate health, melee, grenade, and Rift energy for you and your nearby allies upon activating your Super. After your Super ends, temporarily gain greatly increased melee and grenade regen.",
       "icon": "/common/destiny2_content/icons/5ca9d0fa8f6c97999ac5927c679401af.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/132452792.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 523456396,
@@ -81,7 +93,9 @@
       "name": "Barri-nade",
       "description": "Using your class ability channels defensive Light inward, providing a grenade that creates a barricade on impact. Picking up Orbs of Power enhances your next Barri-nade, spawning more barricades on impact.",
       "icon": "/common/destiny2_content/icons/bdf3b0602482e65c1a59c77d5f29a8a2.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/523456396.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 2829609851,
@@ -93,7 +107,9 @@
       "name": "And Another Thing",
       "description": "Gain an additional grenade charge. Grenade final blows spawn an Orb of Power. Weapon final blows grant grenade energy. Activating your grenade ability reloads your equipped weapon from reserves.",
       "icon": "/common/destiny2_content/icons/87ed6eb97c923d6a8d0e14639f4b7791.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2999866952.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 809007410,
@@ -105,7 +121,9 @@
       "name": "Bring the Heat",
       "description": "Fusion Grenades gain increased throw speed, explode on impact, and stun Unstoppable Champions. Final blows with Fusion Grenades grant grenade energy.",
       "icon": "/common/destiny2_content/icons/e62825791887bff24c2d044a250169eb.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1203306857.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3400283633,
@@ -117,7 +135,9 @@
       "name": "Vanishing Execution",
       "description": "Powered melee final blows grant invisibility and restore a portion of health and shields. Finishers and final blows against more powerful targets increase the duration of the invisibility and the amount of health and shields restored.",
       "icon": "/common/destiny2_content/icons/961559205e83e96cd590b34c28efadb7.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3400283633.jpg",
+    "source": "Source: Shadowkeep Campaign"
   },
   {
     "id": 866590993,
@@ -129,7 +149,9 @@
       "name": "Move to Survive",
       "description": "With Blink equipped, use [Air Dodge]  while airborne to perform a Dark Blink.\n\nUsing Blink or Dark Blink grants Volatile Rounds. Blink travels farther, causes nearby targets to become volatile, and has a shorter cooldown. While your Nova Warp Super is active, Dark Blink does not cost Super energy. Provides a moderate benefit to airborne effectiveness for all weapons.",
       "icon": "/common/destiny2_content/icons/3e0c0449da436384126e4cf4d3410086.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4035625646.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 89619507,
@@ -141,7 +163,9 @@
       "name": "Skittering Stinger",
       "description": "Weighted Knife gains a second bounce. Rapid precision hits with your weapons grant Weighted Knife a significant damage bonus, bonus melee, and the ability to stun unshielded combatants for a short time.\n\nEmpowered Weighted Knife is strong against [Stagger] Unstoppable Champions.",
       "icon": "/common/destiny2_content/icons/2773ee80deb86b097323b0827b3db6e5.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/89619507.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 2340803152,
@@ -153,7 +177,9 @@
       "name": "Double Down",
       "description": "Your Threaded Specter has increased duration and durability, and damaging it releases additional Threadlings. While near your Threaded Specter, you do not appear on radar.",
       "icon": "/common/destiny2_content/icons/36a16b32c69487cd4fa8b507bb84a67a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2340803152.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 2109877638,
@@ -165,7 +191,9 @@
       "name": "Hearts of Ice",
       "description": "Targets frozen by your Winter's Wrath Super take increased Shatter damage. Allies in range of your Winter's Wrath shockwave and Frostpulse gain Frost Armor and deal increased damage with Stasis weapons. Granting these buffs to allies grants you Super energy.",
       "icon": "/common/destiny2_content/icons/c9914b643a1a99b9115d092fc42f1ac3.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2109877638.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1849901681,
@@ -177,7 +205,9 @@
       "name": "Blastwave Striders",
       "description": "Gain resistance to your explosives. Defeat targets to charge this armor. Once charged, land a Shiver Strike melee attack or deal explosive self-damage to rocket jump backward and release a blast wave with deadly shrapnel projectiles. The wave freezes combatants and slows Guardians. Charged rocket jumps grant Frost Armor.",
       "icon": "/common/destiny2_content/icons/d0aa8bc9a7050aca98702cbc7499ea33.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1849901681.jpg",
+    "source": "Source: Solo Expert and Master Lost Sectors"
   },
   {
     "id": 863908533,
@@ -189,7 +219,9 @@
       "name": "Voltaic Mirror",
       "description": "Guarding with your Arc Staff does not consume extra Super energy. [Super]  : Cancel Arc Staff early, temporarily increasing Arc weapon damage and creating a blinding burst. Reflected attacks increase the damage of the burst, extend your Super, and deal additional damage.",
       "icon": "/common/destiny2_content/icons/011ceced7088a20d9c6d217694d3971a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/863908533.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 597039524,
@@ -201,7 +233,9 @@
       "name": "Blessing of Order",
       "description": "Standing in a rift creates Noble Seekers that seek out allies and heal them. Standing in an empowering rift creates Noble Seekers that grant both you and your ally a damage bonus. When a Noble Seeker finds an ally, you gain class ability energy. Increases the airborne effectiveness stat of the Hand Cannon Lumina.",
       "icon": "/common/destiny2_content/icons/dcda11796b3ea21561068b723e5bbc93.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/597039524.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 768145972,
@@ -213,7 +247,9 @@
       "name": "One with the Void",
       "description": "Your Void Souls have a longer duration. They also gain escalating damage and durability as they defeat targets. You can retrieve your Void Souls by interacting with them, allowing them to be redeployed.",
       "icon": "/common/destiny2_content/icons/b9e7de604ce74e4dc26e1af3ed8f0549.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/768145972.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 2851385306,
@@ -225,7 +261,9 @@
       "name": "Lancer's Vigil",
       "description": "While a Stasis Super is equipped, rapid Stasis weapon damage or damage from behind your Rally Barricade will create a Diamond Lance near you. Thrown Diamond Lances create Stasis crystals. Your Diamond Lances deal more damage based on how much Frost Armor you have.",
       "icon": "/common/destiny2_content/icons/c23300e63ac0eedfaba2fd398b0901dd.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2851385306.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 327385975,
@@ -237,7 +275,9 @@
       "name": "Roast 'Em",
       "description": "Your Proximity Knife scorches targets it damages with its explosions, or ignites targets on final blow.\n\nAfter throwing a Proximity Knife, you gain increased melee regeneration until the knife explodes. Gain a small amount of melee energy when your Scorch damages a target, and Ignition final blows fully refund melee energy and can overflow into an additional knife charge.",
       "icon": "/common/destiny2_content/icons/cd66bbfb633d559d5c42c6c85e1d6873.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/327385975.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1667080810,
@@ -249,7 +289,9 @@
       "name": "Hawkeye Hack",
       "description": "Precision final blows reduce the cooldown of your Super. Modifies Golden Gun to fire a single, high-damage shot. Targets defeated by that shot give you Super energy and explode.",
       "icon": "/common/destiny2_content/icons/22e4a1934ecb6b95295ebcc2d5139ff4.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3960926756.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3589022772,
@@ -261,7 +303,9 @@
       "name": "High Priority",
       "description": "Steadily reloads a portion of your equipped Trace Rifle's magazine from reserves. Damaging a vehicle, boss, or Champion with a Trace Rifle marks them as the target. When an ally defeats the marked target, Special ammo is generated for you and Heavy ammo for your allies.",
       "icon": "/common/destiny2_content/icons/25a8b65797c75c363e15f51ff138fd2f.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3589022772.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 3488362706,
@@ -273,7 +317,9 @@
       "name": "Crystalline Transistor",
       "description": "Final blows from Kinetic weapons create an explosion in the element of your equipped Super that deals damage and applies a matching elemental effect:\n• [Arc] Blinds targets.\n• [Solar] Scorches targets.\n• [Void] Weakens targets.\n• [Stasis] Slows targets.\n• [Strand] Severs targets.\nElemental final blows temporarily increase the explosion's size. Precision final blows always maximum the explosion's size.",
       "icon": "/common/destiny2_content/icons/d9d5643bc00f65638387f71709534c2b.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3545094011.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2551549824,
@@ -285,7 +331,9 @@
       "name": "Assault Barricade",
       "description": "You and allies can shoot through your Towering Barricade. Your Towering Barricade takes increased damage from Guardians.",
       "icon": "/common/destiny2_content/icons/6abd58ac928344895a54a11d6e06dff9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2551549824.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 171695625,
@@ -297,7 +345,9 @@
       "name": "The Whispers",
       "description": "Gain an additional melee charge. Powered melee final blows spawn an Orb of Power.",
       "icon": "/common/destiny2_content/icons/569a1a4cbdd7a014159ebdf304c8a9b5.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/171695625.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2389062558,
@@ -309,7 +359,9 @@
       "name": "Chaotic Exchanger",
       "description": "Resist incoming damage while charging your Void grenade with Chaos Accelerant. Charged Void grenades return grenade energy on a hit and apply Weaken.",
       "icon": "/common/destiny2_content/icons/565c5f4a70339697ddd4d554f47ea101.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3261527845.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 458095280,
@@ -321,7 +373,9 @@
       "name": "Survival Well",
       "description": "Generates an additional Orb of Power from Supers. Generating a Barricade, or dealing sustained damage or defeating targets from behind one creates a healing pulse. Healing your allies grants Barricade energy.",
       "icon": "/common/destiny2_content/icons/a5c5979f3630735a03bee7f2d32e9043.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3768376418.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 925466718,
@@ -333,7 +387,9 @@
       "name": "Conduction Tines",
       "description": "While you have an Arc ability equipped, Arc ability or Jolt final blows increase the recharge rate of your abilities and extend the duration of Stormtrance.\n\nWhile you have Conduction Tines, Ionic Sentry creates a Storm Grenade when it deploys.",
       "icon": "/common/destiny2_content/icons/00d4bd4093297b236bcb4d3e866f15b0.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/925466718.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4057875770,
@@ -345,7 +401,9 @@
       "name": "Glorious Charge",
       "description": "Greatly increases your Thundercrash damage and grants you damage resistance after impact. Melee final blows while amplified grant you Super energy.",
       "icon": "/common/destiny2_content/icons/bd423a4890e05228b89c0835f8b47633.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4057875770.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1008364980,
@@ -357,7 +415,9 @@
       "name": "Acrobat's Focus",
       "description": "Activating Grapple grants Woven Mail. While active, Woven Mail provides flinch resistance and health when defeating targets.",
       "icon": "/common/destiny2_content/icons/358bc75bc96bdadc33cc25d864848de4.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1008364980.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 3767088557,
@@ -369,7 +429,9 @@
       "name": "Rites of Ember",
       "description": "Your Daybreak projectiles ignite targets on impact. Your Scorch deals additional damage, and builds to more powerful Ignitions. Dealing damage with Scorch or Ignitions grants melee energy.",
       "icon": "/common/destiny2_content/icons/a45747238d01714bd3b9633b7f8e120f.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3767088557.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1479082657,
@@ -381,7 +443,9 @@
       "name": "Malevolent Grasp",
       "description": "While a Strand Super is equipped, casting Rift will suspend nearby combatants. Suspend deals damage over time, which heals you in the process. Targets who break free from suspension suffer additional damage. Defeating suspended targets heals you a moderate amount.",
       "icon": "/common/destiny2_content/icons/be3d10c223512e51c824f808554b2eb8.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1479082657.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1035680665,
@@ -393,7 +457,9 @@
       "name": "Horns of Doom",
       "description": "Defeating targets with Void damage has a chance to grant an escalating bonus to damage with Void weapons. Defeating targets with Void melee grants Super energy.\n\nWhile Sentinel Shield is active, defeating targets with melee attacks recharges Shield Throw, which extends your Super on hitting a target.",
       "icon": "/common/destiny2_content/icons/2711427d59a7abae9059a7b80ff27562.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2002759682.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1437375562,
@@ -405,7 +471,9 @@
       "name": "Linear Actuators",
       "description": "Increases sprint speed. Sprinting builds up a static charge. After melee-attacking a combatant, that charge will chain damage to nearby foes. Gain Bolt Charge per target hit by the chain.",
       "icon": "/common/destiny2_content/icons/10eb32a307eaadd26eb0fe4550bcdbfb.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1437375562.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1643575148,
@@ -417,7 +485,9 @@
       "name": "Resolute",
       "description": "[Arc]Arc final blows grant an escalating damage bonus with Arc weapons. While using Fist of Havoc, activating your Super grants an overshield; final blows extend its duration. When it ends, gain a damage bonus to your Arc weapons.",
       "icon": "/common/destiny2_content/icons/abaff19620ec578f1f379a359de7134c.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3692827145.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3481695565,
@@ -429,7 +499,9 @@
       "name": "Consul's Pitch",
       "description": "Hellion projectiles deal increased damage the further they travel eventually fracturing into scorching shrapnel.",
       "icon": "/common/destiny2_content/icons/ae8c3388b411cf880f9dd76de7e79072.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3481695565.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 925466717,
@@ -441,7 +513,9 @@
       "name": "Cerebral Uplink",
       "description": "Highlights priority targets and improves the regeneration speed of your grenade, melee, and Rift abilities. Provides a small benefit to the airborne effectiveness stat of all weapons.",
       "icon": "/common/destiny2_content/icons/3e642a717efb7bdb36f0f5dcb4cb9d71.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/925466717.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3781549120,
@@ -453,7 +527,9 @@
       "name": "Ionic Conductor",
       "description": "Ionic traces you create move faster and grant you additional ability energy. Nearby allies also gain ability energy when you collect an ionic trace.",
       "icon": "/common/destiny2_content/icons/29137a5b6622734760a1b14700424994.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3781549120.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 728668916,
@@ -465,7 +541,9 @@
       "name": "Warlord's End",
       "description": "Powered melee hits weaken targets. Powered melee final blows create a burst of energy that dramatically weakens nearby targets. Finishers and final blows against more powerful targets increase the radius of the burst and the length of the weakening effect.",
       "icon": "/common/destiny2_content/icons/97685a8e1ddb61ae32a82aef55b77e24.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/728668916.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 671504994,
@@ -477,7 +555,9 @@
       "name": "Relentless Tracker",
       "description": "Damaging a powerful combatant or Guardian with an ability temporarily increases weapon damage of the same type. Defeating that marked target with damage that matches the element creates an Elemental pickup.",
       "icon": "/common/destiny2_content/icons/c156b7906217d8b61e7573f9c9cc2dc7.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/671504994.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4010324161,
@@ -489,7 +569,9 @@
       "name": "Kismet",
       "description": "After landing a final blow while at full health, or when out of combat for an extended duration, your shields will slowly recharge into an overshield. \n\nWhen you have an overshield, your weapons gain increased accuracy, stability, handling, and damage against combatants, and final blows will grant a short period of increased mobility once the overshield is depleted.",
       "icon": "/common/destiny2_content/icons/28e26c9a7e6bca0ac431baae14f9fa16.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4010324161.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 574694189,
@@ -501,7 +583,9 @@
       "name": "Rapid Cooldown",
       "description": "Increases grenade, melee, and dodge regeneration while sprinting.\n\nGain stacks of Frost Armor while sprinting. When you have Frost Armor, Stasis weapons deal additional damage.",
       "icon": "/common/destiny2_content/icons/9b2105255a34673a2b9607f9df1ff2e5.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1737050140.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1488061763,
@@ -513,7 +597,9 @@
       "name": "Misdirection",
       "description": "Dodging disorients nearby enemies and temporarily removes their radar.",
       "icon": "/common/destiny2_content/icons/ec0f49f1d1ac107ff075d74f710153f9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2132672800.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2808445048,
@@ -525,7 +611,9 @@
       "name": "Close Enough",
       "description": "Damaging targets with Chaos Reach extends its duration. Collecting Ionic Traces grants you energy for Chaos Reach. Sprinting while near max Bolt Charge will grant stacks over time.",
       "icon": "/common/destiny2_content/icons/66fcc068afb7cda7082e338debf3c454.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3608857511.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3070357340,
@@ -537,7 +625,9 @@
       "name": "Dynamic Duo",
       "description": "[Grenade]  : Convert your Arc grenade into a Arc Soul and become amplified. The Arc Soul functions as an autonomous turret.",
       "icon": "/common/destiny2_content/icons/21f908e327196879aaa3f22a42229dc2.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4177778015.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1446374842,
@@ -549,7 +639,9 @@
       "name": "The Gift of Certainty",
       "description": "Activating Ascension or Tempest Strike throws bouncing explosives at nearby targets that jolt and damage them. Jolting nearby targets grants you damage resistance.",
       "icon": "/common/destiny2_content/icons/445018df2003ca15a56cb62f07824577.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1446374842.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 407148246,
@@ -561,7 +653,9 @@
       "name": "Vanishing Shadow",
       "description": "Increases the duration of any invisibility effects. When you gain invisibility, your grenade, melee and class abilities recharge faster. At maximum stacks, you gain a Void Overshield as well.",
       "icon": "/common/destiny2_content/icons/d32d006e7f77b1e5bc4d192232b95d42.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/407148246.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1168370783,
@@ -573,7 +667,9 @@
       "name": "Roving Assassin",
       "description": "Each Spectral Blades hit or final blow you make before becoming invisible will restore more of your Super energy.\n\nExiting invisibility while near a target creates a cloud of weakening smoke around you.",
       "icon": "/common/destiny2_content/icons/16e8d034dc489095e8ab84a9540835aa.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1168370783.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2447096246,
@@ -585,7 +681,9 @@
       "name": "See Me, Feel Me",
       "description": "Your Void weapons gain Volatile Rounds after you emerge from being invisible. When you are invisible and defeat a combatant while using a finisher, all of your weapons gain bonus damage; you and your nearby allies gain a reserve overshield and improved class ability regeneration. These reserve overshields can be deployed by using a class ability.",
       "icon": "/common/destiny2_content/icons/bd7a131851dd9dad2da3e9f198f67f6e.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2447096246.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 458095282,
@@ -597,7 +695,9 @@
       "name": "Sunfire Furnace",
       "description": "While your Solar Super is charged, ability final blows cure you and give stacks of Sunfire Furnace.\n\nWhile Sunfire Furnace is active, grenade and Shieldburst final blows trigger an ignition. Each stack increases grenade regeneration, class ability regeneration, and Super damage. Upon exiting your Super, all stacks are converted into Super energy.",
       "icon": "/common/destiny2_content/icons/7066c741806a4c30d4987a63f5b3b2d9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2094927311.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3050442980,
@@ -609,7 +709,9 @@
       "name": "Danger Close",
       "description": "Weapon precision hits or final blows have a chance to load a Kinetic Exodus micro-missile. Activating your class ability fires loaded Exodus micro-missiles. Damaging targets with Exodus micro-missiles temporarily increases the damage you deal with other micro-missiles and Rocket Launchers.",
       "icon": "/common/destiny2_content/icons/6aac128fffa4deabc593e373299c4a9c.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3050442980.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 502173648,
@@ -621,7 +723,9 @@
       "name": "Overflowing Light",
       "description": "Using an ability (grenade, melee, or Barricade) empowers the other two abilities. Empowered means abilities have faster regen, melees and grenades do more damage, and Barricades have more hit points.",
       "icon": "/common/destiny2_content/icons/51756fc7603bd72a83d1859d8c33f0b9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/502173648.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 943320520,
@@ -633,7 +737,9 @@
       "name": "Starless Night",
       "description": "Weapons of Light persists after exiting Ward of Dawn. While Weapons of Light is active, final blows or sustained damage grant stacks of The Saint; Void and Kinetic damage sources also trigger a suppressing burst.\n \nPicking up Ward of Dawn consumes all stacks of The Saint and extends its duration based on how many stacks were consumed.",
       "icon": "/common/destiny2_content/icons/d4a23b232372815d738f5009e8da29d4.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/943320520.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4165710258,
@@ -645,7 +751,9 @@
       "name": "Glacial Fortification",
       "description": "While you have a Stasis Super equipped, your Barricade becomes a wall of Stasis crystals that slows nearby targets when created. Standing behind this barricade will grant you and your allies increased weapon reload speed, stability, and range.",
       "icon": "/common/destiny2_content/icons/f093d552bec2248e94fed1a960d62dde.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4165710258.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1734674241,
@@ -657,7 +765,9 @@
       "name": "Glacial Guard",
       "description": "While you have a Stasis Super equipped, rapid Stasis final blows grant Frost Armor. You heal a small amount whenever you gain Frost Armor. Replaces your class ability with a burst of Stasis energy that freezes nearby combatants, slows nearby opponents, and grants you increased Frost Armor.",
       "icon": "/common/destiny2_content/icons/29603482ccb0d4d2be723213df4054a9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1734674241.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 900910759,
@@ -669,7 +779,9 @@
       "name": "Vampire's Caress",
       "description": "Melee and finisher final blows instantly grant cure and provide restoration for a short duration.",
       "icon": "/common/destiny2_content/icons/26ae0fb1750196126118d19464c63bf0.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/900910759.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 510504540,
@@ -681,7 +793,9 @@
       "name": "Solar Rampart",
       "description": "Solar final blows recharge your Barricade. While you have a Solar Super equipped, casting your Barricade unleashes waves of Solar energy that damage and scorch targets. Combatants damaged and Guardians defeated by these waves are enveloped in a Sunspot.",
       "icon": "/common/destiny2_content/icons/784bd1d46cc9bd60e1d510e915aedb04.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/858758105.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 146629029,
@@ -693,7 +807,9 @@
       "name": "Touch of Venom",
       "description": "Defeating a weakened target releases a burst of weakening smoke and refunds Void melee ability energy.",
       "icon": "/common/destiny2_content/icons/896118bfa352e5f2d4990c1ea822140a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4002939008.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1667080811,
@@ -705,7 +821,9 @@
       "name": "Upgraded Sensor Pack",
       "description": "Provides radar while you're aiming. Enhances your radar resolution while crouched. Visually marks targets. Deals more damage to low-health marked targets. Provides a small benefit to the airborne effectiveness stat of all weapons.",
       "icon": "/common/destiny2_content/icons/6fd9aecd4c810d6dafd2517ebd50cbe0.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3960926757.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2749457084,
@@ -717,7 +835,9 @@
       "name": "Cross Counter",
       "description": "Using your Arc melee ability or being hit by a melee attack will allow you to follow up with an extremely powerful melee counterpunch that will heal you.",
       "icon": "/common/destiny2_content/icons/71a75146e38ba257b7379af0efacd61f.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2749457084.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 53126581,
@@ -729,7 +849,9 @@
       "name": "Jump Jets",
       "description": "Increases hip-fire range and accuracy for Primary ammo weapons. Grants additional aerial maneuverability and enables airborne firing during Lift. Increases the airborne effectiveness stat of all weapons.",
       "icon": "/common/destiny2_content/icons/7b334c8fca87e908ccea8fbe4c6af68f.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/53126581.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4258262391,
@@ -741,7 +863,9 @@
       "name": "Cauterizing Flame",
       "description": "While you have a Solar Super equipped, casting your Barricade or becoming critically wounded with full class ability energy creates a Sunspot at your location.",
       "icon": "/common/destiny2_content/icons/112420b294bf86cb9911ed30c4d0669e.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4258262391.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1245809812,
@@ -753,7 +877,9 @@
       "name": "Illegally Modded Holster",
       "description": "Improves sprint, slide, and airborne effectiveness while a Hand Cannon is equipped. For a short time after being drawn, Hand Cannons ready faster, are more accurate, and each hit against a combatant increases Hand Cannon damage.",
       "icon": "/common/destiny2_content/icons/efbc5e963de684734f9761785b51a375.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2405271939.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 419976111,
@@ -765,7 +891,9 @@
       "name": "Probability Matrix",
       "description": "Arcbolt Grenades have increased chaining capabilities and jolt targets hit. Damaging combatants with jolt or applying jolt to targets grants additional Arcbolt Grenade energy.",
       "icon": "/common/destiny2_content/icons/4bedcf0eb0d6fd52d82d3e5f9ff11e4b.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1803778317.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 418363297,
@@ -777,7 +905,9 @@
       "name": "Alchemical Etchings",
       "description": "Increases hip-fire range and accuracy for Primary ammo weapons. Your Rifts gain the additional ability to increase weapon reload speeds. Empowering Rift makes weapons effective at longer ranges.",
       "icon": "/common/destiny2_content/icons/c6e1c87f613c0eaabd4420dfc93de88a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/418363297.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2732820041,
@@ -789,7 +919,9 @@
       "name": "Absorption Cells",
       "description": "Final blows or sustained damage with weapons matching your equipped Super damage type grant you Super energy. When your Super energy is full, you instead gain a temporary bonus to weapon damage of that type. When you've exhausted your Super, matching elemental weapons' damage temporarily causes explosions around the target.",
       "icon": "/common/destiny2_content/icons/675540240cef9fc9e047d9f9d20a0722.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2732820041.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 508515818,
@@ -801,7 +933,9 @@
       "name": "Light Shift",
       "description": "While you have a Stasis or Arc Super equipped, your Dodge becomes a longer range, faster moving shift that partially cloaks you during use. After shifting, your Stasis and Arc weapons gain a stacking damage bonus for a short time. Final blows with this bonus active refund class ability energy.",
       "icon": "/common/destiny2_content/icons/201a9a1773ef1b4babff1e92b8447c69.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/508515818.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 2915174768,
@@ -813,7 +947,9 @@
       "name": "Null Factor",
       "description": "Withering Blade hits and bounces create a small Stasis crystal and refund a portion of melee energy. Using Withering Blade to shatter crystals or frozen targets releases a spread of Withering Blades.",
       "icon": "/common/destiny2_content/icons/72fb65f48503b80d6d29515718c0668f.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2915174768.jpg",
+    "source": "Source: Solo Expert and Master Lost Sectors"
   },
   {
     "id": 197761152,
@@ -825,7 +961,9 @@
       "name": "Dreaded Visage",
       "description": "Grants ability energy when you are damaged. While you have a Void super equipped, rapid final blows and final blows while critically wounded grant Devour.",
       "icon": "/common/destiny2_content/icons/3b5d1aeb79dbe70f6e1896028d5399bc.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4060352315.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1003391927,
@@ -837,7 +975,9 @@
       "name": "Stylostixis",
       "description": "Targets damaged by Arcane Needle emit a suspending detonation when defeated. Landing multiple Arcane Needles or Needlestorm on the same target immediately triggers a larger, more powerful detonation. Defeating suspended targets grants melee energy. Your Arcane Needles are strong against [Shield-Piercing]Barrier Champions.",
       "icon": "/common/destiny2_content/icons/6c7821c2b549c37d16c4af2d81b46a29.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1003391927.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 2574019120,
@@ -849,7 +989,9 @@
       "name": "Spring-Loaded Mounting",
       "description": "Increases Sidearm airborne effectiveness, ready speed, and reload speed. While you're critically wounded, swapping to a Sidearm reloads it and increases its damage. While this effect is active, Sidearm final blows reload the weapon and extend the effect's duration.",
       "icon": "/common/destiny2_content/icons/cbea782469054e260fd336b5222adc23.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2574019120.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2867399974,
@@ -861,7 +1003,9 @@
       "name": "Forge Master",
       "description": "Collecting a Firesprite or rapid Solar final blows make you a Forge Master, allowing you to recall your Throwing Hammer. After impacting a target, recall your hammer at full intensity to perform a Perfect Recall, causing an explosion of forge slag. Perfect Recalls and collecting Firesprites extend your time as a Forge Master.",
       "icon": "/common/destiny2_content/icons/28ba5d00f7cfa0026beedc74ae62adbf.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2867399974.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1902412292,
@@ -873,7 +1017,9 @@
       "name": "Seriously, Watch Out",
       "description": "While your Juggernaut shield is active, you slowly gain Bolt Charge stacks over time and increased weapon ready speed. Sprinting while amplified creates an energizing field behind you that grants close by allies speed boost.",
       "icon": "/common/destiny2_content/icons/cb83f0a06e3144bfa424dc886ccf8f6d.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3182840395.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2647299044,
@@ -885,7 +1031,9 @@
       "name": "Webcatcher",
       "description": "Threaded Spike can bounce to Tangles, detonating them and returning immediately. Tangles detonated by Threaded Spike are rewoven and retrieved by it. Catches without a Tangle refund extra melee energy.",
       "icon": "/common/destiny2_content/icons/b1421fef77fe63ec01cdce658911e8ca.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2647299044.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 3688534631,
@@ -897,7 +1045,9 @@
       "name": "Winged Eclipse",
       "description": "Defeat targets to charge up cages of loyal moths that fly toward nearby targets or allies.\n \n[Grenade]  : Throw the cage of loyal moths, which are released on impact. Upon reaching targets, moths detonate in a blinding explosion; upon reaching allies, moths provide a Void overshield.",
       "icon": "/common/destiny2_content/icons/5c414274c55de2e49517bd6203912aba.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3688534631.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 124786972,
@@ -909,7 +1059,9 @@
       "name": "Grasp of the Devourer",
       "description": "Damaging a target with a melee inflicts potent corruption that deals increasing damage over time. Defeating targets afflicted by corruption spreads the condition.\n\nProvides a moderate benefit to the airborne effectiveness stat of all Weapons of Sorrow.",
       "icon": "/common/destiny2_content/icons/4c1a349c2723d3aa84598da98c7a8805.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/124786972.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 925466716,
@@ -921,7 +1073,9 @@
       "name": "Abyssal Extractors",
       "description": "Void final blows increase ability energy recharge rate. Combatants affected by Soul Siphon are suppressed. Defeating suppressed targets grants more time to Abyssal Extractors.",
       "icon": "/common/destiny2_content/icons/9bddb418ae0a1292b3766d3d6583d059.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/925466716.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 730200061,
@@ -933,7 +1087,9 @@
       "name": "Force Multiplier",
       "description": "Shotgun and melee final blows start your health regeneration. While you have a defensive buff (Void Overshield, Amplified, Restoration, Frost Armor, Woven Mail), your Shotguns and melees deal additional damage and final blows with either extend the duration of those buffs. Provides a moderate benefit to Shotgun airborne effectiveness and reload speed.",
       "icon": "/common/destiny2_content/icons/1008decd8282aaf6c9e20461722e4a92.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/730200061.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 3982932616,
@@ -945,7 +1101,9 @@
       "name": "Scatter Charge",
       "description": "You gain an additional Scatter Grenade charge. Enables tracking for Scatter Grenade projectiles. Scatter Grenade final blows create additional Scatter Grenade projectiles.",
       "icon": "/common/destiny2_content/icons/80234e3068ab261bc277791427723a11.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3982932616.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1098931324,
@@ -957,7 +1115,9 @@
       "name": "Adamantine Brace",
       "description": "Bow perfect draw can be held indefinitely. Gain a bonus to the Bow's damage when released, based on how long perfect draw was held. Provides a moderate benefit to the airborne effectiveness stat of Bows.",
       "icon": "/common/destiny2_content/icons/23bd5476f6002f913fd511bc62d37826.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3883286571.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4255001288,
@@ -969,7 +1129,9 @@
       "name": "Beyond The Veil",
       "description": "You gain a second Smoke Bomb charge and have damage resistance while invisible. When you make an ally invisible, they gain damage resistance while invisible and you gain melee energy.",
       "icon": "/common/destiny2_content/icons/ae998d23b15b04136f563bcf18990d5a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4255001288.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1249787553,
@@ -981,7 +1143,9 @@
       "name": "Vengeance",
       "description": "Highlights the target who dares to damage you. Track down and destroy them for an overshield.",
       "icon": "/common/destiny2_content/icons/c3c7f55e9cfc9f8fa19adc2096575665.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1249787553.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3392742912,
@@ -993,7 +1157,9 @@
       "name": "Scissor Fingers",
       "description": "Gain a second knife per charge. Getting a final blow with a throwing knife grants consecutive knives a temporary stacking damage bonus. Gambler's Dodge refreshes the bonus timer.",
       "icon": "/common/destiny2_content/icons/ab27032269b5faa817000b9d22ee751e.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3642110725.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 68357813,
@@ -1005,7 +1171,9 @@
       "name": "Cobra Totemic",
       "description": "Improves melee range as well as ready speed and reload for weapons. Provides a small benefit to airborne effectiveness for all weapons.",
       "icon": "/common/destiny2_content/icons/3945ff76d8e7ec70991cb0f6601c6797.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/507400048.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1245809813,
@@ -1017,7 +1185,9 @@
       "name": "Uncanny Arrows",
       "description": "Provides ability energy for each target tethered by Deadfall anchors. Moebius Quiver has an additional shot.",
       "icon": "/common/destiny2_content/icons/392cc994318808b9f3b2bcbec7f285c3.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2405271938.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2555349547,
@@ -1029,7 +1199,9 @@
       "name": "Fervid Coldsnap",
       "description": "Your Coldsnap grenades have an additional charge that recharges quicker on hits. The seeker spawned from Coldsnap grenades travels farther.",
       "icon": "/common/destiny2_content/icons/81b6412d2d6784891dd7ddad764891cc.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2555349547.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 53126580,
@@ -1041,7 +1213,9 @@
       "name": "Mecha Holster",
       "description": "While wielding a Submachine Gun, handling, airborne effectiveness, and movement are all improved, and damage against combatants will increase the longer you remain on target. Submachine Guns are reloaded when stowed.",
       "icon": "/common/destiny2_content/icons/fc5f93fd49cdea67bf72d139c5a2c227.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/53126580.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 3257252969,
@@ -1053,7 +1227,9 @@
       "name": "Peregrine Strike",
       "description": "All shoulder charge abilities (Seismic Strike, Hammer Strike, or Shield Bash) deal bonus damage when activated in the air. Damaging mini-bosses, Tormentors, or Champions with your shoulder charge refunds your melee. Provides a small benefit to the airborne effectiveness stat of all weapons.",
       "icon": "/common/destiny2_content/icons/7713596356b90eec06db4b7c50523685.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3450721096.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2439379860,
@@ -1065,7 +1241,9 @@
       "name": "Beacons of Empowerment",
       "description": "Sol Invictus lasts twice as long. Allies who pass through your Sunspot are granted Sol Invictus and Restoration. Dealing sustained [Solar]Solar damage in a Sunspot extends the duration of the Sunspot. Applying Solar buffs to allies has a chance to create a Sunspot at your feet.",
       "icon": "/common/destiny2_content/icons/4a17f2216c0951713c49ea4f08928742.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2439379860.jpg",
+    "source": "Source: Shadowkeep Campaign"
   },
   {
     "id": 3488362707,
@@ -1077,7 +1255,9 @@
       "name": "Battle-Hearth",
       "description": "Kills and assists you make while standing in your Well of Radiance return Super energy.",
       "icon": "/common/destiny2_content/icons/6985c5f8dbe4d38b0702df7f55d50172.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3545094010.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 308767728,
@@ -1089,7 +1269,9 @@
       "name": "Hammer of the Gods",
       "description": "Defeating targets with your Thunderclap melee restores melee energy. Targets near you when you use your Thunderclap suffer lightning strikes and become jolted; being amplified increases the damage of these lightning strikes.",
       "icon": "/common/destiny2_content/icons/a4ead8e3316d22dbb9fc48e6c643dde3.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/308767728.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 4184605701,
@@ -1101,7 +1283,9 @@
       "name": "Praxic Lift",
       "description": "You gain an air move jetpack. Weapon and Arc powered melee final blows build up Jetpack Fuel.\n\nWhile airborne, [Air Dodge] : Charge your jetpack.\n\nOn release, activate your jetpack with a forceful blast of exhausting Arc energy then fly forward a short distance based on the amount charged. Collide with a combatant to unleash a blinding blast of energy and gain a temporary bonus to your melee stat.",
       "icon": "/common/destiny2_content/icons/3bd76d816e615328d7c5d64e30bf2f1e.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4184605701.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1978467312,
@@ -1113,7 +1297,9 @@
       "name": "Kintsugi",
       "description": "Final blows from weapons with a damage type matching your Super create a burst of healing around you that grants allies restoration. After reviving or being revived, you gain an aura that provides overshields to you and nearby allies.",
       "icon": "/common/destiny2_content/icons/811e014f935edafdc52042602ca2429d.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1978467312.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 3864952146,
@@ -1125,7 +1311,9 @@
       "name": "Embers of Light",
       "description": "While a Solar Super is equipped, weapon final blows grant class ability energy. Defeating targets with your weapon while standing in a healing rift creates a pulse that grants Radiant to you and nearby allies; an empowering rift instead grants Cure to you and nearby allies. Daybreak final blows grant both effects.",
       "icon": "/common/destiny2_content/icons/c47e43df7db6047a5a8b0d9963e5043a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3864952146.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 864224653,
@@ -1137,7 +1325,9 @@
       "name": "Percussive Flames",
       "description": "Modifies Burning Maul into a single, high-damage slam of your hammer that creates several cyclones of flame. Consecration's second slam creates a cyclone of flame.",
       "icon": "/common/destiny2_content/icons/fee237f7f5a0d5aaa5a8442a73ae6cbe.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/864224653.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1709794165,
@@ -1149,7 +1339,9 @@
       "name": "The Dance",
       "description": "Moderately increases airborne effectiveness and hip fire mobility, range, and accuracy for weapons that use Primary ammo.\n\nFinal blows with Primary ammo weapons return dodge energy, which can overflow to create additional charges when full.",
       "icon": "/common/destiny2_content/icons/d1bc9350b3c6a8333936a1fd3ce8922b.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1709794165.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 368733543,
@@ -1161,7 +1353,9 @@
       "name": "Synapse Junctions",
       "description": "Quick successive attacks with Arc Staff increase its damage output, duration and jolt targets hit.",
       "icon": "/common/destiny2_content/icons/3a7f6104736bbfa9305e49063beb1ec2.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/368733543.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2767482390,
@@ -1173,7 +1367,9 @@
       "name": "Mobius Conduit",
       "description": "Activating Gathering Storm calls down lightning on all nearby targets, jolting them while also amplifying allies. Defeating Arc debuffed targets grants a small amount of Gathering Storm energy.",
       "icon": "/common/destiny2_content/icons/6db788a7e92c10f7f7ee3daddce16cba.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2767482390.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 511709874,
@@ -1185,7 +1381,9 @@
       "name": "Soaring Fusilier",
       "description": "Air dodge reloads all of your weapons and improves the airborne effectiveness of Fusion Rifles and Linear Fusion Rifles; final blows with these weapons make you radiant. Provides a moderate benefit to the airborne effectiveness stat of Fusion Rifles and Linear Fusion Rifles.",
       "icon": "/common/destiny2_content/icons/1018b32e9bed692b4766d1a870457eed.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/511709874.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 2809120022,
@@ -1283,7 +1481,9 @@
           }
         ]
       }
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2809120022.jpg",
+    "source": "Source: Exploring the Pale Heart"
   },
   {
     "id": 3793245444,
@@ -1295,7 +1495,9 @@
       "name": "Depths of Duskfield",
       "description": "Your Duskfield grenades have a much larger effect radius. Allies inside the Duskfield gain Frost Armor and targets inside the area deal reduced damage.",
       "icon": "/common/destiny2_content/icons/47fd782cc9b993709e25ca66035d13b8.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3793245444.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 888791258,
@@ -1307,7 +1509,9 @@
       "name": "Bleak Domain",
       "description": "Your Bleak Watcher turrets are enhanced with extended range and are surrounded by Stasis crystals and a storm. While standing in the storm, you are granted icicles over time. Icicles activate when you fire your weapons, applying Slow to targets they hit.",
       "icon": "/common/destiny2_content/icons/6d8ffb8297587bdbbead0418d344b2e9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/888791258.jpg",
+    "source": "Source: Solo Expert and Master Lost Sectors"
   },
   {
     "id": 2422973183,
@@ -1319,7 +1523,9 @@
       "name": "Blood Magic",
       "description": "While standing in any rift, damaging a target will mark it. You deal extra damage to marked targets, and gain additional bonus damage with weapons that have a damage type matching your equipped Super. Weapon final blows while standing in any rift pause the rift's countdown, extending its duration.",
       "icon": "/common/destiny2_content/icons/ef3b48bcd760b23563516e9b667ace5a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2966741808.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2166230715,
@@ -1331,7 +1537,9 @@
       "name": "Nightmare Fuel",
       "description": "Powered melee and finisher final blows grant Nightmare Fuel, increasing handling and airborne effectiveness. While active, freshly drawn weapons deal additional damage and grant Nightmare Fuel on final blows. Gaining Nightmare Fuel reloads all holstered weapons.",
       "icon": "/common/destiny2_content/icons/eabdd8dd9c1abcdbcaf4b0cbe8e97248.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3987871714.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4029987901,
@@ -1343,7 +1551,9 @@
       "name": "Devouring Rift",
       "description": "While using a Void Super, casting an Empowering Rift will grant you Devour. Damage dealt by you and your allies from within your Empowering Rift will [Disruption] disrupt combatants. Defeating a target while Devour is active grants you class ability energy.",
       "icon": "/common/destiny2_content/icons/1d4c0be6150c4ca71bc7add447c5d86c.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4029987901.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 4268030601,
@@ -1355,7 +1565,9 @@
       "name": "Myrmidon's Reach",
       "description": "Gain a second charge of your Shield Throw melee. Your Shield Throws now weaken targets, create a Void Breach on final blows, and become shield-piercing, stunning [Shield-Piercing] Barrier Champions and refunding a Shield Throw charge when you do. Picking up a Void Breach grants you Shield Throw energy.",
       "icon": "/common/destiny2_content/icons/d1d0a66bbefc83e8240648d399041a96.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4268030601.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1429817243,
@@ -1367,7 +1579,9 @@
       "name": "Spheromatik Trigger",
       "description": "Powered melee final blows unleash a damaging explosion. Finishers and final blows against more powerful targets increase the radius and damage of the explosion.",
       "icon": "/common/destiny2_content/icons/baed176aaf20399a3abb8b287790747a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1429817243.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1098931325,
@@ -1379,7 +1593,9 @@
       "name": "Sharp Edges",
       "description": "Throwing Knife final blows decrease the cooldown of your Super. Hitting a single target with most Blade Barrage knives in a volley causes them to release a violent Solar explosion; releasing scorching Solar shrapnel. Hits and final blows with Blade Barrage will return Super energy after the Super ends.",
       "icon": "/common/destiny2_content/icons/467f441de1568bd8c6ad437a76671b5f.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3883286570.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1611241895,
@@ -1391,7 +1607,9 @@
       "name": "New Tricks",
       "description": "Gain an additional Skip Grenade charge. Skip Grenade damage grants Bolt Chargeand gaining Bolt Charge grants Skip Grenade energy. When Bolt Charge is ready, you heal nearby allies and enhance your next Skip Grenade.",
       "icon": "/common/destiny2_content/icons/5e71bde3f74560840a67842e5c46a8cc.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1611241895.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2523259394,
@@ -1403,7 +1621,9 @@
       "name": "Actual Grandeur",
       "description": "After casting a Nova Bomb, briefly gain a free cast of a fast-moving but weaker Nova Bomb: Lance. Your Nova Bomb: Cataclysm is empowered if detonated with another Nova Bomb. \nNova Bomb final blows and weapon final blows while you have Devour grant Super energy.",
       "icon": "/common/destiny2_content/icons/02a31f96b28aaf6950dcd041aeb67251.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3050017626.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2273643087,
@@ -1501,7 +1721,9 @@
           }
         ]
       }
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2273643087.jpg",
+    "source": "Source: Exploring the Pale Heart"
   },
   {
     "id": 3617849232,
@@ -1513,7 +1735,9 @@
       "name": "The Lost Voice",
       "description": "Healing grenades spawn a Restorative Turret. Healing allies occasionally spawns an Orb of Power.",
       "icon": "/common/destiny2_content/icons/de5fe717db761b124bed152675a3bfc7.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3617849232.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1793346751,
@@ -1525,7 +1749,9 @@
       "name": "Tight Fit",
       "description": "Dodging instantly reloads all your weapons and grants increased reload and handling to you and nearby allies. While the buff is active, additional dodges increase the buff strength and refresh the timer, maxing out at 5 stacks. Dealing sustained damage grants class ability energy.",
       "icon": "/common/destiny2_content/icons/c1afa2683c4762598af01b9b21a9ff7a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1793346751.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1245809814,
@@ -1537,7 +1763,9 @@
       "name": "Hydraulic Boosters",
       "description": "Increases slide distance and improves High Jump, Strafe Jump, and Triple Jump. Take less damage from targets when airborne.",
       "icon": "/common/destiny2_content/icons/1f2c8873254a4d9f6e09f243123168ac.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2405271937.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1006498763,
@@ -1549,7 +1777,9 @@
       "name": "Feast of Light",
       "description": "You gain additional Super energy from Orbs of Power you pick up. While your Super energy is full, picking up an Orb of Power overcharges your Super, causing you to gain a burst of healing when cast and a bonus to your Super damage. At maximum overcharge, you also gain an overshield.",
       "icon": "/common/destiny2_content/icons/b29ab6e87ec85bac4563f3d3a432c451.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1006498763.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 599049453,
@@ -1561,7 +1791,9 @@
       "name": "Fusion Harness",
       "description": "Fusion Grenades have an additional charge and recharge from empowered weapon damage, with empowered weapon final blows granting more energy. Defeating targets with Fusion Grenades grant Rift energy.",
       "icon": "/common/destiny2_content/icons/18c3e0503b1c9cd823dde3ded3680f8d.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/599049453.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 266021826,
@@ -1659,7 +1891,9 @@
           }
         ]
       }
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/266021826.jpg",
+    "source": "Source: Exploring the Pale Heart"
   },
   {
     "id": 1747063685,
@@ -1671,7 +1905,9 @@
       "name": "Ascending Amplitude",
       "description": "Stormtrance hits and final blows increase the damage it deals. Refunds Super energy when it ends. While Stormtrance is equipped, ability damage while amplified grants Bolt Charge.",
       "icon": "/common/destiny2_content/icons/37ed1658b106c79b87bdc7476c2b3666.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1747063685.jpg",
+    "source": "Source: Shadowkeep Campaign"
   },
   {
     "id": 512777670,
@@ -1683,7 +1919,9 @@
       "name": "Clenched Fist",
       "description": "Maximizes guard stats on equipped Heavy ammo Swords. You take reduced damage while blocking with a Sword. Rapidly damaging targets after blocking shots with a Sword grants Restoration for a duration determined by the number of shots blocked.",
       "icon": "/common/destiny2_content/icons/c10f29eba7f5e4eda1be088c46a4dc14.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/512777670.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 950745251,
@@ -1695,7 +1933,9 @@
       "name": "Helium Spirals",
       "description": "Increases the duration of Solar Grenades. Solar melee kills grant unlimited Solar Grenade energy for a brief time.",
       "icon": "/common/destiny2_content/icons/ce7588c614700f1e6d204a52368d9bd9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/950745251.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2100136540,
@@ -1707,7 +1947,9 @@
       "name": "Swarmers",
       "description": "Destroying a Tangle spawns a Threadling. Your Threadlings unravel targets that they damage.",
       "icon": "/common/destiny2_content/icons/2c51c7358ab1de58c11edc89b5573e84.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2100136540.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1035680666,
@@ -1719,7 +1961,9 @@
       "name": "Biotic Enhancements",
       "description": "When you're surrounded, gain increased melee and Super damage, as well as improved weapon handling and reload speed.",
       "icon": "/common/destiny2_content/icons/640d76fb6ab52e290116455379194b07.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2002759681.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2177224557,
@@ -1731,7 +1975,9 @@
       "name": "Parting Gift",
       "description": "Dodging leaves behind an explosive that detonates after a short delay, damaging targets around it and creating a secondary effect based on your Super's element:\n• [Arc] Blinds targets.\n• [Solar] Scorches targets.\n• [Void] Suppresses targets.\n• [Stasis] Slows targets.\n• [Strand] Severs targets.",
       "icon": "/common/destiny2_content/icons/97c352f8ad87a9c7ea68b2a643d821ed.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2177224557.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 368733541,
@@ -1743,7 +1989,9 @@
       "name": "Wraithmetal Mail",
       "description": "Your weapons ready quicker and are more stable. Dodging temporarily increases this benefit, reloads your equipped weapon from reserves, grants improved movement speed, and increases your class ability stat.",
       "icon": "/common/destiny2_content/icons/100cd6b35af5fb3f979807d68ad57380.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/368733541.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4119704973,
@@ -1755,7 +2003,9 @@
       "name": "Firewalker",
       "description": "Increase the damage of Solar weapons and Solar Ignitions based on the amount of Roaring Flames stacks you have. You are harder to suspend, slow, or freeze, and when you break out, you take no damage from doing so, creating a burst of Solar energy around yourself.",
       "icon": "/common/destiny2_content/icons/85c73f064a7e60038b25eecacd71a147.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4119704973.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1168370782,
@@ -1767,7 +2017,9 @@
       "name": "Double Dodge",
       "description": "Gain a second dodge charge. Shortly after dodging, your next weapon final blow spawns an Orb of Power.",
       "icon": "/common/destiny2_content/icons/aa2934eb8a1990f6a1e76402ba12f26a.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1168370782.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 994038265,
@@ -1779,7 +2031,9 @@
       "name": "Dearly Departed",
       "description": "Your Rift provides damage reduction to allied Guardians standing in it. Grants Rift energy when you are critically wounded. On your death, creates a healing rift on your corpse.",
       "icon": "/common/destiny2_content/icons/c4f95301370c59ab4d7ce34825e83305.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/994038265.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2954558333,
@@ -1791,7 +2045,9 @@
       "name": "Strange Protractor",
       "description": "Sprint speed increased. After a short time sprinting, your currently equipped weapon is automatically reloaded.",
       "icon": "/common/destiny2_content/icons/381a293f45eb74cdd7d4444a3c7ce7ed.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3337759189.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1304266146,
@@ -1803,7 +2059,9 @@
       "name": "Halberdier's Reach",
       "description": "Increases Glaive reload speed and melee damage when surrounded. Glaive melee final blows overflow a round to the magazine. Glaive projectile final blows detonate in an explosion.",
       "icon": "/common/destiny2_content/icons/4f6f7f7ed33e3c274165705bba5aebc5.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1304266146.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 1484674161,
@@ -1815,7 +2073,9 @@
       "name": "Ursine Guard",
       "description": "Move faster while guarding with Sentinel Shield or the Unbreakable shield. Damage blocked with Sentinel Shield is converted to Super energy, and damage blocked with Unbreakable is converted to grenade energy.",
       "icon": "/common/destiny2_content/icons/c792f09ce9d03c03064724af10be0349.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2046130360.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2553961985,
@@ -1827,7 +2087,9 @@
       "name": "The Fourth Magic",
       "description": "Weapon final blows with a damage type matching your grenade grant Death Throes, which provide a grenade damage bonus and grant you grenade energy. When you have Death Throes and throw a grenade, nearby allies gain greatly increased grenade regeneration for a short time.",
       "icon": "/common/destiny2_content/icons/9732f284c71054229671287ab43444b7.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/2553961985.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1799380614,
@@ -1839,7 +2101,9 @@
       "name": "Planetary Torrent",
       "description": "Rifts periodically release Arc shockwaves. Final blows with these shockwaves create an Arc explosion. While an Arc Super is equipped, the shockwaves and subsequent explosions blind nearby targets. Rift energy recharges faster when you are surrounded by targets.",
       "icon": "/common/destiny2_content/icons/ff55cfecf4c70924d0894b1d8a442a18.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3139221735.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 1179169099,
@@ -1851,7 +2115,9 @@
       "name": "Tome of Dawn",
       "description": "While you have a [Solar]Solar Super equipped, aiming weapons while you're midair suspends you there for a short time. While this effect is active, you are more resistant to incoming damage and combatants are less accurate. Weapon hits extend this effect's duration, and [Solar]Solar weapon final blows provide Restoration and reload your other weapons from reserves. Provides a large benefit to the airborne effectiveness stat of all weapons.",
       "icon": "/common/destiny2_content/icons/bca803e50002410309460be0966fabe9.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1179169099.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 900910756,
@@ -1863,7 +2129,9 @@
       "name": "Warlord's Sigil",
       "description": "Melee and finisher final blows increase melee damage. With maximum stacks, you gain vastly increased melee regeneration speed for a short time.",
       "icon": "/common/destiny2_content/icons/afb8bae64742a8633975b1bc85c98923.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/900910756.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 4157369212,
@@ -1875,7 +2143,9 @@
       "name": "Wish-Dragon's Talons",
       "description": "Gain an additional Frenzied Blade charge. Frenzied Blade and Flechette Storm briefly increase their damage with each strike. Pulses from your Banner of War return melee energy based on the number of allies healed.",
       "icon": "/common/destiny2_content/icons/5a233a91d9d5ee5b1ca6851bb8dbedf8.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/4157369212.jpg",
+    "source": "Exotic Armor Focusing"
   },
   {
     "id": 809007411,
@@ -1887,7 +2157,9 @@
       "name": "Burning Fists",
       "description": "Defeating a target with melee or a finisher grants escalating melee damage, which decays over time. Higher levels of Burning Fists grant increased weapon damage.",
       "icon": "/common/destiny2_content/icons/89777d9b91d348fc8d24e24edca139ae.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/1203306856.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 2600992433,
@@ -1899,7 +2171,9 @@
       "name": "Burning Souls",
       "description": "Activating your class ability grants Cure. Rapid [Solar]Solar final blows grant stacks of Burning Souls that increase Solar ability damage, increase the potency of Dodge's healing, and spreads the healing to nearby allies.",
       "icon": "/common/destiny2_content/icons/16f43c6fbb972bdc24764a59aacc8161.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/3721047650.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   },
   {
     "id": 405059572,
@@ -1911,6 +2185,8 @@
       "name": "Wish-Dragon Teeth",
       "description": "Increases Tripmine Grenade duration and blast radius. Ability damage grants Tripmine Grenade energy.",
       "icon": "/common/destiny2_content/icons/28aa0f30e0e57d914bf5f12345c631f0.png"
-    }
+    },
+    "screenshot": "/common/destiny2_content/screenshots/405059572.jpg",
+    "source": "Source: Exotic engrams; extremely rare world drops."
   }
 ]
