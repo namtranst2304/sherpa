@@ -1,8 +1,9 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { DoorOverlay } from "@/components/common/DoorOverlay";
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "motion/react"
+import { DoorOverlay } from "@/components/common/DoorOverlay"
+import { playGlobalBgAudio } from "@/lib/audio"
 
 export function WelcomeScreen() {
   const [isOpened, setIsOpened] = useState(false);
@@ -31,24 +32,17 @@ export function WelcomeScreen() {
   }, [isVisible, isChecking]);
 
   const handleEnter = () => {
-    // Đánh dấu đã qua màn chào hỏi
-    sessionStorage.setItem("sherpa_welcomed", "true");
-
-    // Play nhạc nền
-    const audio = document.getElementById("global-bg-audio") as HTMLAudioElement;
-    if (audio) {
-      audio.play().catch(e => console.error("Audio error:", e));
-    }
-
-    setIsOpened(true);
+    sessionStorage.setItem("sherpa_welcomed", "true")
+    playGlobalBgAudio()
+    setIsOpened(true)
 
     // Xóa hẳn khỏi DOM sau khi animation kết thúc (1s)
     setTimeout(() => {
-      setIsVisible(false);
-    }, 1000);
-  };
+      setIsVisible(false)
+    }, 1000)
+  }
 
-  if (isChecking || !isVisible) return null;
+  if (isChecking || !isVisible) return null
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden pointer-events-none">

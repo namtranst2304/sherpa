@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { useScrollSpy } from "@/hooks/use-scroll-spy";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { useGuideTOC } from "@/hooks/use-guide-toc";
-import * as React from "react";
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { useScrollSpy } from "@/hooks/use-scroll-spy"
+import { useIsMobile } from "@/hooks/use-mobile"
+import { useGuideTOC } from "@/hooks/use-guide-toc"
+import * as React from "react"
 import {
   Sidebar,
   SidebarContent,
@@ -17,20 +17,20 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar";
+} from "@/components/ui/sidebar"
 
 export type SidebarSection = {
-  id: string;
-  title: string;
-  href?: string;
-  label?: string;
-  isFinal?: boolean;
-};
+  id: string
+  title: string
+  href?: string
+  label?: string
+  isFinal?: boolean
+}
 
 export type SidebarGroup = {
-  title?: string;
-  items: SidebarSection[];
-};
+  title?: string
+  items: SidebarSection[]
+}
 
 export function GuideSidebar({
   title,
@@ -45,28 +45,27 @@ export function GuideSidebar({
   groups: SidebarGroup[];
   activeEncounterId?: string;
 }) {
-  const isMobile = useIsMobile();
-  const { setOpenMobile } = useSidebar();
+  const isMobile = useIsMobile()
+  const { setOpenMobile } = useSidebar()
 
   // Memoize itemIds so the array reference stays stable across renders.
   // Without this, useScrollSpy re-registers the scroll listener every render.
-  const itemIds = React.useMemo(
-    () => groups.reduce((acc, g) => { g.items.forEach(item => acc.push(item.id)); return acc; }, [] as string[]),
-    [groups]
-  );
+  const itemIds = React.useMemo(() => {
+    return groups.flatMap((group) => group.items.map((item) => item.id))
+  }, [groups])
 
-  const activeId = useScrollSpy(itemIds, 120, activeEncounterId);
+  const activeId = useScrollSpy(itemIds, 120, activeEncounterId)
 
-  const { setTOC } = useGuideTOC() || { setTOC: () => {} };
+  const { setTOC } = useGuideTOC() || { setTOC: () => {} }
 
   React.useEffect(() => {
-    setTOC(title, subtitle, orbit, groups, activeEncounterId);
-    return () => setTOC("", "", undefined, []);
-  }, [title, subtitle, orbit, groups, activeEncounterId, setTOC]);
+    setTOC(title, subtitle, orbit, groups, activeEncounterId)
+    return () => setTOC("", "", undefined, [])
+  }, [title, subtitle, orbit, groups, activeEncounterId, setTOC])
 
   // Mobile rendering is now handled by TopNav using useGuideTOC
   if (isMobile) {
-    return null;
+    return null
   }
 
   // Render Sidebar on Desktop
@@ -96,8 +95,8 @@ export function GuideSidebar({
             <SidebarGroupContent>
               <SidebarMenu>
                 {group.items.map((item) => {
-                  const isActive = activeId === item.id;
-                  const linkHref = item.href || `#${item.id}`;
+                  const isActive = activeId === item.id
+                  const linkHref = item.href || `#${item.id}`
                   return (
                     <SidebarMenuItem key={item.id} className="min-w-0">
                       <SidebarMenuButton
@@ -133,7 +132,7 @@ export function GuideSidebar({
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>
-                  );
+                  )
                 })}
               </SidebarMenu>
             </SidebarGroupContent>
@@ -141,5 +140,5 @@ export function GuideSidebar({
         ))}
       </SidebarContent>
     </Sidebar>
-  );
+  )
 }

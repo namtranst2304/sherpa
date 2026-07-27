@@ -32,20 +32,17 @@ export function TopNav() {
   const pathname = usePathname()
   const activities = Object.values(DESTINY_ACTIVITIES)
 
-  const isTimeline = pathname === "/timeline";
-  const isHome = pathname === "/";
+  const isTimeline = pathname === "/timeline"
+  const isHome = pathname === "/"
 
-
+  const headerPositionClass = isTimeline
+    ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 bg-transparent"
+    : isHome
+      ? "absolute top-0 left-0 z-50 bg-transparent"
+      : "sticky top-0 z-50 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)]"
 
   const headerElement = (
-    <header className={cn(
-      "w-full transition-all duration-300",
-      isTimeline
-        ? "absolute top-0 left-0 transition-all duration-500 ease-out -translate-y-full opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 bg-transparent"
-        : isHome
-          ? "absolute top-0 left-0 z-50 bg-transparent"
-          : "sticky top-0 z-50 border-b-2 border-neon-cyan/40 bg-black/90 backdrop-blur-md shadow-[0_4px_20px_rgba(0,243,255,0.15)]"
-    )}>
+    <header className={cn("w-full transition-all duration-300", headerPositionClass)}>
       {(!isHome && !isTimeline) && <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />}
       <div className="flex h-14 w-full items-center px-4 md:px-6">
 
@@ -69,8 +66,7 @@ export function TopNav() {
             <NavigationMenuList>
               {activities.map((category) => {
                 const Icon = category.icon
-                const theme = category.themeColor || "cyan";
-                const currentVariant = category.locked ? 'red' : (theme as "cyan" | "green" | "red" | "orange" | "yellow" | "zinc");
+                const currentVariant = category.locked ? "red" : (category.themeColor || "cyan")
 
                 return (
                   <NavigationMenuItem key={category.id}>
@@ -80,43 +76,40 @@ export function TopNav() {
                     <NavigationMenuContent>
                       <ul className={topNavDropdownVariants({ variant: currentVariant })}>
                         <li className="w-[30%] shrink-0">
-                          {category.locked ? (
-                            <div
-                              className={topNavCardBgVariants({ variant: currentVariant })}
-                            >
+                          <div className={topNavCardBgVariants({ variant: currentVariant })}>
+                            {category.locked ? (
                               <div className="absolute inset-0 bg-neon-red/5 animate-pulse" />
-                              <Icon className={topNavIconVariants({ variant: currentVariant })} />
-                              <div className={topNavTitleVariants({ variant: currentVariant })}>
-                                {category.title}
+                            ) : (
+                              <div className={topNavCardGlowVariants({ variant: currentVariant })} />
+                            )}
+                            <Icon className={topNavIconVariants({ variant: currentVariant })} />
+                            <div className={topNavTitleVariants({ variant: currentVariant })}>
+                              {category.title}
+                              {category.locked && (
                                 <span className="text-[10px] px-1.5 py-0.5 border border-neon-red bg-neon-red/20 text-neon-red animate-pulse">
                                   UPDATING
                                 </span>
-                              </div>
-                              <p className="text-sm leading-tight text-neon-red/70 font-mono">
-                                {category.description}
-                              </p>
+                              )}
                             </div>
-                          ) : (
-                            <div
-                              className={topNavCardBgVariants({ variant: currentVariant })}
-                            >
-                              <div className={topNavCardGlowVariants({ variant: currentVariant })} />
-                              <Icon className={topNavIconVariants({ variant: currentVariant })} />
-                              <div className={topNavTitleVariants({ variant: currentVariant })}>
-                                {category.title}
-                              </div>
-                              <p className="text-sm leading-tight text-muted-foreground font-mono">
-                                {category.description}
-                              </p>
-                            </div>
-                          )}
+                            <p className={cn(
+                              "text-sm leading-tight font-mono",
+                              category.locked ? "text-neon-red/70" : "text-muted-foreground"
+                            )}>
+                              {category.description}
+                            </p>
+                          </div>
                         </li>
 
                         <li className="flex-1 overflow-hidden">
                           <ul className="grid grid-cols-2 lg:grid-cols-3 gap-3 content-start">
-                            {/* Map qua từng item nhỏ bên trong */}
                             {category.items.map((item) => (
-                              <ListItem key={item.title} href={item.href} title={item.title} hoverClass={topNavHoverItemVariants({ variant: currentVariant })} descClass={topNavDescVariants({ variant: currentVariant })}>
+                              <ListItem
+                                key={item.title}
+                                href={item.href}
+                                title={item.title}
+                                hoverClass={topNavHoverItemVariants({ variant: currentVariant })}
+                                descClass={topNavDescVariants({ variant: currentVariant })}
+                              >
                                 {item.description}
                               </ListItem>
                             ))}
@@ -148,13 +141,13 @@ export function TopNav() {
           {headerElement}
         </div>
       )}
-      
+
       {/* Mobile Floating Menu Button (Always floating on mobile) */}
       <div className="fixed top-2 left-4 z-[70] md:hidden">
         <MobileNav />
       </div>
     </>
-  );
+  )
 }
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a"> & { title: string, hoverClass?: string, descClass?: string }>(

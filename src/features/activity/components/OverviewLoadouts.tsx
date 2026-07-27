@@ -6,8 +6,15 @@ interface OverviewLoadoutsProps {
   loadout_tips: ActivityData['loadout_tips']
 }
 
+type ClassLoadout = {
+  supers?: { name: string; utility: string }[]
+  exotics_and_abilities?: { name: string; recommendation: string }[]
+}
+
+const CLASS_KEYS = ["warlocks", "titans", "hunters"] as const
+
 export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
-  if (!loadout_tips) return null;
+  if (!loadout_tips) return null
 
   return (
     <div className="space-y-8">
@@ -40,10 +47,10 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
             </div>
           )}
           
-          {['warlocks', 'titans', 'hunters'].map((cls) => {
-            const data = loadout_tips?.[cls as keyof typeof loadout_tips] as { supers?: { name: string; utility: string }[]; exotics_and_abilities?: { name: string; recommendation: string }[] } | undefined;
-            if (!data) return null;
-            
+          {CLASS_KEYS.map((cls) => {
+            const data = loadout_tips[cls] as ClassLoadout | undefined
+            if (!data) return null
+
             return (
               <div key={cls}>
                 <h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
@@ -54,7 +61,7 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
                     <div>
                       <strong className="text-xs text-muted-foreground uppercase">Supers:</strong>
                       <div className="flex flex-col gap-2 mt-2">
-                        {data.supers!.map((s: { name: string; utility: string }) => (
+                        {(data.supers ?? []).map((s: { name: string; utility: string }) => (
                           <div key={s.name} className="flex flex-col bg-secondary/10 p-3 rounded-md border border-border/50">
                             <span className="font-bold text-primary text-sm">{s.name}</span>
                             <span className="text-xs text-muted-foreground mt-1">{s.utility}</span>
@@ -67,7 +74,7 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
                     <div className="mt-4">
                       <strong className="text-xs text-muted-foreground uppercase">Exotics & Abilities:</strong>
                       <div className="flex flex-col gap-2 mt-2">
-                        {data.exotics_and_abilities!.map((e: { name: string; recommendation: string }) => (
+                        {(data.exotics_and_abilities ?? []).map((e: { name: string; recommendation: string }) => (
                           <div key={e.name} className="flex flex-col bg-amber-500/5 p-3 rounded-md border border-amber-500/20">
                             <span className="font-bold text-amber-500 text-sm">{e.name}</span>
                             <span className="text-xs text-muted-foreground mt-1">{e.recommendation}</span>

@@ -7,7 +7,8 @@ interface OverviewRulesProps {
 }
 
 export function OverviewRules({ preface }: OverviewRulesProps) {
-  if (!preface) return null;
+  if (!preface) return null
+
 
   return (
     <div className="space-y-8">

@@ -3,11 +3,26 @@ import { CyberCard } from "@/components/common/CyberComponents"
 import { ActivityData } from "@/types"
 
 interface OverviewEpicModeProps {
-  epic_mode: ActivityData['epic_mode']
+  epic_mode: ActivityData["epic_mode"]
+}
+
+function EpicList({ title, items }: { title: string; items?: string[] }) {
+  if (!items || items.length === 0) return null
+
+  return (
+    <div>
+      <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">{title}</h3>
+      <ul className="space-y-2 text-sm text-foreground/80 list-disc pl-5">
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 export function OverviewEpicMode({ epic_mode }: OverviewEpicModeProps) {
-  if (!epic_mode) return null;
+  if (!epic_mode) return null
 
   return (
     <div className="space-y-8">
@@ -22,22 +37,9 @@ export function OverviewEpicMode({ epic_mode }: OverviewEpicModeProps) {
           <h2 className="text-xl font-bold uppercase tracking-wider text-neon-red text-glow-red">The Epic Raid (Mastery)</h2>
         </div>
         <div className="space-y-6 relative z-10">
-          {epic_mode.requirements_and_contest && (
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">🛡️ Requirements & Contest Mode</h3>
-              <ul className="space-y-2 text-sm text-foreground/80 list-disc pl-5">
-                {epic_mode.requirements_and_contest.map((req, i) => <li key={i}>{req}</li>)}
-              </ul>
-            </div>
-          )}
-          {epic_mode.emblems_and_titles && (
-            <div>
-              <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">🏆 Emblems & Titles</h3>
-              <ul className="space-y-2 text-sm text-foreground/80 list-disc pl-5">
-                {epic_mode.emblems_and_titles.map((emb, i) => <li key={i}>{emb}</li>)}
-              </ul>
-            </div>
-          )}
+          <EpicList title="🛡️ Requirements & Contest Mode" items={epic_mode.requirements_and_contest} />
+          <EpicList title="🏆 Emblems & Titles" items={epic_mode.emblems_and_titles} />
+
           {epic_mode.encounter_changes && (
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-red-500 mb-3 border-b border-border/50 pb-2 flex items-center gap-2">⚠️ Encounter Changes</h3>

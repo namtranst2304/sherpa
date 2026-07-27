@@ -21,7 +21,9 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
     return <div>No activity data found.</div>
   }
 
-  const isOverview = !activeEncounterId || activeEncounterId === "overview";
+  const isOverview = !activeEncounterId || activeEncounterId === "overview"
+  const isSecretsView = activeEncounterId === "secrets"
+  const pageTitle = activityData.raid_name || activityData.dungeon_name || "Activity"
 
   const sidebarGroups = [
     {
@@ -32,12 +34,16 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
           title: "Overview & Loadouts",
           href: "?enc=overview",
         },
-        ...(activityData.activity_secrets ? [{
-          id: "secrets",
-          title: "Secrets & Chests",
-          href: "?enc=secrets"
-        }] : [])
-      ]
+        ...(activityData.activity_secrets
+          ? [
+              {
+                id: "secrets",
+                title: "Secrets & Chests",
+                href: "?enc=secrets",
+              },
+            ]
+          : []),
+      ],
     },
     {
       title: "Encounters",
@@ -46,15 +52,23 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
         title: enc.name,
         href: `?enc=${enc.id}`,
       }))
-    }
+    },
   ]
 
-  const activeEncounter = isOverview || activeEncounterId === "secrets"
-    ? null 
-    : (activityData.encounters.find((enc: ActivityEncounter) => enc.id === activeEncounterId) || activityData.encounters[0])
+  const activeEncounter =
+    isOverview || isSecretsView
+      ? null
+      : activityData.encounters.find((enc: ActivityEncounter) => enc.id === activeEncounterId) ||
+        activityData.encounters[0]
+
+  const currentViewId = isOverview
+    ? "overview"
+    : isSecretsView
+      ? "secrets"
+      : activeEncounter?.id
 
   const renderContent = () => {
-    if (activeEncounterId === "secrets" && activityData.activity_secrets) {
+    if (isSecretsView && activityData.activity_secrets) {
       return (
         <GuideTemplate
           title="Secrets & Chests"
@@ -63,56 +77,60 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
           map={null}
           roles={null}
         />
-      );
+      )
     }
-    
+
     if (isOverview) {
-      return <ActivityOverviewTemplate activityData={activityData} />;
+      return <ActivityOverviewTemplate activityData={activityData} />
+    }
+
+    if (!activeEncounter) {
+      return <div>Encounter not found.</div>
     }
 
     return (
       <GuideTemplate
-        title={activeEncounter!.name}
+        title={activeEncounter.name}
         description={activityData.preface?.author_notes || "Hướng dẫn chi tiết cơ chế chiến đấu"}
         mechanics={
-          activeEncounter!.walkthrough && Object.keys(activeEncounter!.walkthrough).length > 0 ? (
-            <EncounterPhase walkthrough={activeEncounter!.walkthrough} />
+          activeEncounter.walkthrough && Object.keys(activeEncounter.walkthrough).length > 0 ? (
+            <EncounterPhase walkthrough={activeEncounter.walkthrough} />
           ) : undefined
         }
         map={
-          activeEncounter!.images && activeEncounter!.images.length > 0 ? (
-            <EncounterMap images={activeEncounter!.images} encounterName={activeEncounter!.name} />
+          activeEncounter.images && activeEncounter.images.length > 0 ? (
+            <EncounterMap images={activeEncounter.images} encounterName={activeEncounter.name} />
           ) : undefined
         }
         roles={
-          activeEncounter!.roles && Object.keys(activeEncounter!.roles).length > 0 && (
-            <EncounterRoles roles={activeEncounter!.roles} />
+          activeEncounter.roles && Object.keys(activeEncounter.roles).length > 0 && (
+            <EncounterRoles roles={activeEncounter.roles} />
           )
         }
         secrets={
-          activeEncounter!.secrets && activeEncounter!.secrets.length > 0 ? (
-            <EncounterSecrets secrets={activeEncounter!.secrets} />
+          activeEncounter.secrets && activeEncounter.secrets.length > 0 ? (
+            <EncounterSecrets secrets={activeEncounter.secrets} />
           ) : undefined
         }
       />
-    );
-  };
+    )
+  }
 
   return (
     <div className="flex h-full w-full md:overflow-hidden flex-col md:flex-row">
-      <GuideSidebar 
-        groups={sidebarGroups} 
-        title={activityData.raid_name || activityData.dungeon_name || "Activity"} 
-        subtitle="Walkthrough Guide" 
-        activeEncounterId={isOverview ? "overview" : activeEncounter?.id}
+      <GuideSidebar
+        groups={sidebarGroups}
+        title={pageTitle}
+        subtitle="Walkthrough Guide"
+        activeEncounterId={currentViewId}
       />
 
-      <MobileGuideTOC groups={sidebarGroups} activeEncounterId={isOverview ? "overview" : (activeEncounterId === "secrets" ? "secrets" : activeEncounter?.id)} title={activityData.raid_name || activityData.dungeon_name || "Activity"} />
+      <MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} title={pageTitle} />
 
       <div className="flex-1 md:overflow-hidden relative">
         <AnimatePresence mode="wait">
-          <motion.div 
-            key={isOverview ? "overview" : activeEncounterId === "secrets" ? "secrets" : activeEncounter?.id} 
+          <motion.div
+            key={currentViewId}
             className="w-full h-full flex flex-col"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

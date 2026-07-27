@@ -4,7 +4,8 @@ import Image from "next/image"
 import { Sparkles } from "lucide-react"
 
 export function ExoticCatalystTab({ catalystGuide }: { catalystGuide: ActivityData["catalyst_guide"] }) {
-  if (!catalystGuide) return null;
+  if (!catalystGuide) return null
+
 
   return (
     <div className="flex flex-col gap-6 p-6 max-w-4xl">

@@ -6,21 +6,28 @@ interface EncounterRolesProps {
   roles?: ActivityEncounter['roles']
 }
 
+type StrategyOption = "option_1" | "option_2"
+const STRATEGY_OPTIONS: StrategyOption[] = ["option_1", "option_2"]
+
+function formatRoleLabel(roleKey: string) {
+  return roleKey.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())
+}
+
 export function EncounterRoles({ roles }: EncounterRolesProps) {
-  if (!roles) return null;
+  if (!roles) return null
 
   if (roles.option_1 || roles.option_2) {
     return (
       <div className="space-y-6">
         <div className="grid grid-cols-1 gap-6">
-          {['option_1', 'option_2'].map((opt) => {
+          {STRATEGY_OPTIONS.map((opt) => {
             if (!roles[opt]) return null;
-            const rolesForOption = roles[opt] as Record<string, ActivityRole>;
+            const rolesForOption = roles[opt] as Record<string, ActivityRole>
             return (
               <CyberCard key={opt} variant="zinc" withCorners className="relative group">
                 <div className="absolute top-0 left-0 w-1 h-full bg-neon-cyan/50 group-hover:bg-neon-cyan transition-colors"></div>
                 <h4 className="text-xl font-black text-neon-cyan mb-5 uppercase tracking-wider border-b border-zinc-800 pb-3 flex items-center justify-between text-glow-cyan">
-                  {opt.replace('_', ' ')}
+                  {opt.replace("_", " ")}
                   <CyberBadge variant="zinc">Strategy</CyberBadge>
                 </h4>
                 <div className="space-y-4">
@@ -34,7 +41,7 @@ export function EncounterRoles({ roles }: EncounterRolesProps) {
                             <Icon className="w-4 h-4 text-neon-cyan" />
                           </div>
                           <span className="break-words min-w-0 flex-1 leading-tight">
-                            {roleKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                            {formatRoleLabel(roleKey)}
                           </span>
                           <CyberBadge variant="zinc" className="ml-auto shrink-0" withIndicator={false}>x{roleVal.quantity || 1}</CyberBadge>
                         </h5>
@@ -78,7 +85,7 @@ export function EncounterRoles({ roles }: EncounterRolesProps) {
                     <Icon className="w-5 h-5 text-neon-cyan" />
                   </div>
                   <span className="break-words min-w-0 flex-1 leading-tight">
-                    {roleKey.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                    {formatRoleLabel(roleKey)}
                   </span>
                   <CyberBadge variant="zinc" className="ml-auto shrink-0" withIndicator={false}>x{roleVal.quantity || 1}</CyberBadge>
                 </h3>

@@ -1,31 +1,27 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "motion/react";
-import { ChevronDown } from "lucide-react";
-import { AnimatedScrollText } from "@/features/timeline/components/AnimatedScrollText";
-import { DoorOverlay } from "@/components/common/DoorOverlay";
+import { useState } from "react"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { motion, AnimatePresence } from "motion/react"
+import { ChevronDown } from "lucide-react"
+import { AnimatedScrollText } from "@/features/timeline/components/AnimatedScrollText"
+import { DoorOverlay } from "@/components/common/DoorOverlay"
+import { playGlobalBgAudio } from "@/lib/audio"
 
 export function LandingPage() {
-  const router = useRouter();
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const router = useRouter()
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const handleEnter = () => {
-    setIsTransitioning(true);
-
-    // Play backgound music
-    const audio = document.getElementById("global-bg-audio") as HTMLAudioElement;
-    if (audio) {
-      audio.play().catch(e => console.error("Audio error:", e));
-    }
+    setIsTransitioning(true)
+    playGlobalBgAudio()
 
     // Wait for the door to close, then navigate to timeline
     setTimeout(() => {
-      router.push("/timeline");
-    }, 1000);
-  };
+      router.push("/timeline")
+    }, 1000)
+  }
 
   return (
     <div className="relative h-[100dvh] min-h-[500px] flex flex-col items-center justify-between px-4 overflow-hidden w-full bg-black">

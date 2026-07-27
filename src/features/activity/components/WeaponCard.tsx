@@ -4,11 +4,12 @@ import Image from "next/image"
 import { CyberCard, CyberBadge, CyberHeading } from "@/components/common/CyberComponents"
 import { LootWeapon } from "@/types"
 
-const NEW_PERKS = ["Chaos Reshaped", "Air Trigger", "Rimestealer", "Circle of Life", "Physic"];
+const NEW_PERKS = ["Chaos Reshaped", "Air Trigger", "Rimestealer", "Circle of Life", "Physic"]
+const VALUE_STATS = ["rpm", "magazine", "zoom", "aim_assist", "draw_time"]
 
 function PerkDisplay({ name }: { name: string }) {
-  const isNew = NEW_PERKS.some(np => name.includes(np));
-  if (!isNew) return <span>{name}</span>;
+  const isNew = NEW_PERKS.some((np) => name.includes(np))
+  if (!isNew) return <span>{name}</span>
   return (
     <span className="relative inline-flex items-center gap-1 group/perk">
       <span className="text-neon-orange font-bold drop-shadow-[0_0_5px_rgba(255,165,0,0.8)]">{name}</span>
@@ -17,22 +18,55 @@ function PerkDisplay({ name }: { name: string }) {
   )
 }
 
+function RecommendedRoll({ label, perks, labelClass }: { label: string; perks: string[]; labelClass: string }) {
+  return (
+    <div className="flex items-start gap-2">
+      <span className={`text-xs font-bold uppercase mt-0.5 ${labelClass}`}>{label}</span>
+      <span className="text-sm text-zinc-300 flex flex-wrap items-center gap-x-1.5">
+        {perks.map((p, i, arr) => (
+          <React.Fragment key={i}>
+            <PerkDisplay name={p} />
+            {i < arr.length - 1 && <span className="text-zinc-600">+</span>}
+          </React.Fragment>
+        ))}
+      </span>
+    </div>
+  )
+}
+
+function TraitColumn({ title, perks }: { title: string; perks: string[] }) {
+  return (
+    <div>
+      <span className="text-[10px] text-zinc-500 uppercase font-bold block mb-1">{title}</span>
+      <ul className="text-xs text-zinc-300 space-y-1">
+        {perks.map((p, i) => (
+          <li key={i} className="flex items-center gap-1">
+            <span className="text-zinc-600">•</span> <PerkDisplay name={p} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 interface WeaponCardProps {
-  weapon: LootWeapon;
+  weapon: LootWeapon
 }
 
 export function WeaponCard({ weapon }: WeaponCardProps) {
-  const isExotic = weapon.weapon.includes("(Exotic)");
-  const name = weapon.weapon.replace("(Exotic)", "").trim();
+  const isExotic = weapon.weapon.includes("(Exotic)")
+  const name = weapon.weapon.replace("(Exotic)", "").trim()
+  const badgeVariant = isExotic ? "orange" : "cyan"
+  const headingVariant = isExotic ? "exotic" : "legendary"
+  const barColor = isExotic ? "bg-amber-500" : "bg-neon-cyan"
 
   return (
     <CyberCard variant="zinc" withCorners className="flex flex-col h-full overflow-hidden p-0 relative group">
-      {/* Background Image / Banner */}
       <div className="h-32 w-full bg-zinc-950 relative overflow-hidden flex items-center justify-center border-b border-zinc-800 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800 to-zinc-950">
         {weapon.image ? (
-          <Image 
-            src={weapon.image} 
-            alt={name} 
+          <Image
+            src={weapon.image}
+            alt={name}
             width={80}
             height={80}
             unoptimized={true}
@@ -44,23 +78,21 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
             <span className="text-xs font-mono uppercase tracking-widest">No Image Data</span>
           </div>
         )}
-        
-        {/* Element & Ammo Type Overlay */}
+
         <div className="absolute top-3 right-3 flex flex-col gap-2">
           {weapon.ammoType && (
             <CyberBadge variant="zinc" className="bg-black/60 backdrop-blur-md border-zinc-700 shadow-xl">{weapon.ammoType}</CyberBadge>
           )}
           {weapon.element && (
-            <CyberBadge variant={isExotic ? "orange" : "cyan"} className="bg-black/60 backdrop-blur-md shadow-xl">{weapon.element}</CyberBadge>
+            <CyberBadge variant={badgeVariant} className="bg-black/60 backdrop-blur-md shadow-xl">{weapon.element}</CyberBadge>
           )}
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-5 flex flex-col flex-grow">
         <div className="mb-4">
           <div className="flex justify-between items-start gap-2">
-            <CyberHeading variant={isExotic ? 'exotic' : 'legendary'} size="md" className="mb-1">
+            <CyberHeading variant={headingVariant} size="md" className="mb-1">
               {name}
             </CyberHeading>
             {weapon.tier && (
@@ -80,7 +112,6 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
           </div>
         </div>
 
-        {/* Source */}
         {weapon.source && (
           <div className="mb-6 inline-flex items-center gap-2 text-xs font-mono bg-zinc-900/50 p-2 rounded-md border border-zinc-800">
             <Gem className="w-4 h-4 text-neon-cyan" />
@@ -88,14 +119,11 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
           </div>
         )}
 
-        {/* Stats Grid */}
         {weapon.stats && (
           <div className="mb-6 grid grid-cols-2 gap-x-4 gap-y-3">
             {Object.entries(weapon.stats).map(([statName, value]) => {
-              // Format stat name (e.g. reload_speed -> Reload Speed)
-              const formattedName = statName.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
-              // For RPM and Magazine, just show the number. For others, show a progress bar.
-              const isValueStat = ['rpm', 'magazine', 'zoom', 'aim_assist', 'draw_time'].includes(statName.toLowerCase());
+              const formattedName = statName.replace("_", " ").replace(/\b\w/g, (l) => l.toUpperCase())
+              const isValueStat = VALUE_STATS.includes(statName.toLowerCase())
 
               return (
                 <div key={statName} className="flex flex-col gap-1">
@@ -105,8 +133,8 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
                   </div>
                   {!isValueStat && (
                     <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full ${isExotic ? 'bg-amber-500' : 'bg-neon-cyan'}`} 
+                      <div
+                        className={`h-full ${barColor}`}
                         style={{ width: `${Math.min(100, Number(value))}%` }}
                       />
                     </div>
@@ -117,67 +145,27 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
           </div>
         )}
 
-        {/* Spacer */}
-        <div className="flex-grow"></div>
+        <div className="flex-grow" />
 
-        {/* Perks */}
         {weapon.perks && (
           <div className="mt-4 pt-4 border-t border-zinc-800/50 space-y-4">
             <h4 className="text-sm font-bold text-white flex items-center gap-2 uppercase tracking-widest">
               <Crosshair className="w-4 h-4 text-neon-pink" /> Recommended Rolls
             </h4>
-            
+
             {(weapon.perks.recommended_pve || weapon.perks.recommended_pvp) ? (
               <div className="space-y-3">
                 {weapon.perks.recommended_pve && (
-                  <div className="flex items-start gap-2">
-                    <span className="text-xs font-bold text-neon-cyan uppercase mt-0.5">PvE:</span>
-                    <span className="text-sm text-zinc-300 flex flex-wrap items-center gap-x-1.5">
-                      {weapon.perks.recommended_pve.map((p, i, arr) => (
-                        <React.Fragment key={i}>
-                          <PerkDisplay name={p} />
-                          {i < arr.length - 1 && <span className="text-zinc-600">+</span>}
-                        </React.Fragment>
-                      ))}
-                    </span>
-                  </div>
+                  <RecommendedRoll label="PvE:" perks={weapon.perks.recommended_pve} labelClass="text-neon-cyan" />
                 )}
                 {weapon.perks.recommended_pvp && (
-                  <div className="flex items-start gap-2">
-                    <span className="text-xs font-bold text-neon-pink uppercase mt-0.5">PvP:</span>
-                    <span className="text-sm text-zinc-300 flex flex-wrap items-center gap-x-1.5">
-                      {weapon.perks.recommended_pvp.map((p, i, arr) => (
-                        <React.Fragment key={i}>
-                          <PerkDisplay name={p} />
-                          {i < arr.length - 1 && <span className="text-zinc-600">+</span>}
-                        </React.Fragment>
-                      ))}
-                    </span>
-                  </div>
+                  <RecommendedRoll label="PvP:" perks={weapon.perks.recommended_pvp} labelClass="text-neon-pink" />
                 )}
               </div>
             ) : (
               <div className="grid grid-cols-2 gap-4">
-                {weapon.perks.column_3 && (
-                  <div>
-                    <span className="text-[10px] text-zinc-500 uppercase font-bold block mb-1">Trait 1</span>
-                    <ul className="text-xs text-zinc-300 space-y-1">
-                      {weapon.perks.column_3.map((p, i) => (
-                        <li key={i} className="flex items-center gap-1"><span className="text-zinc-600">•</span> <PerkDisplay name={p} /></li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {weapon.perks.column_4 && (
-                  <div>
-                    <span className="text-[10px] text-zinc-500 uppercase font-bold block mb-1">Trait 2</span>
-                    <ul className="text-xs text-zinc-300 space-y-1">
-                      {weapon.perks.column_4.map((p, i) => (
-                        <li key={i} className="flex items-center gap-1"><span className="text-zinc-600">•</span> <PerkDisplay name={p} /></li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+                {weapon.perks.column_3 && <TraitColumn title="Trait 1" perks={weapon.perks.column_3} />}
+                {weapon.perks.column_4 && <TraitColumn title="Trait 2" perks={weapon.perks.column_4} />}
               </div>
             )}
           </div>

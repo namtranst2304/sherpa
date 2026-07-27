@@ -1,27 +1,27 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { useGuideTOC } from "@/hooks/use-guide-toc";
+import * as React from "react"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { useGuideTOC } from "@/hooks/use-guide-toc"
 
 interface TOCGroup {
-  title: string;
-  items: { id: string; title: string; href?: string }[];
+  title: string
+  items: { id: string; title: string; href?: string }[]
 }
 
 interface MobileGuideTOCProps {
-  groups?: TOCGroup[];
-  activeEncounterId?: string | null;
-  title?: string;
+  groups?: TOCGroup[]
+  activeEncounterId?: string | null
+  title?: string
 }
 
 export function MobileGuideTOC({ groups, activeEncounterId: activeProp }: MobileGuideTOCProps) {
-  const tocContext = useGuideTOC();
-  const tocGroups = groups || tocContext?.groups || [];
-  const activeEncounterId = activeProp !== undefined ? activeProp : (tocContext?.activeEncounterId || null);
+  const tocContext = useGuideTOC()
+  const tocGroups = groups || tocContext?.groups || []
+  const activeEncounterId = activeProp !== undefined ? activeProp : (tocContext?.activeEncounterId || null)
 
-  if (!tocGroups || tocGroups.length === 0) return null;
+  if (!tocGroups || tocGroups.length === 0) return null
 
   return (
     <div className="md:hidden w-full bg-[#030303]/95 backdrop-blur-md border-b border-zinc-800 z-40 sticky top-0 h-16 flex items-center">
@@ -30,7 +30,7 @@ export function MobileGuideTOC({ groups, activeEncounterId: activeProp }: Mobile
         {tocGroups.map((group) => (
           <React.Fragment key={`group-${group.title}`}>
             {group.items.map((item: { id: string; title: string; href?: string }) => {
-              const isActive = activeEncounterId === item.id;
+              const isActive = activeEncounterId === item.id
               return (
                 <Link
                   key={`toc-item-${item.id}`}
@@ -51,5 +51,5 @@ export function MobileGuideTOC({ groups, activeEncounterId: activeProp }: Mobile
         ))}
       </div>
     </div>
-  );
+  )
 }

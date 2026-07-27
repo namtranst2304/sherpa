@@ -13,7 +13,8 @@ interface EncounterSecretsProps {
 }
 
 export function EncounterSecrets({ secrets }: EncounterSecretsProps) {
-  if (!secrets || secrets.length === 0) return null;
+  if (!secrets || secrets.length === 0) return null
+
 
   return (
     <div className="space-y-6">
