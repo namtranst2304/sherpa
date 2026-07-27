@@ -63,7 +63,7 @@ export function GuideSidebar({
     return () => setTOC("", "", undefined, [])
   }, [title, subtitle, orbit, groups, activeEncounterId, setTOC])
 
-  // Mobile rendering is now handled by TopNav using useGuideTOC
+  // Mobile TOC is rendered by each guide view via MobileGuideTOC
   if (isMobile) {
     return null
   }

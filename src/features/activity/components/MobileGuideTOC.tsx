@@ -13,7 +13,6 @@ interface TOCGroup {
 interface MobileGuideTOCProps {
   groups?: TOCGroup[]
   activeEncounterId?: string | null
-  title?: string
 }
 
 export function MobileGuideTOC({ groups, activeEncounterId: activeProp }: MobileGuideTOCProps) {

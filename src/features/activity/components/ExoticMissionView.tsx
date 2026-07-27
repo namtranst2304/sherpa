@@ -1,5 +1,6 @@
 "use client"
 
+import { useMemo } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { GuideSidebar } from "./GuideSidebar"
 import { MobileGuideTOC } from "./MobileGuideTOC"
@@ -17,30 +18,33 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
   const missionName = activityData.dungeon_name || activityData.raid_name || "Exotic Mission"
   const walkthrough = activityData.encounters?.[0]?.walkthrough
 
-  const sidebarGroups = [
-    {
-      title: "Mission Content",
-      items: [
-        {
-          id: "overview",
-          title: "Overview & Loadouts",
-          href: "?tab=overview",
-        },
-        {
-          id: "walkthrough",
-          title: "Mission Walkthrough",
-          href: "?tab=walkthrough",
-        },
-        ...(activityData.catalyst_guide
-          ? [{
-              id: "catalyst",
-              title: "Catalyst & Secrets",
-              href: "?tab=catalyst",
-            }]
-          : []),
-      ],
-    },
-  ]
+  const sidebarGroups = useMemo(
+    () => [
+      {
+        title: "Mission Content",
+        items: [
+          {
+            id: "overview",
+            title: "Overview & Loadouts",
+            href: "?tab=overview",
+          },
+          {
+            id: "walkthrough",
+            title: "Mission Walkthrough",
+            href: "?tab=walkthrough",
+          },
+          ...(activityData.catalyst_guide
+            ? [{
+                id: "catalyst",
+                title: "Catalyst & Secrets",
+                href: "?tab=catalyst",
+              }]
+            : []),
+        ],
+      },
+    ],
+    [activityData.catalyst_guide]
+  )
 
   const renderContent = () => {
     switch (activeTabId) {
@@ -93,7 +97,6 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
       <MobileGuideTOC
         groups={sidebarGroups}
         activeEncounterId={activeTabId}
-        title={missionName}
       />
 
       <AnimatePresence mode="wait">

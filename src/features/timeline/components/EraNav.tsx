@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "motion/react";
-import { DESTINY_TIMELINE, ROMAN_NUMERALS, type TimelineEra } from "@/data/timeline/index";
+import { ROMAN_NUMERALS, type TimelineEra } from "@/data/timeline/index"
 import { getTheme, type ThemeColorTokens } from "@/lib/theme";
 
 function TimelineNode({ era, idx, total, isActive, isPast, activeTheme, onClick }: { era: TimelineEra, idx: number, total: number, isActive: boolean, isPast: boolean, activeTheme: ThemeColorTokens, onClick: () => void }) {
@@ -57,7 +57,7 @@ function TimelineNode({ era, idx, total, isActive, isPast, activeTheme, onClick 
   );
 }
 
-export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLElement>> }) {
+export function EraNav({ eras, eraRefs }: { eras: TimelineEra[]; eraRefs: React.RefObject<Map<string, HTMLElement>> }) {
   const [navActiveIndex, setNavActiveIndex] = useState(0);
 
   // Tweak spring to be very responsive (not sticky) but smooth
@@ -72,7 +72,7 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
   const autoScrollTimer = useRef<NodeJS.Timeout | null>(null);
 
   const effectiveActiveIndex = autoScrollTarget !== null ? autoScrollTarget : navActiveIndex;
-  const activeEra = DESTINY_TIMELINE[effectiveActiveIndex] || DESTINY_TIMELINE[0];
+  const activeEra = eras[effectiveActiveIndex] || eras[0];
   const activeTheme = getTheme(activeEra.themeColor);
 
   useEffect(() => {
@@ -84,17 +84,17 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
         rafId = null;
 
         const scrollContainer = document.getElementById("timeline-scroll-container") as HTMLElement;
-        if (!scrollContainer || DESTINY_TIMELINE.length < 2) return;
+        if (!scrollContainer || eras.length < 2) return;
 
         const scrollTop = scrollContainer.scrollTop;
         const vh = scrollContainer.clientHeight;
 
         // O(1) calculation instead of layout thrashing loop
-        const floatIndex = Math.max(0, Math.min(scrollTop / vh, DESTINY_TIMELINE.length - 1));
+        const floatIndex = Math.max(0, Math.min(scrollTop / vh, eras.length - 1));
         const activeIdx = Math.round(floatIndex);
 
         setNavActiveIndex((prev) => (prev !== activeIdx ? activeIdx : prev));
-        rawProgress.set(floatIndex * (100 / (DESTINY_TIMELINE.length - 1)));
+        rawProgress.set(floatIndex * (100 / (eras.length - 1)));
 
         // If auto-scrolling and we reached the target, clear it
         // Read from ref — no dependency needed, avoids re-registering listener
@@ -115,10 +115,10 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
       scrollContainer.removeEventListener("scroll", onScroll);
       if (rafId !== null) cancelAnimationFrame(rafId);
     };
-  }, [eraRefs, rawProgress]); // autoScrollState removed — using ref instead
+  }, [eraRefs, rawProgress, eras]); // autoScrollState removed — using ref instead
 
   const scrollToEra = useCallback((id: string) => {
-    const targetIdx = DESTINY_TIMELINE.findIndex(e => e.id === id);
+    const targetIdx = eras.findIndex(e => e.id === id);
     autoScrollStateRef.current = { start: navActiveIndex, target: targetIdx };
     setAutoScrollTarget(targetIdx);
 
@@ -129,7 +129,7 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
     }, 1500); // Failsafe timeout
 
     eraRefs.current?.get(id)?.scrollIntoView({ behavior: "smooth" });
-  }, [eraRefs, navActiveIndex]);
+  }, [eraRefs, navActiveIndex, eras]);
 
   return (
     <>
@@ -149,7 +149,7 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
           />
 
           {/* Nodes */}
-          {DESTINY_TIMELINE.map((era, idx) => {
+          {eras.map((era, idx) => {
             const isAutoScrolling = autoScrollTarget !== null;
             const isActive = isAutoScrolling ? (idx === autoScrollTarget) : (idx === navActiveIndex);
             const isPast = idx <= effectiveActiveIndex;
@@ -159,7 +159,7 @@ export function EraNav({ eraRefs }: { eraRefs: React.RefObject<Map<string, HTMLE
                 key={era.id} 
                 era={era} 
                 idx={idx} 
-                total={DESTINY_TIMELINE.length} 
+                total={eras.length} 
                 isActive={isActive} 
                 isPast={isPast} 
                 activeTheme={activeTheme} 

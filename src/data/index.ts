@@ -134,4 +134,20 @@ export async function getExoticMissionData(slug: string): Promise<ActivityData |
   if (!loader) return null;
   const mod = await loader();
   return mod.default as unknown as ActivityData;
+}
+
+/** Database loaders — dynamic import so JSON stays out of the default client graph. */
+export async function getExoticWeaponsData() {
+  const mod = await import("./database/exotic-weapons.json")
+  return mod.default
+}
+
+export async function getExoticArmorData() {
+  const mod = await import("./database/exotic-armor.json")
+  return mod.default
+}
+
+export async function getArmorSetsData() {
+  const mod = await import("./armor-sets.json")
+  return mod.default
 }

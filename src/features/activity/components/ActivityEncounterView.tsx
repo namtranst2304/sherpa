@@ -1,5 +1,6 @@
 "use client"
 
+import { useMemo } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { GuideSidebar } from "./GuideSidebar"
 import { GuideTemplate } from "./GuideTemplate"
@@ -17,43 +18,49 @@ interface ActivityEncounterViewProps {
 }
 
 export function ActivityEncounterView({ activityData, activeEncounterId }: ActivityEncounterViewProps) {
-  if (!activityData || !activityData.encounters) {
-    return <div>No activity data found.</div>
-  }
-
   const isOverview = !activeEncounterId || activeEncounterId === "overview"
   const isSecretsView = activeEncounterId === "secrets"
-  const pageTitle = activityData.raid_name || activityData.dungeon_name || "Activity"
+  const pageTitle = activityData?.raid_name || activityData?.dungeon_name || "Activity"
 
-  const sidebarGroups = [
-    {
-      title: "Activity Info",
-      items: [
+  const sidebarGroups = useMemo(
+    () => {
+      if (!activityData?.encounters) return []
+      return [
         {
-          id: "overview",
-          title: "Overview & Loadouts",
-          href: "?enc=overview",
+          title: "Activity Info",
+          items: [
+            {
+              id: "overview",
+              title: "Overview & Loadouts",
+              href: "?enc=overview",
+            },
+            ...(activityData.activity_secrets
+              ? [
+                  {
+                    id: "secrets",
+                    title: "Secrets & Chests",
+                    href: "?enc=secrets",
+                  },
+                ]
+              : []),
+          ],
         },
-        ...(activityData.activity_secrets
-          ? [
-              {
-                id: "secrets",
-                title: "Secrets & Chests",
-                href: "?enc=secrets",
-              },
-            ]
-          : []),
-      ],
+        {
+          title: "Encounters",
+          items: activityData.encounters.map((enc: ActivityEncounter) => ({
+            id: enc.id,
+            title: enc.name,
+            href: `?enc=${enc.id}`,
+          })),
+        },
+      ]
     },
-    {
-      title: "Encounters",
-      items: activityData.encounters.map((enc: ActivityEncounter) => ({
-        id: enc.id,
-        title: enc.name,
-        href: `?enc=${enc.id}`,
-      }))
-    },
-  ]
+    [activityData]
+  )
+
+  if (!activityData?.encounters) {
+    return <div>No activity data found.</div>
+  }
 
   const activeEncounter =
     isOverview || isSecretsView
@@ -125,7 +132,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
         activeEncounterId={currentViewId}
       />
 
-      <MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} title={pageTitle} />
+      <MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} />
 
       <div className="flex-1 md:overflow-hidden relative">
         <AnimatePresence mode="wait">
