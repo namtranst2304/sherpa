@@ -1,6 +1,9 @@
-import React from "react"
+"use client"
+
+import React, { useState } from "react"
 import Image from "next/image"
-import { Sparkles } from "lucide-react"
+import { Sparkles, ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export interface ExoticArmor {
   id: number
@@ -64,6 +67,7 @@ function PerkColumn({ title, perks }: { title: string; perks: PerkItem[] }) {
 }
 
 export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
+  const [expanded, setExpanded] = useState(false)
   const iconUrl = armor.icon ? bungieUrl(armor.icon) : null
   const traitIconUrl = armor.trait.icon ? bungieUrl(armor.trait.icon) : null
   const perkPool = armor.trait.perkPool
@@ -111,35 +115,52 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
             )}
             <div className="flex flex-col flex-1">
               <span className="font-bold text-white mb-1">{armor.trait.name}</span>
-              <span className="text-sm text-zinc-400 leading-relaxed whitespace-pre-wrap">{armor.trait.description}</span>
-
-              {perkPool && (
-                <div className="mt-6 border-t border-zinc-800 pt-6">
-                  <div className="flex flex-col gap-6 lg:hidden">
-                    <PerkColumn title="Column 1" perks={perkPool.column1} />
-                    <PerkColumn title="Column 2" perks={perkPool.column2} />
-                  </div>
-
-                  <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-4">
-                    <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 1</div>
-                    <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 2</div>
-
-                    {Array.from({ length: Math.max(perkPool.column1.length, perkPool.column2.length) }).map((_, i) => {
-                      const perk1 = perkPool.column1[i]
-                      const perk2 = perkPool.column2[i]
-                      return (
-                        <React.Fragment key={i}>
-                          {perk1 ? <PerkRow perk={perk1} bordered /> : <div />}
-                          {perk2 ? <PerkRow perk={perk2} bordered /> : <div />}
-                        </React.Fragment>
-                      )
-                    })}
-                  </div>
-                </div>
-              )}
+              <span className={cn(
+                "text-sm text-zinc-400 leading-relaxed whitespace-pre-wrap",
+                !expanded && "line-clamp-3"
+              )}>
+                {armor.trait.description}
+              </span>
             </div>
           </div>
         </div>
+
+        {perkPool && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="flex items-center justify-between w-full px-3 py-2 text-xs font-mono uppercase tracking-wider border border-zinc-800 bg-zinc-950/60 text-neon-cyan hover:border-neon-cyan/50 transition-colors"
+            aria-expanded={expanded}
+          >
+            <span>{expanded ? "Thu gọn" : "Chi tiết perk pool"}</span>
+            <ChevronDown className={cn("w-4 h-4 transition-transform", expanded && "rotate-180")} />
+          </button>
+        )}
+
+        {expanded && perkPool && (
+          <div className="border-t border-zinc-800 pt-4">
+            <div className="flex flex-col gap-6 lg:hidden">
+              <PerkColumn title="Column 1" perks={perkPool.column1} />
+              <PerkColumn title="Column 2" perks={perkPool.column2} />
+            </div>
+
+            <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-4">
+              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 1</div>
+              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 2</div>
+
+              {Array.from({ length: Math.max(perkPool.column1.length, perkPool.column2.length) }).map((_, i) => {
+                const perk1 = perkPool.column1[i]
+                const perk2 = perkPool.column2[i]
+                return (
+                  <React.Fragment key={i}>
+                    {perk1 ? <PerkRow perk={perk1} bordered /> : <div />}
+                    {perk2 ? <PerkRow perk={perk2} bordered /> : <div />}
+                  </React.Fragment>
+                )
+              })}
+            </div>
+          </div>
+        )}
 
         {armor.source && (
           <div className="mt-2 pt-3 border-t border-zinc-800/50">

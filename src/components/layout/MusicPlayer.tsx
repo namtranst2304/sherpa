@@ -19,102 +19,76 @@ export function MusicPlayer() {
   const isVisible = pathname === "/" || pathname === "/timeline";
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible) return
 
-    const audio = audioRef.current;
-    if (!audio) return;
+    const audio = audioRef.current
+    if (!audio) return
 
-    audio.volume = 0.15;
+    audio.volume = 0.15
 
-    // Đồng bộ state isPlaying thông qua event gốc của thẻ audio
     const syncState = () => {
-      setIsPlaying(!audio.paused);
-      if (!audio.paused) setShowPulseHint(false);
-    };
+      setIsPlaying(!audio.paused)
+      if (!audio.paused) setShowPulseHint(false)
+    }
 
-    audio.addEventListener("play", syncState);
-    audio.addEventListener("pause", syncState);
+    audio.addEventListener("play", syncState)
+    audio.addEventListener("pause", syncState)
 
-    // 1. Thử auto-play ngay lập tức
-    const unlockAudio = (e: Event) => {
-      // Nếu user click vào nút TTS để nghe truyện, đừng tự bật nhạc nền (gây hiểu nhầm là TTS tự bật nhạc)
-      const target = e.target as HTMLElement;
-      if (target && target.closest && target.closest('.tts-btn-group')) return;
-      audio.play().catch(() => {});
-    };
-    const events = ["click", "keydown", "touchstart", "pointerdown"];
-    
-    const removeUnlockListeners = () => {
-      events.forEach((evt) => window.removeEventListener(evt, unlockAudio));
-    };
+    // Hint pulse when user scrolls — do NOT auto-unlock on every site click
+    const hintScroll = () => {
+      if (audio.paused) setShowPulseHint(true)
+    }
+    window.addEventListener("wheel", hintScroll, { once: true, passive: true })
+    window.addEventListener("touchmove", hintScroll, { once: true, passive: true })
 
-    audio.play().catch(() => {
-      // 2. Nếu browser chặn, chờ tương tác đầu tiên của user để bật nhạc
-      events.forEach((evt) => window.addEventListener(evt, unlockAudio, { once: true, passive: true }));
-
-      // 3. Nếu user cuộn trang mà nhạc vẫn chưa bật -> nháy sáng nút Play
-      const hintScroll = () => { if (audio.paused) setShowPulseHint(true); };
-      window.addEventListener("wheel", hintScroll, { once: true, passive: true });
-      window.addEventListener("touchmove", hintScroll, { once: true, passive: true });
-
-      return () => {
-        removeUnlockListeners();
-        window.removeEventListener("wheel", hintScroll);
-        window.removeEventListener("touchmove", hintScroll);
-      };
-    });
-
-    // Quản lý việc tự động dừng/phát nhạc khi chuyển tab hoặc chuyển app trên mobile
     const handleVisibilityChange = () => {
       if (document.hidden) {
         if (!audio.paused) {
-          wasPlayingRef.current = true;
-          audio.pause();
+          wasPlayingRef.current = true
+          audio.pause()
         }
-      } else {
-        if (wasPlayingRef.current) {
-          audio.play().catch(() => {});
-          wasPlayingRef.current = false;
-        }
+      } else if (wasPlayingRef.current) {
+        audio.play().catch(() => {})
+        wasPlayingRef.current = false
       }
-    };
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+    }
+    document.addEventListener("visibilitychange", handleVisibilityChange)
 
-    // Xử lý sự kiện tạm dừng từ TTS
     const handleToggleGlobalMusic = (e: Event) => {
-      const customEvent = e as CustomEvent;
+      const customEvent = e as CustomEvent
       if (customEvent.detail?.pause) {
         if (!audio.paused) {
-          ttsWasPlayingRef.current = true;
-          audio.pause();
+          ttsWasPlayingRef.current = true
+          audio.pause()
         }
-      } else {
-        if (ttsWasPlayingRef.current) {
-          audio.play().catch(() => {});
-          ttsWasPlayingRef.current = false;
-        }
+      } else if (ttsWasPlayingRef.current) {
+        audio.play().catch(() => {})
+        ttsWasPlayingRef.current = false
       }
-    };
-    window.addEventListener('toggle-global-music', handleToggleGlobalMusic);
+    }
+    window.addEventListener("toggle-global-music", handleToggleGlobalMusic)
 
     return () => {
-      audio.removeEventListener("play", syncState);
-      audio.removeEventListener("pause", syncState);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      window.removeEventListener('toggle-global-music', handleToggleGlobalMusic);
-    };
-  }, [isVisible]);
+      audio.removeEventListener("play", syncState)
+      audio.removeEventListener("pause", syncState)
+      document.removeEventListener("visibilitychange", handleVisibilityChange)
+      window.removeEventListener("toggle-global-music", handleToggleGlobalMusic)
+      window.removeEventListener("wheel", hintScroll)
+      window.removeEventListener("touchmove", hintScroll)
+    }
+  }, [isVisible])
 
   const togglePlay = () => {
+    setShowPulseHint(false)
     if (audioRef.current?.paused) {
-      audioRef.current.play().catch(console.error);
+      audioRef.current.play().catch(console.error)
     } else {
-      audioRef.current?.pause();
+      audioRef.current?.pause()
     }
-  };
+  }
 
   if (!isVisible) {
-    return null;
+    return null
   }
 
   return (
@@ -122,13 +96,15 @@ export function MusicPlayer() {
       <audio id="global-bg-audio" ref={audioRef} src="/audio/timeline-theme.mp3" loop preload="none" />
 
       <div className="fixed bottom-4 left-4 md:bottom-8 md:left-8 z-50 flex items-center gap-2 md:gap-3">
-        {/* Nút Play/Pause kèm hiệu ứng nháy sáng (pulse) khi scroll */}
         <motion.button
+          type="button"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={togglePlay}
+          aria-label={isPlaying ? "Tạm dừng nhạc nền" : "Phát nhạc nền"}
+          aria-pressed={isPlaying}
           className={cn(
-            "relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border backdrop-blur-md transition-all duration-300 group",
+            "relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-none border backdrop-blur-md transition-all duration-300 group",
             showPulseHint && !isPlaying ? "animate-pulse border-neon-cyan/80 bg-neon-cyan/20 shadow-[0_0_20px_rgba(34,211,238,0.5)]" : "",
             isPlaying
               ? "bg-neon-cyan/20 border-neon-cyan/50 text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.3)]"
@@ -154,7 +130,7 @@ export function MusicPlayer() {
         </motion.button>
 
         <div className={cn(
-          "hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-black/60 backdrop-blur-md border border-zinc-800/50 transition-all duration-500",
+          "hidden md:flex items-center gap-2 px-4 py-2 rounded-none bg-black/60 backdrop-blur-md border border-zinc-800/50 transition-all duration-500",
           isPlaying ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
         )}>
           <Music className="w-4 h-4 text-neon-cyan/70" />

@@ -1,8 +1,11 @@
-import React from "react"
-import { Gem, Crosshair, Swords } from "lucide-react"
+"use client"
+
+import React, { useState } from "react"
+import { Gem, Crosshair, Swords, ChevronDown } from "lucide-react"
 import Image from "next/image"
 import { CyberCard, CyberBadge, CyberHeading } from "@/components/common/CyberComponents"
 import { LootWeapon } from "@/types"
+import { cn } from "@/lib/utils"
 
 const NEW_PERKS = ["Chaos Reshaped", "Air Trigger", "Rimestealer", "Circle of Life", "Physic"]
 const VALUE_STATS = ["rpm", "magazine", "zoom", "aim_assist", "draw_time"]
@@ -54,11 +57,13 @@ interface WeaponCardProps {
 }
 
 export function WeaponCard({ weapon }: WeaponCardProps) {
+  const [expanded, setExpanded] = useState(false)
   const isExotic = weapon.weapon.includes("(Exotic)")
   const name = weapon.weapon.replace("(Exotic)", "").trim()
   const badgeVariant = isExotic ? "orange" : "cyan"
   const headingVariant = isExotic ? "exotic" : "legendary"
   const barColor = isExotic ? "bg-amber-500" : "bg-neon-cyan"
+  const hasDetails = Boolean(weapon.stats || weapon.perks)
 
   return (
     <CyberCard variant="zinc" withCorners className="flex flex-col h-full overflow-hidden p-0 relative group">
@@ -113,59 +118,73 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
         </div>
 
         {weapon.source && (
-          <div className="mb-6 inline-flex items-center gap-2 text-xs font-mono bg-zinc-900/50 p-2 rounded-md border border-zinc-800">
+          <div className="mb-4 inline-flex items-center gap-2 text-xs font-mono bg-zinc-900/50 p-2 rounded-md border border-zinc-800">
             <Gem className="w-4 h-4 text-neon-cyan" />
             <span className="text-zinc-300">Source: <span className="text-neon-cyan">{weapon.source}</span></span>
           </div>
         )}
 
-        {weapon.stats && (
-          <div className="mb-6 grid grid-cols-2 gap-x-4 gap-y-3">
-            {Object.entries(weapon.stats).map(([statName, value]) => {
-              const formattedName = statName.replace("_", " ").replace(/\b\w/g, (l) => l.toUpperCase())
-              const isValueStat = VALUE_STATS.includes(statName.toLowerCase())
-
-              return (
-                <div key={statName} className="flex flex-col gap-1">
-                  <div className="flex justify-between items-end">
-                    <span className="text-[10px] uppercase tracking-wider text-zinc-500 font-bold">{formattedName}</span>
-                    <span className="text-xs font-mono text-zinc-300">{value}</span>
-                  </div>
-                  {!isValueStat && (
-                    <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full ${barColor}`}
-                        style={{ width: `${Math.min(100, Number(value))}%` }}
-                      />
-                    </div>
-                  )}
-                </div>
-              )
-            })}
-          </div>
+        {hasDetails && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-auto flex items-center justify-between w-full px-3 py-2 text-xs font-mono uppercase tracking-wider border border-zinc-800 bg-zinc-950/60 text-neon-cyan hover:border-neon-cyan/50 transition-colors"
+            aria-expanded={expanded}
+          >
+            <span>{expanded ? "Thu gọn" : "Chi tiết"}</span>
+            <ChevronDown className={cn("w-4 h-4 transition-transform", expanded && "rotate-180")} />
+          </button>
         )}
 
-        <div className="flex-grow" />
-
-        {weapon.perks && (
+        {expanded && (
           <div className="mt-4 pt-4 border-t border-zinc-800/50 space-y-4">
-            <h4 className="text-sm font-bold text-white flex items-center gap-2 uppercase tracking-widest">
-              <Crosshair className="w-4 h-4 text-neon-pink" /> Recommended Rolls
-            </h4>
+            {weapon.stats && (
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                {Object.entries(weapon.stats).map(([statName, value]) => {
+                  const formattedName = statName.replace("_", " ").replace(/\b\w/g, (l) => l.toUpperCase())
+                  const isValueStat = VALUE_STATS.includes(statName.toLowerCase())
 
-            {(weapon.perks.recommended_pve || weapon.perks.recommended_pvp) ? (
-              <div className="space-y-3">
-                {weapon.perks.recommended_pve && (
-                  <RecommendedRoll label="PvE:" perks={weapon.perks.recommended_pve} labelClass="text-neon-cyan" />
-                )}
-                {weapon.perks.recommended_pvp && (
-                  <RecommendedRoll label="PvP:" perks={weapon.perks.recommended_pvp} labelClass="text-neon-pink" />
-                )}
+                  return (
+                    <div key={statName} className="flex flex-col gap-1">
+                      <div className="flex justify-between items-end">
+                        <span className="text-[10px] uppercase tracking-wider text-zinc-500 font-bold">{formattedName}</span>
+                        <span className="text-xs font-mono text-zinc-300">{value}</span>
+                      </div>
+                      {!isValueStat && (
+                        <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full ${barColor}`}
+                            style={{ width: `${Math.min(100, Number(value))}%` }}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
-            ) : (
-              <div className="grid grid-cols-2 gap-4">
-                {weapon.perks.column_3 && <TraitColumn title="Trait 1" perks={weapon.perks.column_3} />}
-                {weapon.perks.column_4 && <TraitColumn title="Trait 2" perks={weapon.perks.column_4} />}
+            )}
+
+            {weapon.perks && (
+              <div className="space-y-4">
+                <h4 className="text-sm font-bold text-white flex items-center gap-2 uppercase tracking-widest">
+                  <Crosshair className="w-4 h-4 text-neon-pink" /> Roll đề xuất
+                </h4>
+
+                {(weapon.perks.recommended_pve || weapon.perks.recommended_pvp) ? (
+                  <div className="space-y-3">
+                    {weapon.perks.recommended_pve && (
+                      <RecommendedRoll label="PvE:" perks={weapon.perks.recommended_pve} labelClass="text-neon-cyan" />
+                    )}
+                    {weapon.perks.recommended_pvp && (
+                      <RecommendedRoll label="PvP:" perks={weapon.perks.recommended_pvp} labelClass="text-neon-pink" />
+                    )}
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-2 gap-4">
+                    {weapon.perks.column_3 && <TraitColumn title="Trait 1" perks={weapon.perks.column_3} />}
+                    {weapon.perks.column_4 && <TraitColumn title="Trait 2" perks={weapon.perks.column_4} />}
+                  </div>
+                )}
               </div>
             )}
           </div>

@@ -60,6 +60,19 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
         actions={headerActions}
       />
 
+      <div className="flex items-center justify-between gap-3 text-xs font-mono uppercase tracking-wider text-zinc-500">
+        <span>{filteredArmors.length} kết quả · {activeClass}</span>
+        {searchTerm && (
+          <button
+            type="button"
+            onClick={() => setSearchTerm("")}
+            className="text-neon-cyan hover:text-white transition-colors"
+          >
+            Xóa tìm kiếm
+          </button>
+        )}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {filteredArmors.length > 0 ? (
           filteredArmors.map((armor) => (
@@ -69,7 +82,7 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
           ))
         ) : (
           <div className="col-span-full py-12 text-center text-zinc-500 font-mono">
-            No exotic armor found for {activeClass}.
+            Không tìm thấy giáp Exotic cho {activeClass}.
           </div>
         )}
       </div>

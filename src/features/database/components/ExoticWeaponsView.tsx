@@ -76,6 +76,23 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
         actions={headerActions}
       />
 
+      <div className="flex items-center justify-between gap-3 text-xs font-mono uppercase tracking-wider text-zinc-500">
+        <span>{filteredWeapons.length} kết quả</span>
+        {(searchTerm || selectedSlot !== "All" || selectedType !== "All") && (
+          <button
+            type="button"
+            onClick={() => {
+              setSearchTerm("")
+              setSelectedSlot("All")
+              setSelectedType("All")
+            }}
+            className="text-neon-cyan hover:text-white transition-colors"
+          >
+            Xóa bộ lọc
+          </button>
+        )}
+      </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {filteredWeapons.length > 0 ? (
           filteredWeapons.map((weapon) => (

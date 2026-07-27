@@ -23,9 +23,8 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "20mb",
     },
     optimizePackageImports: [
-      'lucide-react',
-      'date-fns',
-      '@radix-ui/react-icons',
+      "lucide-react",
+      "motion",
     ],
   },
 };

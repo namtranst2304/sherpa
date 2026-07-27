@@ -75,6 +75,19 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
         actions={headerActions}
       />
 
+      <div className="flex items-center justify-between gap-3 text-xs font-mono uppercase tracking-wider text-zinc-500">
+        <span>{filteredAndSortedSets.length} kết quả</span>
+        {searchQuery && (
+          <button
+            type="button"
+            onClick={() => setSearchQuery("")}
+            className="text-neon-cyan hover:text-white transition-colors"
+          >
+            Xóa tìm kiếm
+          </button>
+        )}
+      </div>
+
       {filteredAndSortedSets.length === 0 ? (
         <div className="text-center py-12 text-zinc-500 font-mono">
           Không tìm thấy set giáp nào phù hợp.

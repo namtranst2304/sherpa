@@ -38,7 +38,7 @@ export function OverviewLootTable({ loot_table, armor_table }: OverviewLootTable
             <div className="p-2 bg-neon-orange/20 rounded-md">
               <Gem className="w-5 h-5 text-neon-orange" />
             </div>
-            <h2 className="text-xl font-bold uppercase tracking-wider text-neon-orange text-glow-orange">Loot Table</h2>
+            <h2 className="text-xl font-bold uppercase tracking-wider text-neon-orange text-glow-orange">Bảng Loot</h2>
           </div>
 
           {hasArmor && (
@@ -47,13 +47,13 @@ export function OverviewLootTable({ loot_table, armor_table }: OverviewLootTable
                 onClick={() => setActiveTab("weapons")}
                 className={tabBtnClass(activeTab === "weapons", "bg-neon-orange/20 text-neon-orange border-neon-orange/30")}
               >
-                Weapons
+                Vũ khí
               </button>
               <button
                 onClick={() => setActiveTab("armor")}
                 className={tabBtnClass(activeTab === "armor", "bg-cyan-500/20 text-cyan-400 border-cyan-500/30")}
               >
-                Armor Sets
+                Bộ giáp
               </button>
             </div>
           )}

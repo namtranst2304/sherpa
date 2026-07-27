@@ -128,7 +128,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       <GuideSidebar
         groups={sidebarGroups}
         title={pageTitle}
-        subtitle="Walkthrough Guide"
+        subtitle="Hướng dẫn Encounter"
         activeEncounterId={currentViewId}
       />
 

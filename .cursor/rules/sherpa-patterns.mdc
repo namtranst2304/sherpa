@@ -16,7 +16,7 @@ alwaysApply: true
 
 ## Architecture: Feature-Sliced Design
 
-```
+```text
 src/
 ├── app/              # Routes only — thin pages, no business logic
 ├── features/         # Domain features (activity, database, home, timeline)
@@ -51,6 +51,7 @@ export default async function RaidPage({ params, searchParams }: PageProps) {
 All game content lives in `src/data/` as JSON. Never hardcode game content in components. Never import JSON statically at module level (especially not from `"use client"` pages).
 
 To add activity content:
+
 1. Create JSON in the right subfolder (`raids/`, `dungeons/`, `exotic-missions/`, `pantheon/`, `timeline/`)
 2. Add slug to the registry array in `src/data/index.ts`
 3. Add dynamic import entry + loader in the same file
@@ -107,7 +108,7 @@ Every activity guide view that uses `GuideSidebar` must also mount `MobileGuideT
 
 ```tsx
 <GuideSidebar groups={sidebarGroups} title={pageTitle} ... activeEncounterId={currentViewId} />
-<MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} title={pageTitle} />
+<MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} />
 ```
 
 - Derive shared values once (`pageTitle`, `currentViewId`, `isOverview`, …) — do not repeat ternaries in JSX
@@ -116,12 +117,14 @@ Every activity guide view that uses `GuideSidebar` must also mount `MobileGuideT
 ### 6. Styling
 
 - Tailwind utility classes exclusively
-- Design system: `CyberComponents.tsx` + CVA variants
+- Design system: `CyberComponents.tsx` + CVA variants + `src/lib/theme.ts`
+- Prefer angular / `rounded-none` cyber chrome over soft `rounded-full` pills
 - CyberVariants: `cyan | orange | yellow | red | green | zinc | exotic`
 - Neon tokens: `neon-cyan`, `neon-orange`, `neon-yellow`, `neon-red`, `neon-green`
-- Theme tokens: `src/lib/theme.ts` (`getTheme`, `ThemeColor`)
+- Theme maps must use **complete class strings** (never `` `bg-${color}-500` `` — Tailwind JIT drops them)
 - `cn()` from `@/lib/utils` for conditional classes
 - Dark-first (default theme is dark)
+- UI chrome labels in Vietnamese; keep game proper nouns (Exotic, Raid, PvE)
 - Do NOT manually edit `src/components/ui/` (shadcn)
 
 ### 7. Animations
@@ -163,7 +166,7 @@ Use Framer Motion (`motion/react`) with the standard page transition:
 - Files/folders: English, kebab-case
 
 | Type | Convention | Example |
-|------|-----------|---------|
+| ------ | ----------- | --------- |
 | Components | PascalCase | `ActivityEncounterView.tsx` |
 | Hooks | kebab-case + `use-` | `use-scroll-spy.ts` |
 | Data files | kebab-case | `vault-of-glass.json` |

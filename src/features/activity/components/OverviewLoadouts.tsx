@@ -23,7 +23,7 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
           <div className="p-2 bg-neon-cyan/10 rounded-md">
             <Shield className="w-5 h-5 text-neon-cyan" />
           </div>
-          <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Recommended Loadouts</h2>
+          <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Loadout đề xuất</h2>
         </div>
         <div className="space-y-6 relative z-10">
           {loadout_tips.note && (
@@ -34,7 +34,7 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
           {loadout_tips.weapons && (
             <div>
               <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
-                <Crosshair className="w-4 h-4" /> Recommended Weapons
+                <Crosshair className="w-4 h-4" /> Vũ khí đề xuất
               </h3>
               <div className="flex flex-col gap-2">
                 {loadout_tips.weapons.map((w: { name: string; description: string }) => (

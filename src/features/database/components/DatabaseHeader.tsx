@@ -19,7 +19,7 @@ export function DatabaseHeader({
   actions
 }: DatabaseHeaderProps) {
   return (
-    <div className="sticky top-0 z-20 pt-6 pb-4 bg-background/80 backdrop-blur-md border-b border-zinc-800/50">
+    <div className="sticky top-0 md:top-14 z-20 pt-6 pb-4 pl-14 md:pl-0 bg-background/80 backdrop-blur-md border-b border-zinc-800/50">
       <div className="flex flex-col gap-4">
         <div>
           <h1 className="text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-cyan animate-cyber-scan uppercase drop-shadow-[0_0_10px_rgba(0,243,255,0.3)]">

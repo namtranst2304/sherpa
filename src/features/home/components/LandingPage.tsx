@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "motion/react"
 import { ChevronDown } from "lucide-react"
@@ -90,6 +91,20 @@ export function LandingPage() {
                 <ChevronDown className={chevron.styles} />
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-zinc-500">
+            <Link href="/raids/salvations-edge" className="hover:text-neon-cyan transition-colors" onClick={(e) => e.stopPropagation()}>
+              Raids
+            </Link>
+            <span className="text-zinc-700">/</span>
+            <Link href="/dungeons/vespers-host" className="hover:text-neon-green transition-colors" onClick={(e) => e.stopPropagation()}>
+              Dungeons
+            </Link>
+            <span className="text-zinc-700">/</span>
+            <Link href="/database/exotic-weapons" className="hover:text-zinc-200 transition-colors" onClick={(e) => e.stopPropagation()}>
+              Database
+            </Link>
           </div>
         </motion.div>
       </div>

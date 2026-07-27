@@ -1,6 +1,9 @@
-import React from "react"
+"use client"
+
+import React, { useState } from "react"
 import Image from "next/image"
-import { Sparkles } from "lucide-react"
+import { Sparkles, ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export interface ExoticWeapon {
   id: number
@@ -98,10 +101,12 @@ function AmmoTypeIcon({ type }: { type: string }) {
 }
 
 export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
+  const [expanded, setExpanded] = useState(false)
   const iconUrl = weapon.icon ? bungieUrl(weapon.icon) : null
   const traitIconUrl = weapon.trait.icon ? bungieUrl(weapon.trait.icon) : null
   const perkPool = weapon.trait.perkPool
   const showAmmo = weapon.ammoType.toLowerCase() !== "primary" && weapon.ammoType !== "None"
+  const hasDetails = Boolean(perkPool || (weapon.catalysts && weapon.catalysts.length > 0))
 
   return (
     <div className="flex flex-col h-full bg-zinc-900/50 rounded-lg border border-zinc-800/50 overflow-hidden hover:border-neon-cyan/50 transition-colors">
@@ -145,44 +150,61 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
             <span>INTRINSIC TRAIT</span>
           </div>
 
-          <div className="flex gap-3 items-start p-3 rounded bg-black/30 border border-zinc-800/50 h-full">
+          <div className="flex gap-3 items-start p-3 rounded bg-black/30 border border-zinc-800/50">
             {traitIconUrl && (
               <Image src={traitIconUrl} alt={weapon.trait.name} width={32} height={32} className="rounded-sm shrink-0 bg-zinc-900" unoptimized />
             )}
             <div className="flex flex-col flex-1">
               <span className="font-bold text-white mb-1">{weapon.trait.name || "Unknown Trait"}</span>
-              <span className="text-sm text-zinc-400 leading-relaxed whitespace-pre-wrap">{weapon.trait.description || "No description available."}</span>
-
-              {perkPool && (
-                <div className="mt-6 border-t border-zinc-800 pt-6">
-                  <div className="flex flex-col gap-6 lg:hidden">
-                    <PerkColumn title="Column 1 (Frames)" perks={perkPool.column1} />
-                    <PerkColumn title="Column 2 (Exotic Traits)" perks={perkPool.column2} />
-                  </div>
-
-                  <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-4">
-                    <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 1 (Frames)</div>
-                    <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 2 (Exotic Traits)</div>
-
-                    {Array.from({ length: Math.max(perkPool.column1.length, perkPool.column2.length) }).map((_, i) => {
-                      const perk1 = perkPool.column1[i]
-                      const perk2 = perkPool.column2[i]
-                      return (
-                        <React.Fragment key={i}>
-                          {perk1 ? <PerkRow perk={perk1} bordered /> : <div />}
-                          {perk2 ? <PerkRow perk={perk2} bordered /> : <div />}
-                        </React.Fragment>
-                      )
-                    })}
-                  </div>
-                </div>
-              )}
+              <span className={cn(
+                "text-sm text-zinc-400 leading-relaxed whitespace-pre-wrap",
+                !expanded && "line-clamp-3"
+              )}>
+                {weapon.trait.description || "No description available."}
+              </span>
             </div>
           </div>
         </div>
 
-        {weapon.catalysts && weapon.catalysts.length > 0 && (
-          <div className="mt-4">
+        {hasDetails && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="flex items-center justify-between w-full px-3 py-2 text-xs font-mono uppercase tracking-wider border border-zinc-800 bg-zinc-950/60 text-neon-cyan hover:border-neon-cyan/50 transition-colors"
+            aria-expanded={expanded}
+          >
+            <span>{expanded ? "Thu gọn" : "Chi tiết / Catalyst"}</span>
+            <ChevronDown className={cn("w-4 h-4 transition-transform", expanded && "rotate-180")} />
+          </button>
+        )}
+
+        {expanded && perkPool && (
+          <div className="border-t border-zinc-800 pt-4">
+            <div className="flex flex-col gap-6 lg:hidden">
+              <PerkColumn title="Column 1 (Frames)" perks={perkPool.column1} />
+              <PerkColumn title="Column 2 (Exotic Traits)" perks={perkPool.column2} />
+            </div>
+
+            <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-4">
+              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 1 (Frames)</div>
+              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 2 (Exotic Traits)</div>
+
+              {Array.from({ length: Math.max(perkPool.column1.length, perkPool.column2.length) }).map((_, i) => {
+                const perk1 = perkPool.column1[i]
+                const perk2 = perkPool.column2[i]
+                return (
+                  <React.Fragment key={i}>
+                    {perk1 ? <PerkRow perk={perk1} bordered /> : <div />}
+                    {perk2 ? <PerkRow perk={perk2} bordered /> : <div />}
+                  </React.Fragment>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
+        {expanded && weapon.catalysts && weapon.catalysts.length > 0 && (
+          <div>
             <div className="flex items-center gap-2 mb-3 text-neon-cyan text-sm font-black tracking-widest uppercase">
               <Sparkles className="w-4 h-4" />
               <span>Catalyst(s)</span>

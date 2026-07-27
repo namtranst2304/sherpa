@@ -11,13 +11,22 @@ import { Button } from "@/components/ui/button";
 import { DESTINY_ACTIVITIES } from "@/config/constants";
 
 const THEME_TEXT = {
-  cyan: 'text-neon-cyan',
-  green: 'text-neon-green',
-  red: 'text-neon-red',
-  orange: 'text-neon-orange',
-  yellow: 'text-neon-yellow',
-  zinc: 'text-zinc-400'
-} as const;
+  cyan: "text-neon-cyan",
+  green: "text-neon-green",
+  red: "text-neon-red",
+  orange: "text-neon-orange",
+  yellow: "text-neon-yellow",
+  zinc: "text-zinc-400",
+} as const
+
+const THEME_DIAMOND = {
+  cyan: "bg-neon-cyan/50 border-neon-cyan",
+  green: "bg-neon-green/50 border-neon-green",
+  red: "bg-neon-red/50 border-neon-red",
+  orange: "bg-neon-orange/50 border-neon-orange",
+  yellow: "bg-neon-yellow/50 border-neon-yellow",
+  zinc: "bg-zinc-500/50 border-zinc-500",
+} as const
 
 export function MobileNav() {
   const activities = Object.values(DESTINY_ACTIVITIES);
@@ -68,9 +77,10 @@ export function MobileNav() {
               {/* Global Navigation Links */}
               <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-top-4 duration-500 delay-100 fill-mode-both">
                 {activities.map((act) => {
-                  const theme = act.themeColor || "cyan";
-                  const titleColor = act.locked ? 'text-neon-red' : THEME_TEXT[theme as keyof typeof THEME_TEXT] || THEME_TEXT.zinc;
-                  const isOpen = openCategories[act.id];
+                  const theme = act.themeColor || "cyan"
+                  const titleColor = act.locked ? "text-neon-red" : THEME_TEXT[theme as keyof typeof THEME_TEXT] || THEME_TEXT.zinc
+                  const diamondClass = THEME_DIAMOND[theme as keyof typeof THEME_DIAMOND] || THEME_DIAMOND.zinc
+                  const isOpen = openCategories[act.id]
                   
                   return (
                     <div key={`mobile-${act.id}`} className="flex flex-col gap-2 group">
@@ -78,7 +88,7 @@ export function MobileNav() {
                         onClick={() => toggleCategory(act.id)}
                         className={`w-full text-left text-[13px] font-bold tracking-[0.2em] uppercase flex items-center gap-3 ${titleColor} outline-none py-2 rounded-md hover:bg-white/5 active:bg-white/10 px-2 -mx-2 transition-colors`}
                       >
-                        <div className={cn("w-2 h-2 rotate-45 transition-transform group-hover:scale-125 shrink-0", `bg-${theme}-500/50`, `border border-${theme}-500`)} />
+                        <div className={cn("w-2 h-2 rotate-45 border transition-transform group-hover:scale-125 shrink-0", diamondClass)} />
                         <span className="truncate">{act.title}</span>
                         
                         <div className="ml-auto flex items-center gap-3 shrink-0">

@@ -135,13 +135,17 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
         </AnimatePresence>
 
         <button
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-transparent hover:border-neon-cyan/50 z-10"
+          type="button"
+          aria-label="Ảnh trước"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-none bg-black/70 text-neon-cyan flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-neon-cyan/40 z-10"
           onClick={() => paginate(-1)}
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-transparent hover:border-neon-cyan/50 z-10"
+          type="button"
+          aria-label="Ảnh sau"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-none bg-black/70 text-neon-cyan flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-neon-cyan/40 z-10"
           onClick={() => paginate(1)}
         >
           <ChevronRight className="w-6 h-6" />

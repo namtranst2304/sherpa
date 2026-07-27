@@ -63,7 +63,7 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
             {map && (
               <GuideSection
                 icon={Map}
-                title="Callout Map"
+                title="Bản đồ Callout"
                 className="flex flex-col relative"
                 contentClassName="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden"
               >
@@ -74,7 +74,7 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
 
             <GuideSection
               icon={Settings}
-              title="Encounter Mechanics"
+              title="Cơ chế Encounter"
               className="cyber-grid relative"
               contentClassName="text-muted-foreground leading-relaxed"
             >
@@ -83,14 +83,14 @@ export function GuideTemplate({ title, description, mechanics, map, roles, secre
           </div>
 
           {hasSidebar && (
-            <div className="flex flex-col gap-8 w-full min-w-0 lg:sticky lg:top-8">
+            <div className="flex flex-col gap-8 w-full min-w-0 lg:sticky lg:top-[calc(3.5rem+1rem)]">
               {roles && (
-                <GuideSection icon={Users} title="What to do (Roles)" className="cyber-grid relative">
+                <GuideSection icon={Users} title="Vai trò" className="cyber-grid relative">
                   {roles}
                 </GuideSection>
               )}
               {secrets && (
-                <GuideSection icon={Sparkles} title="Hidden Chests & Secrets" className="cyber-grid relative">
+                <GuideSection icon={Sparkles} title="Rương ẩn & Secrets" className="cyber-grid relative">
                   {secrets}
                 </GuideSection>
               )}

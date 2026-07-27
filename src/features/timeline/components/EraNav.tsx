@@ -133,6 +133,32 @@ export function EraNav({ eras, eraRefs }: { eras: TimelineEra[]; eraRefs: React.
 
   return (
     <>
+      {/* Always-visible active chapter label (especially useful on touch) */}
+      <AnimatePresence mode="wait">
+        {activeEra && (
+          <motion.div
+            key={activeEra.id}
+            initial={{ opacity: 0, x: 12 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 12 }}
+            transition={{ duration: 0.2 }}
+            className="fixed right-10 md:right-14 top-1/2 -translate-y-1/2 z-50 pointer-events-none max-w-[40vw] md:max-w-xs"
+          >
+            <div className="flex flex-col items-end bg-black/70 backdrop-blur-md border border-white/10 px-3 py-2 md:px-4 md:py-2.5">
+              <span className={`text-[9px] md:text-[10px] font-sans font-medium tracking-widest uppercase ${activeTheme.text} mb-0.5 opacity-90`}>
+                CHƯƠNG {ROMAN_NUMERALS[effectiveActiveIndex] || String(effectiveActiveIndex + 1)}
+              </span>
+              <span
+                className="text-xs md:text-sm font-sans tracking-widest text-white uppercase text-right leading-tight line-clamp-2"
+                style={{ textShadow: `0 2px 10px rgba(${activeTheme.rgb}, 0.5)` }}
+              >
+                {activeEra.name}
+              </span>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.nav
         initial={{ x: 50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
