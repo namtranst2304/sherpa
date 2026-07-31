@@ -1,5 +1,5 @@
 import { Trophy } from "lucide-react"
-import { CyberCard } from "@/components/common/CyberComponents"
+import { CyberCard, CyberSectionHeader } from "@/components/common/CyberComponents"
 import { ActivityData } from "@/types"
 
 interface OverviewEpicModeProps {
@@ -30,12 +30,7 @@ export function OverviewEpicMode({ epic_mode }: OverviewEpicModeProps) {
         <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
           <Trophy className="w-32 h-32 text-neon-red" />
         </div>
-        <div className="border-b border-neon-red/30 pb-4 mb-4 flex items-center gap-3 relative z-10">
-          <div className="p-2 bg-neon-red/20 rounded-md">
-            <Trophy className="w-5 h-5 text-neon-red" />
-          </div>
-          <h2 className="text-xl font-bold uppercase tracking-wider text-neon-red text-glow-red">The Epic Raid (Mastery)</h2>
-        </div>
+        <CyberSectionHeader icon={Trophy} title="The Epic Raid (Mastery)" variant="red" />
         <div className="space-y-6 relative z-10">
           <EpicList title="🛡️ Requirements & Contest Mode" items={epic_mode.requirements_and_contest} />
           <EpicList title="🏆 Emblems & Titles" items={epic_mode.emblems_and_titles} />

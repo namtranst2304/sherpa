@@ -1,4 +1,5 @@
 import React from 'react';
+import { ChevronDown, type LucideIcon } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
@@ -250,5 +251,126 @@ export function CyberHeading({
     <h1 className={cn(cyberHeadingVariants({ variant, size, className }))} {...props}>
       {children}
     </h1>
+  );
+}
+
+// ─── CYBER EXPAND TOGGLE ─────────────────────────────────────────────────────
+interface CyberExpandToggleProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
+  expanded: boolean;
+  onToggle?: () => void;
+  collapsedLabel?: string;
+  expandedLabel?: string;
+}
+
+export function CyberExpandToggle({
+  expanded,
+  onToggle,
+  collapsedLabel = 'Chi tiết',
+  expandedLabel = 'Thu gọn',
+  className,
+  onClick,
+  type = 'button',
+  ...props
+}: CyberExpandToggleProps) {
+  return (
+    <button
+      type={type}
+      onClick={(e) => {
+        onToggle?.();
+        onClick?.(e);
+      }}
+      className={cn(
+        'flex items-center justify-between w-full min-h-11 px-3 py-2.5 text-xs font-mono uppercase tracking-wider border border-zinc-800 bg-zinc-950/60 text-neon-cyan hover:border-neon-cyan/50 transition-colors',
+        className
+      )}
+      aria-expanded={expanded}
+      {...props}
+    >
+      <span>{expanded ? expandedLabel : collapsedLabel}</span>
+      <ChevronDown className={cn('w-4 h-4 transition-transform', expanded && 'rotate-180')} />
+    </button>
+  );
+}
+
+// ─── CYBER SECTION HEADER ────────────────────────────────────────────────────
+const cyberSectionHeaderTone = {
+  cyan: {
+    border: 'border-zinc-800',
+    iconBox: 'bg-neon-cyan/10',
+    icon: 'text-neon-cyan',
+    title: 'text-foreground',
+  },
+  orange: {
+    border: 'border-neon-orange/30',
+    iconBox: 'bg-neon-orange/20',
+    icon: 'text-neon-orange',
+    title: 'text-neon-orange text-glow-orange',
+  },
+  yellow: {
+    border: 'border-neon-yellow/30',
+    iconBox: 'bg-neon-yellow/20',
+    icon: 'text-neon-yellow',
+    title: 'text-neon-yellow text-glow-yellow',
+  },
+  red: {
+    border: 'border-neon-red/30',
+    iconBox: 'bg-neon-red/20',
+    icon: 'text-neon-red',
+    title: 'text-neon-red text-glow-red',
+  },
+  green: {
+    border: 'border-neon-green/30',
+    iconBox: 'bg-neon-green/20',
+    icon: 'text-neon-green',
+    title: 'text-neon-green text-glow-green',
+  },
+  zinc: {
+    border: 'border-zinc-800',
+    iconBox: 'bg-zinc-800/60',
+    icon: 'text-zinc-400',
+    title: 'text-foreground',
+  },
+} as const;
+
+type CyberSectionHeaderVariant = keyof typeof cyberSectionHeaderTone;
+
+interface CyberSectionHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+  icon: LucideIcon;
+  title: React.ReactNode;
+  variant?: CyberSectionHeaderVariant;
+  actions?: React.ReactNode;
+}
+
+export function CyberSectionHeader({
+  icon: Icon,
+  title,
+  variant = 'cyan',
+  actions,
+  className,
+  ...props
+}: CyberSectionHeaderProps) {
+  const tone = cyberSectionHeaderTone[variant];
+
+  return (
+    <div
+      className={cn(
+        'border-b pb-4 mb-4 flex flex-wrap items-center gap-3 relative z-10',
+        actions && 'justify-between',
+        tone.border,
+        className
+      )}
+      {...props}
+    >
+      <div className="flex items-center gap-3 min-w-0">
+        <div className={cn('p-2 rounded-md shrink-0', tone.iconBox)}>
+          <Icon className={cn('w-5 h-5', tone.icon)} />
+        </div>
+        <h2 className={cn('text-lg sm:text-xl font-bold uppercase tracking-wider break-words', tone.title)}>
+          {title}
+        </h2>
+      </div>
+      {actions ? <div className="shrink-0 w-full sm:w-auto">{actions}</div> : null}
+    </div>
   );
 }

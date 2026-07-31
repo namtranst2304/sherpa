@@ -1,5 +1,5 @@
 import { BookOpen, Map } from "lucide-react"
-import { CyberCard, CyberBadge } from "@/components/common/CyberComponents"
+import { CyberCard, CyberBadge, CyberSectionHeader } from "@/components/common/CyberComponents"
 import { ActivityData } from "@/types"
 
 interface OverviewRulesProps {
@@ -13,12 +13,7 @@ export function OverviewRules({ preface }: OverviewRulesProps) {
   return (
     <div className="space-y-8">
       <CyberCard variant="zinc" withCorners className="cyber-grid relative">
-        <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-          <div className="p-2 bg-neon-cyan/10 rounded-md">
-            <BookOpen className="w-5 h-5 text-neon-cyan" />
-          </div>
-          <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">General Rules</h2>
-        </div>
+        <CyberSectionHeader icon={BookOpen} title="General Rules" />
         <div className="text-muted-foreground leading-relaxed space-y-4 relative z-10">
           {preface.formatting_rules && (
             <div>

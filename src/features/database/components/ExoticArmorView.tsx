@@ -36,8 +36,9 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
       {CLASSES.map((cls) => (
         <button
           key={cls}
+          type="button"
           onClick={() => setActiveClass(cls)}
-          className={`flex-1 sm:flex-none px-6 py-2 rounded-md text-sm font-bold uppercase tracking-wider transition-all ${
+          className={`flex-1 sm:flex-none min-h-11 px-4 sm:px-6 py-2 rounded-md text-sm font-bold uppercase tracking-wider transition-all ${
             activeClass === cls
               ? "bg-neon-cyan text-black shadow-[0_0_15px_rgba(0,255,255,0.3)]"
               : "text-zinc-400 hover:text-white hover:bg-zinc-800"
@@ -52,7 +53,7 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
   return (
     <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
       <DatabaseHeader
-        title="Exotic Armor"
+        title="Giáp Exotic"
         description="Dữ liệu chi tiết về toàn bộ các giáp Exotic trong Destiny 2."
         searchPlaceholder="Tìm kiếm giáp hoặc perks..."
         searchValue={searchTerm}

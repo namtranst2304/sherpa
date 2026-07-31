@@ -1,12 +1,16 @@
 "use client"
 
 import React, { useState, useMemo } from "react"
+import { ChevronDown } from "lucide-react"
 import { ExoticWeaponCard, ExoticWeapon } from "@/features/database/components/ExoticWeaponCard"
 import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"
 
 interface ExoticWeaponsViewProps {
   weapons: ExoticWeapon[]
 }
+
+const selectClassName =
+  "w-full min-h-11 pl-4 pr-10 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none cursor-pointer"
 
 export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
   const [searchTerm, setSearchTerm] = useState("")
@@ -40,27 +44,31 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
 
   const headerActions = (
     <>
-      <div className="relative flex-1 sm:flex-none">
+      <div className="relative w-full sm:w-auto sm:min-w-[9rem]">
         <select
           value={selectedSlot}
           onChange={(e) => setSelectedSlot(e.target.value)}
-          className="w-full pl-4 pr-8 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none"
+          aria-label="Lọc theo slot"
+          className={selectClassName}
         >
           {slots.map((s) => (
-            <option key={s} value={s}>{s === "All" ? "All Slots" : s}</option>
+            <option key={s} value={s}>{s === "All" ? "Tất cả slot" : s}</option>
           ))}
         </select>
+        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
       </div>
-      <div className="relative flex-1 sm:flex-none">
+      <div className="relative w-full sm:w-auto sm:min-w-[10rem]">
         <select
           value={selectedType}
           onChange={(e) => setSelectedType(e.target.value)}
-          className="w-full px-4 pr-8 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none"
+          aria-label="Lọc theo loại vũ khí"
+          className={selectClassName}
         >
           {weaponTypes.map((t) => (
-            <option key={t} value={t}>{t === "All" ? "All Types" : t}</option>
+            <option key={t} value={t}>{t === "All" ? "Tất cả loại" : t}</option>
           ))}
         </select>
+        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
       </div>
     </>
   )
@@ -68,7 +76,7 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
   return (
     <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
       <DatabaseHeader
-        title="Exotic Weapons & Catalysts"
+        title="Vũ khí Exotic & Catalyst"
         description="Dữ liệu chi tiết về toàn bộ các vũ khí Exotic trong Destiny 2. Đã bao gồm hệ thống nâng cấp Catalyst và các tổ hợp Perk ngẫu nhiên."
         searchPlaceholder="Tìm kiếm tên súng, loại đạn, nguyên tố, trait..."
         searchValue={searchTerm}
@@ -86,7 +94,7 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
               setSelectedSlot("All")
               setSelectedType("All")
             }}
-            className="text-neon-cyan hover:text-white transition-colors"
+            className="min-h-11 px-2 text-neon-cyan hover:text-white transition-colors"
           >
             Xóa bộ lọc
           </button>

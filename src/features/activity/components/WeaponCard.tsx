@@ -1,11 +1,10 @@
 "use client"
 
 import React, { useState } from "react"
-import { Gem, Crosshair, Swords, ChevronDown } from "lucide-react"
+import { Gem, Crosshair, Swords } from "lucide-react"
 import Image from "next/image"
-import { CyberCard, CyberBadge, CyberHeading } from "@/components/common/CyberComponents"
+import { CyberCard, CyberBadge, CyberHeading, CyberExpandToggle } from "@/components/common/CyberComponents"
 import { LootWeapon } from "@/types"
-import { cn } from "@/lib/utils"
 
 const NEW_PERKS = ["Chaos Reshaped", "Air Trigger", "Rimestealer", "Circle of Life", "Physic"]
 const VALUE_STATS = ["rpm", "magazine", "zoom", "aim_assist", "draw_time"]
@@ -125,15 +124,11 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
         )}
 
         {hasDetails && (
-          <button
-            type="button"
-            onClick={() => setExpanded((v) => !v)}
-            className="mt-auto flex items-center justify-between w-full px-3 py-2 text-xs font-mono uppercase tracking-wider border border-zinc-800 bg-zinc-950/60 text-neon-cyan hover:border-neon-cyan/50 transition-colors"
-            aria-expanded={expanded}
-          >
-            <span>{expanded ? "Thu gọn" : "Chi tiết"}</span>
-            <ChevronDown className={cn("w-4 h-4 transition-transform", expanded && "rotate-180")} />
-          </button>
+          <CyberExpandToggle
+            expanded={expanded}
+            onToggle={() => setExpanded((v) => !v)}
+            className="mt-auto"
+          />
         )}
 
         {expanded && (

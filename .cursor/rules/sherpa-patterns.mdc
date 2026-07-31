@@ -99,7 +99,7 @@ export function MyComponent({ data }: MyComponentProps) {
 - Named exports only (no default exports for components)
 - `"use client"` only when needed (hooks, event handlers, motion)
 - Imports use `@/` path alias
-- Deduplicate repeated JSX with tiny local helpers in the same file (e.g. `PerkRow`, `EpicList`) — do not over-abstract into new packages
+- Prefer shared Cyber/Perk primitives when the markup already exists; otherwise tiny local helpers in the same file (e.g. `EpicList`) — do not over-abstract into new packages
 - Style: no semicolons, consistent with existing cleaned files
 
 ### 5. Activity Guide Views
@@ -118,6 +118,8 @@ Every activity guide view that uses `GuideSidebar` must also mount `MobileGuideT
 
 - Tailwind utility classes exclusively
 - Design system: `CyberComponents.tsx` + CVA variants + `src/lib/theme.ts`
+- Shared Cyber primitives: `CyberButton`, `CyberCard`, `CyberBadge`, `CyberHeading`, `CyberExpandToggle`, `CyberSectionHeader`
+- Perk rows for exotic cards: `PerkRow` / `PerkColumn` from `@/components/common/PerkRow`
 - Prefer angular / `rounded-none` cyber chrome over soft `rounded-full` pills
 - CyberVariants: `cyan | orange | yellow | red | green | zinc | exotic`
 - Neon tokens: `neon-cyan`, `neon-orange`, `neon-yellow`, `neon-red`, `neon-green`
@@ -150,7 +152,7 @@ Use Framer Motion (`motion/react`) with the standard page transition:
 - `cn()` → `@/lib/utils`
 - Activity page factory → `@/lib/page-utils` (`createActivityPage`)
 - Background audio → `@/lib/audio` (`playGlobalBgAudio`) — do not duplicate `getElementById("global-bg-audio")`
-- Bungie image URLs → prefer a local `bungieUrl(path)` helper when repeating `https://www.bungie.net${path}`
+- Bungie image URLs → `@/lib/bungie` (`bungieUrl(path)`) — do not inline `https://www.bungie.net${path}`
 
 ### 9. API Routes
 

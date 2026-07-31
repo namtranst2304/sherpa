@@ -87,7 +87,7 @@ export function TopNav() {
                               {category.title}
                               {category.locked && (
                                 <span className="text-[10px] px-1.5 py-0.5 border border-neon-red bg-neon-red/20 text-neon-red animate-pulse">
-                                  UPDATING
+                                  ĐANG CẬP NHẬT
                                 </span>
                               )}
                             </div>

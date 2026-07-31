@@ -48,7 +48,7 @@ export function MobileNav() {
           <Button
             variant="ghost"
             size="icon"
-            className="peer flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-black hover:bg-white/10 transition-colors text-neon-cyan border border-neon-cyan/30 active:scale-95 outline-none"
+            className="peer flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-black hover:bg-white/10 transition-colors text-neon-cyan border border-neon-cyan/30 active:scale-95 outline-none"
           >
             <Menu className="h-5 w-5 peer-data-[state=open]:hidden group-has-[[data-state=open]]:hidden" />
             <X className="h-5 w-5 hidden peer-data-[state=open]:block group-has-[[data-state=open]]:block" />
@@ -94,7 +94,7 @@ export function MobileNav() {
                         <div className="ml-auto flex items-center gap-3 shrink-0">
                           {act.locked && (
                             <span className="text-[9px] font-mono font-bold tracking-wider border border-neon-red/50 px-2 py-0.5 bg-neon-red/10 text-neon-red shadow-[0_0_8px_rgba(255,0,51,0.2)]">
-                              LOCKED
+                              KHÓA
                             </span>
                           )}
                           <ChevronDown className={cn("w-4 h-4 transition-transform duration-300", isOpen ? "rotate-180" : "rotate-0 opacity-50")} />

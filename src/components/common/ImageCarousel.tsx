@@ -137,7 +137,7 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
         <button
           type="button"
           aria-label="Ảnh trước"
-          className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-none bg-black/70 text-neon-cyan flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-neon-cyan/40 z-10"
+          className="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-none bg-black/70 text-neon-cyan flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-neon-cyan/40 z-10"
           onClick={() => paginate(-1)}
         >
           <ChevronLeft className="w-6 h-6" />
@@ -145,28 +145,34 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
         <button
           type="button"
           aria-label="Ảnh sau"
-          className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-none bg-black/70 text-neon-cyan flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-neon-cyan/40 z-10"
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 rounded-none bg-black/70 text-neon-cyan flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity hover:bg-neon-cyan/20 border border-neon-cyan/40 z-10"
           onClick={() => paginate(1)}
         >
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
 
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-1 mt-4">
         {images.map((_, idx) => (
           <button
             key={idx}
+            type="button"
             onClick={() => {
               setDirection(idx > currentIndex ? 1 : -1)
               setCurrentIndex(idx)
             }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              idx === currentIndex
-                ? "bg-neon-cyan w-6 shadow-[0_0_8px_rgba(0,243,255,0.8)]"
-                : "bg-zinc-600 hover:bg-zinc-400"
-            }`}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
+            className="inline-flex items-center justify-center min-h-11 min-w-11 p-3"
+            aria-label={`Chuyển tới ảnh ${idx + 1}`}
+            aria-current={idx === currentIndex ? "true" : undefined}
+          >
+            <span
+              className={`block rounded-full transition-all duration-300 ${
+                idx === currentIndex
+                  ? "bg-neon-cyan w-6 h-2 shadow-[0_0_8px_rgba(0,243,255,0.8)]"
+                  : "bg-zinc-600 w-2 h-2 hover:bg-zinc-400"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

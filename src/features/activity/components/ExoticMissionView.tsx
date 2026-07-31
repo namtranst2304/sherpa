@@ -21,16 +21,16 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
   const sidebarGroups = useMemo(
     () => [
       {
-        title: "Mission Content",
+        title: "Nội dung Mission",
         items: [
           {
             id: "overview",
-            title: "Overview & Loadouts",
+            title: "Tổng quan & Loadout",
             href: "?tab=overview",
           },
           {
             id: "walkthrough",
-            title: "Mission Walkthrough",
+            title: "Walkthrough",
             href: "?tab=walkthrough",
           },
           ...(activityData.catalyst_guide

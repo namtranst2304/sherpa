@@ -27,18 +27,18 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       if (!activityData?.encounters) return []
       return [
         {
-          title: "Activity Info",
+          title: "Thông tin Activity",
           items: [
             {
               id: "overview",
-              title: "Overview & Loadouts",
+              title: "Tổng quan & Loadout",
               href: "?enc=overview",
             },
             ...(activityData.activity_secrets
               ? [
                   {
                     id: "secrets",
-                    title: "Secrets & Chests",
+                    title: "Secrets & Rương ẩn",
                     href: "?enc=secrets",
                   },
                 ]
@@ -78,7 +78,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
     if (isSecretsView && activityData.activity_secrets) {
       return (
         <GuideTemplate
-          title="Secrets & Chests"
+          title="Secrets & Rương ẩn"
           description="Vị trí rương ẩn và giải đố hạt giống viền đỏ (Red Border)"
           mechanics={<EncounterSecrets secrets={activityData.activity_secrets} />}
           map={null}

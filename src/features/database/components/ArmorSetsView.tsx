@@ -5,6 +5,7 @@ import Image from "next/image"
 import { ArrowUpDown, ImageIcon } from "lucide-react"
 import { CyberCard, CyberHeading, CyberBadge } from "@/components/common/CyberComponents"
 import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"
+import { bungieUrl } from "@/lib/bungie"
 
 export interface ArmorSet {
   name: string
@@ -45,7 +46,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
     <>
       <button
         onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-        className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-md text-sm text-zinc-300 transition-colors"
+        className="flex-1 sm:flex-none flex items-center justify-center gap-2 min-h-11 px-6 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-md text-sm text-zinc-300 transition-colors"
       >
         <ArrowUpDown className="h-4 w-4" />
         Sắp xếp: {sortOrder === "asc" ? "A - Z" : "Z - A"}
@@ -55,7 +56,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
         href="/images/database/armorbonus.jpeg"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-6 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-md text-sm text-neon-cyan hover:text-neon-cyan/80 transition-colors"
+        className="flex-1 sm:flex-none flex items-center justify-center gap-2 min-h-11 px-6 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-md text-sm text-neon-cyan hover:text-neon-cyan/80 transition-colors"
         title="Xem ảnh tĩnh toàn bộ Armor Sets"
       >
         <ImageIcon className="h-4 w-4" />
@@ -67,7 +68,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
   return (
     <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
       <DatabaseHeader
-        title="Armor Sets Library"
+        title="Thư viện Armor Sets"
         description="Tổng hợp các bộ giáp và hiệu ứng Set Bonus trong Destiny 2."
         searchPlaceholder="Tìm kiếm set giáp hoặc hiệu ứng..."
         searchValue={searchQuery}
@@ -94,8 +95,8 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {filteredAndSortedSets.map((set, i) => (
-            <CyberCard key={i} className="flex flex-col h-full">
+          {filteredAndSortedSets.map((set) => (
+            <CyberCard key={set.name} className="flex flex-col h-full">
               <CyberHeading variant="default" size="sm" className="mb-4 text-white">
                 {set.name}
               </CyberHeading>
@@ -103,7 +104,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
               {set.screenshot && (
                 <div className="relative w-full aspect-[21/9] mb-4 border-b border-zinc-800/50 bg-black/50 overflow-hidden rounded">
                   <Image
-                    src={`https://www.bungie.net${set.screenshot}`}
+                    src={bungieUrl(set.screenshot)}
                     alt={`${set.name} screenshot`}
                     fill
                     className="object-cover opacity-80 mix-blend-screen"

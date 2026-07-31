@@ -104,7 +104,7 @@ export function MusicPlayer() {
           aria-label={isPlaying ? "Tạm dừng nhạc nền" : "Phát nhạc nền"}
           aria-pressed={isPlaying}
           className={cn(
-            "relative flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-none border backdrop-blur-md transition-all duration-300 group",
+            "relative flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-none border backdrop-blur-md transition-all duration-300 group",
             showPulseHint && !isPlaying ? "animate-pulse border-neon-cyan/80 bg-neon-cyan/20 shadow-[0_0_20px_rgba(34,211,238,0.5)]" : "",
             isPlaying
               ? "bg-neon-cyan/20 border-neon-cyan/50 text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.3)]"

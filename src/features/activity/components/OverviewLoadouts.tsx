@@ -1,5 +1,5 @@
 import { Shield, Crosshair } from "lucide-react"
-import { CyberCard } from "@/components/common/CyberComponents"
+import { CyberCard, CyberSectionHeader } from "@/components/common/CyberComponents"
 import { ActivityData } from "@/types"
 
 interface OverviewLoadoutsProps {
@@ -19,12 +19,7 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
   return (
     <div className="space-y-8">
       <CyberCard variant="zinc" withCorners className="h-full">
-        <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3">
-          <div className="p-2 bg-neon-cyan/10 rounded-md">
-            <Shield className="w-5 h-5 text-neon-cyan" />
-          </div>
-          <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">Loadout đề xuất</h2>
-        </div>
+        <CyberSectionHeader icon={Shield} title="Loadout đề xuất" />
         <div className="space-y-6 relative z-10">
           {loadout_tips.note && (
             <p className="text-sm italic text-muted-foreground bg-secondary/10 p-3 rounded border-l-2 border-primary">

@@ -1,6 +1,6 @@
 import React from "react"
 import { Map, Users, Settings, Sparkles, LucideIcon } from "lucide-react"
-import { CyberCard, CyberHeading } from "@/components/common/CyberComponents"
+import { CyberCard, CyberHeading, CyberSectionHeader } from "@/components/common/CyberComponents"
 import { cn } from "@/lib/utils"
 
 interface GuideTemplateProps {
@@ -20,17 +20,12 @@ interface GuideSectionProps {
   contentClassName?: string
 }
 
-function GuideSection({ icon: Icon, title, children, className, contentClassName }: GuideSectionProps) {
+function GuideSection({ icon, title, children, className, contentClassName }: GuideSectionProps) {
   if (!children) return null
 
   return (
     <CyberCard variant="zinc" withCorners className={className}>
-      <div className="border-b border-zinc-800 pb-4 mb-4 flex items-center gap-3 relative z-10">
-        <div className="p-2 bg-neon-cyan/10 rounded-md">
-          <Icon className="w-5 h-5 text-neon-cyan" />
-        </div>
-        <h2 className="text-xl font-bold uppercase tracking-wider text-foreground">{title}</h2>
-      </div>
+      <CyberSectionHeader icon={icon} title={title} />
       <div className={cn("relative z-10", contentClassName)}>
         {children}
       </div>

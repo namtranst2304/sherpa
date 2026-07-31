@@ -2,8 +2,11 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
-import { Sparkles, ChevronDown } from "lucide-react"
+import { Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { bungieUrl } from "@/lib/bungie"
+import { PerkRow, PerkColumn, type PerkItem } from "@/components/common/PerkRow"
+import { CyberExpandToggle } from "@/components/common/CyberComponents"
 
 export interface ExoticArmor {
   id: number
@@ -22,48 +25,6 @@ export interface ExoticArmor {
   }
   screenshot?: string
   source?: string
-}
-
-type PerkItem = {
-  name: string
-  description: string
-  icon: string
-}
-
-const bungieUrl = (path: string) => `https://www.bungie.net${path}`
-
-function PerkRow({ perk, bordered = false }: { perk: PerkItem; bordered?: boolean }) {
-  return (
-    <div className="flex gap-3 items-start">
-      {perk.icon && (
-        <Image
-          src={bungieUrl(perk.icon)}
-          alt={perk.name}
-          width={32}
-          height={32}
-          className={`rounded shrink-0 bg-black${bordered ? " shadow-md border border-zinc-700/50" : ""}`}
-          unoptimized
-        />
-      )}
-      <div className="flex flex-col">
-        <span className="text-sm font-bold text-zinc-200">{perk.name}</span>
-        <span className="text-xs text-zinc-500 leading-relaxed">{perk.description}</span>
-      </div>
-    </div>
-  )
-}
-
-function PerkColumn({ title, perks }: { title: string; perks: PerkItem[] }) {
-  return (
-    <div>
-      <h4 className="text-sm font-bold text-zinc-300 uppercase mb-3 tracking-wider text-neon-cyan/80">{title}</h4>
-      <div className="flex flex-col gap-4">
-        {perks.map((perk, i) => (
-          <PerkRow key={i} perk={perk} />
-        ))}
-      </div>
-    </div>
-  )
 }
 
 export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
@@ -126,15 +87,11 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
         </div>
 
         {perkPool && (
-          <button
-            type="button"
-            onClick={() => setExpanded((v) => !v)}
-            className="flex items-center justify-between w-full px-3 py-2 text-xs font-mono uppercase tracking-wider border border-zinc-800 bg-zinc-950/60 text-neon-cyan hover:border-neon-cyan/50 transition-colors"
-            aria-expanded={expanded}
-          >
-            <span>{expanded ? "Thu gọn" : "Chi tiết perk pool"}</span>
-            <ChevronDown className={cn("w-4 h-4 transition-transform", expanded && "rotate-180")} />
-          </button>
+          <CyberExpandToggle
+            expanded={expanded}
+            onToggle={() => setExpanded((v) => !v)}
+            collapsedLabel="Chi tiết perk pool"
+          />
         )}
 
         {expanded && perkPool && (
