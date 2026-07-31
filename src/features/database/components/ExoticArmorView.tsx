@@ -1,8 +1,9 @@
 "use client"
 
 import React, { useState } from "react"
-import { ExoticArmorCard, ExoticArmor } from "@/features/database/components/ExoticArmorCard"
-import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"
+import { ExoticArmorCard } from "./ExoticArmorCard"
+import { DatabaseHeader } from "./DatabaseHeader"
+import type { ExoticArmor } from "@/types"
 
 type ClassType = "Titan" | "Hunter" | "Warlock"
 

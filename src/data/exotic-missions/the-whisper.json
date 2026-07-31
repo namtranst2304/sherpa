@@ -1,7 +1,7 @@
 {
   "dungeon_name": "The Whisper",
   "location": "Into The Light Rotator",
-  "bannerImage": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+  "bannerImage": "/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
   "overview": "Nhiệm vụ Exotic huyền thoại đưa Guardians quay trở lại hầm ngầm của Io để thu thập khẩu súng ngắm Whisper of the Worm. Trong phiên bản làm lại (Into The Light), nhiệm vụ có thêm các rương ẩn để nâng cấp Catalyst và perk.",
   "loot_table": [
     {
@@ -11,7 +11,7 @@
       "source": "Hoàn thành nhiệm vụ",
       "tier": "S",
       "isNew": false,
-      "image": "https://www.bungie.net/common/destiny2_content/icons/9e3f16ebcb58a36ba47dd9c7713d3cb0.jpg",
+      "image": "/common/destiny2_content/icons/9e3f16ebcb58a36ba47dd9c7713d3cb0.jpg",
       "perks": {
         "column_3": [
           "Mulligan",

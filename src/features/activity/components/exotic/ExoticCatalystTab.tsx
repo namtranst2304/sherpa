@@ -1,7 +1,8 @@
 import * as React from "react"
-import { ActivityData } from "@/types"
 import Image from "next/image"
 import { Sparkles } from "lucide-react"
+import { ActivityData } from "@/types"
+import { bungieUrl } from "@/lib/bungie"
 
 export function ExoticCatalystTab({ catalystGuide }: { catalystGuide: ActivityData["catalyst_guide"] }) {
   if (!catalystGuide) return null
@@ -44,7 +45,7 @@ export function ExoticCatalystTab({ catalystGuide }: { catalystGuide: ActivityDa
             {catalystGuide.images.map((img, i) => (
               <div key={i} className="flex flex-col gap-2">
                 <div className="relative w-full aspect-video rounded-lg border-2 border-zinc-800 overflow-hidden bg-black/50 hover:border-neon-yellow/50 transition-colors">
-                  <Image src={img.url} alt={img.caption || "Catalyst Image"} fill className="object-cover" unoptimized />
+                  <Image src={bungieUrl(img.url)} alt={img.caption || "Catalyst Image"} fill className="object-cover" unoptimized />
                 </div>
                 {img.caption && (
                   <span className="text-sm font-mono text-neon-yellow/70 text-center">{img.caption}</span>

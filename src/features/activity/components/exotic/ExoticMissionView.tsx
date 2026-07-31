@@ -2,9 +2,9 @@
 
 import { useMemo } from "react"
 import { motion, AnimatePresence } from "motion/react"
-import { GuideSidebar } from "./GuideSidebar"
-import { MobileGuideTOC } from "./MobileGuideTOC"
-import { ActivityOverviewTemplate } from "./ActivityOverviewTemplate"
+import { GuideSidebar } from "../encounter/GuideSidebar"
+import { MobileGuideTOC } from "../encounter/MobileGuideTOC"
+import { ActivityOverviewTemplate } from "../overview/ActivityOverviewTemplate"
 import { ExoticWalkthroughCard } from "./ExoticWalkthroughCard"
 import { ExoticCatalystTab } from "./ExoticCatalystTab"
 import { ActivityData } from "@/types"

@@ -5,36 +5,11 @@ import Image from "next/image"
 import { Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { bungieUrl } from "@/lib/bungie"
-import { PerkRow, PerkColumn, type PerkItem } from "@/components/common/PerkRow"
+import { PerkPoolGrid } from "@/components/common/PerkRow"
 import { CyberExpandToggle } from "@/components/common/CyberComponents"
+import type { ExoticWeapon } from "@/types"
 
-export interface ExoticWeapon {
-  id: number
-  name: string
-  icon: string
-  flavorText: string
-  weaponType: string
-  damageType: string
-  ammoType: string
-  slot: string
-  trait: {
-    name: string
-    description: string
-    icon: string
-    perkPool?: {
-      column1: PerkItem[]
-      column2: PerkItem[]
-    }
-  }
-  catalysts?: {
-    name: string
-    icon: string
-    description: string
-    effects: PerkItem[]
-    objectives: { description: string; completionValue: number }[]
-  }[]
-}
-
+export type { ExoticWeapon }
 const DAMAGE_ICONS: Record<string, string> = {
   kinetic: "/common/destiny2_content/icons/DestinyDamageTypeDefinition_3385a924fd3ccb92c343ade19f19a370.png",
   solar: "/common/destiny2_content/icons/DestinyDamageTypeDefinition_2a1773e10968f2d088b97c22b22bba9e.png",
@@ -136,28 +111,12 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
         )}
 
         {expanded && perkPool && (
-          <div className="border-t border-zinc-800 pt-4">
-            <div className="flex flex-col gap-6 lg:hidden">
-              <PerkColumn title="Column 1 (Frames)" perks={perkPool.column1} />
-              <PerkColumn title="Column 2 (Exotic Traits)" perks={perkPool.column2} />
-            </div>
-
-            <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-4">
-              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 1 (Frames)</div>
-              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 2 (Exotic Traits)</div>
-
-              {Array.from({ length: Math.max(perkPool.column1.length, perkPool.column2.length) }).map((_, i) => {
-                const perk1 = perkPool.column1[i]
-                const perk2 = perkPool.column2[i]
-                return (
-                  <React.Fragment key={i}>
-                    {perk1 ? <PerkRow perk={perk1} bordered /> : <div />}
-                    {perk2 ? <PerkRow perk={perk2} bordered /> : <div />}
-                  </React.Fragment>
-                )
-              })}
-            </div>
-          </div>
+          <PerkPoolGrid
+            column1={perkPool.column1}
+            column2={perkPool.column2}
+            title1="Column 1 (Frames)"
+            title2="Column 2 (Exotic Traits)"
+          />
         )}
 
         {expanded && weapon.catalysts && weapon.catalysts.length > 0 && (

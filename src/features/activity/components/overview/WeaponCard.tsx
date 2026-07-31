@@ -5,6 +5,7 @@ import { Gem, Crosshair, Swords } from "lucide-react"
 import Image from "next/image"
 import { CyberCard, CyberBadge, CyberHeading, CyberExpandToggle } from "@/components/common/CyberComponents"
 import { LootWeapon } from "@/types"
+import { bungieUrl } from "@/lib/bungie"
 
 const NEW_PERKS = ["Chaos Reshaped", "Air Trigger", "Rimestealer", "Circle of Life", "Physic"]
 const VALUE_STATS = ["rpm", "magazine", "zoom", "aim_assist", "draw_time"]
@@ -69,7 +70,7 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
       <div className="h-32 w-full bg-zinc-950 relative overflow-hidden flex items-center justify-center border-b border-zinc-800 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800 to-zinc-950">
         {weapon.image ? (
           <Image
-            src={weapon.image}
+            src={bungieUrl(weapon.image)}
             alt={name}
             width={80}
             height={80}

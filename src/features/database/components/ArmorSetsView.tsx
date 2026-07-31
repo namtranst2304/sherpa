@@ -4,15 +4,11 @@ import * as React from "react"
 import Image from "next/image"
 import { ArrowUpDown, ImageIcon } from "lucide-react"
 import { CyberCard, CyberHeading, CyberBadge } from "@/components/common/CyberComponents"
-import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"
+import { DatabaseHeader } from "./DatabaseHeader"
 import { bungieUrl } from "@/lib/bungie"
+import type { ArmorSet } from "@/types"
 
-export interface ArmorSet {
-  name: string
-  bonuses: { pieces: number; description: string; icon?: string }[]
-  screenshot?: string
-  source?: string
-}
+export type { ArmorSet }
 
 interface ArmorSetsViewProps {
   sets: ArmorSet[]
@@ -119,7 +115,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
                     <div className="shrink-0 pt-1">
                       {bonus.icon ? (
                         <Image
-                          src={bonus.icon}
+                          src={bungieUrl(bonus.icon)}
                           alt={`${bonus.pieces} piece bonus`}
                           width={32}
                           height={32}

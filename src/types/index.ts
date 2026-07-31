@@ -120,3 +120,63 @@ export interface ActivityData {
   };
   [key: string]: unknown;
 }
+
+/** Shared perk shape for exotic cards / PerkRow */
+export interface PerkItem {
+  name: string
+  description: string
+  icon: string
+}
+
+export interface ExoticWeapon {
+  id: number
+  name: string
+  icon: string
+  flavorText: string
+  weaponType: string
+  damageType: string
+  ammoType: string
+  slot: string
+  trait: {
+    name: string
+    description: string
+    icon: string
+    perkPool?: {
+      column1: PerkItem[]
+      column2: PerkItem[]
+    }
+  }
+  catalysts?: {
+    name: string
+    icon: string
+    description: string
+    effects: PerkItem[]
+    objectives: { description: string; completionValue: number }[]
+  }[]
+}
+
+export interface ExoticArmor {
+  id: number
+  name: string
+  icon: string
+  class: string
+  type: string
+  trait: {
+    name: string
+    description: string
+    icon: string
+    perkPool?: {
+      column1: PerkItem[]
+      column2: PerkItem[]
+    }
+  }
+  screenshot?: string
+  source?: string
+}
+
+export interface ArmorSet {
+  name: string
+  bonuses: { pieces: number; description: string; icon?: string }[]
+  screenshot?: string
+  source?: string
+}

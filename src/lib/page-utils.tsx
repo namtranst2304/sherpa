@@ -1,6 +1,6 @@
 
 import { notFound } from "next/navigation"
-import { ActivityEncounterView } from "@/features/activity/components/ActivityEncounterView"
+import { ActivityEncounterView } from "@/features/activity"
 import { ActivityData } from "@/types"
 
 export async function createActivityPage(

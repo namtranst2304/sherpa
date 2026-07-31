@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import type { SidebarGroup } from "@/features/activity/components/GuideSidebar"
+import type { SidebarGroup } from "@/features/activity"
 
 type GuideTOCContextType = {
   title: string

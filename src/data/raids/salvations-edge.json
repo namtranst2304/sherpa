@@ -75,7 +75,7 @@
       "type": "Pulse Rifle",
       "frame": "Heavy Burst",
       "source": "Herald of Finality, Repository, The Witness",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/4629deed92fe5ef7513686850fb9cbb7.jpg",
+      "image": "/common/destiny2_content/icons/4629deed92fe5ef7513686850fb9cbb7.jpg",
       "element": "Solar",
       "ammoType": "Primary",
       "stats": {
@@ -119,7 +119,7 @@
       "type": "Linear Fusion Rifle",
       "frame": "Exotic",
       "source": "The Witness",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/fe16110003f0cc75145eed012458a667.jpg",
+      "image": "/common/destiny2_content/icons/fe16110003f0cc75145eed012458a667.jpg",
       "element": "Strand",
       "ammoType": "Special",
       "stats": {
@@ -152,7 +152,7 @@
       "type": "Combat Bow",
       "frame": "Precision Frame",
       "source": "Subjugation, Herald of Finality, The Witness",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/e56caaf523a140ff834905da55d3b046.jpg",
+      "image": "/common/destiny2_content/icons/e56caaf523a140ff834905da55d3b046.jpg",
       "element": "Arc",
       "ammoType": "Primary",
       "stats": {
@@ -193,7 +193,7 @@
       "type": "Submachine Gun",
       "frame": "Lightweight Frame",
       "source": "Subjugation, Herald of Finality, Verity",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/0a636f8e1f115bcb825e7ab60ef6c302.jpg",
+      "image": "/common/destiny2_content/icons/0a636f8e1f115bcb825e7ab60ef6c302.jpg",
       "element": "Strand",
       "ammoType": "Primary",
       "stats": {
@@ -236,7 +236,7 @@
       "type": "Sword",
       "frame": "Wave Frame",
       "source": "Herald of Finality, Repository",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/e6087e2af1907deb1f7d28e5b90195dd.jpg",
+      "image": "/common/destiny2_content/icons/e6087e2af1907deb1f7d28e5b90195dd.jpg",
       "element": "Arc",
       "ammoType": "Heavy",
       "stats": {
@@ -276,7 +276,7 @@
       "type": "Sniper Rifle",
       "frame": "Aggressive Frame",
       "source": "Repository, Verity, The Witness",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/64ce229d4c03c5cca04e9de5855146a2.jpg",
+      "image": "/common/destiny2_content/icons/64ce229d4c03c5cca04e9de5855146a2.jpg",
       "element": "Stasis",
       "ammoType": "Special",
       "stats": {
@@ -319,7 +319,7 @@
       "type": "Glaive",
       "frame": "Rapid-Fire Frame",
       "source": "Herald of Finality, Repository",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/3383698dee3df48089b8d18f956f9476.jpg",
+      "image": "/common/destiny2_content/icons/3383698dee3df48089b8d18f956f9476.jpg",
       "element": "Void",
       "ammoType": "Special",
       "stats": {
@@ -642,21 +642,21 @@
       "name": "Promised Reunion",
       "class": "Titan",
       "source": "Salvation's Edge Encounters",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/8c8d8b16c1a8a81eb8ed9100778a3c89.jpg",
+      "image": "/common/destiny2_content/icons/8c8d8b16c1a8a81eb8ed9100778a3c89.jpg",
       "setBonus": "Stable Resonance"
     },
     {
       "name": "Promised Reign",
       "class": "Hunter",
       "source": "Salvation's Edge Encounters",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/c57c4b6932402130ff3cbfafbe232da1.jpg",
+      "image": "/common/destiny2_content/icons/c57c4b6932402130ff3cbfafbe232da1.jpg",
       "setBonus": "Stable Resonance"
     },
     {
       "name": "Promised Victory",
       "class": "Warlock",
       "source": "Salvation's Edge Encounters",
-      "image": "https://www.bungie.net/common/destiny2_content/icons/e76ab6de8dcf2821dd4b6d4db1c7848f.jpg",
+      "image": "/common/destiny2_content/icons/e76ab6de8dcf2821dd4b6d4db1c7848f.jpg",
       "setBonus": "Stable Resonance"
     }
   ],

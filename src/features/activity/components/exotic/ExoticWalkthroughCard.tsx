@@ -1,6 +1,6 @@
-import * as React from "react"
-import { ActivityEncounterPhase } from "@/types"
 import Image from "next/image"
+import { ActivityEncounterPhase } from "@/types"
+import { bungieUrl } from "@/lib/bungie"
 
 interface ExoticWalkthroughCardProps {
   title: string
@@ -42,7 +42,7 @@ export function ExoticWalkthroughCard({ title, phase, index }: ExoticWalkthrough
             {phase.images.map((img, i) => (
               <div key={i} className="flex flex-col gap-2">
                 <div className="relative w-full aspect-video rounded border border-zinc-700/50 overflow-hidden bg-black/50">
-                  <Image src={img.url} alt={img.caption || `Image ${i + 1}`} fill className="object-contain" unoptimized />
+                  <Image src={bungieUrl(img.url)} alt={img.caption || `Image ${i + 1}`} fill className="object-contain" unoptimized />
                 </div>
                 {img.caption && (
                   <span className="text-xs font-mono text-zinc-500 text-center">{img.caption}</span>

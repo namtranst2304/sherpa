@@ -1,4 +1,4 @@
-import { LandingPage } from "@/features/home/components/LandingPage"
+import { LandingPage } from "@/features/home"
 
 export default function Home() {
   return <LandingPage />;

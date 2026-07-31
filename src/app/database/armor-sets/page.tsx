@@ -1,5 +1,6 @@
+import { ArmorSetsView } from "@/features/database"
+import type { ArmorSet } from "@/types"
 import { getArmorSetsData } from "@/data"
-import { ArmorSetsView, type ArmorSet } from "@/features/database/components/ArmorSetsView"
 
 export default async function ArmorSetsPage() {
   const data = await getArmorSetsData()

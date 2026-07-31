@@ -1,7 +1,7 @@
 {
   "dungeon_name": "Encore",
   "location": "Exotic Mission Rotator / Pinnacle Ops",
-  "bannerImage": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+  "bannerImage": "/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
   "overview": "Nhiệm vụ Exotic Encore cho phép người chơi thu thập và nâng cấp vũ khí Choir of One. Người chơi có thể tìm các rương ẩn để mở khóa các bản nâng cấp Intrinsic (Catalyst) và thay đổi perk theo ý muốn tại Enclave.",
   "loot_table": [
     {
@@ -11,7 +11,7 @@
       "source": "Hoàn thành nhiệm vụ",
       "tier": "S",
       "isNew": false,
-      "image": "https://www.bungie.net/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
+      "image": "/common/destiny2_content/icons/8e5b4b1a1c3d18e541b3e8e916a2d3df.jpg",
       "perks": {
         "column_3": [
           "Destabilizing Rounds",

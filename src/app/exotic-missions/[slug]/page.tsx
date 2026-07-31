@@ -1,5 +1,5 @@
 import { EXOTIC_MISSION_SLUGS, getExoticMissionData } from "@/data"
-import { ExoticMissionView } from "@/features/activity/components/ExoticMissionView"
+import { ExoticMissionView } from "@/features/activity"
 import { notFound } from "next/navigation"
 
 interface PageProps {

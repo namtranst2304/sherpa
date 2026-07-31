@@ -2,6 +2,7 @@ import { LootArmorSet } from "@/types";
 import Image from "next/image";
 import { CyberCard, CyberHeading } from "@/components/common/CyberComponents";
 import { Shield } from "lucide-react";
+import { bungieUrl } from "@/lib/bungie";
 
 export function ArmorCard({ armor }: { armor: LootArmorSet }) {
   const isTitan = armor.class === "Titan";
@@ -20,7 +21,7 @@ export function ArmorCard({ armor }: { armor: LootArmorSet }) {
         <div className="w-20 h-20 shrink-0 bg-zinc-950 relative overflow-hidden flex items-center justify-center border border-zinc-800 rounded-md group-hover:border-white/20 transition-colors">
           {armor.image ? (
             <Image 
-              src={armor.image} 
+              src={bungieUrl(armor.image)} 
               alt={armor.name} 
               width={64}
               height={64}

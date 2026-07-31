@@ -1,21 +1,19 @@
 "use client"
 
 import React, { useState, useMemo } from "react"
-import { ChevronDown } from "lucide-react"
-import { ExoticWeaponCard, ExoticWeapon } from "@/features/database/components/ExoticWeaponCard"
-import { DatabaseHeader } from "@/features/database/components/DatabaseHeader"
+import { ExoticWeaponCard } from "./ExoticWeaponCard"
+import { DatabaseHeader } from "./DatabaseHeader"
+import { DatabaseFilterSelect } from "./DatabaseFilterSelect"
+import type { ExoticWeapon } from "@/types"
 
 interface ExoticWeaponsViewProps {
   weapons: ExoticWeapon[]
 }
 
-const selectClassName =
-  "w-full min-h-11 pl-4 pr-10 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none cursor-pointer"
-
 export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
   const [searchTerm, setSearchTerm] = useState("")
-  const [selectedSlot, setSelectedSlot] = useState<string>("All")
-  const [selectedType, setSelectedType] = useState<string>("All")
+  const [selectedSlot, setSelectedSlot] = useState("All")
+  const [selectedType, setSelectedType] = useState("All")
 
   const weaponTypes = useMemo(() => {
     const types = new Set<string>()
@@ -44,32 +42,25 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
 
   const headerActions = (
     <>
-      <div className="relative w-full sm:w-auto sm:min-w-[9rem]">
-        <select
-          value={selectedSlot}
-          onChange={(e) => setSelectedSlot(e.target.value)}
-          aria-label="Lọc theo slot"
-          className={selectClassName}
-        >
-          {slots.map((s) => (
-            <option key={s} value={s}>{s === "All" ? "Tất cả slot" : s}</option>
-          ))}
-        </select>
-        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-      </div>
-      <div className="relative w-full sm:w-auto sm:min-w-[10rem]">
-        <select
-          value={selectedType}
-          onChange={(e) => setSelectedType(e.target.value)}
-          aria-label="Lọc theo loại vũ khí"
-          className={selectClassName}
-        >
-          {weaponTypes.map((t) => (
-            <option key={t} value={t}>{t === "All" ? "Tất cả loại" : t}</option>
-          ))}
-        </select>
-        <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-      </div>
+      <DatabaseFilterSelect
+        label="Lọc theo slot"
+        value={selectedSlot}
+        onChange={(e) => setSelectedSlot(e.target.value)}
+        options={slots.map((s) => ({
+          value: s,
+          label: s === "All" ? "Tất cả slot" : s,
+        }))}
+      />
+      <DatabaseFilterSelect
+        label="Lọc theo loại vũ khí"
+        value={selectedType}
+        onChange={(e) => setSelectedType(e.target.value)}
+        className="sm:min-w-[10rem]"
+        options={weaponTypes.map((t) => ({
+          value: t,
+          label: t === "All" ? "Tất cả loại" : t,
+        }))}
+      />
     </>
   )
 

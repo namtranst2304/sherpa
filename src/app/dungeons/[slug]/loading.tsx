@@ -1,4 +1,4 @@
-import { ActivityLoadingSkeleton } from "@/features/activity/components/ActivityLoadingSkeleton"
+import { ActivityLoadingSkeleton } from "@/features/activity"
 
 export default function Loading() {
   return <ActivityLoadingSkeleton />

@@ -5,27 +5,11 @@ import Image from "next/image"
 import { Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { bungieUrl } from "@/lib/bungie"
-import { PerkRow, PerkColumn, type PerkItem } from "@/components/common/PerkRow"
+import { PerkPoolGrid } from "@/components/common/PerkRow"
 import { CyberExpandToggle } from "@/components/common/CyberComponents"
+import type { ExoticArmor } from "@/types"
 
-export interface ExoticArmor {
-  id: number
-  name: string
-  icon: string
-  class: string
-  type: string
-  trait: {
-    name: string
-    description: string
-    icon: string
-    perkPool?: {
-      column1: PerkItem[]
-      column2: PerkItem[]
-    }
-  }
-  screenshot?: string
-  source?: string
-}
+export type { ExoticArmor }
 
 export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
   const [expanded, setExpanded] = useState(false)
@@ -95,28 +79,12 @@ export function ExoticArmorCard({ armor }: { armor: ExoticArmor }) {
         )}
 
         {expanded && perkPool && (
-          <div className="border-t border-zinc-800 pt-4">
-            <div className="flex flex-col gap-6 lg:hidden">
-              <PerkColumn title="Column 1" perks={perkPool.column1} />
-              <PerkColumn title="Column 2" perks={perkPool.column2} />
-            </div>
-
-            <div className="hidden lg:grid grid-cols-2 gap-x-8 gap-y-4">
-              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 1</div>
-              <div className="text-sm font-bold text-zinc-300 uppercase tracking-wider text-neon-cyan/80 pb-2 border-b border-zinc-800/50">Column 2</div>
-
-              {Array.from({ length: Math.max(perkPool.column1.length, perkPool.column2.length) }).map((_, i) => {
-                const perk1 = perkPool.column1[i]
-                const perk2 = perkPool.column2[i]
-                return (
-                  <React.Fragment key={i}>
-                    {perk1 ? <PerkRow perk={perk1} bordered /> : <div />}
-                    {perk2 ? <PerkRow perk={perk2} bordered /> : <div />}
-                  </React.Fragment>
-                )
-              })}
-            </div>
-          </div>
+          <PerkPoolGrid
+            column1={perkPool.column1}
+            column2={perkPool.column2}
+            title1="Column 1"
+            title2="Column 2"
+          />
         )}
 
         {armor.source && (

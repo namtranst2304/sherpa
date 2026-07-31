@@ -4,7 +4,7 @@ import { MatrixRain } from "@/components/common/MatrixRain"
 import { getDestinyTimeline } from "@/data/timeline"
 
 const DestinyTimeline = dynamic(
-  () => import("@/features/timeline/components/DestinyTimeline").then((mod) => mod.DestinyTimeline),
+  () => import("@/features/timeline").then((mod) => mod.DestinyTimeline),
   {
     loading: () => (
       <div className="w-full h-[100dvh] flex items-center justify-center bg-[#050505] text-zinc-400 font-mono text-sm tracking-widest uppercase">

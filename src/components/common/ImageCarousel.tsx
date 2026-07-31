@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion, AnimatePresence } from "motion/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import ReactMarkdown, { Components } from "react-markdown"
+import { bungieUrl } from "@/lib/bungie"
 
 export interface CarouselImage {
   url: string
@@ -41,7 +42,7 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
     return (
       <div className="flex flex-col items-center gap-3 w-full mb-4 mt-2">
         <Image
-          src={img.url}
+          src={bungieUrl(img.url)}
           alt={img.caption || "Image"}
           width={1200}
           height={800}
@@ -116,7 +117,7 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
             className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing"
           >
             <Image
-              src={current.url}
+              src={bungieUrl(current.url)}
               alt={current.caption || `Image ${currentIndex + 1}`}
               fill
               className="object-contain"

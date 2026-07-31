@@ -1,6 +1,6 @@
+import { ExoticArmorView } from "@/features/database"
+import type { ExoticArmor } from "@/types"
 import { getExoticArmorData } from "@/data"
-import { ExoticArmorView } from "@/features/database/components/ExoticArmorView"
-import type { ExoticArmor } from "@/features/database/components/ExoticArmorCard"
 
 export default async function ExoticArmorPage() {
   const data = await getExoticArmorData()

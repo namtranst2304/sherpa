@@ -6,7 +6,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "motion/react"
 import { ChevronDown } from "lucide-react"
-import { AnimatedScrollText } from "@/features/timeline/components/AnimatedScrollText"
+import { AnimatedScrollText } from "./AnimatedScrollText"
 import { DoorOverlay } from "@/components/common/DoorOverlay"
 import { playGlobalBgAudio } from "@/lib/audio"
 

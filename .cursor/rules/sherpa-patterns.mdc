@@ -19,19 +19,33 @@ alwaysApply: true
 ```text
 src/
 ├── app/              # Routes only — thin pages, no business logic
-├── features/         # Domain features (activity, database, home, timeline)
-│   └── <feature>/components/   # Feature-scoped components
+├── features/         # Domain features — each has index.ts public API
+│   ├── activity/
+│   │   ├── index.ts              # export ActivityEncounterView, ExoticMissionView, …
+│   │   └── components/
+│   │       ├── overview/         # Overview*, WeaponCard, ArmorCard
+│   │       ├── encounter/        # Guide*, Encounter*, ActivityEncounterView
+│   │       └── exotic/           # ExoticMission*, Catalyst, Walkthrough
+│   ├── database/                 # + DatabaseFilterSelect, exotic cards
+│   ├── home/
+│   └── timeline/
 ├── components/
-│   ├── common/       # Shared reusable (CyberComponents, ThemeProvider, etc.)
-│   ├── layout/       # Shell components (TopNav, MusicPlayer, ScrollToTop)
-│   └── ui/           # shadcn/ui primitives (do NOT edit manually)
+│   ├── common/       # Cyber*, PerkRow/PerkPoolGrid, MatrixRain, DoorOverlay
+│   ├── layout/       # TopNav, MusicPlayer, ScrollToTop
+│   └── ui/           # shadcn/ui (do NOT edit manually)
 ├── data/             # JSON content + dynamic loaders
-├── hooks/            # Custom React hooks
-├── lib/              # Utilities (cn, page-utils, audio, bungie API)
-├── config/           # App constants (nav items — lightweight, not full JSON)
-├── types/            # Shared TypeScript interfaces
-└── store/            # Global state
+├── hooks/
+├── lib/              # cn, page-utils, audio, bungieUrl, theme
+├── config/
+└── types/            # ActivityData, ExoticWeapon/Armor, ArmorSet, PerkItem
 ```
+
+### Import rules
+
+- Routes / lib / hooks import feature **public API**: `import { X } from "@/features/activity"`
+- Do **not** deep-import across features (`home` must not import `timeline/…`)
+- Shared domain types live in `@/types` — not on card components
+- Bungie image paths → `bungieUrl()` from `@/lib/bungie`
 
 ## Rules
 
@@ -119,7 +133,8 @@ Every activity guide view that uses `GuideSidebar` must also mount `MobileGuideT
 - Tailwind utility classes exclusively
 - Design system: `CyberComponents.tsx` + CVA variants + `src/lib/theme.ts`
 - Shared Cyber primitives: `CyberButton`, `CyberCard`, `CyberBadge`, `CyberHeading`, `CyberExpandToggle`, `CyberSectionHeader`
-- Perk rows for exotic cards: `PerkRow` / `PerkColumn` from `@/components/common/PerkRow`
+- Perk UI: `PerkRow` / `PerkColumn` / `PerkPoolGrid` from `@/components/common/PerkRow`
+- Database filters: `DatabaseFilterSelect` from `@/features/database/components/DatabaseFilterSelect`
 - Prefer angular / `rounded-none` cyber chrome over soft `rounded-full` pills
 - CyberVariants: `cyan | orange | yellow | red | green | zinc | exotic`
 - Neon tokens: `neon-cyan`, `neon-orange`, `neon-yellow`, `neon-red`, `neon-green`
@@ -152,7 +167,7 @@ Use Framer Motion (`motion/react`) with the standard page transition:
 - `cn()` → `@/lib/utils`
 - Activity page factory → `@/lib/page-utils` (`createActivityPage`)
 - Background audio → `@/lib/audio` (`playGlobalBgAudio`) — do not duplicate `getElementById("global-bg-audio")`
-- Bungie image URLs → `@/lib/bungie` (`bungieUrl(path)`) — do not inline `https://www.bungie.net${path}`
+- Bungie image URLs → `@/lib/bungie` (`bungieUrl(path)`) — store `/common/...` in JSON; helper resolves CDN. External http(s) and `/images/...` pass through.
 
 ### 9. API Routes
 

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Map } from "lucide-react"
 import { ZoomableImage } from "@/components/common/ZoomableImage"
+import { bungieUrl } from "@/lib/bungie"
 import ReactMarkdown from "react-markdown"
 
 interface EncounterMapProps {
@@ -15,7 +16,7 @@ export function EncounterMap({ images, encounterName }: EncounterMapProps) {
         {images.map((img, idx) => (
           <div key={idx} className="flex flex-col items-center gap-3 w-full">
             <ZoomableImage 
-              src={img.url} 
+              src={bungieUrl(img.url)} 
               alt={img.caption || "Encounter map"} 
               width={1200} 
               height={800} 
