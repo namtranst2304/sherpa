@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic"
 import { Metadata } from "next"
-import { MatrixRain } from "@/components/common/MatrixRain"
 import { getDestinyTimelineSummaries } from "@/data/timeline"
 
 const DestinyTimeline = dynamic(
@@ -12,6 +11,11 @@ const DestinyTimeline = dynamic(
       </div>
     ),
   }
+)
+
+const MatrixRain = dynamic(
+  () => import("@/components/common/MatrixRain").then((m) => m.MatrixRain),
+  { ssr: false }
 )
 
 export const metadata: Metadata = {

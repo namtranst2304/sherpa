@@ -45,20 +45,10 @@ const timelineImports: Array<() => Promise<{ default: unknown }>> = [
   () => import("./16-epilogue.json"),
 ]
 
-function toSummary(era: TimelineEra): TimelineEraSummary {
-  return {
-    id: era.id,
-    name: era.name,
-    description: era.description,
-    themeColor: era.themeColor,
-    image: era.image,
-  }
-}
-
-/** Summaries only — keeps the timeline page RSC payload small. */
+/** Summaries only (~5KB) — does not parse full era event bodies. */
 export async function getDestinyTimelineSummaries(): Promise<TimelineEraSummary[]> {
-  const mods = await Promise.all(timelineImports.map((loader) => loader()))
-  return mods.map((mod) => toSummary(mod.default as unknown as TimelineEra))
+  const mod = await import("./summaries.json")
+  return mod.default as TimelineEraSummary[]
 }
 
 /** Load a single era (with events) by index. */
@@ -67,12 +57,6 @@ export async function getTimelineEraByIndex(index: number): Promise<TimelineEra 
   if (!loader) return null
   const mod = await loader()
   return mod.default as unknown as TimelineEra
-}
-
-/** @deprecated Prefer getDestinyTimelineSummaries + getTimelineEraByIndex */
-export async function getDestinyTimeline(): Promise<TimelineEra[]> {
-  const mods = await Promise.all(timelineImports.map((loader) => loader()))
-  return mods.map((mod) => mod.default as unknown as TimelineEra)
 }
 
 /** Client-safe dynamic loaders (one chunk per era JSON). */

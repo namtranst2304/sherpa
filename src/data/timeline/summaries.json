@@ -1,0 +1,114 @@
+[
+  {
+    "id": "the-ancient-past",
+    "name": "The Ancient Past",
+    "description": "Sự kiện từ quá khứ xa xưa.",
+    "themeColor": "cyan",
+    "image": "/images/timeline/01.webp"
+  },
+  {
+    "id": "history-of-the-cabal",
+    "name": "Lịch sử của Cabal",
+    "description": "Sự kiện từ Lịch sử của Cabal.",
+    "themeColor": "red",
+    "image": "/images/timeline/02.webp"
+  },
+  {
+    "id": "history-of-the-eliksni",
+    "name": "Lịch sử của Eliksni",
+    "description": "Sự kiện từ Lịch sử của Eliksni.",
+    "themeColor": "yellow",
+    "image": "/images/timeline/03.webp"
+  },
+  {
+    "id": "pre-golden-age",
+    "name": "Pre-Golden Age",
+    "description": "Sự kiện từ Thời kỳ Tiền Kỷ Nguyên Hoàng Kim.",
+    "themeColor": "zinc",
+    "image": "/images/timeline/04.webp"
+  },
+  {
+    "id": "the-golden-age",
+    "name": "The Golden Age",
+    "description": "Kỷ nguyên thịnh vượng của nhân loại nhờ sức mạnh từ Traveler.",
+    "themeColor": "yellow",
+    "image": "/images/timeline/05.webp"
+  },
+  {
+    "id": "the-collapse",
+    "name": "The Collapse",
+    "description": "Ngày tàn của Kỷ Nguyên Hoàng Kim và sự xâm lăng của Black Fleet.",
+    "themeColor": "purple",
+    "image": "/images/timeline/06.webp"
+  },
+  {
+    "id": "dark-age",
+    "name": "Dark Age",
+    "description": "Nhân loại đấu tranh sinh tồn giữa đống tro tàn của Kỷ Nguyên Hoàng Kim.",
+    "themeColor": "zinc",
+    "image": "/images/timeline/07.webp"
+  },
+  {
+    "id": "the-city-age",
+    "name": "The City Age",
+    "description": "Rất nhiều huyền thoại đã trỗi dậy và gục ngã trong Kỷ Nguyên Thành Phố — các Lords of Iron; Saint-14; Toland và Osiris; The Speaker; và nhiều người khác — không thể không kể đến một Guardian đơn độc, được hồi sinh ngay trước thềm Bóng Tối trở lại.",
+    "themeColor": "blue",
+    "image": "/images/timeline/08.webp"
+  },
+  {
+    "id": "the-young-wolf-s-ascension",
+    "name": "The Young Wolf's Ascension",
+    "description": "Hành trình huyền thoại của Guardian trải dài qua các sự kiện từ Destiny (Năm 1) cho đến Rise of Iron.",
+    "themeColor": "orange",
+    "image": "/images/timeline/09.webp"
+  },
+  {
+    "id": "10-the-red-war",
+    "name": "The Red War",
+    "description": "Kỷ nguyên của The Red War (Cuộc Chiến Đỏ) bao gồm tựa game gốc Destiny 2 cùng hai bản mở rộng Curse of Osiris và Warmind.",
+    "themeColor": "red",
+    "image": "/images/timeline/10.webp"
+  },
+  {
+    "id": "11-cayde-6-s-death",
+    "name": "Cayde-6's Death",
+    "description": "Kỷ nguyên của Cayde-6's Death bao gồm bản mở rộng Forsaken cùng ba mùa: Season of the Forge, Season of the Drifter và Season of Opulence.",
+    "themeColor": "cyan",
+    "image": "/images/timeline/11.webp"
+  },
+  {
+    "id": "12-return-of-the-black-fleet",
+    "name": "Sự Trở Lại Của Hạm Đội Đen",
+    "description": "Bóng tối đã chính thức phủ bóng lên Hệ Mặt Trời. Các hạm đội Kim tự tháp (Pyramid Ships) khổng lồ xuất hiện, mang theo quyền năng nguyên thủy của The Darkness. Kỷ nguyên ánh sáng đang đứng trước thử thách tàn khốc nhất khi các hành tinh dần biến mất vào hư vô.",
+    "themeColor": "zinc",
+    "image": "/images/timeline/12.webp"
+  },
+  {
+    "id": "13-the-war-against-the-witness",
+    "name": "Cuộc Chiến Chống Lại\nThe Witness",
+    "description": "Kẻ thù tối thượng lộ diện. The Witness - hiện thân của màn đêm đen tối - bắt đầu tiến trình định hình lại vũ trụ thành The Final Shape. Cuộc chiến bùng nổ dữ dội từ những ảo ảnh của Savathûn cho đến chiến dịch sinh tử tại Neomuna và The Pale Heart.",
+    "themeColor": "red",
+    "image": "/images/timeline/13.avif"
+  },
+  {
+    "id": "the-echoes-arms-race",
+    "name": "The Echoes Arms Race",
+    "description": "Sự kiện từ Cuộc chạy đua vũ trang Echoes.",
+    "themeColor": "yellow",
+    "image": "/images/timeline/14.webp"
+  },
+  {
+    "id": "the-fate-saga",
+    "name": "The Fate Saga",
+    "description": "Sự kiện trong The Fate Saga.",
+    "themeColor": "cyan",
+    "image": "/images/timeline/15.webp"
+  },
+  {
+    "id": "16-epilogue",
+    "name": "Bình Minh Kỷ Nguyên Mới",
+    "description": "The Witness đã ngã xuống, nhưng tàn dư của quá khứ vẫn phủ bóng lên tương lai. Vũ trụ bước vào một chương mới.",
+    "themeColor": "prismatic",
+    "image": "/images/timeline/16.webp"
+  }
+]

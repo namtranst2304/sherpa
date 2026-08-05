@@ -1,5 +1,6 @@
 import { EXOTIC_MISSION_SLUGS, getExoticMissionData } from "@/data"
 import { ExoticMissionView } from "@/features/activity"
+import { slimExoticMissionForClient } from "@/lib/activity-payload"
 import { notFound } from "next/navigation"
 
 interface PageProps {
@@ -14,6 +15,7 @@ export async function generateStaticParams() {
 export default async function ExoticMissionPage({ params, searchParams }: PageProps) {
   const resolvedParams = await params
   const resolvedSearchParams = await searchParams
+  const tab = resolvedSearchParams.tab || "overview"
 
   const data = await getExoticMissionData(resolvedParams.slug)
 
@@ -22,9 +24,9 @@ export default async function ExoticMissionPage({ params, searchParams }: PagePr
   }
 
   return (
-    <ExoticMissionView 
-      activityData={data} 
-      activeTabId={resolvedSearchParams.tab || "overview"}
+    <ExoticMissionView
+      activityData={slimExoticMissionForClient(data, tab)}
+      activeTabId={tab}
     />
   )
 }

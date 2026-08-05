@@ -75,7 +75,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       : activeEncounter?.id
 
   const renderContent = () => {
-    if (isSecretsView && activityData.activity_secrets) {
+    if (isSecretsView && activityData.activity_secrets && activityData.activity_secrets.length > 0) {
       return (
         <GuideTemplate
           title="Secrets & Rương ẩn"

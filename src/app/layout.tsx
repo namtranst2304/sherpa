@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from "next"
+import "./globals.css"
 
-import { ThemeProvider } from "@/components/common/ThemeProvider";
-import { TopNav } from "@/components/layout/TopNav";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { ScrollToTop } from "@/components/layout/ScrollToTop";
-import { MusicPlayerGate } from "@/components/layout/MusicPlayerGate";
-import { WelcomeScreen } from "@/features/home";
+import dynamic from "next/dynamic"
+import { ThemeProvider } from "@/components/common/ThemeProvider"
+import { TopNav } from "@/components/layout/TopNav"
+import { ScrollToTop } from "@/components/layout/ScrollToTop"
+import { MusicPlayerGate } from "@/components/layout/MusicPlayerGate"
+
+const WelcomeScreen = dynamic(
+  () => import("@/features/home").then((m) => m.WelcomeScreen),
+  { ssr: false }
+)
 
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
@@ -35,12 +39,12 @@ export const metadata: Metadata = {
     description: "Comprehensive guides to master Destiny 2 endgame content.",
     images: ["/images/destiny-loading-bg.jpg"],
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
@@ -52,18 +56,16 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <WelcomeScreen />
-          <TooltipProvider>
-            <div className="relative flex min-h-screen flex-col w-full">
-              <TopNav />
-              <div className="flex-1 flex flex-col">
-                {children}
-              </div>
-              <ScrollToTop />
-              <MusicPlayerGate />
+          <div className="relative flex min-h-screen flex-col w-full">
+            <TopNav />
+            <div className="flex-1 flex flex-col">
+              {children}
             </div>
-          </TooltipProvider>
+            <ScrollToTop />
+            <MusicPlayerGate />
+          </div>
         </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }

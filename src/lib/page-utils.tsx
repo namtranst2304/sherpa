@@ -1,6 +1,6 @@
-
 import { notFound } from "next/navigation"
 import { ActivityEncounterView } from "@/features/activity"
+import { slimActivityForClient } from "@/lib/activity-payload"
 import { ActivityData } from "@/types"
 
 export async function createActivityPage(
@@ -18,10 +18,9 @@ export async function createActivityPage(
   }
 
   return (
-    <ActivityEncounterView 
-      activityData={data} 
+    <ActivityEncounterView
+      activityData={slimActivityForClient(data, resolvedSearchParams.enc)}
       activeEncounterId={resolvedSearchParams.enc}
     />
   )
 }
-
