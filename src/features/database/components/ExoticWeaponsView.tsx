@@ -4,10 +4,15 @@ import React, { useState, useMemo } from "react"
 import { ExoticWeaponCard } from "./ExoticWeaponCard"
 import { DatabaseHeader } from "./DatabaseHeader"
 import { DatabaseFilterSelect } from "./DatabaseFilterSelect"
-import type { ExoticWeapon } from "@/types"
+import {
+  DatabasePageShell,
+  DatabaseResultsBar,
+  DatabaseEmptyState,
+} from "./DatabasePageChrome"
+import type { LeanExoticWeapon } from "@/types"
 
 interface ExoticWeaponsViewProps {
-  weapons: ExoticWeapon[]
+  weapons: LeanExoticWeapon[]
 }
 
 export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
@@ -24,6 +29,7 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
   }, [weapons])
 
   const slots = ["All", "Kinetic", "Energy", "Power"]
+  const hasFilters = Boolean(searchTerm || selectedSlot !== "All" || selectedType !== "All")
 
   const filteredWeapons = weapons.filter((weapon) => {
     const q = searchTerm.toLowerCase()
@@ -65,7 +71,7 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
   )
 
   return (
-    <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
+    <DatabasePageShell>
       <DatabaseHeader
         title="Vũ khí Exotic & Catalyst"
         description="Dữ liệu chi tiết về toàn bộ các vũ khí Exotic trong Destiny 2. Đã bao gồm hệ thống nâng cấp Catalyst và các tổ hợp Perk ngẫu nhiên."
@@ -75,36 +81,35 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
         actions={headerActions}
       />
 
-      <div className="flex items-center justify-between gap-3 text-xs font-mono uppercase tracking-wider text-zinc-500">
-        <span>{filteredWeapons.length} kết quả</span>
-        {(searchTerm || selectedSlot !== "All" || selectedType !== "All") && (
-          <button
-            type="button"
-            onClick={() => {
-              setSearchTerm("")
-              setSelectedSlot("All")
-              setSelectedType("All")
-            }}
-            className="min-h-11 px-2 text-neon-cyan hover:text-white transition-colors"
-          >
-            Xóa bộ lọc
-          </button>
-        )}
-      </div>
+      <DatabaseResultsBar
+        label={`${filteredWeapons.length} kết quả`}
+        clearLabel="Xóa bộ lọc"
+        clearClassName="min-h-11 px-2"
+        onClear={
+          hasFilters
+            ? () => {
+                setSearchTerm("")
+                setSelectedSlot("All")
+                setSelectedType("All")
+              }
+            : undefined
+        }
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {filteredWeapons.length > 0 ? (
           filteredWeapons.map((weapon) => (
-            <div key={weapon.id} className={weapon.trait?.perkPool ? "col-span-1 md:col-span-2 xl:col-span-3" : ""}>
+            <div key={weapon.id} className={weapon.hasPerkPool ? "col-span-1 md:col-span-2 xl:col-span-3" : ""}>
               <ExoticWeaponCard weapon={weapon} />
             </div>
           ))
         ) : (
-          <div className="col-span-full py-12 text-center text-zinc-500 font-mono">
-            Không tìm thấy vũ khí Exotic nào phù hợp.
-          </div>
+          <DatabaseEmptyState
+            className="col-span-full"
+            message="Không tìm thấy vũ khí Exotic nào phù hợp."
+          />
         )}
       </div>
-    </div>
+    </DatabasePageShell>
   )
 }

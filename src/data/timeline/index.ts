@@ -18,6 +18,9 @@ export interface TimelineEra {
   events: TimelineEvent[]
 }
 
+/** Lightweight era meta for nav / initial page payload (no events). */
+export type TimelineEraSummary = Omit<TimelineEra, "events">
+
 export const ROMAN_NUMERALS = [
   "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X",
   "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",
@@ -42,8 +45,39 @@ const timelineImports: Array<() => Promise<{ default: unknown }>> = [
   () => import("./16-epilogue.json"),
 ]
 
-/** Load all timeline eras via dynamic imports (code-split). */
+function toSummary(era: TimelineEra): TimelineEraSummary {
+  return {
+    id: era.id,
+    name: era.name,
+    description: era.description,
+    themeColor: era.themeColor,
+    image: era.image,
+  }
+}
+
+/** Summaries only — keeps the timeline page RSC payload small. */
+export async function getDestinyTimelineSummaries(): Promise<TimelineEraSummary[]> {
+  const mods = await Promise.all(timelineImports.map((loader) => loader()))
+  return mods.map((mod) => toSummary(mod.default as unknown as TimelineEra))
+}
+
+/** Load a single era (with events) by index. */
+export async function getTimelineEraByIndex(index: number): Promise<TimelineEra | null> {
+  const loader = timelineImports[index]
+  if (!loader) return null
+  const mod = await loader()
+  return mod.default as unknown as TimelineEra
+}
+
+/** @deprecated Prefer getDestinyTimelineSummaries + getTimelineEraByIndex */
 export async function getDestinyTimeline(): Promise<TimelineEra[]> {
   const mods = await Promise.all(timelineImports.map((loader) => loader()))
   return mods.map((mod) => mod.default as unknown as TimelineEra)
 }
+
+/** Client-safe dynamic loaders (one chunk per era JSON). */
+export const timelineEraClientLoaders: Array<() => Promise<TimelineEra>> =
+  timelineImports.map((loader) => async () => {
+    const mod = await loader()
+    return mod.default as unknown as TimelineEra
+  })

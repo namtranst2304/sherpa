@@ -3,12 +3,17 @@
 import React, { useState } from "react"
 import { ExoticArmorCard } from "./ExoticArmorCard"
 import { DatabaseHeader } from "./DatabaseHeader"
-import type { ExoticArmor } from "@/types"
+import {
+  DatabasePageShell,
+  DatabaseResultsBar,
+  DatabaseEmptyState,
+} from "./DatabasePageChrome"
+import type { LeanExoticArmor } from "@/types"
 
 type ClassType = "Titan" | "Hunter" | "Warlock"
 
 interface ExoticArmorViewProps {
-  armors: ExoticArmor[]
+  armors: LeanExoticArmor[]
 }
 
 const SLOT_ORDER = ["Helmet", "Gauntlets", "Chest", "Leg", "Mark", "Cloak", "Bond"]
@@ -52,7 +57,7 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
   )
 
   return (
-    <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
+    <DatabasePageShell>
       <DatabaseHeader
         title="Giáp Exotic"
         description="Dữ liệu chi tiết về toàn bộ các giáp Exotic trong Destiny 2."
@@ -62,32 +67,25 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
         actions={headerActions}
       />
 
-      <div className="flex items-center justify-between gap-3 text-xs font-mono uppercase tracking-wider text-zinc-500">
-        <span>{filteredArmors.length} kết quả · {activeClass}</span>
-        {searchTerm && (
-          <button
-            type="button"
-            onClick={() => setSearchTerm("")}
-            className="text-neon-cyan hover:text-white transition-colors"
-          >
-            Xóa tìm kiếm
-          </button>
-        )}
-      </div>
+      <DatabaseResultsBar
+        label={`${filteredArmors.length} kết quả · ${activeClass}`}
+        onClear={searchTerm ? () => setSearchTerm("") : undefined}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {filteredArmors.length > 0 ? (
           filteredArmors.map((armor) => (
-            <div key={armor.id} className={armor.trait.perkPool ? "col-span-1 md:col-span-2 xl:col-span-3" : ""}>
+            <div key={armor.id} className={armor.hasPerkPool ? "col-span-1 md:col-span-2 xl:col-span-3" : ""}>
               <ExoticArmorCard armor={armor} />
             </div>
           ))
         ) : (
-          <div className="col-span-full py-12 text-center text-zinc-500 font-mono">
-            Không tìm thấy giáp Exotic cho {activeClass}.
-          </div>
+          <DatabaseEmptyState
+            className="col-span-full"
+            message={`Không tìm thấy giáp Exotic cho ${activeClass}.`}
+          />
         )}
       </div>
-    </div>
+    </DatabasePageShell>
   )
 }

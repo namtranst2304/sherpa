@@ -2,14 +2,17 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
-import { Sparkles } from "lucide-react"
-import { cn } from "@/lib/utils"
 import { bungieUrl } from "@/lib/bungie"
 import { PerkPoolGrid } from "@/components/common/PerkRow"
 import { CyberExpandToggle } from "@/components/common/CyberComponents"
-import type { ExoticWeapon } from "@/types"
+import {
+  ExoticCardHeader,
+  ExoticTraitBlock,
+  ExoticSectionLabel,
+} from "./ExoticCardParts"
+import { loadFullExoticWeapon } from "../lib/load-full-item"
+import type { ExoticWeapon, LeanExoticWeapon } from "@/types"
 
-export type { ExoticWeapon }
 const DAMAGE_ICONS: Record<string, string> = {
   kinetic: "/common/destiny2_content/icons/DestinyDamageTypeDefinition_3385a924fd3ccb92c343ade19f19a370.png",
   solar: "/common/destiny2_content/icons/DestinyDamageTypeDefinition_2a1773e10968f2d088b97c22b22bba9e.png",
@@ -36,26 +39,35 @@ function AmmoTypeIcon({ type }: { type: string }) {
   return null
 }
 
-export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
+export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
   const [expanded, setExpanded] = useState(false)
+  const [details, setDetails] = useState<ExoticWeapon | null>(null)
+  const [loadingDetails, setLoadingDetails] = useState(false)
+
   const iconUrl = weapon.icon ? bungieUrl(weapon.icon) : null
   const traitIconUrl = weapon.trait.icon ? bungieUrl(weapon.trait.icon) : null
-  const perkPool = weapon.trait.perkPool
   const showAmmo = weapon.ammoType.toLowerCase() !== "primary" && weapon.ammoType !== "None"
-  const hasDetails = Boolean(perkPool || (weapon.catalysts && weapon.catalysts.length > 0))
+  const hasDetails = weapon.hasPerkPool || weapon.hasCatalysts
+  const perkPool = details?.trait.perkPool
+  const catalysts = details?.catalysts
+
+  const handleToggle = async () => {
+    const next = !expanded
+    if (next && !details && hasDetails) {
+      setLoadingDetails(true)
+      const full = await loadFullExoticWeapon(weapon.id)
+      setDetails(full)
+      setLoadingDetails(false)
+    }
+    setExpanded(next)
+  }
 
   return (
     <div className="flex flex-col h-full bg-zinc-900/50 rounded-lg border border-zinc-800/50 overflow-hidden hover:border-neon-cyan/50 transition-colors">
-      <div className="flex items-center gap-4 p-4 border-b border-zinc-800 bg-zinc-950/50">
-        <div className="relative w-12 h-12 flex-shrink-0 bg-zinc-800 rounded">
-          {iconUrl ? (
-            <Image src={iconUrl} alt={weapon.name} fill className="object-cover rounded" unoptimized />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-zinc-600">?</div>
-          )}
-        </div>
-        <div className="flex flex-col">
-          <h3 className="text-lg font-bold text-white leading-tight">{weapon.name}</h3>
+      <ExoticCardHeader
+        iconUrl={iconUrl}
+        name={weapon.name}
+        meta={
           <div className="flex items-center gap-3 text-sm text-neon-cyan font-mono mt-1">
             <span>{weapon.weaponType}</span>
             <div className="flex items-center gap-1 opacity-80" title={weapon.slot}>
@@ -70,8 +82,8 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
               </div>
             )}
           </div>
-        </div>
-      </div>
+        }
+      />
 
       <div className="p-4 flex flex-col gap-4 flex-grow">
         {weapon.flavorText && (
@@ -80,33 +92,20 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
           </p>
         )}
 
-        <div>
-          <div className="flex items-center gap-2 mb-3 text-neon-cyan text-sm font-black tracking-widest uppercase">
-            <Sparkles className="w-4 h-4" />
-            <span>INTRINSIC TRAIT</span>
-          </div>
-
-          <div className="flex gap-3 items-start p-3 rounded bg-black/30 border border-zinc-800/50">
-            {traitIconUrl && (
-              <Image src={traitIconUrl} alt={weapon.trait.name} width={32} height={32} className="rounded-sm shrink-0 bg-zinc-900" unoptimized />
-            )}
-            <div className="flex flex-col flex-1">
-              <span className="font-bold text-white mb-1">{weapon.trait.name || "Unknown Trait"}</span>
-              <span className={cn(
-                "text-sm text-zinc-400 leading-relaxed whitespace-pre-wrap",
-                !expanded && "line-clamp-3"
-              )}>
-                {weapon.trait.description || "No description available."}
-              </span>
-            </div>
-          </div>
-        </div>
+        <ExoticTraitBlock
+          label="INTRINSIC TRAIT"
+          iconUrl={traitIconUrl}
+          name={weapon.trait.name || "Unknown Trait"}
+          description={weapon.trait.description || "No description available."}
+          expanded={expanded}
+          iconClassName="bg-zinc-900"
+        />
 
         {hasDetails && (
           <CyberExpandToggle
             expanded={expanded}
-            onToggle={() => setExpanded((v) => !v)}
-            collapsedLabel="Chi tiết / Catalyst"
+            onToggle={handleToggle}
+            collapsedLabel={loadingDetails ? "Đang tải..." : "Chi tiết / Catalyst"}
           />
         )}
 
@@ -119,15 +118,12 @@ export function ExoticWeaponCard({ weapon }: { weapon: ExoticWeapon }) {
           />
         )}
 
-        {expanded && weapon.catalysts && weapon.catalysts.length > 0 && (
+        {expanded && catalysts && catalysts.length > 0 && (
           <div>
-            <div className="flex items-center gap-2 mb-3 text-neon-cyan text-sm font-black tracking-widest uppercase">
-              <Sparkles className="w-4 h-4" />
-              <span>Catalyst(s)</span>
-            </div>
+            <ExoticSectionLabel>Catalyst(s)</ExoticSectionLabel>
 
             <div className="flex flex-col gap-4">
-              {weapon.catalysts.map((cat, idx) => (
+              {catalysts.map((cat, idx) => (
                 <div key={idx} className="flex flex-col gap-3 p-3 rounded bg-zinc-950/80 border border-zinc-800/80">
                   <div className="flex gap-3 items-start">
                     {cat.icon && (

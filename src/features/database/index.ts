@@ -4,4 +4,3 @@
 export { ExoticWeaponsView } from "./components/ExoticWeaponsView"
 export { ExoticArmorView } from "./components/ExoticArmorView"
 export { ArmorSetsView } from "./components/ArmorSetsView"
-export { DatabaseHeader } from "./components/DatabaseHeader"

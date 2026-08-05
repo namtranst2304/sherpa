@@ -3,21 +3,7 @@
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
-import { useIsMobile } from "@/hooks/use-mobile"
-import { useGuideTOC } from "@/hooks/use-guide-toc"
 import * as React from "react"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup as ShadcnSidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  useSidebar,
-} from "@/components/ui/sidebar"
 
 export type SidebarSection = {
   id: string
@@ -39,43 +25,24 @@ export function GuideSidebar({
   groups,
   activeEncounterId,
 }: {
-  title: string;
-  subtitle: string;
-  orbit?: string;
-  groups: SidebarGroup[];
-  activeEncounterId?: string;
+  title: string
+  subtitle: string
+  orbit?: string
+  groups: SidebarGroup[]
+  activeEncounterId?: string
 }) {
-  const isMobile = useIsMobile()
-  const { setOpenMobile } = useSidebar()
-
-  // Memoize itemIds so the array reference stays stable across renders.
-  // Without this, useScrollSpy re-registers the scroll listener every render.
   const itemIds = React.useMemo(() => {
     return groups.flatMap((group) => group.items.map((item) => item.id))
   }, [groups])
 
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId)
 
-  const { setTOC } = useGuideTOC() || { setTOC: () => {} }
-
-  React.useEffect(() => {
-    setTOC(title, subtitle, orbit, groups, activeEncounterId)
-    return () => setTOC("", "", undefined, [])
-  }, [title, subtitle, orbit, groups, activeEncounterId, setTOC])
-
-  // Mobile TOC is rendered by each guide view via MobileGuideTOC
-  if (isMobile) {
-    return null
-  }
-
-  // Render Sidebar on Desktop
   return (
-    <Sidebar className="hidden md:flex top-[3.5rem] h-[calc(100vh-3.5rem)] border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid" collapsible="icon">
-      <SidebarHeader className="border-b-2 border-neon-yellow p-4 relative overflow-hidden bg-zinc-950">
-        {/* Decorative cyber corner */}
+    <aside className="hidden md:flex flex-col w-64 shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid overflow-hidden">
+      <div className="border-b-2 border-neon-yellow p-4 relative overflow-hidden bg-zinc-950 shrink-0">
         <div className="absolute top-0 right-0 w-8 h-8 bg-neon-yellow -rotate-45 translate-x-4 -translate-y-4" />
         <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-neon-yellow to-transparent" />
-        
+
         <h1 className="text-xl font-extrabold text-neon-yellow tracking-widest uppercase break-words text-glow-yellow" title={title}>
           {title}
         </h1>
@@ -87,58 +54,62 @@ export function GuideSidebar({
         {orbit && (
           <p className="text-[10px] text-zinc-500 mt-2 break-words font-mono uppercase">sys.orbit: {orbit}</p>
         )}
-      </SidebarHeader>
-      <SidebarContent>
+      </div>
+
+      <nav className="flex-1 overflow-y-auto py-2" aria-label="Mục lục guide">
         {groups.map((group, idx) => (
-          <ShadcnSidebarGroup key={idx} className="mt-2">
-            {group.title && <SidebarGroupLabel className="text-neon-red font-mono tracking-widest uppercase text-[10px] opacity-80">{group.title}</SidebarGroupLabel>}
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {group.items.map((item) => {
-                  const isActive = activeId === item.id
-                  const linkHref = item.href || `#${item.id}`
-                  return (
-                    <SidebarMenuItem key={item.id} className="min-w-0">
-                      <SidebarMenuButton
-                        asChild
-                        isActive={isActive}
-                        onClick={() => setOpenMobile(false)}
+          <div key={idx} className="mt-2 px-2">
+            {group.title && (
+              <div className="px-2 py-1.5 text-neon-red font-mono tracking-widest uppercase text-[10px] opacity-80">
+                {group.title}
+              </div>
+            )}
+            <ul className="flex flex-col gap-0.5">
+              {group.items.map((item) => {
+                const isActive = activeId === item.id
+                const linkHref = item.href || `#${item.id}`
+                return (
+                  <li key={item.id} className="min-w-0">
+                    <Link
+                      href={linkHref}
+                      className={cn(
+                        "flex items-start justify-between w-full gap-2 relative z-10 transition-all py-2.5 px-2 font-mono text-sm border-l-4",
+                        isActive
+                          ? "text-black font-extrabold bg-neon-yellow border-neon-red"
+                          : "text-zinc-400 hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-neon-cyan border-transparent"
+                      )}
+                    >
+                      <div
                         className={cn(
-                          "transition-all h-auto py-2.5 relative group overflow-hidden rounded-none font-mono text-sm",
-                          isActive 
-                            ? "text-black font-extrabold bg-neon-yellow hover:bg-neon-yellow/90 hover:text-black border-l-4 border-neon-red" 
-                            : "text-zinc-400 hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-l-4 hover:border-neon-cyan border-l-4 border-transparent"
+                          "break-words whitespace-normal leading-tight tracking-wide",
+                          item.isFinal && !isActive && "text-neon-red font-extrabold text-glow-red",
+                          item.isFinal && isActive && "text-red-700 font-extrabold"
                         )}
-                        tooltip={item.title}
                       >
-                        <Link href={linkHref} className="flex items-start justify-between w-full gap-2 relative z-10">
-                          <div className={cn("break-words whitespace-normal leading-tight tracking-wide", item.isFinal && !isActive && "text-neon-red font-extrabold text-glow-red", item.isFinal && isActive && "text-red-700 font-extrabold")}>
-                            {item.title}
-                          </div>
-                          {item.label && (
-                            <div
-                              className={cn(
-                                "text-[9px] px-1.5 py-0.5 rounded-none font-bold font-mono ml-2 shrink-0 border uppercase",
-                                isActive 
-                                  ? "bg-black text-neon-yellow border-black" 
-                                  : (item.isFinal
-                                    ? "bg-neon-red/20 text-neon-red border-neon-red/50"
-                                    : "bg-neon-cyan/20 text-neon-cyan border-neon-cyan/50")
-                              )}
-                            >
-                              {item.label}
-                            </div>
+                        {item.title}
+                      </div>
+                      {item.label && (
+                        <div
+                          className={cn(
+                            "text-[9px] px-1.5 py-0.5 font-bold font-mono ml-2 shrink-0 border uppercase",
+                            isActive
+                              ? "bg-black text-neon-yellow border-black"
+                              : item.isFinal
+                                ? "bg-neon-red/20 text-neon-red border-neon-red/50"
+                                : "bg-neon-cyan/20 text-neon-cyan border-neon-cyan/50"
                           )}
-                        </Link>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  )
-                })}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </ShadcnSidebarGroup>
+                        >
+                          {item.label}
+                        </div>
+                      )}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         ))}
-      </SidebarContent>
-    </Sidebar>
+      </nav>
+    </aside>
   )
 }

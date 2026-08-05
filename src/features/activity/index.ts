@@ -4,5 +4,5 @@
  */
 export { ActivityEncounterView } from "./components/encounter/ActivityEncounterView"
 export { ActivityLoadingSkeleton } from "./components/encounter/ActivityLoadingSkeleton"
-export { GuideSidebar, type SidebarGroup } from "./components/encounter/GuideSidebar"
+export type { SidebarGroup } from "./components/encounter/GuideSidebar"
 export { ExoticMissionView } from "./components/exotic/ExoticMissionView"

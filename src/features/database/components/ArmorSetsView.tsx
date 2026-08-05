@@ -5,10 +5,14 @@ import Image from "next/image"
 import { ArrowUpDown, ImageIcon } from "lucide-react"
 import { CyberCard, CyberHeading, CyberBadge } from "@/components/common/CyberComponents"
 import { DatabaseHeader } from "./DatabaseHeader"
+import {
+  DatabasePageShell,
+  DatabaseResultsBar,
+  DatabaseEmptyState,
+} from "./DatabasePageChrome"
+import { ItemSourceLine } from "./ExoticCardParts"
 import { bungieUrl } from "@/lib/bungie"
 import type { ArmorSet } from "@/types"
-
-export type { ArmorSet }
 
 interface ArmorSetsViewProps {
   sets: ArmorSet[]
@@ -62,7 +66,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
   )
 
   return (
-    <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
+    <DatabasePageShell>
       <DatabaseHeader
         title="Thư viện Armor Sets"
         description="Tổng hợp các bộ giáp và hiệu ứng Set Bonus trong Destiny 2."
@@ -72,23 +76,13 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
         actions={headerActions}
       />
 
-      <div className="flex items-center justify-between gap-3 text-xs font-mono uppercase tracking-wider text-zinc-500">
-        <span>{filteredAndSortedSets.length} kết quả</span>
-        {searchQuery && (
-          <button
-            type="button"
-            onClick={() => setSearchQuery("")}
-            className="text-neon-cyan hover:text-white transition-colors"
-          >
-            Xóa tìm kiếm
-          </button>
-        )}
-      </div>
+      <DatabaseResultsBar
+        label={`${filteredAndSortedSets.length} kết quả`}
+        onClear={searchQuery ? () => setSearchQuery("") : undefined}
+      />
 
       {filteredAndSortedSets.length === 0 ? (
-        <div className="text-center py-12 text-zinc-500 font-mono">
-          Không tìm thấy set giáp nào phù hợp.
-        </div>
+        <DatabaseEmptyState message="Không tìm thấy set giáp nào phù hợp." />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {filteredAndSortedSets.map((set) => (
@@ -138,18 +132,11 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
                 ))}
               </div>
 
-              {set.source && (
-                <div className="mt-4 pt-3 border-t border-zinc-800/50">
-                  <div className="flex gap-2 text-xs">
-                    <span className="text-zinc-500 font-bold uppercase tracking-wider shrink-0">Source:</span>
-                    <span className="text-zinc-300 italic">{set.source.replace(/^Source:\s*/, "")}</span>
-                  </div>
-                </div>
-              )}
+              {set.source && <ItemSourceLine source={set.source} className="mt-4" />}
             </CyberCard>
           ))}
         </div>
       )}
-    </div>
+    </DatabasePageShell>
   )
 }

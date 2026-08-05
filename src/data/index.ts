@@ -1,7 +1,14 @@
 // Dynamic imports — data is only loaded when requested, not bundled upfront.
 // This avoids loading ~550KB of JSON into every page's client bundle.
 
-import { ActivityData } from "@/types"
+import {
+  ActivityData,
+  ArmorSet,
+  ExoticArmor,
+  ExoticWeapon,
+  LeanExoticArmor,
+  LeanExoticWeapon,
+} from "@/types"
 
 // --- Slug registries for route generation (generateStaticParams) ---
 // These are lightweight string arrays, NOT the full JSON data.
@@ -139,15 +146,57 @@ export async function getExoticMissionData(slug: string): Promise<ActivityData |
 /** Database loaders — dynamic import so JSON stays out of the default client graph. */
 export async function getExoticWeaponsData() {
   const mod = await import("./database/exotic-weapons.json")
-  return mod.default
+  return mod.default as unknown as ExoticWeapon[]
 }
 
 export async function getExoticArmorData() {
   const mod = await import("./database/exotic-armor.json")
-  return mod.default
+  return mod.default as unknown as ExoticArmor[]
 }
 
 export async function getArmorSetsData() {
   const mod = await import("./armor-sets.json")
-  return mod.default
-}
+  return mod.default as unknown as ArmorSet[]
+}
+
+export function toLeanExoticWeapon(weapon: ExoticWeapon): LeanExoticWeapon {
+  const { perkPool, ...trait } = weapon.trait
+  return {
+    id: weapon.id,
+    name: weapon.name,
+    icon: weapon.icon,
+    flavorText: weapon.flavorText,
+    weaponType: weapon.weaponType,
+    damageType: weapon.damageType,
+    ammoType: weapon.ammoType,
+    slot: weapon.slot,
+    trait,
+    hasPerkPool: Boolean(perkPool),
+    hasCatalysts: Boolean(weapon.catalysts && weapon.catalysts.length > 0),
+  }
+}
+
+export function toLeanExoticArmor(armor: ExoticArmor): LeanExoticArmor {
+  const { perkPool, ...trait } = armor.trait
+  return {
+    id: armor.id,
+    name: armor.name,
+    icon: armor.icon,
+    class: armor.class,
+    type: armor.type,
+    screenshot: armor.screenshot,
+    source: armor.source,
+    trait,
+    hasPerkPool: Boolean(perkPool),
+  }
+}
+
+export async function getLeanExoticWeaponsData() {
+  const data = await getExoticWeaponsData()
+  return data.map(toLeanExoticWeapon)
+}
+
+export async function getLeanExoticArmorData() {
+  const data = await getExoticArmorData()
+  return data.map(toLeanExoticArmor)
+}

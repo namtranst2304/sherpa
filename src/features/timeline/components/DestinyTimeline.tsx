@@ -1,9 +1,10 @@
 "use client"
 
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useInView } from "motion/react"
 import dynamic from "next/dynamic"
-import type { TimelineEra } from "@/data/timeline/index"
+import type { TimelineEra, TimelineEraSummary } from "@/data/timeline/index"
+import { timelineEraClientLoaders } from "@/data/timeline/index"
 import { EraNav } from "./EraNav"
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
 
@@ -19,19 +20,39 @@ const EraCinematicScene = dynamic(
   }
 )
 
-function LazyEraScene({ era, index }: { era: TimelineEra; index: number }) {
+function LazyEraScene({ summary, index }: { summary: TimelineEraSummary; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: "100% 0px" })
+  const [era, setEra] = useState<TimelineEra | null>(null)
+
+  useEffect(() => {
+    if (!isInView || era) return
+    let cancelled = false
+    const loader = timelineEraClientLoaders[index]
+    if (!loader) return
+    loader().then((full) => {
+      if (!cancelled) setEra(full)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [isInView, era, index])
 
   return (
     <div ref={ref} className="w-full h-full">
-      {isInView ? <EraCinematicScene era={era} index={index} /> : null}
+      {era ? (
+        <EraCinematicScene era={era} index={index} />
+      ) : isInView ? (
+        <div className="w-full h-full flex items-center justify-center bg-[#050505] text-zinc-500 text-sm tracking-widest uppercase animate-pulse">
+          Đang tải {summary.name}...
+        </div>
+      ) : null}
     </div>
   )
 }
 
 interface DestinyTimelineProps {
-  eras: TimelineEra[]
+  eras: TimelineEraSummary[]
 }
 
 export function DestinyTimeline({ eras }: DestinyTimelineProps) {
@@ -56,7 +77,7 @@ export function DestinyTimeline({ eras }: DestinyTimelineProps) {
             }}
             className="w-full h-[100dvh] shrink-0 snap-start snap-always"
           >
-            <LazyEraScene era={era} index={idx} />
+            <LazyEraScene summary={era} index={idx} />
           </div>
         ))}
       </div>

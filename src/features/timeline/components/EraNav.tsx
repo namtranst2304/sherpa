@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react"
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react"
-import { ROMAN_NUMERALS, type TimelineEra } from "@/data/timeline/index"
+import { ROMAN_NUMERALS, type TimelineEraSummary } from "@/data/timeline/index"
 import { getTheme, type ThemeColorTokens } from "@/lib/theme"
 import { cn } from "@/lib/utils"
 
@@ -15,7 +15,7 @@ function TimelineNode({
   activeTheme,
   onClick,
 }: {
-  era: TimelineEra
+  era: TimelineEraSummary
   idx: number
   total: number
   isActive: boolean
@@ -77,7 +77,7 @@ export function EraNav({
   eras,
   eraRefs,
 }: {
-  eras: TimelineEra[]
+  eras: TimelineEraSummary[]
   eraRefs: React.RefObject<Map<string, HTMLElement>>
 }) {
   const [activeIndex, setActiveIndex] = useState(0)

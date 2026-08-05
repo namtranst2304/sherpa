@@ -3,12 +3,10 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 import { TopNav } from "@/components/layout/TopNav";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
-import { MusicPlayer } from "@/components/layout/MusicPlayer";
+import { MusicPlayerGate } from "@/components/layout/MusicPlayerGate";
 import { WelcomeScreen } from "@/features/home";
-import { GuideTOCProvider } from "@/hooks/use-guide-toc";
 
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
@@ -55,20 +53,14 @@ export default function RootLayout({
         >
           <WelcomeScreen />
           <TooltipProvider>
-            {/* SidebarProvider bọc toàn bộ để các trang con có thể dùng GuideSidebar */}
-            <SidebarProvider defaultOpen={true}>
-              <GuideTOCProvider>
-                <div className="relative flex min-h-screen flex-col w-full">
-                  <TopNav />
-                  {/* Phần thân chính */}
-                  <div className="flex-1 flex flex-col">
-                    {children}
-                  </div>
-                  <ScrollToTop />
-                  <MusicPlayer />
-                </div>
-              </GuideTOCProvider>
-            </SidebarProvider>
+            <div className="relative flex min-h-screen flex-col w-full">
+              <TopNav />
+              <div className="flex-1 flex flex-col">
+                {children}
+              </div>
+              <ScrollToTop />
+              <MusicPlayerGate />
+            </div>
           </TooltipProvider>
         </ThemeProvider>
       </body>

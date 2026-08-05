@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic"
 import { Metadata } from "next"
 import { MatrixRain } from "@/components/common/MatrixRain"
-import { getDestinyTimeline } from "@/data/timeline"
+import { getDestinyTimelineSummaries } from "@/data/timeline"
 
 const DestinyTimeline = dynamic(
   () => import("@/features/timeline").then((mod) => mod.DestinyTimeline),
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 }
 
 export default async function TimelinePage() {
-  const eras = await getDestinyTimeline()
+  const eras = await getDestinyTimelineSummaries()
 
   return (
     <main className="fixed inset-0 z-40 h-[100dvh] w-full overflow-hidden bg-[#050505]">

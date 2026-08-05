@@ -180,3 +180,15 @@ export interface ArmorSet {
   screenshot?: string
   source?: string
 }
+
+/** List payload without heavy perk pools / catalyst details. */
+export type LeanExoticWeapon = Omit<ExoticWeapon, "catalysts" | "trait"> & {
+  trait: Omit<ExoticWeapon["trait"], "perkPool">
+  hasPerkPool: boolean
+  hasCatalysts: boolean
+}
+
+export type LeanExoticArmor = Omit<ExoticArmor, "trait"> & {
+  trait: Omit<ExoticArmor["trait"], "perkPool">
+  hasPerkPool: boolean
+}

@@ -4,10 +4,9 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { Play, Pause, Music } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
 
+/** Mounted only on `/` and `/timeline` via MusicPlayerGate. */
 export function MusicPlayer() {
-  const pathname = usePathname();
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPulseHint, setShowPulseHint] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -15,12 +14,7 @@ export function MusicPlayer() {
   const ttsWasPlayingRef = useRef(false);
   const shouldReduceMotion = useReducedMotion();
 
-  // Chỉ hiển thị và phát nhạc ở trang chủ và timeline
-  const isVisible = pathname === "/" || pathname === "/timeline";
-
   useEffect(() => {
-    if (!isVisible) return
-
     const audio = audioRef.current
     if (!audio) return
 
@@ -34,7 +28,6 @@ export function MusicPlayer() {
     audio.addEventListener("play", syncState)
     audio.addEventListener("pause", syncState)
 
-    // Hint pulse when user scrolls — do NOT auto-unlock on every site click
     const hintScroll = () => {
       if (audio.paused) setShowPulseHint(true)
     }
@@ -76,7 +69,7 @@ export function MusicPlayer() {
       window.removeEventListener("wheel", hintScroll)
       window.removeEventListener("touchmove", hintScroll)
     }
-  }, [isVisible])
+  }, [])
 
   const togglePlay = () => {
     setShowPulseHint(false)
@@ -85,10 +78,6 @@ export function MusicPlayer() {
     } else {
       audioRef.current?.pause()
     }
-  }
-
-  if (!isVisible) {
-    return null
   }
 
   return (
