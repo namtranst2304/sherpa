@@ -4,8 +4,9 @@ import * as React from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "motion/react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import ReactMarkdown, { Components } from "react-markdown"
+import { MarkdownText } from "@/components/common/MarkdownText"
 import { bungieUrl } from "@/lib/bungie"
+import type { Components } from "react-markdown"
 
 export interface CarouselImage {
   url: string
@@ -25,9 +26,9 @@ const captionMarkdownComponents: Components = {
 
 function Caption({ text, className }: { text: string; className?: string }) {
   return (
-    <div className={className}>
-      <ReactMarkdown components={captionMarkdownComponents}>{text}</ReactMarkdown>
-    </div>
+    <MarkdownText className={className} components={captionMarkdownComponents}>
+      {text}
+    </MarkdownText>
   )
 }
 

@@ -1,16 +1,11 @@
 import type { Metadata } from "next"
 import "./globals.css"
 
-import dynamic from "next/dynamic"
 import { ThemeProvider } from "@/components/common/ThemeProvider"
 import { TopNav } from "@/components/layout/TopNav"
-import { ScrollToTop } from "@/components/layout/ScrollToTop"
+import { ScrollToTopGate } from "@/components/layout/ScrollToTopGate"
 import { MusicPlayerGate } from "@/components/layout/MusicPlayerGate"
-
-const WelcomeScreen = dynamic(
-  () => import("@/features/home").then((m) => m.WelcomeScreen),
-  { ssr: false }
-)
+import { WelcomeScreenGate } from "@/components/layout/WelcomeScreenGate"
 
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
@@ -55,13 +50,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <WelcomeScreen />
+          <WelcomeScreenGate />
           <div className="relative flex min-h-screen flex-col w-full">
             <TopNav />
             <div className="flex-1 flex flex-col">
               {children}
             </div>
-            <ScrollToTop />
+            <ScrollToTopGate />
             <MusicPlayerGate />
           </div>
         </ThemeProvider>

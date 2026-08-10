@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
-import { motion, AnimatePresence } from "motion/react"
+import { GuideShell } from "../GuideShell"
 import { GuideSidebar } from "../encounter/GuideSidebar"
 import { MobileGuideTOC } from "../encounter/MobileGuideTOC"
 import { ActivityOverviewTemplate } from "../overview/ActivityOverviewTemplate"
@@ -34,11 +34,13 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
             href: "?tab=walkthrough",
           },
           ...(activityData.catalyst_guide
-            ? [{
-                id: "catalyst",
-                title: "Catalyst & Secrets",
-                href: "?tab=catalyst",
-              }]
+            ? [
+                {
+                  id: "catalyst",
+                  title: "Catalyst & Secrets",
+                  href: "?tab=catalyst",
+                },
+              ]
             : []),
         ],
       },
@@ -86,31 +88,20 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
   }
 
   return (
-    <div className="flex h-full w-full md:overflow-hidden flex-col md:flex-row">
-      <GuideSidebar
-        groups={sidebarGroups}
-        title={missionName}
-        subtitle="Exotic Walkthrough"
-        activeEncounterId={activeTabId}
-      />
-
-      <MobileGuideTOC
-        groups={sidebarGroups}
-        activeEncounterId={activeTabId}
-      />
-
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeTabId}
-          className="flex-1 overflow-hidden h-full bg-zinc-950"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ opacity: { duration: 0.2, ease: "easeInOut" }, y: { duration: 0.2, ease: "easeInOut" } }}
-        >
-          {renderContent()}
-        </motion.div>
-      </AnimatePresence>
-    </div>
+    <GuideShell
+      contentKey={activeTabId}
+      contentClassName="flex-1 overflow-hidden h-full bg-zinc-950"
+      sidebar={
+        <GuideSidebar
+          groups={sidebarGroups}
+          title={missionName}
+          subtitle="Exotic Walkthrough"
+          activeEncounterId={activeTabId}
+        />
+      }
+      toc={<MobileGuideTOC groups={sidebarGroups} activeEncounterId={activeTabId} />}
+    >
+      {renderContent()}
+    </GuideShell>
   )
 }

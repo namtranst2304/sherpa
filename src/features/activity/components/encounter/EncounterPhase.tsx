@@ -1,8 +1,8 @@
 import { Map } from "lucide-react"
-import ReactMarkdown from "react-markdown"
 import { ActivityEncounterPhase } from "@/types"
 import { CyberCard, CyberBadge } from "@/components/common/CyberComponents"
 import { ImageCarousel } from "@/components/common/ImageCarousel"
+import { MarkdownText } from "@/components/common/MarkdownText"
 import { markdownComponents } from "./EncounterMarkdown"
 
 interface EncounterPhaseProps {
@@ -48,7 +48,7 @@ export function EncounterPhase({ walkthrough }: EncounterPhaseProps) {
                 <li key={i} className="text-sm text-foreground/80 leading-relaxed flex items-start gap-1.5">
                   <span className="text-neon-cyan font-bold shrink-0 min-w-[20px]">{i + 1}.</span>
                   <div className="flex-1">
-                    <ReactMarkdown components={markdownComponents}>{step}</ReactMarkdown>
+                    <MarkdownText components={markdownComponents}>{step}</MarkdownText>
                   </div>
                 </li>
               ))}

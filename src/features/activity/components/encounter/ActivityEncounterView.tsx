@@ -1,7 +1,7 @@
 "use client"
 
 import { useMemo } from "react"
-import { motion, AnimatePresence } from "motion/react"
+import { GuideShell } from "../GuideShell"
 import { GuideSidebar } from "./GuideSidebar"
 import { GuideTemplate } from "./GuideTemplate"
 import { ActivityOverviewTemplate } from "../overview/ActivityOverviewTemplate"
@@ -22,41 +22,38 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
   const isSecretsView = activeEncounterId === "secrets"
   const pageTitle = activityData?.raid_name || activityData?.dungeon_name || "Activity"
 
-  const sidebarGroups = useMemo(
-    () => {
-      if (!activityData?.encounters) return []
-      return [
-        {
-          title: "Thông tin Activity",
-          items: [
-            {
-              id: "overview",
-              title: "Tổng quan & Loadout",
-              href: "?enc=overview",
-            },
-            ...(activityData.activity_secrets
-              ? [
-                  {
-                    id: "secrets",
-                    title: "Secrets & Rương ẩn",
-                    href: "?enc=secrets",
-                  },
-                ]
-              : []),
-          ],
-        },
-        {
-          title: "Encounters",
-          items: activityData.encounters.map((enc: ActivityEncounter) => ({
-            id: enc.id,
-            title: enc.name,
-            href: `?enc=${enc.id}`,
-          })),
-        },
-      ]
-    },
-    [activityData]
-  )
+  const sidebarGroups = useMemo(() => {
+    if (!activityData?.encounters) return []
+    return [
+      {
+        title: "Thông tin Activity",
+        items: [
+          {
+            id: "overview",
+            title: "Tổng quan & Loadout",
+            href: "?enc=overview",
+          },
+          ...(activityData.activity_secrets
+            ? [
+                {
+                  id: "secrets",
+                  title: "Secrets & Rương ẩn",
+                  href: "?enc=secrets",
+                },
+              ]
+            : []),
+        ],
+      },
+      {
+        title: "Encounters",
+        items: activityData.encounters.map((enc: ActivityEncounter) => ({
+          id: enc.id,
+          title: enc.name,
+          href: `?enc=${enc.id}`,
+        })),
+      },
+    ]
+  }, [activityData])
 
   if (!activityData?.encounters) {
     return <div>No activity data found.</div>
@@ -124,30 +121,19 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
   }
 
   return (
-    <div className="flex h-full w-full md:overflow-hidden flex-col md:flex-row">
-      <GuideSidebar
-        groups={sidebarGroups}
-        title={pageTitle}
-        subtitle="Hướng dẫn Encounter"
-        activeEncounterId={currentViewId}
-      />
-
-      <MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} />
-
-      <div className="flex-1 md:overflow-hidden relative">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentViewId}
-            className="w-full h-full flex flex-col"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ opacity: { duration: 0.2, ease: "easeInOut" }, y: { duration: 0.2, ease: "easeInOut" } }}
-          >
-            {renderContent()}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
+    <GuideShell
+      contentKey={currentViewId || "overview"}
+      sidebar={
+        <GuideSidebar
+          groups={sidebarGroups}
+          title={pageTitle}
+          subtitle="Hướng dẫn Encounter"
+          activeEncounterId={currentViewId}
+        />
+      }
+      toc={<MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} />}
+    >
+      {renderContent()}
+    </GuideShell>
   )
 }

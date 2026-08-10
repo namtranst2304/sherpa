@@ -1,6 +1,6 @@
 import { Sparkles } from "lucide-react"
-import ReactMarkdown from "react-markdown"
 import { ImageCarousel } from "@/components/common/ImageCarousel"
+import { MarkdownText } from "@/components/common/MarkdownText"
 import { markdownComponents } from "./EncounterMarkdown"
 
 interface EncounterSecretsProps {
@@ -28,7 +28,7 @@ export function EncounterSecrets({ secrets }: EncounterSecretsProps) {
           </h4>
           {secret.description && (
             <p className="text-muted-foreground text-sm mb-4">
-              <ReactMarkdown components={markdownComponents}>{secret.description}</ReactMarkdown>
+              <MarkdownText components={markdownComponents}>{secret.description}</MarkdownText>
             </p>
           )}
           
@@ -40,7 +40,7 @@ export function EncounterSecrets({ secrets }: EncounterSecretsProps) {
             <ul className="space-y-2">
               {secret.steps.map((step, i) => (
                 <li key={i} className="text-sm text-foreground/80 pl-4 border-l-2 border-neon-cyan/50 leading-relaxed">
-                  <ReactMarkdown components={markdownComponents}>{step}</ReactMarkdown>
+                  <MarkdownText components={markdownComponents}>{step}</MarkdownText>
                 </li>
               ))}
             </ul>

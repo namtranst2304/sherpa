@@ -1,4 +1,4 @@
-import { Components } from "react-markdown"
+import type { Components } from "react-markdown"
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export const markdownComponents: Components = {
