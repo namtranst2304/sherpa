@@ -53,7 +53,7 @@ export default function RootLayout({
         >
           <WelcomeScreenGate />
           <GlobalBgAudio />
-          <div className="relative flex min-h-screen flex-col w-full min-h-0">
+          <div className="relative flex flex-1 flex-col w-full min-h-0">
             <TopNav />
             <div className="flex-1 flex flex-col min-h-0">
               {children}
