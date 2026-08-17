@@ -1,6 +1,7 @@
 import { EXOTIC_MISSION_SLUGS, getExoticMissionData } from "@/data"
 import { ExoticMissionView } from "@/features/activity"
 import { slimExoticMissionForClient } from "@/lib/activity-payload"
+import { createActivityMetadata } from "@/lib/page-utils"
 import { notFound } from "next/navigation"
 
 interface PageProps {
@@ -10,6 +11,10 @@ interface PageProps {
 
 export async function generateStaticParams() {
   return EXOTIC_MISSION_SLUGS.map((slug) => ({ slug }))
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  return await createActivityMetadata(params, getExoticMissionData, "Exotic Mission")
 }
 
 export default async function ExoticMissionPage({ params, searchParams }: PageProps) {
@@ -30,3 +35,4 @@ export default async function ExoticMissionPage({ params, searchParams }: PagePr
     />
   )
 }
+

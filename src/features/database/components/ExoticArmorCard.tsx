@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
+import { Star } from "lucide-react"
 import { bungieUrl } from "@/lib/bungie"
 import { PerkPoolGrid } from "@/components/common/PerkRow"
 import { CyberExpandToggle } from "@/components/common/CyberComponents"
@@ -11,13 +12,17 @@ import {
   ItemSourceLine,
 } from "./ExoticCardParts"
 import { loadFullExoticArmor } from "../lib/load-full-item"
+import { useWishlist } from "@/hooks/use-sherpa-store"
+import { cn } from "@/lib/utils"
 import type { ExoticArmor, LeanExoticArmor } from "@/types"
 
 export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
   const [expanded, setExpanded] = useState(false)
   const [details, setDetails] = useState<ExoticArmor | null>(null)
   const [loadingDetails, setLoadingDetails] = useState(false)
+  const { isWishlisted, toggleWishlist } = useWishlist()
 
+  const wishlisted = isWishlisted(armor.name)
   const iconUrl = armor.icon ? bungieUrl(armor.icon) : null
   const traitIconUrl = armor.trait.icon ? bungieUrl(armor.trait.icon) : null
   const perkPool = details?.trait.perkPool
@@ -38,6 +43,22 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
       <ExoticCardHeader
         iconUrl={iconUrl}
         name={armor.name}
+        action={
+          <button
+            type="button"
+            onClick={() => toggleWishlist(armor.name)}
+            className={cn(
+              "p-2 rounded border transition-all",
+              wishlisted
+                ? "bg-amber-500/20 border-amber-500 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]"
+                : "bg-zinc-950/60 border-zinc-800 text-zinc-500 hover:text-amber-400 hover:border-amber-500/40"
+            )}
+            title={wishlisted ? "Đã lưu vào Wishlist (Click để bỏ)" : "Thêm vào Wishlist"}
+            aria-label={wishlisted ? "Bỏ khỏi Wishlist" : "Thêm vào Wishlist"}
+          >
+            <Star className={cn("w-4 h-4", wishlisted && "fill-amber-400")} />
+          </button>
+        }
         meta={
           <div className="flex items-center gap-2 text-sm text-neon-cyan font-mono mt-1">
             <span>{armor.type}</span>

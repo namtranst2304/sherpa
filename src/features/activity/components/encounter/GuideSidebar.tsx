@@ -1,8 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
+import { useCheckpoints } from "@/hooks/use-sherpa-store"
 import * as React from "react"
 
 export type SidebarSection = {
@@ -36,6 +38,7 @@ export function GuideSidebar({
   }, [groups])
 
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId)
+  const { isEncounterCompleted } = useCheckpoints()
 
   return (
     <aside className="hidden md:flex h-full w-64 shrink-0 flex-col border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid overflow-hidden">
@@ -68,6 +71,8 @@ export function GuideSidebar({
               {group.items.map((item) => {
                 const isActive = activeId === item.id
                 const linkHref = item.href || `#${item.id}`
+                const isCleared = isEncounterCompleted(title, item.id)
+
                 return (
                   <li key={item.id} className="min-w-0">
                     <Link
@@ -81,12 +86,15 @@ export function GuideSidebar({
                     >
                       <div
                         className={cn(
-                          "break-words whitespace-normal leading-tight tracking-wide",
+                          "break-words whitespace-normal leading-tight tracking-wide flex items-center gap-1.5",
                           item.isFinal && !isActive && "text-neon-red font-extrabold text-glow-red",
                           item.isFinal && isActive && "text-red-700 font-extrabold"
                         )}
                       >
-                        {item.title}
+                        {isCleared && (
+                          <Check className={cn("w-3.5 h-3.5 shrink-0", isActive ? "text-black" : "text-neon-green")} />
+                        )}
+                        <span>{item.title}</span>
                       </div>
                       {item.label && (
                         <div

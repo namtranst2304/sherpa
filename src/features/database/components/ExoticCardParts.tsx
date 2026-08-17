@@ -16,22 +16,26 @@ interface ExoticCardHeaderProps {
   iconUrl: string | null
   name: string
   meta: ReactNode
+  action?: ReactNode
 }
 
-export function ExoticCardHeader({ iconUrl, name, meta }: ExoticCardHeaderProps) {
+export function ExoticCardHeader({ iconUrl, name, meta, action }: ExoticCardHeaderProps) {
   return (
-    <div className="flex items-center gap-4 p-4 border-b border-zinc-800 bg-zinc-950/50">
-      <div className="relative w-12 h-12 flex-shrink-0 bg-zinc-800 rounded">
-        {iconUrl ? (
-          <Image src={iconUrl} alt={name} fill className="object-cover rounded" unoptimized />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-zinc-600">?</div>
-        )}
+    <div className="flex items-center justify-between gap-4 p-4 border-b border-zinc-800 bg-zinc-950/50">
+      <div className="flex items-center gap-4 min-w-0">
+        <div className="relative w-12 h-12 flex-shrink-0 bg-zinc-800 rounded">
+          {iconUrl ? (
+            <Image src={iconUrl} alt={name} fill className="object-cover rounded" unoptimized />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-zinc-600">?</div>
+          )}
+        </div>
+        <div className="flex flex-col min-w-0">
+          <h3 className="text-lg font-bold text-white leading-tight truncate">{name}</h3>
+          {meta}
+        </div>
       </div>
-      <div className="flex flex-col">
-        <h3 className="text-lg font-bold text-white leading-tight">{name}</h3>
-        {meta}
-      </div>
+      {action ? <div className="shrink-0">{action}</div> : null}
     </div>
   )
 }

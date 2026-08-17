@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { DESTINY_ACTIVITIES } from "@/config/constants"
 import { MobileNav } from "./MobileNav"
+import { CommandPalette } from "./CommandPalette"
 
 import {
   topNavTriggerVariants,
@@ -124,8 +125,11 @@ export function TopNav() {
           </NavigationMenu>
         </div>
 
-        {/* Portal Target for Dynamic Headers (e.g., Timeline Active Chapter) */}
-        <div id="topnav-portal-target" className="ml-auto flex h-full items-center" />
+        {/* Right Action Area: Portal Target & Command Palette Search */}
+        <div className="ml-auto flex h-full items-center gap-3">
+          <div id="topnav-portal-target" className="flex h-full items-center" />
+          <CommandPalette />
+        </div>
       </div>
     </header>
   )

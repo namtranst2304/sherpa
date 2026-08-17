@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
+import { Star } from "lucide-react"
 import { bungieUrl } from "@/lib/bungie"
 import { PerkPoolGrid } from "@/components/common/PerkRow"
 import { CyberExpandToggle } from "@/components/common/CyberComponents"
@@ -11,6 +12,8 @@ import {
   ExoticSectionLabel,
 } from "./ExoticCardParts"
 import { loadFullExoticWeapon } from "../lib/load-full-item"
+import { useWishlist } from "@/hooks/use-sherpa-store"
+import { cn } from "@/lib/utils"
 import type { ExoticWeapon, LeanExoticWeapon } from "@/types"
 
 const DAMAGE_ICONS: Record<string, string> = {
@@ -43,7 +46,9 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
   const [expanded, setExpanded] = useState(false)
   const [details, setDetails] = useState<ExoticWeapon | null>(null)
   const [loadingDetails, setLoadingDetails] = useState(false)
+  const { isWishlisted, toggleWishlist } = useWishlist()
 
+  const wishlisted = isWishlisted(weapon.name)
   const iconUrl = weapon.icon ? bungieUrl(weapon.icon) : null
   const traitIconUrl = weapon.trait.icon ? bungieUrl(weapon.trait.icon) : null
   const showAmmo = weapon.ammoType.toLowerCase() !== "primary" && weapon.ammoType !== "None"
@@ -63,10 +68,26 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
   }
 
   return (
-    <div className="flex flex-col h-full bg-zinc-900/50 rounded-lg border border-zinc-800/50 overflow-hidden hover:border-neon-cyan/50 transition-colors">
+    <div className="flex flex-col h-full bg-zinc-900/40 border border-zinc-800 rounded-lg overflow-hidden hover:border-zinc-700 transition-colors">
       <ExoticCardHeader
         iconUrl={iconUrl}
         name={weapon.name}
+        action={
+          <button
+            type="button"
+            onClick={() => toggleWishlist(weapon.name)}
+            className={cn(
+              "p-2 rounded border transition-all",
+              wishlisted
+                ? "bg-amber-500/20 border-amber-500 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]"
+                : "bg-zinc-950/60 border-zinc-800 text-zinc-500 hover:text-amber-400 hover:border-amber-500/40"
+            )}
+            title={wishlisted ? "Đã lưu vào Wishlist (Click để bỏ)" : "Thêm vào Wishlist"}
+            aria-label={wishlisted ? "Bỏ khỏi Wishlist" : "Thêm vào Wishlist"}
+          >
+            <Star className={cn("w-4 h-4", wishlisted && "fill-amber-400")} />
+          </button>
+        }
         meta={
           <div className="flex items-center gap-3 text-sm text-neon-cyan font-mono mt-1">
             <span>{weapon.weaponType}</span>

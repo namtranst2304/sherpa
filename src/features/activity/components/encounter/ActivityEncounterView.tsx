@@ -108,6 +108,8 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       <GuideTemplate
         title={activeEncounter.name}
         description={activityData.preface?.author_notes || "Hướng dẫn chi tiết cơ chế chiến đấu"}
+        encounterId={activeEncounter.id}
+        activitySlug={pageTitle}
         mechanics={
           activeEncounter.walkthrough && Object.keys(activeEncounter.walkthrough).length > 0 ? (
             <EncounterPhase walkthrough={activeEncounter.walkthrough} />

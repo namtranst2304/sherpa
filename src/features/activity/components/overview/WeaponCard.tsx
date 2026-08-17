@@ -1,11 +1,13 @@
 "use client"
 
 import React, { useState } from "react"
-import { Gem, Crosshair, Swords } from "lucide-react"
+import { Gem, Crosshair, Swords, Star } from "lucide-react"
 import Image from "next/image"
 import { CyberCard, CyberBadge, CyberHeading, CyberExpandToggle } from "@/components/common/CyberComponents"
 import { LootWeapon } from "@/types"
 import { bungieUrl } from "@/lib/bungie"
+import { useWishlist } from "@/hooks/use-sherpa-store"
+import { cn } from "@/lib/utils"
 
 const NEW_PERKS = ["Chaos Reshaped", "Air Trigger", "Rimestealer", "Circle of Life", "Physic"]
 const VALUE_STATS = ["rpm", "magazine", "zoom", "aim_assist", "draw_time"]
@@ -58,16 +60,34 @@ interface WeaponCardProps {
 
 export function WeaponCard({ weapon }: WeaponCardProps) {
   const [expanded, setExpanded] = useState(false)
+  const { isWishlisted, toggleWishlist } = useWishlist()
   const isExotic = weapon.weapon.includes("(Exotic)")
   const name = weapon.weapon.replace("(Exotic)", "").trim()
   const badgeVariant = isExotic ? "orange" : "cyan"
   const headingVariant = isExotic ? "exotic" : "legendary"
   const barColor = isExotic ? "bg-amber-500" : "bg-neon-cyan"
   const hasDetails = Boolean(weapon.stats || weapon.perks)
+  const wishlisted = isWishlisted(name)
 
   return (
     <CyberCard variant="zinc" withCorners className="flex flex-col h-full overflow-hidden p-0 relative group">
       <div className="h-32 w-full bg-zinc-950 relative overflow-hidden flex items-center justify-center border-b border-zinc-800 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800 to-zinc-950">
+        {/* Wishlist Button */}
+        <button
+          type="button"
+          onClick={() => toggleWishlist(name)}
+          className={cn(
+            "absolute top-3 left-3 p-1.5 rounded-none border transition-all z-10",
+            wishlisted
+              ? "bg-amber-500/20 border-amber-500 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+              : "bg-black/60 border-zinc-700 text-zinc-500 hover:text-amber-400 hover:border-amber-500/50"
+          )}
+          title={wishlisted ? "Đã lưu vào Wishlist (Click để bỏ)" : "Thêm vào Wishlist"}
+          aria-label={wishlisted ? "Bỏ khỏi Wishlist" : "Thêm vào Wishlist"}
+        >
+          <Star className={cn("w-3.5 h-3.5", wishlisted && "fill-amber-400")} />
+        </button>
+
         {weapon.image ? (
           <Image
             src={bungieUrl(weapon.image)}
