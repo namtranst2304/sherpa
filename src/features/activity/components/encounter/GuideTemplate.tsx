@@ -39,6 +39,12 @@ function GuideSection({ icon, title, children, className, contentClassName }: Gu
   )
 }
 
+interface SidebarSectionItem {
+  title: string
+  icon: LucideIcon
+  content: React.ReactNode
+}
+
 export function GuideTemplate({
   title,
   description,
@@ -51,8 +57,6 @@ export function GuideTemplate({
 }: GuideTemplateProps) {
   const [copied, setCopied] = useState(false)
   const { isEncounterCompleted, toggleEncounterCompleted } = useCheckpoints()
-  const hasSidebar = Boolean(roles || secrets)
-
   const isCompleted = encounterId && activitySlug ? isEncounterCompleted(activitySlug, encounterId) : false
 
   const handleCopyLink = async () => {
@@ -63,6 +67,10 @@ export function GuideTemplate({
       setTimeout(() => setCopied(false), 2000)
     }
   }
+
+  const sidebarSections: SidebarSectionItem[] = []
+  if (roles) sidebarSections.push({ title: "Vai trò", icon: Users, content: roles })
+  if (secrets) sidebarSections.push({ title: "Rương ẩn & Secrets", icon: Sparkles, content: secrets })
 
   return (
     <div className="flex-1 overflow-y-auto w-full bg-background p-4 md:p-8 relative">
@@ -124,7 +132,7 @@ export function GuideTemplate({
 
         <div className={cn(
           "flex flex-col lg:grid gap-8 items-start",
-          hasSidebar ? "lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px]" : "lg:grid-cols-1"
+          sidebarSections.length > 0 ? "lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_450px]" : "lg:grid-cols-1"
         )}>
           <div className="flex flex-col gap-8 w-full min-w-0">
             {map && (
@@ -149,18 +157,18 @@ export function GuideTemplate({
             </GuideSection>
           </div>
 
-          {hasSidebar && (
+          {sidebarSections.length > 0 && (
             <div className="flex flex-col gap-8 w-full min-w-0 lg:sticky lg:top-[calc(3.5rem+1rem)]">
-              {roles && (
-                <GuideSection icon={Users} title="Vai trò" className="cyber-grid relative">
-                  {roles}
+              {sidebarSections.map((section) => (
+                <GuideSection
+                  key={section.title}
+                  icon={section.icon}
+                  title={section.title}
+                  className="cyber-grid relative"
+                >
+                  {section.content}
                 </GuideSection>
-              )}
-              {secrets && (
-                <GuideSection icon={Sparkles} title="Rương ẩn & Secrets" className="cyber-grid relative">
-                  {secrets}
-                </GuideSection>
-              )}
+              ))}
             </div>
           )}
         </div>
