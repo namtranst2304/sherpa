@@ -6,6 +6,7 @@ import { TopNav } from "@/components/layout/TopNav"
 import { ScrollToTopGate } from "@/components/layout/ScrollToTopGate"
 import { MusicPlayerGate } from "@/components/layout/MusicPlayerGate"
 import { WelcomeScreenGate } from "@/components/layout/WelcomeScreenGate"
+import { GlobalBgAudio } from "@/components/layout/GlobalBgAudio"
 
 export const metadata: Metadata = {
   title: "Destiny 2 Sherpa | Guides for Dungeons & Raids",
@@ -51,9 +52,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <WelcomeScreenGate />
-          <div className="relative flex min-h-screen flex-col w-full">
+          <GlobalBgAudio />
+          <div className="relative flex min-h-screen flex-col w-full min-h-0">
             <TopNav />
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col min-h-0">
               {children}
             </div>
             <ScrollToTopGate />

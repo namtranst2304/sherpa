@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react"
 import type { ReactNode } from "react"
+import { cn } from "@/lib/utils"
 
 interface GuideShellProps {
   sidebar: ReactNode
@@ -17,17 +18,17 @@ export function GuideShell({
   toc,
   contentKey,
   children,
-  contentClassName = "flex-1 md:overflow-hidden relative",
+  contentClassName = "flex-1 min-h-0 md:overflow-hidden relative",
 }: GuideShellProps) {
   return (
-    <div className="flex h-full w-full md:overflow-hidden flex-col md:flex-row">
+    <div className="flex w-full flex-col md:h-[calc(100vh-3.5rem)] md:min-h-0 md:flex-row md:overflow-hidden">
       {sidebar}
       {toc}
-      <div className={contentClassName}>
+      <div className={cn(contentClassName)}>
         <AnimatePresence mode="wait">
           <motion.div
             key={contentKey}
-            className="w-full h-full flex flex-col"
+            className="flex h-full min-h-0 w-full flex-col"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

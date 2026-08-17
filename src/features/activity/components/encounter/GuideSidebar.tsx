@@ -38,7 +38,7 @@ export function GuideSidebar({
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId)
 
   return (
-    <aside className="hidden md:flex flex-col w-64 shrink-0 sticky top-14 h-[calc(100vh-3.5rem)] border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid overflow-hidden">
+    <aside className="hidden md:flex h-full w-64 shrink-0 flex-col border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid overflow-hidden">
       <div className="border-b-2 border-neon-yellow p-4 relative overflow-hidden bg-zinc-950 shrink-0">
         <div className="absolute top-0 right-0 w-8 h-8 bg-neon-yellow -rotate-45 translate-x-4 -translate-y-4" />
         <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-neon-yellow to-transparent" />

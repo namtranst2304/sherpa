@@ -90,7 +90,7 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
   return (
     <GuideShell
       contentKey={activeTabId}
-      contentClassName="flex-1 overflow-hidden h-full bg-zinc-950"
+      contentClassName="flex-1 min-h-0 overflow-hidden bg-zinc-950"
       sidebar={
         <GuideSidebar
           groups={sidebarGroups}

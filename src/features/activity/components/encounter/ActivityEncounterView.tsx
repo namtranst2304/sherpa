@@ -33,7 +33,8 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
             title: "Tổng quan & Loadout",
             href: "?enc=overview",
           },
-          ...(activityData.activity_secrets
+          // Empty array from slim payload still means “has secrets” — keep nav link.
+          ...(activityData.activity_secrets != null
             ? [
                 {
                   id: "secrets",
@@ -72,12 +73,23 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       : activeEncounter?.id
 
   const renderContent = () => {
-    if (isSecretsView && activityData.activity_secrets && activityData.activity_secrets.length > 0) {
+    if (isSecretsView) {
+      if (activityData.activity_secrets && activityData.activity_secrets.length > 0) {
+        return (
+          <GuideTemplate
+            title="Secrets & Rương ẩn"
+            description="Vị trí rương ẩn và giải đố hạt giống viền đỏ (Red Border)"
+            mechanics={<EncounterSecrets secrets={activityData.activity_secrets} />}
+            map={null}
+            roles={null}
+          />
+        )
+      }
       return (
         <GuideTemplate
           title="Secrets & Rương ẩn"
-          description="Vị trí rương ẩn và giải đố hạt giống viền đỏ (Red Border)"
-          mechanics={<EncounterSecrets secrets={activityData.activity_secrets} />}
+          description="Chưa có dữ liệu secrets cho activity này."
+          mechanics={null}
           map={null}
           roles={null}
         />
@@ -129,6 +141,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
           title={pageTitle}
           subtitle="Hướng dẫn Encounter"
           activeEncounterId={currentViewId}
+          orbit={activityData.active_orbit}
         />
       }
       toc={<MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} />}

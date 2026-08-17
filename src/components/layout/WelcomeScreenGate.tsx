@@ -1,12 +1,8 @@
 "use client"
 
-import dynamic from "next/dynamic"
+import { WelcomeScreen } from "@/features/home"
 
-const WelcomeScreen = dynamic(
-  () => import("@/features/home").then((m) => m.WelcomeScreen),
-  { ssr: false }
-)
-
+/** Client boundary for welcome overlay (no delayed dynamic — avoids first-paint flash). */
 export function WelcomeScreenGate() {
   return <WelcomeScreen />
 }

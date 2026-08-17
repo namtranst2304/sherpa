@@ -5,15 +5,22 @@ import { motion, AnimatePresence } from "motion/react"
 import { DoorOverlay } from "@/components/common/DoorOverlay"
 import { playGlobalBgAudio } from "@/lib/audio"
 
-function subscribeWelcomed() {
-  return () => {}
+const WELCOME_EVENT = "sherpa-welcomed"
+
+function subscribeWelcomed(onStoreChange: () => void) {
+  window.addEventListener(WELCOME_EVENT, onStoreChange)
+  window.addEventListener("storage", onStoreChange)
+  return () => {
+    window.removeEventListener(WELCOME_EVENT, onStoreChange)
+    window.removeEventListener("storage", onStoreChange)
+  }
 }
 
 function getWelcomedSnapshot() {
   return sessionStorage.getItem("sherpa_welcomed") === "true"
 }
 
-/** Hide on SSR/hydration to avoid flash + mismatch; client snapshot applies after. */
+/** Client-only component: hide until hydrated snapshot is read. */
 function getWelcomedServerSnapshot() {
   return true
 }
@@ -43,6 +50,7 @@ export function WelcomeScreen() {
 
   const handleEnter = () => {
     sessionStorage.setItem("sherpa_welcomed", "true")
+    window.dispatchEvent(new Event(WELCOME_EVENT))
     playGlobalBgAudio()
     setIsOpened(true)
     setTimeout(() => setExited(true), 1000)
