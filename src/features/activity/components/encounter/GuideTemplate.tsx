@@ -4,6 +4,7 @@ import React, { useState } from "react"
 import { Map, Users, Settings, Sparkles, LucideIcon, Share2, Check, CheckCircle2 } from "lucide-react"
 import { CyberCard, CyberHeading, CyberSectionHeader, CyberBadge } from "@/components/common/CyberComponents"
 import { useCheckpoints } from "@/hooks/use-sherpa-store"
+import { copyToClipboard } from "@/lib/clipboard"
 import { cn } from "@/lib/utils"
 
 interface GuideTemplateProps {
@@ -54,39 +55,12 @@ export function GuideTemplate({
 
   const isCompleted = encounterId && activitySlug ? isEncounterCompleted(activitySlug, encounterId) : false
 
-  const handleCopyLink = () => {
+  const handleCopyLink = async () => {
     if (typeof window === "undefined") return
-    const textToCopy = window.location.href
-
-    if (navigator?.clipboard?.writeText) {
-      navigator.clipboard
-        .writeText(textToCopy)
-        .then(() => {
-          setCopied(true)
-          setTimeout(() => setCopied(false), 2000)
-        })
-        .catch(() => {
-          fallbackCopy(textToCopy)
-        })
-    } else {
-      fallbackCopy(textToCopy)
-    }
-  }
-
-  const fallbackCopy = (text: string) => {
-    try {
-      const textarea = document.createElement("textarea")
-      textarea.value = text
-      textarea.style.position = "fixed"
-      textarea.style.opacity = "0"
-      document.body.appendChild(textarea)
-      textarea.select()
-      document.execCommand("copy")
-      document.body.removeChild(textarea)
+    const success = await copyToClipboard(window.location.href)
+    if (success) {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // Silently catch clipboard failures in restricted contexts
     }
   }
 
