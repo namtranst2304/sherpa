@@ -56,10 +56,38 @@ export function GuideTemplate({
 
   const handleCopyLink = () => {
     if (typeof window === "undefined") return
-    navigator.clipboard.writeText(window.location.href).then(() => {
+    const textToCopy = window.location.href
+
+    if (navigator?.clipboard?.writeText) {
+      navigator.clipboard
+        .writeText(textToCopy)
+        .then(() => {
+          setCopied(true)
+          setTimeout(() => setCopied(false), 2000)
+        })
+        .catch(() => {
+          fallbackCopy(textToCopy)
+        })
+    } else {
+      fallbackCopy(textToCopy)
+    }
+  }
+
+  const fallbackCopy = (text: string) => {
+    try {
+      const textarea = document.createElement("textarea")
+      textarea.value = text
+      textarea.style.position = "fixed"
+      textarea.style.opacity = "0"
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand("copy")
+      document.body.removeChild(textarea)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-    })
+    } catch {
+      // Silently catch clipboard failures in restricted contexts
+    }
   }
 
   return (
