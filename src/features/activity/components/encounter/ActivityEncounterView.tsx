@@ -1,11 +1,13 @@
 "use client"
 
-import { useMemo } from "react"
+import { useMemo, useCallback } from "react"
+import { useRouter } from "next/navigation"
 import { GuideShell } from "../GuideShell"
 import { GuideSidebar } from "./GuideSidebar"
 import { GuideTemplate } from "./GuideTemplate"
 import { ActivityOverviewTemplate } from "../overview/ActivityOverviewTemplate"
 import { MobileGuideTOC } from "./MobileGuideTOC"
+import { EncounterNavigatorHUD, NavItem } from "./EncounterNavigatorHUD"
 import { ActivityData, ActivityEncounter } from "@/types"
 import { EncounterPhase } from "./EncounterPhase"
 import { EncounterMap } from "./EncounterMap"
@@ -18,6 +20,7 @@ interface ActivityEncounterViewProps {
 }
 
 export function ActivityEncounterView({ activityData, activeEncounterId }: ActivityEncounterViewProps) {
+  const router = useRouter()
   const isOverview = !activeEncounterId || activeEncounterId === "overview"
   const isSecretsView = activeEncounterId === "secrets"
   const pageTitle = activityData?.raid_name || activityData?.dungeon_name || "Activity"
@@ -55,6 +58,19 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
       },
     ]
   }, [activityData])
+
+  const flatNavItems: NavItem[] = useMemo(() => {
+    return sidebarGroups.flatMap((g) => g.items)
+  }, [sidebarGroups])
+
+  const handleNavigate = useCallback(
+    (item: NavItem) => {
+      if (item.href) {
+        router.push(item.href, { scroll: false })
+      }
+    },
+    [router]
+  )
 
   if (!activityData?.encounters) {
     return <div>No activity data found.</div>
@@ -121,9 +137,9 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
           ) : undefined
         }
         roles={
-          activeEncounter.roles && Object.keys(activeEncounter.roles).length > 0 && (
-            <EncounterRoles roles={activeEncounter.roles} />
-          )
+          activeEncounter.roles && Object.keys(activeEncounter.roles).length > 0 ? (
+            <EncounterRoles roles={activeEncounter.roles} encounterName={activeEncounter.name} />
+          ) : undefined
         }
         secrets={
           activeEncounter.secrets && activeEncounter.secrets.length > 0 ? (
@@ -135,26 +151,37 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
   }
 
   return (
-    <GuideShell
-      contentKey={currentViewId || "overview"}
-      sidebar={
-        <GuideSidebar
-          groups={sidebarGroups}
-          title={pageTitle}
-          subtitle="Hướng dẫn Encounter"
-          activeEncounterId={currentViewId}
-          orbit={activityData.active_orbit}
-        />
-      }
-      toc={
-        <MobileGuideTOC
-          groups={sidebarGroups}
-          activeEncounterId={currentViewId}
-          activityTitle={pageTitle}
-        />
-      }
-    >
-      {renderContent()}
-    </GuideShell>
+    <>
+      <GuideShell
+        contentKey={currentViewId || "overview"}
+        sidebar={
+          <GuideSidebar
+            groups={sidebarGroups}
+            title={pageTitle}
+            subtitle="Hướng dẫn Encounter"
+            activeEncounterId={currentViewId}
+            orbit={activityData.active_orbit}
+          />
+        }
+        toc={
+          <MobileGuideTOC
+            groups={sidebarGroups}
+            activeEncounterId={currentViewId}
+            activityTitle={pageTitle}
+          />
+        }
+      >
+        {renderContent()}
+      </GuideShell>
+
+      {/* Floating Bottom Action HUD */}
+      <EncounterNavigatorHUD
+        items={flatNavItems}
+        currentId={currentViewId}
+        activityTitle={pageTitle}
+        onNavigate={handleNavigate}
+      />
+    </>
   )
 }
+

@@ -1,9 +1,11 @@
 "use client"
 
-import { useMemo } from "react"
+import { useMemo, useCallback } from "react"
+import { useRouter } from "next/navigation"
 import { GuideShell } from "../GuideShell"
 import { GuideSidebar } from "../encounter/GuideSidebar"
 import { MobileGuideTOC } from "../encounter/MobileGuideTOC"
+import { EncounterNavigatorHUD, NavItem } from "../encounter/EncounterNavigatorHUD"
 import { ActivityOverviewTemplate } from "../overview/ActivityOverviewTemplate"
 import { ExoticWalkthroughCard } from "./ExoticWalkthroughCard"
 import { ExoticCatalystTab } from "./ExoticCatalystTab"
@@ -15,6 +17,7 @@ interface ExoticMissionViewProps {
 }
 
 export function ExoticMissionView({ activityData, activeTabId = "overview" }: ExoticMissionViewProps) {
+  const router = useRouter()
   const missionName = activityData.dungeon_name || activityData.raid_name || "Exotic Mission"
   const walkthrough = activityData.encounters?.[0]?.walkthrough
 
@@ -46,6 +49,19 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
       },
     ],
     [activityData.catalyst_guide]
+  )
+
+  const flatNavItems: NavItem[] = useMemo(() => {
+    return sidebarGroups.flatMap((g) => g.items)
+  }, [sidebarGroups])
+
+  const handleNavigate = useCallback(
+    (item: NavItem) => {
+      if (item.href) {
+        router.push(item.href, { scroll: false })
+      }
+    },
+    [router]
   )
 
   const renderContent = () => {
@@ -88,26 +104,37 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
   }
 
   return (
-    <GuideShell
-      contentKey={activeTabId}
-      contentClassName="flex-1 min-h-0 overflow-hidden bg-zinc-950"
-      sidebar={
-        <GuideSidebar
-          groups={sidebarGroups}
-          title={missionName}
-          subtitle="Exotic Walkthrough"
-          activeEncounterId={activeTabId}
-        />
-      }
-      toc={
-        <MobileGuideTOC
-          groups={sidebarGroups}
-          activeEncounterId={activeTabId}
-          activityTitle={missionName}
-        />
-      }
-    >
-      {renderContent()}
-    </GuideShell>
+    <>
+      <GuideShell
+        contentKey={activeTabId}
+        contentClassName="flex-1 min-h-0 overflow-hidden bg-zinc-950"
+        sidebar={
+          <GuideSidebar
+            groups={sidebarGroups}
+            title={missionName}
+            subtitle="Exotic Walkthrough"
+            activeEncounterId={activeTabId}
+          />
+        }
+        toc={
+          <MobileGuideTOC
+            groups={sidebarGroups}
+            activeEncounterId={activeTabId}
+            activityTitle={missionName}
+          />
+        }
+      >
+        {renderContent()}
+      </GuideShell>
+
+      {/* Floating Bottom Action HUD */}
+      <EncounterNavigatorHUD
+        items={flatNavItems}
+        currentId={activeTabId}
+        activityTitle={missionName}
+        onNavigate={handleNavigate}
+      />
+    </>
   )
 }
+

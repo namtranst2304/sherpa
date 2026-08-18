@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Compass, Sparkles, BookOpen, Flame, Crosshair, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useCheckpoints } from "@/hooks/use-sherpa-store"
+import { playHoverSound, playNavSound } from "@/lib/cyber-audio"
 
 interface TOCGroup {
   title?: string
@@ -61,6 +62,8 @@ export function MobileGuideTOC({ groups, activeEncounterId, activityTitle }: Mob
                   ref={isActive ? activeRef : undefined}
                   href={item.href || `#${item.id}`}
                   scroll={false}
+                  onMouseEnter={playHoverSound}
+                  onClick={playNavSound}
                   className={cn(
                     "whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 min-h-11 px-3.5 py-2 text-xs font-mono font-bold transition-all border-b-2 snap-start relative group",
                     isActive
@@ -72,7 +75,7 @@ export function MobileGuideTOC({ groups, activeEncounterId, activityTitle }: Mob
                   {isCleared ? (
                     <Check className="w-3.5 h-3.5 shrink-0 text-neon-green" />
                   ) : (
-                    getTabIcon(item.id, encounterCounter)
+                    getTabIcon(item.id)
                   )}
 
                   {/* Encounter Index Badge for regular encounters */}

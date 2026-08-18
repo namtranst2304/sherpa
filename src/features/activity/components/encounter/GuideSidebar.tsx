@@ -5,6 +5,7 @@ import { Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useScrollSpy } from "@/hooks/use-scroll-spy"
 import { useCheckpoints } from "@/hooks/use-sherpa-store"
+import { playHoverSound, playNavSound } from "@/lib/cyber-audio"
 import * as React from "react"
 
 export type SidebarSection = {
@@ -77,6 +78,8 @@ export function GuideSidebar({
                   <li key={item.id} className="min-w-0">
                     <Link
                       href={linkHref}
+                      onMouseEnter={playHoverSound}
+                      onClick={playNavSound}
                       className={cn(
                         "flex items-start justify-between w-full gap-2 relative z-10 transition-all py-2.5 px-2 font-mono text-sm border-l-4",
                         isActive
