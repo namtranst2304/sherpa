@@ -146,7 +146,13 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
           orbit={activityData.active_orbit}
         />
       }
-      toc={<MobileGuideTOC groups={sidebarGroups} activeEncounterId={currentViewId} />}
+      toc={
+        <MobileGuideTOC
+          groups={sidebarGroups}
+          activeEncounterId={currentViewId}
+          activityTitle={pageTitle}
+        />
+      }
     >
       {renderContent()}
     </GuideShell>

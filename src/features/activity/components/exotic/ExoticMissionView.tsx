@@ -99,7 +99,13 @@ export function ExoticMissionView({ activityData, activeTabId = "overview" }: Ex
           activeEncounterId={activeTabId}
         />
       }
-      toc={<MobileGuideTOC groups={sidebarGroups} activeEncounterId={activeTabId} />}
+      toc={
+        <MobileGuideTOC
+          groups={sidebarGroups}
+          activeEncounterId={activeTabId}
+          activityTitle={missionName}
+        />
+      }
     >
       {renderContent()}
     </GuideShell>
