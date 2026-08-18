@@ -1,55 +1,59 @@
-"use client"
+'use client'
 
-import { useMemo, useCallback } from "react"
-import { useRouter } from "next/navigation"
-import { GuideShell } from "../GuideShell"
-import { GuideSidebar } from "./GuideSidebar"
-import { GuideTemplate } from "./GuideTemplate"
-import { ActivityOverviewTemplate } from "../overview/ActivityOverviewTemplate"
-import { MobileGuideTOC } from "./MobileGuideTOC"
-import { EncounterNavigatorHUD, NavItem } from "./EncounterNavigatorHUD"
-import { ActivityData, ActivityEncounter } from "@/types"
-import { EncounterPhase } from "./EncounterPhase"
-import { EncounterMap } from "./EncounterMap"
-import { EncounterRoles } from "./EncounterRoles"
-import { EncounterSecrets } from "./EncounterSecrets"
+import { useMemo, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
+import { GuideShell } from '../GuideShell'
+import { GuideSidebar } from './GuideSidebar'
+import { GuideTemplate } from './GuideTemplate'
+import { ActivityOverviewTemplate } from '../overview/ActivityOverviewTemplate'
+import { MobileGuideTOC } from './MobileGuideTOC'
+import { EncounterNavigatorHUD, NavItem } from './EncounterNavigatorHUD'
+import { ActivityData, ActivityEncounter } from '@/types'
+import { EncounterPhase } from './EncounterPhase'
+import { EncounterMap } from './EncounterMap'
+import { EncounterRoles } from './EncounterRoles'
+import { EncounterSecrets } from './EncounterSecrets'
 
 interface ActivityEncounterViewProps {
   activityData: ActivityData
   activeEncounterId?: string
 }
 
-export function ActivityEncounterView({ activityData, activeEncounterId }: ActivityEncounterViewProps) {
+export function ActivityEncounterView({
+  activityData,
+  activeEncounterId,
+}: ActivityEncounterViewProps) {
   const router = useRouter()
-  const isOverview = !activeEncounterId || activeEncounterId === "overview"
-  const isSecretsView = activeEncounterId === "secrets"
-  const pageTitle = activityData?.raid_name || activityData?.dungeon_name || "Activity"
+  const isOverview = !activeEncounterId || activeEncounterId === 'overview'
+  const isSecretsView = activeEncounterId === 'secrets'
+  const pageTitle =
+    activityData?.raid_name || activityData?.dungeon_name || 'Activity'
 
   const sidebarGroups = useMemo(() => {
     if (!activityData?.encounters) return []
     return [
       {
-        title: "Thông tin Activity",
+        title: 'Thông tin Activity',
         items: [
           {
-            id: "overview",
-            title: "Tổng quan & Loadout",
-            href: "?enc=overview",
+            id: 'overview',
+            title: 'Tổng quan & Loadout',
+            href: '?enc=overview',
           },
           // Empty array from slim payload still means “has secrets” — keep nav link.
           ...(activityData.activity_secrets != null
             ? [
                 {
-                  id: "secrets",
-                  title: "Secrets & Rương ẩn",
-                  href: "?enc=secrets",
+                  id: 'secrets',
+                  title: 'Secrets & Rương ẩn',
+                  href: '?enc=secrets',
                 },
               ]
             : []),
         ],
       },
       {
-        title: "Encounters",
+        title: 'Encounters',
         items: activityData.encounters.map((enc: ActivityEncounter) => ({
           id: enc.id,
           title: enc.name,
@@ -69,7 +73,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
         router.push(item.href, { scroll: false })
       }
     },
-    [router]
+    [router],
   )
 
   if (!activityData?.encounters) {
@@ -79,23 +83,29 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
   const activeEncounter =
     isOverview || isSecretsView
       ? null
-      : activityData.encounters.find((enc: ActivityEncounter) => enc.id === activeEncounterId) ||
-        activityData.encounters[0]
+      : activityData.encounters.find(
+          (enc: ActivityEncounter) => enc.id === activeEncounterId,
+        ) || activityData.encounters[0]
 
   const currentViewId = isOverview
-    ? "overview"
+    ? 'overview'
     : isSecretsView
-      ? "secrets"
+      ? 'secrets'
       : activeEncounter?.id
 
   const renderContent = () => {
     if (isSecretsView) {
-      if (activityData.activity_secrets && activityData.activity_secrets.length > 0) {
+      if (
+        activityData.activity_secrets &&
+        activityData.activity_secrets.length > 0
+      ) {
         return (
           <GuideTemplate
             title="Secrets & Rương ẩn"
             description="Vị trí rương ẩn và giải đố hạt giống viền đỏ (Red Border)"
-            mechanics={<EncounterSecrets secrets={activityData.activity_secrets} />}
+            mechanics={
+              <EncounterSecrets secrets={activityData.activity_secrets} />
+            }
             map={null}
             roles={null}
           />
@@ -123,22 +133,33 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
     return (
       <GuideTemplate
         title={activeEncounter.name}
-        description={activityData.preface?.author_notes || "Hướng dẫn chi tiết cơ chế chiến đấu"}
+        description={
+          activityData.preface?.author_notes ||
+          'Hướng dẫn chi tiết cơ chế chiến đấu'
+        }
         encounterId={activeEncounter.id}
         activitySlug={pageTitle}
         mechanics={
-          activeEncounter.walkthrough && Object.keys(activeEncounter.walkthrough).length > 0 ? (
+          activeEncounter.walkthrough &&
+          Object.keys(activeEncounter.walkthrough).length > 0 ? (
             <EncounterPhase walkthrough={activeEncounter.walkthrough} />
           ) : undefined
         }
         map={
           activeEncounter.images && activeEncounter.images.length > 0 ? (
-            <EncounterMap images={activeEncounter.images} encounterName={activeEncounter.name} />
+            <EncounterMap
+              images={activeEncounter.images}
+              encounterName={activeEncounter.name}
+            />
           ) : undefined
         }
         roles={
-          activeEncounter.roles && Object.keys(activeEncounter.roles).length > 0 ? (
-            <EncounterRoles roles={activeEncounter.roles} encounterName={activeEncounter.name} />
+          activeEncounter.roles &&
+          Object.keys(activeEncounter.roles).length > 0 ? (
+            <EncounterRoles
+              roles={activeEncounter.roles}
+              encounterName={activeEncounter.name}
+            />
           ) : undefined
         }
         secrets={
@@ -153,7 +174,7 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
   return (
     <>
       <GuideShell
-        contentKey={currentViewId || "overview"}
+        contentKey={currentViewId || 'overview'}
         sidebar={
           <GuideSidebar
             groups={sidebarGroups}
@@ -184,4 +205,3 @@ export function ActivityEncounterView({ activityData, activeEncounterId }: Activ
     </>
   )
 }
-

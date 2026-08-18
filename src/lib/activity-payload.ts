@@ -1,4 +1,4 @@
-import type { ActivityData, ActivityEncounter } from "@/types"
+import type { ActivityData, ActivityEncounter } from '@/types'
 
 function stubEncounter(enc: ActivityEncounter): ActivityEncounter {
   return { id: enc.id, name: enc.name }
@@ -10,14 +10,14 @@ function stubEncounter(enc: ActivityEncounter): ActivityEncounter {
  */
 export function slimActivityForClient(
   data: ActivityData,
-  activeEncounterId?: string
+  activeEncounterId?: string,
 ): ActivityData {
   const view =
-    !activeEncounterId || activeEncounterId === "overview"
-      ? "overview"
-      : activeEncounterId === "secrets"
-        ? "secrets"
-        : "encounter"
+    !activeEncounterId || activeEncounterId === 'overview'
+      ? 'overview'
+      : activeEncounterId === 'secrets'
+        ? 'secrets'
+        : 'encounter'
 
   const hasSecrets = Boolean(data.activity_secrets)
   const base = {
@@ -27,7 +27,7 @@ export function slimActivityForClient(
     location: data.location,
   }
 
-  if (view === "overview") {
+  if (view === 'overview') {
     return {
       ...base,
       preface: data.preface,
@@ -41,7 +41,7 @@ export function slimActivityForClient(
     }
   }
 
-  if (view === "secrets") {
+  if (view === 'secrets') {
     return {
       ...base,
       loot_table: [],
@@ -51,7 +51,8 @@ export function slimActivityForClient(
   }
 
   const active =
-    data.encounters.find((enc) => enc.id === activeEncounterId) || data.encounters[0]
+    data.encounters.find((enc) => enc.id === activeEncounterId) ||
+    data.encounters[0]
 
   return {
     ...base,
@@ -60,7 +61,7 @@ export function slimActivityForClient(
       ? { author_notes: data.preface.author_notes }
       : undefined,
     encounters: data.encounters.map((enc) =>
-      enc.id === active?.id ? enc : stubEncounter(enc)
+      enc.id === active?.id ? enc : stubEncounter(enc),
     ),
     activity_secrets: hasSecrets ? [] : undefined,
   }
@@ -71,7 +72,7 @@ export function slimActivityForClient(
  */
 export function slimExoticMissionForClient(
   data: ActivityData,
-  activeTabId = "overview"
+  activeTabId = 'overview',
 ): ActivityData {
   const base = {
     raid_name: data.raid_name,
@@ -85,16 +86,18 @@ export function slimExoticMissionForClient(
     ? [{ id: data.encounters[0].id, name: data.encounters[0].name }]
     : []
 
-  if (activeTabId === "walkthrough") {
+  if (activeTabId === 'walkthrough') {
     return {
       ...base,
       loot_table: [],
       encounters: data.encounters,
-      catalyst_guide: hasCatalyst ? { title: data.catalyst_guide!.title } : undefined,
+      catalyst_guide: hasCatalyst
+        ? { title: data.catalyst_guide!.title }
+        : undefined,
     }
   }
 
-  if (activeTabId === "catalyst") {
+  if (activeTabId === 'catalyst') {
     return {
       ...base,
       loot_table: [],
@@ -112,6 +115,8 @@ export function slimExoticMissionForClient(
     loot_table: data.loot_table,
     armor_table: data.armor_table,
     encounters: encounterStub,
-    catalyst_guide: hasCatalyst ? { title: data.catalyst_guide!.title } : undefined,
+    catalyst_guide: hasCatalyst
+      ? { title: data.catalyst_guide!.title }
+      : undefined,
   }
 }

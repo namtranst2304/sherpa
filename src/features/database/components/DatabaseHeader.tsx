@@ -1,43 +1,43 @@
-import React from 'react';
-import { Search } from 'lucide-react';
+import React from 'react'
+import { Search } from 'lucide-react'
 
 interface DatabaseHeaderProps {
-  title: string;
-  description: string;
-  searchPlaceholder?: string;
-  searchValue: string;
-  onSearchChange: (value: string) => void;
-  actions?: React.ReactNode;
+  title: string
+  description: string
+  searchPlaceholder?: string
+  searchValue: string
+  onSearchChange: (value: string) => void
+  actions?: React.ReactNode
 }
 
 export function DatabaseHeader({
   title,
   description,
-  searchPlaceholder = "Tìm kiếm...",
+  searchPlaceholder = 'Tìm kiếm...',
   searchValue,
   onSearchChange,
-  actions
+  actions,
 }: DatabaseHeaderProps) {
   return (
-    <div className="sticky top-14 md:top-28 z-20 pt-4 md:pt-6 pb-4 pl-0 bg-background/80 backdrop-blur-md border-b border-zinc-800/50">
+    <div className="sticky top-14 z-20 border-b border-zinc-800/50 bg-background/80 pt-4 pb-4 pl-0 backdrop-blur-md md:top-28 md:pt-6">
       <div className="flex flex-col gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-white to-neon-cyan animate-cyber-scan uppercase drop-shadow-[0_0_10px_rgba(0,243,255,0.3)]">
+          <h1 className="animate-cyber-scan bg-gradient-to-r from-neon-cyan via-white to-neon-cyan bg-clip-text text-2xl font-black tracking-wider text-transparent uppercase drop-shadow-[0_0_10px_rgba(0,243,255,0.3)] sm:text-3xl">
             {title}
           </h1>
-          <p className="text-zinc-400 mt-2 font-mono text-sm max-w-2xl leading-relaxed">
+          <p className="mt-2 max-w-2xl font-mono text-sm leading-relaxed text-zinc-400">
             {description}
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
-          <div className="relative group w-full sm:max-w-md">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-zinc-500 group-focus-within:text-neon-cyan transition-colors" />
+        <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
+          <div className="group relative w-full sm:max-w-md">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <Search className="h-5 w-5 text-zinc-500 transition-colors group-focus-within:text-neon-cyan" />
             </div>
             <input
               type="search"
-              className="block w-full min-h-11 pl-10 pr-3 py-2.5 border border-zinc-800 rounded-md leading-5 bg-zinc-900/50 text-zinc-300 placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-neon-cyan focus:border-neon-cyan sm:text-sm transition-all focus:bg-zinc-900"
+              className="block min-h-11 w-full rounded-md border border-zinc-800 bg-zinc-900/50 py-2.5 pr-3 pl-10 leading-5 text-zinc-300 placeholder-zinc-500 transition-all focus:border-neon-cyan focus:bg-zinc-900 focus:ring-1 focus:ring-neon-cyan focus:outline-none sm:text-sm"
               placeholder={searchPlaceholder}
               value={searchValue}
               onChange={(e) => onSearchChange(e.target.value)}
@@ -45,12 +45,12 @@ export function DatabaseHeader({
           </div>
 
           {actions && (
-            <div className="flex flex-col sm:flex-row flex-wrap gap-2 w-full sm:w-auto sm:ml-auto">
+            <div className="flex w-full flex-col flex-wrap gap-2 sm:ml-auto sm:w-auto sm:flex-row">
               {actions}
             </div>
           )}
         </div>
       </div>
     </div>
-  );
+  )
 }

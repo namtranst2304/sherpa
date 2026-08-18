@@ -1,10 +1,11 @@
-import React from 'react';
-import { ChevronDown, type LucideIcon } from 'lucide-react';
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
+import React from 'react'
+import { ChevronDown, type LucideIcon } from 'lucide-react'
+import { cva, type VariantProps } from 'class-variance-authority'
+import { cn } from '@/lib/utils'
 
-export type CyberVariant = 'cyan' | 'orange' | 'yellow' | 'red' | 'green' | 'zinc' | 'exotic';
-export type CyberSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type CyberVariant =
+  'cyan' | 'orange' | 'yellow' | 'red' | 'green' | 'zinc' | 'exotic'
+export type CyberSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 // ─── CYBER BUTTON ────────────────────────────────────────────────────────────
 const cyberButtonVariants = cva(
@@ -33,11 +34,31 @@ const cyberButtonVariants = cva(
       },
     },
     compoundVariants: [
-      { variant: 'cyan', glow: true, className: 'shadow-neon-cyan hover:shadow-neon-cyan-hover' },
-      { variant: 'orange', glow: true, className: 'shadow-neon-orange hover:shadow-neon-orange-hover' },
-      { variant: 'yellow', glow: true, className: 'shadow-neon-yellow hover:shadow-neon-yellow-hover' },
-      { variant: 'red', glow: true, className: 'shadow-neon-red hover:shadow-neon-red-hover' },
-      { variant: 'green', glow: true, className: 'shadow-neon-green hover:shadow-neon-green-hover' },
+      {
+        variant: 'cyan',
+        glow: true,
+        className: 'shadow-neon-cyan hover:shadow-neon-cyan-hover',
+      },
+      {
+        variant: 'orange',
+        glow: true,
+        className: 'shadow-neon-orange hover:shadow-neon-orange-hover',
+      },
+      {
+        variant: 'yellow',
+        glow: true,
+        className: 'shadow-neon-yellow hover:shadow-neon-yellow-hover',
+      },
+      {
+        variant: 'red',
+        glow: true,
+        className: 'shadow-neon-red hover:shadow-neon-red-hover',
+      },
+      {
+        variant: 'green',
+        glow: true,
+        className: 'shadow-neon-green hover:shadow-neon-green-hover',
+      },
     ],
     defaultVariants: {
       variant: 'cyan',
@@ -45,11 +66,12 @@ const cyberButtonVariants = cva(
       glow: true,
       fullWidth: false,
     },
-  }
-);
+  },
+)
 
 interface CyberButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof cyberButtonVariants> {}
 
 export function CyberButton({
@@ -63,12 +85,14 @@ export function CyberButton({
 }: CyberButtonProps) {
   return (
     <button
-      className={cn(cyberButtonVariants({ variant, size, glow, fullWidth, className }))}
+      className={cn(
+        cyberButtonVariants({ variant, size, glow, fullWidth, className }),
+      )}
       {...props}
     >
       {children}
     </button>
-  );
+  )
 }
 
 // ─── CYBER CARD ──────────────────────────────────────────────────────────────
@@ -95,8 +119,8 @@ const cyberCardVariants = cva(
       variant: 'zinc',
       padding: 'md',
     },
-  }
-);
+  },
+)
 
 const cyberCardCorners = {
   cyan: 'border-neon-cyan',
@@ -105,12 +129,13 @@ const cyberCardCorners = {
   red: 'border-neon-red',
   green: 'border-neon-green',
   zinc: 'border-zinc-500',
-};
+}
 
 interface CyberCardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof cyberCardVariants> {
-  withCorners?: boolean;
+  withCorners?: boolean
 }
 
 export function CyberCard({
@@ -121,7 +146,7 @@ export function CyberCard({
   children,
   ...props
 }: CyberCardProps) {
-  const currentVariant = variant || 'zinc';
+  const currentVariant = variant || 'zinc'
   return (
     <div
       className={cn(cyberCardVariants({ variant, padding, className }))}
@@ -129,13 +154,23 @@ export function CyberCard({
     >
       {withCorners && (
         <>
-          <div className={cn('absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2', cyberCardCorners[currentVariant])} />
-          <div className={cn('absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2', cyberCardCorners[currentVariant])} />
+          <div
+            className={cn(
+              'absolute top-0 left-0 h-3 w-3 border-t-2 border-l-2',
+              cyberCardCorners[currentVariant],
+            )}
+          />
+          <div
+            className={cn(
+              'absolute right-0 bottom-0 h-3 w-3 border-r-2 border-b-2',
+              cyberCardCorners[currentVariant],
+            )}
+          />
         </>
       )}
       {children}
     </div>
-  );
+  )
 }
 
 // ─── CYBER BADGE ─────────────────────────────────────────────────────────────
@@ -145,12 +180,16 @@ const cyberBadgeVariants = cva(
     variants: {
       variant: {
         cyan: 'bg-neon-cyan/10 text-neon-cyan border-neon-cyan shadow-[0_0_8px_rgba(0,243,255,0.15)]',
-        orange: 'bg-neon-orange/10 text-neon-orange border-neon-orange shadow-[0_0_8px_rgba(255,140,0,0.15)]',
-        yellow: 'bg-neon-yellow/10 text-neon-yellow border-neon-yellow shadow-[0_0_8px_rgba(252,226,5,0.15)]',
+        orange:
+          'bg-neon-orange/10 text-neon-orange border-neon-orange shadow-[0_0_8px_rgba(255,140,0,0.15)]',
+        yellow:
+          'bg-neon-yellow/10 text-neon-yellow border-neon-yellow shadow-[0_0_8px_rgba(252,226,5,0.15)]',
         red: 'bg-neon-red/10 text-neon-red border-neon-red shadow-[0_0_8px_rgba(255,0,0,0.15)]',
-        green: 'bg-neon-green/10 text-neon-green border-neon-green shadow-[0_0_8px_rgba(57,255,20,0.15)]',
+        green:
+          'bg-neon-green/10 text-neon-green border-neon-green shadow-[0_0_8px_rgba(57,255,20,0.15)]',
         zinc: 'bg-zinc-900/50 text-zinc-500 border-zinc-700',
-        exotic: 'bg-amber-500/10 text-amber-400 border-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.15)]',
+        exotic:
+          'bg-amber-500/10 text-amber-400 border-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.15)]',
       },
       size: {
         xs: 'px-1 py-0.5 text-[8px] font-black tracking-widest',
@@ -162,8 +201,8 @@ const cyberBadgeVariants = cva(
       variant: 'cyan',
       size: 'md',
     },
-  }
-);
+  },
+)
 
 const cyberBadgeIndicator = {
   cyan: 'bg-neon-cyan shadow-[0_0_8px_#00f3ff]',
@@ -173,13 +212,14 @@ const cyberBadgeIndicator = {
   green: 'bg-neon-green shadow-[0_0_8px_#39ff14]',
   zinc: 'bg-zinc-600',
   exotic: 'bg-amber-500 shadow-[0_0_8px_#f59e0b]',
-};
+}
 
 interface CyberBadgeProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
+  extends
+    React.HTMLAttributes<HTMLSpanElement>,
     VariantProps<typeof cyberBadgeVariants> {
-  pulse?: boolean;
-  withIndicator?: boolean;
+  pulse?: boolean
+  withIndicator?: boolean
 }
 
 export function CyberBadge({
@@ -191,7 +231,7 @@ export function CyberBadge({
   children,
   ...props
 }: CyberBadgeProps) {
-  const currentVariant = variant || 'cyan';
+  const currentVariant = variant || 'cyan'
   return (
     <span
       className={cn(cyberBadgeVariants({ variant, size, className }))}
@@ -200,44 +240,43 @@ export function CyberBadge({
       {withIndicator && (
         <div
           className={cn(
-            'w-1.5 h-1.5 rounded-none shrink-0',
+            'h-1.5 w-1.5 shrink-0 rounded-none',
             cyberBadgeIndicator[currentVariant],
-            pulse && 'animate-pulse'
+            pulse && 'animate-pulse',
           )}
         />
       )}
       {children}
     </span>
-  );
+  )
 }
 
 // ─── CYBER HEADING ───────────────────────────────────────────────────────────
-const cyberHeadingVariants = cva(
-  'font-extrabold uppercase tracking-widest',
-  {
-    variants: {
-      variant: {
-        default: 'text-foreground',
-        gradient: 'text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange text-glow-cyan',
-        exotic: 'text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]',
-        legendary: 'text-purple-400 drop-shadow-[0_0_10px_rgba(192,132,252,0.5)]',
-      },
-      size: {
-        sm: 'text-xl',
-        md: 'text-2xl',
-        lg: 'text-3xl md:text-4xl',
-        xl: 'text-4xl md:text-6xl',
-      },
+const cyberHeadingVariants = cva('font-extrabold uppercase tracking-widest', {
+  variants: {
+    variant: {
+      default: 'text-foreground',
+      gradient:
+        'text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange text-glow-cyan',
+      exotic: 'text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]',
+      legendary: 'text-purple-400 drop-shadow-[0_0_10px_rgba(192,132,252,0.5)]',
     },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md',
+    size: {
+      sm: 'text-xl',
+      md: 'text-2xl',
+      lg: 'text-3xl md:text-4xl',
+      xl: 'text-4xl md:text-6xl',
     },
-  }
-);
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'md',
+  },
+})
 
 interface CyberHeadingProps
-  extends React.HTMLAttributes<HTMLHeadingElement>,
+  extends
+    React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof cyberHeadingVariants> {}
 
 export function CyberHeading({
@@ -248,19 +287,24 @@ export function CyberHeading({
   ...props
 }: CyberHeadingProps) {
   return (
-    <h1 className={cn(cyberHeadingVariants({ variant, size, className }))} {...props}>
+    <h1
+      className={cn(cyberHeadingVariants({ variant, size, className }))}
+      {...props}
+    >
       {children}
     </h1>
-  );
+  )
 }
 
 // ─── CYBER EXPAND TOGGLE ─────────────────────────────────────────────────────
-interface CyberExpandToggleProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
-  expanded: boolean;
-  onToggle?: () => void;
-  collapsedLabel?: string;
-  expandedLabel?: string;
+interface CyberExpandToggleProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  'children'
+> {
+  expanded: boolean
+  onToggle?: () => void
+  collapsedLabel?: string
+  expandedLabel?: string
 }
 
 export function CyberExpandToggle({
@@ -277,20 +321,22 @@ export function CyberExpandToggle({
     <button
       type={type}
       onClick={(e) => {
-        onToggle?.();
-        onClick?.(e);
+        onToggle?.()
+        onClick?.(e)
       }}
       className={cn(
-        'flex items-center justify-between w-full min-h-11 px-3 py-2.5 text-xs font-mono uppercase tracking-wider border border-zinc-800 bg-zinc-950/60 text-neon-cyan hover:border-neon-cyan/50 transition-colors',
-        className
+        'flex min-h-11 w-full items-center justify-between border border-zinc-800 bg-zinc-950/60 px-3 py-2.5 font-mono text-xs tracking-wider text-neon-cyan uppercase transition-colors hover:border-neon-cyan/50',
+        className,
       )}
       aria-expanded={expanded}
       {...props}
     >
       <span>{expanded ? expandedLabel : collapsedLabel}</span>
-      <ChevronDown className={cn('w-4 h-4 transition-transform', expanded && 'rotate-180')} />
+      <ChevronDown
+        className={cn('h-4 w-4 transition-transform', expanded && 'rotate-180')}
+      />
     </button>
-  );
+  )
 }
 
 // ─── CYBER SECTION HEADER ────────────────────────────────────────────────────
@@ -331,15 +377,18 @@ const cyberSectionHeaderTone = {
     icon: 'text-zinc-400',
     title: 'text-foreground',
   },
-} as const;
+} as const
 
-type CyberSectionHeaderVariant = keyof typeof cyberSectionHeaderTone;
+type CyberSectionHeaderVariant = keyof typeof cyberSectionHeaderTone
 
-interface CyberSectionHeaderProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
-  icon: LucideIcon;
-  title: React.ReactNode;
-  variant?: CyberSectionHeaderVariant;
-  actions?: React.ReactNode;
+interface CyberSectionHeaderProps extends Omit<
+  React.HTMLAttributes<HTMLDivElement>,
+  'title'
+> {
+  icon: LucideIcon
+  title: React.ReactNode
+  variant?: CyberSectionHeaderVariant
+  actions?: React.ReactNode
 }
 
 export function CyberSectionHeader({
@@ -350,27 +399,34 @@ export function CyberSectionHeader({
   className,
   ...props
 }: CyberSectionHeaderProps) {
-  const tone = cyberSectionHeaderTone[variant];
+  const tone = cyberSectionHeaderTone[variant]
 
   return (
     <div
       className={cn(
-        'border-b pb-4 mb-4 flex flex-wrap items-center gap-3 relative z-10',
+        'relative z-10 mb-4 flex flex-wrap items-center gap-3 border-b pb-4',
         actions && 'justify-between',
         tone.border,
-        className
+        className,
       )}
       {...props}
     >
-      <div className="flex items-center gap-3 min-w-0">
-        <div className={cn('p-2 rounded-md shrink-0', tone.iconBox)}>
-          <Icon className={cn('w-5 h-5', tone.icon)} />
+      <div className="flex min-w-0 items-center gap-3">
+        <div className={cn('shrink-0 rounded-md p-2', tone.iconBox)}>
+          <Icon className={cn('h-5 w-5', tone.icon)} />
         </div>
-        <h2 className={cn('text-lg sm:text-xl font-bold uppercase tracking-wider break-words', tone.title)}>
+        <h2
+          className={cn(
+            'text-lg font-bold tracking-wider break-words uppercase sm:text-xl',
+            tone.title,
+          )}
+        >
           {title}
         </h2>
       </div>
-      {actions ? <div className="shrink-0 w-full sm:w-auto">{actions}</div> : null}
+      {actions ? (
+        <div className="w-full shrink-0 sm:w-auto">{actions}</div>
+      ) : null}
     </div>
-  );
+  )
 }

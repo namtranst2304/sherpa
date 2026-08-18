@@ -1,24 +1,24 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useRef, useSyncExternalStore } from "react"
-import { motion, AnimatePresence, useReducedMotion } from "motion/react"
-import { Play, Pause, Music } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState, useEffect, useRef, useSyncExternalStore } from 'react'
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
+import { Play, Pause, Music } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 function getGlobalAudio() {
-  if (typeof document === "undefined") return null
-  const el = document.getElementById("global-bg-audio")
+  if (typeof document === 'undefined') return null
+  const el = document.getElementById('global-bg-audio')
   return el instanceof HTMLAudioElement ? el : null
 }
 
 function subscribePlaying(onStoreChange: () => void) {
   const audio = getGlobalAudio()
   if (!audio) return () => {}
-  audio.addEventListener("play", onStoreChange)
-  audio.addEventListener("pause", onStoreChange)
+  audio.addEventListener('play', onStoreChange)
+  audio.addEventListener('pause', onStoreChange)
   return () => {
-    audio.removeEventListener("play", onStoreChange)
-    audio.removeEventListener("pause", onStoreChange)
+    audio.removeEventListener('play', onStoreChange)
+    audio.removeEventListener('pause', onStoreChange)
   }
 }
 
@@ -35,7 +35,7 @@ export function MusicPlayer() {
   const isPlaying = useSyncExternalStore(
     subscribePlaying,
     getPlayingSnapshot,
-    getPlayingServerSnapshot
+    getPlayingServerSnapshot,
   )
   const [showPulseHint, setShowPulseHint] = useState(false)
   const wasPlayingRef = useRef(false)
@@ -51,8 +51,11 @@ export function MusicPlayer() {
     const hintScroll = () => {
       if (audio.paused) setShowPulseHint(true)
     }
-    window.addEventListener("wheel", hintScroll, { once: true, passive: true })
-    window.addEventListener("touchmove", hintScroll, { once: true, passive: true })
+    window.addEventListener('wheel', hintScroll, { once: true, passive: true })
+    window.addEventListener('touchmove', hintScroll, {
+      once: true,
+      passive: true,
+    })
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
@@ -65,7 +68,7 @@ export function MusicPlayer() {
         wasPlayingRef.current = false
       }
     }
-    document.addEventListener("visibilitychange", handleVisibilityChange)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
 
     const handleToggleGlobalMusic = (e: Event) => {
       const customEvent = e as CustomEvent
@@ -79,13 +82,13 @@ export function MusicPlayer() {
         ttsWasPlayingRef.current = false
       }
     }
-    window.addEventListener("toggle-global-music", handleToggleGlobalMusic)
+    window.addEventListener('toggle-global-music', handleToggleGlobalMusic)
 
     return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange)
-      window.removeEventListener("toggle-global-music", handleToggleGlobalMusic)
-      window.removeEventListener("wheel", hintScroll)
-      window.removeEventListener("touchmove", hintScroll)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      window.removeEventListener('toggle-global-music', handleToggleGlobalMusic)
+      window.removeEventListener('wheel', hintScroll)
+      window.removeEventListener('touchmove', hintScroll)
     }
   }, [])
 
@@ -103,28 +106,33 @@ export function MusicPlayer() {
   }
 
   return (
-    <div className="fixed bottom-4 left-4 md:bottom-8 md:left-8 z-50 flex items-center gap-2 md:gap-3">
+    <div className="fixed bottom-4 left-4 z-50 flex items-center gap-2 md:bottom-8 md:left-8 md:gap-3">
       <motion.button
         type="button"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={togglePlay}
-        aria-label={isPlaying ? "Tạm dừng nhạc nền" : "Phát nhạc nền"}
+        aria-label={isPlaying ? 'Tạm dừng nhạc nền' : 'Phát nhạc nền'}
         aria-pressed={isPlaying}
         className={cn(
-          "relative flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-none border backdrop-blur-md transition-all duration-300 group",
+          'group relative flex h-11 w-11 items-center justify-center rounded-none border backdrop-blur-md transition-all duration-300 md:h-12 md:w-12',
           pulseHint
-            ? "animate-pulse border-neon-cyan/80 bg-neon-cyan/20 shadow-[0_0_20px_rgba(34,211,238,0.5)]"
-            : "",
+            ? 'animate-pulse border-neon-cyan/80 bg-neon-cyan/20 shadow-[0_0_20px_rgba(34,211,238,0.5)]'
+            : '',
           isPlaying
-            ? "bg-neon-cyan/20 border-neon-cyan/50 text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.3)]"
-            : "bg-black/60 border-zinc-700/50 text-zinc-400 hover:text-white hover:border-zinc-500"
+            ? 'border-neon-cyan/50 bg-neon-cyan/20 text-neon-cyan shadow-[0_0_15px_rgba(34,211,238,0.3)]'
+            : 'border-zinc-700/50 bg-black/60 text-zinc-400 hover:border-zinc-500 hover:text-white',
         )}
       >
         {isPlaying ? (
-          <Pause className="w-4 h-4 md:w-5 md:h-5" />
+          <Pause className="h-4 w-4 md:h-5 md:w-5" />
         ) : (
-          <Play className={cn("w-4 h-4 md:w-5 md:h-5 ml-1", pulseHint ? "text-white" : "")} />
+          <Play
+            className={cn(
+              'ml-1 h-4 w-4 md:h-5 md:w-5',
+              pulseHint ? 'text-white' : '',
+            )}
+          />
         )}
 
         <AnimatePresence>
@@ -132,7 +140,7 @@ export function MusicPlayer() {
             <motion.div
               className="absolute inset-0 rounded-full border border-neon-cyan"
               animate={{ scale: [1, 1.2, 1], opacity: [0.8, 0, 0.8] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
               exit={{ opacity: 0 }}
             />
           )}
@@ -141,22 +149,24 @@ export function MusicPlayer() {
 
       <div
         className={cn(
-          "hidden md:flex items-center gap-2 px-4 py-2 rounded-none bg-black/60 backdrop-blur-md border border-zinc-800/50 transition-all duration-500",
-          isPlaying ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
+          'hidden items-center gap-2 rounded-none border border-zinc-800/50 bg-black/60 px-4 py-2 backdrop-blur-md transition-all duration-500 md:flex',
+          isPlaying
+            ? 'translate-x-0 opacity-100'
+            : 'pointer-events-none -translate-x-4 opacity-0',
         )}
       >
-        <Music className="w-4 h-4 text-neon-cyan/70" />
-        <div className="flex items-end gap-[2px] h-4">
+        <Music className="h-4 w-4 text-neon-cyan/70" />
+        <div className="flex h-4 items-end gap-[2px]">
           {[1, 2, 3, 4].map((i) => (
             <div
               key={i}
-              className="w-1 bg-neon-cyan rounded-t-sm"
+              className="w-1 rounded-t-sm bg-neon-cyan"
               style={{
-                height: isPlaying ? undefined : "20%",
+                height: isPlaying ? undefined : '20%',
                 animation:
                   isPlaying && !shouldReduceMotion
                     ? `equalizer ${1 + i * 0.2}s ease-in-out infinite`
-                    : "none",
+                    : 'none',
               }}
             />
           ))}

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import React, { useState, useEffect, useCallback } from "react"
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react"
-import { ROMAN_NUMERALS, type TimelineEraSummary } from "@/data/timeline/index"
-import { getTheme, type ThemeColorTokens } from "@/lib/theme"
-import { cn } from "@/lib/utils"
+import React, { useState, useEffect, useCallback } from 'react'
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
+import { ROMAN_NUMERALS, type TimelineEraSummary } from '@/data/timeline/index'
+import { getTheme, type ThemeColorTokens } from '@/lib/theme'
+import { cn } from '@/lib/utils'
 
 function TimelineNode({
   era,
@@ -29,23 +29,23 @@ function TimelineNode({
     <button
       type="button"
       onClick={onClick}
-      className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center group outline-none cursor-pointer z-10"
+      className="group absolute left-1/2 z-10 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center justify-center outline-none"
       style={{ top: `${idx * (100 / (total - 1 || 1))}%` }}
       aria-label={`Chương ${idx + 1}: ${era.name}`}
-      aria-current={isActive ? "true" : undefined}
+      aria-current={isActive ? 'true' : undefined}
     >
       <div
         className={cn(
-          "absolute inset-0 m-auto h-[2px] w-3 rounded-full transition-colors duration-200 z-0",
-          isPast ? activeTheme.bg : "bg-zinc-700/80"
+          'absolute inset-0 z-0 m-auto h-[2px] w-3 rounded-full transition-colors duration-200',
+          isPast ? activeTheme.bg : 'bg-zinc-700/80',
         )}
       />
       <div
         className={cn(
-          "absolute m-auto inset-0 border transition-all duration-200 z-10 rotate-45",
+          'absolute inset-0 z-10 m-auto rotate-45 border transition-all duration-200',
           isActive
-            ? "w-5 h-5 opacity-100"
-            : "w-2 h-2 opacity-0 scale-75 group-hover:w-4 group-hover:h-4 group-hover:opacity-100 group-hover:scale-100"
+            ? 'h-5 w-5 opacity-100'
+            : 'h-2 w-2 scale-75 opacity-0 group-hover:h-4 group-hover:w-4 group-hover:scale-100 group-hover:opacity-100',
         )}
         style={{
           borderColor: theme.hex,
@@ -54,18 +54,25 @@ function TimelineNode({
       />
       <div
         className={cn(
-          "relative z-20 rotate-45 transition-all duration-200",
-          isActive ? "w-2.5 h-2.5 bg-white" : "w-1.5 h-1.5 bg-zinc-600 group-hover:w-2 group-hover:h-2 group-hover:bg-white"
+          'relative z-20 rotate-45 transition-all duration-200',
+          isActive
+            ? 'h-2.5 w-2.5 bg-white'
+            : 'h-1.5 w-1.5 bg-zinc-600 group-hover:h-2 group-hover:w-2 group-hover:bg-white',
         )}
         style={isActive ? { boxShadow: `0 0 15px ${theme.hex}` } : undefined}
       />
 
       {/* Hover label — CSS only */}
-      <div className="absolute right-full mr-4 flex flex-col items-end pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-150 bg-black/70 border border-white/10 px-3 py-1.5 max-w-[12rem]">
-        <span className={cn("text-[9px] font-medium tracking-widest uppercase mb-0.5", theme.text)}>
+      <div className="pointer-events-none absolute right-full mr-4 flex max-w-[12rem] flex-col items-end border border-white/10 bg-black/70 px-3 py-1.5 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+        <span
+          className={cn(
+            'mb-0.5 text-[9px] font-medium tracking-widest uppercase',
+            theme.text,
+          )}
+        >
           CHƯƠNG {ROMAN_NUMERALS[idx] || String(idx + 1)}
         </span>
-        <span className="text-xs font-sans tracking-widest text-white uppercase text-right leading-tight line-clamp-2">
+        <span className="line-clamp-2 text-right font-sans text-xs leading-tight tracking-widest text-white uppercase">
           {era.name}
         </span>
       </div>
@@ -82,7 +89,11 @@ export function EraNav({
 }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const rawProgress = useMotionValue(0)
-  const smoothProgress = useSpring(rawProgress, { stiffness: 400, damping: 40, mass: 0.5 })
+  const smoothProgress = useSpring(rawProgress, {
+    stiffness: 400,
+    damping: 40,
+    mass: 0.5,
+  })
   const progressHeight = useTransform(smoothProgress, (p) => `${p}%`)
 
   const activeEra = eras[activeIndex] || eras[0]
@@ -90,44 +101,53 @@ export function EraNav({
 
   useEffect(() => {
     let rafId: number | null = null
-    const container = document.getElementById("timeline-scroll-container")
+    const container = document.getElementById('timeline-scroll-container')
     if (!container || eras.length < 2) return
 
     const onScroll = () => {
       if (rafId !== null) return
       rafId = requestAnimationFrame(() => {
         rafId = null
-        const floatIndex = Math.max(0, Math.min(container.scrollTop / container.clientHeight, eras.length - 1))
+        const floatIndex = Math.max(
+          0,
+          Math.min(
+            container.scrollTop / container.clientHeight,
+            eras.length - 1,
+          ),
+        )
         const next = Math.round(floatIndex)
         setActiveIndex((prev) => (prev !== next ? next : prev))
         rawProgress.set(floatIndex * (100 / (eras.length - 1)))
       })
     }
 
-    container.addEventListener("scroll", onScroll, { passive: true })
+    container.addEventListener('scroll', onScroll, { passive: true })
     onScroll()
     return () => {
-      container.removeEventListener("scroll", onScroll)
+      container.removeEventListener('scroll', onScroll)
       if (rafId !== null) cancelAnimationFrame(rafId)
     }
   }, [eras, rawProgress])
 
   const scrollToEra = useCallback(
     (id: string) => {
-      eraRefs.current?.get(id)?.scrollIntoView({ behavior: "smooth" })
+      eraRefs.current?.get(id)?.scrollIntoView({ behavior: 'smooth' })
     },
-    [eraRefs]
+    [eraRefs],
   )
 
   return (
     <nav
-      className="fixed right-0 md:right-4 top-1/2 -translate-y-1/2 h-[80vh] min-h-[400px] max-h-[800px] z-50 w-8 flex flex-col py-4"
+      className="fixed top-1/2 right-0 z-50 flex h-[80vh] max-h-[800px] min-h-[400px] w-8 -translate-y-1/2 flex-col py-4 md:right-4"
       aria-label="Điều hướng timeline"
     >
-      <div className="flex-1 relative flex items-center justify-center">
-        <div className="relative w-[2px] h-full bg-white/10 z-0">
+      <div className="relative flex flex-1 items-center justify-center">
+        <div className="relative z-0 h-full w-[2px] bg-white/10">
           <motion.div
-            className={cn("w-full rounded-full absolute top-0 z-0", activeTheme.bg)}
+            className={cn(
+              'absolute top-0 z-0 w-full rounded-full',
+              activeTheme.bg,
+            )}
             style={{ height: progressHeight }}
           />
           {eras.map((era, idx) => (

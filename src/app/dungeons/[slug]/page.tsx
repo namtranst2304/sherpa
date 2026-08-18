@@ -1,5 +1,5 @@
-import { DUNGEON_SLUGS, getDungeonData } from "@/data"
-import { createActivityPage, createActivityMetadata } from "@/lib/page-utils"
+import { DUNGEON_SLUGS, getDungeonData } from '@/data'
+import { createActivityPage, createActivityMetadata } from '@/lib/page-utils'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -11,10 +11,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  return await createActivityMetadata(params, getDungeonData, "Dungeon")
+  return await createActivityMetadata(params, getDungeonData, 'Dungeon')
 }
 
-export default async function DungeonEncounterPage({ params, searchParams }: PageProps) {
+export default async function DungeonEncounterPage({
+  params,
+  searchParams,
+}: PageProps) {
   return await createActivityPage(params, searchParams, getDungeonData)
 }
-

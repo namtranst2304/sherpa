@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import React, { useState } from "react"
-import Image from "next/image"
-import { Star } from "lucide-react"
-import { bungieUrl } from "@/lib/bungie"
-import { PerkPoolGrid } from "@/components/common/PerkRow"
-import { CyberExpandToggle } from "@/components/common/CyberComponents"
+import React, { useState } from 'react'
+import Image from 'next/image'
+import { Star } from 'lucide-react'
+import { bungieUrl } from '@/lib/bungie'
+import { PerkPoolGrid } from '@/components/common/PerkRow'
+import { CyberExpandToggle } from '@/components/common/CyberComponents'
 import {
   ExoticCardHeader,
   ExoticTraitBlock,
   ItemSourceLine,
-} from "./ExoticCardParts"
-import { loadFullExoticArmor } from "../lib/load-full-item"
-import { useWishlist } from "@/hooks/use-sherpa-store"
-import { cn } from "@/lib/utils"
-import type { ExoticArmor, LeanExoticArmor } from "@/types"
+} from './ExoticCardParts'
+import { loadFullExoticArmor } from '../lib/load-full-item'
+import { useWishlist } from '@/hooks/use-sherpa-store'
+import { cn } from '@/lib/utils'
+import type { ExoticArmor, LeanExoticArmor } from '@/types'
 
 export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
   const [expanded, setExpanded] = useState(false)
@@ -39,7 +39,7 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
   }
 
   return (
-    <div className="flex flex-col bg-zinc-900/50 rounded-lg border border-zinc-800/50 overflow-hidden hover:border-neon-cyan/50 transition-colors">
+    <div className="flex flex-col overflow-hidden rounded-lg border border-zinc-800/50 bg-zinc-900/50 transition-colors hover:border-neon-cyan/50">
       <ExoticCardHeader
         iconUrl={iconUrl}
         name={armor.name}
@@ -48,26 +48,30 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
             type="button"
             onClick={() => toggleWishlist(armor.name)}
             className={cn(
-              "p-2 rounded border transition-all",
+              'rounded border p-2 transition-all',
               wishlisted
-                ? "bg-amber-500/20 border-amber-500 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]"
-                : "bg-zinc-950/60 border-zinc-800 text-zinc-500 hover:text-amber-400 hover:border-amber-500/40"
+                ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]'
+                : 'border-zinc-800 bg-zinc-950/60 text-zinc-500 hover:border-amber-500/40 hover:text-amber-400',
             )}
-            title={wishlisted ? "Đã lưu vào Wishlist (Click để bỏ)" : "Thêm vào Wishlist"}
-            aria-label={wishlisted ? "Bỏ khỏi Wishlist" : "Thêm vào Wishlist"}
+            title={
+              wishlisted
+                ? 'Đã lưu vào Wishlist (Click để bỏ)'
+                : 'Thêm vào Wishlist'
+            }
+            aria-label={wishlisted ? 'Bỏ khỏi Wishlist' : 'Thêm vào Wishlist'}
           >
-            <Star className={cn("w-4 h-4", wishlisted && "fill-amber-400")} />
+            <Star className={cn('h-4 w-4', wishlisted && 'fill-amber-400')} />
           </button>
         }
         meta={
-          <div className="flex items-center gap-2 text-sm text-neon-cyan font-mono mt-1">
+          <div className="mt-1 flex items-center gap-2 font-mono text-sm text-neon-cyan">
             <span>{armor.type}</span>
           </div>
         }
       />
 
       {armor.screenshot && (
-        <div className="relative w-full aspect-[21/9] border-b border-zinc-800 bg-black/50">
+        <div className="relative aspect-[21/9] w-full border-b border-zinc-800 bg-black/50">
           <Image
             src={bungieUrl(armor.screenshot)}
             alt={`${armor.name} screenshot`}
@@ -78,7 +82,7 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
         </div>
       )}
 
-      <div className="p-4 flex flex-col gap-4">
+      <div className="flex flex-col gap-4 p-4">
         <ExoticTraitBlock
           label="EXOTIC TRAIT"
           iconUrl={traitIconUrl}
@@ -91,7 +95,9 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
           <CyberExpandToggle
             expanded={expanded}
             onToggle={handleToggle}
-            collapsedLabel={loadingDetails ? "Đang tải..." : "Chi tiết perk pool"}
+            collapsedLabel={
+              loadingDetails ? 'Đang tải...' : 'Chi tiết perk pool'
+            }
           />
         )}
 

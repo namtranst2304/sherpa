@@ -1,10 +1,17 @@
-"use client"
+'use client'
 
-import { useState, useEffect, useCallback } from "react"
-import { createPortal } from "react-dom"
-import Image from "next/image"
-import { X, ZoomIn, ZoomOut, RotateCcw, Maximize2, Sparkles } from "lucide-react"
-import { playNavSound, playHoverSound } from "@/lib/cyber-audio"
+import { useState, useEffect, useCallback } from 'react'
+import { createPortal } from 'react-dom'
+import Image from 'next/image'
+import {
+  X,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+  Maximize2,
+  Sparkles,
+} from 'lucide-react'
+import { playNavSound, playHoverSound } from '@/lib/cyber-audio'
 
 interface ZoomableImageProps {
   src: string
@@ -59,19 +66,21 @@ export function ZoomableImage({
   useEffect(() => {
     if (!isOpen) return
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") handleClose()
-      if (e.key === "+" || e.key === "=") setZoomLevel((prev) => Math.min(prev + 0.3, 3))
-      if (e.key === "-" || e.key === "_") setZoomLevel((prev) => Math.max(prev - 0.3, 0.7))
-      if (e.key === "0") setZoomLevel(1)
+      if (e.key === 'Escape') handleClose()
+      if (e.key === '+' || e.key === '=')
+        setZoomLevel((prev) => Math.min(prev + 0.3, 3))
+      if (e.key === '-' || e.key === '_')
+        setZoomLevel((prev) => Math.max(prev - 0.3, 0.7))
+      if (e.key === '0') setZoomLevel(1)
     }
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [isOpen, handleClose])
 
   return (
     <>
       <div
-        className={`relative group cursor-pointer overflow-hidden rounded-none border border-zinc-800 transition-all duration-300 hover:border-neon-cyan/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] ${className}`}
+        className={`group relative cursor-pointer overflow-hidden rounded-none border border-zinc-800 transition-all duration-300 hover:border-neon-cyan/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] ${className}`}
         onClick={handleOpen}
         onMouseEnter={playHoverSound}
       >
@@ -81,37 +90,39 @@ export function ZoomableImage({
           width={width}
           height={height}
           unoptimized={unoptimized}
-          className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+          className="h-auto w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
         />
 
         {/* Hover cyber overlay indicator */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-          <div className="bg-zinc-950/90 px-4 py-2 border border-neon-cyan/70 text-neon-cyan backdrop-blur-md flex items-center gap-2 shadow-[0_0_20px_rgba(0,243,255,0.4)]">
-            <Maximize2 className="w-4 h-4 text-neon-cyan" />
-            <span className="text-xs font-mono font-bold tracking-widest uppercase">Phóng to Callout Map</span>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="flex items-center gap-2 border border-neon-cyan/70 bg-zinc-950/90 px-4 py-2 text-neon-cyan shadow-[0_0_20px_rgba(0,243,255,0.4)] backdrop-blur-md">
+            <Maximize2 className="h-4 w-4 text-neon-cyan" />
+            <span className="font-mono text-xs font-bold tracking-widest uppercase">
+              Phóng to Callout Map
+            </span>
           </div>
         </div>
       </div>
 
       {isOpen &&
-        typeof document !== "undefined" &&
+        typeof document !== 'undefined' &&
         createPortal(
           <div
-            className="fixed inset-0 z-[9999] flex flex-col items-center justify-between bg-black/95 backdrop-blur-md p-3 sm:p-6 animate-in fade-in duration-200 select-none cyber-grid"
+            className="fixed inset-0 z-[9999] flex animate-in flex-col items-center justify-between bg-black/95 cyber-grid p-3 backdrop-blur-md duration-200 select-none fade-in sm:p-6"
             onClick={handleClose}
           >
             {/* Top HUD Header */}
             <div
-              className="relative w-full max-w-6xl flex items-center justify-between px-4 py-2.5 bg-zinc-950/90 border border-neon-cyan/40 shadow-[0_0_20px_rgba(0,243,255,0.15)] z-50 shrink-0"
+              className="relative z-50 flex w-full max-w-6xl shrink-0 items-center justify-between border border-neon-cyan/40 bg-zinc-950/90 px-4 py-2.5 shadow-[0_0_20px_rgba(0,243,255,0.15)]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center gap-2 min-w-0">
-                <Sparkles className="w-4 h-4 text-neon-cyan shrink-0" />
-                <div className="flex flex-col min-w-0">
-                  <span className="text-[10px] font-mono text-neon-cyan/70 tracking-[0.2em] uppercase">
+              <div className="flex min-w-0 items-center gap-2">
+                <Sparkles className="h-4 w-4 shrink-0 text-neon-cyan" />
+                <div className="flex min-w-0 flex-col">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-neon-cyan/70 uppercase">
                     SYS.MAP // CALLOUT VIEWER
                   </span>
-                  <span className="text-xs sm:text-sm font-black text-zinc-100 uppercase tracking-wider truncate">
+                  <span className="truncate text-xs font-black tracking-wider text-zinc-100 uppercase sm:text-sm">
                     {alt}
                   </span>
                 </div>
@@ -122,46 +133,48 @@ export function ZoomableImage({
                 <button
                   type="button"
                   onClick={handleZoomIn}
-                  className="p-1.5 sm:p-2 bg-zinc-900 hover:bg-neon-cyan/20 text-zinc-300 hover:text-neon-cyan border border-zinc-700 hover:border-neon-cyan transition-all"
+                  className="border border-zinc-700 bg-zinc-900 p-1.5 text-zinc-300 transition-all hover:border-neon-cyan hover:bg-neon-cyan/20 hover:text-neon-cyan sm:p-2"
                   title="Phóng to (+)"
                 >
-                  <ZoomIn className="w-4 h-4" />
+                  <ZoomIn className="h-4 w-4" />
                 </button>
                 <button
                   type="button"
                   onClick={handleZoomOut}
-                  className="p-1.5 sm:p-2 bg-zinc-900 hover:bg-neon-cyan/20 text-zinc-300 hover:text-neon-cyan border border-zinc-700 hover:border-neon-cyan transition-all"
+                  className="border border-zinc-700 bg-zinc-900 p-1.5 text-zinc-300 transition-all hover:border-neon-cyan hover:bg-neon-cyan/20 hover:text-neon-cyan sm:p-2"
                   title="Thu nhỏ (-)"
                 >
-                  <ZoomOut className="w-4 h-4" />
+                  <ZoomOut className="h-4 w-4" />
                 </button>
                 <button
                   type="button"
                   onClick={handleReset}
-                  className="p-1.5 sm:p-2 bg-zinc-900 hover:bg-neon-cyan/20 text-zinc-300 hover:text-neon-cyan border border-zinc-700 hover:border-neon-cyan transition-all font-mono text-xs flex items-center gap-1"
+                  className="flex items-center gap-1 border border-zinc-700 bg-zinc-900 p-1.5 font-mono text-xs text-zinc-300 transition-all hover:border-neon-cyan hover:bg-neon-cyan/20 hover:text-neon-cyan sm:p-2"
                   title="Đặt lại tỉ lệ (0)"
                 >
-                  <RotateCcw className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">{Math.round(zoomLevel * 100)}%</span>
+                  <RotateCcw className="h-3.5 w-3.5" />
+                  <span className="hidden sm:inline">
+                    {Math.round(zoomLevel * 100)}%
+                  </span>
                 </button>
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="p-1.5 sm:p-2 bg-neon-red/20 hover:bg-neon-red/40 text-neon-red border border-neon-red/60 transition-all ml-1 cursor-pointer"
+                  className="ml-1 cursor-pointer border border-neon-red/60 bg-neon-red/20 p-1.5 text-neon-red transition-all hover:bg-neon-red/40 sm:p-2"
                   title="Đóng (ESC)"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="h-5 w-5" />
                 </button>
               </div>
             </div>
 
             {/* Main Zoom Canvas Area */}
             <div
-              className="relative flex-1 flex items-center justify-center w-full max-w-6xl overflow-auto my-3"
+              className="relative my-3 flex w-full max-w-6xl flex-1 items-center justify-center overflow-auto"
               onClick={(e) => e.stopPropagation()}
             >
               <div
-                className="transition-transform duration-200 ease-out flex items-center justify-center"
+                className="flex items-center justify-center transition-transform duration-200 ease-out"
                 style={{ transform: `scale(${zoomLevel})` }}
               >
                 <Image
@@ -170,23 +183,24 @@ export function ZoomableImage({
                   width={width}
                   height={height}
                   unoptimized={unoptimized}
-                  className="object-contain max-h-[80vh] w-auto max-w-full rounded-none border border-zinc-800 shadow-[0_0_40px_rgba(0,243,255,0.2)]"
+                  className="max-h-[80vh] w-auto max-w-full rounded-none border border-zinc-800 object-contain shadow-[0_0_40px_rgba(0,243,255,0.2)]"
                 />
               </div>
             </div>
 
             {/* Bottom Status bar */}
             <div
-              className="w-full max-w-6xl px-4 py-1.5 bg-zinc-950/80 border border-zinc-800 flex items-center justify-between text-[10px] font-mono text-zinc-500 uppercase tracking-widest shrink-0"
+              className="flex w-full max-w-6xl shrink-0 items-center justify-between border border-zinc-800 bg-zinc-950/80 px-4 py-1.5 font-mono text-[10px] tracking-widest text-zinc-500 uppercase"
               onClick={(e) => e.stopPropagation()}
             >
-              <span>Phím tắt: [+] Phóng to | [-] Thu nhỏ | [0] Đặt lại | [ESC] Đóng</span>
-              <span className="text-neon-cyan font-bold">READY</span>
+              <span>
+                Phím tắt: [+] Phóng to | [-] Thu nhỏ | [0] Đặt lại | [ESC] Đóng
+              </span>
+              <span className="font-bold text-neon-cyan">READY</span>
             </div>
           </div>,
-          document.body
+          document.body,
         )}
     </>
   )
 }
-

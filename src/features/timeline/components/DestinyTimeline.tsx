@@ -1,28 +1,34 @@
-"use client"
+'use client'
 
-import { useEffect, useRef, useState } from "react"
-import { useInView } from "motion/react"
-import dynamic from "next/dynamic"
-import type { TimelineEra, TimelineEraSummary } from "@/data/timeline/index"
-import { timelineEraClientLoaders } from "@/data/timeline/index"
-import { EraNav } from "./EraNav"
-import { useSmoothScroll } from "@/hooks/use-smooth-scroll"
+import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'motion/react'
+import dynamic from 'next/dynamic'
+import type { TimelineEra, TimelineEraSummary } from '@/data/timeline/index'
+import { timelineEraClientLoaders } from '@/data/timeline/index'
+import { EraNav } from './EraNav'
+import { useSmoothScroll } from '@/hooks/use-smooth-scroll'
 
 const EraCinematicScene = dynamic(
-  () => import("./EraCinematicScene").then((mod) => mod.EraCinematicScene),
+  () => import('./EraCinematicScene').then((mod) => mod.EraCinematicScene),
   {
     ssr: false,
     loading: () => (
-      <div className="w-full h-full flex items-center justify-center bg-[#050505] text-zinc-500 text-sm tracking-widest uppercase animate-pulse">
+      <div className="flex h-full w-full animate-pulse items-center justify-center bg-[#050505] text-sm tracking-widest text-zinc-500 uppercase">
         Đang tải...
       </div>
     ),
-  }
+  },
 )
 
-function LazyEraScene({ summary, index }: { summary: TimelineEraSummary; index: number }) {
+function LazyEraScene({
+  summary,
+  index,
+}: {
+  summary: TimelineEraSummary
+  index: number
+}) {
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: "100% 0px" })
+  const isInView = useInView(ref, { once: true, margin: '100% 0px' })
   const [era, setEra] = useState<TimelineEra | null>(null)
 
   useEffect(() => {
@@ -39,11 +45,11 @@ function LazyEraScene({ summary, index }: { summary: TimelineEraSummary; index: 
   }, [isInView, era, index])
 
   return (
-    <div ref={ref} className="w-full h-full">
+    <div ref={ref} className="h-full w-full">
       {era ? (
         <EraCinematicScene era={era} index={index} />
       ) : isInView ? (
-        <div className="w-full h-full flex items-center justify-center bg-[#050505] text-zinc-500 text-sm tracking-widest uppercase animate-pulse">
+        <div className="flex h-full w-full animate-pulse items-center justify-center bg-[#050505] text-sm tracking-widest text-zinc-500 uppercase">
           Đang tải {summary.name}...
         </div>
       ) : null}
@@ -63,7 +69,7 @@ export function DestinyTimeline({ eras }: DestinyTimelineProps) {
   return (
     <div
       id="timeline-scroll-container"
-      className="bg-[#050505] h-[100dvh] w-full overflow-y-auto overflow-x-hidden font-sans text-zinc-100 selection:bg-neon-cyan/30 selection:text-white [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] snap-y snap-mandatory overscroll-y-contain"
+      className="h-[100dvh] w-full snap-y snap-mandatory [scrollbar-width:'none'] overflow-x-hidden overflow-y-auto overscroll-y-contain bg-[#050505] font-sans text-zinc-100 [-ms-overflow-style:'none'] selection:bg-neon-cyan/30 selection:text-white [&::-webkit-scrollbar]:hidden"
     >
       <EraNav eras={eras} eraRefs={eraRefs} />
 
@@ -75,7 +81,7 @@ export function DestinyTimeline({ eras }: DestinyTimelineProps) {
             ref={(el) => {
               if (el) eraRefs.current.set(era.id, el)
             }}
-            className="w-full h-[100dvh] shrink-0 snap-start snap-always"
+            className="h-[100dvh] w-full shrink-0 snap-start snap-always"
           >
             <LazyEraScene summary={era} index={idx} />
           </div>

@@ -1,13 +1,13 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { ActivityEncounterView } from "@/features/activity"
-import { slimActivityForClient } from "@/lib/activity-payload"
-import { ActivityData } from "@/types"
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { ActivityEncounterView } from '@/features/activity'
+import { slimActivityForClient } from '@/lib/activity-payload'
+import { ActivityData } from '@/types'
 
 export async function createActivityMetadata(
   params: Promise<{ slug: string }>,
   dataLoader: (slug: string) => Promise<ActivityData | null>,
-  typeLabel: "Raid" | "Dungeon" | "Pantheon" | "Exotic Mission"
+  typeLabel: 'Raid' | 'Dungeon' | 'Pantheon' | 'Exotic Mission',
 ): Promise<Metadata> {
   const resolvedParams = await params
   const data = await dataLoader(resolvedParams.slug)
@@ -21,8 +21,10 @@ export async function createActivityMetadata(
   const name =
     data.raid_name ||
     data.dungeon_name ||
-    (typeof data.name === "string" ? data.name : undefined) ||
-    resolvedParams.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+    (typeof data.name === 'string' ? data.name : undefined) ||
+    resolvedParams.slug
+      .replace(/-/g, ' ')
+      .replace(/\b\w/g, (c) => c.toUpperCase())
 
   const description =
     data.preface?.author_notes?.slice(0, 160) ||
@@ -36,10 +38,10 @@ export async function createActivityMetadata(
     openGraph: {
       title,
       description,
-      type: "article",
+      type: 'article',
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
     },
@@ -49,7 +51,7 @@ export async function createActivityMetadata(
 export async function createActivityPage(
   params: Promise<{ slug: string }>,
   searchParams: Promise<{ enc?: string }>,
-  dataLoader: (slug: string) => Promise<ActivityData | null>
+  dataLoader: (slug: string) => Promise<ActivityData | null>,
 ) {
   const resolvedParams = await params
   const resolvedSearchParams = await searchParams
@@ -67,4 +69,3 @@ export async function createActivityPage(
     />
   )
 }
-

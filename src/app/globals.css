@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@plugin "@tailwindcss/typography";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,32 +8,32 @@
 .dark {
   --background: #0f1115;
   --foreground: #f8fafc;
-  
+
   --card: #15181e;
   --card-foreground: #f8fafc;
-  
+
   --popover: #15181e;
   --popover-foreground: #f8fafc;
-  
+
   --primary: #00f3ff;
   --primary-foreground: #0f1115;
-  
+
   --secondary: #ff8c00;
   --secondary-foreground: #f8fafc;
-  
+
   --muted: #1e222a;
   --muted-foreground: #94a3b8;
-  
+
   --accent: #1e222a;
   --accent-foreground: #f8fafc;
-  
+
   --destructive: #ff0000;
   --destructive-foreground: #f8fafc;
-  
+
   --border: #1e222a;
   --input: #1e222a;
   --ring: #00f3ff;
-  
+
   --radius: 0.25rem;
 }
 
@@ -80,18 +80,26 @@
 }
 
 @keyframes cyber-scan {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 /* Cyberpunk Custom Utilities */
 @utility cyber-grid {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(6, 182, 212, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
   background-size: 32px 32px;
@@ -158,7 +166,8 @@
   * {
     @apply border-border outline-ring/50;
   }
-  html, body {
+  html,
+  body {
     margin: 0;
     padding: 0;
     @apply bg-background text-foreground;
@@ -183,10 +192,19 @@
 
 /* Music Player equalizer bars — pure CSS for better GPU performance */
 @keyframes equalizer {
-  0%, 100% { height: 20%; }
-  25% { height: 100%; }
-  50% { height: 40%; }
-  75% { height: 80%; }
+  0%,
+  100% {
+    height: 20%;
+  }
+  25% {
+    height: 100%;
+  }
+  50% {
+    height: 40%;
+  }
+  75% {
+    height: 80%;
+  }
 }
 
 /* ==============================================================
@@ -205,13 +223,20 @@
   text-transform: uppercase;
   font-size: 1.25rem;
   /* Destiny 2 Arc/Stasis Theme Gradient */
-  background: linear-gradient(90deg, #0891b2 0%, #22d3ee 25%, #ffffff 50%, #22d3ee 75%, #0891b2 100%);
+  background: linear-gradient(
+    90deg,
+    #0891b2 0%,
+    #22d3ee 25%,
+    #ffffff 50%,
+    #22d3ee 75%,
+    #0891b2 100%
+  );
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   animation: shine 4s linear infinite;
-  filter: drop-shadow(0 0 4px rgba(34,211,238,0.4));
+  filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.4));
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
   z-index: 10;
@@ -219,14 +244,15 @@
 
 .cyber-text-container:hover .cyber-text {
   /* Bright Arc / Splicer Cyan Glow on hover */
-  filter: drop-shadow(0 0 10px rgba(92,242,242,0.8)) drop-shadow(0 0 20px rgba(92,242,242,0.4));
+  filter: drop-shadow(0 0 10px rgba(92, 242, 242, 0.8))
+    drop-shadow(0 0 20px rgba(92, 242, 242, 0.4));
   transform: scale(1.05);
   letter-spacing: 0.3em;
 }
 
 .cyber-text::before,
 .cyber-text::after {
-  content: "D2 SHERPA";
+  content: 'D2 SHERPA';
   position: absolute;
   top: 0;
   left: 0;
@@ -242,20 +268,20 @@
 /* Splicer Pink Glitch */
 .cyber-text-container:hover .cyber-text::before {
   opacity: 0.85;
-  color: #F1518D;
+  color: #f1518d;
   filter: blur(1.5px);
   transform: translate(-3px, 1px);
-  -webkit-text-fill-color: #F1518D;
+  -webkit-text-fill-color: #f1518d;
   animation: glitch-anim-1 0.3s infinite linear alternate-reverse;
 }
 
 /* Splicer Cyan Glitch */
 .cyber-text-container:hover .cyber-text::after {
   opacity: 0.85;
-  color: #5CF2F2;
+  color: #5cf2f2;
   filter: blur(1.5px);
   transform: translate(3px, -1px);
-  -webkit-text-fill-color: #5CF2F2;
+  -webkit-text-fill-color: #5cf2f2;
   animation: glitch-anim-2 0.25s infinite linear alternate-reverse;
 }
 
@@ -266,19 +292,43 @@
 }
 
 @keyframes glitch-anim-1 {
-  0% { clip-path: inset(20% 0 80% 0); }
-  20% { clip-path: inset(60% 0 10% 0); }
-  40% { clip-path: inset(40% 0 50% 0); }
-  60% { clip-path: inset(80% 0 5% 0); }
-  80% { clip-path: inset(10% 0 70% 0); }
-  100% { clip-path: inset(30% 0 40% 0); }
+  0% {
+    clip-path: inset(20% 0 80% 0);
+  }
+  20% {
+    clip-path: inset(60% 0 10% 0);
+  }
+  40% {
+    clip-path: inset(40% 0 50% 0);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    clip-path: inset(10% 0 70% 0);
+  }
+  100% {
+    clip-path: inset(30% 0 40% 0);
+  }
 }
 
 @keyframes glitch-anim-2 {
-  0% { clip-path: inset(10% 0 60% 0); }
-  20% { clip-path: inset(30% 0 20% 0); }
-  40% { clip-path: inset(70% 0 10% 0); }
-  60% { clip-path: inset(20% 0 50% 0); }
-  80% { clip-path: inset(50% 0 30% 0); }
-  100% { clip-path: inset(5% 0 80% 0); }
+  0% {
+    clip-path: inset(10% 0 60% 0);
+  }
+  20% {
+    clip-path: inset(30% 0 20% 0);
+  }
+  40% {
+    clip-path: inset(70% 0 10% 0);
+  }
+  60% {
+    clip-path: inset(20% 0 50% 0);
+  }
+  80% {
+    clip-path: inset(50% 0 30% 0);
+  }
+  100% {
+    clip-path: inset(5% 0 80% 0);
+  }
 }

@@ -1,26 +1,30 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import Image from "next/image"
-import { ArrowUpDown, ImageIcon } from "lucide-react"
-import { CyberCard, CyberHeading, CyberBadge } from "@/components/common/CyberComponents"
-import { DatabaseHeader } from "./DatabaseHeader"
+import * as React from 'react'
+import Image from 'next/image'
+import { ArrowUpDown, ImageIcon } from 'lucide-react'
+import {
+  CyberCard,
+  CyberHeading,
+  CyberBadge,
+} from '@/components/common/CyberComponents'
+import { DatabaseHeader } from './DatabaseHeader'
 import {
   DatabasePageShell,
   DatabaseResultsBar,
   DatabaseEmptyState,
-} from "./DatabasePageChrome"
-import { ItemSourceLine } from "./ExoticCardParts"
-import { bungieUrl } from "@/lib/bungie"
-import type { ArmorSet } from "@/types"
+} from './DatabasePageChrome'
+import { ItemSourceLine } from './ExoticCardParts'
+import { bungieUrl } from '@/lib/bungie'
+import type { ArmorSet } from '@/types'
 
 interface ArmorSetsViewProps {
   sets: ArmorSet[]
 }
 
 export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
-  const [searchQuery, setSearchQuery] = React.useState("")
-  const [sortOrder, setSortOrder] = React.useState<"asc" | "desc">("asc")
+  const [searchQuery, setSearchQuery] = React.useState('')
+  const [sortOrder, setSortOrder] = React.useState<'asc' | 'desc'>('asc')
 
   const filteredAndSortedSets = React.useMemo(() => {
     let result = [...sets]
@@ -30,13 +34,13 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
       result = result.filter(
         (set) =>
           set.name.toLowerCase().includes(query) ||
-          set.bonuses.some((b) => b.description.toLowerCase().includes(query))
+          set.bonuses.some((b) => b.description.toLowerCase().includes(query)),
       )
     }
 
     result.sort((a, b) => {
       const cmp = a.name.localeCompare(b.name)
-      return sortOrder === "asc" ? cmp : -cmp
+      return sortOrder === 'asc' ? cmp : -cmp
     })
 
     return result
@@ -45,18 +49,18 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
   const headerActions = (
     <>
       <button
-        onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}
-        className="flex-1 sm:flex-none flex items-center justify-center gap-2 min-h-11 px-6 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-md text-sm text-zinc-300 transition-colors"
+        onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+        className="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-800 sm:flex-none"
       >
         <ArrowUpDown className="h-4 w-4" />
-        Sắp xếp: {sortOrder === "asc" ? "A - Z" : "Z - A"}
+        Sắp xếp: {sortOrder === 'asc' ? 'A - Z' : 'Z - A'}
       </button>
 
       <a
         href="/images/database/armorbonus.jpeg"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 sm:flex-none flex items-center justify-center gap-2 min-h-11 px-6 py-2 bg-zinc-900/50 hover:bg-zinc-800 border border-zinc-800 rounded-md text-sm text-neon-cyan hover:text-neon-cyan/80 transition-colors"
+        className="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-2 text-sm text-neon-cyan transition-colors hover:bg-zinc-800 hover:text-neon-cyan/80 sm:flex-none"
         title="Xem ảnh tĩnh toàn bộ Armor Sets"
       >
         <ImageIcon className="h-4 w-4" />
@@ -78,21 +82,25 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
 
       <DatabaseResultsBar
         label={`${filteredAndSortedSets.length} kết quả`}
-        onClear={searchQuery ? () => setSearchQuery("") : undefined}
+        onClear={searchQuery ? () => setSearchQuery('') : undefined}
       />
 
       {filteredAndSortedSets.length === 0 ? (
         <DatabaseEmptyState message="Không tìm thấy set giáp nào phù hợp." />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {filteredAndSortedSets.map((set) => (
-            <CyberCard key={set.name} className="flex flex-col h-full">
-              <CyberHeading variant="default" size="sm" className="mb-4 text-white">
+            <CyberCard key={set.name} className="flex h-full flex-col">
+              <CyberHeading
+                variant="default"
+                size="sm"
+                className="mb-4 text-white"
+              >
                 {set.name}
               </CyberHeading>
 
               {set.screenshot && (
-                <div className="relative w-full aspect-[21/9] mb-4 border-b border-zinc-800/50 bg-black/50 overflow-hidden rounded">
+                <div className="relative mb-4 aspect-[21/9] w-full overflow-hidden rounded border-b border-zinc-800/50 bg-black/50">
                   <Image
                     src={bungieUrl(set.screenshot)}
                     alt={`${set.name} screenshot`}
@@ -103,9 +111,12 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
                 </div>
               )}
 
-              <div className="space-y-4 flex-1">
+              <div className="flex-1 space-y-4">
                 {set.bonuses.map((bonus, j) => (
-                  <div key={j} className="flex gap-4 p-3 bg-black/40 rounded-lg border border-zinc-800/50">
+                  <div
+                    key={j}
+                    className="flex gap-4 rounded-lg border border-zinc-800/50 bg-black/40 p-3"
+                  >
                     <div className="shrink-0 pt-1">
                       {bonus.icon ? (
                         <Image
@@ -117,14 +128,14 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
                           className="rounded"
                         />
                       ) : (
-                        <div className="w-8 h-8 rounded bg-zinc-800" />
+                        <div className="h-8 w-8 rounded bg-zinc-800" />
                       )}
                     </div>
                     <div>
                       <CyberBadge variant="cyan" size="sm" className="mb-2">
                         {bonus.pieces} PIECE
                       </CyberBadge>
-                      <p className="text-sm text-zinc-300 leading-relaxed mt-1">
+                      <p className="mt-1 text-sm leading-relaxed text-zinc-300">
                         {bonus.description}
                       </p>
                     </div>
@@ -132,7 +143,9 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
                 ))}
               </div>
 
-              {set.source && <ItemSourceLine source={set.source} className="mt-4" />}
+              {set.source && (
+                <ItemSourceLine source={set.source} className="mt-4" />
+              )}
             </CyberCard>
           ))}
         </div>

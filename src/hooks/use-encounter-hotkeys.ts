@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef } from 'react'
 
 interface UseEncounterHotkeysOptions {
   onNext?: () => void
@@ -19,7 +19,9 @@ export function useEncounterHotkeys({
   onToggleShortcuts,
   enableSwipe = true,
 }: UseEncounterHotkeysOptions) {
-  const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null)
+  const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(
+    null,
+  )
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -27,8 +29,8 @@ export function useEncounterHotkeys({
       const target = e.target as HTMLElement | null
       if (
         target &&
-        (target.tagName === "INPUT" ||
-          target.tagName === "TEXTAREA" ||
+        (target.tagName === 'INPUT' ||
+          target.tagName === 'TEXTAREA' ||
           target.isContentEditable)
       ) {
         return
@@ -38,48 +40,50 @@ export function useEncounterHotkeys({
       if (e.ctrlKey || e.metaKey || e.altKey) return
 
       switch (e.code) {
-        case "ArrowRight":
-        case "KeyL":
-        case "KeyJ":
+        case 'ArrowRight':
+        case 'KeyL':
+        case 'KeyJ':
           e.preventDefault()
           onNext?.()
           break
 
-        case "ArrowLeft":
-        case "KeyH":
-        case "KeyK":
+        case 'ArrowLeft':
+        case 'KeyH':
+        case 'KeyK':
           e.preventDefault()
           onPrev?.()
           break
 
-        case "KeyC":
+        case 'KeyC':
           e.preventDefault()
           onToggleClear?.()
           break
 
-        case "KeyM": {
+        case 'KeyM': {
           e.preventDefault()
-          const mapEl = document.querySelector('[data-section="map"]') || document.querySelector("img")
-          mapEl?.scrollIntoView({ behavior: "smooth", block: "center" })
+          const mapEl =
+            document.querySelector('[data-section="map"]') ||
+            document.querySelector('img')
+          mapEl?.scrollIntoView({ behavior: 'smooth', block: 'center' })
           break
         }
 
-        case "KeyR": {
+        case 'KeyR': {
           e.preventDefault()
           const rolesEl = document.querySelector('[data-section="roles"]')
-          rolesEl?.scrollIntoView({ behavior: "smooth", block: "start" })
+          rolesEl?.scrollIntoView({ behavior: 'smooth', block: 'start' })
           break
         }
 
-        case "Digit1":
-        case "Digit2":
-        case "Digit3":
-        case "Digit4":
-        case "Digit5":
-        case "Digit6":
-        case "Digit7":
-        case "Digit8":
-        case "Digit9": {
+        case 'Digit1':
+        case 'Digit2':
+        case 'Digit3':
+        case 'Digit4':
+        case 'Digit5':
+        case 'Digit6':
+        case 'Digit7':
+        case 'Digit8':
+        case 'Digit9': {
           const idx = parseInt(e.key, 10) - 1
           if (!isNaN(idx)) {
             e.preventDefault()
@@ -88,8 +92,8 @@ export function useEncounterHotkeys({
           break
         }
 
-        case "Slash":
-          if (e.shiftKey || e.key === "?") {
+        case 'Slash':
+          if (e.shiftKey || e.key === '?') {
             e.preventDefault()
             onToggleShortcuts?.()
           }
@@ -100,13 +104,13 @@ export function useEncounterHotkeys({
       }
     }
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [onNext, onPrev, onToggleClear, onJumpToIndex, onToggleShortcuts])
 
   // Touch Swipe Handlers for Mobile
   useEffect(() => {
-    if (!enableSwipe || typeof window === "undefined") return
+    if (!enableSwipe || typeof window === 'undefined') return
 
     function handleTouchStart(e: TouchEvent) {
       if (e.touches.length === 1) {
@@ -128,7 +132,11 @@ export function useEncounterHotkeys({
       touchStartRef.current = null
 
       // Only trigger if fast gesture (<400ms) and horizontal dominant (|dx| > 2*|dy| and |dx| > 50)
-      if (deltaTime < 400 && Math.abs(deltaX) > 55 && Math.abs(deltaX) > Math.abs(deltaY) * 1.8) {
+      if (
+        deltaTime < 400 &&
+        Math.abs(deltaX) > 55 &&
+        Math.abs(deltaX) > Math.abs(deltaY) * 1.8
+      ) {
         if (deltaX < 0) {
           // Swipe Left -> Next
           onNext?.()
@@ -139,12 +147,12 @@ export function useEncounterHotkeys({
       }
     }
 
-    window.addEventListener("touchstart", handleTouchStart, { passive: true })
-    window.addEventListener("touchend", handleTouchEnd, { passive: true })
+    window.addEventListener('touchstart', handleTouchStart, { passive: true })
+    window.addEventListener('touchend', handleTouchEnd, { passive: true })
 
     return () => {
-      window.removeEventListener("touchstart", handleTouchStart)
-      window.removeEventListener("touchend", handleTouchEnd)
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchend', handleTouchEnd)
     }
   }, [enableSwipe, onNext, onPrev])
 }

@@ -1,11 +1,18 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import Link from "next/link"
-import { Compass, Sparkles, BookOpen, Flame, Crosshair, Check } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useCheckpoints } from "@/hooks/use-sherpa-store"
-import { playHoverSound, playNavSound } from "@/lib/cyber-audio"
+import * as React from 'react'
+import Link from 'next/link'
+import {
+  Compass,
+  Sparkles,
+  BookOpen,
+  Flame,
+  Crosshair,
+  Check,
+} from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { useCheckpoints } from '@/hooks/use-sherpa-store'
+import { playHoverSound, playNavSound } from '@/lib/cyber-audio'
 
 interface TOCGroup {
   title?: string
@@ -19,22 +26,28 @@ interface MobileGuideTOCProps {
 }
 
 function getTabIcon(id: string) {
-  if (id === "overview") return <Compass className="w-3.5 h-3.5 shrink-0" />
-  if (id === "secrets") return <Sparkles className="w-3.5 h-3.5 shrink-0 text-neon-yellow" />
-  if (id === "walkthrough") return <BookOpen className="w-3.5 h-3.5 shrink-0" />
-  if (id === "catalyst") return <Flame className="w-3.5 h-3.5 shrink-0 text-neon-orange" />
-  return <Crosshair className="w-3.5 h-3.5 shrink-0 opacity-70" />
+  if (id === 'overview') return <Compass className="h-3.5 w-3.5 shrink-0" />
+  if (id === 'secrets')
+    return <Sparkles className="h-3.5 w-3.5 shrink-0 text-neon-yellow" />
+  if (id === 'walkthrough') return <BookOpen className="h-3.5 w-3.5 shrink-0" />
+  if (id === 'catalyst')
+    return <Flame className="h-3.5 w-3.5 shrink-0 text-neon-orange" />
+  return <Crosshair className="h-3.5 w-3.5 shrink-0 opacity-70" />
 }
 
-export function MobileGuideTOC({ groups, activeEncounterId, activityTitle }: MobileGuideTOCProps) {
+export function MobileGuideTOC({
+  groups,
+  activeEncounterId,
+  activityTitle,
+}: MobileGuideTOCProps) {
   const activeRef = React.useRef<HTMLAnchorElement | null>(null)
   const { isEncounterCompleted } = useCheckpoints()
 
   React.useEffect(() => {
     activeRef.current?.scrollIntoView({
-      behavior: "smooth",
-      inline: "center",
-      block: "nearest",
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
     })
   }, [activeEncounterId])
 
@@ -43,18 +56,24 @@ export function MobileGuideTOC({ groups, activeEncounterId, activityTitle }: Mob
   let encounterCounter = 0
 
   return (
-    <div className="md:hidden w-full bg-[#050508]/95 backdrop-blur-xl border-b border-neon-cyan/25 z-40 sticky top-0 min-h-14 flex items-center relative overflow-hidden">
+    <div className="relative sticky top-0 z-40 flex min-h-14 w-full items-center overflow-hidden border-b border-neon-cyan/25 bg-[#050508]/95 backdrop-blur-xl md:hidden">
       {/* Cyber accent line */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent opacity-70 pointer-events-none" />
+      <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent opacity-70" />
 
-      <div className="flex items-center overflow-x-auto w-full gap-1.5 pl-14 pr-4 py-1.5 snap-x scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+      <div className="flex w-full snap-x [scrollbar-width:'none'] items-center gap-1.5 overflow-x-auto scroll-smooth py-1.5 pr-4 pl-14 [-ms-overflow-style:'none'] [&::-webkit-scrollbar]:hidden">
         {groups.map((group, gIdx) => (
           <React.Fragment key={`group-${group.title || gIdx}`}>
             {group.items.map((item) => {
               const isActive = activeEncounterId === item.id
-              const isEncounter = item.id !== "overview" && item.id !== "secrets" && item.id !== "walkthrough" && item.id !== "catalyst"
+              const isEncounter =
+                item.id !== 'overview' &&
+                item.id !== 'secrets' &&
+                item.id !== 'walkthrough' &&
+                item.id !== 'catalyst'
               if (isEncounter) encounterCounter++
-              const isCleared = activityTitle ? isEncounterCompleted(activityTitle, item.id) : false
+              const isCleared = activityTitle
+                ? isEncounterCompleted(activityTitle, item.id)
+                : false
 
               return (
                 <Link
@@ -65,30 +84,36 @@ export function MobileGuideTOC({ groups, activeEncounterId, activityTitle }: Mob
                   onMouseEnter={playHoverSound}
                   onClick={playNavSound}
                   className={cn(
-                    "whitespace-nowrap shrink-0 inline-flex items-center gap-1.5 min-h-11 px-3.5 py-2 text-xs font-mono font-bold transition-all border-b-2 snap-start relative group",
+                    'group relative inline-flex min-h-11 shrink-0 snap-start items-center gap-1.5 border-b-2 px-3.5 py-2 font-mono text-xs font-bold whitespace-nowrap transition-all',
                     isActive
-                      ? "bg-neon-cyan/15 text-neon-cyan border-neon-cyan shadow-[0_0_12px_rgba(0,243,255,0.25)]"
-                      : "bg-zinc-900/60 text-zinc-400 border-transparent hover:text-zinc-200 hover:bg-zinc-800/60"
+                      ? 'border-neon-cyan bg-neon-cyan/15 text-neon-cyan shadow-[0_0_12px_rgba(0,243,255,0.25)]'
+                      : 'border-transparent bg-zinc-900/60 text-zinc-400 hover:bg-zinc-800/60 hover:text-zinc-200',
                   )}
                 >
                   {/* Status / Type Icon */}
                   {isCleared ? (
-                    <Check className="w-3.5 h-3.5 shrink-0 text-neon-green" />
+                    <Check className="h-3.5 w-3.5 shrink-0 text-neon-green" />
                   ) : (
                     getTabIcon(item.id)
                   )}
 
                   {/* Encounter Index Badge for regular encounters */}
                   {isEncounter && !isCleared && (
-                    <span className={cn(
-                      "text-[10px] px-1 py-0.2 rounded-none font-mono",
-                      isActive ? "bg-neon-cyan/20 text-neon-cyan" : "bg-zinc-800 text-zinc-400"
-                    )}>
-                      {encounterCounter < 10 ? `0${encounterCounter}` : encounterCounter}
+                    <span
+                      className={cn(
+                        'py-0.2 rounded-none px-1 font-mono text-[10px]',
+                        isActive
+                          ? 'bg-neon-cyan/20 text-neon-cyan'
+                          : 'bg-zinc-800 text-zinc-400',
+                      )}
+                    >
+                      {encounterCounter < 10
+                        ? `0${encounterCounter}`
+                        : encounterCounter}
                     </span>
                   )}
 
-                  <span className="tracking-wide uppercase text-[11px] truncate max-w-[160px]">
+                  <span className="max-w-[160px] truncate text-[11px] tracking-wide uppercase">
                     {item.title}
                   </span>
                 </Link>
@@ -100,4 +125,3 @@ export function MobileGuideTOC({ groups, activeEncounterId, activityTitle }: Mob
     </div>
   )
 }
-

@@ -1,12 +1,12 @@
-import type { ReactNode } from "react"
-import Image from "next/image"
-import { Sparkles } from "lucide-react"
-import { cn } from "@/lib/utils"
+import type { ReactNode } from 'react'
+import Image from 'next/image'
+import { Sparkles } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 export function ExoticSectionLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-center gap-2 mb-3 text-neon-cyan text-sm font-black tracking-widest uppercase">
-      <Sparkles className="w-4 h-4" />
+    <div className="mb-3 flex items-center gap-2 text-sm font-black tracking-widest text-neon-cyan uppercase">
+      <Sparkles className="h-4 w-4" />
       <span>{children}</span>
     </div>
   )
@@ -19,19 +19,34 @@ interface ExoticCardHeaderProps {
   action?: ReactNode
 }
 
-export function ExoticCardHeader({ iconUrl, name, meta, action }: ExoticCardHeaderProps) {
+export function ExoticCardHeader({
+  iconUrl,
+  name,
+  meta,
+  action,
+}: ExoticCardHeaderProps) {
   return (
-    <div className="flex items-center justify-between gap-4 p-4 border-b border-zinc-800 bg-zinc-950/50">
-      <div className="flex items-center gap-4 min-w-0">
-        <div className="relative w-12 h-12 flex-shrink-0 bg-zinc-800 rounded">
+    <div className="flex items-center justify-between gap-4 border-b border-zinc-800 bg-zinc-950/50 p-4">
+      <div className="flex min-w-0 items-center gap-4">
+        <div className="relative h-12 w-12 flex-shrink-0 rounded bg-zinc-800">
           {iconUrl ? (
-            <Image src={iconUrl} alt={name} fill className="object-cover rounded" unoptimized />
+            <Image
+              src={iconUrl}
+              alt={name}
+              fill
+              className="rounded object-cover"
+              unoptimized
+            />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-zinc-600">?</div>
+            <div className="flex h-full w-full items-center justify-center text-zinc-600">
+              ?
+            </div>
           )}
         </div>
-        <div className="flex flex-col min-w-0">
-          <h3 className="text-lg font-bold text-white leading-tight truncate">{name}</h3>
+        <div className="flex min-w-0 flex-col">
+          <h3 className="truncate text-lg leading-tight font-bold text-white">
+            {name}
+          </h3>
           {meta}
         </div>
       </div>
@@ -60,23 +75,23 @@ export function ExoticTraitBlock({
   return (
     <div>
       <ExoticSectionLabel>{label}</ExoticSectionLabel>
-      <div className="flex gap-3 items-start p-3 rounded bg-black/30 border border-zinc-800/50">
+      <div className="flex items-start gap-3 rounded border border-zinc-800/50 bg-black/30 p-3">
         {iconUrl && (
           <Image
             src={iconUrl}
             alt={name}
             width={32}
             height={32}
-            className={cn("rounded-sm shrink-0", iconClassName)}
+            className={cn('shrink-0 rounded-sm', iconClassName)}
             unoptimized
           />
         )}
-        <div className="flex flex-col flex-1">
-          <span className="font-bold text-white mb-1">{name}</span>
+        <div className="flex flex-1 flex-col">
+          <span className="mb-1 font-bold text-white">{name}</span>
           <span
             className={cn(
-              "text-sm text-zinc-400 leading-relaxed whitespace-pre-wrap",
-              !expanded && "line-clamp-3"
+              'text-sm leading-relaxed whitespace-pre-wrap text-zinc-400',
+              !expanded && 'line-clamp-3',
             )}
           >
             {description}
@@ -95,10 +110,14 @@ export function ItemSourceLine({
   className?: string
 }) {
   return (
-    <div className={cn("mt-2 pt-3 border-t border-zinc-800/50", className)}>
+    <div className={cn('mt-2 border-t border-zinc-800/50 pt-3', className)}>
       <div className="flex gap-2 text-xs">
-        <span className="text-zinc-500 font-bold uppercase tracking-wider shrink-0">Source:</span>
-        <span className="text-zinc-300 italic">{source.replace(/^Source:\s*/, "")}</span>
+        <span className="shrink-0 font-bold tracking-wider text-zinc-500 uppercase">
+          Source:
+        </span>
+        <span className="text-zinc-300 italic">
+          {source.replace(/^Source:\s*/, '')}
+        </span>
       </div>
     </div>
   )

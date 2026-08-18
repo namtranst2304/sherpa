@@ -1,8 +1,8 @@
-import { EXOTIC_MISSION_SLUGS, getExoticMissionData } from "@/data"
-import { ExoticMissionView } from "@/features/activity"
-import { slimExoticMissionForClient } from "@/lib/activity-payload"
-import { createActivityMetadata } from "@/lib/page-utils"
-import { notFound } from "next/navigation"
+import { EXOTIC_MISSION_SLUGS, getExoticMissionData } from '@/data'
+import { ExoticMissionView } from '@/features/activity'
+import { slimExoticMissionForClient } from '@/lib/activity-payload'
+import { createActivityMetadata } from '@/lib/page-utils'
+import { notFound } from 'next/navigation'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -14,13 +14,20 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  return await createActivityMetadata(params, getExoticMissionData, "Exotic Mission")
+  return await createActivityMetadata(
+    params,
+    getExoticMissionData,
+    'Exotic Mission',
+  )
 }
 
-export default async function ExoticMissionPage({ params, searchParams }: PageProps) {
+export default async function ExoticMissionPage({
+  params,
+  searchParams,
+}: PageProps) {
   const resolvedParams = await params
   const resolvedSearchParams = await searchParams
-  const tab = resolvedSearchParams.tab || "overview"
+  const tab = resolvedSearchParams.tab || 'overview'
 
   const data = await getExoticMissionData(resolvedParams.slug)
 
@@ -35,4 +42,3 @@ export default async function ExoticMissionPage({ params, searchParams }: PagePr
     />
   )
 }
-

@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { Check } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { useScrollSpy } from "@/hooks/use-scroll-spy"
-import { useCheckpoints } from "@/hooks/use-sherpa-store"
-import { playHoverSound, playNavSound } from "@/lib/cyber-audio"
-import * as React from "react"
+import Link from 'next/link'
+import { Check } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { useScrollSpy } from '@/hooks/use-scroll-spy'
+import { useCheckpoints } from '@/hooks/use-sherpa-store'
+import { playHoverSound, playNavSound } from '@/lib/cyber-audio'
+import * as React from 'react'
 
 export type SidebarSection = {
   id: string
@@ -42,21 +42,26 @@ export function GuideSidebar({
   const { isEncounterCompleted } = useCheckpoints()
 
   return (
-    <aside className="hidden md:flex h-full w-64 shrink-0 flex-col border-r-2 border-r-neon-yellow/50 z-40 bg-black cyber-grid overflow-hidden">
-      <div className="border-b-2 border-neon-yellow p-4 relative overflow-hidden bg-zinc-950 shrink-0">
-        <div className="absolute top-0 right-0 w-8 h-8 bg-neon-yellow -rotate-45 translate-x-4 -translate-y-4" />
-        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-neon-yellow to-transparent" />
+    <aside className="z-40 hidden h-full w-64 shrink-0 flex-col overflow-hidden border-r-2 border-r-neon-yellow/50 bg-black cyber-grid md:flex">
+      <div className="relative shrink-0 overflow-hidden border-b-2 border-neon-yellow bg-zinc-950 p-4">
+        <div className="absolute top-0 right-0 h-8 w-8 translate-x-4 -translate-y-4 -rotate-45 bg-neon-yellow" />
+        <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-neon-yellow to-transparent" />
 
-        <h1 className="text-xl font-extrabold text-neon-yellow tracking-widest uppercase break-words text-glow-yellow" title={title}>
+        <h1
+          className="text-xl font-extrabold tracking-widest break-words text-neon-yellow uppercase text-glow-yellow"
+          title={title}
+        >
           {title}
         </h1>
         <div className="mt-2">
-          <h2 className="text-[10px] font-black text-black bg-neon-cyan tracking-widest uppercase break-words inline-block px-2 py-0.5">
+          <h2 className="inline-block bg-neon-cyan px-2 py-0.5 text-[10px] font-black tracking-widest break-words text-black uppercase">
             {subtitle}
           </h2>
         </div>
         {orbit && (
-          <p className="text-[10px] text-zinc-500 mt-2 break-words font-mono uppercase">sys.orbit: {orbit}</p>
+          <p className="mt-2 font-mono text-[10px] break-words text-zinc-500 uppercase">
+            sys.orbit: {orbit}
+          </p>
         )}
       </div>
 
@@ -64,7 +69,7 @@ export function GuideSidebar({
         {groups.map((group, idx) => (
           <div key={idx} className="mt-2 px-2">
             {group.title && (
-              <div className="px-2 py-1.5 text-neon-red font-mono tracking-widest uppercase text-[10px] opacity-80">
+              <div className="px-2 py-1.5 font-mono text-[10px] tracking-widest text-neon-red uppercase opacity-80">
                 {group.title}
               </div>
             )}
@@ -81,33 +86,42 @@ export function GuideSidebar({
                       onMouseEnter={playHoverSound}
                       onClick={playNavSound}
                       className={cn(
-                        "flex items-start justify-between w-full gap-2 relative z-10 transition-all py-2.5 px-2 font-mono text-sm border-l-4",
+                        'relative z-10 flex w-full items-start justify-between gap-2 border-l-4 px-2 py-2.5 font-mono text-sm transition-all',
                         isActive
-                          ? "text-black font-extrabold bg-neon-yellow border-neon-red"
-                          : "text-zinc-400 hover:bg-neon-cyan/10 hover:text-neon-cyan hover:border-neon-cyan border-transparent"
+                          ? 'border-neon-red bg-neon-yellow font-extrabold text-black'
+                          : 'border-transparent text-zinc-400 hover:border-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan',
                       )}
                     >
                       <div
                         className={cn(
-                          "break-words whitespace-normal leading-tight tracking-wide flex items-center gap-1.5",
-                          item.isFinal && !isActive && "text-neon-red font-extrabold text-glow-red",
-                          item.isFinal && isActive && "text-red-700 font-extrabold"
+                          'flex items-center gap-1.5 leading-tight tracking-wide break-words whitespace-normal',
+                          item.isFinal &&
+                            !isActive &&
+                            'font-extrabold text-neon-red text-glow-red',
+                          item.isFinal &&
+                            isActive &&
+                            'font-extrabold text-red-700',
                         )}
                       >
                         {isCleared && (
-                          <Check className={cn("w-3.5 h-3.5 shrink-0", isActive ? "text-black" : "text-neon-green")} />
+                          <Check
+                            className={cn(
+                              'h-3.5 w-3.5 shrink-0',
+                              isActive ? 'text-black' : 'text-neon-green',
+                            )}
+                          />
                         )}
                         <span>{item.title}</span>
                       </div>
                       {item.label && (
                         <div
                           className={cn(
-                            "text-[9px] px-1.5 py-0.5 font-bold font-mono ml-2 shrink-0 border uppercase",
+                            'ml-2 shrink-0 border px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase',
                             isActive
-                              ? "bg-black text-neon-yellow border-black"
+                              ? 'border-black bg-black text-neon-yellow'
                               : item.isFinal
-                                ? "bg-neon-red/20 text-neon-red border-neon-red/50"
-                                : "bg-neon-cyan/20 text-neon-cyan border-neon-cyan/50"
+                                ? 'border-neon-red/50 bg-neon-red/20 text-neon-red'
+                                : 'border-neon-cyan/50 bg-neon-cyan/20 text-neon-cyan',
                           )}
                         >
                           {item.label}

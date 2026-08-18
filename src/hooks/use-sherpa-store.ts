@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import { useCallback, useSyncExternalStore } from "react"
+import { useCallback, useSyncExternalStore } from 'react'
 
-const WISHLIST_STORAGE_KEY = "sherpa_wishlist_v1"
-const CHECKPOINTS_STORAGE_KEY = "sherpa_checkpoints_v1"
+const WISHLIST_STORAGE_KEY = 'sherpa_wishlist_v1'
+const CHECKPOINTS_STORAGE_KEY = 'sherpa_checkpoints_v1'
 
 // Custom event to sync state across same-tab components
-const SYNC_EVENT = "sherpa_storage_sync"
+const SYNC_EVENT = 'sherpa_storage_sync'
 
 function notifySync() {
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     window.dispatchEvent(new Event(SYNC_EVENT))
   }
 }
@@ -17,24 +17,24 @@ function notifySync() {
 // ─── WISHLIST STORE ─────────────────────────────────────────────────────────
 
 function getWishlistSnapshot(): string {
-  if (typeof window === "undefined") return "[]"
+  if (typeof window === 'undefined') return '[]'
   try {
-    return localStorage.getItem(WISHLIST_STORAGE_KEY) || "[]"
+    return localStorage.getItem(WISHLIST_STORAGE_KEY) || '[]'
   } catch {
-    return "[]"
+    return '[]'
   }
 }
 
 function getWishlistServerSnapshot(): string {
-  return "[]"
+  return '[]'
 }
 
 function subscribeStore(callback: () => void) {
-  if (typeof window === "undefined") return () => {}
-  window.addEventListener("storage", callback)
+  if (typeof window === 'undefined') return () => {}
+  window.addEventListener('storage', callback)
   window.addEventListener(SYNC_EVENT, callback)
   return () => {
-    window.removeEventListener("storage", callback)
+    window.removeEventListener('storage', callback)
     window.removeEventListener(SYNC_EVENT, callback)
   }
 }
@@ -43,7 +43,7 @@ export function useWishlist() {
   const rawList = useSyncExternalStore(
     subscribeStore,
     getWishlistSnapshot,
-    getWishlistServerSnapshot
+    getWishlistServerSnapshot,
   )
 
   const wishlist = (() => {
@@ -57,14 +57,16 @@ export function useWishlist() {
 
   const isWishlisted = useCallback(
     (name: string) => wishlist.includes(name),
-    [wishlist]
+    [wishlist],
   )
 
   const toggleWishlist = useCallback((name: string) => {
     try {
       const current = (() => {
         try {
-          const parsed = JSON.parse(localStorage.getItem(WISHLIST_STORAGE_KEY) || "[]")
+          const parsed = JSON.parse(
+            localStorage.getItem(WISHLIST_STORAGE_KEY) || '[]',
+          )
           return Array.isArray(parsed) ? (parsed as string[]) : []
         } catch {
           return []
@@ -78,7 +80,7 @@ export function useWishlist() {
       localStorage.setItem(WISHLIST_STORAGE_KEY, JSON.stringify(next))
       notifySync()
     } catch (e) {
-      console.error("Failed to update wishlist:", e)
+      console.error('Failed to update wishlist:', e)
     }
   }, [])
 
@@ -90,29 +92,31 @@ export function useWishlist() {
 type CheckpointsMap = Record<string, string[]> // activitySlug -> array of completed encounterIds
 
 function getCheckpointsSnapshot(): string {
-  if (typeof window === "undefined") return "{}"
+  if (typeof window === 'undefined') return '{}'
   try {
-    return localStorage.getItem(CHECKPOINTS_STORAGE_KEY) || "{}"
+    return localStorage.getItem(CHECKPOINTS_STORAGE_KEY) || '{}'
   } catch {
-    return "{}"
+    return '{}'
   }
 }
 
 function getCheckpointsServerSnapshot(): string {
-  return "{}"
+  return '{}'
 }
 
 export function useCheckpoints() {
   const rawMap = useSyncExternalStore(
     subscribeStore,
     getCheckpointsSnapshot,
-    getCheckpointsServerSnapshot
+    getCheckpointsServerSnapshot,
   )
 
   const checkpoints = (() => {
     try {
       const parsed = JSON.parse(rawMap)
-      return (parsed && typeof parsed === "object" ? parsed : {}) as CheckpointsMap
+      return (
+        parsed && typeof parsed === 'object' ? parsed : {}
+      ) as CheckpointsMap
     } catch {
       return {} as CheckpointsMap
     }
@@ -122,7 +126,7 @@ export function useCheckpoints() {
     (activitySlug: string, encounterId: string) => {
       return Boolean(checkpoints[activitySlug]?.includes(encounterId))
     },
-    [checkpoints]
+    [checkpoints],
   )
 
   const toggleEncounterCompleted = useCallback(
@@ -130,8 +134,12 @@ export function useCheckpoints() {
       try {
         const current = (() => {
           try {
-            const parsed = JSON.parse(localStorage.getItem(CHECKPOINTS_STORAGE_KEY) || "{}")
-            return (parsed && typeof parsed === "object" ? parsed : {}) as CheckpointsMap
+            const parsed = JSON.parse(
+              localStorage.getItem(CHECKPOINTS_STORAGE_KEY) || '{}',
+            )
+            return (
+              parsed && typeof parsed === 'object' ? parsed : {}
+            ) as CheckpointsMap
           } catch {
             return {} as CheckpointsMap
           }
@@ -146,18 +154,22 @@ export function useCheckpoints() {
         localStorage.setItem(CHECKPOINTS_STORAGE_KEY, JSON.stringify(next))
         notifySync()
       } catch (e) {
-        console.error("Failed to update checkpoints:", e)
+        console.error('Failed to update checkpoints:', e)
       }
     },
-    []
+    [],
   )
 
   const clearActivityCheckpoints = useCallback((activitySlug: string) => {
     try {
       const current = (() => {
         try {
-          const parsed = JSON.parse(localStorage.getItem(CHECKPOINTS_STORAGE_KEY) || "{}")
-          return (parsed && typeof parsed === "object" ? parsed : {}) as CheckpointsMap
+          const parsed = JSON.parse(
+            localStorage.getItem(CHECKPOINTS_STORAGE_KEY) || '{}',
+          )
+          return (
+            parsed && typeof parsed === 'object' ? parsed : {}
+          ) as CheckpointsMap
         } catch {
           return {} as CheckpointsMap
         }
@@ -167,7 +179,7 @@ export function useCheckpoints() {
       localStorage.setItem(CHECKPOINTS_STORAGE_KEY, JSON.stringify(next))
       notifySync()
     } catch (e) {
-      console.error("Failed to clear checkpoints:", e)
+      console.error('Failed to clear checkpoints:', e)
     }
   }, [])
 

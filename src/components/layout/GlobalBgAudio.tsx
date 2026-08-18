@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 /** Persistent bg audio element — survives route changes; chrome is gated separately. */
 export function GlobalBgAudio() {

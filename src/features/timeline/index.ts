@@ -1,1 +1,1 @@
-export { DestinyTimeline } from "./components/DestinyTimeline"
+export { DestinyTimeline } from './components/DestinyTimeline'

@@ -6,8 +6,8 @@
  */
 export function bungieUrl(path: string): string {
   if (!path) return path
-  if (path.startsWith("http://") || path.startsWith("https://")) return path
-  if (path.startsWith("/common/")) return `https://www.bungie.net${path}`
-  if (path.startsWith("common/")) return `https://www.bungie.net/${path}`
+  if (path.startsWith('http://') || path.startsWith('https://')) return path
+  if (path.startsWith('/common/')) return `https://www.bungie.net${path}`
+  if (path.startsWith('common/')) return `https://www.bungie.net/${path}`
   return path
 }

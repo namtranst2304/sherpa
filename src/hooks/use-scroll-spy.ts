@@ -1,11 +1,11 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from 'react'
 
 export function useScrollSpy(
   itemIds: string[],
   offset: number = 120,
-  forcedActiveId?: string
+  forcedActiveId?: string,
 ) {
-  const [spiedId, setSpiedId] = useState("")
+  const [spiedId, setSpiedId] = useState('')
   const elementsRef = useRef<Map<string, HTMLElement>>(new Map())
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export function useScrollSpy(
       if (rafId !== null) return
       rafId = requestAnimationFrame(() => {
         rafId = null
-        let currentId = ""
+        let currentId = ''
 
         for (const id of itemIds) {
           const section = cache.get(id)
@@ -39,10 +39,10 @@ export function useScrollSpy(
       })
     }
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => {
-      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener('scroll', handleScroll)
       if (rafId !== null) cancelAnimationFrame(rafId)
     }
   }, [itemIds, forcedActiveId, offset])

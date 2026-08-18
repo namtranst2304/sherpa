@@ -3,7 +3,7 @@
  * Supports modern Clipboard API with fallback for restricted/HTTP contexts.
  */
 export async function copyToClipboard(text: string): Promise<boolean> {
-  if (typeof window === "undefined") return false
+  if (typeof window === 'undefined') return false
 
   if (navigator?.clipboard?.writeText) {
     try {
@@ -15,13 +15,13 @@ export async function copyToClipboard(text: string): Promise<boolean> {
   }
 
   try {
-    const textarea = document.createElement("textarea")
+    const textarea = document.createElement('textarea')
     textarea.value = text
-    textarea.style.position = "fixed"
-    textarea.style.opacity = "0"
+    textarea.style.position = 'fixed'
+    textarea.style.opacity = '0'
     document.body.appendChild(textarea)
     textarea.select()
-    const success = document.execCommand("copy")
+    const success = document.execCommand('copy')
     document.body.removeChild(textarea)
     return success
   } catch {

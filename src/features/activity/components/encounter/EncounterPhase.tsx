@@ -1,9 +1,9 @@
-import { Map } from "lucide-react"
-import { ActivityEncounterPhase } from "@/types"
-import { CyberCard, CyberBadge } from "@/components/common/CyberComponents"
-import { ImageCarousel } from "@/components/common/ImageCarousel"
-import { MarkdownText } from "@/components/common/MarkdownText"
-import { markdownComponents } from "./EncounterMarkdown"
+import { Map } from 'lucide-react'
+import { ActivityEncounterPhase } from '@/types'
+import { CyberCard, CyberBadge } from '@/components/common/CyberComponents'
+import { ImageCarousel } from '@/components/common/ImageCarousel'
+import { MarkdownText } from '@/components/common/MarkdownText'
+import { markdownComponents } from './EncounterMarkdown'
 
 interface EncounterPhaseProps {
   walkthrough: Record<string, ActivityEncounterPhase>
@@ -18,25 +18,33 @@ export function EncounterPhase({ walkthrough }: EncounterPhaseProps) {
       {walkthroughEntries.map(([phaseKey, phaseVal], index) => {
         let phaseTitle = phaseVal.name || phaseKey.toUpperCase()
         // Always remove redundant "Phase X:" prefix since we have the numbered badge
-        phaseTitle = phaseTitle.replace(/^(Giai đoạn \d+:\s*|Phase \d+:\s*)/i, '')
-        
+        phaseTitle = phaseTitle.replace(
+          /^(Giai đoạn \d+:\s*|Phase \d+:\s*)/i,
+          '',
+        )
+
         const phaseObjective = phaseVal.objective
         const steps = phaseVal.steps || phaseVal.details || []
 
         return (
-          <CyberCard key={phaseKey} variant="zinc" withCorners className="flex flex-col gap-2">
-            <h3 className="text-xl font-bold text-neon-cyan mb-3 flex items-start gap-3 text-glow-cyan">
+          <CyberCard
+            key={phaseKey}
+            variant="zinc"
+            withCorners
+            className="flex flex-col gap-2"
+          >
+            <h3 className="mb-3 flex items-start gap-3 text-xl font-bold text-neon-cyan text-glow-cyan">
               {hasMultiplePhases && (
-                <CyberBadge variant="cyan" className="shrink-0 mt-1">
+                <CyberBadge variant="cyan" className="mt-1 shrink-0">
                   {index + 1}
                 </CyberBadge>
               )}
-              <span className="break-words min-w-0 flex-1 leading-tight">
+              <span className="min-w-0 flex-1 leading-tight break-words">
                 {phaseTitle}
               </span>
             </h3>
             {phaseObjective && (
-              <p className="text-muted-foreground italic mb-4 border-l-2 border-neon-cyan pl-4 py-1 text-sm bg-neon-cyan/5 rounded-r-lg">
+              <p className="mb-4 rounded-r-lg border-l-2 border-neon-cyan bg-neon-cyan/5 py-1 pl-4 text-sm text-muted-foreground italic">
                 Mục tiêu: {phaseObjective}
               </p>
             )}
@@ -45,22 +53,32 @@ export function EncounterPhase({ walkthrough }: EncounterPhaseProps) {
             )}
             <ul className="space-y-3">
               {steps.map((step: string, i: number) => (
-                <li key={i} className="text-sm text-foreground/80 leading-relaxed flex items-start gap-1.5">
-                  <span className="text-neon-cyan font-bold shrink-0 min-w-[20px]">{i + 1}.</span>
+                <li
+                  key={i}
+                  className="flex items-start gap-1.5 text-sm leading-relaxed text-foreground/80"
+                >
+                  <span className="min-w-[20px] shrink-0 font-bold text-neon-cyan">
+                    {i + 1}.
+                  </span>
                   <div className="flex-1">
-                    <MarkdownText components={markdownComponents}>{step}</MarkdownText>
+                    <MarkdownText components={markdownComponents}>
+                      {step}
+                    </MarkdownText>
                   </div>
                 </li>
               ))}
             </ul>
             {phaseVal.mine_locations && (
-              <div className="mt-5 p-4 bg-neon-yellow/10 border border-neon-yellow/20 rounded-lg">
-                <h4 className="font-semibold text-neon-yellow mb-3 flex items-center gap-2">
-                  <Map className="w-4 h-4" /> Vị trí phân bổ Mìn:
+              <div className="mt-5 rounded-lg border border-neon-yellow/20 bg-neon-yellow/10 p-4">
+                <h4 className="mb-3 flex items-center gap-2 font-semibold text-neon-yellow">
+                  <Map className="h-4 w-4" /> Vị trí phân bổ Mìn:
                 </h4>
                 <ul className="space-y-2">
                   {phaseVal.mine_locations.map((loc: string, i: number) => (
-                    <li key={i} className="text-sm text-neon-yellow/90 ml-6 list-disc">
+                    <li
+                      key={i}
+                      className="ml-6 list-disc text-sm text-neon-yellow/90"
+                    >
                       {loc}
                     </li>
                   ))}

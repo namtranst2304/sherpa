@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import type { SelectHTMLAttributes } from "react"
-import { ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
+import type { SelectHTMLAttributes } from 'react'
+import { ChevronDown } from 'lucide-react'
+import { cn } from '@/lib/utils'
 
 interface DatabaseFilterSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label: string
@@ -17,10 +17,10 @@ export function DatabaseFilterSelect({
   ...props
 }: DatabaseFilterSelectProps) {
   return (
-    <div className={cn("relative w-full sm:w-auto sm:min-w-[9rem]", className)}>
+    <div className={cn('relative w-full sm:w-auto sm:min-w-[9rem]', className)}>
       <select
         aria-label={label}
-        className="w-full min-h-11 pl-4 pr-10 py-2.5 bg-zinc-900/50 border border-zinc-800 rounded-md text-sm text-zinc-300 focus:outline-none focus:ring-1 focus:ring-neon-cyan appearance-none cursor-pointer"
+        className="min-h-11 w-full cursor-pointer appearance-none rounded-md border border-zinc-800 bg-zinc-900/50 py-2.5 pr-10 pl-4 text-sm text-zinc-300 focus:ring-1 focus:ring-neon-cyan focus:outline-none"
         {...props}
       >
         {options.map((opt) => (
@@ -29,7 +29,7 @@ export function DatabaseFilterSelect({
           </option>
         ))}
       </select>
-      <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+      <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-zinc-500" />
     </div>
   )
 }

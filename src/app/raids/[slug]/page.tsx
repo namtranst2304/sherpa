@@ -1,5 +1,5 @@
-import { RAID_SLUGS, getRaidData } from "@/data"
-import { createActivityPage, createActivityMetadata } from "@/lib/page-utils"
+import { RAID_SLUGS, getRaidData } from '@/data'
+import { createActivityPage, createActivityMetadata } from '@/lib/page-utils'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -11,9 +11,12 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  return await createActivityMetadata(params, getRaidData, "Raid")
+  return await createActivityMetadata(params, getRaidData, 'Raid')
 }
 
-export default async function RaidEncounterPage({ params, searchParams }: PageProps) {
+export default async function RaidEncounterPage({
+  params,
+  searchParams,
+}: PageProps) {
   return await createActivityPage(params, searchParams, getRaidData)
 }

@@ -1,23 +1,23 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Shield, Sparkles, Shirt } from "lucide-react"
-import { cn } from "@/lib/utils"
-import { playHoverSound, playNavSound } from "@/lib/cyber-audio"
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Shield, Sparkles, Shirt } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { playHoverSound, playNavSound } from '@/lib/cyber-audio'
 
 const TABS = [
-  { name: "Giáp Exotic", href: "/database/exotic-armor", icon: Shirt },
-  { name: "Vũ khí Exotic", href: "/database/exotic-weapons", icon: Sparkles },
-  { name: "Armor Sets", href: "/database/armor-sets", icon: Shield },
+  { name: 'Giáp Exotic', href: '/database/exotic-armor', icon: Shirt },
+  { name: 'Vũ khí Exotic', href: '/database/exotic-weapons', icon: Sparkles },
+  { name: 'Armor Sets', href: '/database/armor-sets', icon: Shield },
 ] as const
 
 export function DatabaseTabNav() {
   const pathname = usePathname()
 
   return (
-    <div className="sticky top-0 md:top-14 z-30 -mx-4 md:mx-0 px-4 md:px-0 bg-background/90 backdrop-blur-md border-b border-zinc-800">
-      <div className="flex gap-1 sm:gap-2 overflow-x-auto pb-0 pt-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+    <div className="sticky top-0 z-30 -mx-4 border-b border-zinc-800 bg-background/90 px-4 backdrop-blur-md md:top-14 md:mx-0 md:px-0">
+      <div className="flex [scrollbar-width:'none'] gap-1 overflow-x-auto pt-1 pb-0 [-ms-overflow-style:'none'] sm:gap-2 [&::-webkit-scrollbar]:hidden">
         {TABS.map((tab) => {
           const isActive = pathname.startsWith(tab.href)
           const Icon = tab.icon
@@ -28,13 +28,13 @@ export function DatabaseTabNav() {
               onMouseEnter={playHoverSound}
               onClick={playNavSound}
               className={cn(
-                "flex items-center gap-2 min-h-11 px-4 sm:px-6 py-2.5 rounded-t-lg transition-all border-b-2 font-black uppercase tracking-wider text-xs sm:text-sm whitespace-nowrap shrink-0",
+                'flex min-h-11 shrink-0 items-center gap-2 rounded-t-lg border-b-2 px-4 py-2.5 text-xs font-black tracking-wider whitespace-nowrap uppercase transition-all sm:px-6 sm:text-sm',
                 isActive
-                  ? "border-neon-cyan text-neon-cyan bg-neon-cyan/10"
-                  : "border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/50"
+                  ? 'border-neon-cyan bg-neon-cyan/10 text-neon-cyan'
+                  : 'border-transparent text-zinc-500 hover:bg-zinc-900/50 hover:text-zinc-300',
               )}
             >
-              <Icon className="w-4 h-4 shrink-0" />
+              <Icon className="h-4 w-4 shrink-0" />
               {tab.name}
             </Link>
           )

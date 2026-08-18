@@ -1,40 +1,43 @@
-import { useSyncExternalStore } from "react"
+import { useSyncExternalStore } from 'react'
 
-const SFX_STORAGE_KEY = "sherpa_sfx_enabled_v1"
-const SYNC_SFX_EVENT = "sherpa_sfx_sync"
+const SFX_STORAGE_KEY = 'sherpa_sfx_enabled_v1'
+const SYNC_SFX_EVENT = 'sherpa_sfx_sync'
 
 let audioCtx: AudioContext | null = null
 
 function getAudioContext(): AudioContext | null {
-  if (typeof window === "undefined") return null
+  if (typeof window === 'undefined') return null
   if (!audioCtx) {
-    const AudioCtxClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext
+    const AudioCtxClass =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext
     if (AudioCtxClass) {
       audioCtx = new AudioCtxClass()
     }
   }
-  if (audioCtx && audioCtx.state === "suspended") {
+  if (audioCtx && audioCtx.state === 'suspended') {
     audioCtx.resume().catch(() => {})
   }
   return audioCtx
 }
 
 function getSfxSnapshot(): boolean {
-  if (typeof window === "undefined") return true
+  if (typeof window === 'undefined') return true
   try {
     const val = localStorage.getItem(SFX_STORAGE_KEY)
-    return val === null ? true : val === "true"
+    return val === null ? true : val === 'true'
   } catch {
     return true
   }
 }
 
 function subscribeSfx(callback: () => void) {
-  if (typeof window === "undefined") return () => {}
-  window.addEventListener("storage", callback)
+  if (typeof window === 'undefined') return () => {}
+  window.addEventListener('storage', callback)
   window.addEventListener(SYNC_SFX_EVENT, callback)
   return () => {
-    window.removeEventListener("storage", callback)
+    window.removeEventListener('storage', callback)
     window.removeEventListener(SYNC_SFX_EVENT, callback)
   }
 }
@@ -48,12 +51,12 @@ export function isSfxEnabled(): boolean {
 }
 
 export function setSfxEnabled(enabled: boolean) {
-  if (typeof window === "undefined") return
+  if (typeof window === 'undefined') return
   try {
     localStorage.setItem(SFX_STORAGE_KEY, String(enabled))
     window.dispatchEvent(new Event(SYNC_SFX_EVENT))
   } catch (e) {
-    console.error("Failed to save SFX state:", e)
+    console.error('Failed to save SFX state:', e)
   }
 }
 
@@ -77,7 +80,7 @@ export function playHoverSound() {
     const osc = ctx.createOscillator()
     const gain = ctx.createGain()
 
-    osc.type = "sine"
+    osc.type = 'sine'
     osc.frequency.setValueAtTime(440, ctx.currentTime)
     osc.frequency.exponentialRampToValueAtTime(720, ctx.currentTime + 0.04)
 
@@ -105,7 +108,7 @@ export function playNavSound() {
     const osc = ctx.createOscillator()
     const gain = ctx.createGain()
 
-    osc.type = "triangle"
+    osc.type = 'triangle'
     osc.frequency.setValueAtTime(580, now)
     osc.frequency.exponentialRampToValueAtTime(1160, now + 0.06)
 
@@ -137,7 +140,7 @@ export function playClearSound() {
       const gain = ctx.createGain()
       const start = now + idx * 0.05
 
-      osc.type = "sine"
+      osc.type = 'sine'
       osc.frequency.setValueAtTime(freq, start)
 
       gain.gain.setValueAtTime(0.08, start)
@@ -165,7 +168,7 @@ export function playToggleSound() {
     const osc = ctx.createOscillator()
     const gain = ctx.createGain()
 
-    osc.type = "square"
+    osc.type = 'square'
     osc.frequency.setValueAtTime(320, now)
     osc.frequency.exponentialRampToValueAtTime(160, now + 0.03)
 

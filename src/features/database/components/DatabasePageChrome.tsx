@@ -1,9 +1,9 @@
-import type { ReactNode } from "react"
-import { cn } from "@/lib/utils"
+import type { ReactNode } from 'react'
+import { cn } from '@/lib/utils'
 
 export function DatabasePageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-col gap-8 max-w-[1600px] w-full mx-auto relative min-h-screen pb-20">
+    <div className="relative mx-auto flex min-h-screen w-full max-w-[1600px] flex-col gap-8 pb-20">
       {children}
     </div>
   )
@@ -19,17 +19,20 @@ interface DatabaseResultsBarProps {
 export function DatabaseResultsBar({
   label,
   onClear,
-  clearLabel = "Xóa tìm kiếm",
+  clearLabel = 'Xóa tìm kiếm',
   clearClassName,
 }: DatabaseResultsBarProps) {
   return (
-    <div className="flex items-center justify-between gap-3 text-xs font-mono uppercase tracking-wider text-zinc-500">
+    <div className="flex items-center justify-between gap-3 font-mono text-xs tracking-wider text-zinc-500 uppercase">
       <span>{label}</span>
       {onClear && (
         <button
           type="button"
           onClick={onClear}
-          className={cn("text-neon-cyan hover:text-white transition-colors", clearClassName)}
+          className={cn(
+            'text-neon-cyan transition-colors hover:text-white',
+            clearClassName,
+          )}
         >
           {clearLabel}
         </button>
@@ -46,7 +49,7 @@ export function DatabaseEmptyState({
   className?: string
 }) {
   return (
-    <div className={cn("py-12 text-center text-zinc-500 font-mono", className)}>
+    <div className={cn('py-12 text-center font-mono text-zinc-500', className)}>
       {message}
     </div>
   )

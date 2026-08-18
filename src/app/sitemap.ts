@@ -1,44 +1,44 @@
-import type { MetadataRoute } from "next"
+import type { MetadataRoute } from 'next'
 import {
   RAID_SLUGS,
   DUNGEON_SLUGS,
   PANTHEON_SLUGS,
   EXOTIC_MISSION_SLUGS,
-} from "@/data"
+} from '@/data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://d2sherpa.com"
+  const baseUrl = 'https://d2sherpa.com'
   const lastModified = new Date()
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/timeline`,
       lastModified,
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/database/exotic-weapons`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/database/exotic-armor`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/database/armor-sets`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
   ]
@@ -46,30 +46,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const raidRoutes: MetadataRoute.Sitemap = RAID_SLUGS.map((slug) => ({
     url: `${baseUrl}/raids/${slug}`,
     lastModified,
-    changeFrequency: "weekly",
+    changeFrequency: 'weekly',
     priority: 0.9,
   }))
 
   const dungeonRoutes: MetadataRoute.Sitemap = DUNGEON_SLUGS.map((slug) => ({
     url: `${baseUrl}/dungeons/${slug}`,
     lastModified,
-    changeFrequency: "weekly",
+    changeFrequency: 'weekly',
     priority: 0.9,
   }))
 
   const pantheonRoutes: MetadataRoute.Sitemap = PANTHEON_SLUGS.map((slug) => ({
     url: `${baseUrl}/pantheon/${slug}`,
     lastModified,
-    changeFrequency: "monthly",
+    changeFrequency: 'monthly',
     priority: 0.7,
   }))
 
-  const exoticMissionRoutes: MetadataRoute.Sitemap = EXOTIC_MISSION_SLUGS.map((slug) => ({
-    url: `${baseUrl}/exotic-missions/${slug}`,
-    lastModified,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }))
+  const exoticMissionRoutes: MetadataRoute.Sitemap = EXOTIC_MISSION_SLUGS.map(
+    (slug) => ({
+      url: `${baseUrl}/exotic-missions/${slug}`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    }),
+  )
 
   return [
     ...staticRoutes,
