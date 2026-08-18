@@ -77,7 +77,7 @@ export function ExoticMissionView({
         return (
           <div className="mx-auto flex h-full max-w-5xl flex-col gap-8 overflow-y-auto p-6 md:p-12">
             <div className="mb-8">
-              <h1 className="text-glow-zinc mb-4 text-4xl font-black tracking-widest text-zinc-100 uppercase md:text-5xl">
+              <h1 className="glow-text-zinc mb-4 text-4xl font-black tracking-widest text-zinc-100 uppercase md:text-5xl">
                 Walkthrough
               </h1>
               <p className="max-w-3xl font-mono text-lg text-zinc-400">

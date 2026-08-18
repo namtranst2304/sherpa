@@ -48,7 +48,7 @@ export function GuideSidebar({
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-neon-yellow to-transparent" />
 
         <h1
-          className="text-xl font-extrabold tracking-widest break-words text-neon-yellow uppercase text-glow-yellow"
+          className="text-xl font-extrabold tracking-widest break-words text-neon-yellow uppercase glow-text-yellow"
           title={title}
         >
           {title}
@@ -97,7 +97,7 @@ export function GuideSidebar({
                           'flex items-center gap-1.5 leading-tight tracking-wide break-words whitespace-normal',
                           item.isFinal &&
                             !isActive &&
-                            'font-extrabold text-neon-red text-glow-red',
+                            'font-extrabold text-neon-red glow-text-red',
                           item.isFinal &&
                             isActive &&
                             'font-extrabold text-red-700',

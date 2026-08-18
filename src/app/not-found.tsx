@@ -24,7 +24,7 @@ export default function NotFound() {
 
         {/* Glitchy 404 Text */}
         <div className="relative">
-          <h1 className="bg-gradient-to-b from-white via-neon-red to-black bg-clip-text text-7xl leading-none font-black tracking-tighter text-transparent select-none text-glow-red md:text-[10rem]">
+          <h1 className="bg-gradient-to-b from-white via-neon-red to-black bg-clip-text text-7xl leading-none font-black tracking-tighter text-transparent select-none glow-text-red md:text-[10rem]">
             404
           </h1>
           <div className="absolute inset-0 -translate-x-1 translate-y-1 text-7xl leading-none font-black text-neon-red opacity-30 blur-[2px] md:text-[10rem]">

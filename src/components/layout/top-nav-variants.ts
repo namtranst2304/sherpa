@@ -78,11 +78,11 @@ export const topNavTitleVariants = cva(
   {
     variants: {
       variant: {
-        cyan: 'text-neon-cyan text-glow-cyan',
-        green: 'text-neon-green text-glow-green',
-        red: 'text-neon-red text-glow-red',
-        orange: 'text-neon-orange text-glow-orange',
-        yellow: 'text-neon-yellow text-glow-yellow',
+        cyan: 'text-neon-cyan glow-text-cyan',
+        green: 'text-neon-green glow-text-green',
+        red: 'text-neon-red glow-text-red',
+        orange: 'text-neon-orange glow-text-orange',
+        yellow: 'text-neon-yellow glow-text-yellow',
         zinc: 'text-zinc-300',
       },
     },
@@ -95,14 +95,14 @@ export const topNavHoverItemVariants = cva(
   {
     variants: {
       variant: {
-        cyan: 'hover:bg-neon-cyan/10 hover:border-neon-cyan group-hover:text-neon-cyan group-hover:text-glow-cyan',
+        cyan: 'hover:bg-neon-cyan/10 hover:border-neon-cyan group-hover:text-neon-cyan group-hover:glow-text-cyan',
         green:
-          'hover:bg-neon-green/10 hover:border-neon-green group-hover:text-neon-green group-hover:text-glow-green',
-        red: 'hover:bg-neon-red/10 hover:border-neon-red group-hover:text-neon-red group-hover:text-glow-red',
+          'hover:bg-neon-green/10 hover:border-neon-green group-hover:text-neon-green group-hover:glow-text-green',
+        red: 'hover:bg-neon-red/10 hover:border-neon-red group-hover:text-neon-red group-hover:glow-text-red',
         orange:
-          'hover:bg-neon-orange/10 hover:border-neon-orange group-hover:text-neon-orange group-hover:text-glow-orange',
+          'hover:bg-neon-orange/10 hover:border-neon-orange group-hover:text-neon-orange group-hover:glow-text-orange',
         yellow:
-          'hover:bg-neon-yellow/10 hover:border-neon-yellow group-hover:text-neon-yellow group-hover:text-glow-yellow',
+          'hover:bg-neon-yellow/10 hover:border-neon-yellow group-hover:text-neon-yellow group-hover:glow-text-yellow',
         zinc: 'hover:bg-zinc-800/30 hover:border-zinc-500 group-hover:text-zinc-300',
       },
     },

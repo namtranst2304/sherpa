@@ -33,7 +33,7 @@ export function EncounterPhase({ walkthrough }: EncounterPhaseProps) {
             withCorners
             className="flex flex-col gap-2"
           >
-            <h3 className="mb-3 flex items-start gap-3 text-xl font-bold text-neon-cyan text-glow-cyan">
+            <h3 className="mb-3 flex items-start gap-3 text-xl font-bold text-neon-cyan glow-text-cyan">
               {hasMultiplePhases && (
                 <CyberBadge variant="cyan" className="mt-1 shrink-0">
                   {index + 1}

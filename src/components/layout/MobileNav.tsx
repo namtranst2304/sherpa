@@ -122,7 +122,7 @@ export function MobileNav() {
                 <p className="font-mono text-[10px] tracking-[0.35em] text-neon-cyan/70 uppercase">
                   sys.nav // mobile
                 </p>
-                <p className="mt-0.5 text-sm font-black tracking-widest text-neon-cyan uppercase text-glow-cyan">
+                <p className="mt-0.5 text-sm font-black tracking-widest text-neon-cyan uppercase glow-text-cyan">
                   Select Destination
                 </p>
               </div>

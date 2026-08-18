@@ -312,7 +312,7 @@ export function EncounterNavigatorHUD({
             <div className="mb-5 flex items-center justify-between border-b border-neon-cyan/30 pb-3">
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-neon-cyan" />
-                <h3 className="text-sm font-black tracking-widest text-neon-cyan uppercase text-glow-cyan">
+                <h3 className="text-sm font-black tracking-widest text-neon-cyan uppercase glow-text-cyan">
                   Gamer Shortcuts HUD
                 </h3>
               </div>

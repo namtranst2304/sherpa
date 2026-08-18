@@ -257,7 +257,7 @@ const cyberHeadingVariants = cva('font-extrabold uppercase tracking-widest', {
     variant: {
       default: 'text-foreground',
       gradient:
-        'text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange text-glow-cyan',
+        'text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan via-blue-400 to-neon-orange glow-text-cyan',
       exotic: 'text-amber-400 drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]',
       legendary: 'text-purple-400 drop-shadow-[0_0_10px_rgba(192,132,252,0.5)]',
     },
@@ -351,25 +351,25 @@ const cyberSectionHeaderTone = {
     border: 'border-neon-orange/30',
     iconBox: 'bg-neon-orange/20',
     icon: 'text-neon-orange',
-    title: 'text-neon-orange text-glow-orange',
+    title: 'text-neon-orange glow-text-orange',
   },
   yellow: {
     border: 'border-neon-yellow/30',
     iconBox: 'bg-neon-yellow/20',
     icon: 'text-neon-yellow',
-    title: 'text-neon-yellow text-glow-yellow',
+    title: 'text-neon-yellow glow-text-yellow',
   },
   red: {
     border: 'border-neon-red/30',
     iconBox: 'bg-neon-red/20',
     icon: 'text-neon-red',
-    title: 'text-neon-red text-glow-red',
+    title: 'text-neon-red glow-text-red',
   },
   green: {
     border: 'border-neon-green/30',
     iconBox: 'bg-neon-green/20',
     icon: 'text-neon-green',
-    title: 'text-neon-green text-glow-green',
+    title: 'text-neon-green glow-text-green',
   },
   zinc: {
     border: 'border-zinc-800',

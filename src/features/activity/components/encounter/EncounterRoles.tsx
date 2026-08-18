@@ -221,7 +221,7 @@ export function EncounterRoles({
                 className="group relative"
               >
                 <div className="absolute top-0 left-0 h-full w-1 bg-neon-cyan/50 transition-colors group-hover:bg-neon-cyan" />
-                <h4 className="mb-4 flex items-center justify-between border-b border-zinc-800 pb-3 text-lg font-black tracking-wider text-neon-cyan uppercase text-glow-cyan sm:text-xl">
+                <h4 className="mb-4 flex items-center justify-between border-b border-zinc-800 pb-3 text-lg font-black tracking-wider text-neon-cyan uppercase glow-text-cyan sm:text-xl">
                   {strat.name}
                   <CyberBadge variant="zinc">Strategy</CyberBadge>
                 </h4>

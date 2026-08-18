@@ -16,7 +16,7 @@ export function ExoticCatalystTab({
       <div className="flex items-center gap-3 border-b border-neon-yellow/30 pb-4">
         <Sparkles className="h-8 w-8 text-neon-yellow" />
         <div>
-          <h2 className="text-3xl font-black tracking-widest text-neon-yellow uppercase text-glow-yellow">
+          <h2 className="text-3xl font-black tracking-widest text-neon-yellow uppercase glow-text-yellow">
             {catalystGuide.title || 'Cách Lấy Catalyst'}
           </h2>
           {catalystGuide.description && (

@@ -40,7 +40,7 @@ interface PerkColumnProps {
 export function PerkColumn({ title, perks }: PerkColumnProps) {
   return (
     <div>
-      <h4 className="mb-3 text-sm font-bold tracking-wider text-neon-cyan/80 text-zinc-300 uppercase">
+      <h4 className="mb-3 text-sm font-bold tracking-wider text-neon-cyan/80 uppercase">
         {title}
       </h4>
       <div className="flex flex-col gap-4">

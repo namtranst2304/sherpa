@@ -56,7 +56,7 @@ export function MobileGuideTOC({
   let encounterCounter = 0
 
   return (
-    <div className="relative sticky top-0 z-40 flex min-h-14 w-full items-center overflow-hidden border-b border-neon-cyan/25 bg-[#050508]/95 backdrop-blur-xl md:hidden">
+    <div className="sticky top-0 z-40 flex min-h-14 w-full items-center overflow-hidden border-b border-neon-cyan/25 bg-[#050508]/95 backdrop-blur-xl md:hidden">
       {/* Cyber accent line */}
       <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent opacity-70" />
 
