@@ -16,6 +16,30 @@ type ClassLoadout = {
 
 const CLASS_KEYS = ['warlocks', 'titans', 'hunters'] as const
 
+const CLASS_STYLES = {
+  titans: {
+    text: 'text-neon-red',
+    border: 'border-neon-red/30',
+    cardBorder: 'border-neon-red/20',
+    cardBg: 'bg-neon-red/5',
+    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
+  },
+  hunters: {
+    text: 'text-neon-cyan',
+    border: 'border-neon-cyan/30',
+    cardBorder: 'border-neon-cyan/20',
+    cardBg: 'bg-neon-cyan/5',
+    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
+  },
+  warlocks: {
+    text: 'text-neon-yellow',
+    border: 'border-neon-yellow/30',
+    cardBorder: 'border-neon-yellow/20',
+    cardBg: 'bg-neon-yellow/5',
+    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
+  },
+} as const
+
 export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
   if (!loadout_tips) return null
 
@@ -57,16 +81,16 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
           {CLASS_KEYS.map((cls) => {
             const data = loadout_tips[cls] as ClassLoadout | undefined
             if (!data) return null
-            
-            const colorClass = cls === 'titans' ? 'neon-red' : cls === 'hunters' ? 'neon-cyan' : 'neon-yellow'
+
+            const style = CLASS_STYLES[cls]
 
             return (
               <div key={cls}>
-                <h3 className={`mb-3 flex items-center gap-2 text-sm font-bold tracking-wider uppercase text-${colorClass} drop-shadow-[0_0_5px_currentColor]`}>
+                <h3 className={`mb-3 flex items-center gap-2 text-sm font-bold tracking-wider uppercase ${style.text} ${style.dropShadow}`}>
                   <Shield className="h-4 w-4" />{' '}
                   {cls.charAt(0).toUpperCase() + cls.slice(1)}
                 </h3>
-                <div className={`space-y-3 border-l-2 border-${colorClass}/30 pl-3`}>
+                <div className={`space-y-3 border-l-2 ${style.border} pl-3`}>
                   {(data.supers?.length ?? 0) > 0 && (
                     <div>
                       <strong className="text-xs text-zinc-500 uppercase">
@@ -77,9 +101,9 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
                           (s: { name: string; utility: string }) => (
                             <div
                               key={s.name}
-                              className={`flex flex-col rounded-md border border-${colorClass}/20 bg-${colorClass}/5 p-3`}
+                              className={`flex flex-col rounded-md border ${style.cardBorder} ${style.cardBg} p-3`}
                             >
-                              <span className={`text-sm font-bold text-${colorClass}`}>
+                              <span className={`text-sm font-bold ${style.text}`}>
                                 {s.name}
                               </span>
                               <span className="mt-1 text-xs text-zinc-400">

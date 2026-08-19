@@ -19,6 +19,12 @@ function formatRoleLabel(roleKey: string) {
     .replace(/\b\w/g, (char) => char.toUpperCase())
 }
 
+const ROLE_ICON_STYLES = {
+  cyan: { bg: 'bg-neon-cyan/10', text: 'text-neon-cyan' },
+  orange: { bg: 'bg-neon-orange/10', text: 'text-neon-orange' },
+  zinc: { bg: 'bg-zinc-800/60', text: 'text-zinc-400' },
+} as const
+
 function RoleCard({
   roleKey,
   roleVal,
@@ -31,6 +37,7 @@ function RoleCard({
   const Icon = isRunner ? Target : isShooter ? Sword : Users
   const variant = isRunner ? 'cyan' : isShooter ? 'orange' : 'zinc'
   const quantity = roleVal.quantity || 1
+  const iconStyle = ROLE_ICON_STYLES[variant]
 
   return (
     <CyberCard
@@ -40,8 +47,8 @@ function RoleCard({
       className="flex flex-col gap-3 transition-all hover:-translate-y-1 hover:shadow-lg group"
     >
       <h5 className="flex items-center gap-2 font-bold text-foreground">
-        <div className={`shrink-0 rounded-md bg-neon-${variant}/10 p-1.5`}>
-          <Icon className={`h-4 w-4 text-neon-${variant}`} />
+        <div className={`shrink-0 rounded-md p-1.5 ${iconStyle.bg}`}>
+          <Icon className={`h-4 w-4 ${iconStyle.text}`} />
         </div>
         <span className="min-w-0 flex-1 text-sm leading-tight break-words text-zinc-100 sm:text-base group-hover:text-white transition-colors">
           {formatRoleLabel(roleKey)}
