@@ -166,6 +166,8 @@ interface CyberCardProps
   withCorners?: boolean
 }
 
+import { HoverGlow } from './HoverGlow'
+
 export function CyberCard({
   variant,
   padding,
@@ -180,23 +182,33 @@ export function CyberCard({
       className={cn(cyberCardVariants({ variant, padding, className }))}
       {...props}
     >
-      {withCorners && (
-        <>
-          <div
-            className={cn(
-              'absolute top-0 left-0 h-3 w-3 border-t-2 border-l-2',
-              cyberCardCorners[currentVariant],
-            )}
-          />
-          <div
-            className={cn(
-              'absolute right-0 bottom-0 h-3 w-3 border-r-2 border-b-2',
-              cyberCardCorners[currentVariant],
-            )}
-          />
-        </>
-      )}
-      {children}
+      <HoverGlow glowColor={
+        currentVariant === 'cyan' ? 'rgba(0, 243, 255, 0.15)' :
+        currentVariant === 'red' ? 'rgba(255, 60, 60, 0.15)' :
+        currentVariant === 'orange' ? 'rgba(255, 140, 0, 0.15)' :
+        currentVariant === 'yellow' ? 'rgba(255, 215, 0, 0.15)' :
+        currentVariant === 'green' ? 'rgba(57, 255, 20, 0.15)' :
+        currentVariant === 'exotic' ? 'rgba(250, 197, 28, 0.15)' :
+        'rgba(255, 255, 255, 0.05)'
+      }>
+        {withCorners && (
+          <>
+            <div
+              className={cn(
+                'absolute top-0 left-0 h-3 w-3 border-t-2 border-l-2 z-20 pointer-events-none',
+                cyberCardCorners[currentVariant],
+              )}
+            />
+            <div
+              className={cn(
+                'absolute right-0 bottom-0 h-3 w-3 border-r-2 border-b-2 z-20 pointer-events-none',
+                cyberCardCorners[currentVariant],
+              )}
+            />
+          </>
+        )}
+        {children}
+      </HoverGlow>
     </div>
   )
 }
