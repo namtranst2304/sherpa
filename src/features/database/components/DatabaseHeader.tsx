@@ -20,9 +20,9 @@ export function DatabaseHeader({
   actions,
 }: DatabaseHeaderProps) {
   return (
-    <div className="sticky top-0 z-20 border-b border-zinc-800/50 bg-background/80 pb-4 pt-4 pl-14 pr-14 backdrop-blur-md md:top-14 md:pl-0 md:pr-0 md:pt-6">
+    <div className="-mx-4 sticky top-0 z-20 border-b border-zinc-800/50 bg-background/80 px-4 pb-4 pt-4 backdrop-blur-md md:-mx-6 md:top-14 md:px-6 md:pt-6 lg:-mx-8 lg:px-8">
       <div className="flex flex-col gap-4">
-        <div>
+        <div className="pl-[3.25rem] pr-[3.25rem] md:pl-0 md:pr-0">
           <h1 className="animate-cyber-scan bg-gradient-to-r from-neon-cyan via-white to-neon-cyan bg-clip-text text-2xl font-black tracking-wider text-transparent uppercase drop-shadow-[0_0_10px_rgba(0,243,255,0.3)] sm:text-3xl">
             {title}
           </h1>
