@@ -122,6 +122,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
       variant={cardVariant}
       padding="none"
       withCorners
+      data-expanded={expanded}
       className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
     >
       <ExoticCardHeader
@@ -147,10 +148,10 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
           </MagneticButton>
         }
         meta={
-          <div className="mt-1 flex items-center gap-3 font-mono text-sm text-neon-cyan">
+          <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-sm text-neon-cyan">
             <span>{weapon.weaponType}</span>
             <div
-              className="flex items-center gap-1 opacity-80"
+              className="flex shrink-0 items-center gap-1 opacity-80"
               title={weapon.slot}
             >
               <span className="rounded border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 text-xs text-zinc-400 uppercase">
@@ -158,7 +159,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
               </span>
             </div>
             <div
-              className="flex items-center gap-1 opacity-80"
+              className="flex shrink-0 items-center gap-1 opacity-80"
               title={weapon.damageType}
             >
               <DamageTypeIcon type={weapon.damageType} />

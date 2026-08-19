@@ -55,7 +55,8 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
       variant={cardVariant}
       padding="none"
       withCorners
-      className="flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
+      data-expanded={expanded}
+      className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
     >
       <ExoticCardHeader
         iconUrl={iconUrl}
@@ -80,7 +81,7 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
           </MagneticButton>
         }
         meta={
-          <div className="mt-1 flex items-center gap-2 font-mono text-sm text-neon-cyan">
+          <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-sm text-neon-cyan">
             <span>{armor.type}</span>
           </div>
         }

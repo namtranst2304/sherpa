@@ -109,7 +109,7 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
               key={armor.id}
               className={
                 armor.hasPerkPool
-                  ? 'col-span-1 md:col-span-2 xl:col-span-3'
+                  ? 'has-[[data-expanded=true]]:col-span-1 md:has-[[data-expanded=true]]:col-span-2 xl:has-[[data-expanded=true]]:col-span-3'
                   : ''
               }
             >

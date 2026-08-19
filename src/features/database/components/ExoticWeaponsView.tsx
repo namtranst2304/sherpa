@@ -125,7 +125,7 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
               key={weapon.id}
               className={
                 weapon.hasPerkPool
-                  ? 'col-span-1 md:col-span-2 xl:col-span-3'
+                  ? 'has-[[data-expanded=true]]:col-span-1 md:has-[[data-expanded=true]]:col-span-2 xl:has-[[data-expanded=true]]:col-span-3'
                   : ''
               }
             >
