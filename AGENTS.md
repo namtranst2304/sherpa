@@ -14,6 +14,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **STRICT TYPE SAFETY**: **NEVER USE `any` FOR TYPESAFETY**. Always use strongly typed interfaces, Generics, unions, or `unknown` with type narrowing.
 - **Closed-Loop Verification**: Self-test and verify features (run `yarn check` / `yarn typecheck` / `yarn lint` / test server requests) before finishing. Do not rely on the user to provide error logs or debug basic regressions.
 - **Maintain Aesthetics & Visual Polish**: Adhere strictly to the Destiny 2 Cyberpunk / Sci-fi neon visual design system. Never build plain, generic, or unstyled UI.
+- **DRY & Clean Code (No God Components)**: Constantly refactor and break down large files (>200 lines) into smaller, reusable UI blocks. Prevent HTML/Tailwind duplication by extracting reusable internal components or moving them to `CyberComponents`.
+- **Responsive Layout Integrity**: Ensure UI components don't clip text on mobile (use `break-words`). Always add adequate bottom padding (e.g., `pb-24`) to scrolling containers so content isn't hidden behind floating mobile navigation.
 
 ---
 
