@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { motion } from 'motion/react'
 import { Star } from 'lucide-react'
 import { ExoticArmorCard } from './ExoticArmorCard'
 import { CyberButton } from '@/components/common/CyberComponents'
@@ -104,9 +105,13 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {filteredArmors.length > 0 ? (
-          filteredArmors.map((armor) => (
-            <div
+          filteredArmors.map((armor, index) => (
+            <motion.div
               key={armor.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.4, delay: (index % 12) * 0.05 }}
               className={
                 armor.hasPerkPool
                   ? 'has-[[data-expanded=true]]:col-span-1 md:has-[[data-expanded=true]]:col-span-2 xl:has-[[data-expanded=true]]:col-span-3'
@@ -114,7 +119,7 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
               }
             >
               <ExoticArmorCard armor={armor} />
-            </div>
+            </motion.div>
           ))
         ) : (
           <DatabaseEmptyState

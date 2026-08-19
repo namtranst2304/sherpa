@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
+import { motion } from 'motion/react'
 import { Star } from 'lucide-react'
 import { ExoticWeaponCard } from './ExoticWeaponCard'
 import { CyberButton } from '@/components/common/CyberComponents'
@@ -120,9 +121,13 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filteredWeapons.length > 0 ? (
-          filteredWeapons.map((weapon) => (
-            <div
+          filteredWeapons.map((weapon, index) => (
+            <motion.div
               key={weapon.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.4, delay: (index % 12) * 0.05 }}
               className={
                 weapon.hasPerkPool
                   ? 'has-[[data-expanded=true]]:col-span-1 md:has-[[data-expanded=true]]:col-span-2 xl:has-[[data-expanded=true]]:col-span-3'
@@ -130,7 +135,7 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
               }
             >
               <ExoticWeaponCard weapon={weapon} />
-            </div>
+            </motion.div>
           ))
         ) : (
           <DatabaseEmptyState

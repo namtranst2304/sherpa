@@ -65,9 +65,11 @@ export function PerkPoolGrid({
   title2: string
 }) {
   return (
-    <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 pt-4 lg:grid-cols-2 lg:gap-x-8">
-      <PerkColumn title={title1} perks={column1} />
-      <PerkColumn title={title2} perks={column2} />
+    <div className="@container">
+      <div className="grid grid-cols-1 gap-6 border-t border-zinc-800 pt-4 @lg:grid-cols-2 @lg:gap-x-8">
+        <PerkColumn title={title1} perks={column1} />
+        <PerkColumn title={title2} perks={column2} />
+      </div>
     </div>
   )
 }
