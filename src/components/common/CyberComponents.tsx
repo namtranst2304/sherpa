@@ -107,6 +107,7 @@ const cyberCardVariants = cva(
         red: 'border-neon-red/40 shadow-[0_0_15px_rgba(255,0,0,0.05)]',
         green: 'border-neon-green/40 shadow-[0_0_15px_rgba(57,255,20,0.05)]',
         zinc: 'border-zinc-800',
+        exotic: 'border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)]',
       },
       padding: {
         none: 'p-0',
@@ -129,6 +130,7 @@ const cyberCardCorners = {
   red: 'border-neon-red',
   green: 'border-neon-green',
   zinc: 'border-zinc-500',
+  exotic: 'border-amber-500',
 }
 
 interface CyberCardProps

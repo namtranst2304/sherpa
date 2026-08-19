@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { Star } from 'lucide-react'
 import { bungieUrl } from '@/lib/bungie'
 import { PerkPoolGrid } from '@/components/common/PerkRow'
-import { CyberExpandToggle } from '@/components/common/CyberComponents'
+import { CyberExpandToggle, CyberCard, type CyberVariant } from '@/components/common/CyberComponents'
+import { MagneticButton } from '@/components/common/MagneticButton'
 import {
   ExoticCardHeader,
   ExoticTraitBlock,
@@ -38,13 +39,29 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
     setExpanded(next)
   }
 
+  const getClassVariant = (className: string): CyberVariant => {
+    switch (className.toLowerCase()) {
+      case 'titan': return 'red'
+      case 'hunter': return 'cyan'
+      case 'warlock': return 'yellow'
+      default: return 'zinc'
+    }
+  }
+
+  const cardVariant = getClassVariant(armor.class)
+
   return (
-    <div className="flex flex-col overflow-hidden rounded-lg border border-zinc-800/50 bg-zinc-900/50 transition-colors hover:border-neon-cyan/50">
+    <CyberCard 
+      variant={cardVariant}
+      padding="none"
+      withCorners
+      className="flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
+    >
       <ExoticCardHeader
         iconUrl={iconUrl}
         name={armor.name}
         action={
-          <button
+          <MagneticButton
             type="button"
             onClick={() => toggleWishlist(armor.name)}
             className={cn(
@@ -58,10 +75,9 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
                 ? 'Đã lưu vào Wishlist (Click để bỏ)'
                 : 'Thêm vào Wishlist'
             }
-            aria-label={wishlisted ? 'Bỏ khỏi Wishlist' : 'Thêm vào Wishlist'}
           >
             <Star className={cn('h-4 w-4', wishlisted && 'fill-amber-400')} />
-          </button>
+          </MagneticButton>
         }
         meta={
           <div className="mt-1 flex items-center gap-2 font-mono text-sm text-neon-cyan">
@@ -112,6 +128,6 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
 
         {armor.source && <ItemSourceLine source={armor.source} />}
       </div>
-    </div>
+    </CyberCard>
   )
 }

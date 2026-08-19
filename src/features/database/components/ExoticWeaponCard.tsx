@@ -5,7 +5,8 @@ import Image from 'next/image'
 import { Star } from 'lucide-react'
 import { bungieUrl } from '@/lib/bungie'
 import { PerkPoolGrid } from '@/components/common/PerkRow'
-import { CyberExpandToggle } from '@/components/common/CyberComponents'
+import { CyberExpandToggle, CyberCard, type CyberVariant } from '@/components/common/CyberComponents'
+import { MagneticButton } from '@/components/common/MagneticButton'
 import {
   ExoticCardHeader,
   ExoticTraitBlock,
@@ -103,13 +104,31 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
     setExpanded(next)
   }
 
+  const getDamageTypeVariant = (type: string): CyberVariant => {
+    switch (type.toLowerCase()) {
+      case 'solar': return 'orange'
+      case 'arc': return 'cyan'
+      case 'void': return 'zinc' // Needs purple, fallback to zinc
+      case 'stasis': return 'cyan'
+      case 'strand': return 'green'
+      default: return 'zinc'
+    }
+  }
+
+  const cardVariant = getDamageTypeVariant(weapon.damageType)
+
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/40 transition-colors hover:border-zinc-700">
+    <CyberCard 
+      variant={cardVariant}
+      padding="none"
+      withCorners
+      className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
+    >
       <ExoticCardHeader
         iconUrl={iconUrl}
         name={weapon.name}
         action={
-          <button
+          <MagneticButton
             type="button"
             onClick={() => toggleWishlist(weapon.name)}
             className={cn(
@@ -123,10 +142,9 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
                 ? 'Đã lưu vào Wishlist (Click để bỏ)'
                 : 'Thêm vào Wishlist'
             }
-            aria-label={wishlisted ? 'Bỏ khỏi Wishlist' : 'Thêm vào Wishlist'}
           >
             <Star className={cn('h-4 w-4', wishlisted && 'fill-amber-400')} />
-          </button>
+          </MagneticButton>
         }
         meta={
           <div className="mt-1 flex items-center gap-3 font-mono text-sm text-neon-cyan">
@@ -274,6 +292,6 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
           </div>
         )}
       </div>
-    </div>
+    </CyberCard>
   )
 }
