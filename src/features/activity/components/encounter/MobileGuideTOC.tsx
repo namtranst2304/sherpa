@@ -55,7 +55,10 @@ export function MobileGuideTOC({
       {/* Cyber accent line */}
       <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-neon-cyan/50 to-transparent opacity-70" />
 
-      <div className="flex w-full snap-x [scrollbar-width:'none'] items-center gap-1.5 overflow-x-auto scroll-smooth py-1.5 pl-14 pr-14 [-ms-overflow-style:'none'] [&::-webkit-scrollbar]:hidden">
+      <div className="flex w-full snap-x [scrollbar-width:'none'] items-center gap-1.5 overflow-x-auto scroll-smooth py-1.5 [-ms-overflow-style:'none'] [&::-webkit-scrollbar]:hidden">
+        {/* Left Spacer for Menu Button */}
+        <div className="w-[60px] shrink-0" />
+
         {groups.map((group, gIdx) => (
           <React.Fragment key={`group-${group.title || gIdx}`}>
             {group.items.map((item) => {
@@ -108,6 +111,9 @@ export function MobileGuideTOC({
             })}
           </React.Fragment>
         ))}
+
+        {/* Right Spacer for Search Button */}
+        <div className="w-12 shrink-0" />
       </div>
     </div>
   )
