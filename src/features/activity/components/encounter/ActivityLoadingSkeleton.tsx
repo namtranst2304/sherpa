@@ -15,6 +15,24 @@ function Skeleton({
   )
 }
 
+function SkeletonCard({
+  titleWidth = 'w-32',
+  children,
+}: {
+  titleWidth?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className="flex flex-col gap-4 rounded-lg border border-zinc-800/60 bg-zinc-900/20 p-5">
+      <div className="flex items-center gap-3 border-b border-zinc-800 pb-4">
+        <Skeleton className="h-8 w-8 rounded-md" />
+        <Skeleton className={`h-5 ${titleWidth}`} />
+      </div>
+      {children}
+    </div>
+  )
+}
+
 export function ActivityLoadingSkeleton() {
   return (
     <div className="flex min-h-[calc(100vh-3.5rem)] w-full flex-1 bg-background">
@@ -33,7 +51,7 @@ export function ActivityLoadingSkeleton() {
       </div>
 
       {/* Main content */}
-      <div className="flex flex-1 flex-col gap-8 overflow-hidden p-4 md:p-8">
+      <div className="flex flex-1 flex-col gap-8 overflow-hidden p-4 pb-24 md:p-8 md:pb-28">
         {/* Header */}
         <div className="flex flex-col gap-3 border-b border-zinc-800 pb-6">
           <Skeleton className="h-9 w-72 max-w-full" />
@@ -53,20 +71,12 @@ export function ActivityLoadingSkeleton() {
           {/* Left column */}
           <div className="flex flex-col gap-6">
             {/* Map card */}
-            <div className="flex flex-col gap-4 rounded-lg border border-zinc-800/60 bg-zinc-900/20 p-5">
-              <div className="flex items-center gap-3 border-b border-zinc-800 pb-4">
-                <Skeleton className="h-8 w-8 rounded-md" />
-                <Skeleton className="h-5 w-32" />
-              </div>
+            <SkeletonCard titleWidth="w-32">
               <Skeleton className="aspect-video w-full rounded-md" />
-            </div>
+            </SkeletonCard>
 
             {/* Mechanics card */}
-            <div className="flex flex-col gap-4 rounded-lg border border-zinc-800/60 bg-zinc-900/20 p-5">
-              <div className="flex items-center gap-3 border-b border-zinc-800 pb-4">
-                <Skeleton className="h-8 w-8 rounded-md" />
-                <Skeleton className="h-5 w-44" />
-              </div>
+            <SkeletonCard titleWidth="w-44">
               <div className="flex flex-col gap-2.5">
                 {[1, 0.9, 0.75, 1, 0.85].map((w, i) => (
                   <Skeleton
@@ -76,17 +86,13 @@ export function ActivityLoadingSkeleton() {
                   />
                 ))}
               </div>
-            </div>
+            </SkeletonCard>
           </div>
 
           {/* Right column */}
           <div className="flex flex-col gap-6">
             {/* Roles card */}
-            <div className="flex flex-col gap-4 rounded-lg border border-zinc-800/60 bg-zinc-900/20 p-5">
-              <div className="flex items-center gap-3 border-b border-zinc-800 pb-4">
-                <Skeleton className="h-8 w-8 rounded-md" />
-                <Skeleton className="h-5 w-36" />
-              </div>
+            <SkeletonCard titleWidth="w-36">
               <div className="flex flex-col gap-4">
                 {Array.from({ length: 3 }).map((_, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -99,20 +105,16 @@ export function ActivityLoadingSkeleton() {
                   </div>
                 ))}
               </div>
-            </div>
+            </SkeletonCard>
 
             {/* Secrets card */}
-            <div className="flex flex-col gap-4 rounded-lg border border-zinc-800/60 bg-zinc-900/20 p-5">
-              <div className="flex items-center gap-3 border-b border-zinc-800 pb-4">
-                <Skeleton className="h-8 w-8 rounded-md" />
-                <Skeleton className="h-5 w-48" />
-              </div>
+            <SkeletonCard titleWidth="w-48">
               <div className="flex flex-col gap-2">
                 <Skeleton className="h-4 w-full" />
                 <Skeleton className="h-4 w-3/4" />
                 <Skeleton className="h-4 w-full" />
               </div>
-            </div>
+            </SkeletonCard>
           </div>
         </div>
       </div>
