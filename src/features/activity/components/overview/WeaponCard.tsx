@@ -194,11 +194,11 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
 
   return (
     <CyberCard
-      variant="zinc"
+      variant={elementVariant}
       withCorners
-      className="group relative flex h-full flex-col overflow-hidden p-0"
+      className="group relative flex h-full flex-col overflow-hidden p-0 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
     >
-      <div className="relative flex h-32 w-full items-center justify-center overflow-hidden border-b border-zinc-800 bg-zinc-950 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800 to-zinc-950">
+      <div className="relative flex h-32 w-full items-center justify-center overflow-hidden border-b border-zinc-800/50 bg-zinc-950 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800 to-zinc-950 transition-colors duration-500 group-hover:border-zinc-700">
         {/* Wishlist Button */}
         <MagneticButton
           type="button"
@@ -225,7 +225,7 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
             width={80}
             height={80}
             unoptimized={true}
-            className="rounded-md border border-white/10 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+            className="rounded-md border border-white/10 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500 group-hover:scale-110 group-hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.25)]"
           />
         ) : (
           <div className="flex flex-col items-center justify-center opacity-30">
@@ -271,7 +271,7 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
               </CyberBadge>
             )}
           </div>
-          <div className="flex items-center gap-2 font-mono text-sm text-zinc-400">
+          <div className="flex items-center gap-2 font-mono text-xs tracking-wider text-zinc-400">
             <span>{weapon.type}</span>
             {weapon.frame && (
               <>

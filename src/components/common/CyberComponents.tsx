@@ -121,7 +121,7 @@ export function CyberButton({
 
 // ─── CYBER CARD ──────────────────────────────────────────────────────────────
 const cyberCardVariants = cva(
-  'bg-black/80 border relative transition-colors duration-300 ease-out',
+  'bg-black/80 backdrop-blur-md border relative transition-all duration-300 ease-out hover:bg-black/70',
   {
     variants: {
       variant: {
@@ -203,7 +203,7 @@ export function CyberCard({
 
 // ─── CYBER BADGE ─────────────────────────────────────────────────────────────
 const cyberBadgeVariants = cva(
-  'inline-flex items-center justify-center gap-2 uppercase font-mono border-l-[3px] border-y border-r border-t-zinc-800/30 border-b-zinc-800/30 border-r-zinc-800/30 select-none',
+  'inline-flex items-center justify-center gap-2 uppercase font-mono border-l-[3px] border-y border-r border-t-zinc-800/30 border-b-zinc-800/30 border-r-zinc-800/30 select-none transition-all duration-300 hover:brightness-125 hover:-translate-y-0.5',
   {
     variants: {
       variant: {
@@ -448,9 +448,9 @@ export function CyberSectionHeader({
       )}
       {...props}
     >
-      <div className="flex min-w-0 items-center gap-3">
-        <div className={cn('shrink-0 rounded-md p-2', tone.iconBox)}>
-          <Icon className={cn('h-5 w-5', tone.icon)} />
+      <div className="group flex min-w-0 items-center gap-3">
+        <div className={cn('shrink-0 rounded-md p-2 transition-transform duration-300 group-hover:scale-110 group-hover:shadow-[0_0_12px_currentColor]', tone.iconBox, tone.icon)}>
+          <Icon className="h-5 w-5" />
         </div>
         <h2
           className={cn(

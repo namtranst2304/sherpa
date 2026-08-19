@@ -4,6 +4,7 @@ import {
   CyberSectionHeader,
 } from '@/components/common/CyberComponents'
 import { ActivityData } from '@/types'
+import { cn } from '@/lib/utils'
 
 interface OverviewLoadoutsProps {
   loadout_tips: ActivityData['loadout_tips']
@@ -57,7 +58,12 @@ function LoadoutItemCard({
 }) {
   return (
     <div
-      className={`flex flex-col rounded-md border p-3 transition-colors ${borderClass} ${bgClass} ${hoverClass}`}
+      className={cn(
+        'group flex flex-col rounded-md border p-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg',
+        borderClass,
+        bgClass,
+        hoverClass
+      )}
     >
       <span className={`text-sm font-bold ${titleClass}`}>{title}</span>
       <span className="mt-1 text-xs text-zinc-400">{description}</span>
