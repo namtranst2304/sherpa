@@ -16,7 +16,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import { DESTINY_ACTIVITIES } from '@/config/constants'
 import { MobileNav } from './MobileNav'
-import { CommandPalette } from './CommandPalette'
+
 
 import {
   topNavTriggerVariants,
@@ -172,10 +172,9 @@ export function TopNav() {
           </NavigationMenu>
         </div>
 
-        {/* Right Action Area: Portal Target & Command Palette Search */}
+        {/* Right Action Area: Portal Target */}
         <div className="ml-auto flex h-full items-center gap-3">
           <div id="topnav-portal-target" className="flex h-full items-center" />
-          <CommandPalette />
         </div>
       </div>
     </header>
@@ -203,10 +202,7 @@ export function TopNav() {
         <MobileNav />
       </div>
 
-      {/* Mobile Floating Search Button */}
-      <div className="fixed right-4 top-2 z-[70] md:hidden">
-        <CommandPalette />
-      </div>
+
     </>
   )
 }

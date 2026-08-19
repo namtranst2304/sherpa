@@ -1,13 +1,11 @@
 'use client'
 
-import { useMemo, useCallback } from 'react'
-import { useRouter } from 'next/navigation'
+import { useMemo } from 'react'
 import { GuideShell } from '../GuideShell'
 import { GuideSidebar } from './GuideSidebar'
 import { GuideTemplate } from './GuideTemplate'
 import { ActivityOverviewTemplate } from '../overview/ActivityOverviewTemplate'
 import { MobileGuideTOC } from './MobileGuideTOC'
-import { EncounterNavigatorHUD, NavItem } from './EncounterNavigatorHUD'
 import { ActivityData, ActivityEncounter } from '@/types'
 import { EncounterPhase } from './EncounterPhase'
 import { EncounterMap } from './EncounterMap'
@@ -24,7 +22,6 @@ export function ActivityEncounterView({
   activityData,
   activeEncounterId,
 }: ActivityEncounterViewProps) {
-  const router = useRouter()
   const isOverview = !activeEncounterId || activeEncounterId === 'overview'
   const isSecretsView = activeEncounterId === 'secrets'
   const isCatalystView = activeEncounterId === 'catalyst'
@@ -74,18 +71,7 @@ export function ActivityEncounterView({
     ]
   }, [activityData])
 
-  const flatNavItems: NavItem[] = useMemo(() => {
-    return sidebarGroups.flatMap((g) => g.items)
-  }, [sidebarGroups])
 
-  const handleNavigate = useCallback(
-    (item: NavItem) => {
-      if (item.href) {
-        router.push(item.href, { scroll: false })
-      }
-    },
-    [router],
-  )
 
   if (!activityData?.encounters) {
     return <div>No activity data found.</div>
@@ -229,13 +215,6 @@ export function ActivityEncounterView({
       >
         {renderContent()}
       </GuideShell>
-
-      {/* Floating Bottom Action HUD */}
-      <EncounterNavigatorHUD
-        items={flatNavItems}
-        currentId={currentViewId}
-        onNavigate={handleNavigate}
-      />
     </>
   )
 }

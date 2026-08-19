@@ -1,14 +1,10 @@
 'use client'
 
-import { useMemo, useCallback } from 'react'
-import { useRouter } from 'next/navigation'
+import { useMemo } from 'react'
 import { GuideShell } from '../GuideShell'
 import { GuideSidebar } from '../encounter/GuideSidebar'
 import { MobileGuideTOC } from '../encounter/MobileGuideTOC'
-import {
-  EncounterNavigatorHUD,
-  NavItem,
-} from '../encounter/EncounterNavigatorHUD'
+
 import { ActivityOverviewTemplate } from '../overview/ActivityOverviewTemplate'
 import { ExoticWalkthroughCard } from './ExoticWalkthroughCard'
 import { ExoticCatalystTab } from './ExoticCatalystTab'
@@ -23,7 +19,6 @@ export function ExoticMissionView({
   activityData,
   activeTabId = 'overview',
 }: ExoticMissionViewProps) {
-  const router = useRouter()
   const missionName =
     activityData.dungeon_name || activityData.raid_name || 'Exotic Mission'
   const walkthrough = activityData.encounters?.[0]?.walkthrough
@@ -58,18 +53,7 @@ export function ExoticMissionView({
     [activityData.catalyst_guide],
   )
 
-  const flatNavItems: NavItem[] = useMemo(() => {
-    return sidebarGroups.flatMap((g) => g.items)
-  }, [sidebarGroups])
 
-  const handleNavigate = useCallback(
-    (item: NavItem) => {
-      if (item.href) {
-        router.push(item.href, { scroll: false })
-      }
-    },
-    [router],
-  )
 
   const renderContent = () => {
     switch (activeTabId) {
@@ -133,13 +117,6 @@ export function ExoticMissionView({
       >
         {renderContent()}
       </GuideShell>
-
-      {/* Floating Bottom Action HUD */}
-      <EncounterNavigatorHUD
-        items={flatNavItems}
-        currentId={activeTabId}
-        onNavigate={handleNavigate}
-      />
     </>
   )
 }
