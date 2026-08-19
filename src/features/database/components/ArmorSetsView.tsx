@@ -58,16 +58,21 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
         Sắp xếp: {sortOrder === 'asc' ? 'A - Z' : 'Z - A'}
       </CyberButton>
 
-      <a
-        href="/images/database/armorbonus.jpeg"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex min-h-11 flex-1 sm:flex-none items-center justify-center gap-2 border border-neon-cyan bg-transparent px-6 py-2.5 font-mono text-xs font-bold tracking-widest text-neon-cyan uppercase shadow-neon-cyan transition-all duration-300 ease-out hover:bg-neon-cyan/20 hover:shadow-neon-cyan-hover active:scale-[0.98]"
+      <CyberButton
+        asChild
+        variant="cyan"
+        className="flex-1 sm:flex-none"
         title="Xem ảnh tĩnh toàn bộ Armor Sets"
       >
-        <ImageIcon className="h-4 w-4" />
-        Xem Ảnh Gốc
-      </a>
+        <a
+          href="/images/database/armorbonus.jpeg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ImageIcon className="h-4 w-4" />
+          Xem Ảnh Gốc
+        </a>
+      </CyberButton>
     </>
   )
 

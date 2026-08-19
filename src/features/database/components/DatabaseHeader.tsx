@@ -1,5 +1,6 @@
 import React from 'react'
 import { Search } from 'lucide-react'
+import { CyberInput } from '@/components/common/CyberComponents'
 
 interface DatabaseHeaderProps {
   title: string
@@ -32,12 +33,12 @@ export function DatabaseHeader({
 
         <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
           <div className="group relative w-full sm:max-w-md">
-            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center pl-3">
               <Search className="h-5 w-5 text-zinc-500 transition-colors group-focus-within:text-neon-cyan" />
             </div>
-            <input
-              type="search"
-              className="block min-h-11 w-full rounded-md border border-zinc-800 bg-zinc-900/50 py-2.5 pr-3 pl-10 leading-5 text-zinc-300 placeholder-zinc-500 transition-all focus:border-neon-cyan focus:bg-zinc-900 focus:ring-1 focus:ring-neon-cyan focus:outline-none sm:text-sm"
+            <CyberInput
+              variant="cyan"
+              className="pl-10"
               placeholder={searchPlaceholder}
               value={searchValue}
               onChange={(e) => onSearchChange(e.target.value)}
