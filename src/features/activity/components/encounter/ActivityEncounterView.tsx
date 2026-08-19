@@ -137,8 +137,6 @@ export function ActivityEncounterView({
           activityData.preface?.author_notes ||
           'Hướng dẫn chi tiết cơ chế chiến đấu'
         }
-        encounterId={activeEncounter.id}
-        activitySlug={pageTitle}
         mechanics={
           activeEncounter.walkthrough &&
           Object.keys(activeEncounter.walkthrough).length > 0 ? (
@@ -188,7 +186,6 @@ export function ActivityEncounterView({
           <MobileGuideTOC
             groups={sidebarGroups}
             activeEncounterId={currentViewId}
-            activityTitle={pageTitle}
           />
         }
       >
@@ -199,7 +196,6 @@ export function ActivityEncounterView({
       <EncounterNavigatorHUD
         items={flatNavItems}
         currentId={currentViewId}
-        activityTitle={pageTitle}
         onNavigate={handleNavigate}
       />
     </>

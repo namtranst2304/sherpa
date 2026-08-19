@@ -2,7 +2,6 @@ import * as React from 'react'
 import {
   ChevronLeft,
   ChevronRight,
-  CheckCircle2,
   Volume2,
   VolumeX,
   Keyboard,
@@ -10,15 +9,14 @@ import {
   X,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useCheckpoints } from '@/hooks/use-sherpa-store'
 import {
   useSfxStore,
   toggleSfx,
   playNavSound,
-  playClearSound,
   playHoverSound,
 } from '@/lib/cyber-audio'
 import { useEncounterHotkeys } from '@/hooks/use-encounter-hotkeys'
+import { MagneticButton } from '@/components/common/MagneticButton'
 
 export interface NavItem {
   id: string
@@ -29,19 +27,16 @@ export interface NavItem {
 interface EncounterNavigatorHUDProps {
   items: NavItem[]
   currentId?: string
-  activityTitle: string
   onNavigate: (item: NavItem) => void
 }
 
 export function EncounterNavigatorHUD({
   items,
   currentId,
-  activityTitle,
   onNavigate,
 }: EncounterNavigatorHUDProps) {
   const sfxOn = useSfxStore()
   const [showShortcuts, setShowShortcuts] = React.useState<boolean>(false)
-  const { isEncounterCompleted, toggleEncounterCompleted } = useCheckpoints()
 
   const currentIndex = items.findIndex((item) => item.id === currentId)
   const effectiveIndex = currentIndex >= 0 ? currentIndex : 0
@@ -50,18 +45,6 @@ export function EncounterNavigatorHUD({
   const nextItem =
     effectiveIndex < items.length - 1 ? items[effectiveIndex + 1] : null
   const currentItem = items[effectiveIndex]
-
-  const isCurrentEncounter =
-    currentItem &&
-    currentItem.id !== 'overview' &&
-    currentItem.id !== 'secrets' &&
-    currentItem.id !== 'walkthrough' &&
-    currentItem.id !== 'catalyst'
-
-  const isCurrentCompleted =
-    isCurrentEncounter && currentItem
-      ? isEncounterCompleted(activityTitle, currentItem.id)
-      : false
 
   const handlePrev = React.useCallback(() => {
     if (prevItem) {
@@ -77,23 +60,6 @@ export function EncounterNavigatorHUD({
     }
   }, [nextItem, onNavigate])
 
-  const handleToggleClear = React.useCallback(() => {
-    if (isCurrentEncounter && currentItem) {
-      const willBeCompleted = !isCurrentCompleted
-      if (willBeCompleted) {
-        playClearSound()
-      } else {
-        playNavSound()
-      }
-      toggleEncounterCompleted(activityTitle, currentItem.id)
-    }
-  }, [
-    isCurrentEncounter,
-    currentItem,
-    isCurrentCompleted,
-    activityTitle,
-    toggleEncounterCompleted,
-  ])
 
   const handleJumpToIndex = React.useCallback(
     (index: number) => {
@@ -109,7 +75,6 @@ export function EncounterNavigatorHUD({
   useEncounterHotkeys({
     onNext: handleNext,
     onPrev: handlePrev,
-    onToggleClear: handleToggleClear,
     onJumpToIndex: handleJumpToIndex,
     onToggleShortcuts: () => setShowShortcuts((prev) => !prev),
     enableSwipe: true,
@@ -140,7 +105,7 @@ export function EncounterNavigatorHUD({
           <div className="pointer-events-none absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-neon-cyan/80 to-transparent" />
 
           {/* Prev Button */}
-          <button
+          <MagneticButton
             type="button"
             onClick={handlePrev}
             onMouseEnter={playHoverSound}
@@ -161,7 +126,7 @@ export function EncounterNavigatorHUD({
             <span className="ml-1 hidden text-[11px] font-black md:inline-block">
               PREV
             </span>
-          </button>
+          </MagneticButton>
 
           {/* Center Info & Quick Checkpoint Status */}
           <div className="flex min-h-11 max-w-[280px] flex-1 items-center justify-between gap-2 border border-zinc-800 bg-black/60 px-2 py-1 sm:max-w-[340px] sm:gap-3 sm:px-4">
@@ -181,12 +146,6 @@ export function EncounterNavigatorHUD({
               <div className="mt-1 flex items-center gap-1">
                 {items.map((it, idx) => {
                   const itActive = it.id === currentId
-                  const itCleared =
-                    it.id !== 'overview' &&
-                    it.id !== 'secrets' &&
-                    it.id !== 'walkthrough' &&
-                    it.id !== 'catalyst' &&
-                    isEncounterCompleted(activityTitle, it.id)
 
                   return (
                     <div
@@ -197,45 +156,17 @@ export function EncounterNavigatorHUD({
                         'h-1.5 cursor-pointer rounded-none transition-all',
                         itActive
                           ? 'w-4 bg-neon-cyan shadow-[0_0_8px_#00f3ff]'
-                          : itCleared
-                            ? 'w-2 bg-neon-green shadow-[0_0_6px_#39ff14]'
-                            : 'w-2 bg-zinc-700 hover:bg-zinc-500',
+                          : 'w-2 bg-zinc-700 hover:bg-zinc-500',
                       )}
                     />
                   )
                 })}
               </div>
             </div>
-
-            {/* Quick Checkpoint Action (for encounters) */}
-            {isCurrentEncounter && (
-              <button
-                type="button"
-                onClick={handleToggleClear}
-                onMouseEnter={playHoverSound}
-                className={cn(
-                  'flex shrink-0 cursor-pointer items-center gap-1.5 border px-2.5 py-1 font-mono text-[10px] font-bold uppercase transition-all outline-none',
-                  isCurrentCompleted
-                    ? 'border-neon-green bg-neon-green/20 text-neon-green shadow-[0_0_12px_rgba(57,255,20,0.3)] hover:bg-neon-green/30'
-                    : 'border-zinc-700 bg-zinc-900 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200',
-                )}
-                title="Đánh dấu đã hoàn thành Encounter này (Phím [C])"
-              >
-                <CheckCircle2
-                  className={cn(
-                    'h-3.5 w-3.5',
-                    isCurrentCompleted && 'text-neon-green',
-                  )}
-                />
-                <span className="hidden sm:inline">
-                  {isCurrentCompleted ? 'Cleared' : 'Clear'}
-                </span>
-              </button>
-            )}
           </div>
 
           {/* Next Button */}
-          <button
+          <MagneticButton
             type="button"
             onClick={handleNext}
             onMouseEnter={playHoverSound}
@@ -256,10 +187,10 @@ export function EncounterNavigatorHUD({
               NEXT
             </span>
             <ChevronRight className="h-5 w-5" />
-          </button>
+          </MagneticButton>
 
           {/* Sound Toggle */}
-          <button
+          <MagneticButton
             type="button"
             onClick={() => toggleSfx()}
             onMouseEnter={playHoverSound}
@@ -278,10 +209,10 @@ export function EncounterNavigatorHUD({
             ) : (
               <VolumeX className="h-4 w-4" />
             )}
-          </button>
+          </MagneticButton>
 
           {/* Keyboard Shortcuts Trigger Button */}
-          <button
+          <MagneticButton
             type="button"
             onClick={() => setShowShortcuts(true)}
             onMouseEnter={playHoverSound}
@@ -289,7 +220,7 @@ export function EncounterNavigatorHUD({
             title="Bảng phím tắt Gamer (Phím [?])"
           >
             <Keyboard className="h-4 w-4" />
-          </button>
+          </MagneticButton>
         </div>
       </div>
 
@@ -354,15 +285,6 @@ export function EncounterNavigatorHUD({
                     H
                   </kbd>
                 </div>
-              </div>
-
-              <div className="flex items-center justify-between border-b border-zinc-800/80 py-1.5">
-                <span className="text-zinc-300">
-                  Bật/tắt Đã hoàn thành (Clear)
-                </span>
-                <kbd className="border border-neon-green bg-neon-green/20 px-2.5 py-1 font-bold text-neon-green">
-                  C
-                </kbd>
               </div>
 
               <div className="flex items-center justify-between border-b border-zinc-800/80 py-1.5">

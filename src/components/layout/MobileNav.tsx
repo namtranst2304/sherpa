@@ -12,8 +12,10 @@ import {
   PopoverTrigger,
   PopoverClose,
 } from '@/components/ui/popover'
-import { Button } from '@/components/ui/button'
+import { MagneticButton } from '@/components/common/MagneticButton'
 import { DESTINY_ACTIVITIES } from '@/config/constants'
+
+// ... existing code ...
 
 const THEME_TEXT = {
   cyan: 'text-neon-cyan',
@@ -72,15 +74,13 @@ export function MobileNav() {
     <Popover>
       <div className="group relative z-[70] flex w-fit items-center gap-0 transition-all">
         <PopoverTrigger asChild>
-          <Button
-            variant="ghost"
-            size="icon"
+          <MagneticButton
             className="peer flex h-11 w-11 shrink-0 items-center justify-center rounded-none border-2 border-neon-cyan/50 bg-black/90 text-neon-cyan shadow-[0_0_15px_rgba(0,243,255,0.25)] backdrop-blur-md transition-colors outline-none hover:bg-neon-cyan/10 active:scale-95 data-[state=open]:border-neon-cyan data-[state=open]:bg-neon-cyan/15"
           >
             <Menu className="h-5 w-5 group-has-[[data-state=open]]:hidden peer-data-[state=open]:hidden" />
             <X className="hidden h-5 w-5 group-has-[[data-state=open]]:block peer-data-[state=open]:block" />
             <span className="sr-only">Toggle menu</span>
-          </Button>
+          </MagneticButton>
         </PopoverTrigger>
 
         <Link

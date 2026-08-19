@@ -8,10 +8,8 @@ import {
   BookOpen,
   Flame,
   Crosshair,
-  Check,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { useCheckpoints } from '@/hooks/use-sherpa-store'
 import { playHoverSound, playNavSound } from '@/lib/cyber-audio'
 
 interface TOCGroup {
@@ -22,7 +20,6 @@ interface TOCGroup {
 interface MobileGuideTOCProps {
   groups: TOCGroup[]
   activeEncounterId?: string | null
-  activityTitle?: string
 }
 
 function getTabIcon(id: string) {
@@ -38,10 +35,8 @@ function getTabIcon(id: string) {
 export function MobileGuideTOC({
   groups,
   activeEncounterId,
-  activityTitle,
 }: MobileGuideTOCProps) {
   const activeRef = React.useRef<HTMLAnchorElement | null>(null)
-  const { isEncounterCompleted } = useCheckpoints()
 
   React.useEffect(() => {
     activeRef.current?.scrollIntoView({
@@ -71,10 +66,6 @@ export function MobileGuideTOC({
                 item.id !== 'walkthrough' &&
                 item.id !== 'catalyst'
               if (isEncounter) encounterCounter++
-              const isCleared = activityTitle
-                ? isEncounterCompleted(activityTitle, item.id)
-                : false
-
               return (
                 <Link
                   key={`toc-item-${item.id}`}
@@ -91,14 +82,10 @@ export function MobileGuideTOC({
                   )}
                 >
                   {/* Status / Type Icon */}
-                  {isCleared ? (
-                    <Check className="h-3.5 w-3.5 shrink-0 text-neon-green" />
-                  ) : (
-                    getTabIcon(item.id)
-                  )}
+                  {getTabIcon(item.id)}
 
                   {/* Encounter Index Badge for regular encounters */}
-                  {isEncounter && !isCleared && (
+                  {isEncounter && (
                     <span
                       className={cn(
                         'py-0.2 rounded-none px-1 font-mono text-[10px]',

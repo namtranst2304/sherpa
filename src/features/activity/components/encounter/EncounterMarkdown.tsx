@@ -1,8 +1,9 @@
 import type { Components } from 'react-markdown'
+import { withGlossaryParsing } from '@/lib/glossary-parser'
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 export const markdownComponents: Components = {
-  p: ({ node, ...props }) => <span className="break-words" {...props} />,
+  p: ({ node, children, ...props }) => <span className="break-words" {...props}>{withGlossaryParsing(children)}</span>,
   strong: ({ node, ...props }) => (
     <strong className="font-bold text-neon-cyan" {...props} />
   ),
@@ -40,8 +41,11 @@ export const markdownComponents: Components = {
       {...props}
     />
   ),
-  td: ({ node, ...props }) => (
-    <td className="border-b border-zinc-800/50 px-4 py-3" {...props} />
+  td: ({ node, children, ...props }) => (
+    <td className="border-b border-zinc-800/50 px-4 py-3" {...props}>{withGlossaryParsing(children)}</td>
+  ),
+  li: ({ node, children, ...props }) => (
+    <li {...props}>{withGlossaryParsing(children)}</li>
   ),
 }
 /* eslint-enable @typescript-eslint/no-unused-vars */

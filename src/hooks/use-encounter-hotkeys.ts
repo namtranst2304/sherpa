@@ -5,7 +5,6 @@ import { useEffect, useRef } from 'react'
 interface UseEncounterHotkeysOptions {
   onNext?: () => void
   onPrev?: () => void
-  onToggleClear?: () => void
   onJumpToIndex?: (index: number) => void
   onToggleShortcuts?: () => void
   enableSwipe?: boolean
@@ -14,7 +13,6 @@ interface UseEncounterHotkeysOptions {
 export function useEncounterHotkeys({
   onNext,
   onPrev,
-  onToggleClear,
   onJumpToIndex,
   onToggleShortcuts,
   enableSwipe = true,
@@ -52,11 +50,6 @@ export function useEncounterHotkeys({
         case 'KeyK':
           e.preventDefault()
           onPrev?.()
-          break
-
-        case 'KeyC':
-          e.preventDefault()
-          onToggleClear?.()
           break
 
         case 'KeyM': {
@@ -106,7 +99,7 @@ export function useEncounterHotkeys({
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [onNext, onPrev, onToggleClear, onJumpToIndex, onToggleShortcuts])
+  }, [onNext, onPrev, onJumpToIndex, onToggleShortcuts])
 
   // Touch Swipe Handlers for Mobile
   useEffect(() => {

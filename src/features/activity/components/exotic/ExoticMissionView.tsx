@@ -128,7 +128,6 @@ export function ExoticMissionView({
           <MobileGuideTOC
             groups={sidebarGroups}
             activeEncounterId={activeTabId}
-            activityTitle={missionName}
           />
         }
       >
@@ -139,7 +138,6 @@ export function ExoticMissionView({
       <EncounterNavigatorHUD
         items={flatNavItems}
         currentId={activeTabId}
-        activityTitle={missionName}
         onNavigate={handleNavigate}
       />
     </>
