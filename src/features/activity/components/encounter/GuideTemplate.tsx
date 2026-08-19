@@ -89,7 +89,7 @@ export function GuideTemplate({
     })
 
   return (
-    <div className="relative w-full flex-1 overflow-y-auto bg-background p-4 md:p-8">
+    <div className="relative w-full flex-1 overflow-y-auto bg-background p-4 pb-24 md:p-8 md:pb-28">
       <div className="bg-scanline pointer-events-none absolute inset-0 z-0 opacity-5" />
 
       <div className="relative z-10 w-full space-y-8">

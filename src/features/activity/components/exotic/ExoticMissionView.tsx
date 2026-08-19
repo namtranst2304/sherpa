@@ -75,7 +75,7 @@ export function ExoticMissionView({
     switch (activeTabId) {
       case 'walkthrough':
         return (
-          <div className="mx-auto flex h-full max-w-5xl flex-col gap-8 overflow-y-auto p-6 md:p-12">
+          <div className="mx-auto flex h-full max-w-5xl flex-col gap-8 overflow-y-auto p-6 pb-24 md:p-12 md:pb-28">
             <div className="mb-8">
               <h1 className="glow-text-zinc mb-4 text-4xl font-black tracking-widest text-zinc-100 uppercase md:text-5xl">
                 Walkthrough

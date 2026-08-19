@@ -13,7 +13,7 @@ export function ExoticCatalystTab({
   if (!catalystGuide) return null
 
   return (
-    <div className="flex max-w-4xl flex-col gap-6 p-6">
+    <div className="flex max-w-4xl flex-col gap-6 p-6 pb-24 md:pb-28">
       <div className="flex items-center gap-3 border-b border-neon-yellow/30 pb-4">
         <Sparkles className="h-8 w-8 text-neon-yellow" />
         <div>

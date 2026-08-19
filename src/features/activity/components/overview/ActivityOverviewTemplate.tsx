@@ -23,7 +23,7 @@ export function ActivityOverviewTemplate({
   const title = raid_name || dungeon_name || 'Activity Overview'
 
   return (
-    <div className="w-full flex-1 overflow-y-auto bg-background p-4 md:p-8">
+    <div className="w-full flex-1 overflow-y-auto bg-background p-4 pb-24 md:p-8 md:pb-28">
       <div className="w-full space-y-8">
         {/* Header */}
         <div className="border-b border-border pb-6">
