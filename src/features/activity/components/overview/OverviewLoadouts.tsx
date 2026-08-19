@@ -20,25 +20,50 @@ const CLASS_STYLES = {
   titans: {
     text: 'text-neon-red',
     border: 'border-neon-red/30',
+    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
     cardBorder: 'border-neon-red/20',
     cardBg: 'bg-neon-red/5',
-    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
   },
   hunters: {
     text: 'text-neon-cyan',
     border: 'border-neon-cyan/30',
+    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
     cardBorder: 'border-neon-cyan/20',
     cardBg: 'bg-neon-cyan/5',
-    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
   },
   warlocks: {
     text: 'text-neon-yellow',
     border: 'border-neon-yellow/30',
+    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
     cardBorder: 'border-neon-yellow/20',
     cardBg: 'bg-neon-yellow/5',
-    dropShadow: 'drop-shadow-[0_0_5px_currentColor]',
   },
 } as const
+
+function LoadoutItemCard({
+  title,
+  description,
+  borderClass = 'border-zinc-800',
+  bgClass = 'bg-zinc-900/50',
+  titleClass = 'text-white',
+  hoverClass = 'hover:border-zinc-700',
+}: {
+  title: string
+  description: string
+  borderClass?: string
+  bgClass?: string
+  titleClass?: string
+  hoverClass?: string
+}) {
+  return (
+    <div
+      className={`flex flex-col rounded-md border p-3 transition-colors ${borderClass} ${bgClass} ${hoverClass}`}
+    >
+      <span className={`text-sm font-bold ${titleClass}`}>{title}</span>
+      <span className="mt-1 text-xs text-zinc-400">{description}</span>
+    </div>
+  )
+}
 
 export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
   if (!loadout_tips) return null
@@ -53,6 +78,7 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
               {loadout_tips.note}
             </p>
           )}
+          
           {loadout_tips.weapons && (
             <div>
               <h3 className="mb-3 flex items-center gap-2 text-sm font-bold tracking-wider text-zinc-400 uppercase">
@@ -61,17 +87,11 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
               <div className="flex flex-col gap-2">
                 {loadout_tips.weapons.map(
                   (w: { name: string; description: string }) => (
-                    <div
+                    <LoadoutItemCard
                       key={w.name}
-                      className="flex flex-col rounded-md border border-zinc-800 bg-zinc-900/50 p-3 transition-colors hover:border-zinc-700"
-                    >
-                      <span className="text-sm font-bold text-white">
-                        {w.name}
-                      </span>
-                      <span className="mt-1 text-xs text-zinc-400">
-                        {w.description}
-                      </span>
-                    </div>
+                      title={w.name}
+                      description={w.description}
+                    />
                   ),
                 )}
               </div>
@@ -91,6 +111,7 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
                   {cls.charAt(0).toUpperCase() + cls.slice(1)}
                 </h3>
                 <div className={`space-y-3 border-l-2 ${style.border} pl-3`}>
+                  
                   {(data.supers?.length ?? 0) > 0 && (
                     <div>
                       <strong className="text-xs text-zinc-500 uppercase">
@@ -99,22 +120,21 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
                       <div className="mt-2 flex flex-col gap-2">
                         {(data.supers ?? []).map(
                           (s: { name: string; utility: string }) => (
-                            <div
+                            <LoadoutItemCard
                               key={s.name}
-                              className={`flex flex-col rounded-md border ${style.cardBorder} ${style.cardBg} p-3`}
-                            >
-                              <span className={`text-sm font-bold ${style.text}`}>
-                                {s.name}
-                              </span>
-                              <span className="mt-1 text-xs text-zinc-400">
-                                {s.utility}
-                              </span>
-                            </div>
+                              title={s.name}
+                              description={s.utility}
+                              borderClass={style.cardBorder}
+                              bgClass={style.cardBg}
+                              titleClass={style.text}
+                              hoverClass=""
+                            />
                           ),
                         )}
                       </div>
                     </div>
                   )}
+
                   {(data.exotics_and_abilities?.length ?? 0) > 0 && (
                     <div className="mt-4">
                       <strong className="text-xs text-zinc-500 uppercase">
@@ -123,22 +143,21 @@ export function OverviewLoadouts({ loadout_tips }: OverviewLoadoutsProps) {
                       <div className="mt-2 flex flex-col gap-2">
                         {(data.exotics_and_abilities ?? []).map(
                           (e: { name: string; recommendation: string }) => (
-                            <div
+                            <LoadoutItemCard
                               key={e.name}
-                              className="flex flex-col rounded-md border border-amber-500/30 bg-amber-500/10 p-3"
-                            >
-                              <span className="text-sm font-bold text-amber-500 drop-shadow-[0_0_5px_rgba(245,158,11,0.5)]">
-                                {e.name}
-                              </span>
-                              <span className="mt-1 text-xs text-zinc-400">
-                                {e.recommendation}
-                              </span>
-                            </div>
+                              title={e.name}
+                              description={e.recommendation}
+                              borderClass="border-amber-500/30"
+                              bgClass="bg-amber-500/10"
+                              titleClass="text-amber-500 drop-shadow-[0_0_5px_rgba(245,158,11,0.5)]"
+                              hoverClass=""
+                            />
                           ),
                         )}
                       </div>
                     </div>
                   )}
+                  
                 </div>
               </div>
             )

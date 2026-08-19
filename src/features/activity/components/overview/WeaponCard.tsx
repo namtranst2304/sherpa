@@ -83,6 +83,86 @@ function TraitColumn({ title, perks }: { title: string; perks: string[] }) {
   )
 }
 
+function WeaponStatsBlock({
+  stats,
+  barColor,
+}: {
+  stats: Record<string, string | number>
+  barColor: string
+}) {
+  return (
+    <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+      {Object.entries(stats).map(([statName, value]) => {
+        const formattedName = statName
+          .replace('_', ' ')
+          .replace(/\b\w/g, (l) => l.toUpperCase())
+        const isValueStat = VALUE_STATS.includes(statName.toLowerCase())
+
+        return (
+          <div key={statName} className="flex flex-col gap-1">
+            <div className="flex items-end justify-between">
+              <span className="text-[10px] font-bold tracking-wider text-zinc-500 uppercase">
+                {formattedName}
+              </span>
+              <span className="font-mono text-xs text-zinc-300">{value}</span>
+            </div>
+            {!isValueStat && (
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-900">
+                <div
+                  className={`h-full ${barColor}`}
+                  style={{
+                    width: `${Math.min(100, Number(value))}%`,
+                  }}
+                />
+              </div>
+            )}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+function WeaponPerksBlock({ perks }: { perks: LootWeapon['perks'] }) {
+  if (!perks) return null
+
+  return (
+    <div className="space-y-4">
+      <h4 className="flex items-center gap-2 text-sm font-bold tracking-widest text-white uppercase">
+        <Crosshair className="text-neon-pink h-4 w-4" /> Roll đề xuất
+      </h4>
+
+      {perks.recommended_pve || perks.recommended_pvp ? (
+        <div className="space-y-3">
+          {perks.recommended_pve && (
+            <RecommendedRoll
+              label="PvE:"
+              perks={perks.recommended_pve}
+              labelClass="text-neon-cyan"
+            />
+          )}
+          {perks.recommended_pvp && (
+            <RecommendedRoll
+              label="PvP:"
+              perks={perks.recommended_pvp}
+              labelClass="text-neon-pink"
+            />
+          )}
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 gap-4">
+          {perks.column_3 && (
+            <TraitColumn title="Trait 1" perks={perks.column_3} />
+          )}
+          {perks.column_4 && (
+            <TraitColumn title="Trait 2" perks={perks.column_4} />
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
 interface WeaponCardProps {
   weapon: LootWeapon
 }
@@ -222,83 +302,9 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
         {expanded && (
           <div className="mt-4 space-y-4 border-t border-zinc-800/50 pt-4">
             {weapon.stats && (
-              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
-                {Object.entries(weapon.stats).map(([statName, value]) => {
-                  const formattedName = statName
-                    .replace('_', ' ')
-                    .replace(/\b\w/g, (l) => l.toUpperCase())
-                  const isValueStat = VALUE_STATS.includes(
-                    statName.toLowerCase(),
-                  )
-
-                  return (
-                    <div key={statName} className="flex flex-col gap-1">
-                      <div className="flex items-end justify-between">
-                        <span className="text-[10px] font-bold tracking-wider text-zinc-500 uppercase">
-                          {formattedName}
-                        </span>
-                        <span className="font-mono text-xs text-zinc-300">
-                          {value}
-                        </span>
-                      </div>
-                      {!isValueStat && (
-                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-zinc-900">
-                          <div
-                            className={`h-full ${barColor}`}
-                            style={{
-                              width: `${Math.min(100, Number(value))}%`,
-                            }}
-                          />
-                        </div>
-                      )}
-                    </div>
-                  )
-                })}
-              </div>
+              <WeaponStatsBlock stats={weapon.stats} barColor={barColor} />
             )}
-
-            {weapon.perks && (
-              <div className="space-y-4">
-                <h4 className="flex items-center gap-2 text-sm font-bold tracking-widest text-white uppercase">
-                  <Crosshair className="text-neon-pink h-4 w-4" /> Roll đề xuất
-                </h4>
-
-                {weapon.perks.recommended_pve ||
-                weapon.perks.recommended_pvp ? (
-                  <div className="space-y-3">
-                    {weapon.perks.recommended_pve && (
-                      <RecommendedRoll
-                        label="PvE:"
-                        perks={weapon.perks.recommended_pve}
-                        labelClass="text-neon-cyan"
-                      />
-                    )}
-                    {weapon.perks.recommended_pvp && (
-                      <RecommendedRoll
-                        label="PvP:"
-                        perks={weapon.perks.recommended_pvp}
-                        labelClass="text-neon-pink"
-                      />
-                    )}
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-2 gap-4">
-                    {weapon.perks.column_3 && (
-                      <TraitColumn
-                        title="Trait 1"
-                        perks={weapon.perks.column_3}
-                      />
-                    )}
-                    {weapon.perks.column_4 && (
-                      <TraitColumn
-                        title="Trait 2"
-                        perks={weapon.perks.column_4}
-                      />
-                    )}
-                  </div>
-                )}
-              </div>
-            )}
+            {weapon.perks && <WeaponPerksBlock perks={weapon.perks} />}
           </div>
         )}
       </div>
