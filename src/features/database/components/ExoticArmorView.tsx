@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { Star } from 'lucide-react'
 import { ExoticArmorCard } from './ExoticArmorCard'
+import { CyberButton } from '@/components/common/CyberComponents'
 import { DatabaseHeader } from './DatabaseHeader'
 import {
   DatabasePageShell,
@@ -53,35 +54,33 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
 
   const headerActions = (
     <div className="flex w-full flex-wrap items-center gap-2 sm:w-fit">
-      <button
-        type="button"
+      <CyberButton
+        variant={wishlistOnly ? 'exotic' : 'zinc'}
         onClick={() => setWishlistOnly((prev) => !prev)}
-        className={cn(
-          'flex min-h-11 items-center justify-center gap-2 border px-4 py-2 font-mono text-xs tracking-wider uppercase transition-all',
-          wishlistOnly
-            ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)]'
-            : 'border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-white',
-        )}
         title="Chỉ hiển thị các món trong Wishlist"
       >
         <Star className={cn('h-3.5 w-3.5', wishlistOnly && 'fill-amber-400')} />
         <span>Wishlist ({wishlist.length})</span>
-      </button>
+      </CyberButton>
 
       <div className="flex flex-1 gap-2 rounded-lg bg-zinc-900/50 p-1 sm:flex-none">
         {CLASSES.map((cls) => (
-          <button
+          <CyberButton
             key={cls}
-            type="button"
-            onClick={() => setActiveClass(cls)}
-            className={`min-h-11 flex-1 rounded-md px-4 py-2 text-sm font-bold tracking-wider uppercase transition-all sm:flex-none sm:px-6 ${
+            variant={
               activeClass === cls
-                ? 'bg-neon-cyan text-black shadow-[0_0_15px_rgba(0,255,255,0.3)]'
-                : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
-            }`}
+                ? cls === 'Titan'
+                  ? 'red'
+                  : cls === 'Warlock'
+                  ? 'yellow'
+                  : 'cyan'
+                : 'zinc'
+            }
+            onClick={() => setActiveClass(cls)}
+            className="flex-1 sm:flex-none"
           >
             {cls}
-          </button>
+          </CyberButton>
         ))}
       </div>
     </div>

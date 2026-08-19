@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react'
 import { Star } from 'lucide-react'
 import { ExoticWeaponCard } from './ExoticWeaponCard'
+import { CyberButton } from '@/components/common/CyberComponents'
 import { DatabaseHeader } from './DatabaseHeader'
 import { DatabaseFilterSelect } from './DatabaseFilterSelect'
 import {
@@ -60,20 +61,14 @@ export function ExoticWeaponsView({ weapons }: ExoticWeaponsViewProps) {
 
   const headerActions = (
     <>
-      <button
-        type="button"
+      <CyberButton
+        variant={wishlistOnly ? 'exotic' : 'zinc'}
         onClick={() => setWishlistOnly((prev) => !prev)}
-        className={cn(
-          'flex min-h-11 items-center justify-center gap-2 border px-4 py-2 font-mono text-xs tracking-wider uppercase transition-all',
-          wishlistOnly
-            ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.3)]'
-            : 'border-zinc-800 bg-zinc-900/50 text-zinc-400 hover:border-zinc-700 hover:text-white',
-        )}
         title="Chỉ hiển thị các món trong Wishlist"
       >
         <Star className={cn('h-3.5 w-3.5', wishlistOnly && 'fill-amber-400')} />
         <span>Wishlist ({wishlist.length})</span>
-      </button>
+      </CyberButton>
 
       <DatabaseFilterSelect
         label="Lọc theo slot"

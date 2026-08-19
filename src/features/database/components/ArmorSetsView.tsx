@@ -7,6 +7,7 @@ import {
   CyberCard,
   CyberHeading,
   CyberBadge,
+  CyberButton,
 } from '@/components/common/CyberComponents'
 import { DatabaseHeader } from './DatabaseHeader'
 import {
@@ -48,19 +49,20 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
 
   const headerActions = (
     <>
-      <button
+      <CyberButton
+        variant="zinc"
         onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-        className="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-800 sm:flex-none"
+        className="flex-1 sm:flex-none"
       >
         <ArrowUpDown className="h-4 w-4" />
         Sắp xếp: {sortOrder === 'asc' ? 'A - Z' : 'Z - A'}
-      </button>
+      </CyberButton>
 
       <a
         href="/images/database/armorbonus.jpeg"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex min-h-11 flex-1 items-center justify-center gap-2 rounded-md border border-zinc-800 bg-zinc-900/50 px-6 py-2 text-sm text-neon-cyan transition-colors hover:bg-zinc-800 hover:text-neon-cyan/80 sm:flex-none"
+        className="inline-flex min-h-11 flex-1 sm:flex-none items-center justify-center gap-2 border border-neon-cyan bg-transparent px-6 py-2.5 font-mono text-xs font-bold tracking-widest text-neon-cyan uppercase shadow-neon-cyan transition-all duration-300 ease-out hover:bg-neon-cyan/20 hover:shadow-neon-cyan-hover active:scale-[0.98]"
         title="Xem ảnh tĩnh toàn bộ Armor Sets"
       >
         <ImageIcon className="h-4 w-4" />

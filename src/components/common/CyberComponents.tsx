@@ -27,6 +27,7 @@ const cyberButtonVariants = cva(
         green: 'border-neon-green text-neon-green hover:bg-neon-green/20',
         purple: 'border-neon-purple text-neon-purple hover:bg-neon-purple/20',
         zinc: 'border-zinc-600 text-zinc-300 hover:border-zinc-400 hover:bg-zinc-800/30',
+        exotic: 'border-amber-500 text-amber-400 hover:bg-amber-500/20',
       },
       size: {
         sm: 'px-4 py-1.5 text-[10px] tracking-wider',
@@ -71,6 +72,11 @@ const cyberButtonVariants = cva(
         variant: 'purple',
         glow: true,
         className: 'shadow-neon-purple hover:shadow-neon-purple-hover',
+      },
+      {
+        variant: 'exotic',
+        glow: true,
+        className: 'shadow-[0_0_15px_rgba(245,158,11,0.4)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)]',
       },
     ],
     defaultVariants: {

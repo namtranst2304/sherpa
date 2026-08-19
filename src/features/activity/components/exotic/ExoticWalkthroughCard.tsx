@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ActivityEncounterPhase } from '@/types'
 import { bungieUrl } from '@/lib/bungie'
+import { CyberCard, CyberHeading } from '@/components/common/CyberComponents'
 
 interface ExoticWalkthroughCardProps {
   title: string
@@ -14,7 +15,7 @@ export function ExoticWalkthroughCard({
   index,
 }: ExoticWalkthroughCardProps) {
   return (
-    <div className="relative mb-8 flex flex-col overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900/40">
+    <CyberCard variant="zinc" padding="none" className="mb-8 flex flex-col overflow-hidden">
       <div className="absolute top-0 left-0 h-full w-1 bg-neon-cyan/50" />
 
       <div className="border-b border-zinc-800/50 bg-black/40 p-4 md:p-6">
@@ -22,9 +23,9 @@ export function ExoticWalkthroughCard({
           <div className="flex h-8 w-8 items-center justify-center rounded-full border border-neon-cyan/30 bg-neon-cyan/10 font-mono font-black text-neon-cyan">
             {index}
           </div>
-          <h3 className="text-xl font-black tracking-widest text-zinc-100 uppercase">
+          <CyberHeading size="sm" className="text-zinc-100">
             {title}
-          </h3>
+          </CyberHeading>
         </div>
         {phase.objective && (
           <p className="mt-2 font-mono text-sm tracking-wider text-neon-cyan/80 uppercase">
@@ -70,6 +71,6 @@ export function ExoticWalkthroughCard({
           </div>
         )}
       </div>
-    </div>
+    </CyberCard>
   )
 }
