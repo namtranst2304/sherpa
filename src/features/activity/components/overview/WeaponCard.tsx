@@ -8,6 +8,7 @@ import {
   CyberBadge,
   CyberHeading,
   CyberExpandToggle,
+  type CyberVariant,
 } from '@/components/common/CyberComponents'
 import { LootWeapon } from '@/types'
 import { bungieUrl } from '@/lib/bungie'
@@ -91,7 +92,21 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
   const { isWishlisted, toggleWishlist } = useWishlist()
   const isExotic = weapon.weapon.includes('(Exotic)')
   const name = weapon.weapon.replace('(Exotic)', '').trim()
-  const badgeVariant = isExotic ? 'orange' : 'cyan'
+  
+  const getElementVariant = (el?: string): CyberVariant => {
+    if (!el) return 'zinc'
+    switch (el.toLowerCase()) {
+      case 'solar': return 'orange'
+      case 'arc': return 'cyan'
+      case 'void': return 'purple'
+      case 'stasis': return 'cyan'
+      case 'strand': return 'green'
+      case 'kinetic': return 'zinc'
+      default: return 'zinc'
+    }
+  }
+
+  const elementVariant = getElementVariant(weapon.element)
   const headingVariant = isExotic ? 'exotic' : 'legendary'
   const barColor = isExotic ? 'bg-amber-500' : 'bg-neon-cyan'
   const hasDetails = Boolean(weapon.stats || weapon.perks)
@@ -152,7 +167,7 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
           )}
           {weapon.element && (
             <CyberBadge
-              variant={badgeVariant}
+              variant={elementVariant}
               className="bg-black/60 shadow-xl backdrop-blur-md"
             >
               {weapon.element}

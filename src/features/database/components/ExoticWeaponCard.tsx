@@ -108,7 +108,7 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
     switch (type.toLowerCase()) {
       case 'solar': return 'orange'
       case 'arc': return 'cyan'
-      case 'void': return 'zinc' // Needs purple, fallback to zinc
+      case 'void': return 'purple'
       case 'stasis': return 'cyan'
       case 'strand': return 'green'
       default: return 'zinc'

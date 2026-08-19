@@ -9,10 +9,10 @@ export function ArmorCard({ armor }: { armor: LootArmorSet }) {
   const isHunter = armor.class === 'Hunter'
   const isWarlock = armor.class === 'Warlock'
 
-  let classColor: 'cyan' | 'orange' | 'yellow' | 'zinc' = 'cyan'
-  if (isTitan) classColor = 'orange'
+  let classColor: 'cyan' | 'orange' | 'yellow' | 'red' | 'green' | 'purple' | 'zinc' | 'exotic' = 'zinc'
+  if (isTitan) classColor = 'red'
   else if (isWarlock) classColor = 'yellow'
-  else if (isHunter) classColor = 'zinc'
+  else if (isHunter) classColor = 'cyan'
 
   return (
     <CyberCard

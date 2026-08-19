@@ -4,7 +4,14 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 export type CyberVariant =
-  'cyan' | 'orange' | 'yellow' | 'red' | 'green' | 'zinc' | 'exotic'
+  | 'cyan'
+  | 'orange'
+  | 'yellow'
+  | 'red'
+  | 'green'
+  | 'purple'
+  | 'zinc'
+  | 'exotic'
 export type CyberSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 // ─── CYBER BUTTON ────────────────────────────────────────────────────────────
@@ -18,6 +25,7 @@ const cyberButtonVariants = cva(
         yellow: 'border-neon-yellow text-neon-yellow hover:bg-neon-yellow/20',
         red: 'border-neon-red text-neon-red hover:bg-neon-red/20',
         green: 'border-neon-green text-neon-green hover:bg-neon-green/20',
+        purple: 'border-neon-purple text-neon-purple hover:bg-neon-purple/20',
         zinc: 'border-zinc-600 text-zinc-300 hover:border-zinc-400 hover:bg-zinc-800/30',
       },
       size: {
@@ -58,6 +66,11 @@ const cyberButtonVariants = cva(
         variant: 'green',
         glow: true,
         className: 'shadow-neon-green hover:shadow-neon-green-hover',
+      },
+      {
+        variant: 'purple',
+        glow: true,
+        className: 'shadow-neon-purple hover:shadow-neon-purple-hover',
       },
     ],
     defaultVariants: {
@@ -106,6 +119,7 @@ const cyberCardVariants = cva(
         yellow: 'border-neon-yellow/40 shadow-[0_0_15px_rgba(252,226,5,0.05)]',
         red: 'border-neon-red/40 shadow-[0_0_15px_rgba(255,0,0,0.05)]',
         green: 'border-neon-green/40 shadow-[0_0_15px_rgba(57,255,20,0.05)]',
+        purple: 'border-neon-purple/40 shadow-[0_0_15px_rgba(178,65,255,0.05)]',
         zinc: 'border-zinc-800',
         exotic: 'border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.05)]',
       },
@@ -129,6 +143,7 @@ const cyberCardCorners = {
   yellow: 'border-neon-yellow',
   red: 'border-neon-red',
   green: 'border-neon-green',
+  purple: 'border-neon-purple',
   zinc: 'border-zinc-500',
   exotic: 'border-amber-500',
 }
@@ -189,6 +204,8 @@ const cyberBadgeVariants = cva(
         red: 'bg-neon-red/10 text-neon-red border-neon-red shadow-[0_0_8px_rgba(255,0,0,0.15)]',
         green:
           'bg-neon-green/10 text-neon-green border-neon-green shadow-[0_0_8px_rgba(57,255,20,0.15)]',
+        purple:
+          'bg-neon-purple/10 text-neon-purple border-neon-purple shadow-[0_0_8px_rgba(178,65,255,0.15)]',
         zinc: 'bg-zinc-900/50 text-zinc-500 border-zinc-700',
         exotic:
           'bg-amber-500/10 text-amber-400 border-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.15)]',
@@ -212,6 +229,7 @@ const cyberBadgeIndicator = {
   yellow: 'bg-neon-yellow shadow-[0_0_8px_#fce205]',
   red: 'bg-neon-red shadow-[0_0_8px_#ff0000]',
   green: 'bg-neon-green shadow-[0_0_8px_#39ff14]',
+  purple: 'bg-neon-purple shadow-[0_0_8px_#b241ff]',
   zinc: 'bg-zinc-600',
   exotic: 'bg-amber-500 shadow-[0_0_8px_#f59e0b]',
 }
@@ -372,6 +390,12 @@ const cyberSectionHeaderTone = {
     iconBox: 'bg-neon-green/20',
     icon: 'text-neon-green',
     title: 'text-neon-green glow-text-green',
+  },
+  purple: {
+    border: 'border-neon-purple/30',
+    iconBox: 'bg-neon-purple/20',
+    icon: 'text-neon-purple',
+    title: 'text-neon-purple glow-text-purple',
   },
   zinc: {
     border: 'border-zinc-800',

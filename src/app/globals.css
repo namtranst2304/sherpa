@@ -58,11 +58,12 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-neon-cyan: #06b6d4;
-  --color-neon-orange: #f97316;
-  --color-neon-yellow: #eab308;
-  --color-neon-red: #ef4444;
-  --color-neon-green: #22c55e;
+  --color-neon-cyan: #00f3ff; /* Arc / Hunter */
+  --color-neon-orange: #ff6600; /* Solar */
+  --color-neon-yellow: #fce205; /* Warlock / Gold */
+  --color-neon-red: #ff3333; /* Titan / SIVA */
+  --color-neon-green: #39ff14; /* Strand */
+  --color-neon-purple: #b241ff; /* Void */
 
   --animate-cyber-fade: cyber-fade 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   --animate-cyber-scan: cyber-scan 3s linear infinite;
@@ -115,10 +116,13 @@
   text-shadow: 0 0 3px rgba(234, 179, 8, 0.6);
 }
 @utility glow-text-red {
-  text-shadow: 0 0 3px rgba(239, 68, 68, 0.6);
+  text-shadow: 0 0 3px rgba(255, 51, 51, 0.6);
 }
 @utility glow-text-green {
-  text-shadow: 0 0 3px rgba(34, 197, 94, 0.6);
+  text-shadow: 0 0 3px rgba(57, 255, 20, 0.6);
+}
+@utility glow-text-purple {
+  text-shadow: 0 0 3px rgba(178, 65, 255, 0.6);
 }
 
 @utility shadow-neon-cyan {
@@ -150,15 +154,23 @@
 }
 @utility shadow-neon-red-hover {
   &:hover {
-    box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
+    box-shadow: 0 0 12px rgba(255, 51, 51, 0.25);
   }
 }
 @utility shadow-neon-green {
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.15);
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.15);
 }
 @utility shadow-neon-green-hover {
   &:hover {
-    box-shadow: 0 0 12px rgba(34, 197, 94, 0.25);
+    box-shadow: 0 0 12px rgba(57, 255, 20, 0.25);
+  }
+}
+@utility shadow-neon-purple {
+  box-shadow: 0 0 8px rgba(178, 65, 255, 0.15);
+}
+@utility shadow-neon-purple-hover {
+  &:hover {
+    box-shadow: 0 0 12px rgba(178, 65, 255, 0.25);
   }
 }
 
