@@ -13,6 +13,7 @@ import { EncounterPhase } from './EncounterPhase'
 import { EncounterMap } from './EncounterMap'
 import { EncounterRoles } from './EncounterRoles'
 import { EncounterSecrets } from './EncounterSecrets'
+import { EncounterCatalyst } from './EncounterCatalyst'
 
 interface ActivityEncounterViewProps {
   activityData: ActivityData
@@ -26,6 +27,7 @@ export function ActivityEncounterView({
   const router = useRouter()
   const isOverview = !activeEncounterId || activeEncounterId === 'overview'
   const isSecretsView = activeEncounterId === 'secrets'
+  const isCatalystView = activeEncounterId === 'catalyst'
   const pageTitle =
     activityData?.raid_name || activityData?.dungeon_name || 'Activity'
 
@@ -47,6 +49,15 @@ export function ActivityEncounterView({
                   id: 'secrets',
                   title: 'Secrets & Rương ẩn',
                   href: '?enc=secrets',
+                },
+              ]
+            : []),
+          ...(activityData.catalyst_guide != null
+            ? [
+                {
+                  id: 'catalyst',
+                  title: 'Catalyst Guide',
+                  href: '?enc=catalyst',
                 },
               ]
             : []),
@@ -81,7 +92,7 @@ export function ActivityEncounterView({
   }
 
   const activeEncounter =
-    isOverview || isSecretsView
+    isOverview || isSecretsView || isCatalystView
       ? null
       : activityData.encounters.find(
           (enc: ActivityEncounter) => enc.id === activeEncounterId,
@@ -91,7 +102,9 @@ export function ActivityEncounterView({
     ? 'overview'
     : isSecretsView
       ? 'secrets'
-      : activeEncounter?.id
+      : isCatalystView
+        ? 'catalyst'
+        : activeEncounter?.id
 
   const renderContent = () => {
     if (isSecretsView) {
@@ -115,6 +128,31 @@ export function ActivityEncounterView({
         <GuideTemplate
           title="Secrets & Rương ẩn"
           description="Chưa có dữ liệu secrets cho activity này."
+          mechanics={null}
+          map={null}
+          roles={null}
+        />
+      )
+    }
+
+    if (isCatalystView) {
+      if (activityData.catalyst_guide) {
+        return (
+          <GuideTemplate
+            title="Hướng dẫn lấy Catalyst"
+            description="Chi tiết cách giải đố và thu thập vũ khí Catalyst"
+            mechanics={
+              <EncounterCatalyst catalyst={activityData.catalyst_guide} />
+            }
+            map={null}
+            roles={null}
+          />
+        )
+      }
+      return (
+        <GuideTemplate
+          title="Hướng dẫn lấy Catalyst"
+          description="Chưa có dữ liệu Catalyst cho activity này."
           mechanics={null}
           map={null}
           roles={null}

@@ -122,3 +122,94 @@ export function ItemSourceLine({
     </div>
   )
 }
+
+export function ExoticCatalystBlock({
+  catalysts,
+}: {
+  catalysts: {
+    name: string
+    description: string
+    icon?: string
+    objectives?: { description: string; completionValue: number }[]
+    effects?: { name: string; description: string; icon?: string }[]
+  }[]
+}) {
+  if (!catalysts || catalysts.length === 0) return null
+
+  return (
+    <div>
+      <ExoticSectionLabel>Catalyst(s)</ExoticSectionLabel>
+      <div className="flex flex-col gap-4">
+        {catalysts.map((cat, idx) => (
+          <div
+            key={idx}
+            className="flex flex-col gap-3 rounded border border-zinc-800/80 bg-zinc-950/80 p-3"
+          >
+            <div className="flex items-start gap-3">
+              {cat.icon && (
+                <Image
+                  src={`https://www.bungie.net${cat.icon}`}
+                  alt={cat.name}
+                  width={32}
+                  height={32}
+                  className="shrink-0 rounded-sm border border-zinc-800 bg-zinc-900"
+                  unoptimized
+                />
+              )}
+              <div className="flex flex-col">
+                <span className="text-sm font-bold text-white">{cat.name}</span>
+                <span className="mt-1 text-xs leading-relaxed whitespace-pre-wrap text-zinc-400">
+                  {cat.description}
+                </span>
+              </div>
+            </div>
+
+            {cat.effects && cat.effects.length > 0 && (
+              <div className="mt-2 flex flex-col gap-2 border-t border-zinc-800/50 pt-2">
+                {cat.effects.map((effect, eIdx) => (
+                  <div key={eIdx} className="flex items-start gap-2">
+                    {effect.icon && (
+                      <Image
+                        src={`https://www.bungie.net${effect.icon}`}
+                        alt={effect.name}
+                        width={20}
+                        height={20}
+                        className="shrink-0 rounded-sm"
+                        unoptimized
+                      />
+                    )}
+                    <div className="flex flex-col">
+                      <span className="text-xs font-bold text-zinc-300">
+                        {effect.name}
+                      </span>
+                      <span className="text-xs leading-relaxed text-zinc-500">
+                        {effect.description}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {cat.objectives && cat.objectives.length > 0 && (
+              <div className="mt-2 flex flex-col gap-1 text-xs text-zinc-500">
+                <div className="font-semibold text-zinc-400">
+                  Unlock Requirements:
+                </div>
+                {cat.objectives.map((obj, oIdx) => (
+                  <div key={oIdx} className="flex items-center justify-between">
+                    <span>{obj.description || 'Kills'}</span>
+                    <span className="font-mono text-neon-cyan">
+                      {obj.completionValue}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+

@@ -92,7 +92,7 @@ export function EncounterNavigatorHUD({
   return (
     <>
       {/* Floating Action HUD Bar */}
-      <div className="pointer-events-auto fixed bottom-3 left-1/2 z-40 w-auto max-w-[95vw] -translate-x-1/2 select-none sm:bottom-6 sm:max-w-xl">
+      <div className="pointer-events-auto fixed bottom-20 left-1/2 z-40 w-auto max-w-[95vw] -translate-x-1/2 select-none md:bottom-8 sm:max-w-xl">
         <div className="relative flex items-center gap-1.5 border-2 border-neon-cyan/40 bg-[#08090d]/90 cyber-grid p-1.5 shadow-[0_0_30px_rgba(0,243,255,0.25)] backdrop-blur-xl sm:gap-2 sm:p-2">
           {/* Cyber Corner Brackets */}
           <div className="pointer-events-none absolute top-0 left-0 h-2.5 w-2.5 border-t-2 border-l-2 border-neon-cyan" />

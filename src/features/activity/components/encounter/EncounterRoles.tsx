@@ -94,19 +94,19 @@ export function EncounterRoles({
       if (roles.option_1 || roles.option_2) {
         if (roles.option_1) {
           text += `\n**[Option 1]**\n`
-          for (const key of Object.keys(roles.option_1)) {
-            text += `• **${formatRoleLabel(key)}**: \n`
+          for (const [key, val] of Object.entries(roles.option_1 as Record<string, ActivityRole>)) {
+            text += `• **${formatRoleLabel(key)}**: ${val.description || ''}\n`
           }
         }
         if (roles.option_2) {
           text += `\n**[Option 2]**\n`
-          for (const key of Object.keys(roles.option_2)) {
-            text += `• **${formatRoleLabel(key)}**: \n`
+          for (const [key, val] of Object.entries(roles.option_2 as Record<string, ActivityRole>)) {
+            text += `• **${formatRoleLabel(key)}**: ${val.description || ''}\n`
           }
         }
       } else {
-        for (const key of Object.keys(roles as Record<string, ActivityRole>)) {
-          text += `• **${formatRoleLabel(key)}**: \n`
+        for (const [key, val] of Object.entries(roles as Record<string, ActivityRole>)) {
+          text += `• **${formatRoleLabel(key)}**: ${val.description || ''}\n`
         }
       }
     }
