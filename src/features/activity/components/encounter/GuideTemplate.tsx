@@ -15,6 +15,7 @@ import {
   CyberHeading,
   CyberSectionHeader,
 } from '@/components/common/CyberComponents'
+import { MagneticButton } from '@/components/common/MagneticButton'
 import { copyToClipboard } from '@/lib/clipboard'
 import { cn } from '@/lib/utils'
 
@@ -106,7 +107,7 @@ export function GuideTemplate({
 
           {/* Quick Action Controls */}
           <div className="flex shrink-0 items-center gap-2">
-            <button
+            <MagneticButton
               type="button"
               onClick={handleCopyLink}
               className={cn(
@@ -123,7 +124,7 @@ export function GuideTemplate({
                 <Share2 className="h-4 w-4" />
               )}
               <span>{copied ? 'Đã sao chép!' : 'Chia sẻ link'}</span>
-            </button>
+            </MagneticButton>
           </div>
         </div>
 

@@ -3,6 +3,7 @@
 import * as React from 'react'
 import { Target, Sword, Users, Copy, Check } from 'lucide-react'
 import { CyberCard, CyberBadge } from '@/components/common/CyberComponents'
+import { MagneticButton } from '@/components/common/MagneticButton'
 import { ActivityRole, ActivityEncounter } from '@/types'
 import { copyToClipboard } from '@/lib/clipboard'
 import { playClearSound } from '@/lib/cyber-audio'
@@ -25,18 +26,24 @@ function RoleCard({
   roleKey: string
   roleVal: ActivityRole
 }) {
-  const isRunner = roleKey.toLowerCase().includes('runner')
-  const isShooter = roleKey.toLowerCase().includes('shooter')
-  const Icon = isRunner || isShooter ? Target : Sword
+  const isRunner = roleKey.toLowerCase().includes('runner') || roleKey.toLowerCase().includes('relic')
+  const isShooter = roleKey.toLowerCase().includes('shooter') || roleKey.toLowerCase().includes('ad_clear')
+  const Icon = isRunner ? Target : isShooter ? Sword : Users
+  const variant = isRunner ? 'cyan' : isShooter ? 'orange' : 'zinc'
   const quantity = roleVal.quantity || 1
 
   return (
-    <div className="flex flex-col gap-3 border border-zinc-800 bg-black/60 p-4 transition-all hover:border-neon-cyan/50 hover:shadow-neon-cyan">
+    <CyberCard
+      variant={variant}
+      padding="sm"
+      withCorners
+      className="flex flex-col gap-3 transition-all hover:-translate-y-1 hover:shadow-lg group"
+    >
       <h5 className="flex items-center gap-2 font-bold text-foreground">
-        <div className="shrink-0 rounded-md bg-neon-cyan/10 p-1.5">
-          <Icon className="h-4 w-4 text-neon-cyan" />
+        <div className={`shrink-0 rounded-md bg-neon-${variant}/10 p-1.5`}>
+          <Icon className={`h-4 w-4 text-neon-${variant}`} />
         </div>
-        <span className="min-w-0 flex-1 text-sm leading-tight break-words text-zinc-100 sm:text-base">
+        <span className="min-w-0 flex-1 text-sm leading-tight break-words text-zinc-100 sm:text-base group-hover:text-white transition-colors">
           {formatRoleLabel(roleKey)}
         </span>
         <CyberBadge
@@ -62,7 +69,7 @@ function RoleCard({
         </div>
       )}
 
-    </div>
+    </CyberCard>
   )
 }
 
@@ -118,7 +125,7 @@ export function EncounterRoles({
             Bảng phân vai Fireteam
           </span>
         </div>
-        <button
+        <MagneticButton
           type="button"
           onClick={handleCopyDiscord}
           className="flex cursor-pointer items-center gap-1.5 border border-neon-cyan/50 bg-neon-cyan/15 px-3 py-1.5 font-mono text-xs font-bold text-neon-cyan uppercase shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all hover:border-neon-cyan hover:bg-neon-cyan/25 active:scale-95"
@@ -130,7 +137,7 @@ export function EncounterRoles({
             <Copy className="h-3.5 w-3.5" />
           )}
           <span>{copied ? 'Đã chép Discord!' : 'Chép Discord'}</span>
-        </button>
+        </MagneticButton>
       </div>
 
       {hasStrategyOptions ? (
