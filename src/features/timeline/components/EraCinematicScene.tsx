@@ -4,7 +4,7 @@ import * as React from 'react'
 import Image from 'next/image'
 import { TimelineEra, ROMAN_NUMERALS } from '@/data/timeline/index'
 import { getTheme, type ThemeColorTokens } from '@/lib/theme'
-import { CyberBadge } from '@/components/common/CyberComponents'
+import { CyberBadge, CyberCard, CyberHeading, type CyberVariant } from '@/components/common/CyberComponents'
 import { TTSButton } from '@/components/common/TTSButton'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
@@ -154,15 +154,16 @@ export function EraCinematicScene({
               </span>
             </div>
 
-            <h2 
-              className="mb-4 font-sans text-xl leading-snug font-normal tracking-[0.15em] uppercase md:text-2xl lg:mb-8 lg:text-3xl 2xl:text-4xl"
-              style={{ 
-                color: 'white',
+            <CyberHeading 
+              variant="default"
+              size="lg"
+              className="mb-4 lg:mb-8"
+              style={{
                 textShadow: `0 0 20px ${theme.hex}`
               }}
             >
               {era.name}
-            </h2>
+            </CyberHeading>
 
             <p className="hidden text-justify font-sans text-sm leading-loose text-zinc-200 opacity-90 md:block md:text-base 2xl:text-lg">
               {era.description}
@@ -182,17 +183,23 @@ export function EraCinematicScene({
             onTouchEnd={onTouchEnd}
           >
             <div className="h-full w-full">
-              <div
-                className="group relative h-full w-full overflow-hidden p-1 lg:h-[70vh] 2xl:h-[75vh]"
+              <CyberCard
+                variant={
+                  (era.themeColor as CyberVariant) === 'cyan' || 
+                  (era.themeColor as CyberVariant) === 'orange' ||
+                  (era.themeColor as CyberVariant) === 'yellow' ||
+                  (era.themeColor as CyberVariant) === 'red' ||
+                  (era.themeColor as CyberVariant) === 'green' ||
+                  (era.themeColor as CyberVariant) === 'purple' ||
+                  (era.themeColor as CyberVariant) === 'zinc' 
+                    ? (era.themeColor as CyberVariant) 
+                    : 'zinc'
+                }
+                withCorners
+                padding="none"
+                className="group relative h-full w-full overflow-hidden lg:h-[70vh] 2xl:h-[75vh]"
                 style={{ transform: 'skewX(-5deg)' }}
               >
-                <div
-                  className="absolute inset-0 border border-white/5 bg-[#050508]/80 backdrop-blur-md transition-colors duration-200 group-hover:border-white/15"
-                  style={{ 
-                    borderLeft: `2px solid ${theme.hex}`,
-                    boxShadow: `inset 20px 0 50px -30px ${theme.hex}40`
-                  }}
-                />
 
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -253,7 +260,7 @@ export function EraCinematicScene({
                   )}
                   </motion.div>
                 </AnimatePresence>
-              </div>
+              </CyberCard>
             </div>
 
             <EraCarouselControls
