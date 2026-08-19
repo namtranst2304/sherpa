@@ -9,7 +9,7 @@ interface PerkRowProps {
   bordered?: boolean
 }
 
-export function PerkRow({ perk, bordered = false }: PerkRowProps) {
+function PerkRow({ perk, bordered = false }: PerkRowProps) {
   return (
     <div className="flex items-start gap-3">
       {perk.icon && (
@@ -37,7 +37,7 @@ interface PerkColumnProps {
   perks: PerkItem[]
 }
 
-export function PerkColumn({ title, perks }: PerkColumnProps) {
+function PerkColumn({ title, perks }: PerkColumnProps) {
   return (
     <div>
       <h4 className="mb-3 text-sm font-bold tracking-wider text-neon-cyan/80 uppercase">

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export function ExoticSectionLabel({ children }: { children: ReactNode }) {
+function ExoticSectionLabel({ children }: { children: ReactNode }) {
   return (
     <div className="mb-3 flex items-center gap-2 text-sm font-black tracking-widest text-neon-cyan uppercase">
       <Sparkles className="h-4 w-4" />
