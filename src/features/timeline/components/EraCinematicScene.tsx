@@ -7,6 +7,8 @@ import { getTheme, type ThemeColorTokens } from '@/lib/theme'
 import { CyberBadge } from '@/components/common/CyberComponents'
 import { TTSButton } from '@/components/common/TTSButton'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { motion, AnimatePresence } from 'motion/react'
+import { MagneticButton } from '@/components/common/MagneticButton'
 
 function EraCarouselControls({
   theme,
@@ -25,34 +27,32 @@ function EraCarouselControls({
 }) {
   return (
     <div className={`flex ${className || ''}`}>
-      <button
-        type="button"
+      <MagneticButton
         onClick={onPrev}
         aria-label="Sự kiện trước"
         className={`relative ${sizeClass} group flex shrink-0 items-center justify-center rounded-none border-none bg-transparent`}
       >
         <div
-          className="absolute inset-0 m-auto h-[85%] w-[85%] rotate-45 border bg-black/50 transition-colors group-hover:bg-black/80"
+          className="absolute inset-0 m-auto h-[85%] w-[85%] rotate-45 border bg-black/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-white/10 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
           style={{ borderColor: theme.hex }}
         />
         <ChevronLeft
-          className={`${iconSize} relative z-10 text-zinc-400 group-hover:text-white`}
+          className={`${iconSize} relative z-10 text-zinc-400 transition-colors group-hover:text-white`}
         />
-      </button>
-      <button
-        type="button"
+      </MagneticButton>
+      <MagneticButton
         onClick={onNext}
         aria-label="Sự kiện tiếp theo"
         className={`relative ${sizeClass} group flex shrink-0 items-center justify-center rounded-none border-none bg-transparent`}
       >
         <div
-          className="absolute inset-0 m-auto h-[85%] w-[85%] rotate-45 border bg-black/50 transition-colors group-hover:bg-black/80"
+          className="absolute inset-0 m-auto h-[85%] w-[85%] rotate-45 border bg-black/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-white/10 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
           style={{ borderColor: theme.hex }}
         />
         <ChevronRight
-          className={`${iconSize} relative z-10 text-zinc-400 group-hover:text-white`}
+          className={`${iconSize} relative z-10 text-zinc-400 transition-colors group-hover:text-white`}
         />
-      </button>
+      </MagneticButton>
     </div>
   )
 }
@@ -113,14 +113,26 @@ export function EraCinematicScene({
     <section className="relative flex h-[100dvh] w-full snap-center flex-col justify-center overflow-hidden">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {era.image && (
-          <Image
-            src={era.image}
-            alt={era.name}
-            fill
-            className="object-cover opacity-60 md:opacity-70"
-            priority={index === 0}
-            unoptimized
-          />
+          <motion.div
+            className="absolute inset-0 h-full w-full"
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1 }}
+            transition={{
+              duration: 20,
+              ease: 'linear',
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          >
+            <Image
+              src={era.image}
+              alt={era.name}
+              fill
+              className="object-cover opacity-60 md:opacity-70"
+              priority={index === 0}
+              unoptimized
+            />
+          </motion.div>
         )}
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
@@ -142,7 +154,13 @@ export function EraCinematicScene({
               </span>
             </div>
 
-            <h2 className="mb-4 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text font-sans text-xl leading-snug font-normal tracking-[0.15em] text-transparent uppercase md:text-2xl lg:mb-8 lg:text-3xl 2xl:text-4xl">
+            <h2 
+              className="mb-4 font-sans text-xl leading-snug font-normal tracking-[0.15em] uppercase md:text-2xl lg:mb-8 lg:text-3xl 2xl:text-4xl"
+              style={{ 
+                color: 'white',
+                textShadow: `0 0 20px ${theme.hex}`
+              }}
+            >
               {era.name}
             </h2>
 
@@ -168,12 +186,24 @@ export function EraCinematicScene({
                 className="group relative h-full w-full overflow-hidden p-1 lg:h-[70vh] 2xl:h-[75vh]"
                 style={{ transform: 'skewX(-5deg)' }}
               >
-                <div className="absolute inset-0 border-2 border-white/10 bg-black/60 transition-colors duration-200 group-hover:border-white/25" />
-
                 <div
-                  className="relative z-10 flex h-full w-full flex-col px-6 py-5 md:px-10 md:py-8 xl:px-12 xl:py-10 2xl:px-16 2xl:py-12"
-                  style={{ transform: 'skewX(5deg)' }}
-                >
+                  className="absolute inset-0 border border-white/5 bg-[#050508]/80 backdrop-blur-md transition-colors duration-200 group-hover:border-white/15"
+                  style={{ 
+                    borderLeft: `2px solid ${theme.hex}`,
+                    boxShadow: `inset 20px 0 50px -30px ${theme.hex}40`
+                  }}
+                />
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={current}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
+                    className="relative z-10 flex h-full w-full flex-col px-6 py-5 md:px-10 md:py-8 xl:px-12 xl:py-10 2xl:px-16 2xl:py-12"
+                    style={{ transform: 'skewX(5deg)' }}
+                  >
                   {event.date && (
                     <div className="mb-3 lg:mb-4">
                       <span
@@ -185,7 +215,7 @@ export function EraCinematicScene({
                     </div>
                   )}
 
-                  <h3 className="mb-4 text-xl font-semibold text-white md:text-3xl lg:mb-6 lg:text-4xl 2xl:text-5xl">
+                  <h3 className="mb-4 text-xl font-bold text-white md:text-3xl lg:mb-6 lg:text-4xl 2xl:text-5xl">
                     {event.title}
                   </h3>
 
@@ -221,7 +251,8 @@ export function EraCinematicScene({
                       ))}
                     </div>
                   )}
-                </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 
@@ -234,27 +265,27 @@ export function EraCinematicScene({
               onNext={goNext}
             />
 
-            <div className="mt-4 flex justify-center gap-1 pb-2 lg:mt-6">
+            <div className="mt-4 flex justify-center gap-2 pb-2 lg:mt-6">
               {Array.from({ length: count }).map((_, i) => (
                 <button
                   key={i}
                   type="button"
                   onClick={() => goTo(i)}
-                  className="inline-flex min-h-11 min-w-11 items-center justify-center"
+                  className="group inline-flex min-h-11 items-center justify-center px-1"
                   aria-label={`Chuyển tới sự kiện ${i + 1}`}
                   aria-current={i === current ? 'true' : undefined}
                 >
                   <span
-                    className={`block rotate-45 rounded-[1px] transition-colors ${
+                    className={`block h-1.5 transition-all duration-300 ${
                       i === current
-                        ? 'h-2.5 w-2.5'
-                        : 'h-2 w-2 bg-white/20 hover:bg-white/50'
+                        ? 'w-8 bg-white'
+                        : 'w-4 bg-white/20 group-hover:bg-white/50 group-hover:w-6'
                     }`}
                     style={
                       i === current
                         ? {
                             backgroundColor: theme.hex,
-                            boxShadow: `0 0 12px rgba(${theme.rgb}, 0.8)`,
+                            boxShadow: `0 0 10px ${theme.hex}`,
                           }
                         : undefined
                     }

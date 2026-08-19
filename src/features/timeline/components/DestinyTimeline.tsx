@@ -73,6 +73,9 @@ export function DestinyTimeline({ eras }: DestinyTimelineProps) {
     >
       <EraNav eras={eras} eraRefs={eraRefs} />
 
+      {/* Cyberpunk Scanlines Overlay */}
+      <div className="pointer-events-none fixed inset-0 z-30 opacity-[0.03] mix-blend-overlay [background-image:repeating-linear-gradient(transparent,transparent_2px,black_2px,black_4px)]" />
+
       <div className="relative">
         {eras.map((era, idx) => (
           <div

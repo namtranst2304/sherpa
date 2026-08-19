@@ -42,37 +42,38 @@ function TimelineNode({
       />
       <div
         className={cn(
-          'absolute inset-0 z-10 m-auto rotate-45 border transition-all duration-200',
+          'absolute inset-0 z-10 m-auto rotate-45 border bg-[#050505] transition-all duration-300',
           isActive
             ? 'h-5 w-5 opacity-100'
             : 'h-2 w-2 scale-75 opacity-0 group-hover:h-4 group-hover:w-4 group-hover:scale-100 group-hover:opacity-100',
         )}
         style={{
           borderColor: theme.hex,
-          boxShadow: isActive ? `0 0 10px rgba(${theme.rgb}, 0.6)` : undefined,
+          boxShadow: isActive ? `0 0 15px ${theme.hex}60` : undefined,
         }}
       />
       <div
         className={cn(
-          'relative z-20 rotate-45 transition-all duration-200',
+          'relative z-20 rotate-45 transition-all duration-300',
           isActive
-            ? 'h-2.5 w-2.5 bg-white'
-            : 'h-1.5 w-1.5 bg-zinc-600 group-hover:h-2 group-hover:w-2 group-hover:bg-white',
+            ? 'h-2 w-2 bg-white'
+            : 'h-1.5 w-1.5 bg-zinc-600 group-hover:h-1.5 group-hover:w-1.5 group-hover:bg-white',
         )}
-        style={isActive ? { boxShadow: `0 0 15px ${theme.hex}` } : undefined}
+        style={isActive ? { boxShadow: `0 0 10px ${theme.hex}` } : undefined}
       />
 
-      {/* Hover label — CSS only */}
-      <div className="pointer-events-none absolute right-full mr-4 flex max-w-[12rem] flex-col items-end border border-white/10 bg-black/70 px-3 py-1.5 opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+      {/* Hover label */}
+      <div 
+        className="pointer-events-none absolute right-full mr-6 flex max-w-[14rem] flex-col items-end border border-white/10 bg-[#050508]/90 px-4 py-2 backdrop-blur-md opacity-0 translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+        style={{ borderRight: `2px solid ${theme.hex}` }}
+      >
         <span
-          className={cn(
-            'mb-0.5 text-[9px] font-medium tracking-widest uppercase',
-            theme.text,
-          )}
+          className="mb-1 font-mono text-[9px] font-bold tracking-[0.2em] uppercase"
+          style={{ color: theme.hex }}
         >
           CHƯƠNG {ROMAN_NUMERALS[idx] || String(idx + 1)}
         </span>
-        <span className="line-clamp-2 text-right font-sans text-xs leading-tight tracking-widest text-white uppercase">
+        <span className="line-clamp-2 text-right font-sans text-xs leading-tight font-medium tracking-widest text-zinc-100 uppercase">
           {era.name}
         </span>
       </div>
