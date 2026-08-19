@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 import Image from 'next/image'
 import { Star } from 'lucide-react'
 import { bungieUrl } from '@/lib/bungie'
@@ -202,18 +203,34 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
           />
         )}
 
-        {expanded && perkPool && (
-          <PerkPoolGrid
-            column1={perkPool.column1}
-            column2={perkPool.column2}
-            title1="Column 1 (Frames)"
-            title2="Column 2 (Exotic Traits)"
-          />
-        )}
+        <AnimatePresence initial={false}>
+          {expanded && details && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <div className="flex flex-col gap-6 border-t border-zinc-800 bg-zinc-950/60 p-4 pt-6">
+                {/* Base Perks (Intrinsics/Traits) */}
+                {perkPool && (
+                  <PerkPoolGrid
+                    column1={perkPool.column1}
+                    column2={perkPool.column2}
+                    title1="Column 1 (Frames)"
+                    title2="Column 2 (Exotic Traits)"
+                  />
+                )}
 
-        {expanded && catalysts && catalysts.length > 0 && (
-          <ExoticCatalystBlock catalysts={catalysts} />
-        )}
+                {/* Catalysts */}
+                {catalysts && catalysts.length > 0 && (
+                  <ExoticCatalystBlock catalysts={catalysts} />
+                )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </CyberCard>
   )

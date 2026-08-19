@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 import Image from 'next/image'
 import { Star } from 'lucide-react'
 import { bungieUrl } from '@/lib/bungie'
@@ -27,6 +28,8 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
   const iconUrl = armor.icon ? bungieUrl(armor.icon) : null
   const traitIconUrl = armor.trait.icon ? bungieUrl(armor.trait.icon) : null
   const perkPool = details?.trait.perkPool
+
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   const handleToggle = async () => {
     const next = !expanded
@@ -88,12 +91,21 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
       />
 
       {armor.screenshot && (
-        <div className="relative aspect-[21/9] w-full border-b border-zinc-800 bg-black/50">
+        <div
+          className={cn(
+            'relative aspect-[21/9] w-full border-b border-zinc-800',
+            !imageLoaded ? 'animate-pulse bg-zinc-800/80' : 'bg-black/50',
+          )}
+        >
           <Image
             src={bungieUrl(armor.screenshot)}
             alt={`${armor.name} screenshot`}
             fill
-            className="object-cover opacity-80 mix-blend-screen"
+            className={cn(
+              'object-cover mix-blend-screen transition-opacity duration-500',
+              imageLoaded ? 'opacity-80' : 'opacity-0',
+            )}
+            onLoad={() => setImageLoaded(true)}
             unoptimized
           />
         </div>
@@ -118,14 +130,26 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
           />
         )}
 
-        {expanded && perkPool && (
-          <PerkPoolGrid
-            column1={perkPool.column1}
-            column2={perkPool.column2}
-            title1="Column 1"
-            title2="Column 2"
-          />
-        )}
+        <AnimatePresence initial={false}>
+          {expanded && perkPool && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="overflow-hidden"
+            >
+              <div className="border-t border-zinc-800 bg-zinc-950/60 p-4 pt-6">
+                <PerkPoolGrid
+                  column1={perkPool.column1}
+                  column2={perkPool.column2}
+                  title1="Column 1"
+                  title2="Column 2"
+                />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {armor.source && <ItemSourceLine source={armor.source} />}
       </div>
