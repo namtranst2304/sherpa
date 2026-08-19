@@ -142,7 +142,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
                       <CyberBadge variant="cyan" size="sm" className="mb-2">
                         {bonus.pieces} PIECE
                       </CyberBadge>
-                      <p className="mt-1 text-sm leading-relaxed text-zinc-300">
+                      <p className="mt-1 text-sm leading-relaxed text-zinc-300 break-words">
                         {bonus.description}
                       </p>
                     </div>

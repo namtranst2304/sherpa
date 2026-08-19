@@ -40,7 +40,7 @@ export function ExoticWalkthroughCard({
             {phase.steps.map((step, i) => (
               <div key={i} className="flex items-start gap-3">
                 <span className="mt-1 text-neon-cyan/50">▸</span>
-                <p className="font-mono text-sm leading-relaxed text-zinc-300">
+                <p className="font-mono text-sm leading-relaxed text-zinc-300 break-words">
                   {step}
                 </p>
               </div>
