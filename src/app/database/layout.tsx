@@ -6,9 +6,9 @@ export default function DatabaseLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="mx-auto w-full max-w-7xl py-8 pr-4 pl-14 md:px-4">
+    <div className="mx-auto w-full max-w-7xl py-8 md:px-4">
       <div className="flex flex-col gap-6 md:gap-8">
-        <div>
+        <div className="px-4 pl-[4.5rem] pr-[4.5rem] md:px-0">
           <h1 className="mb-3 text-2xl font-black tracking-widest break-words text-neon-cyan uppercase glow-text-cyan sm:text-3xl md:mb-4 md:text-5xl">
             Destiny 2 Database
           </h1>

@@ -18,6 +18,9 @@ export function DatabaseTabNav() {
   return (
     <div className="sticky top-0 z-30 -mx-4 border-b border-zinc-800 bg-background/90 px-4 backdrop-blur-md md:top-14 md:mx-0 md:px-0">
       <div className="flex [scrollbar-width:'none'] gap-1 overflow-x-auto pt-1 pb-0 [-ms-overflow-style:'none'] sm:gap-2 [&::-webkit-scrollbar]:hidden">
+        {/* Left Spacer for Menu Button */}
+        <div className="w-[60px] shrink-0 md:hidden" />
+
         {TABS.map((tab) => {
           const isActive = pathname.startsWith(tab.href)
           const Icon = tab.icon
@@ -39,6 +42,9 @@ export function DatabaseTabNav() {
             </Link>
           )
         })}
+
+        {/* Right Spacer for Search Button */}
+        <div className="w-[60px] shrink-0 md:hidden" />
       </div>
     </div>
   )
