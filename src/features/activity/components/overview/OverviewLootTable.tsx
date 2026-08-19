@@ -5,25 +5,17 @@ import { Gem } from 'lucide-react'
 import {
   CyberCard,
   CyberSectionHeader,
+  CyberButton,
 } from '@/components/common/CyberComponents'
 import { ActivityData } from '@/types'
 import { WeaponCard } from './WeaponCard'
 import { ArmorCard } from './ArmorCard'
-import { cn } from '@/lib/utils'
 
 interface OverviewLootTableProps {
   loot_table: ActivityData['loot_table']
   armor_table?: ActivityData['armor_table']
 }
 
-function tabBtnClass(active: boolean, activeStyles: string) {
-  return cn(
-    'min-h-11 px-4 py-2.5 text-xs font-mono uppercase tracking-wider transition-colors rounded-sm border',
-    active
-      ? activeStyles
-      : 'text-zinc-500 hover:text-zinc-300 border-transparent',
-  )
-}
 
 export function OverviewLootTable({
   loot_table,
@@ -52,25 +44,23 @@ export function OverviewLootTable({
           className="mb-8"
           actions={
             hasArmor ? (
-              <div className="flex rounded-md border border-zinc-800 bg-zinc-900/50 p-1">
-                <button
+              <div className="flex rounded-md border border-zinc-800 bg-zinc-900/50 p-1 gap-1">
+                <CyberButton
+                  variant={activeTab === 'weapons' ? 'orange' : 'zinc'}
+                  size="sm"
+                  glow={activeTab === 'weapons'}
                   onClick={() => setActiveTab('weapons')}
-                  className={tabBtnClass(
-                    activeTab === 'weapons',
-                    'border-neon-orange/30 bg-neon-orange/20 text-neon-orange',
-                  )}
                 >
                   Vũ khí
-                </button>
-                <button
+                </CyberButton>
+                <CyberButton
+                  variant={activeTab === 'armor' ? 'cyan' : 'zinc'}
+                  size="sm"
+                  glow={activeTab === 'armor'}
                   onClick={() => setActiveTab('armor')}
-                  className={tabBtnClass(
-                    activeTab === 'armor',
-                    'border-cyan-500/30 bg-cyan-500/20 text-cyan-400',
-                  )}
                 >
                   Bộ giáp
-                </button>
+                </CyberButton>
               </div>
             ) : undefined
           }

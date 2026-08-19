@@ -12,6 +12,7 @@ import {
 import { LootWeapon } from '@/types'
 import { bungieUrl } from '@/lib/bungie'
 import { useWishlist } from '@/hooks/use-sherpa-store'
+import { MagneticButton } from '@/components/common/MagneticButton'
 import { cn } from '@/lib/utils'
 
 const NEW_PERKS = [
@@ -104,7 +105,7 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
     >
       <div className="relative flex h-32 w-full items-center justify-center overflow-hidden border-b border-zinc-800 bg-zinc-950 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800 to-zinc-950">
         {/* Wishlist Button */}
-        <button
+        <MagneticButton
           type="button"
           onClick={() => toggleWishlist(name)}
           className={cn(
@@ -118,10 +119,9 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
               ? 'Đã lưu vào Wishlist (Click để bỏ)'
               : 'Thêm vào Wishlist'
           }
-          aria-label={wishlisted ? 'Bỏ khỏi Wishlist' : 'Thêm vào Wishlist'}
         >
           <Star className={cn('h-3.5 w-3.5', wishlisted && 'fill-amber-400')} />
-        </button>
+        </MagneticButton>
 
         {weapon.image ? (
           <Image
