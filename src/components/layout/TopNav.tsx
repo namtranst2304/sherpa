@@ -199,8 +199,13 @@ export function TopNav() {
       )}
 
       {/* Mobile Floating Menu Button (Always floating on mobile) */}
-      <div className="fixed top-2 left-4 z-[70] md:hidden">
+      <div className="fixed left-4 top-2 z-[70] md:hidden">
         <MobileNav />
+      </div>
+
+      {/* Mobile Floating Search Button */}
+      <div className="fixed right-4 top-2 z-[70] md:hidden">
+        <CommandPalette />
       </div>
     </>
   )
