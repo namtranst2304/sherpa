@@ -120,7 +120,7 @@ export async function getRaidData(slug: string): Promise<ActivityData | null> {
   const loader = raidImports[slug]
   if (!loader) return null
   const mod = await loader()
-  return mod.default as unknown as ActivityData
+  return (mod.default || mod) as unknown as ActivityData
 }
 
 /** Load a single dungeon's data by slug. Returns null if slug not found. */
@@ -130,7 +130,7 @@ export async function getDungeonData(
   const loader = dungeonImports[slug]
   if (!loader) return null
   const mod = await loader()
-  return mod.default as unknown as ActivityData
+  return (mod.default || mod) as unknown as ActivityData
 }
 
 /** Load a single pantheon's data by slug. Returns null if slug not found. */
@@ -140,7 +140,7 @@ export async function getPantheonData(
   const loader = pantheonImports[slug]
   if (!loader) return null
   const mod = await loader()
-  return mod.default as unknown as ActivityData
+  return (mod.default || mod) as unknown as ActivityData
 }
 
 /** Load a single exotic mission's data by slug. Returns null if slug not found. */
@@ -150,23 +150,23 @@ export async function getExoticMissionData(
   const loader = exoticMissionImports[slug]
   if (!loader) return null
   const mod = await loader()
-  return mod.default as unknown as ActivityData
+  return (mod.default || mod) as unknown as ActivityData
 }
 
 /** Database loaders — dynamic import so JSON stays out of the default client graph. */
 export async function getExoticWeaponsData() {
   const mod = await import('./database/exotic-weapons.json')
-  return mod.default as unknown as ExoticWeapon[]
+  return (mod.default || mod) as unknown as ExoticWeapon[]
 }
 
 export async function getExoticArmorData() {
   const mod = await import('./database/exotic-armor.json')
-  return mod.default as unknown as ExoticArmor[]
+  return (mod.default || mod) as unknown as ExoticArmor[]
 }
 
 export async function getArmorSetsData() {
   const mod = await import('./armor-sets.json')
-  return mod.default as unknown as ArmorSet[]
+  return (mod.default || mod) as unknown as ArmorSet[]
 }
 
 export function toLeanExoticWeapon(weapon: ExoticWeapon): LeanExoticWeapon {
