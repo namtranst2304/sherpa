@@ -29,7 +29,7 @@ const pattern = new RegExp(
   'gi'
 )
 
-export function parseGlossaryText(text: string): React.ReactNode[] {
+function parseGlossaryText(text: string): React.ReactNode[] {
   const parts = text.split(pattern)
   const result: React.ReactNode[] = []
 

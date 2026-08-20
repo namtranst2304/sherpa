@@ -72,7 +72,7 @@ export async function getDestinyTimelineSummaries(): Promise<
 }
 
 /** Load a single era (with events) by index. */
-export async function getTimelineEraByIndex(
+async function getTimelineEraByIndex(
   index: number,
 ): Promise<TimelineEra | null> {
   const loader = timelineImports[index]

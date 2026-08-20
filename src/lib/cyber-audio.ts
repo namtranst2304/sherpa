@@ -42,15 +42,15 @@ function subscribeSfx(callback: () => void) {
   }
 }
 
-export function useSfxStore(): boolean {
+function useSfxStore(): boolean {
   return useSyncExternalStore(subscribeSfx, getSfxSnapshot, () => true)
 }
 
-export function isSfxEnabled(): boolean {
+function isSfxEnabled(): boolean {
   return getSfxSnapshot()
 }
 
-export function setSfxEnabled(enabled: boolean) {
+function setSfxEnabled(enabled: boolean) {
   if (typeof window === 'undefined') return
   try {
     localStorage.setItem(SFX_STORAGE_KEY, String(enabled))
@@ -60,7 +60,7 @@ export function setSfxEnabled(enabled: boolean) {
   }
 }
 
-export function toggleSfx(): boolean {
+function toggleSfx(): boolean {
   const current = isSfxEnabled()
   const next = !current
   setSfxEnabled(next)

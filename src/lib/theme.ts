@@ -24,7 +24,7 @@ export interface ThemeColorTokens {
   hoverShadow: string
 }
 
-export const THEME_COLORS: Record<ThemeColor, ThemeColorTokens> = {
+const THEME_COLORS: Record<ThemeColor, ThemeColorTokens> = {
   cyan: {
     hex: '#00f3ff',
     rgb: '0,243,255',

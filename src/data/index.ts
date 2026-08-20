@@ -154,12 +154,12 @@ export async function getExoticMissionData(
 }
 
 /** Database loaders — dynamic import so JSON stays out of the default client graph. */
-export async function getExoticWeaponsData() {
+async function getExoticWeaponsData() {
   const mod = await import('./database/exotic-weapons.json')
   return (mod.default || mod) as unknown as ExoticWeapon[]
 }
 
-export async function getExoticArmorData() {
+async function getExoticArmorData() {
   const mod = await import('./database/exotic-armor.json')
   return (mod.default || mod) as unknown as ExoticArmor[]
 }
@@ -169,7 +169,7 @@ export async function getArmorSetsData() {
   return (mod.default || mod) as unknown as ArmorSet[]
 }
 
-export function toLeanExoticWeapon(weapon: ExoticWeapon): LeanExoticWeapon {
+function toLeanExoticWeapon(weapon: ExoticWeapon): LeanExoticWeapon {
   const { perkPool, ...trait } = weapon.trait
   return {
     id: weapon.id,
@@ -186,7 +186,7 @@ export function toLeanExoticWeapon(weapon: ExoticWeapon): LeanExoticWeapon {
   }
 }
 
-export function toLeanExoticArmor(armor: ExoticArmor): LeanExoticArmor {
+function toLeanExoticArmor(armor: ExoticArmor): LeanExoticArmor {
   const { perkPool, ...trait } = armor.trait
   return {
     id: armor.id,
