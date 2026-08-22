@@ -47,7 +47,7 @@ function useSfxStore(): boolean {
 }
 
 function isSfxEnabled(): boolean {
-  return getSfxSnapshot()
+  return false
 }
 
 function setSfxEnabled(enabled: boolean) {

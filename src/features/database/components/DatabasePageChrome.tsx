@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 
 export function DatabasePageShell({ children }: { children: ReactNode }) {
   return (
-    <div className="relative mx-auto flex min-h-screen w-full max-w-[1600px] flex-col gap-8 px-4 pb-20 md:px-6 lg:px-8">
+    <div className="relative mx-auto flex min-h-screen w-full max-w-[1600px] flex-col gap-8 px-4 pb-24 md:px-6 md:pb-28 lg:px-8">
       {children}
     </div>
   )

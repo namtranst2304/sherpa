@@ -84,7 +84,7 @@ export function ExoticMissionView({
 
       case 'catalyst':
         return (
-          <div className="h-full overflow-y-auto p-6 md:p-12">
+          <div className="h-full overflow-y-auto p-6 pb-24 md:p-12 md:pb-28">
             <ExoticCatalystTab catalystGuide={activityData.catalyst_guide} />
           </div>
         )
