@@ -122,7 +122,7 @@ export function GuideTemplate({
         animate="visible"
         className="relative z-10 w-full space-y-8"
       >
-        <motion.div variants={itemVariants} className="flex flex-col justify-between gap-4 border-b border-primary/30 pb-6 sm:flex-row sm:items-start">
+        <motion.div variants={itemVariants} className="flex flex-col justify-between gap-4 border-b border-primary/30 pb-6 pt-12 sm:flex-row sm:items-start md:pt-0">
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-3">
               <CyberHeading variant="gradient" size="lg">

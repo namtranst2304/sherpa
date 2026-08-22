@@ -65,7 +65,7 @@ export function LandingPage() {
         <div className="flex shrink-0 flex-col items-center gap-4">
           <MagneticButton
             onClick={handleEnter}
-            className="group flex cursor-pointer flex-col items-center gap-4 rounded-3xl border border-transparent px-8 py-4 transition-all hover:border-neon-cyan/20 hover:bg-neon-cyan/5 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)]"
+            className="group flex cursor-pointer flex-col items-center gap-4 clip-angled border border-transparent px-8 py-4 transition-all hover:border-neon-cyan/20 hover:bg-neon-cyan/5 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)]"
           >
             <AnimatedScrollText />
             <ChevronDown className="h-6 w-6 animate-bounce text-neon-cyan drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]" />

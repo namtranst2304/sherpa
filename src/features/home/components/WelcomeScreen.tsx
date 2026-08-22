@@ -4,6 +4,7 @@ import { useState, useEffect, useSyncExternalStore } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { DoorOverlay } from '@/components/common/DoorOverlay'
 import { playGlobalBgAudio } from '@/lib/audio'
+import { CyberButton } from '@/components/common/CyberComponents'
 
 const WELCOME_EVENT = 'sherpa-welcomed'
 
@@ -83,14 +84,16 @@ export function WelcomeScreen() {
               </p>
             </div>
 
-            <button
+            <CyberButton
+              variant="cyan"
+              size="lg"
               onClick={handleEnter}
-              className="group relative mt-8 flex scale-100 transform items-center gap-2 overflow-hidden rounded-sm border border-zinc-700 px-8 py-3 text-xs font-light tracking-widest text-zinc-300 uppercase transition-all duration-500 will-change-transform hover:scale-[1.02] hover:border-zinc-400 hover:bg-white/10 hover:text-white hover:duration-75 active:scale-[0.98] md:gap-3 md:px-12 md:py-4 md:text-sm md:tracking-[0.4em]"
+              className="group relative mt-8 overflow-hidden transition-all duration-500 hover:scale-105"
             >
               <div className="h-2 w-2 animate-pulse rounded-full bg-red-500 transition-colors duration-300 group-hover:bg-green-400 group-hover:duration-75" />
               <span className="relative z-10 pt-[2px]">RETURN TO ORBIT</span>
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:animate-[shimmer_1s_infinite]" />
-            </button>
+            </CyberButton>
           </motion.div>
         )}
       </AnimatePresence>

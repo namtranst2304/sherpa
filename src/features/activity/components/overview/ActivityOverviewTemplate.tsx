@@ -55,7 +55,7 @@ export function ActivityOverviewTemplate({
         className="w-full space-y-8"
       >
         {/* Header */}
-        <motion.div variants={itemVariants} className="border-b border-border pb-6">
+        <motion.div variants={itemVariants} className="border-b border-border pb-6 pt-12 md:pt-0">
           <div>
             <CyberHeading variant="gradient" size="lg">
               {title} - Overview
