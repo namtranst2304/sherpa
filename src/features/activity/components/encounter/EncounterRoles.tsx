@@ -43,7 +43,7 @@ function RoleCard({
       variant={variant}
       padding="sm"
       withCorners
-      className="flex flex-col gap-3 transition-all hover:-translate-y-1 hover:shadow-lg group"
+      className="flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,243,255,0.15)] group"
     >
       <h5 className="flex items-center gap-2 font-bold text-foreground">
         <div className={`shrink-0 rounded-md p-1.5 ${iconStyle.bg}`}>

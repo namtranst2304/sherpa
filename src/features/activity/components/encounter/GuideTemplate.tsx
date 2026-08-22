@@ -18,6 +18,7 @@ import {
 import { MagneticButton } from '@/components/common/MagneticButton'
 import { copyToClipboard } from '@/lib/clipboard'
 import { cn } from '@/lib/utils'
+import { motion } from 'motion/react'
 
 interface GuideTemplateProps {
   title: string
@@ -88,12 +89,40 @@ export function GuideTemplate({
       content: secrets,
     })
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring' as const,
+        stiffness: 260,
+        damping: 20,
+      },
+    },
+  }
+
   return (
     <div className="relative w-full flex-1 overflow-y-auto bg-background p-4 pb-24 md:p-8 md:pb-28">
       <div className="bg-scanline pointer-events-none absolute inset-0 z-0 opacity-5" />
 
-      <div className="relative z-10 w-full space-y-8">
-        <div className="flex flex-col justify-between gap-4 border-b border-primary/30 pb-6 sm:flex-row sm:items-start">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 w-full space-y-8"
+      >
+        <motion.div variants={itemVariants} className="flex flex-col justify-between gap-4 border-b border-primary/30 pb-6 sm:flex-row sm:items-start">
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-3">
               <CyberHeading variant="gradient" size="lg">
@@ -126,7 +155,7 @@ export function GuideTemplate({
               <span>{copied ? 'Đã sao chép!' : 'Chia sẻ link'}</span>
             </MagneticButton>
           </div>
-        </div>
+        </motion.div>
 
         <div
           className={cn(
@@ -138,43 +167,48 @@ export function GuideTemplate({
         >
           <div className="flex w-full min-w-0 flex-col gap-8">
             {map && (
-              <GuideSection
-                icon={Map}
-                title="Bản đồ Callout"
-                className="relative flex flex-col"
-                contentClassName="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden"
-              >
-                <div className="pointer-events-none absolute inset-0 m-2 border border-neon-cyan/20" />
-                {map}
-              </GuideSection>
+              <motion.div variants={itemVariants}>
+                <GuideSection
+                  icon={Map}
+                  title="Bản đồ Callout"
+                  className="relative flex flex-col"
+                  contentClassName="flex-1 flex items-center justify-center min-h-[300px] bg-background/50 rounded-md border border-zinc-800 overflow-hidden"
+                >
+                  <div className="pointer-events-none absolute inset-0 m-2 border border-neon-cyan/20" />
+                  {map}
+                </GuideSection>
+              </motion.div>
             )}
 
-            <GuideSection
-              icon={Settings}
-              title="Cơ chế Encounter"
-              className="relative cyber-grid"
-              contentClassName="text-muted-foreground leading-relaxed"
-            >
-              {mechanics}
-            </GuideSection>
+            <motion.div variants={itemVariants}>
+              <GuideSection
+                icon={Settings}
+                title="Cơ chế Encounter"
+                className="relative cyber-grid"
+                contentClassName="text-muted-foreground leading-relaxed"
+              >
+                {mechanics}
+              </GuideSection>
+            </motion.div>
           </div>
 
           {sidebarSections.length > 0 && (
             <div className="flex w-full min-w-0 flex-col gap-8 lg:sticky lg:top-[calc(3.5rem+1rem)]">
               {sidebarSections.map((section) => (
-                <GuideSection
-                  key={section.title}
-                  icon={section.icon}
-                  title={section.title}
-                  className="relative cyber-grid"
-                >
-                  {section.content}
-                </GuideSection>
+                <motion.div variants={itemVariants} key={section.title}>
+                  <GuideSection
+                    icon={section.icon}
+                    title={section.title}
+                    className="relative cyber-grid"
+                  >
+                    {section.content}
+                  </GuideSection>
+                </motion.div>
               ))}
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

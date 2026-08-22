@@ -4,6 +4,7 @@ import { OverviewLoadouts } from './OverviewLoadouts'
 import { OverviewEpicMode } from './OverviewEpicMode'
 import { OverviewLootTable } from './OverviewLootTable'
 import { CyberHeading } from '@/components/common/CyberComponents'
+import { motion } from 'motion/react'
 
 interface ActivityOverviewTemplateProps {
   activityData: ActivityData
@@ -22,11 +23,39 @@ export function ActivityOverviewTemplate({
   } = activityData
   const title = raid_name || dungeon_name || 'Activity Overview'
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring' as const,
+        stiffness: 260,
+        damping: 20,
+      },
+    },
+  }
+
   return (
     <div className="w-full flex-1 overflow-y-auto bg-background p-4 pb-24 md:p-8 md:pb-28">
-      <div className="w-full space-y-8">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="w-full space-y-8"
+      >
         {/* Header */}
-        <div className="border-b border-border pb-6">
+        <motion.div variants={itemVariants} className="border-b border-border pb-6">
           <div>
             <CyberHeading variant="gradient" size="lg">
               {title} - Overview
@@ -37,20 +66,34 @@ export function ActivityOverviewTemplate({
               </p>
             )}
           </div>
-        </div>
+        </motion.div>
 
         <div className="flex flex-col gap-8">
-          {preface && <OverviewRules preface={preface} />}
-          {loadout_tips && <OverviewLoadouts loadout_tips={loadout_tips} />}
-          {epic_mode && <OverviewEpicMode epic_mode={epic_mode} />}
+          {preface && (
+            <motion.div variants={itemVariants}>
+              <OverviewRules preface={preface} />
+            </motion.div>
+          )}
+          {loadout_tips && (
+            <motion.div variants={itemVariants}>
+              <OverviewLoadouts loadout_tips={loadout_tips} />
+            </motion.div>
+          )}
+          {epic_mode && (
+            <motion.div variants={itemVariants}>
+              <OverviewEpicMode epic_mode={epic_mode} />
+            </motion.div>
+          )}
           {loot_table && (
-            <OverviewLootTable
-              loot_table={loot_table}
-              armor_table={activityData.armor_table}
-            />
+            <motion.div variants={itemVariants}>
+              <OverviewLootTable
+                loot_table={loot_table}
+                armor_table={activityData.armor_table}
+              />
+            </motion.div>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

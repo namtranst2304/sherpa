@@ -139,12 +139,14 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            'group block space-y-1 rounded-none border-l-2 border-transparent p-3 leading-none no-underline transition-all outline-none select-none',
+            'group relative block space-y-1 rounded-none border-l-2 border-transparent p-3 leading-none no-underline transition-all outline-none select-none overflow-hidden',
             hoverClass || 'hover:border-neon-cyan hover:bg-neon-cyan/10',
             className
           )}
           {...props}
         >
+          {/* Animated underline */}
+          <span className="absolute bottom-0 left-0 h-[2px] w-full origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100 opacity-50" />
           <div className="text-sm font-bold tracking-wider text-zinc-300 uppercase transition-colors">
             {title}
           </div>

@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Image from 'next/image'
+import { motion } from 'motion/react'
 import { ArrowUpDown, ImageIcon } from 'lucide-react'
 import {
   CyberCard,
@@ -96,64 +97,73 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
         <DatabaseEmptyState message="Không tìm thấy set giáp nào phù hợp." />
       ) : (
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {filteredAndSortedSets.map((set) => (
-            <CyberCard key={set.name} className="flex h-full flex-col">
-              <CyberHeading
-                variant="default"
-                size="sm"
-                className="mb-4 text-white"
-              >
-                {set.name}
-              </CyberHeading>
+          {filteredAndSortedSets.map((set, index) => (
+            <motion.div
+              key={set.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "50px" }}
+              transition={{ duration: 0.4, delay: (index % 12) * 0.05 }}
+              className="h-full"
+            >
+              <CyberCard className="flex h-full flex-col group/armor">
+                <CyberHeading
+                  variant="default"
+                  size="sm"
+                  className="mb-4 text-white transition-colors group-hover/armor:text-neon-cyan"
+                >
+                  {set.name}
+                </CyberHeading>
 
-              {set.screenshot && (
-                <div className="relative mb-4 aspect-[21/9] w-full overflow-hidden rounded border-b border-zinc-800/50 bg-black/50">
-                  <Image
-                    src={bungieUrl(set.screenshot)}
-                    alt={`${set.name} screenshot`}
-                    fill
-                    className="object-cover opacity-80 mix-blend-screen"
-                    unoptimized
-                  />
-                </div>
-              )}
-
-              <div className="flex-1 space-y-4">
-                {set.bonuses.map((bonus, j) => (
-                  <div
-                    key={j}
-                    className="flex gap-4 rounded-lg border border-zinc-800/50 bg-black/40 p-3"
-                  >
-                    <div className="shrink-0 pt-1">
-                      {bonus.icon ? (
-                        <Image
-                          src={bungieUrl(bonus.icon)}
-                          alt={`${bonus.pieces} piece bonus`}
-                          width={32}
-                          height={32}
-                          unoptimized
-                          className="rounded"
-                        />
-                      ) : (
-                        <div className="h-8 w-8 rounded bg-zinc-800" />
-                      )}
-                    </div>
-                    <div>
-                      <CyberBadge variant="cyan" size="sm" className="mb-2">
-                        {bonus.pieces} PIECE
-                      </CyberBadge>
-                      <p className="mt-1 text-sm leading-relaxed text-zinc-300 break-words">
-                        {bonus.description}
-                      </p>
-                    </div>
+                {set.screenshot && (
+                  <div className="relative mb-4 aspect-[21/9] w-full overflow-hidden rounded border-b border-zinc-800/50 bg-black/50">
+                    <Image
+                      src={bungieUrl(set.screenshot)}
+                      alt={`${set.name} screenshot`}
+                      fill
+                      className="object-cover opacity-80 mix-blend-screen transition-transform duration-500 group-hover/armor:scale-105"
+                      unoptimized
+                    />
                   </div>
-                ))}
-              </div>
+                )}
 
-              {set.source && (
-                <ItemSourceLine source={set.source} className="mt-4" />
-              )}
-            </CyberCard>
+                <div className="flex-1 space-y-4">
+                  {set.bonuses.map((bonus, j) => (
+                    <div
+                      key={j}
+                      className="flex gap-4 rounded-lg border border-zinc-800/50 bg-black/40 p-3 transition-colors hover:border-zinc-700/80 hover:bg-black/60"
+                    >
+                      <div className="shrink-0 pt-1">
+                        {bonus.icon ? (
+                          <Image
+                            src={bungieUrl(bonus.icon)}
+                            alt={`${bonus.pieces} piece bonus`}
+                            width={32}
+                            height={32}
+                            unoptimized
+                            className="rounded"
+                          />
+                        ) : (
+                          <div className="h-8 w-8 rounded bg-zinc-800" />
+                        )}
+                      </div>
+                      <div>
+                        <CyberBadge variant="cyan" size="sm" className="mb-2">
+                          {bonus.pieces} PIECE
+                        </CyberBadge>
+                        <p className="mt-1 text-sm leading-relaxed text-zinc-300 break-words">
+                          {bonus.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {set.source && (
+                  <ItemSourceLine source={set.source} className="mt-4" />
+                )}
+              </CyberCard>
+            </motion.div>
           ))}
         </div>
       )}

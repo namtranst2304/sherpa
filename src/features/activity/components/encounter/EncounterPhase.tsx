@@ -31,7 +31,7 @@ export function EncounterPhase({ walkthrough }: EncounterPhaseProps) {
             key={phaseKey}
             variant="zinc"
             withCorners
-            className="flex flex-col gap-2"
+            className="group flex flex-col gap-2 transition-all duration-300 hover:-translate-y-1 hover:border-neon-cyan/50 hover:shadow-[0_0_20px_rgba(0,243,255,0.15)]"
           >
             <h3 className="mb-3 flex items-start gap-3 text-xl font-bold text-neon-cyan glow-text-cyan">
               {hasMultiplePhases && (

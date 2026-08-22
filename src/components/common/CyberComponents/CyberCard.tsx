@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { HoverGlow } from '../HoverGlow'
 
 const cyberCardVariants = cva(
-  'bg-black/80 backdrop-blur-md border relative transition-all duration-300 ease-out hover:bg-black/70',
+  'bg-black/80 backdrop-blur-md border relative transition-all duration-300 ease-out hover:bg-black/70 clip-angled',
   {
     variants: {
       variant: {
