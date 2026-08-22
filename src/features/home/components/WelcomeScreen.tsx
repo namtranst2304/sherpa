@@ -47,8 +47,6 @@ export function WelcomeScreen() {
     }
   }, [isVisible])
 
-  if (!isVisible) return null
-
   const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -56,6 +54,8 @@ export function WelcomeScreen() {
       if (timerRef.current) clearTimeout(timerRef.current)
     }
   }, [])
+
+  if (!isVisible) return null
 
   const handleEnter = () => {
     sessionStorage.setItem('sherpa_welcomed', 'true')
