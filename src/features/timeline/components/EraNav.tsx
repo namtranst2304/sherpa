@@ -78,27 +78,15 @@ function TimelineNode({
         style={isActive ? { boxShadow: `0 0 10px #ffffff` } : undefined}
       />
 
-      {/* Label Box (Hiển thị khi hover HOẶC khi Active) */}
+      {/* Minimal Hover Tooltip */}
       <div 
         className={cn(
-          "pointer-events-none absolute right-full mr-6 flex max-w-[14rem] flex-col items-end border border-white/10 bg-[#050508]/90 px-4 py-2 backdrop-blur-md transition-all duration-500",
-          isActive 
-            ? "opacity-100 translate-x-0 shadow-lg" 
-            : "opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0"
+          "pointer-events-none absolute right-full mr-4 flex items-center whitespace-nowrap rounded border border-white/10 bg-black/80 px-2 py-1 backdrop-blur-md transition-all duration-300",
+          "opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
         )}
-        style={{ 
-          borderRight: `2px solid ${theme.hex}`,
-          boxShadow: isActive ? `4px 0 15px -5px ${theme.hex}60` : undefined
-        }}
       >
-        <span
-          className="mb-1 font-mono text-[9px] font-bold tracking-[0.2em] uppercase"
-          style={{ color: theme.hex }}
-        >
-          CHƯƠNG {ROMAN_NUMERALS[idx] || String(idx + 1)}
-        </span>
-        <span className="line-clamp-2 text-right font-sans text-xs leading-tight font-black tracking-widest text-zinc-100 uppercase">
-          {era.name}
+        <span className="font-mono text-[10px] tracking-widest text-zinc-300 uppercase">
+          Chương {ROMAN_NUMERALS[idx] || idx + 1}
         </span>
       </div>
     </button>
@@ -162,10 +150,38 @@ export function EraNav({
   )
 
   return (
-    <nav
-      className="fixed top-1/2 right-0 z-50 flex h-[80vh] max-h-[800px] min-h-[400px] w-8 -translate-y-1/2 flex-col py-4 md:right-4"
-      aria-label="Điều hướng timeline"
-    >
+    <>
+      {/* Active Era HUD */}
+      <div className="pointer-events-none fixed top-24 right-4 z-50 flex flex-col items-end md:right-8 lg:right-12">
+        <motion.div
+          key={activeEra.id}
+          initial={{ opacity: 0, x: 20, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          className="flex flex-col items-end"
+        >
+          <span
+            className="mb-1 font-mono text-[10px] font-bold tracking-[0.3em] uppercase md:text-xs"
+            style={{ 
+              color: activeTheme.hex,
+              textShadow: `0 0 15px ${activeTheme.hex}80` 
+            }}
+          >
+            CHƯƠNG {ROMAN_NUMERALS[activeIndex] || String(activeIndex + 1)}
+          </span>
+          <h2 
+            className="max-w-[280px] text-right font-sans text-xl leading-tight font-black tracking-widest text-white uppercase drop-shadow-xl sm:text-2xl md:max-w-[400px] md:text-3xl"
+          >
+            {activeEra.name}
+          </h2>
+        </motion.div>
+      </div>
+
+      {/* Timeline Track */}
+      <nav
+        className="fixed top-1/2 right-0 z-50 flex h-[80vh] max-h-[800px] min-h-[400px] w-8 -translate-y-1/2 flex-col py-4 md:right-4 lg:right-8"
+        aria-label="Điều hướng timeline"
+      >
       <div className="relative flex flex-1 items-center justify-center">
         <div className="relative z-0 h-full w-[2px] bg-white/10">
           <motion.div
@@ -199,5 +215,6 @@ export function EraNav({
         </div>
       </div>
     </nav>
+    </>
   )
 }
