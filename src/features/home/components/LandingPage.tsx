@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -15,10 +15,18 @@ export function LandingPage() {
   const router = useRouter()
   const [isTransitioning, setIsTransitioning] = useState(false)
 
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  React.useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [])
+
   const handleEnter = () => {
     setIsTransitioning(true)
     playGlobalBgAudio()
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       router.push('/timeline')
     }, 700)
   }

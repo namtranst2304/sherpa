@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Target, Sword, Users, Copy, Check } from 'lucide-react'
-import { CyberCard, CyberBadge } from '@/components/common/CyberComponents'
+import { CyberCard, CyberBadge, CyberHUDBar } from '@/components/common/CyberComponents'
 import { MagneticButton } from '@/components/common/MagneticButton'
 import { ActivityRole, ActivityEncounter } from '@/types'
 import { copyToClipboard } from '@/lib/clipboard'
@@ -85,6 +85,14 @@ export function EncounterRoles({
 }: EncounterRolesProps) {
   const [copied, setCopied] = React.useState(false)
 
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  React.useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [])
+
   const handleCopyDiscord = async () => {
     let text = `⚔️ **PHÂN VAI: ${encounterName.toUpperCase()}** ⚔️\n`
     
@@ -112,7 +120,7 @@ export function EncounterRoles({
     const success = await copyToClipboard(text)
     if (success) {
       setCopied(true)
-      setTimeout(() => setCopied(false), 2200)
+      timerRef.current = setTimeout(() => setCopied(false), 2200)
     }
   }
 
@@ -123,27 +131,27 @@ export function EncounterRoles({
   return (
     <div className="flex flex-col gap-4">
       {/* Top Action Bar */}
-      <div className="flex items-center justify-between border border-zinc-800 bg-zinc-950/80 p-2.5">
-        <div className="flex items-center gap-2">
-          <Users className="h-4 w-4 text-neon-cyan" />
-          <span className="font-mono text-xs font-bold text-zinc-300 uppercase">
-            Bảng phân vai Fireteam
-          </span>
-        </div>
-        <MagneticButton
-          type="button"
-          onClick={handleCopyDiscord}
-          className="flex cursor-pointer items-center gap-1.5 border border-neon-cyan/50 bg-neon-cyan/15 px-3 py-1.5 font-mono text-xs font-bold text-neon-cyan uppercase shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all hover:border-neon-cyan hover:bg-neon-cyan/25 active:scale-95"
-          title="Sao chép bảng phân vai gửi vào Discord"
-        >
-          {copied ? (
-            <Check className="h-3.5 w-3.5 text-neon-green" />
-          ) : (
-            <Copy className="h-3.5 w-3.5" />
-          )}
-          <span>{copied ? 'Đã chép Discord!' : 'Chép Discord'}</span>
-        </MagneticButton>
-      </div>
+      <CyberHUDBar
+        variant="zinc"
+        icon={Users}
+        title="Bảng phân vai Fireteam"
+        className="p-2.5"
+        actions={
+          <MagneticButton
+            type="button"
+            onClick={handleCopyDiscord}
+            className="flex cursor-pointer items-center gap-1.5 border border-neon-cyan/50 bg-neon-cyan/15 px-3 py-1.5 font-mono text-xs font-bold text-neon-cyan uppercase shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all hover:border-neon-cyan hover:bg-neon-cyan/25 active:scale-95"
+            title="Sao chép bảng phân vai gửi vào Discord"
+          >
+            {copied ? (
+              <Check className="h-3.5 w-3.5 text-neon-green" />
+            ) : (
+              <Copy className="h-3.5 w-3.5" />
+            )}
+            <span>{copied ? 'Đã chép Discord!' : 'Chép Discord'}</span>
+          </MagneticButton>
+        }
+      />
 
       {hasStrategyOptions ? (
         <div className="grid grid-cols-1 gap-6">

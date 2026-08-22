@@ -172,6 +172,8 @@ export function useTTSAudio({
 
       let lastNotifiedEventIndex = -1
 
+      let autoScrollTimer: ReturnType<typeof setTimeout> | null = null
+
       while (currentIndexRef.current < chunksToPlay.length) {
         if (isCancelled) break
 
@@ -183,9 +185,15 @@ export function useTTSAudio({
           lastNotifiedEventIndex = currentEventIndex
           playingEventIndexRef.current = currentEventIndex
 
-          setTimeout(() => {
+          if (autoScrollTimer) clearTimeout(autoScrollTimer)
+          autoScrollTimer = setTimeout(() => {
             isAutoScrollingRef.current = false
           }, 1000)
+          
+          stopRef.current.stop = () => {
+            isCancelled = true
+            if (autoScrollTimer) clearTimeout(autoScrollTimer)
+          }
         }
 
         const currentItem = await fetchChunk(currentIndexRef.current)
@@ -205,6 +213,7 @@ export function useTTSAudio({
           audio.onerror = resolve
           stopRef.current.stop = () => {
             isCancelled = true
+            if (autoScrollTimer) clearTimeout(autoScrollTimer)
             audio.pause()
             resolve(false)
           }

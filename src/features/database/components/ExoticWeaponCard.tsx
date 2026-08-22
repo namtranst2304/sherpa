@@ -9,10 +9,10 @@ import { PerkPoolGrid } from '@/components/common/PerkRow'
 import { CyberExpandToggle, CyberCard, type CyberVariant } from '@/components/common/CyberComponents'
 import { MagneticButton } from '@/components/common/MagneticButton'
 import {
-  ExoticCardHeader,
   ExoticTraitBlock,
   ExoticCatalystBlock,
 } from './ExoticCardParts'
+import { DatabaseItemCard } from './DatabaseItemCard'
 import { loadFullExoticWeapon } from '../lib/load-full-item'
 import { useWishlist } from '@/hooks/use-sherpa-store'
 import { cn } from '@/lib/utils'
@@ -119,119 +119,111 @@ export function ExoticWeaponCard({ weapon }: { weapon: LeanExoticWeapon }) {
   const cardVariant = getDamageTypeVariant(weapon.damageType)
 
   return (
-    <CyberCard 
+    <DatabaseItemCard
       variant={cardVariant}
-      padding="none"
-      withCorners
-      data-expanded={expanded}
-      className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 group"
-    >
-      <ExoticCardHeader
-        iconUrl={iconUrl}
-        name={weapon.name}
-        action={
-          <MagneticButton
-            type="button"
-            onClick={() => toggleWishlist(weapon.name)}
-            className={cn(
-              'rounded border p-2 transition-all',
-              wishlisted
-                ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]'
-                : 'border-zinc-800 bg-zinc-950/60 text-zinc-500 hover:border-amber-500/40 hover:text-amber-400',
-            )}
-            title={
-              wishlisted
-                ? 'Đã lưu vào Wishlist (Click để bỏ)'
-                : 'Thêm vào Wishlist'
-            }
+      name={weapon.name}
+      iconUrl={iconUrl}
+      expanded={expanded}
+      action={
+        <MagneticButton
+          type="button"
+          onClick={() => toggleWishlist(weapon.name)}
+          className={cn(
+            'rounded border p-2 transition-all',
+            wishlisted
+              ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]'
+              : 'border-zinc-800 bg-zinc-950/60 text-zinc-500 hover:border-amber-500/40 hover:text-amber-400',
+          )}
+          title={
+            wishlisted
+              ? 'Đã lưu vào Wishlist (Click để bỏ)'
+              : 'Thêm vào Wishlist'
+          }
+        >
+          <Star className={cn('h-4 w-4', wishlisted && 'fill-amber-400')} />
+        </MagneticButton>
+      }
+      meta={
+        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-sm text-neon-cyan">
+          <span>{weapon.weaponType}</span>
+          <div
+            className="flex shrink-0 items-center gap-1 opacity-80"
+            title={weapon.slot}
           >
-            <Star className={cn('h-4 w-4', wishlisted && 'fill-amber-400')} />
-          </MagneticButton>
-        }
-        meta={
-          <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-sm text-neon-cyan">
-            <span>{weapon.weaponType}</span>
-            <div
-              className="flex shrink-0 items-center gap-1 opacity-80"
-              title={weapon.slot}
-            >
-              <span className="rounded border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 text-xs text-zinc-400 uppercase">
-                {weapon.slot}
-              </span>
-            </div>
-            <div
-              className="flex shrink-0 items-center gap-1 opacity-80"
-              title={weapon.damageType}
-            >
-              <DamageTypeIcon type={weapon.damageType} />
-            </div>
-            {showAmmo && (
-              <div
-                className="flex items-center gap-1 opacity-80"
-                title={weapon.ammoType}
-              >
-                <AmmoTypeIcon type={weapon.ammoType} />
-              </div>
-            )}
+            <span className="rounded border border-zinc-800 bg-zinc-900/80 px-2 py-0.5 text-xs text-zinc-400 uppercase">
+              {weapon.slot}
+            </span>
           </div>
-        }
+          <div
+            className="flex shrink-0 items-center gap-1 opacity-80"
+            title={weapon.damageType}
+          >
+            <DamageTypeIcon type={weapon.damageType} />
+          </div>
+          {showAmmo && (
+            <div
+              className="flex items-center gap-1 opacity-80"
+              title={weapon.ammoType}
+            >
+              <AmmoTypeIcon type={weapon.ammoType} />
+            </div>
+          )}
+        </div>
+      }
+    >
+      {weapon.flavorText && (
+        <p className="border-l-2 border-zinc-700 pl-3 text-xs text-zinc-500 italic">
+          &quot;{weapon.flavorText}&quot;
+        </p>
+      )}
+
+      <ExoticTraitBlock
+        label="INTRINSIC TRAIT"
+        iconUrl={traitIconUrl}
+        name={weapon.trait.name || 'Unknown Trait'}
+        description={weapon.trait.description || 'No description available.'}
+        expanded={expanded}
+        iconClassName="bg-zinc-900"
       />
 
-      <div className="flex flex-grow flex-col gap-4 p-4">
-        {weapon.flavorText && (
-          <p className="border-l-2 border-zinc-700 pl-3 text-xs text-zinc-500 italic">
-            &quot;{weapon.flavorText}&quot;
-          </p>
-        )}
-
-        <ExoticTraitBlock
-          label="INTRINSIC TRAIT"
-          iconUrl={traitIconUrl}
-          name={weapon.trait.name || 'Unknown Trait'}
-          description={weapon.trait.description || 'No description available.'}
+      {hasDetails && (
+        <CyberExpandToggle
           expanded={expanded}
-          iconClassName="bg-zinc-900"
+          onToggle={handleToggle}
+          collapsedLabel={
+            loadingDetails ? 'Đang tải...' : 'Chi tiết / Catalyst'
+          }
         />
+      )}
 
-        {hasDetails && (
-          <CyberExpandToggle
-            expanded={expanded}
-            onToggle={handleToggle}
-            collapsedLabel={
-              loadingDetails ? 'Đang tải...' : 'Chi tiết / Catalyst'
-            }
-          />
+      <AnimatePresence initial={false}>
+        {expanded && details && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="flex flex-col gap-6 border-t border-white/10 bg-black/20 p-4 pt-6">
+              {/* Base Perks (Intrinsics/Traits) */}
+              {perkPool && (
+                <PerkPoolGrid
+                  column1={perkPool.column1}
+                  column2={perkPool.column2}
+                  title1="Column 1 (Frames)"
+                  title2="Column 2 (Exotic Traits)"
+                />
+              )}
+
+              {/* Catalysts */}
+              {catalysts && catalysts.length > 0 && (
+                <ExoticCatalystBlock catalysts={catalysts} />
+              )}
+            </div>
+          </motion.div>
         )}
-
-        <AnimatePresence initial={false}>
-          {expanded && details && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="overflow-hidden"
-            >
-              <div className="flex flex-col gap-6 border-t border-zinc-800 bg-zinc-950/60 p-4 pt-6">
-                {/* Base Perks (Intrinsics/Traits) */}
-                {perkPool && (
-                  <PerkPoolGrid
-                    column1={perkPool.column1}
-                    column2={perkPool.column2}
-                    title1="Column 1 (Frames)"
-                    title2="Column 2 (Exotic Traits)"
-                  />
-                )}
-
-                {/* Catalysts */}
-                {catalysts && catalysts.length > 0 && (
-                  <ExoticCatalystBlock catalysts={catalysts} />
-                )}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </CyberCard>
+      </AnimatePresence>
+    </DatabaseItemCard>
   )
 }

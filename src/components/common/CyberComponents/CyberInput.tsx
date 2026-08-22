@@ -4,18 +4,18 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 export const cyberInputVariants = cva(
-  'block w-full rounded-md border bg-zinc-900/50 py-2.5 px-3 leading-5 font-mono text-zinc-300 placeholder-zinc-500 transition-all outline-none',
+  'block w-full rounded-md border bg-white/5 py-2.5 px-3 leading-5 font-mono text-zinc-300 placeholder-zinc-500 transition-all outline-none backdrop-blur-sm',
   {
     variants: {
       variant: {
-        cyan: 'border-zinc-800 focus:border-neon-cyan focus:bg-zinc-900 focus:ring-1 focus:ring-neon-cyan',
-        orange: 'border-zinc-800 focus:border-neon-orange focus:bg-zinc-900 focus:ring-1 focus:ring-neon-orange',
-        yellow: 'border-zinc-800 focus:border-neon-yellow focus:bg-zinc-900 focus:ring-1 focus:ring-neon-yellow',
-        red: 'border-zinc-800 focus:border-neon-red focus:bg-zinc-900 focus:ring-1 focus:ring-neon-red',
-        green: 'border-zinc-800 focus:border-neon-green focus:bg-zinc-900 focus:ring-1 focus:ring-neon-green',
-        purple: 'border-zinc-800 focus:border-neon-purple focus:bg-zinc-900 focus:ring-1 focus:ring-neon-purple',
-        zinc: 'border-zinc-800 focus:border-zinc-400 focus:bg-zinc-900 focus:ring-1 focus:ring-zinc-400',
-        exotic: 'border-zinc-800 focus:border-amber-500 focus:bg-zinc-900 focus:ring-1 focus:ring-amber-500',
+        cyan: 'border-white/10 focus:border-neon-cyan focus:bg-white/10 focus:ring-1 focus:ring-neon-cyan',
+        orange: 'border-white/10 focus:border-neon-orange focus:bg-white/10 focus:ring-1 focus:ring-neon-orange',
+        yellow: 'border-white/10 focus:border-neon-yellow focus:bg-white/10 focus:ring-1 focus:ring-neon-yellow',
+        red: 'border-white/10 focus:border-neon-red focus:bg-white/10 focus:ring-1 focus:ring-neon-red',
+        green: 'border-white/10 focus:border-neon-green focus:bg-white/10 focus:ring-1 focus:ring-neon-green',
+        purple: 'border-white/10 focus:border-neon-purple focus:bg-white/10 focus:ring-1 focus:ring-neon-purple',
+        zinc: 'border-white/10 focus:border-zinc-400 focus:bg-white/10 focus:ring-1 focus:ring-zinc-400',
+        exotic: 'border-white/10 focus:border-amber-500 focus:bg-white/10 focus:ring-1 focus:ring-amber-500',
       },
       size: {
         sm: 'min-h-9 text-xs',

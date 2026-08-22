@@ -64,7 +64,7 @@ export function ExoticArmorView({ armors }: ExoticArmorViewProps) {
         <span>Wishlist ({wishlist.length})</span>
       </CyberButton>
 
-      <div className="flex flex-1 gap-2 rounded-lg bg-zinc-900/50 p-1 sm:flex-none">
+      <div className="flex flex-1 gap-2 rounded-lg bg-white/5 p-1 sm:flex-none">
         {CLASSES.map((cls) => (
           <CyberButton
             key={cls}

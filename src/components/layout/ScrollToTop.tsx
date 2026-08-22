@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Rocket } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -23,12 +23,22 @@ export function ScrollToTop() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const particlesTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const launchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (particlesTimerRef.current) clearTimeout(particlesTimerRef.current)
+      if (launchTimerRef.current) clearTimeout(launchTimerRef.current)
+    }
+  }, [])
+
   const handleLaunch = () => {
     setIsLaunching(true)
     setShowParticles(true)
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    setTimeout(() => setShowParticles(false), 1200)
-    setTimeout(() => setIsLaunching(false), 1500)
+    particlesTimerRef.current = setTimeout(() => setShowParticles(false), 1200)
+    launchTimerRef.current = setTimeout(() => setIsLaunching(false), 1500)
   }
 
   return (

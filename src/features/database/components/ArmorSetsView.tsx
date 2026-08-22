@@ -16,7 +16,8 @@ import {
   DatabaseResultsBar,
   DatabaseEmptyState,
 } from './DatabasePageChrome'
-import { ItemSourceLine, ExoticCardHeader } from './ExoticCardParts'
+import { ItemSourceLine } from './ExoticCardParts'
+import { DatabaseItemCard } from './DatabaseItemCard'
 import { bungieUrl } from '@/lib/bungie'
 import type { ArmorSet } from '@/types'
 
@@ -104,67 +105,49 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
               transition={{ duration: 0.4, delay: (index % 12) * 0.05 }}
               className="h-full"
             >
-              <CyberCard variant="zinc" withCorners padding="none" className="flex h-full flex-col group/armor overflow-hidden transition-all duration-300 hover:-translate-y-1">
-                <ExoticCardHeader
-                  iconUrl={null}
-                  name={set.name}
-                  meta={
-                    <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-neon-cyan/70 uppercase tracking-widest">
-                      <span>Armor Set</span>
-                    </div>
-                  }
-                />
-
-                <div className="flex flex-col flex-1 gap-4 p-4">
-                  {set.screenshot && (
-                    <div className="relative aspect-[21/9] w-full overflow-hidden rounded border border-zinc-800/50 bg-black/50">
-                      <Image
-                        src={bungieUrl(set.screenshot)}
-                        alt={`${set.name} screenshot`}
-                        fill
-                        className="object-cover opacity-80 mix-blend-screen transition-transform duration-500 group-hover/armor:scale-105"
-                        unoptimized
-                      />
-                    </div>
-                  )}
-
-                  <div className="flex-1 space-y-4">
-                    {set.bonuses.map((bonus, j) => (
-                      <div
-                        key={j}
-                        className="flex gap-4 rounded-lg border border-zinc-800/50 bg-black/40 p-3 transition-colors hover:border-zinc-700/80 hover:bg-black/60"
-                      >
-                        <div className="shrink-0 pt-1">
-                          {bonus.icon ? (
-                            <Image
-                              src={bungieUrl(bonus.icon)}
-                              alt={`${bonus.pieces} piece bonus`}
-                              width={32}
-                              height={32}
-                              unoptimized
-                              className="rounded"
-                            />
-                          ) : (
-                            <div className="h-8 w-8 rounded bg-zinc-800" />
-                          )}
-                        </div>
-                        <div>
-                          <CyberBadge variant="cyan" size="sm" className="mb-2">
-                            {bonus.pieces} PIECE
-                          </CyberBadge>
-                          <p className="mt-1 text-sm leading-relaxed text-zinc-300 break-words">
-                            {bonus.description}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
+              <DatabaseItemCard
+                variant="zinc"
+                name={set.name}
+                screenshot={set.screenshot}
+                source={set.source}
+                meta={
+                  <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-neon-cyan/70 uppercase tracking-widest">
+                    <span>Armor Set</span>
                   </div>
-
-                  {set.source && (
-                    <ItemSourceLine source={set.source} />
-                  )}
+                }
+              >
+                <div className="flex-1 space-y-4">
+                  {set.bonuses.map((bonus, j) => (
+                    <div
+                      key={j}
+                      className="flex gap-4 rounded-lg border border-white/5 bg-white/5 p-3 transition-colors hover:border-white/10 hover:bg-white/10"
+                    >
+                      <div className="shrink-0 pt-1">
+                        {bonus.icon ? (
+                          <Image
+                            src={bungieUrl(bonus.icon)}
+                            alt={`${bonus.pieces} piece bonus`}
+                            width={32}
+                            height={32}
+                            unoptimized
+                            className="rounded"
+                          />
+                        ) : (
+                          <div className="h-8 w-8 rounded bg-zinc-800" />
+                        )}
+                      </div>
+                      <div>
+                        <CyberBadge variant="cyan" size="sm" className="mb-2">
+                          {bonus.pieces} PIECE
+                        </CyberBadge>
+                        <p className="mt-1 text-sm leading-relaxed text-zinc-300 break-words">
+                          {bonus.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </CyberCard>
+              </DatabaseItemCard>
             </motion.div>
           ))
         ) : (

@@ -47,7 +47,10 @@ export function ActivityOverviewTemplate({
   }
 
   return (
-    <div className="w-full flex-1 overflow-y-auto bg-background p-4 pb-24 md:p-8 md:pb-28">
+    <div className="relative w-full flex-1 overflow-y-auto bg-background p-4 pb-24 md:p-8 md:pb-28">
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_center,_var(--tw-gradient-stops))] from-neon-cyan/5 via-background to-background" />
+      <div className="bg-scanline pointer-events-none absolute inset-0 z-0 opacity-5" />
+      
       <motion.div
         variants={containerVariants}
         initial="hidden"

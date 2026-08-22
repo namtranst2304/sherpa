@@ -21,7 +21,7 @@ export const topNavTriggerVariants = cva(
 )
 
 export const topNavDropdownVariants = cva(
-  'flex gap-6 p-6 md:w-[700px] lg:w-[950px] bg-black/95 backdrop-blur-xl border max-h-[90vh]',
+  'flex gap-6 p-6 md:w-[700px] lg:w-[950px] glass-panel border border-white/5 max-h-[90vh]',
   {
     variants: {
       variant: {
@@ -40,7 +40,7 @@ export const topNavDropdownVariants = cva(
 )
 
 export const topNavCardBgVariants = cva(
-  'flex h-full w-full select-none flex-col justify-start rounded-md p-6 outline-none relative overflow-hidden',
+  'flex h-full w-full select-none flex-col justify-start rounded-md p-6 outline-none relative overflow-hidden bg-black/20 border border-white/5',
   {
     variants: {
       variant: {

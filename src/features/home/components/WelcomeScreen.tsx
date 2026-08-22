@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useSyncExternalStore } from 'react'
+import React, { useState, useEffect, useSyncExternalStore } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { DoorOverlay } from '@/components/common/DoorOverlay'
 import { playGlobalBgAudio } from '@/lib/audio'
@@ -49,12 +49,20 @@ export function WelcomeScreen() {
 
   if (!isVisible) return null
 
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [])
+
   const handleEnter = () => {
     sessionStorage.setItem('sherpa_welcomed', 'true')
     window.dispatchEvent(new Event(WELCOME_EVENT))
     playGlobalBgAudio()
     setIsOpened(true)
-    setTimeout(() => setExited(true), 1000)
+    timerRef.current = setTimeout(() => setExited(true), 1000)
   }
 
   return (

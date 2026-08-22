@@ -69,13 +69,21 @@ export function GuideTemplate({
   secrets,
 }: GuideTemplateProps) {
   const [copied, setCopied] = useState(false)
+  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  React.useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [])
 
   const handleCopyLink = async () => {
-    if (typeof window === 'undefined') return
-    const success = await copyToClipboard(window.location.href)
-    if (success) {
+    try {
+      await copyToClipboard(window.location.href)
       setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      timerRef.current = setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy', err)
     }
   }
 
@@ -114,6 +122,7 @@ export function GuideTemplate({
 
   return (
     <div className="relative w-full flex-1 overflow-y-auto bg-background p-4 pb-24 md:p-8 md:pb-28">
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_center,_var(--tw-gradient-stops))] from-neon-cyan/5 via-background to-background" />
       <div className="bg-scanline pointer-events-none absolute inset-0 z-0 opacity-5" />
 
       <motion.div

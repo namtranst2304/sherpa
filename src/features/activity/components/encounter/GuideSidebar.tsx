@@ -39,8 +39,8 @@ export function GuideSidebar({
   const activeId = useScrollSpy(itemIds, 120, activeEncounterId)
 
   return (
-    <aside className="z-40 hidden h-full w-64 shrink-0 flex-col overflow-hidden border-r-2 border-r-neon-yellow/50 bg-black cyber-grid md:flex">
-      <div className="relative shrink-0 overflow-hidden border-b-2 border-neon-yellow bg-zinc-950 p-4">
+    <aside className="z-40 hidden h-full w-64 shrink-0 flex-col overflow-hidden border-r border-white/5 glass-panel md:flex">
+      <div className="relative shrink-0 overflow-hidden border-b border-white/10 bg-black/40 p-4">
         <div className="absolute top-0 right-0 h-8 w-8 translate-x-4 -translate-y-4 -rotate-45 bg-neon-yellow" />
         <div className="absolute bottom-0 left-0 h-[1px] w-full bg-gradient-to-r from-neon-yellow to-transparent" />
 
@@ -80,10 +80,10 @@ export function GuideSidebar({
                       <Link
                       href={linkHref}
                       className={cn(
-                        'relative z-10 flex w-full items-start justify-between gap-2 border-l-4 px-2 py-2.5 font-mono text-sm transition-all',
+                        'relative z-10 flex w-full items-start justify-between gap-2 border-l-2 px-3 py-2.5 font-mono text-sm transition-all',
                         isActive
-                          ? 'border-neon-red bg-neon-yellow font-extrabold text-black'
-                          : 'border-transparent text-zinc-400 hover:border-neon-cyan hover:bg-neon-cyan/10 hover:text-neon-cyan',
+                          ? 'border-neon-cyan bg-neon-cyan/10 font-bold text-white shadow-[-4px_0_10px_rgba(0,243,255,0.2)]'
+                          : 'border-transparent text-zinc-400 hover:border-white/20 hover:bg-white/5 hover:text-zinc-200',
                       )}
                     >
                       <div

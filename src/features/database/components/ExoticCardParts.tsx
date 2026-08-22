@@ -26,9 +26,9 @@ export function ExoticCardHeader({
   action,
 }: ExoticCardHeaderProps) {
   return (
-    <div className="flex items-center justify-between gap-4 border-b border-zinc-800 bg-zinc-950/50 p-4">
+    <div className="flex items-center justify-between gap-4 border-b border-white/10 bg-white/5 p-4 backdrop-blur-md">
       <div className="flex min-w-0 items-center gap-4">
-        <div className="relative h-12 w-12 flex-shrink-0 rounded bg-zinc-800">
+        <div className="relative h-12 w-12 flex-shrink-0 rounded bg-white/10 border border-white/10 shadow-inner">
           {iconUrl ? (
             <Image
               src={iconUrl}
@@ -75,7 +75,7 @@ export function ExoticTraitBlock({
   return (
     <div>
       <ExoticSectionLabel>{label}</ExoticSectionLabel>
-      <div className="flex items-start gap-3 rounded border border-zinc-800/50 bg-black/30 p-3">
+      <div className="flex items-start gap-3 rounded border border-white/5 bg-white/5 p-3 transition-colors hover:bg-white/10 hover:border-white/10">
         {iconUrl && (
           <Image
             src={iconUrl}
@@ -143,7 +143,7 @@ export function ExoticCatalystBlock({
         {catalysts.map((cat, idx) => (
           <div
             key={idx}
-            className="flex flex-col gap-3 rounded border border-zinc-800/80 bg-zinc-950/80 p-3"
+            className="flex flex-col gap-3 rounded border border-white/10 bg-white/5 p-3 transition-colors hover:bg-white/10 hover:border-white/20"
           >
             <div className="flex items-start gap-3">
               {cat.icon && (
