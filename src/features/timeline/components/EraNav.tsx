@@ -34,38 +34,62 @@ function TimelineNode({
       aria-label={`Chương ${idx + 1}: ${era.name}`}
       aria-current={isActive ? 'true' : undefined}
     >
+      {/* Ngang nối node */}
       <div
         className={cn(
-          'absolute inset-0 z-0 m-auto h-[2px] w-3 rounded-full transition-colors duration-200',
+          'absolute inset-0 z-0 m-auto h-[2px] w-3 rounded-full transition-colors duration-300',
           isPast ? activeTheme.bg : 'bg-zinc-700/80',
         )}
       />
+
+      {/* Node tĩnh (chờ hover) */}
       <div
         className={cn(
-          'absolute inset-0 z-10 m-auto rotate-45 border bg-[#050505] transition-all duration-300',
+          'absolute inset-0 z-10 m-auto rotate-45 border border-zinc-600 bg-[#050505] transition-all duration-300',
           isActive
-            ? 'h-5 w-5 opacity-100'
-            : 'h-2 w-2 scale-75 opacity-0 group-hover:h-4 group-hover:w-4 group-hover:scale-100 group-hover:opacity-100',
+            ? 'opacity-0'
+            : 'h-2 w-2 opacity-100 group-hover:h-3 group-hover:w-3 group-hover:border-zinc-400',
         )}
-        style={{
-          borderColor: theme.hex,
-          boxShadow: isActive ? `0 0 15px ${theme.hex}60` : undefined,
-        }}
-      />
-      <div
-        className={cn(
-          'relative z-20 rotate-45 transition-all duration-300',
-          isActive
-            ? 'h-2 w-2 bg-white'
-            : 'h-1.5 w-1.5 bg-zinc-600 group-hover:h-1.5 group-hover:w-1.5 group-hover:bg-white',
-        )}
-        style={isActive ? { boxShadow: `0 0 10px ${theme.hex}` } : undefined}
       />
 
-      {/* Hover label */}
+      {/* Node Active có layoutId để trượt mượt mà giữa các điểm */}
+      {isActive && (
+        <motion.div
+          layoutId="active-timeline-diamond"
+          className="absolute inset-0 z-20 m-auto rotate-45 border-2 bg-[#050505]"
+          style={{
+            borderColor: theme.hex,
+            boxShadow: `0 0 20px ${theme.hex}80, inset 0 0 10px ${theme.hex}40`,
+            height: '1.25rem',
+            width: '1.25rem',
+          }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+        />
+      )}
+
+      {/* Lõi trắng bên trong (nháy) */}
+      <div
+        className={cn(
+          'relative z-30 rotate-45 transition-all duration-300',
+          isActive
+            ? 'h-2 w-2 bg-white scale-100'
+            : 'h-1.5 w-1.5 bg-zinc-600 scale-50 group-hover:scale-100 group-hover:bg-zinc-300',
+        )}
+        style={isActive ? { boxShadow: `0 0 10px #ffffff` } : undefined}
+      />
+
+      {/* Label Box (Hiển thị khi hover HOẶC khi Active) */}
       <div 
-        className="pointer-events-none absolute right-full mr-6 flex max-w-[14rem] flex-col items-end border border-white/10 bg-[#050508]/90 px-4 py-2 backdrop-blur-md opacity-0 translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
-        style={{ borderRight: `2px solid ${theme.hex}` }}
+        className={cn(
+          "pointer-events-none absolute right-full mr-6 flex max-w-[14rem] flex-col items-end border border-white/10 bg-[#050508]/90 px-4 py-2 backdrop-blur-md transition-all duration-500",
+          isActive 
+            ? "opacity-100 translate-x-0 shadow-lg" 
+            : "opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0"
+        )}
+        style={{ 
+          borderRight: `2px solid ${theme.hex}`,
+          boxShadow: isActive ? `4px 0 15px -5px ${theme.hex}60` : undefined
+        }}
       >
         <span
           className="mb-1 font-mono text-[9px] font-bold tracking-[0.2em] uppercase"
@@ -73,7 +97,7 @@ function TimelineNode({
         >
           CHƯƠNG {ROMAN_NUMERALS[idx] || String(idx + 1)}
         </span>
-        <span className="line-clamp-2 text-right font-sans text-xs leading-tight font-medium tracking-widest text-zinc-100 uppercase">
+        <span className="line-clamp-2 text-right font-sans text-xs leading-tight font-black tracking-widest text-zinc-100 uppercase">
           {era.name}
         </span>
       </div>
@@ -150,7 +174,16 @@ export function EraNav({
               activeTheme.bg,
             )}
             style={{ height: progressHeight }}
-          />
+          >
+            {/* Glowing head of the progress line */}
+            <div 
+              className={cn(
+                "absolute bottom-0 left-1/2 h-8 w-[2px] -translate-x-1/2 blur-[2px]",
+                activeTheme.bg
+              )}
+              style={{ boxShadow: `0 4px 10px ${activeTheme.hex}` }}
+            />
+          </motion.div>
           {eras.map((era, idx) => (
             <TimelineNode
               key={era.id}
