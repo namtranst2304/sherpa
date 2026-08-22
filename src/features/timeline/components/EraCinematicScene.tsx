@@ -4,58 +4,11 @@ import * as React from 'react'
 import Image from 'next/image'
 import { TimelineEra, ROMAN_NUMERALS } from '@/data/timeline/index'
 import { getTheme, type ThemeColorTokens } from '@/lib/theme'
-import { CyberBadge, CyberCard, CyberHeading, type CyberVariant } from '@/components/common/CyberComponents'
+import { CyberBadge } from '@/components/common/CyberComponents'
 import { TTSButton } from '@/components/common/TTSButton'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import { MagneticButton } from '@/components/common/MagneticButton'
-
-function EraCarouselControls({
-  theme,
-  className,
-  iconSize = 'w-5 h-5 md:w-6 md:h-6',
-  sizeClass = 'w-10 h-10 md:w-12 md:h-12',
-  onPrev,
-  onNext,
-}: {
-  theme: ThemeColorTokens
-  className?: string
-  iconSize?: string
-  sizeClass?: string
-  onPrev: () => void
-  onNext: () => void
-}) {
-  return (
-    <div className={`flex ${className || ''}`}>
-      <MagneticButton
-        onClick={onPrev}
-        aria-label="Sự kiện trước"
-        className={`relative ${sizeClass} group flex shrink-0 items-center justify-center rounded-none border-none bg-transparent`}
-      >
-        <div
-          className="absolute inset-0 m-auto h-[85%] w-[85%] rotate-45 border bg-black/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-white/10 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-          style={{ borderColor: theme.hex }}
-        />
-        <ChevronLeft
-          className={`${iconSize} relative z-10 text-zinc-400 transition-colors group-hover:text-white`}
-        />
-      </MagneticButton>
-      <MagneticButton
-        onClick={onNext}
-        aria-label="Sự kiện tiếp theo"
-        className={`relative ${sizeClass} group flex shrink-0 items-center justify-center rounded-none border-none bg-transparent`}
-      >
-        <div
-          className="absolute inset-0 m-auto h-[85%] w-[85%] rotate-45 border bg-black/50 transition-all duration-300 group-hover:scale-110 group-hover:bg-white/10 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-          style={{ borderColor: theme.hex }}
-        />
-        <ChevronRight
-          className={`${iconSize} relative z-10 text-zinc-400 transition-colors group-hover:text-white`}
-        />
-      </MagneticButton>
-    </div>
-  )
-}
 
 export function EraCinematicScene({
   era,
@@ -109,16 +62,46 @@ export function EraCinematicScene({
 
   const cleanDescription = event.description.replace(/\*\*(.*?)\*\*/g, '$1')
 
+  // Animation variants
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.3 },
+    }
+  }
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: { type: 'spring', damping: 20, stiffness: 100 },
+    },
+  }
+
   return (
-    <section className="relative flex h-[100dvh] w-full snap-center flex-col justify-center overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+    <section 
+      className="relative flex h-[100dvh] w-full snap-center flex-col overflow-hidden bg-[#050505]"
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Background Layer */}
+      <div className="pointer-events-none absolute inset-0 z-0">
         {era.image && (
           <motion.div
             className="absolute inset-0 h-full w-full"
             initial={{ scale: 1.05 }}
             animate={{ scale: 1 }}
             transition={{
-              duration: 20,
+              duration: 25,
               ease: 'linear',
               repeat: Infinity,
               repeatType: 'reverse',
@@ -128,178 +111,161 @@ export function EraCinematicScene({
               src={era.image}
               alt={era.name}
               fill
-              className="object-cover opacity-60 md:opacity-70"
+              className="object-cover object-right opacity-70 md:opacity-90"
               priority={index === 0}
               unoptimized
             />
           </motion.div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+        
+        {/* Advanced Cinematic Overlays */}
+        {/* Left side deep shadow for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent md:w-[75%] lg:w-[60%] xl:w-[50%]" />
+        
+        {/* Bottom shadow to ground the scene */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1920px] flex-col justify-center px-6 py-6 md:px-12 md:py-8 lg:px-24 lg:py-12 xl:px-32 2xl:px-48">
-        <div className="flex h-full w-full flex-col items-center justify-between gap-3 md:gap-6 lg:flex-row lg:gap-12">
-          <div className="flex w-full shrink-0 flex-col pt-16 md:pt-0 lg:w-[25%]">
-            <div className="mb-4 flex items-center gap-4 lg:mb-8">
-              <div
-                className="h-px w-12"
-                style={{ backgroundColor: theme.hex }}
-              />
-              <span
-                className="font-sans text-[10px] tracking-[0.4em] uppercase opacity-80 md:text-xs 2xl:text-sm"
-                style={{ color: theme.hex }}
-              >
-                Chương {chapterRoman}
-              </span>
-            </div>
-
-            <CyberHeading 
-              variant="default"
-              size="lg"
-              className="mb-4 lg:mb-8"
-              style={{
-                textShadow: `0 0 20px ${theme.hex}`
-              }}
+      {/* Content Layer */}
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1920px] flex-col justify-center px-6 md:px-12 lg:px-24 xl:px-32 2xl:px-48">
+        
+        {/* Left-Aligned Floating Content Block */}
+        <div className="flex h-full max-h-[85vh] w-full flex-col justify-center py-10 md:w-[80%] lg:w-[55%] xl:w-[45%]">
+          
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              variants={staggerContainer}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              className="flex min-h-0 flex-col"
             >
-              {era.name}
-            </CyberHeading>
-
-            <p className="hidden text-justify font-sans text-sm leading-loose text-zinc-200 opacity-90 md:block md:text-base 2xl:text-lg">
-              {era.description}
-            </p>
-
-            <EraCarouselControls
-              theme={theme}
-              className="mt-8 hidden gap-4 lg:flex"
-              onPrev={goPrev}
-              onNext={goNext}
-            />
-          </div>
-
-          <div
-            className="relative flex min-h-0 w-full flex-1 flex-col justify-center lg:h-full lg:w-[75%] lg:flex-none"
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-          >
-            <div className="h-full w-full">
-              <CyberCard
-                variant={
-                  (era.themeColor as CyberVariant) === 'cyan' || 
-                  (era.themeColor as CyberVariant) === 'orange' ||
-                  (era.themeColor as CyberVariant) === 'yellow' ||
-                  (era.themeColor as CyberVariant) === 'red' ||
-                  (era.themeColor as CyberVariant) === 'green' ||
-                  (era.themeColor as CyberVariant) === 'purple' ||
-                  (era.themeColor as CyberVariant) === 'zinc' 
-                    ? (era.themeColor as CyberVariant) 
-                    : 'zinc'
-                }
-                withCorners
-                padding="none"
-                className="group relative h-full w-full overflow-hidden lg:h-[70vh] 2xl:h-[75vh]"
-              >
-
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={current}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="relative z-10 flex h-full w-full flex-col px-6 py-5 md:px-10 md:py-8 xl:px-12 xl:py-10 2xl:px-16 2xl:py-12"
-                  >
-                  {event.date && (
-                    <div className="mb-3 lg:mb-4">
-                      <span
-                        className="inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] tracking-[0.2em] uppercase md:text-xs 2xl:text-sm"
-                        style={{ color: theme.hex }}
-                      >
-                        {event.date}
-                      </span>
-                    </div>
-                  )}
-
-                  <h3 className="mb-4 text-xl font-bold text-white md:text-3xl lg:mb-6 lg:text-4xl 2xl:text-5xl">
-                    {event.title}
-                  </h3>
-
-                  <div
-                    className="min-h-0 flex-1 overflow-y-auto pr-4 lg:pr-6"
-                    style={{
-                      maskImage:
-                        'linear-gradient(to bottom, black 85%, transparent 100%)',
-                      WebkitMaskImage:
-                        'linear-gradient(to bottom, black 85%, transparent 100%)',
-                    }}
-                  >
-                    <div className="prose max-w-none pb-2 text-justify text-xs leading-relaxed font-normal whitespace-pre-line text-zinc-100 prose-zinc prose-invert md:text-sm lg:text-base 2xl:text-lg">
-                      {cleanDescription}
-                      <div
-                        className="pointer-events-none h-6 md:h-10"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
-
-                  {event.tags && event.tags.length > 0 && (
-                    <div className="mt-auto flex shrink-0 flex-wrap gap-2 pt-4">
-                      {event.tags.map((tag) => (
-                        <CyberBadge
-                          key={tag}
-                          variant="zinc"
-                          withIndicator={false}
-                          className="rounded-full border-white/10 bg-transparent px-3 py-1 font-sans text-[9px] tracking-widest text-zinc-500 uppercase shadow-none"
-                        >
-                          {tag}
-                        </CyberBadge>
-                      ))}
-                    </div>
-                  )}
-                  </motion.div>
-                </AnimatePresence>
-              </CyberCard>
-            </div>
-
-            <EraCarouselControls
-              theme={theme}
-              className="mt-6 mb-4 justify-center gap-8 lg:hidden"
-              sizeClass="w-12 h-12"
-              iconSize="w-5 h-5"
-              onPrev={goPrev}
-              onNext={goNext}
-            />
-
-            <div className="mt-4 flex justify-center gap-2 pb-2 lg:mt-6">
-              {Array.from({ length: count }).map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => goTo(i)}
-                  className="group inline-flex min-h-11 items-center justify-center px-1"
-                  aria-label={`Chuyển tới sự kiện ${i + 1}`}
-                  aria-current={i === current ? 'true' : undefined}
+              {/* Metadata row (Chapter + Era Name Mobile only + Date) */}
+              <motion.div variants={fadeUp} className="mb-4 flex flex-wrap items-center gap-3">
+                <div
+                  className="h-[2px] w-8 lg:w-12"
+                  style={{ backgroundColor: theme.hex }}
+                />
+                
+                {/* On mobile, show Era Name because the background image's right edge might be cropped out */}
+                <span 
+                  className="font-sans text-[9px] font-bold tracking-[0.3em] uppercase md:hidden"
+                  style={{ color: theme.hex }}
                 >
-                  <span
-                    className={`block h-1.5 transition-all duration-300 ${
-                      i === current
-                        ? 'w-8 bg-white'
-                        : 'w-4 bg-white/20 group-hover:bg-white/50 group-hover:w-6'
-                    }`}
-                    style={
-                      i === current
-                        ? {
-                            backgroundColor: theme.hex,
-                            boxShadow: `0 0 10px ${theme.hex}`,
-                          }
-                        : undefined
-                    }
-                  />
-                </button>
-              ))}
+                  {era.name}
+                </span>
+
+                {/* On desktop, just show the chapter number or date */}
+                <span 
+                  className="hidden font-sans text-[10px] font-bold tracking-[0.3em] uppercase opacity-80 md:block"
+                  style={{ color: theme.hex }}
+                >
+                  CHƯƠNG {chapterRoman}
+                </span>
+
+                {event.date && (
+                  <>
+                    <div className="hidden h-1 w-1 rounded-full bg-white/20 md:block" />
+                    <span className="font-mono text-[9px] tracking-widest text-zinc-400 uppercase md:text-[10px]">
+                      {event.date}
+                    </span>
+                  </>
+                )}
+              </motion.div>
+
+              {/* Event Title */}
+              <motion.div variants={fadeUp} className="mb-6 lg:mb-8">
+                <h3 className="font-sans text-3xl font-black tracking-tight text-white md:text-5xl lg:text-5xl 2xl:text-6xl"
+                    style={{ textShadow: `0 4px 30px ${theme.hex}40` }}>
+                  {event.title}
+                </h3>
+              </motion.div>
+
+              {/* Scrollable Description with Invisible Scrollbar */}
+              <motion.div 
+                variants={fadeUp}
+                className="min-h-0 flex-1 overflow-y-auto pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                style={{
+                  maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+                }}
+              >
+                <div className="prose prose-invert max-w-none pb-12 text-justify font-sans text-sm font-light leading-[1.8] text-zinc-300 whitespace-pre-line md:text-base lg:text-lg">
+                  {cleanDescription}
+                </div>
+              </motion.div>
+
+              {/* Tags */}
+              {event.tags && event.tags.length > 0 && (
+                <motion.div variants={fadeUp} className="mt-4 flex shrink-0 flex-wrap gap-2 pt-4 border-t border-white/5">
+                  {event.tags.map((tag) => (
+                    <CyberBadge
+                      key={tag}
+                      variant="zinc"
+                      withIndicator={false}
+                      className="rounded-full border-white/10 bg-white/5 px-3 py-1 font-sans text-[9px] font-medium tracking-widest text-zinc-400 uppercase shadow-none transition-colors hover:bg-white/10"
+                    >
+                      {tag}
+                    </CyberBadge>
+                  ))}
+                </motion.div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Persistent Controls Toolbar (Bottom) */}
+          <div className="mt-8 flex shrink-0 flex-col gap-6 md:flex-row md:items-center md:justify-between border-t border-white/10 pt-6">
+            {/* Pagination Lines */}
+            <div className="flex items-center gap-3">
+              <MagneticButton
+                onClick={goPrev}
+                aria-label="Sự kiện trước"
+                className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-black/50 transition-colors hover:border-white/30 hover:bg-white/10"
+              >
+                <ChevronLeft className="h-5 w-5 text-zinc-400 transition-colors group-hover:text-white" />
+              </MagneticButton>
+
+              <div className="flex gap-1.5 px-2">
+                {Array.from({ length: count }).map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => goTo(i)}
+                    className="group py-2 outline-none"
+                    aria-label={`Chuyển tới sự kiện ${i + 1}`}
+                    aria-current={i === current ? 'true' : undefined}
+                  >
+                    <span
+                      className={`block h-[3px] rounded-full transition-all duration-500 ease-out ${
+                        i === current
+                          ? 'w-8 bg-white'
+                          : 'w-3 bg-white/20 group-hover:bg-white/50 group-hover:w-5'
+                      }`}
+                      style={
+                        i === current
+                          ? {
+                              backgroundColor: theme.hex,
+                              boxShadow: `0 0 12px ${theme.hex}`,
+                            }
+                          : undefined
+                      }
+                    />
+                  </button>
+                ))}
+              </div>
+
+              <MagneticButton
+                onClick={goNext}
+                aria-label="Sự kiện tiếp theo"
+                className="group flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-black/50 transition-colors hover:border-white/30 hover:bg-white/10"
+              >
+                <ChevronRight className="h-5 w-5 text-zinc-400 transition-colors group-hover:text-white" />
+              </MagneticButton>
             </div>
 
-            <div className="mt-3 flex justify-center">
+            {/* TTS Button */}
+            <div className="flex items-center">
               <TTSButton
                 events={era.events}
                 currentEventIndex={current}
@@ -307,9 +273,11 @@ export function EraCinematicScene({
                 onEventChange={goTo}
                 eraTitle={`Chương ${chapterRoman}. ${era.name}`}
                 eraDescription={era.description}
+                className="shadow-none border-white/10 bg-transparent hover:bg-white/5"
               />
             </div>
           </div>
+          
         </div>
       </div>
     </section>
