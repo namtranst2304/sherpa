@@ -10,17 +10,41 @@ export function ScrollToTop() {
   const [isLaunching, setIsLaunching] = useState(false)
   const [showParticles, setShowParticles] = useState(false)
 
+  const scrollTargetRef = useRef<HTMLElement | null>(null)
+
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > window.innerHeight)
-      if (window.scrollY === 0) {
-        setIsLaunching(false)
-        setShowParticles(false)
+    const handleScroll = (e: Event) => {
+      const target = e.target as HTMLElement | Document
+      
+      // Document scroll
+      if (target === document || target === document.documentElement || target === document.body) {
+        setVisible(window.scrollY > 300)
+        if (window.scrollY === 0) {
+          setIsLaunching(false)
+          setShowParticles(false)
+        }
+        scrollTargetRef.current = null
+        return
+      }
+
+      // Inner container scroll
+      const el = target as HTMLElement
+      // Only track if it's a significant scroll area (e.g. main content)
+      if (el.clientHeight > window.innerHeight * 0.3) {
+        scrollTargetRef.current = el
+        setVisible(el.scrollTop > 300)
+        if (el.scrollTop === 0) {
+          setIsLaunching(false)
+          setShowParticles(false)
+        }
       }
     }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, { capture: true, passive: true })
+    // Trigger initial check
+    handleScroll({ target: document } as unknown as Event)
+    
+    return () => window.removeEventListener('scroll', handleScroll, { capture: true })
   }, [])
 
   const particlesTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -36,7 +60,13 @@ export function ScrollToTop() {
   const handleLaunch = () => {
     setIsLaunching(true)
     setShowParticles(true)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    
+    if (scrollTargetRef.current) {
+      scrollTargetRef.current.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
     particlesTimerRef.current = setTimeout(() => setShowParticles(false), 1200)
     launchTimerRef.current = setTimeout(() => setIsLaunching(false), 1500)
   }
