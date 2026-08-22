@@ -1,11 +1,9 @@
 'use client'
 
 import * as React from 'react'
-import { Target, Sword, Users, Copy, Check } from 'lucide-react'
+import { Target, Sword, Users } from 'lucide-react'
 import { CyberCard, CyberBadge, CyberHUDBar } from '@/components/common/CyberComponents'
-import { MagneticButton } from '@/components/common/MagneticButton'
 import { ActivityRole, ActivityEncounter } from '@/types'
-import { copyToClipboard } from '@/lib/clipboard'
 
 interface EncounterRolesProps {
   roles?: ActivityEncounter['roles']
@@ -83,47 +81,6 @@ export function EncounterRoles({
   roles,
   encounterName = 'Encounter',
 }: EncounterRolesProps) {
-  const [copied, setCopied] = React.useState(false)
-
-  const timerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  React.useEffect(() => {
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current)
-    }
-  }, [])
-
-  const handleCopyDiscord = async () => {
-    let text = `⚔️ **PHÂN VAI: ${encounterName.toUpperCase()}** ⚔️\n`
-    
-    if (roles) {
-      if (roles.option_1 || roles.option_2) {
-        if (roles.option_1) {
-          text += `\n**[Option 1]**\n`
-          for (const [key, val] of Object.entries(roles.option_1 as Record<string, ActivityRole>)) {
-            text += `• **${formatRoleLabel(key)}**: ${val.description || ''}\n`
-          }
-        }
-        if (roles.option_2) {
-          text += `\n**[Option 2]**\n`
-          for (const [key, val] of Object.entries(roles.option_2 as Record<string, ActivityRole>)) {
-            text += `• **${formatRoleLabel(key)}**: ${val.description || ''}\n`
-          }
-        }
-      } else {
-        for (const [key, val] of Object.entries(roles as Record<string, ActivityRole>)) {
-          text += `• **${formatRoleLabel(key)}**: ${val.description || ''}\n`
-        }
-      }
-    }
-
-    const success = await copyToClipboard(text)
-    if (success) {
-      setCopied(true)
-      timerRef.current = setTimeout(() => setCopied(false), 2200)
-    }
-  }
-
   if (!roles) return null
 
   const hasStrategyOptions = Boolean(roles.option_1 || roles.option_2)
@@ -136,21 +93,6 @@ export function EncounterRoles({
         icon={Users}
         title="Bảng phân vai Fireteam"
         className="p-2.5"
-        actions={
-          <MagneticButton
-            type="button"
-            onClick={handleCopyDiscord}
-            className="flex cursor-pointer items-center gap-1.5 border border-neon-cyan/50 bg-neon-cyan/15 px-3 py-1.5 font-mono text-xs font-bold text-neon-cyan uppercase shadow-[0_0_10px_rgba(0,243,255,0.2)] transition-all hover:border-neon-cyan hover:bg-neon-cyan/25 active:scale-95"
-            title="Sao chép bảng phân vai gửi vào Discord"
-          >
-            {copied ? (
-              <Check className="h-3.5 w-3.5 text-neon-green" />
-            ) : (
-              <Copy className="h-3.5 w-3.5" />
-            )}
-            <span>{copied ? 'Đã chép Discord!' : 'Chép Discord'}</span>
-          </MagneticButton>
-        }
       />
 
       {hasStrategyOptions ? (
