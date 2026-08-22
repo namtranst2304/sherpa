@@ -6,4 +6,3 @@ export const DATABASE_TABS = [
   { name: 'Armor Sets', href: '/database/armor-sets', icon: Shield },
 ] as const
 
-export const WEAPON_SLOT_FILTERS = ['All', 'Kinetic', 'Energy', 'Power'] as const

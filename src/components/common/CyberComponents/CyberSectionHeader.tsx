@@ -47,7 +47,7 @@ const cyberSectionHeaderTone = {
   },
 } as const
 
-export type CyberSectionHeaderVariant = keyof typeof cyberSectionHeaderTone
+type CyberSectionHeaderVariant = keyof typeof cyberSectionHeaderTone
 
 export interface CyberSectionHeaderProps extends Omit<
   React.HTMLAttributes<HTMLDivElement>,

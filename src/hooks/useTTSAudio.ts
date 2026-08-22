@@ -2,7 +2,7 @@ import * as React from 'react'
 import { DESTINY_PHONETICS } from '@/data/phonetics'
 import type { TimelineEvent } from '@/data/timeline/index'
 
-export const applyPhonetics = (text: string) => {
+const applyPhonetics = (text: string) => {
   let result = text
   const sortedKeys = Object.keys(DESTINY_PHONETICS).sort(
     (a, b) => b.length - a.length
