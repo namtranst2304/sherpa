@@ -198,7 +198,6 @@ export function EraCinematicScene({
                 withCorners
                 padding="none"
                 className="group relative h-full w-full overflow-hidden lg:h-[70vh] 2xl:h-[75vh]"
-                style={{ transform: 'skewX(-5deg)' }}
               >
 
                 <AnimatePresence mode="wait">
@@ -209,7 +208,6 @@ export function EraCinematicScene({
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                     className="relative z-10 flex h-full w-full flex-col px-6 py-5 md:px-10 md:py-8 xl:px-12 xl:py-10 2xl:px-16 2xl:py-12"
-                    style={{ transform: 'skewX(5deg)' }}
                   >
                   {event.date && (
                     <div className="mb-3 lg:mb-4">
