@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Shield, Sparkles, Shirt } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { playHoverSound, playNavSound } from '@/lib/cyber-audio'
 
 const TABS = [
   { name: 'Giáp Exotic', href: '/database/exotic-armor', icon: Shirt },
@@ -28,8 +27,6 @@ export function DatabaseTabNav() {
             <Link
               key={tab.href}
               href={tab.href}
-              onMouseEnter={playHoverSound}
-              onClick={playNavSound}
               className={cn(
                 'flex min-h-11 shrink-0 items-center gap-2 rounded-t-lg border-b-2 px-4 py-2.5 text-xs font-black tracking-wider whitespace-nowrap uppercase transition-all sm:px-6 sm:text-sm',
                 isActive

@@ -10,7 +10,6 @@ import {
   Crosshair,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { playHoverSound, playNavSound } from '@/lib/cyber-audio'
 
 interface TOCGroup {
   title?: string
@@ -74,8 +73,6 @@ export function MobileGuideTOC({
                   ref={isActive ? activeRef : undefined}
                   href={item.href || `#${item.id}`}
                   scroll={false}
-                  onMouseEnter={playHoverSound}
-                  onClick={playNavSound}
                   className={cn(
                     'group relative inline-flex min-h-11 shrink-0 snap-start items-center gap-1.5 border-b-2 px-3.5 py-2 font-mono text-xs font-bold whitespace-nowrap transition-all',
                     isActive

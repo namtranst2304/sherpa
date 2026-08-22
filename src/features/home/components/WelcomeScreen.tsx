@@ -3,7 +3,6 @@
 import { useState, useEffect, useSyncExternalStore } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { DoorOverlay } from '@/components/common/DoorOverlay'
-import { playGlobalBgAudio } from '@/lib/audio'
 
 const WELCOME_EVENT = 'sherpa-welcomed'
 
@@ -51,7 +50,6 @@ export function WelcomeScreen() {
   const handleEnter = () => {
     sessionStorage.setItem('sherpa_welcomed', 'true')
     window.dispatchEvent(new Event(WELCOME_EVENT))
-    playGlobalBgAudio()
     setIsOpened(true)
     setTimeout(() => setExited(true), 1000)
   }

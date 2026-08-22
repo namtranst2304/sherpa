@@ -11,7 +11,6 @@ import {
   Maximize2,
   Sparkles,
 } from 'lucide-react'
-import { playNavSound, playHoverSound } from '@/lib/cyber-audio'
 
 interface ZoomableImageProps {
   src: string
@@ -34,32 +33,27 @@ export function ZoomableImage({
   const [zoomLevel, setZoomLevel] = useState(1)
 
   const handleOpen = () => {
-    playNavSound()
     setZoomLevel(1)
     setIsOpen(true)
   }
 
   const handleClose = useCallback(() => {
-    playNavSound()
     setIsOpen(false)
     setZoomLevel(1)
   }, [])
 
   const handleZoomIn = (e: React.MouseEvent) => {
     e.stopPropagation()
-    playNavSound()
     setZoomLevel((prev) => Math.min(prev + 0.35, 3))
   }
 
   const handleZoomOut = (e: React.MouseEvent) => {
     e.stopPropagation()
-    playNavSound()
     setZoomLevel((prev) => Math.max(prev - 0.35, 0.7))
   }
 
   const handleReset = (e: React.MouseEvent) => {
     e.stopPropagation()
-    playNavSound()
     setZoomLevel(1)
   }
 
@@ -82,7 +76,6 @@ export function ZoomableImage({
       <div
         className={`group relative cursor-pointer overflow-hidden rounded-none border border-zinc-800 transition-all duration-300 hover:border-neon-cyan/60 hover:shadow-[0_0_25px_rgba(0,243,255,0.25)] ${className}`}
         onClick={handleOpen}
-        onMouseEnter={playHoverSound}
       >
         <Image
           src={src}

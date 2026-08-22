@@ -6,7 +6,6 @@ import { CyberCard, CyberBadge } from '@/components/common/CyberComponents'
 import { MagneticButton } from '@/components/common/MagneticButton'
 import { ActivityRole, ActivityEncounter } from '@/types'
 import { copyToClipboard } from '@/lib/clipboard'
-import { playClearSound } from '@/lib/cyber-audio'
 
 interface EncounterRolesProps {
   roles?: ActivityEncounter['roles']
@@ -87,7 +86,6 @@ export function EncounterRoles({
   const [copied, setCopied] = React.useState(false)
 
   const handleCopyDiscord = async () => {
-    playClearSound()
     let text = `⚔️ **PHÂN VAI: ${encounterName.toUpperCase()}** ⚔️\n`
     
     if (roles) {

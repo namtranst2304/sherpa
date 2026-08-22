@@ -9,7 +9,6 @@ import { ChevronDown } from 'lucide-react'
 import { AnimatedScrollText } from './AnimatedScrollText'
 import { MagneticButton } from '@/components/common/MagneticButton'
 import { DoorOverlay } from '@/components/common/DoorOverlay'
-import { playGlobalBgAudio } from '@/lib/audio'
 
 export function LandingPage() {
   const router = useRouter()
@@ -17,7 +16,6 @@ export function LandingPage() {
 
   const handleEnter = () => {
     setIsTransitioning(true)
-    playGlobalBgAudio()
     setTimeout(() => {
       router.push('/timeline')
     }, 700)

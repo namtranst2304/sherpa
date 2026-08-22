@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
 import { useScrollSpy } from '@/hooks/use-scroll-spy'
-import { playHoverSound, playNavSound } from '@/lib/cyber-audio'
 import * as React from 'react'
 
 export type SidebarSection = {
@@ -78,10 +77,8 @@ export function GuideSidebar({
 
                 return (
                   <li key={item.id} className="min-w-0">
-                    <Link
+                      <Link
                       href={linkHref}
-                      onMouseEnter={playHoverSound}
-                      onClick={playNavSound}
                       className={cn(
                         'relative z-10 flex w-full items-start justify-between gap-2 border-l-4 px-2 py-2.5 font-mono text-sm transition-all',
                         isActive
