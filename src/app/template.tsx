@@ -13,7 +13,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         damping: 20,
         duration: 0.4,
       }}
-      className="flex-1 w-full flex flex-col"
+      className="flex min-h-0 w-full flex-1 flex-col"
     >
       {children}
     </motion.div>

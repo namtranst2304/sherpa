@@ -186,6 +186,20 @@
     min-height: 100vh;
   }
 
+  /* Destiny 2 selection color */
+  ::selection {
+    background-color: rgba(0, 243, 255, 0.3);
+    color: #ffffff;
+  }
+
+  /* Angled Cutout (Destiny 2 buttons style) */
+  .clip-angled {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  }
+  .clip-angled-reverse {
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+  }
+
   /* Custom Neon Scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
