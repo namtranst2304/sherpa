@@ -25,11 +25,11 @@ export function EncounterCatalyst({ catalyst }: EncounterCatalystProps) {
           </span>
         </h4>
         {catalyst.description && (
-          <p className="mb-4 text-sm text-muted-foreground">
+          <div className="mb-4 text-sm text-muted-foreground">
             <MarkdownText components={markdownComponents}>
               {catalyst.description}
             </MarkdownText>
-          </p>
+          </div>
         )}
 
         {catalyst.images && catalyst.images.length > 0 && (

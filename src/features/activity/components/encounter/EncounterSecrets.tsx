@@ -29,11 +29,11 @@ export function EncounterSecrets({ secrets }: EncounterSecretsProps) {
             </span>
           </h4>
           {secret.description && (
-            <p className="mb-4 text-sm text-muted-foreground">
+            <div className="mb-4 text-sm text-muted-foreground">
               <MarkdownText components={markdownComponents}>
                 {secret.description}
               </MarkdownText>
-            </p>
+            </div>
           )}
 
           {secret.images && secret.images.length > 0 && (

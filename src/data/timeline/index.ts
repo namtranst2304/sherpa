@@ -71,16 +71,6 @@ export async function getDestinyTimelineSummaries(): Promise<
   return (mod.default || mod) as TimelineEraSummary[]
 }
 
-/** Load a single era (with events) by index. */
-async function getTimelineEraByIndex(
-  index: number,
-): Promise<TimelineEra | null> {
-  const loader = timelineImports[index]
-  if (!loader) return null
-  const mod = await loader()
-  return (mod.default || mod) as unknown as TimelineEra
-}
-
 /** Client-safe dynamic loaders (one chunk per era JSON). */
 export const timelineEraClientLoaders: Array<() => Promise<TimelineEra>> =
   timelineImports.map((loader) => async () => {

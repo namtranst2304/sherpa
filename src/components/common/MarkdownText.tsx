@@ -11,6 +11,7 @@ interface MarkdownTextProps {
   children: string
   components?: Components
   className?: string
+  as?: 'div' | 'span'
 }
 
 /** Single code-split entry for react-markdown across the app. */
@@ -18,11 +19,12 @@ export function MarkdownText({
   children,
   components,
   className,
+  as: Component = 'div',
 }: MarkdownTextProps) {
   if (!children) return null
   return (
-    <div className={className}>
+    <Component className={className}>
       <ReactMarkdown components={components}>{children}</ReactMarkdown>
-    </div>
+    </Component>
   )
 }
