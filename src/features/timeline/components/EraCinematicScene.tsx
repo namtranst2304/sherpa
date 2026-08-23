@@ -203,7 +203,7 @@ export function EraCinematicScene({
               {/* Scrollable Description with Invisible Scrollbar */}
               <motion.div 
                 variants={fadeUp}
-                className="min-h-0 w-full flex-1 overflow-y-auto px-2 md:px-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                className="no-scrollbar min-h-0 w-full flex-1 overflow-y-auto px-2 md:px-8"
                 style={{
                   maskImage: 'linear-gradient(to bottom, transparent 0%, black 5%, black 90%, transparent 100%)',
                   WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 5%, black 90%, transparent 100%)',
