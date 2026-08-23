@@ -87,14 +87,27 @@ export function EraCinematicScene({
     },
   }
 
+  const chapterEntryBg = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { duration: 1, ease: 'easeOut' } }
+  }
+
+  const chapterEntryContent = {
+    hidden: { opacity: 0, x: -30 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } }
+  }
+
   return (
-    <section 
+    <motion.section 
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
       className="relative flex h-[100dvh] w-full snap-center flex-col overflow-hidden bg-[#050505]"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
       {/* Background Layer */}
-      <div className="pointer-events-none absolute inset-0 z-0">
+      <motion.div variants={chapterEntryBg} className="pointer-events-none absolute inset-0 z-0">
         {era.image && (
           <motion.div
             className="absolute inset-0 h-full w-full"
@@ -124,10 +137,10 @@ export function EraCinematicScene({
         
         {/* Bottom shadow to ground the scene */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
-      </div>
+      </motion.div>
 
       {/* Content Layer */}
-      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1920px] flex-col justify-center px-6 md:px-12 lg:px-24 xl:px-32 2xl:px-48">
+      <motion.div variants={chapterEntryContent} className="relative z-10 mx-auto flex h-full w-full max-w-[1920px] flex-col justify-center px-6 md:px-12 lg:px-24 xl:px-32 2xl:px-48">
         
         {/* Left-Aligned Floating Content Block */}
         <div className="flex h-full max-h-[85vh] w-full flex-col justify-center py-10 md:w-[80%] lg:w-[55%] xl:w-[45%]">
@@ -279,7 +292,7 @@ export function EraCinematicScene({
           </div>
           
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   )
 }
