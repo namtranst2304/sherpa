@@ -93,8 +93,8 @@ export function EraCinematicScene({
   }
 
   const chapterEntryContent: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } }
+    hidden: { opacity: 0, x: -30 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } }
   }
 
   return (
@@ -124,7 +124,7 @@ export function EraCinematicScene({
               src={era.image}
               alt={era.name}
               fill
-              className="object-cover object-center opacity-80"
+              className="object-cover object-right opacity-70 md:opacity-90"
               priority={index === 0}
               unoptimized
             />
@@ -132,18 +132,18 @@ export function EraCinematicScene({
         )}
         
         {/* Advanced Cinematic Overlays */}
-        {/* Full screen dark overlay for centered text readability */}
-        <div className="absolute inset-0 bg-[#050505]/75" />
+        {/* Left side deep shadow for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/95 to-transparent md:w-[75%] lg:w-[65%] xl:w-[55%]" />
         
         {/* Bottom shadow to ground the scene */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
       </motion.div>
 
       {/* Content Layer */}
-      <motion.div variants={chapterEntryContent} className="relative z-10 mx-auto flex h-full w-full max-w-5xl flex-col justify-center px-6 md:px-12">
+      <motion.div variants={chapterEntryContent} className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] flex-col justify-center px-6 md:px-16 lg:px-24">
         
-        {/* Centered Floating Content Block */}
-        <div className="flex h-full max-h-[85vh] w-full flex-col justify-center py-10">
+        {/* Left-Aligned Floating Content Block */}
+        <div className="flex h-full max-h-[85vh] w-full flex-col justify-center py-10 md:w-[80%] lg:w-[60%] xl:w-[50%]">
           
           <AnimatePresence mode="wait">
             <motion.div

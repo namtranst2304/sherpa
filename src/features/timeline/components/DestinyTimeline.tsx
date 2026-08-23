@@ -69,7 +69,7 @@ export function DestinyTimeline({ eras }: DestinyTimelineProps) {
   return (
     <div
       id="timeline-scroll-container"
-      className="h-[100dvh] w-full snap-y snap-mandatory [scrollbar-width:'none'] overflow-x-hidden overflow-y-auto overscroll-y-contain bg-[#050505] font-sans text-zinc-100 [-ms-overflow-style:'none'] selection:bg-neon-cyan/30 selection:text-white [&::-webkit-scrollbar]:hidden"
+      className="h-[100dvh] w-full snap-y snap-mandatory [scrollbar-width:none] overflow-x-hidden overflow-y-auto overscroll-y-contain bg-[#050505] font-sans text-zinc-100 [-ms-overflow-style:none] selection:bg-neon-cyan/30 selection:text-white [&::-webkit-scrollbar]:hidden"
     >
       <EraNav eras={eras} eraRefs={eraRefs} />
 
