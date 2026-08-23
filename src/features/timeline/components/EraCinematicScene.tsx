@@ -109,9 +109,10 @@ export function EraCinematicScene({
         {era.image && (
           <motion.div 
             className="absolute inset-0 h-full w-full will-change-transform"
-            initial={{ scale: 1.05 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 15, ease: 'easeOut' }}
+            initial={{ opacity: 0.3, scale: 1.08 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ amount: 0.2, once: false }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <Image
               src={era.image}
@@ -135,9 +136,10 @@ export function EraCinematicScene({
       <div className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] flex-col justify-center px-4 md:px-10 lg:px-16 xl:px-24">
           
           <motion.div 
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+            initial={{ opacity: 0, scale: 0.96, y: 16 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ amount: 0.2, once: false }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="mx-auto flex w-full max-w-5xl lg:max-w-6xl xl:max-w-[1240px] 2xl:max-w-[1360px] max-h-[85vh] flex-col items-center justify-between rounded-3xl border border-white/10 bg-black/40 p-6 backdrop-blur-xl shadow-2xl md:p-8 lg:p-10 xl:p-12 overflow-hidden"
           >
             
