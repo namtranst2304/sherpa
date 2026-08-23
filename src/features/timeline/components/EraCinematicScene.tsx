@@ -7,7 +7,7 @@ import { getTheme, type ThemeColorTokens } from '@/lib/theme'
 import { CyberBadge } from '@/components/common/CyberComponents'
 import { TTSButton } from '@/components/common/TTSButton'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence, type Variants } from 'motion/react'
 import { MagneticButton } from '@/components/common/MagneticButton'
 
 export function EraCinematicScene({
@@ -63,7 +63,7 @@ export function EraCinematicScene({
   const cleanDescription = event.description.replace(/\*\*(.*?)\*\*/g, '$1')
 
   // Animation variants
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -77,7 +77,7 @@ export function EraCinematicScene({
     }
   }
 
-  const fadeUp = {
+  const fadeUp: Variants = {
     hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
     show: {
       opacity: 1,
@@ -87,14 +87,14 @@ export function EraCinematicScene({
     },
   }
 
-  const chapterEntryBg = {
+  const chapterEntryBg: Variants = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { duration: 1, ease: 'easeOut' } }
   }
 
-  const chapterEntryContent = {
-    hidden: { opacity: 0, x: -30 },
-    show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } }
+  const chapterEntryContent: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } }
   }
 
   return (
@@ -124,7 +124,7 @@ export function EraCinematicScene({
               src={era.image}
               alt={era.name}
               fill
-              className="object-cover object-right opacity-70 md:opacity-90"
+              className="object-cover object-center opacity-80"
               priority={index === 0}
               unoptimized
             />
@@ -132,18 +132,18 @@ export function EraCinematicScene({
         )}
         
         {/* Advanced Cinematic Overlays */}
-        {/* Left side deep shadow for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent md:w-[75%] lg:w-[60%] xl:w-[50%]" />
+        {/* Full screen dark overlay for centered text readability */}
+        <div className="absolute inset-0 bg-[#050505]/75" />
         
         {/* Bottom shadow to ground the scene */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
       </motion.div>
 
       {/* Content Layer */}
-      <motion.div variants={chapterEntryContent} className="relative z-10 mx-auto flex h-full w-full max-w-[1920px] flex-col justify-center px-6 md:px-12 lg:px-24 xl:px-32 2xl:px-48">
+      <motion.div variants={chapterEntryContent} className="relative z-10 mx-auto flex h-full w-full max-w-5xl flex-col justify-center px-6 md:px-12">
         
-        {/* Left-Aligned Floating Content Block */}
-        <div className="flex h-full max-h-[85vh] w-full flex-col justify-center py-10 md:w-[80%] lg:w-[55%] xl:w-[45%]">
+        {/* Centered Floating Content Block */}
+        <div className="flex h-full max-h-[85vh] w-full flex-col justify-center py-10">
           
           <AnimatePresence mode="wait">
             <motion.div
