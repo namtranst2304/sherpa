@@ -3,7 +3,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 import { TimelineEra, ROMAN_NUMERALS } from '@/data/timeline/index'
-import { getTheme, type ThemeColorTokens } from '@/lib/theme'
+import { getTheme } from '@/lib/theme'
 import { CyberBadge } from '@/components/common/CyberComponents'
 import { TTSButton } from '@/components/common/TTSButton'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
@@ -23,21 +23,33 @@ export function EraCinematicScene({
   const [eraKey, setEraKey] = React.useState(era.name)
   const touchStartX = React.useRef<number | null>(null)
 
+  const [direction, setDirection] = React.useState<1 | -1>(1)
+
   if (era.name !== eraKey) {
     setEraKey(era.name)
     setCurrent(0)
+    setDirection(1)
   }
 
   const goTo = React.useCallback(
     (i: number) => {
       if (count === 0) return
-      setCurrent(((i % count) + count) % count)
+      const nextIndex = ((i % count) + count) % count
+      setDirection(nextIndex >= current ? 1 : -1)
+      setCurrent(nextIndex)
     },
-    [count],
+    [count, current],
   )
 
-  const goPrev = React.useCallback(() => goTo(current - 1), [current, goTo])
-  const goNext = React.useCallback(() => goTo(current + 1), [current, goTo])
+  const goPrev = React.useCallback(() => {
+    setDirection(-1)
+    goTo(current - 1)
+  }, [current, goTo])
+
+  const goNext = React.useCallback(() => {
+    setDirection(1)
+    goTo(current + 1)
+  }, [current, goTo])
 
   const theme = getTheme(era.themeColor)
   const chapterRoman = ROMAN_NUMERALS[index] || String(index + 1)
@@ -62,180 +74,161 @@ export function EraCinematicScene({
 
   const cleanDescription = event.description.replace(/\*\*(.*?)\*\*/g, '$1')
 
-  // Animation variants
-  const staggerContainer: Variants = {
-    hidden: { opacity: 0 },
-    show: {
+  // Smooth direction-aware event slide & fade (100% GPU-accelerated)
+  const eventVariants: Variants = {
+    enter: (dir: number) => ({
+      opacity: 0,
+      x: dir > 0 ? 30 : -30,
+    }),
+    center: {
       opacity: 1,
+      x: 0,
       transition: {
-        staggerChildren: 0.1,
+        duration: 0.35,
+        ease: [0.25, 1, 0.5, 1],
       },
     },
-    exit: {
+    exit: (dir: number) => ({
       opacity: 0,
-      transition: { duration: 0.3 },
-    }
-  }
-
-  const fadeUp: Variants = {
-    hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
-    show: {
-      opacity: 1,
-      y: 0,
-      filter: 'blur(0px)',
-      transition: { type: 'spring', damping: 20, stiffness: 100 },
-    },
-  }
-
-  const chapterEntryBg: Variants = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { duration: 1, ease: 'easeOut' } }
-  }
-
-  const chapterEntryContent: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut', delay: 0.2 } }
+      x: dir > 0 ? -30 : 30,
+      transition: {
+        duration: 0.2,
+        ease: [0.25, 1, 0.5, 1],
+      },
+    }),
   }
 
   return (
-    <>
-      <style dangerouslySetInnerHTML={{__html: `
-        .hide-scroll::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
-        .hide-scroll { -ms-overflow-style: none !important; scrollbar-width: none !important; }
-      `}} />
-      <motion.section 
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.25 }}
-        className="relative flex h-[100dvh] w-full snap-center flex-col overflow-hidden bg-[#050505] hide-scroll"
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-      >
-        {/* Background Layer */}
-        <motion.div variants={chapterEntryBg} className="pointer-events-none absolute inset-0 z-0">
-          {era.image && (
-            <motion.div
-              className="absolute inset-0 h-full w-full"
-              initial={{ scale: 1.05 }}
-              animate={{ scale: 1 }}
-              transition={{
-                duration: 25,
-                ease: 'linear',
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
-            >
-              <Image
-                src={era.image}
-                alt={era.name}
-                fill
-                className="object-cover object-center opacity-100"
-                priority={index === 0}
-                unoptimized
-              />
-            </motion.div>
-          )}
-          
-          {/* Subtle cinematic dimming (Not too dark) */}
-          <div className="absolute inset-0 bg-black/20" />
-          
-          {/* Bottom shadow for controls */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent lg:h-[40%] lg:top-auto" />
-        </motion.div>
+    <section 
+      className="no-scrollbar relative flex h-[100dvh] w-full snap-center flex-col overflow-hidden bg-[#050505]"
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Background Layer with subtle Ken Burns zoom */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        {era.image && (
+          <motion.div 
+            className="absolute inset-0 h-full w-full will-change-transform"
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 15, ease: 'easeOut' }}
+          >
+            <Image
+              src={era.image}
+              alt={era.name}
+              fill
+              className="object-cover object-center opacity-100"
+              priority={index === 0}
+              unoptimized
+            />
+          </motion.div>
+        )}
+        
+        {/* Subtle cinematic dimming */}
+        <div className="absolute inset-0 bg-black/20" />
+        
+        {/* Bottom shadow for controls */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent lg:h-[40%] lg:top-auto" />
+      </div>
 
-        {/* Content Layer - Centered with Glass Panel */}
-        <motion.div variants={chapterEntryContent} className="relative z-10 mx-auto flex h-full w-full max-w-7xl flex-col justify-center px-4 md:px-12 lg:px-20">
+      {/* Content Layer - Centered with Glass Panel */}
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-[1600px] flex-col justify-center px-4 md:px-10 lg:px-16 xl:px-24">
           
-          <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center rounded-3xl border border-white/10 bg-black/40 p-6 backdrop-blur-xl shadow-2xl md:p-12">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+            className="mx-auto flex w-full max-w-5xl lg:max-w-6xl xl:max-w-[1240px] 2xl:max-w-[1360px] max-h-[85vh] flex-col items-center justify-between rounded-3xl border border-white/10 bg-black/40 p-6 backdrop-blur-xl shadow-2xl md:p-8 lg:p-10 xl:p-12 overflow-hidden"
+          >
             
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={current}
-                variants={staggerContainer}
-                initial="hidden"
-                animate="show"
+                custom={direction}
+                variants={eventVariants}
+                initial="enter"
+                animate="center"
                 exit="exit"
-                className="flex min-h-0 flex-col items-center text-center"
+                className="flex min-h-0 flex-1 flex-col items-center overflow-hidden w-full"
               >
-                {/* Metadata row */}
-                <motion.div variants={fadeUp} className="mb-4 flex flex-wrap items-center justify-center gap-3">
+                {/* Metadata row: Chapter + Era Name + Date */}
+                <div className="mb-3 flex shrink-0 flex-wrap items-center justify-center gap-3">
                   <div
                     className="h-[2px] w-8 lg:w-12"
                     style={{ backgroundColor: theme.hex }}
                   />
                   
-                  {/* On mobile, show Era Name */}
                   <span 
-                    className="font-sans text-[9px] font-bold tracking-[0.3em] uppercase md:hidden"
-                    style={{ color: theme.hex }}
-                  >
-                    {era.name}
-                  </span>
-
-                  {/* On desktop, show chapter */}
-                  <span 
-                    className="hidden font-sans text-[10px] font-bold tracking-[0.3em] uppercase opacity-90 md:block"
+                    className="font-sans text-[10px] md:text-xs font-black tracking-[0.25em] uppercase"
                     style={{ color: theme.hex }}
                   >
                     CHƯƠNG {chapterRoman}
                   </span>
 
+                  <div className="h-1 w-1 rounded-full bg-white/40" />
+
+                  <span 
+                    className="font-sans text-[10px] md:text-xs font-extrabold tracking-[0.2em] uppercase text-zinc-200"
+                  >
+                    {era.name}
+                  </span>
+
                   {event.date && (
                     <>
-                      <div className="hidden h-1 w-1 rounded-full bg-white/30 md:block" />
-                      <span className="font-mono text-[9px] tracking-widest text-zinc-300 uppercase md:text-[10px]">
+                      <div className="h-1 w-1 rounded-full bg-white/40" />
+                      <span className="font-mono text-[9px] md:text-[10px] tracking-widest text-zinc-400 uppercase">
                         {event.date}
                       </span>
                     </>
                   )}
+
                   <div
                     className="h-[2px] w-8 lg:w-12"
                     style={{ backgroundColor: theme.hex }}
                   />
-                </motion.div>
+                </div>
 
                 {/* Event Title */}
-                <motion.div variants={fadeUp} className="mb-6 lg:mb-8">
-                  <h3 className="font-sans text-3xl font-black tracking-tight text-white md:text-5xl lg:text-6xl"
+                <div className="mb-4 shrink-0 lg:mb-6 text-center">
+                  <h3 className="font-sans text-2xl font-black tracking-tight text-white md:text-4xl lg:text-5xl"
                       style={{ textShadow: `0 4px 20px ${theme.hex}60` }}>
                     {event.title}
                   </h3>
-                </motion.div>
+                </div>
 
-                {/* Scrollable Description with Invisible Scrollbar */}
-                <motion.div 
-                  variants={fadeUp}
-                  className="hide-scroll max-h-[35vh] min-h-0 w-full overflow-y-auto px-2 md:px-8"
+                {/* Scrollable Description with Invisible Scrollbar & Justified text */}
+                <div 
+                  className="no-scrollbar min-h-0 flex-1 w-full overflow-y-auto overscroll-contain px-3 md:px-8 lg:px-12 my-2"
                   style={{
-                    maskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%)',
+                    maskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)',
                   }}
                 >
-                  <div className="prose prose-invert mx-auto max-w-none py-6 text-center font-sans text-sm font-light leading-relaxed text-zinc-200 whitespace-pre-line md:text-base lg:text-lg">
+                  <div className="prose prose-invert mx-auto max-w-none pt-2 pb-8 text-justify font-sans text-sm font-light leading-[1.9] text-zinc-200 whitespace-pre-line md:text-base lg:text-lg">
                     {cleanDescription}
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Tags */}
                 {event.tags && event.tags.length > 0 && (
-                  <motion.div variants={fadeUp} className="mt-4 flex shrink-0 flex-wrap justify-center gap-2 pt-4">
+                  <div className="mt-3 flex shrink-0 flex-wrap justify-center gap-2 pt-3">
                     {event.tags.map((tag) => (
                       <CyberBadge
                         key={tag}
                         variant="zinc"
                         withIndicator={false}
-                        className="rounded-full border-white/20 bg-white/10 px-4 py-1.5 font-sans text-[10px] font-medium tracking-widest text-white uppercase shadow-none transition-colors hover:bg-white/20"
+                        className="rounded-full border-white/20 bg-white/10 px-4 py-1 font-sans text-[10px] font-medium tracking-widest text-white uppercase shadow-none transition-colors hover:bg-white/20"
                       >
                         {tag}
                       </CyberBadge>
                     ))}
-                  </motion.div>
+                  </div>
                 )}
               </motion.div>
             </AnimatePresence>
 
             {/* Controls Toolbar (Bottom) */}
-            <div className="mt-8 flex w-full shrink-0 flex-col items-center justify-between gap-6 border-t border-white/10 pt-6 md:flex-row">
+            <div className="mt-4 flex w-full shrink-0 flex-col items-center justify-between gap-4 border-t border-white/10 pt-4 md:flex-row">
               {/* Pagination */}
               <div className="flex items-center gap-4">
                 <MagneticButton
@@ -298,9 +291,8 @@ export function EraCinematicScene({
               </div>
             </div>
             
-          </div>
-        </motion.div>
-      </motion.section>
-    </>
+          </motion.div>
+        </div>
+      </section>
   )
 }
