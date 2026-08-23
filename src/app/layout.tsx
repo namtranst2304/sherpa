@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body className="flex min-h-screen flex-col bg-background text-foreground antialiased">
+      <body className="flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
