@@ -119,13 +119,15 @@ async function getEdgeTTS(text: string, voice: string): Promise<Uint8Array> {
       ws.send(ssmlMessage)
     }
 
-    const onMessage = async (eventOrData: unknown) => {
+    const onMessage = async (eventOrData: unknown, isBinary?: unknown) => {
       const data = isCloudflare
         ? (eventOrData as { data: unknown }).data
         : eventOrData
 
-      if (typeof data === 'string') {
-        if (data.includes('Path:turn.end')) {
+      const isNodeText = !isCloudflare && isBinary === false
+      if (typeof data === 'string' || isNodeText) {
+        const textStr = typeof data === 'string' ? data : new TextDecoder().decode(data as Uint8Array)
+        if (textStr.includes('Path:turn.end')) {
           isCompleted = true
           clearTimeout(timeout)
           ws.close()
