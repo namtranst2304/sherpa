@@ -41,11 +41,13 @@ async function generateSecMsGecToken() {
   const roundedTicks = ticks - (ticks % BigInt('3000000000'))
   const strToHash = `${roundedTicks}${TRUSTED_CLIENT_TOKEN}`
 
-  const cryptoModule = await import('crypto')
-  return cryptoModule
-    .createHash('sha256')
-    .update(strToHash, 'ascii')
-    .digest('hex')
+  const encoder = new TextEncoder()
+  const data = encoder.encode(strToHash)
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+  const hashArray = Array.from(new Uint8Array(hashBuffer))
+  return hashArray
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('')
     .toUpperCase()
 }
 
