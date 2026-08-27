@@ -10,7 +10,7 @@ const ALLOWED_VOICES = new Set([
 const DEFAULT_VOICE = 'vi-VN-NamMinhNeural'
 
 function escapeXml(unsafe: string) {
-  return unsafe.replace(/[<>&"']/g, (c) => {
+  const escaped = unsafe.replace(/[<>&"']/g, (c) => {
     switch (c) {
       case '<':
         return '&lt;'
@@ -26,6 +26,11 @@ function escapeXml(unsafe: string) {
         return c
     }
   })
+
+  // Unescape only our injected SSML phoneme tags
+  return escaped
+    .replace(/&lt;phoneme alphabet=&quot;ipa&quot; ph=&quot;(.*?)&quot;&gt;/g, '<phoneme alphabet="ipa" ph="$1">')
+    .replace(/&lt;\/phoneme&gt;/g, '</phoneme>')
 }
 
 function generateRequestId() {
