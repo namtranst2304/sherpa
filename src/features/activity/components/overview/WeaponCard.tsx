@@ -14,6 +14,7 @@ import { LootWeapon } from '@/types'
 import { bungieUrl } from '@/lib/bungie'
 import { useWishlist } from '@/hooks/use-sherpa-store'
 import { MagneticButton } from '@/components/common/MagneticButton'
+import { LightGgButton } from '@/components/common/LightGgButton'
 import { cn } from '@/lib/utils'
 
 const NEW_PERKS = [
@@ -199,24 +200,32 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
       className="group relative flex h-full flex-col overflow-hidden p-0 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
     >
       <div className="relative flex h-32 w-full items-center justify-center overflow-hidden border-b border-zinc-800/50 bg-zinc-950 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-zinc-800 to-zinc-950 transition-colors duration-500 group-hover:border-zinc-700">
-        {/* Wishlist Button */}
-        <MagneticButton
-          type="button"
-          onClick={() => toggleWishlist(name)}
-          className={cn(
-            'absolute top-3 left-3 z-10 rounded-none border p-1.5 transition-all',
-            wishlisted
-              ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.5)]'
-              : 'border-zinc-700 bg-black/60 text-zinc-500 hover:border-amber-500/50 hover:text-amber-400',
-          )}
-          title={
-            wishlisted
-              ? 'Đã lưu vào Wishlist (Click để bỏ)'
-              : 'Thêm vào Wishlist'
-          }
-        >
-          <Star className={cn('h-3.5 w-3.5', wishlisted && 'fill-amber-400')} />
-        </MagneticButton>
+        {/* Actions: Wishlist & Light.gg */}
+        <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5">
+          <MagneticButton
+            type="button"
+            onClick={() => toggleWishlist(name)}
+            className={cn(
+              'rounded-none border p-1.5 transition-all',
+              wishlisted
+                ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.5)]'
+                : 'border-zinc-700 bg-black/60 text-zinc-500 hover:border-amber-500/50 hover:text-amber-400',
+            )}
+            title={
+              wishlisted
+                ? 'Đã lưu vào Wishlist (Click để bỏ)'
+                : 'Thêm vào Wishlist'
+            }
+          >
+            <Star className={cn('h-3.5 w-3.5', wishlisted && 'fill-amber-400')} />
+          </MagneticButton>
+
+          <LightGgButton
+            name={name}
+            size="xs"
+            className="rounded-none border-zinc-700 bg-black/60 p-1.5"
+          />
+        </div>
 
         {weapon.image ? (
           <Image
@@ -305,6 +314,14 @@ export function WeaponCard({ weapon }: WeaponCardProps) {
               <WeaponStatsBlock stats={weapon.stats} barColor={barColor} />
             )}
             {weapon.perks && <WeaponPerksBlock perks={weapon.perks} />}
+            <div className="pt-2 flex justify-end">
+              <LightGgButton
+                name={name}
+                variant="button"
+                label="Tra cứu Rolls trên Light.gg"
+                className="w-full sm:w-auto"
+              />
+            </div>
           </div>
         )}
       </div>

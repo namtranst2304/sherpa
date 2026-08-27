@@ -18,6 +18,7 @@ import {
 } from './DatabasePageChrome'
 import { ItemSourceLine } from './ExoticCardParts'
 import { DatabaseItemCard } from './DatabaseItemCard'
+import { LightGgButton } from '@/components/common/LightGgButton'
 import { bungieUrl } from '@/lib/bungie'
 import type { ArmorSet } from '@/types'
 
@@ -110,6 +111,7 @@ export function ArmorSetsView({ sets }: ArmorSetsViewProps) {
                 name={set.name}
                 screenshot={set.screenshot}
                 source={set.source}
+                action={<LightGgButton name={set.name} size="sm" />}
                 meta={
                   <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-neon-cyan/70 uppercase tracking-widest">
                     <span>Armor Set</span>

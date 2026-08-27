@@ -16,6 +16,7 @@ import { DatabaseItemCard } from './DatabaseItemCard'
 import { loadFullExoticArmor } from '../lib/load-full-item'
 import { useWishlist } from '@/hooks/use-sherpa-store'
 import { cn } from '@/lib/utils'
+import { LightGgButton } from '@/components/common/LightGgButton'
 import type { ExoticArmor, LeanExoticArmor } from '@/types'
 
 export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
@@ -62,23 +63,26 @@ export function ExoticArmorCard({ armor }: { armor: LeanExoticArmor }) {
       source={armor.source}
       expanded={expanded}
       action={
-        <MagneticButton
-          type="button"
-          onClick={() => toggleWishlist(armor.name)}
-          className={cn(
-            'rounded border p-2 transition-all',
-            wishlisted
-              ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]'
-              : 'border-zinc-800 bg-zinc-950/60 text-zinc-500 hover:border-amber-500/40 hover:text-amber-400',
-          )}
-          title={
-            wishlisted
-              ? 'Đã lưu vào Wishlist (Click để bỏ)'
-              : 'Thêm vào Wishlist'
-          }
-        >
-          <Star className={cn('h-4 w-4', wishlisted && 'fill-amber-400')} />
-        </MagneticButton>
+        <div className="flex items-center gap-1.5">
+          <LightGgButton itemId={armor.id} name={armor.name} size="sm" />
+          <MagneticButton
+            type="button"
+            onClick={() => toggleWishlist(armor.name)}
+            className={cn(
+              'rounded border p-2 transition-all',
+              wishlisted
+                ? 'border-amber-500 bg-amber-500/20 text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.4)]'
+                : 'border-zinc-800 bg-zinc-950/60 text-zinc-500 hover:border-amber-500/40 hover:text-amber-400',
+            )}
+            title={
+              wishlisted
+                ? 'Đã lưu vào Wishlist (Click để bỏ)'
+                : 'Thêm vào Wishlist'
+            }
+          >
+            <Star className={cn('h-4 w-4', wishlisted && 'fill-amber-400')} />
+          </MagneticButton>
+        </div>
       }
       meta={
         <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-sm text-neon-cyan">
